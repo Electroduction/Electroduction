@@ -23,6 +23,13 @@ https://docs.google.com/document/d/1ZJRpx_zMxTA050lJfydK9I8Q8G-CvEMZdKdaIRWPRYU/
 https://docs.google.com/document/d/1XXNsLy9B2fgYMmrLsp5miJaARvlQM4JJL4ep5uVXCWs/edit?usp=sharing
 https://alpineheights.store/
 
+<b>Project Mapper and Code Relationship Analyzer TKINTER APPS</b>
+https://docs.google.com/document/d/1jqLbHzJouWGh5ZRa8X9sN1UAxFna1hg8Zd6U8XLQwHs/edit?usp=sharing
+Notes:
+https://docs.google.com/document/d/1hcFFc0q9eBylTlAXUOMDFHh1LtRF1tvfLcGNew0vOw4/edit?usp=sharing
+
+<b>Exotic Pet Adoption Center TKINTER APPS</b>
+https://docs.google.com/document/d/1Uxo761lpYhRSRG63ESPG-30bDoJmsmkcjf-NxmqAVJ0/edit?usp=sharing
 <h2>📘 Education and Experience:</h2>
 Triple Major:
 Bachelor of Science in Information Systems and Technology (Cybersecurity) - CSUSB
