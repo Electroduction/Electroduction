@@ -1,0 +1,53 @@
+# Core AI/ML Libraries
+torch>=2.0.0
+transformers>=4.30.0
+diffusers>=0.21.0
+accelerate>=0.20.0
+
+# Financial Analysis
+yfinance>=0.2.18
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Audio/Music Processing
+librosa>=0.10.0
+soundfile>=0.12.0
+
+# Video Processing
+opencv-python>=4.8.0
+moviepy>=1.0.3
+
+# Data Processing
+scikit-learn>=1.3.0
+scipy>=1.11.0
+
+# Vector Database & RAG
+chromadb>=0.4.0
+langchain>=0.0.200
+
+# Utilities
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+python-dotenv>=1.0.0
+
+# Financial Data APIs
+alpha-vantage>=2.3.1
+fredapi>=0.5.0
+sec-edgar-downloader>=5.0.0
+
+# Reddit API (for creative data)
+praw>=7.7.0
+
+# Kaggle CLI
+kaggle>=1.5.0
+
+# Image Processing
+Pillow>=10.0.0
+
+# API Development (optional)
+fastapi>=0.100.0
+uvicorn>=0.23.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
