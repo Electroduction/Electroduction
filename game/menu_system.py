@@ -133,6 +133,40 @@ class MainMenu(Menu):
         super().__init__("ECHOFRONTIER", items)
         self.game = game
 
+    def render(self, screen):
+        """Render main menu with instructions"""
+        # Call parent render
+        super().render(screen)
+
+        # Add control instructions at bottom
+        width, height = screen.get_size()
+
+        # Big "PRESS ENTER TO START" message
+        big_font = pygame.font.Font(None, 32)
+        start_text = big_font.render("Press ENTER to Start", True, (255, 220, 100))
+        start_rect = start_text.get_rect(center=(width // 2, height - 120))
+
+        # Add pulsing effect
+        import time
+        pulse = abs((time.time() * 2) % 2 - 1)  # 0 to 1 and back
+        alpha = int(150 + 105 * pulse)
+        start_text.set_alpha(alpha)
+        screen.blit(start_text, start_rect)
+
+        instructions = [
+            "↑↓ or W/S - Navigate",
+            "ENTER - Select",
+            "ESC - Back"
+        ]
+
+        inst_font = pygame.font.Font(None, 20)
+        y_offset = height - 70
+
+        for i, inst in enumerate(instructions):
+            inst_surf = inst_font.render(inst, True, (120, 120, 140))
+            inst_rect = inst_surf.get_rect(center=(width // 2, y_offset + i * 20))
+            screen.blit(inst_surf, inst_rect)
+
 class PauseMenu(Menu):
     """Pause menu during gameplay"""
 

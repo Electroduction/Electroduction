@@ -37,8 +37,8 @@ env/
 Thumbs.db
 
 # Game specific
-save/*.json
-!save/.gitkeep
+game/save/*.json
+!game/save/.gitkeep
 *.log
 
 # Pygame
