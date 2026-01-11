@@ -196,18 +196,22 @@ class TileMap:
         tile = self.get_tile(tile_x, tile_y)
         return tile in [self.TILE_TYPES['floor'], self.TILE_TYPES['door']]
 
-    def generate_room_walls(self, collision_system):
-        """Generate collision rectangles for walls"""
-        collision_system.clear()
+    def generate_room_walls(self, collision_system, offset_x=0, offset_y=0):
+        """Generate collision rectangles for walls
 
+        Args:
+            collision_system: CollisionSystem to add walls to
+            offset_x: X offset for the room in world coordinates
+            offset_y: Y offset for the room in world coordinates
+        """
         # Convert tile walls to collision rectangles
         for y in range(self.height):
             for x in range(self.width):
                 if self.tiles[y][x] == self.TILE_TYPES['wall']:
                     world_x, world_y = self.tile_to_world(x, y)
                     collision_system.add_wall(
-                        world_x - self.TILE_SIZE // 2,
-                        world_y - self.TILE_SIZE // 2,
+                        offset_x + world_x - self.TILE_SIZE // 2,
+                        offset_y + world_y - self.TILE_SIZE // 2,
                         self.TILE_SIZE,
                         self.TILE_SIZE
                     )

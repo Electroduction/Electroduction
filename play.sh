@@ -58,8 +58,8 @@ echo "Starting ECHOFRONTIER..."
 echo "========================================="
 echo ""
 
-# Run the enhanced game
-cd game && $PYTHON main_enhanced.py
+# Run the AAA integrated game
+cd game && $PYTHON main_aaa.py
 
 echo ""
 echo "Thanks for playing!"

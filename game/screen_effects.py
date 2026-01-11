@@ -252,6 +252,11 @@ class ComboCounter:
         self.combo += 1
         self.combo_timer = self.combo_decay
 
+    def reset(self):
+        """Reset combo counter"""
+        self.combo = 0
+        self.combo_timer = 0
+
     def update(self, dt):
         """Update combo"""
         if self.combo_timer > 0:

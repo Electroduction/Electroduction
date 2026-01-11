@@ -36,9 +36,9 @@ echo Starting ECHOFRONTIER...
 echo =========================================
 echo.
 
-REM Run the enhanced game
+REM Run the AAA integrated game
 cd game
-python main_enhanced.py
+python main_aaa.py
 
 echo.
 echo Thanks for playing!
