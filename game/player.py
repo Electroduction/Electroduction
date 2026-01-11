@@ -9,7 +9,7 @@ from items import Weapon, Armor
 from particles import ParticleSystem
 
 class Player:
-    def __init__(self, x, y, game_state):
+    def __init__(self, x, y, game_state, combat_system=None):
         # Position
         self.x = x
         self.y = y
@@ -24,7 +24,7 @@ class Player:
         # Combat stats
         self.max_health = 100
         self.health = self.max_health
-        self.power = 10
+        self.power = 15
         self.vitality = 10
         self.focus = 10
         self.celerity = 10
@@ -32,8 +32,16 @@ class Player:
         # Combat state
         self.attack_cooldown = 0
         self.attack_speed = 0.4  # Seconds between attacks
-        self.attack_range = 60
-        self.attack_damage = 15
+        self.attack_range = 70
+        self.attack_damage = 25
+        self.combat_system = combat_system
+
+        # Status effects
+        from combat_system import StatusEffectManager
+        self.status_effects = StatusEffectManager()
+
+        # Currency
+        self.gold = 100  # Starting gold
 
         # Dodge/roll
         self.dodge_cooldown = 0
@@ -77,6 +85,19 @@ class Player:
 
     def update(self, dt, enemies, obstacles):
         """Update player state"""
+        # Update status effects
+        self.status_effects.update(dt)
+
+        # Apply status effect modifiers
+        speed_mult = 1.0
+        if self.status_effects.has_effect('speed'):
+            speed_mult += self.status_effects.get_effect_strength('speed')
+        if self.status_effects.has_effect('slow'):
+            speed_mult -= self.status_effects.get_effect_strength('slow')
+
+        original_speed = self.speed
+        self.speed = original_speed * speed_mult
+
         # Update cooldowns
         if self.attack_cooldown > 0:
             self.attack_cooldown -= dt
@@ -109,9 +130,21 @@ class Player:
             self.hurt_flash -= dt
 
         # Regeneration (passive)
+        base_regen = self.vitality * 0.1
+        if self.status_effects.has_effect('regen'):
+            base_regen += self.status_effects.get_effect_strength('regen')
+
         if self.health < self.max_health:
-            self.health += self.vitality * 0.1 * dt
+            self.health += base_regen * dt
             self.health = min(self.health, self.max_health)
+
+        # Poison damage
+        if self.status_effects.has_effect('poison'):
+            poison_dmg = self.status_effects.get_effect_strength('poison') * dt
+            self.health -= poison_dmg
+
+        # Restore original speed
+        self.speed = original_speed
 
     def handle_input(self, dt):
         """Handle player input"""
@@ -178,12 +211,22 @@ class Player:
         self.attack_cooldown = self.attack_speed
 
         # Calculate attack position
-        attack_x = self.x + math.cos(self.facing_angle) * self.attack_range
-        attack_y = self.y + math.sin(self.facing_angle) * self.attack_range
+        attack_x = self.x + math.cos(self.facing_angle) * (self.attack_range * 0.6)
+        attack_y = self.y + math.sin(self.facing_angle) * (self.attack_range * 0.6)
 
-        # Create attack hitbox (will be used for enemy collision)
-        self.last_attack_pos = (attack_x, attack_y)
-        self.last_attack_time = 0.1  # Visual indicator duration
+        # Create attack hitbox through combat system
+        if self.combat_system:
+            # Calculate total damage
+            total_damage = self.attack_damage + self.power
+
+            self.combat_system.create_hitbox(
+                attack_x, attack_y,
+                radius=self.attack_range * 0.8,
+                damage=total_damage,
+                owner='player',
+                duration=0.15,
+                knockback=30
+            )
 
         # Visual feedback
         self.particles.add_slash_effect(

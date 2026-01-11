@@ -1,9 +1,9 @@
 @echo off
 REM ECHOFRONTIER Launcher for Windows
 
-echo =========================================
-echo     ECHOFRONTIER - Sci-Fantasy RPG
-echo =========================================
+echo ============================================
+echo   ECHOFRONTIER - Enhanced Edition
+echo ============================================
 echo.
 echo Checking dependencies...
 
@@ -17,28 +17,28 @@ if errorlevel 1 (
 
 echo - Python found
 
-REM Check if pygame is installed
-python -c "import pygame" >nul 2>&1
+REM Check if dependencies are installed
+python -c "import pygame; import numpy" >nul 2>&1
 if errorlevel 1 (
-    echo X Pygame not installed!
-    echo Installing pygame...
-    pip install pygame
+    echo X Dependencies not installed!
+    echo Installing requirements...
+    pip install -r requirements.txt
     if errorlevel 1 (
-        echo X Failed to install pygame. Please run: pip install pygame
+        echo X Failed to install dependencies
         pause
         exit /b 1
     )
 )
 
-echo - Pygame installed
+echo - All dependencies installed
 echo.
 echo Starting ECHOFRONTIER...
 echo =========================================
 echo.
 
-REM Run the game
+REM Run the enhanced game
 cd game
-python main.py
+python main_enhanced.py
 
 echo.
 echo Thanks for playing!

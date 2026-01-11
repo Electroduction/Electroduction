@@ -3,9 +3,9 @@
 # ECHOFRONTIER Launcher
 # Simple launcher script for the game
 
-echo "========================================="
-echo "    ECHOFRONTIER - Sci-Fantasy RPG      "
-echo "========================================="
+echo "============================================"
+echo "  ECHOFRONTIER - Enhanced Edition  "
+echo "============================================"
 echo ""
 echo "Checking dependencies..."
 
@@ -31,22 +31,35 @@ $PYTHON -c "import pygame" 2>/dev/null
 
 if [ $? -ne 0 ]; then
     echo "❌ Pygame not installed!"
-    echo "Installing pygame..."
-    pip install pygame
+    echo "Installing dependencies..."
+    pip install -r requirements.txt
     if [ $? -ne 0 ]; then
-        echo "❌ Failed to install pygame. Please run: pip install pygame"
+        echo "❌ Failed to install dependencies"
         exit 1
     fi
 fi
 
-echo "✓ Pygame installed"
+# Check if numpy is installed
+$PYTHON -c "import numpy" 2>/dev/null
+
+if [ $? -ne 0 ]; then
+    echo "❌ Numpy not installed!"
+    echo "Installing dependencies..."
+    pip install -r requirements.txt
+    if [ $? -ne 0 ]; then
+        echo "❌ Failed to install dependencies"
+        exit 1
+    fi
+fi
+
+echo "✓ All dependencies installed"
 echo ""
 echo "Starting ECHOFRONTIER..."
 echo "========================================="
 echo ""
 
-# Run the game
-cd game && $PYTHON main.py
+# Run the enhanced game
+cd game && $PYTHON main_enhanced.py
 
 echo ""
 echo "Thanks for playing!"
