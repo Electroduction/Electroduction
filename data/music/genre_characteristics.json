@@ -1,0 +1,37 @@
+{
+  "edm": {
+    "tempo": [
+      128,
+      140
+    ],
+    "energy": "high"
+  },
+  "lo-fi": {
+    "tempo": [
+      70,
+      90
+    ],
+    "energy": "relaxed"
+  },
+  "jazz": {
+    "tempo": [
+      90,
+      180
+    ],
+    "complexity": "high"
+  },
+  "rock": {
+    "tempo": [
+      110,
+      140
+    ],
+    "energy": "high"
+  },
+  "classical": {
+    "tempo": [
+      60,
+      120
+    ],
+    "complexity": "very_high"
+  }
+}

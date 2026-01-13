@@ -1,0 +1,38 @@
+{
+  "story_prompts": [
+    {
+      "prompt": "A time traveler accidentally prevents their own birth",
+      "genre": "sci-fi",
+      "conflict": "paradox",
+      "sample_opening": "The moment I shook my grandmother's hand at the 1962 World's Fair, I felt myself beginning to fade..."
+    },
+    {
+      "prompt": "The last bookstore in a digital world",
+      "genre": "dystopian",
+      "theme": "preservation_vs_progress",
+      "sample_opening": "Marcus turned the sign to 'Open' knowing he might be the last person to ever do so..."
+    }
+  ],
+  "product_ideas": [
+    {
+      "problem": "People forget to water plants",
+      "solution": "Smart pot with sensors and auto-watering",
+      "target_market": "busy_professionals",
+      "features": [
+        "moisture_sensor",
+        "app_alerts",
+        "auto_water_dispenser"
+      ]
+    },
+    {
+      "problem": "Hard to find parking",
+      "solution": "AR app showing available spots in real-time",
+      "target_market": "urban_drivers",
+      "features": [
+        "real_time_availability",
+        "reservation",
+        "navigation"
+      ]
+    }
+  ]
+}

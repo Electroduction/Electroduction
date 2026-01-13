@@ -137,5 +137,78 @@
     },
     "total_datasets": 3,
     "total_size_mb": 0
+  },
+  "music": {
+    "project": "music",
+    "sources": {
+      "fma": {
+        "description": "Free Music Archive",
+        "datasets": [
+          {
+            "name": "FMA-Small",
+            "expected_path": "fma_small.zip",
+            "status": "missing"
+          }
+        ]
+      },
+      "google_magenta": {
+        "description": "Google Magenta datasets",
+        "datasets": [
+          {
+            "name": "MAESTRO",
+            "original_path": "data/music/maestro_metadata.json",
+            "metadata": "databases/music/by_source/google_magenta/MAESTRO_metadata.json",
+            "status": "found"
+          }
+        ]
+      }
+    },
+    "total_datasets": 2,
+    "total_size_mb": 0
+  },
+  "video": {
+    "project": "video",
+    "sources": {
+      "youtube": {
+        "description": "YouTube trending data",
+        "datasets": [
+          {
+            "name": "YouTube-Trending",
+            "expected_path": "youtube_trending.csv",
+            "status": "missing"
+          }
+        ]
+      }
+    },
+    "total_datasets": 1,
+    "total_size_mb": 0
+  },
+  "creativity": {
+    "project": "creativity",
+    "sources": {
+      "gutenberg": {
+        "description": "Project Gutenberg",
+        "datasets": [
+          {
+            "name": "Classic-Books",
+            "original_path": "data/creativity/books",
+            "metadata": "databases/creativity/by_source/gutenberg/Classic-Books_metadata.json",
+            "status": "found"
+          }
+        ]
+      },
+      "reddit": {
+        "description": "Reddit writing prompts",
+        "datasets": [
+          {
+            "name": "WritingPrompts",
+            "expected_path": "writingprompts_info.md",
+            "status": "missing"
+          }
+        ]
+      }
+    },
+    "total_datasets": 2,
+    "total_size_mb": 0
   }
 }

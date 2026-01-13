@@ -1,0 +1,7 @@
+{
+  "name": "Classic-Books",
+  "source": "https://www.gutenberg.org",
+  "path": "books/",
+  "format": "txt",
+  "count": "3 samples"
+}

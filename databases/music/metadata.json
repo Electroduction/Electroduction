@@ -1,0 +1,15 @@
+{
+  "project": "music",
+  "datasets_collected": [
+    "MAESTRO-Metadata",
+    "Genre-Characteristics"
+  ],
+  "stats": {
+    "downloaded": 1,
+    "failed": 1,
+    "skipped": 0
+  },
+  "total_datasets": 2,
+  "collection_date": "2026-01-13 23:09:39",
+  "notes": "Large downloads: FMA Medium (25GB), FMA Large (93GB) available separately"
+}

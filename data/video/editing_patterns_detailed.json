@@ -1,0 +1,88 @@
+{
+  "youtube_tutorial": {
+    "structure": [
+      "hook",
+      "intro",
+      "problem",
+      "solution",
+      "demo",
+      "recap"
+    ],
+    "timing": {
+      "hook": {
+        "duration_seconds": 3,
+        "purpose": "grab_attention"
+      },
+      "intro": {
+        "duration_seconds": 10,
+        "purpose": "establish_credibility"
+      },
+      "problem": {
+        "duration_seconds": 30,
+        "purpose": "create_need"
+      },
+      "solution": {
+        "duration_seconds": 60,
+        "purpose": "provide_value"
+      },
+      "demo": {
+        "duration_seconds": 120,
+        "purpose": "show_application"
+      },
+      "recap": {
+        "duration_seconds": 20,
+        "purpose": "reinforce_learning"
+      }
+    },
+    "cuts_per_minute": 20,
+    "b_roll_frequency": "every_15_seconds",
+    "text_overlays": true,
+    "optimal_length": {
+      "min": 480,
+      "max": 720
+    }
+  },
+  "short_form": {
+    "structure": [
+      "hook",
+      "content",
+      "payoff"
+    ],
+    "timing": {
+      "hook": {
+        "duration_seconds": 1,
+        "purpose": "instant_grab"
+      },
+      "content": {
+        "duration_seconds": 10,
+        "purpose": "deliver_message"
+      },
+      "payoff": {
+        "duration_seconds": 4,
+        "purpose": "memorable_end"
+      }
+    },
+    "cuts_per_minute": 40,
+    "text_overlays": true,
+    "music": "upbeat",
+    "optimal_length": {
+      "min": 15,
+      "max": 60
+    }
+  },
+  "product_review": {
+    "structure": [
+      "intro",
+      "unboxing",
+      "features",
+      "testing",
+      "verdict"
+    ],
+    "b_roll_percentage": 0.4,
+    "cuts_per_minute": 15,
+    "optimal_length": {
+      "min": 600,
+      "max": 900
+    }
+  }
+}

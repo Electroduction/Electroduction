@@ -1,0 +1,48 @@
+{
+  "scamper": {
+    "substitute": {
+      "question": "What can be substituted?",
+      "example": "Replace X with Y"
+    },
+    "combine": {
+      "question": "What can be combined?",
+      "example": "Uber + Food = UberEats"
+    },
+    "adapt": {
+      "question": "What can be adapted from elsewhere?",
+      "example": "Apply Y industry solution to X industry"
+    },
+    "modify": {
+      "question": "What can be modified?",
+      "example": "Change size, color, shape"
+    },
+    "put_to_other_use": {
+      "question": "What else can this be used for?",
+      "example": "Repurpose existing product"
+    },
+    "eliminate": {
+      "question": "What can be removed?",
+      "example": "Simplify by removing features"
+    },
+    "reverse": {
+      "question": "What can be reversed or rearranged?",
+      "example": "Flip the process or order"
+    }
+  },
+  "random_input": {
+    "description": "Use random word to spark ideas",
+    "process": [
+      "Choose random word",
+      "Force connection to problem",
+      "Generate ideas from connection"
+    ]
+  },
+  "attribute_listing": {
+    "description": "List attributes and modify each",
+    "process": [
+      "List all attributes",
+      "Modify each attribute",
+      "Evaluate modifications"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "hero": {
+    "traits": [
+      "brave",
+      "determined",
+      "flawed"
+    ],
+    "arc": "growth_from_weakness_to_strength",
+    "examples": [
+      "Luke Skywalker",
+      "Katniss Everdeen"
+    ]
+  },
+  "mentor": {
+    "traits": [
+      "wise",
+      "experienced",
+      "mysterious"
+    ],
+    "role": "guide_hero",
+    "examples": [
+      "Gandalf",
+      "Obi-Wan Kenobi"
+    ]
+  },
+  "shadow": {
+    "traits": [
+      "antagonistic",
+      "powerful",
+      "represents_hero_fear"
+    ],
+    "role": "challenge_hero",
+    "examples": [
+      "Darth Vader",
+      "Voldemort"
+    ]
+  },
+  "trickster": {
+    "traits": [
+      "unpredictable",
+      "humorous",
+      "chaotic"
+    ],
+    "role": "comic_relief_and_wisdom",
+    "examples": [
+      "Loki",
+      "Jack Sparrow"
+    ]
+  }
+}

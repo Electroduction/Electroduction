@@ -1,0 +1,96 @@
+{
+  "lo-fi": {
+    "tempo": {
+      "min": 70,
+      "max": 90,
+      "typical": 80
+    },
+    "instruments": [
+      "piano",
+      "drums",
+      "bass",
+      "vinyl_crackle"
+    ],
+    "production": [
+      "low_pass_filter",
+      "bit_crushing",
+      "vinyl_noise"
+    ],
+    "mood": [
+      "relaxed",
+      "nostalgic",
+      "study"
+    ],
+    "song_structure": [
+      "intro",
+      "verse",
+      "chorus",
+      "verse",
+      "outro"
+    ],
+    "typical_length_seconds": 180
+  },
+  "edm": {
+    "tempo": {
+      "min": 128,
+      "max": 140,
+      "typical": 130
+    },
+    "instruments": [
+      "synth",
+      "bass",
+      "drums",
+      "lead"
+    ],
+    "production": [
+      "sidechain",
+      "build_up",
+      "drop",
+      "riser"
+    ],
+    "mood": [
+      "energetic",
+      "euphoric",
+      "danceable"
+    ],
+    "song_structure": [
+      "intro",
+      "build",
+      "drop",
+      "breakdown",
+      "build",
+      "drop",
+      "outro"
+    ],
+    "typical_length_seconds": 210
+  },
+  "jazz": {
+    "tempo": {
+      "min": 90,
+      "max": 180,
+      "typical": 120
+    },
+    "instruments": [
+      "piano",
+      "saxophone",
+      "double_bass",
+      "drums"
+    ],
+    "characteristics": [
+      "improvisation",
+      "swing",
+      "complex_chords"
+    ],
+    "mood": [
+      "sophisticated",
+      "smooth",
+      "expressive"
+    ],
+    "song_structure": [
+      "head",
+      "solos",
+      "head"
+    ],
+    "typical_length_seconds": 240
+  }
+}

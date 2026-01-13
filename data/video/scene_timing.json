@@ -1,0 +1,22 @@
+{
+  "tutorial_intro": {
+    "duration_seconds": 10,
+    "shots": 3,
+    "music": "upbeat"
+  },
+  "explanation": {
+    "duration_seconds": 30,
+    "shots": 5,
+    "b_roll": true
+  },
+  "demo": {
+    "duration_seconds": 45,
+    "shots": 8,
+    "screen_recording": true
+  },
+  "conclusion": {
+    "duration_seconds": 15,
+    "shots": 2,
+    "cta": true
+  }
+}

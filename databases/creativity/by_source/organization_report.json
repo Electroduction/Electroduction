@@ -1,0 +1,28 @@
+{
+  "project": "creativity",
+  "sources": {
+    "gutenberg": {
+      "description": "Project Gutenberg",
+      "datasets": [
+        {
+          "name": "Classic-Books",
+          "original_path": "data/creativity/books",
+          "metadata": "databases/creativity/by_source/gutenberg/Classic-Books_metadata.json",
+          "status": "found"
+        }
+      ]
+    },
+    "reddit": {
+      "description": "Reddit writing prompts",
+      "datasets": [
+        {
+          "name": "WritingPrompts",
+          "expected_path": "writingprompts_info.md",
+          "status": "missing"
+        }
+      ]
+    }
+  },
+  "total_datasets": 2,
+  "total_size_mb": 0
+}

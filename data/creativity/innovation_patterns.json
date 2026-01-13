@@ -1,0 +1,11 @@
+{
+  "scamper": {
+    "substitute": "Replace component with alternative",
+    "combine": "Merge with other ideas",
+    "adapt": "Adjust for different context",
+    "modify": "Change size, shape, attributes",
+    "put_to_other_use": "Repurpose for new application",
+    "eliminate": "Remove unnecessary elements",
+    "reverse": "Flip or rearrange"
+  }
+}

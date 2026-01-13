@@ -1,35 +1,50 @@
 {
-  "collection_date": "2026-01-13 22:48:30",
+  "collection_date": "2026-01-13 23:09:39",
   "projects": {
-    "finance": {
-      "project": "finance",
+    "music": {
+      "project": "music",
       "datasets_collected": [
+        "MAESTRO-Metadata",
+        "Genre-Characteristics"
+      ],
+      "stats": {
+        "downloaded": 1,
+        "failed": 1,
+        "skipped": 0
+      },
+      "total_datasets": 2,
+      "collection_date": "2026-01-13 23:09:39",
+      "notes": "Large downloads: FMA Medium (25GB), FMA Large (93GB) available separately"
+    },
+    "video": {
+      "project": "video",
+      "datasets_collected": [
+        "Video-Patterns",
         "Data-Structure"
       ],
       "stats": {
         "downloaded": 0,
-        "failed": 3,
-        "skipped": 0
-      },
-      "total_datasets": 1,
-      "collection_date": "2026-01-13 22:48:30",
-      "notes": "Run with API keys for full data: ALPHA_VANTAGE_KEY, FRED_API_KEY"
-    },
-    "game_dev": {
-      "project": "game_dev",
-      "datasets_collected": [
-        "OpenGameArt-Structure",
-        "Genre-Taxonomy"
-      ],
-      "stats": {
-        "downloaded": 0,
-        "failed": 3,
+        "failed": 1,
         "skipped": 0
       },
       "total_datasets": 2,
-      "collection_date": "2026-01-13 22:48:30",
-      "notes": "Manual downloads needed: Mixamo (requires Adobe account)"
+      "collection_date": "2026-01-13 23:09:39",
+      "notes": "API keys needed: PEXELS_API_KEY, YOUTUBE_API_KEY for full data"
+    },
+    "creativity": {
+      "project": "creativity",
+      "datasets_collected": [
+        "Story-Structures",
+        "Innovation-Patterns"
+      ],
+      "stats": {
+        "downloaded": 0,
+        "failed": 4,
+        "skipped": 0
+      },
+      "total_datasets": 2,
+      "collection_date": "2026-01-13 23:09:39"
     }
   },
-  "total_projects": 2
+  "total_projects": 3
 }

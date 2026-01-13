@@ -1,0 +1,28 @@
+{
+  "creation_date": "2026-01-13T23:11:01.351770",
+  "projects": {
+    "finance": {
+      "datasets": 3,
+      "files": 12
+    },
+    "game_dev": {
+      "datasets": 3,
+      "files": 3
+    },
+    "music": {
+      "datasets": 3,
+      "files": 3
+    },
+    "video": {
+      "datasets": 3,
+      "files": 3
+    },
+    "creativity": {
+      "datasets": 4,
+      "files": 4
+    }
+  },
+  "total_datasets": 16,
+  "total_files": 25,
+  "note": "Starter databases with curated training data"
+}

@@ -1,0 +1,27 @@
+{
+  "jump": {
+    "duration_ms": 200,
+    "pitch": "high",
+    "volume": 0.7
+  },
+  "land": {
+    "duration_ms": 150,
+    "pitch": "low",
+    "volume": 0.8
+  },
+  "coin": {
+    "duration_ms": 100,
+    "pitch": "high",
+    "volume": 0.6
+  },
+  "hit": {
+    "duration_ms": 250,
+    "pitch": "mid",
+    "volume": 0.9
+  },
+  "powerup": {
+    "duration_ms": 800,
+    "pitch": "ascending",
+    "volume": 0.7
+  }
+}

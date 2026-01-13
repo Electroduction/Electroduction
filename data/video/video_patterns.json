@@ -1,0 +1,23 @@
+{
+  "tutorial": {
+    "structure": [
+      "hook",
+      "intro",
+      "problem",
+      "solution",
+      "demo",
+      "recap"
+    ],
+    "pacing": "fast",
+    "cuts_per_minute": 20
+  },
+  "short_form": {
+    "structure": [
+      "hook",
+      "content",
+      "payoff"
+    ],
+    "pacing": "very_fast",
+    "cuts_per_minute": 30
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "characters": [
+    {
+      "type": "player_character",
+      "genre": "platformer",
+      "style": "pixel_art",
+      "description": "A brave knight with blue armor and a sword",
+      "movement": [
+        "walk",
+        "run",
+        "jump",
+        "attack"
+      ],
+      "size": "32x32"
+    },
+    {
+      "type": "enemy",
+      "genre": "rpg",
+      "style": "anime",
+      "description": "A fire demon with glowing red eyes",
+      "abilities": [
+        "fireball",
+        "teleport"
+      ],
+      "size": "64x64"
+    },
+    {
+      "type": "npc",
+      "genre": "adventure",
+      "style": "cartoon",
+      "description": "A friendly merchant with a large backpack",
+      "animations": [
+        "idle",
+        "wave",
+        "talk"
+      ],
+      "size": "48x48"
+    }
+  ],
+  "environments": [
+    {
+      "type": "background",
+      "genre": "platformer",
+      "style": "pixel_art",
+      "description": "A forest scene with trees and clouds",
+      "layers": 3,
+      "size": "1920x1080"
+    },
+    {
+      "type": "tileset",
+      "genre": "rpg",
+      "style": "top_down",
+      "description": "Castle interior tiles with stone floor",
+      "tile_size": "16x16",
+      "count": 64
+    }
+  ]
+}
