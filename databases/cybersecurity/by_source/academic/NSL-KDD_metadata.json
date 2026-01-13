@@ -1,0 +1,11 @@
+{
+  "name": "NSL-KDD",
+  "source": "Canadian Institute for Cybersecurity",
+  "paths": [
+    "KDDTrain.txt",
+    "KDDTest.txt"
+  ],
+  "format": "csv",
+  "size_mb": "22MB",
+  "records": "148,517 total"
+}

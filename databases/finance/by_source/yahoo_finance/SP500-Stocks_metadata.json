@@ -1,0 +1,7 @@
+{
+  "name": "SP500-Stocks",
+  "source": "yfinance library",
+  "path": "stocks/",
+  "format": "csv",
+  "records": "50 stocks x 1000+ days"
+}

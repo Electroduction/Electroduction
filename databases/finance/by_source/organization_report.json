@@ -1,0 +1,38 @@
+{
+  "project": "finance",
+  "sources": {
+    "yahoo_finance": {
+      "description": "Yahoo Finance stock data",
+      "datasets": [
+        {
+          "name": "SP500-Stocks",
+          "original_path": "data/finance/stocks",
+          "metadata": "databases/finance/by_source/yahoo_finance/SP500-Stocks_metadata.json",
+          "status": "found"
+        }
+      ]
+    },
+    "federal_reserve": {
+      "description": "US Federal Reserve economic data",
+      "datasets": [
+        {
+          "name": "FRED-Indicators",
+          "expected_path": "fred_indicators.csv",
+          "status": "missing"
+        }
+      ]
+    },
+    "academic": {
+      "description": "Financial research datasets",
+      "datasets": [
+        {
+          "name": "Financial-Sentiment",
+          "expected_path": "sentiment_train.csv",
+          "status": "missing"
+        }
+      ]
+    }
+  },
+  "total_datasets": 3,
+  "total_size_mb": 0
+}

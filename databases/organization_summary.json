@@ -1,0 +1,141 @@
+{
+  "cybersecurity": {
+    "project": "cybersecurity",
+    "sources": {
+      "github": {
+        "description": "Data from GitHub repositories",
+        "datasets": [
+          {
+            "name": "ExploitDB",
+            "original_path": "data/cybersecurity/exploitdb",
+            "metadata": "databases/cybersecurity/by_source/github/ExploitDB_metadata.json",
+            "status": "found"
+          },
+          {
+            "name": "Falco-Rules",
+            "original_path": "data/cybersecurity/falco-rules",
+            "metadata": "databases/cybersecurity/by_source/github/Falco-Rules_metadata.json",
+            "status": "found"
+          }
+        ]
+      },
+      "mitre": {
+        "description": "MITRE Corporation data",
+        "datasets": [
+          {
+            "name": "ATT&CK-Framework",
+            "original_path": "data/cybersecurity/mitre-attack.json",
+            "metadata": "databases/cybersecurity/by_source/mitre/ATT&CK-Framework_metadata.json",
+            "status": "found"
+          }
+        ]
+      },
+      "academic": {
+        "description": "Academic research datasets",
+        "datasets": [
+          {
+            "name": "NSL-KDD",
+            "original_path": "data/cybersecurity/KDDTrain.txt",
+            "metadata": "databases/cybersecurity/by_source/academic/NSL-KDD_metadata.json",
+            "status": "found"
+          },
+          {
+            "name": "NSL-KDD",
+            "original_path": "data/cybersecurity/KDDTest.txt",
+            "metadata": "databases/cybersecurity/by_source/academic/NSL-KDD_metadata.json",
+            "status": "found"
+          }
+        ]
+      },
+      "government": {
+        "description": "Government vulnerability databases",
+        "datasets": [
+          {
+            "name": "CVE-Database",
+            "expected_path": "cve-all.csv",
+            "status": "missing"
+          }
+        ]
+      }
+    },
+    "total_datasets": 5,
+    "total_size_mb": 0
+  },
+  "finance": {
+    "project": "finance",
+    "sources": {
+      "yahoo_finance": {
+        "description": "Yahoo Finance stock data",
+        "datasets": [
+          {
+            "name": "SP500-Stocks",
+            "original_path": "data/finance/stocks",
+            "metadata": "databases/finance/by_source/yahoo_finance/SP500-Stocks_metadata.json",
+            "status": "found"
+          }
+        ]
+      },
+      "federal_reserve": {
+        "description": "US Federal Reserve economic data",
+        "datasets": [
+          {
+            "name": "FRED-Indicators",
+            "expected_path": "fred_indicators.csv",
+            "status": "missing"
+          }
+        ]
+      },
+      "academic": {
+        "description": "Financial research datasets",
+        "datasets": [
+          {
+            "name": "Financial-Sentiment",
+            "expected_path": "sentiment_train.csv",
+            "status": "missing"
+          }
+        ]
+      }
+    },
+    "total_datasets": 3,
+    "total_size_mb": 0
+  },
+  "game_dev": {
+    "project": "game_dev",
+    "sources": {
+      "kenney": {
+        "description": "Kenney game assets (CC0)",
+        "datasets": [
+          {
+            "name": "Kenney-Assets",
+            "original_path": "data/game_dev/kenney",
+            "metadata": "databases/game_dev/by_source/kenney/Kenney-Assets_metadata.json",
+            "status": "found"
+          }
+        ]
+      },
+      "cmu": {
+        "description": "Carnegie Mellon University",
+        "datasets": [
+          {
+            "name": "CMU-MoCap",
+            "expected_path": "mocap_sample.bvh",
+            "status": "missing"
+          }
+        ]
+      },
+      "opengameart": {
+        "description": "Open source game art",
+        "datasets": [
+          {
+            "name": "OpenGameArt",
+            "original_path": "data/game_dev/opengameart",
+            "metadata": "databases/game_dev/by_source/opengameart/OpenGameArt_metadata.json",
+            "status": "found"
+          }
+        ]
+      }
+    },
+    "total_datasets": 3,
+    "total_size_mb": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "project": "game_dev",
+  "sources": {
+    "kenney": {
+      "description": "Kenney game assets (CC0)",
+      "datasets": [
+        {
+          "name": "Kenney-Assets",
+          "original_path": "data/game_dev/kenney",
+          "metadata": "databases/game_dev/by_source/kenney/Kenney-Assets_metadata.json",
+          "status": "found"
+        }
+      ]
+    },
+    "cmu": {
+      "description": "Carnegie Mellon University",
+      "datasets": [
+        {
+          "name": "CMU-MoCap",
+          "expected_path": "mocap_sample.bvh",
+          "status": "missing"
+        }
+      ]
+    },
+    "opengameart": {
+      "description": "Open source game art",
+      "datasets": [
+        {
+          "name": "OpenGameArt",
+          "original_path": "data/game_dev/opengameart",
+          "metadata": "databases/game_dev/by_source/opengameart/OpenGameArt_metadata.json",
+          "status": "found"
+        }
+      ]
+    }
+  },
+  "total_datasets": 3,
+  "total_size_mb": 0
+}

@@ -1,0 +1,15 @@
+{
+  "project": "game_dev",
+  "datasets_collected": [
+    "OpenGameArt-Structure",
+    "Genre-Taxonomy"
+  ],
+  "stats": {
+    "downloaded": 0,
+    "failed": 3,
+    "skipped": 0
+  },
+  "total_datasets": 2,
+  "collection_date": "2026-01-13 22:48:30",
+  "notes": "Manual downloads needed: Mixamo (requires Adobe account)"
+}
