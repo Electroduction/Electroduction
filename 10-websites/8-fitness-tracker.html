@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack - Your Fitness Journey</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0f0f23;
+            color: white;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #00c9ff 0%, #92fe9d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .progress-ring {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 1rem;
+            background: conic-gradient(#00c9ff 0% var(--progress), #1a1a2e var(--progress) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .progress-inner {
+            width: 170px;
+            height: 170px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .activity-log {
+            background: #1a1a2e;
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .activity-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: #0f0f23;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .activity-info {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .activity-icon {
+            font-size: 2.5rem;
+        }
+
+        .activity-details h4 {
+            margin-bottom: 0.3rem;
+        }
+
+        .activity-meta {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .add-workout-btn {
+            background: linear-gradient(135deg, #00c9ff 0%, #92fe9d 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+
+        .workout-form {
+            background: #1a1a2e;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: none;
+        }
+
+        .workout-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: #0f0f23;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💪 FitTrack</h1>
+            <p style="color: #888; font-size: 1.2rem;">Track your fitness journey</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="progress-ring" style="--progress: 75%;">
+                    <div class="progress-inner">
+                        <div style="font-size: 2.5rem; font-weight: bold;">75%</div>
+                        <div style="opacity: 0.9;">Daily Goal</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-value" id="caloriesBurned">1,245</div>
+                <div class="stat-label">Calories Burned</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🏃</div>
+                <div class="stat-value" id="totalWorkouts">12</div>
+                <div class="stat-label">Workouts This Week</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-value" id="activeTime">6.5</div>
+                <div class="stat-label">Hours Active</div>
+            </div>
+        </div>
+
+        <button class="add-workout-btn" onclick="toggleWorkoutForm()">➕ Log New Workout</button>
+
+        <div class="workout-form" id="workoutForm">
+            <h3 class="section-title">Log Your Workout</h3>
+            <div class="form-group">
+                <label>Exercise Type</label>
+                <select id="exerciseType">
+                    <option>Running</option>
+                    <option>Cycling</option>
+                    <option>Swimming</option>
+                    <option>Weightlifting</option>
+                    <option>Yoga</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Duration (minutes)</label>
+                <input type="number" id="duration" placeholder="30">
+            </div>
+            <div class="form-group">
+                <label>Calories Burned</label>
+                <input type="number" id="calories" placeholder="250">
+            </div>
+            <button class="submit-btn" onclick="logWorkout()">Log Workout</button>
+        </div>
+
+        <div class="activity-log">
+            <h2 class="section-title">Recent Activity</h2>
+            <div id="activityList"></div>
+        </div>
+    </div>
+
+    <script>
+        const activities = [
+            { id: 1, type: 'Running', duration: 45, calories: 450, icon: '🏃', time: '2 hours ago' },
+            { id: 2, type: 'Weightlifting', duration: 60, calories: 350, icon: '🏋️', time: 'Yesterday' },
+            { id: 3, type: 'Yoga', duration: 30, calories: 120, icon: '🧘', time: '2 days ago' },
+            { id: 4, type: 'Cycling', duration: 90, calories: 600, icon: '🚴', time: '3 days ago' }
+        ];
+
+        function renderActivities() {
+            const list = document.getElementById('activityList');
+            list.innerHTML = activities.map(activity => `
+                <div class="activity-item">
+                    <div class="activity-info">
+                        <div class="activity-icon">${activity.icon}</div>
+                        <div class="activity-details">
+                            <h4>${activity.type}</h4>
+                            <div class="activity-meta">
+                                ${activity.duration} minutes • ${activity.calories} calories • ${activity.time}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleWorkoutForm() {
+            document.getElementById('workoutForm').classList.toggle('active');
+        }
+
+        function logWorkout() {
+            const type = document.getElementById('exerciseType').value;
+            const duration = parseInt(document.getElementById('duration').value);
+            const calories = parseInt(document.getElementById('calories').value);
+
+            if (!duration || !calories) return;
+
+            const icons = {
+                'Running': '🏃',
+                'Cycling': '🚴',
+                'Swimming': '🏊',
+                'Weightlifting': '🏋️',
+                'Yoga': '🧘'
+            };
+
+            activities.unshift({
+                id: Date.now(),
+                type: type,
+                duration: duration,
+                calories: calories,
+                icon: icons[type],
+                time: 'Just now'
+            });
+
+            // Update stats
+            const totalCalories = parseInt(document.getElementById('caloriesBurned').textContent.replace(',', ''));
+            document.getElementById('caloriesBurned').textContent = (totalCalories + calories).toLocaleString();
+
+            const totalWorkouts = parseInt(document.getElementById('totalWorkouts').textContent);
+            document.getElementById('totalWorkouts').textContent = totalWorkouts + 1;
+
+            document.getElementById('duration').value = '';
+            document.getElementById('calories').value = '';
+            renderActivities();
+            toggleWorkoutForm();
+        }
+
+        renderActivities();
+    </script>
+</body>
+</html>
