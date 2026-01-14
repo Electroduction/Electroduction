@@ -284,6 +284,23 @@
     </div>
 
     <script>
+        /* ============================================
+           TECHSHOP E-COMMERCE APPLICATION
+
+           This application demonstrates:
+           - Product catalog management
+           - Shopping cart functionality
+           - Dynamic filtering
+           - State management without frameworks
+
+           Educational Focus: Modern vanilla JavaScript patterns
+           ============================================ */
+
+        // ============================================
+        // DATA LAYER: Product Catalog
+        // ============================================
+        // In a real application, this would come from a database via API
+        // Structure: Array of product objects with consistent schema
         const products = [
             { id: 1, name: 'Premium Laptop Pro', category: 'laptops', price: 1299, icon: '💻', description: 'High-performance laptop for professionals' },
             { id: 2, name: 'Smartphone X', category: 'phones', price: 899, icon: '📱', description: 'Latest flagship smartphone' },
@@ -296,15 +313,33 @@
             { id: 9, name: 'Smartphone Plus', category: 'phones', price: 749, icon: '📱', description: 'Great camera and battery life' }
         ];
 
-        let cart = [];
-        let currentFilter = 'all';
+        // ============================================
+        // STATE MANAGEMENT
+        // ============================================
+        // Global state variables - in a larger app, consider state management pattern
+        let cart = [];  // Shopping cart: array of product objects with quantity
+        let currentFilter = 'all';  // Active category filter
 
+        // ============================================
+        // RENDERING FUNCTIONS
+        // ============================================
+
+        /**
+         * Renders the product grid based on current filter
+         * Uses template literals for clean HTML generation
+         * Pattern: Data -> Filter -> Map -> Join -> Inject
+         */
         function renderProducts() {
             const grid = document.getElementById('productsGrid');
+
+            // Filter products based on current category
+            // Ternary operator: if 'all', show everything, else filter by category
             const filtered = currentFilter === 'all'
                 ? products
                 : products.filter(p => p.category === currentFilter);
 
+            // Map filtered products to HTML strings, then join into single string
+            // Template literals (backticks) allow embedded expressions ${...}
             grid.innerHTML = filtered.map(product => `
                 <div class="product-card">
                     <div class="product-image">${product.icon}</div>
@@ -320,40 +355,80 @@
             `).join('');
         }
 
+        /**
+         * Handles category filter button clicks
+         * Updates UI state and re-renders products
+         * @param {string} category - Category to filter by ('all', 'laptops', etc.)
+         */
         function filterProducts(category) {
+            // Update global state
             currentFilter = category;
+
+            // Update button active states (remove all, add to clicked)
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
+
+            // Re-render with new filter
             renderProducts();
         }
 
+        // ============================================
+        // CART MANAGEMENT
+        // ============================================
+
+        /**
+         * Adds a product to the shopping cart
+         * Handles duplicate items by incrementing quantity
+         * @param {number} productId - ID of product to add
+         */
         function addToCart(productId) {
+            // Find product in catalog
             const product = products.find(p => p.id === productId);
+
+            // Check if product already in cart
             const existingItem = cart.find(item => item.id === productId);
 
             if (existingItem) {
+                // Product exists: increment quantity
                 existingItem.quantity++;
             } else {
+                // New product: add to cart with quantity 1
+                // Spread operator (...) creates new object with all product properties
                 cart.push({ ...product, quantity: 1 });
             }
 
+            // Update cart display
             updateCart();
         }
 
+        /**
+         * Updates cart count badge and refreshes cart display
+         * Central update function called after any cart modification
+         */
         function updateCart() {
+            // Calculate total items using reduce (sum all quantities)
+            // reduce((accumulator, current) => accumulator + current.quantity, startValue)
             document.getElementById('cartCount').textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+            // Refresh cart modal content
             renderCart();
         }
 
+        /**
+         * Renders the shopping cart modal content
+         * Handles empty state and calculates totals
+         */
         function renderCart() {
             const cartItems = document.getElementById('cartItems');
 
+            // Empty cart state
             if (cart.length === 0) {
                 cartItems.innerHTML = '<div class="empty-cart">Your cart is empty</div>';
                 document.getElementById('cartTotal').textContent = '$0.00';
                 return;
             }
 
+            // Generate cart item HTML for each item
             cartItems.innerHTML = cart.map(item => `
                 <div class="cart-item">
                     <div>
@@ -366,29 +441,69 @@
                 </div>
             `).join('');
 
+            // Calculate and display total
+            // reduce sums (price * quantity) for each item
             const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
             document.getElementById('cartTotal').textContent = `$${total.toFixed(2)}`;
         }
 
+        /**
+         * Removes a product from the cart
+         * Uses filter to create new array without the removed item
+         * @param {number} productId - ID of product to remove
+         */
         function removeFromCart(productId) {
+            // Filter out the item with matching ID
+            // Creates new array without mutation
             cart = cart.filter(item => item.id !== productId);
             updateCart();
         }
 
+        /**
+         * Toggles cart modal visibility
+         * Uses CSS class 'active' to show/hide
+         */
         function toggleCart() {
             document.getElementById('cartModal').classList.toggle('active');
         }
 
+        /**
+         * Processes checkout
+         * In production: would send to payment processor
+         * Here: shows confirmation and clears cart
+         */
         function checkout() {
             if (cart.length === 0) return;
+
+            // Calculate final total
             const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            // Show confirmation (in production: redirect to payment)
             alert(`Thank you for your purchase!\nTotal: $${total.toFixed(2)}\n\nOrder confirmed! 🎉`);
+
+            // Clear cart and update UI
             cart = [];
             updateCart();
             toggleCart();
         }
 
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        // Render products on page load
         renderProducts();
+
+        /*
+         * ENHANCEMENT IDEAS:
+         * - Add LocalStorage for cart persistence
+         * - Implement quantity adjustment in cart
+         * - Add product search functionality
+         * - Create wishlist feature
+         * - Add product rating system
+         * - Implement coupon codes
+         * - Add multiple product images
+         * - Create product detail modal
+         */
     </script>
 </body>
 </html>
