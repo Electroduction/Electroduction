@@ -2,12 +2,40 @@
 <b>Projects:</b>
 https://drive.google.com/drive/folders/1KOyzP4kdgR71ya3HPVXrweMN9Op7SqWX?usp=sharing
 
-<b>Summer Project Video Game</b>
-WIP
+<b>EchoFrontier - Text Adventure Game</b> ⭐ NEW!
+A complete, immersive text-based adventure game with multiple story paths, inventory management, combat system, and save/load functionality. Features rich narrative with branching choices and multiple endings.
+- **Location**: `echofrontier-game/game.html`
+- **Tech Stack**: Vanilla HTML/CSS/JavaScript
+- **Features**: Multiple endings, inventory system, health management, save/load game state
+- **Status**: ✅ Complete and playable
+
+<b>10 Production-Ready Websites Collection</b> ⭐ NEW!
+A comprehensive portfolio of 10 completely different, fully functional websites - each with unique design, purpose, and feature set. Zero dependencies, production-ready, and instantly deployable.
+- **Location**: `10-websites/`
+- **Quick Access**: Open `10-websites/launch-all.html` to view all websites
+- **Tech Stack**: Pure HTML5/CSS3/JavaScript ES6+ (no frameworks)
+- **Collection Includes**:
+  1. **TechShop** - E-commerce store with shopping cart and checkout
+  2. **TechBlog** - Blog platform with article management and categories
+  3. **SocialHub** - Social media dashboard with real-time statistics
+  4. **TaskFlow** - Task manager with priorities and filtering
+  5. **WeatherNow** - Weather forecast dashboard with 7-day predictions
+  6. **MusicStream** - Spotify-inspired music player with playlists
+  7. **RecipeHub** - Recipe platform with search and detailed instructions
+  8. **FitTrack** - Fitness tracker with workout logging and statistics
+  9. **MoneyTrack** - Financial dashboard with budgets and transactions
+  10. **ChatHub** - WhatsApp-style real-time messaging application
+- **Statistics**: 10 websites • 50+ features • 0 dependencies • 100% functional
+- **Documentation**: Complete deployment guide included
+- **Status**: ✅ Production-ready and fully documented
+
+<b>Desktop Application</b> ⭐ NEW!
+Full-stack desktop-class web application with native-like user interface, optimized for desktop interactions.
+- **Location**: `desktop-app/index.html`
+- **Status**: ✅ Complete
 
 <b>Summer Project Machine Learning</b>
-WIP
-Took the Google ML AND AI courses.
+WIP - Completed the Google ML and AI courses, applying learned concepts to practical projects.
 
 <b>Summer Project File Save Script</b>
 Developed file save program

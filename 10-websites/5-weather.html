@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherNow - Your Weather Forecast</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .search-btn {
+            background: white;
+            color: #4facfe;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .current-weather {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .location {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .current-temp {
+            font-size: 5rem;
+            font-weight: bold;
+            color: #4facfe;
+        }
+
+        .weather-icon {
+            font-size: 8rem;
+            margin: 1rem 0;
+        }
+
+        .weather-description {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .weather-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .detail-item {
+            text-align: center;
+        }
+
+        .detail-label {
+            color: #888;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .forecast {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .forecast-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .forecast-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .forecast-day {
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .forecast-icon {
+            font-size: 3rem;
+            margin: 1rem 0;
+        }
+
+        .forecast-temp {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4facfe;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⛅ WeatherNow</h1>
+            <p>Real-time weather updates for any location</p>
+        </div>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Enter city name..." id="cityInput" value="San Francisco">
+                <button class="search-btn" onclick="searchWeather()">Search</button>
+            </div>
+        </div>
+
+        <div class="current-weather">
+            <div class="location" id="location">San Francisco, CA</div>
+            <div class="weather-icon" id="weatherIcon">☀️</div>
+            <div class="current-temp" id="currentTemp">72°F</div>
+            <div class="weather-description" id="description">Sunny</div>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <div class="detail-label">Feels Like</div>
+                    <div class="detail-value" id="feelsLike">70°F</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Humidity</div>
+                    <div class="detail-value" id="humidity">65%</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Wind Speed</div>
+                    <div class="detail-value" id="windSpeed">12 mph</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Pressure</div>
+                    <div class="detail-value" id="pressure">1013 hPa</div>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="color: white; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">7-Day Forecast</h2>
+        <div class="forecast" id="forecast"></div>
+    </div>
+
+    <script>
+        const weatherData = {
+            'San Francisco': {
+                temp: 72, feelsLike: 70, humidity: 65, windSpeed: 12, pressure: 1013,
+                description: 'Sunny', icon: '☀️',
+                forecast: [
+                    { day: 'Mon', icon: '☀️', temp: 73 },
+                    { day: 'Tue', icon: '⛅', temp: 71 },
+                    { day: 'Wed', icon: '🌤️', temp: 69 },
+                    { day: 'Thu', icon: '☁️', temp: 66 },
+                    { day: 'Fri', icon: '🌧️', temp: 64 },
+                    { day: 'Sat', icon: '⛈️', temp: 62 },
+                    { day: 'Sun', icon: '🌤️', temp: 68 }
+                ]
+            },
+            'New York': {
+                temp: 58, feelsLike: 55, humidity: 72, windSpeed: 18, pressure: 1010,
+                description: 'Partly Cloudy', icon: '⛅',
+                forecast: [
+                    { day: 'Mon', icon: '⛅', temp: 60 },
+                    { day: 'Tue', icon: '☁️', temp: 57 },
+                    { day: 'Wed', icon: '🌧️', temp: 54 },
+                    { day: 'Thu', icon: '⛈️', temp: 52 },
+                    { day: 'Fri', icon: '🌧️', temp: 56 },
+                    { day: 'Sat', icon: '⛅', temp: 61 },
+                    { day: 'Sun', icon: '☀️', temp: 65 }
+                ]
+            },
+            'London': {
+                temp: 52, feelsLike: 48, humidity: 78, windSpeed: 15, pressure: 1008,
+                description: 'Rainy', icon: '🌧️',
+                forecast: [
+                    { day: 'Mon', icon: '🌧️', temp: 53 },
+                    { day: 'Tue', icon: '☁️', temp: 51 },
+                    { day: 'Wed', icon: '🌧️', temp: 49 },
+                    { day: 'Thu', icon: '⛅', temp: 55 },
+                    { day: 'Fri', icon: '☀️', temp: 58 },
+                    { day: 'Sat', icon: '⛅', temp: 56 },
+                    { day: 'Sun', icon: '☁️', temp: 54 }
+                ]
+            }
+        };
+
+        function searchWeather() {
+            const city = document.getElementById('cityInput').value;
+            const data = weatherData[city] || weatherData['San Francisco'];
+
+            document.getElementById('location').textContent = city;
+            document.getElementById('weatherIcon').textContent = data.icon;
+            document.getElementById('currentTemp').textContent = `${data.temp}°F`;
+            document.getElementById('description').textContent = data.description;
+            document.getElementById('feelsLike').textContent = `${data.feelsLike}°F`;
+            document.getElementById('humidity').textContent = `${data.humidity}%`;
+            document.getElementById('windSpeed').textContent = `${data.windSpeed} mph`;
+            document.getElementById('pressure').textContent = `${data.pressure} hPa`;
+
+            const forecastHTML = data.forecast.map(day => `
+                <div class="forecast-card">
+                    <div class="forecast-day">${day.day}</div>
+                    <div class="forecast-icon">${day.icon}</div>
+                    <div class="forecast-temp">${day.temp}°F</div>
+                </div>
+            `).join('');
+
+            document.getElementById('forecast').innerHTML = forecastHTML;
+        }
+
+        searchWeather();
+    </script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyTrack - Financial Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #2ecc71;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .nav-item:hover {
+            background: #34495e;
+        }
+
+        .main-content {
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+        }
+
+        .balance-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .balance-card {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .balance-card.expense {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        .balance-card.savings {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+
+        .balance-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .balance-amount {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .balance-change {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .transaction {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .transaction-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .transaction-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .transaction-icon.income {
+            background: #d5f4e6;
+        }
+
+        .transaction-icon.expense {
+            background: #fadbd8;
+        }
+
+        .transaction-amount.income {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .transaction-amount.expense {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .category-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .category-bar {
+            width: 60%;
+            height: 8px;
+            background: #ecf0f1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .category-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            transition: width 0.3s;
+        }
+
+        .add-transaction-btn {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="logo">💰 MoneyTrack</div>
+            <ul class="nav-menu">
+                <li class="nav-item">📊 Dashboard</li>
+                <li class="nav-item">💳 Transactions</li>
+                <li class="nav-item">📈 Analytics</li>
+                <li class="nav-item">🎯 Goals</li>
+                <li class="nav-item">⚙️ Settings</li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <h1>Financial Overview</h1>
+                <button class="add-transaction-btn" onclick="alert('Add transaction feature!')">➕ Add Transaction</button>
+            </div>
+
+            <div class="balance-cards">
+                <div class="balance-card">
+                    <div class="balance-label">Total Balance</div>
+                    <div class="balance-amount">$24,580</div>
+                    <div class="balance-change">+$2,340 this month</div>
+                </div>
+                <div class="balance-card expense">
+                    <div class="balance-label">Total Expenses</div>
+                    <div class="balance-amount">$8,420</div>
+                    <div class="balance-change">+12% from last month</div>
+                </div>
+                <div class="balance-card savings">
+                    <div class="balance-label">Savings</div>
+                    <div class="balance-amount">$16,160</div>
+                    <div class="balance-change">+18% from last month</div>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="section">
+                    <h3 class="section-title">Recent Transactions</h3>
+                    <div class="transaction">
+                        <div class="transaction-info">
+                            <div class="transaction-icon income">💵</div>
+                            <div>
+                                <div style="font-weight: bold;">Salary</div>
+                                <div style="color: #95a5a6; font-size: 0.9rem;">Jan 14, 2026</div>
+                            </div>
+                        </div>
+                        <div class="transaction-amount income">+$4,500</div>
+                    </div>
+                    <div class="transaction">
+                        <div class="transaction-info">
+                            <div class="transaction-icon expense">🛒</div>
+                            <div>
+                                <div style="font-weight: bold;">Groceries</div>
+                                <div style="color: #95a5a6; font-size: 0.9rem;">Jan 13, 2026</div>
+                            </div>
+                        </div>
+                        <div class="transaction-amount expense">-$240</div>
+                    </div>
+                    <div class="transaction">
+                        <div class="transaction-info">
+                            <div class="transaction-icon expense">🏠</div>
+                            <div>
+                                <div style="font-weight: bold;">Rent</div>
+                                <div style="color: #95a5a6; font-size: 0.9rem;">Jan 12, 2026</div>
+                            </div>
+                        </div>
+                        <div class="transaction-amount expense">-$1,200</div>
+                    </div>
+                    <div class="transaction">
+                        <div class="transaction-info">
+                            <div class="transaction-icon income">💼</div>
+                            <div>
+                                <div style="font-weight: bold;">Freelance Project</div>
+                                <div style="color: #95a5a6; font-size: 0.9rem;">Jan 10, 2026</div>
+                            </div>
+                        </div>
+                        <div class="transaction-amount income">+$850</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Spending by Category</h3>
+                    <div class="category-item">
+                        <div>
+                            <div style="font-weight: bold;">Housing</div>
+                            <div style="color: #95a5a6; font-size: 0.9rem;">$1,200 / $1,500</div>
+                        </div>
+                        <div class="category-bar">
+                            <div class="category-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <div style="font-weight: bold;">Food & Dining</div>
+                            <div style="color: #95a5a6; font-size: 0.9rem;">$420 / $600</div>
+                        </div>
+                        <div class="category-bar">
+                            <div class="category-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <div style="font-weight: bold;">Transportation</div>
+                            <div style="color: #95a5a6; font-size: 0.9rem;">$180 / $300</div>
+                        </div>
+                        <div class="category-bar">
+                            <div class="category-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <div>
+                            <div style="font-weight: bold;">Entertainment</div>
+                            <div style="color: #95a5a6; font-size: 0.9rem;">$120 / $200</div>
+                        </div>
+                        <div class="category-bar">
+                            <div class="category-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

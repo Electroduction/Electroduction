@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechBlog - Latest in Technology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #fafafa;
+            color: #333;
+        }
+
+        .header {
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .site-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .site-description {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            background: #34495e;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: #3498db;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .featured {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 6rem;
+        }
+
+        .featured-content {
+            padding: 2rem;
+        }
+
+        .featured-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .meta {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .excerpt {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .post-content {
+            padding: 1.5rem;
+        }
+
+        .post-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .post-excerpt {
+            color: #666;
+            line-height: 1.6;
+            margin-top: 0.5rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #3498db;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+
+        .article-view {
+            display: none;
+            background: white;
+            border-radius: 10px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .article-view.active {
+            display: block;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+        }
+
+        .article-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .article-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .back-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .back-btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="site-title">📰 TechBlog</h1>
+        <p class="site-description">Your daily dose of technology news and insights</p>
+    </div>
+
+    <div class="nav">
+        <a class="nav-link" onclick="showHome()">Home</a>
+        <a class="nav-link" onclick="filterCategory('Tech')">Tech</a>
+        <a class="nav-link" onclick="filterCategory('AI')">AI</a>
+        <a class="nav-link" onclick="filterCategory('Web')">Web Dev</a>
+        <a class="nav-link" onclick="filterCategory('Mobile')">Mobile</a>
+    </div>
+
+    <div class="container">
+        <div id="homeView">
+            <div class="featured">
+                <div class="featured-image">🚀</div>
+                <div class="featured-content">
+                    <h2 class="featured-title">The Future of AI: What's Coming in 2026</h2>
+                    <div class="meta">By John Doe • January 14, 2026 • 8 min read</div>
+                    <p class="excerpt">
+                        Artificial Intelligence continues to evolve at breakneck speed. From generative AI to
+                        autonomous systems, discover what groundbreaking developments await us this year.
+                    </p>
+                    <span class="category-tag">AI</span>
+                    <span class="category-tag">Tech</span>
+                </div>
+            </div>
+
+            <div class="posts-grid" id="postsGrid"></div>
+        </div>
+
+        <div class="article-view" id="articleView">
+            <button class="back-btn" onclick="showHome()">← Back to Blog</button>
+            <div class="article-header">
+                <h1 class="article-title" id="articleTitle"></h1>
+                <div class="meta" id="articleMeta"></div>
+            </div>
+            <div class="article-content" id="articleContent"></div>
+        </div>
+    </div>
+
+    <script>
+        const posts = [
+            {
+                id: 1,
+                title: 'React 19: The Complete Guide',
+                category: 'Web',
+                author: 'Sarah Johnson',
+                date: 'Jan 13, 2026',
+                readTime: '5 min',
+                icon: '⚛️',
+                excerpt: 'Explore the latest features in React 19 including improved hooks and server components.',
+                content: '<p>React 19 brings revolutionary changes to how we build web applications. The new compiler automatically optimizes your code for better performance.</p><p>Key features include improved hooks API, better server components integration, and enhanced developer tools. The team has focused on making React faster and more intuitive.</p><p>Server components now work seamlessly with client-side code, reducing bundle sizes significantly. The new use() hook simplifies data fetching and state management.</p>'
+            },
+            {
+                id: 2,
+                title: 'Python for Machine Learning in 2026',
+                category: 'AI',
+                author: 'Mike Chen',
+                date: 'Jan 12, 2026',
+                readTime: '7 min',
+                icon: '🐍',
+                excerpt: 'Why Python remains the top choice for ML engineers and data scientists worldwide.',
+                content: '<p>Python\'s ecosystem for machine learning continues to grow stronger. TensorFlow, PyTorch, and scikit-learn dominate the landscape.</p><p>The language\'s simplicity combined with powerful libraries makes it ideal for rapid prototyping and production deployment. New developments in JIT compilation have improved performance significantly.</p><p>Python 3.13 introduces better support for parallelism, making ML workloads even faster. The future looks bright for Python in AI development.</p>'
+            },
+            {
+                id: 3,
+                title: 'Mobile Development: Native vs Cross-Platform',
+                category: 'Mobile',
+                author: 'Emily Rodriguez',
+                date: 'Jan 11, 2026',
+                readTime: '6 min',
+                icon: '📱',
+                excerpt: 'An in-depth comparison of native development versus cross-platform frameworks.',
+                content: '<p>The debate between native and cross-platform development continues. Flutter and React Native have matured significantly, offering near-native performance.</p><p>Native development still wins in terms of performance and access to platform-specific features. However, cross-platform saves significant development time and resources.</p><p>The choice depends on your project requirements, team expertise, and timeline. Both approaches have their place in modern app development.</p>'
+            },
+            {
+                id: 4,
+                title: 'Cybersecurity Trends You Can\'t Ignore',
+                category: 'Tech',
+                author: 'David Kim',
+                date: 'Jan 10, 2026',
+                readTime: '8 min',
+                icon: '🔒',
+                excerpt: 'Stay ahead of cyber threats with these critical security practices and emerging trends.',
+                content: '<p>Cybersecurity has never been more important. Zero-trust architecture is becoming the standard for enterprise security.</p><p>AI-powered threat detection is improving rapidly, but so are AI-powered attacks. Organizations must stay vigilant and continuously update their security posture.</p><p>Quantum computing poses both opportunities and threats to current encryption methods. The race is on to develop quantum-resistant cryptography.</p>'
+            },
+            {
+                id: 5,
+                title: 'The Rise of Edge Computing',
+                category: 'Tech',
+                author: 'Lisa Wang',
+                date: 'Jan 9, 2026',
+                readTime: '6 min',
+                icon: '☁️',
+                excerpt: 'How edge computing is transforming IoT and real-time applications.',
+                content: '<p>Edge computing brings computation closer to data sources, reducing latency and bandwidth usage. This is crucial for IoT devices and real-time applications.</p><p>Industries from manufacturing to healthcare are adopting edge computing for faster decision-making. The technology enables processing sensitive data locally, improving privacy.</p><p>5G networks are accelerating edge computing adoption, creating new possibilities for distributed applications.</p>'
+            },
+            {
+                id: 6,
+                title: 'Web3 and Decentralized Apps',
+                category: 'Web',
+                author: 'Alex Turner',
+                date: 'Jan 8, 2026',
+                readTime: '9 min',
+                icon: '🌐',
+                excerpt: 'Understanding the Web3 ecosystem and building decentralized applications.',
+                content: '<p>Web3 represents a paradigm shift in how we think about the internet. Decentralization, blockchain, and user ownership are core principles.</p><p>Smart contracts enable trustless interactions, while decentralized storage solutions like IPFS challenge traditional hosting models. The ecosystem is maturing rapidly.</p><p>Challenges remain around scalability, user experience, and regulation. However, the potential for a more open and equitable internet drives innovation forward.</p>'
+            }
+        ];
+
+        let currentCategory = 'all';
+
+        function renderPosts() {
+            const grid = document.getElementById('postsGrid');
+            const filtered = currentCategory === 'all'
+                ? posts
+                : posts.filter(p => p.category === currentCategory);
+
+            grid.innerHTML = filtered.map(post => `
+                <div class="post-card" onclick="viewArticle(${post.id})">
+                    <div class="post-image">${post.icon}</div>
+                    <div class="post-content">
+                        <span class="category-tag">${post.category}</span>
+                        <h3 class="post-title">${post.title}</h3>
+                        <div class="meta">${post.author} • ${post.date} • ${post.readTime} read</div>
+                        <p class="post-excerpt">${post.excerpt}</p>
+                        <a class="read-more">Read More →</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterCategory(category) {
+            currentCategory = category;
+            renderPosts();
+        }
+
+        function viewArticle(id) {
+            const post = posts.find(p => p.id === id);
+            if (!post) return;
+
+            document.getElementById('homeView').style.display = 'none';
+            document.getElementById('articleView').classList.add('active');
+
+            document.getElementById('articleTitle').textContent = post.title;
+            document.getElementById('articleMeta').textContent = `${post.author} • ${post.date} • ${post.readTime} read`;
+            document.getElementById('articleContent').innerHTML = post.content;
+
+            window.scrollTo(0, 0);
+        }
+
+        function showHome() {
+            document.getElementById('homeView').style.display = 'block';
+            document.getElementById('articleView').classList.remove('active');
+            currentCategory = 'all';
+            renderPosts();
+            window.scrollTo(0, 0);
+        }
+
+        renderPosts();
+    </script>
+</body>
+</html>
