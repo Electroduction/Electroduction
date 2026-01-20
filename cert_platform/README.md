@@ -6,14 +6,21 @@ An AI-driven certification platform that provides rapid, job-ready training in 1
 
 ## 🌟 Key Features
 
+### NEW: Enhanced Learning Experience
+- **📖 Comprehensive Curriculum**: 8-12 hours per program (full version) + 2-5 hour summary version
+- **🎧 Text-to-Speech (Radio Mode)**: Listen to lessons like an audiobook - perfect for learning on-the-go
+- **🔍 Semantic Search**: Intelligent topic search across all curriculum with relevance ranking
+- **✍️ User Suggestions & Voting**: Suggest improvements - 75% agreement triggers admin review
+- **🏆 Mini-Certificates**: Earn certificates for completing subsections, sections, and modules
+- **🔗 Source-Grounded**: Every lesson links to 5-10 authoritative sources with images and videos
+
 ### For Students
 - **12 Certification Programs**: Education, Finance, IT & Software, Cooking, Mechanical Engineering, Electrician, HVAC, Nursing, Cybersecurity, Accounting, Business, and AI/ML
-- **AI-Powered Learning**: Content dynamically generated and updated from authoritative sources
-- **Source Transparency**: Every fact linked to verified sources (government agencies, professional organizations, academic institutions)
+- **25+ Minute Lessons**: Each lesson is detailed (6000+ words) for deep understanding
+- **Hierarchical Learning**: Main Topics → Sections → Subsections with clear progression
 - **Adaptive Learning**: Personalized curriculum based on prior knowledge, learning style, and performance
 - **100% Remote**: Learn anytime, anywhere at your own pace
-- **Job-Ready Skills**: Hands-on projects and real-world applications
-- **8-20 Week Programs**: Rapid certification without compromising quality
+- **Job-Ready Skills**: Hands-on projects, case studies, and real-world applications
 
 ### For HR Teams & Enterprises
 - **Workforce Gap Analysis**: AI identifies skill gaps and recommends training programs
@@ -58,14 +65,42 @@ cd cert_platform
 pip install -r requirements.txt
 ```
 
-3. **Run the application**:
+3. **Initialize and populate database**:
 ```bash
-python backend/app.py
+# Initialize database schema
+python run.py init
+
+# Populate all programs (takes a few minutes)
+python run.py populate
+
+# Or populate specific program
+python run.py populate --program cybersecurity
 ```
 
-4. **Access the platform**:
+4. **Start the server**:
+```bash
+python run.py server
+```
+
+5. **Access the platform**:
 - Website: http://localhost:5000
 - API: http://localhost:5000/api
+
+### Quick Commands
+
+```bash
+# Search curriculum
+python run.py search "network security"
+python run.py search "python" --program it_software
+
+# View statistics
+python run.py stats
+
+# Run demo
+python run.py demo
+```
+
+**📖 For complete usage instructions, see [USAGE_GUIDE.md](USAGE_GUIDE.md)**
 
 ## 📚 Available Programs
 

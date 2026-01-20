@@ -48,7 +48,7 @@ class DatabaseManager:
             )
         ''')
 
-        # Curriculum table
+        # Enhanced Curriculum table with hierarchical support
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS curriculum (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -59,9 +59,13 @@ class DatabaseManager:
                 order_index INTEGER,
                 learning_objectives TEXT,
                 estimated_hours REAL,
+                hierarchy_level TEXT DEFAULT 'lesson',
+                parent_id INTEGER,
+                word_count INTEGER DEFAULT 0,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                FOREIGN KEY (program_id) REFERENCES programs(id)
+                FOREIGN KEY (program_id) REFERENCES programs(id),
+                FOREIGN KEY (parent_id) REFERENCES curriculum(id)
             )
         ''')
 
@@ -181,6 +185,103 @@ class DatabaseManager:
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 FOREIGN KEY (student_id) REFERENCES students(id)
+            )
+        ''')
+
+        # Content suggestions (user-suggested changes)
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS content_suggestions (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                student_id INTEGER NOT NULL,
+                program_id TEXT NOT NULL,
+                lesson_id TEXT NOT NULL,
+                suggestion_type TEXT DEFAULT 'content_update',
+                current_content TEXT,
+                suggested_content TEXT,
+                reason TEXT,
+                status TEXT DEFAULT 'pending',
+                flagged_at TIMESTAMP,
+                agreement_percentage REAL,
+                reviewed_by INTEGER,
+                reviewed_at TIMESTAMP,
+                admin_notes TEXT,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (student_id) REFERENCES students(id)
+            )
+        ''')
+
+        # Suggestion votes
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS suggestion_votes (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                suggestion_id INTEGER NOT NULL,
+                student_id INTEGER NOT NULL,
+                vote BOOLEAN NOT NULL,
+                comment TEXT,
+                voted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                UNIQUE(suggestion_id, student_id),
+                FOREIGN KEY (suggestion_id) REFERENCES content_suggestions(id),
+                FOREIGN KEY (student_id) REFERENCES students(id)
+            )
+        ''')
+
+        # Admin notifications
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS admin_notifications (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                type TEXT NOT NULL,
+                reference_id INTEGER,
+                message TEXT NOT NULL,
+                priority TEXT DEFAULT 'normal',
+                read BOOLEAN DEFAULT FALSE,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        ''')
+
+        # Audio cache for text-to-speech
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS audio_cache (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                audio_id TEXT UNIQUE NOT NULL,
+                program_id TEXT,
+                lesson_id TEXT,
+                voice_id TEXT,
+                file_path TEXT,
+                duration_seconds INTEGER,
+                file_size INTEGER,
+                generated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                last_accessed TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        ''')
+
+        # Mini-certificates for subsections
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS mini_certificates (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                student_id INTEGER NOT NULL,
+                program_id TEXT NOT NULL,
+                curriculum_id INTEGER NOT NULL,
+                certificate_type TEXT DEFAULT 'subsection',
+                issued_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                verification_code TEXT UNIQUE,
+                FOREIGN KEY (student_id) REFERENCES students(id),
+                FOREIGN KEY (curriculum_id) REFERENCES curriculum(id)
+            )
+        ''')
+
+        # Images and resources
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS lesson_resources (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                program_id TEXT NOT NULL,
+                lesson_id TEXT NOT NULL,
+                resource_type TEXT NOT NULL,
+                url TEXT NOT NULL,
+                thumbnail_url TEXT,
+                title TEXT,
+                description TEXT,
+                educational_value REAL DEFAULT 0.8,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         ''')
 
