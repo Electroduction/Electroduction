@@ -1,2 +1,16 @@
 pygame>=2.5.0
 numpy>=1.24.0
+
+# Market Analysis System Dependencies
+pandas>=2.0.0
+scipy>=1.10.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+
+# Optional: For production use
+# xgboost>=1.7.0
+# lightgbm>=3.3.0
+# tensorflow>=2.13.0
+# yfinance>=0.2.0
+# alpha_vantage>=2.3.1
+# pandas_datareader>=0.10.0
