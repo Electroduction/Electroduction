@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research Aggregator - Your comprehensive research portal for STEM, Art, Finance, Legal, Technology, Construction, and HR resources">
+    <title>Research Aggregator - Unified Knowledge Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Dashboard-specific styles */
+        .dashboard-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 50%, var(--primary-light) 100%);
+            padding: var(--spacing-2xl) var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--spacing-2xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -25%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(74, 144, 217, 0.15) 0%, transparent 60%);
+        }
+
+        .dashboard-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+
+        .dashboard-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(135deg, #fff, var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .dashboard-hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .dashboard-stats {
+            display: flex;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+
+        .dashboard-stat {
+            text-align: center;
+        }
+
+        .dashboard-stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+
+        .dashboard-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .category-section {
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .category-title {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .view-all-link {
+            font-size: 0.9rem;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .feature-title {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .feature-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Hide sidebar on main dashboard */
+        .main-content.full-width {
+            margin-left: 0;
+            padding-right: var(--spacing-xl);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <main class="main-content full-width">
+            <!-- Hero Section -->
+            <section class="dashboard-hero">
+                <div class="dashboard-hero-content">
+                    <h1>Research Aggregator</h1>
+                    <p>Your unified gateway to comprehensive research across STEM, Technology, Finance, Legal, Construction, and Professional Development. Access curated RSS feeds, zero-to-hero guides, and expert resources - all in one place.</p>
+
+                    <!-- Global Search -->
+                    <div class="search-container">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" class="search-input" placeholder="Search across all portals...">
+                    </div>
+
+                    <div class="dashboard-stats">
+                        <div class="dashboard-stat">
+                            <div class="dashboard-stat-value">12+</div>
+                            <div class="dashboard-stat-label">Research Portals</div>
+                        </div>
+                        <div class="dashboard-stat">
+                            <div class="dashboard-stat-value">200+</div>
+                            <div class="dashboard-stat-label">RSS Sources</div>
+                        </div>
+                        <div class="dashboard-stat">
+                            <div class="dashboard-stat-value">1000+</div>
+                            <div class="dashboard-stat-label">Glossary Terms</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Features -->
+            <section class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3 class="feature-title">Zero-to-Hero Guides</h3>
+                    <p class="feature-description">Comprehensive walkthroughs from beginner to advanced, with clear indexes for quick navigation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3 class="feature-title">Hover Definitions</h3>
+                    <p class="feature-description">Underlined terms reveal detailed explanations when you hover - no more confusion with jargon.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📏</div>
+                    <h3 class="feature-title">Adjustable Length</h3>
+                    <p class="feature-description">Control content depth from 1-12 pages. Get exactly the level of detail you need.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📡</div>
+                    <h3 class="feature-title">Live RSS Feeds</h3>
+                    <p class="feature-description">Real-time aggregation from top industry sources, journals, and research publications.</p>
+                </div>
+            </section>
+
+            <!-- STEM Portals -->
+            <section class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">🔬 STEM Research</h2>
+                </div>
+                <div class="portal-grid stagger-animation">
+                    <a href="portals/physics.html" class="portal-card" data-portal="stem">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #00d4ff, #0099cc);">
+                            <div class="portal-card-icon">⚛️</div>
+                            <h3 class="portal-card-title">Physics</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Quantum mechanics, relativity, thermodynamics, electromagnetism, and particle physics research.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">15+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">120+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="portals/chemistry.html" class="portal-card" data-portal="stem">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #00ff88, #00cc6a);">
+                            <div class="portal-card-icon">🧪</div>
+                            <h3 class="portal-card-title">Chemistry</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Organic, inorganic, analytical chemistry, biochemistry, and materials science.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">12+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">150+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="portals/biology.html" class="portal-card" data-portal="stem">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #66bb6a, #43a047);">
+                            <div class="portal-card-icon">🧬</div>
+                            <h3 class="portal-card-title">Biology</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Genetics, microbiology, ecology, cell biology, and evolutionary science research.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">18+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">180+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="portals/mathematics.html" class="portal-card" data-portal="stem">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #42a5f5, #1e88e5);">
+                            <div class="portal-card-icon">📐</div>
+                            <h3 class="portal-card-title">Mathematics</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Calculus, linear algebra, statistics, number theory, and applied mathematics.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">10+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">100+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="portals/engineering.html" class="portal-card" data-portal="stem">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #ff8c00, #ff6600);">
+                            <div class="portal-card-icon">⚙️</div>
+                            <h3 class="portal-card-title">Engineering</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Mechanical, civil, electrical, chemical engineering principles and practices.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">20+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">200+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Technology Portals -->
+            <section class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">💻 Technology & Computing</h2>
+                </div>
+                <div class="portal-grid stagger-animation">
+                    <a href="portals/computer-science.html" class="portal-card" data-portal="cs">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #4a90d9, #a855f7);">
+                            <div class="portal-card-icon">💾</div>
+                            <h3 class="portal-card-title">Computer Science</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Algorithms, data structures, software engineering, AI/ML, and system design.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">25+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">250+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="portals/cybersecurity.html" class="portal-card" data-portal="cybersecurity">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #ff4757, #ffa502);">
+                            <div class="portal-card-icon">🔐</div>
+                            <h3 class="portal-card-title">Cybersecurity</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Network security, penetration testing, cryptography, threat analysis, and compliance.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">30+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">200+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Business & Professional Portals -->
+            <section class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">💼 Business & Professional</h2>
+                </div>
+                <div class="portal-grid stagger-animation">
+                    <a href="portals/finance.html" class="portal-card" data-portal="finance">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #00ff88, #4a90d9);">
+                            <div class="portal-card-icon">💰</div>
+                            <h3 class="portal-card-title">Finance</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Investment strategies, market analysis, financial planning, and economic research.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">20+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">180+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="portals/accounting.html" class="portal-card" data-portal="accounting">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #26c6da, #66bb6a);">
+                            <div class="portal-card-icon">📊</div>
+                            <h3 class="portal-card-title">Accounting</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">GAAP, auditing, tax accounting, forensic accounting, and financial reporting.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">15+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">160+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="portals/legal.html" class="portal-card" data-portal="legal">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #9575cd, #7986cb);">
+                            <div class="portal-card-icon">⚖️</div>
+                            <h3 class="portal-card-title">Legal & Paralegal</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Contract law, litigation, regulatory compliance, intellectual property, and legal research.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">18+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">200+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="portals/hr.html" class="portal-card" data-portal="hr">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #ec407a, #ab47bc);">
+                            <div class="portal-card-icon">👥</div>
+                            <h3 class="portal-card-title">Human Resources</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Talent acquisition, employee relations, compensation, training, and HR analytics.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">12+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">140+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Creative & Trades Portals -->
+            <section class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">🎨 Creative & Skilled Trades</h2>
+                </div>
+                <div class="portal-grid stagger-animation">
+                    <a href="portals/art.html" class="portal-card" data-portal="art">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #ff6b9d, #ffa726);">
+                            <div class="portal-card-icon">🎨</div>
+                            <h3 class="portal-card-title">Art & Design</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Visual arts, graphic design, UX/UI, color theory, typography, and digital art.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">15+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">130+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="portals/electrical.html" class="portal-card" data-portal="construction">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #ffd54f, #ff8f00);">
+                            <div class="portal-card-icon">⚡</div>
+                            <h3 class="portal-card-title">Electrical Trade</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Wiring, circuit design, NEC codes, electrical systems, and troubleshooting.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">10+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">150+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="portals/plumbing.html" class="portal-card" data-portal="construction">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #4fc3f7, #0288d1);">
+                            <div class="portal-card-icon">🔧</div>
+                            <h3 class="portal-card-title">Plumbing Trade</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Pipe systems, fixtures, drainage, water supply, and plumbing codes.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">8+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">120+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="portals/hvac.html" class="portal-card" data-portal="construction">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #81d4fa, #29b6f6);">
+                            <div class="portal-card-icon">❄️</div>
+                            <h3 class="portal-card-title">HVAC Trade</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Heating, ventilation, air conditioning, refrigeration, and climate control systems.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">10+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">140+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="portals/carpentry.html" class="portal-card" data-portal="construction">
+                        <div class="portal-card-header" style="background: linear-gradient(135deg, #a1887f, #8d6e63);">
+                            <div class="portal-card-icon">🪚</div>
+                            <h3 class="portal-card-title">Carpentry Trade</h3>
+                        </div>
+                        <div class="portal-card-body">
+                            <p class="portal-card-description">Woodworking, framing, finishing, cabinetry, and construction techniques.</p>
+                            <div class="portal-card-stats">
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">8+</div>
+                                    <div class="portal-stat-label">Feeds</div>
+                                </div>
+                                <div class="portal-stat">
+                                    <div class="portal-stat-value">110+</div>
+                                    <div class="portal-stat-label">Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer style="text-align: center; padding: var(--spacing-2xl); color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: var(--spacing-2xl);">
+                <p>Research Aggregator - Unified Knowledge Portal</p>
+                <p style="font-size: 0.85rem; margin-top: var(--spacing-sm);">Aggregating the best research resources from across the web</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/core.js"></script>
+</body>
+</html>

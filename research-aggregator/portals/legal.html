@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Legal & Paralegal Research Portal - Contract Law, Litigation, Regulatory Compliance, Legal Research">
+    <title>Legal Portal - Research Aggregator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-portal="legal">
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-icon">⚖️</div>
+                    <h1>Legal Portal</h1>
+                </div>
+            </div>
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Navigation</div>
+                    <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>Dashboard</span></a>
+                    <a href="#feeds" class="nav-item"><span class="nav-item-icon">📡</span><span>Legal Feeds</span><span class="nav-item-badge">Live</span></a>
+                    <a href="#guide" class="nav-item active"><span class="nav-item-icon">📖</span><span>Legal Guide</span></a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Related Portals</div>
+                    <a href="hr.html" class="nav-item"><span class="nav-item-icon">👥</span><span>Human Resources</span></a>
+                    <a href="finance.html" class="nav-item"><span class="nav-item-icon">💰</span><span>Finance</span></a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div class="page-header-top">
+                    <div>
+                        <h1 class="page-title">Legal & Paralegal Resources</h1>
+                        <p class="page-subtitle">Comprehensive legal research and practice guidance</p>
+                    </div>
+                </div>
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" placeholder="Search legal topics, cases, statutes...">
+                </div>
+                <div class="search-results"></div>
+            </header>
+
+            <aside class="guide-index">
+                <div class="guide-index-header">
+                    <h3 class="guide-index-title">📑 Guide Index</h3>
+                    <button class="guide-index-toggle">−</button>
+                </div>
+                <ul class="guide-index-list"></ul>
+                <div class="guide-progress">
+                    <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
+                    <p class="progress-text">Start reading to track progress</p>
+                </div>
+            </aside>
+
+            <section id="feeds" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">📡</div>
+                    <h2 class="guide-section-title">Live Legal News & Updates</h2>
+                </div>
+                <div class="guide-content">
+                    <div class="rss-feed-header">
+                        <p>Latest legal news, case law updates, and regulatory changes</p>
+                        <div class="rss-feed-actions">
+                            <button class="rss-refresh-btn" onclick="app.refreshFeeds()">🔄 Refresh</button>
+                        </div>
+                    </div>
+                    <div class="rss-feed-list">
+                        <div class="loading"><div class="loading-spinner"></div><p class="loading-text">Loading legal feeds...</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-0" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">1</div>
+                    <h2 class="guide-section-title">Introduction to the Legal System</h2>
+                </div>
+                <div class="guide-content">
+                    <p>The <span class="glossary-term" data-term="legal-system">legal system</span> is the framework of rules, institutions, and processes that govern society. Understanding its structure is essential for legal work.</p>
+
+                    <h3>Sources of Law</h3>
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="constitutional-law">Constitutional Law</span></strong> - Supreme law establishing government structure and rights</li>
+                        <li><strong><span class="glossary-term" data-term="statutory-law">Statutory Law</span></strong> - Laws enacted by legislative bodies</li>
+                        <li><strong><span class="glossary-term" data-term="case-law">Case Law (Common Law)</span></strong> - Law developed through court decisions</li>
+                        <li><strong><span class="glossary-term" data-term="administrative-law">Administrative Law</span></strong> - Rules and regulations from government agencies</li>
+                    </ul>
+
+                    <h3>Court System Hierarchy</h3>
+                    <p>The U.S. has both federal and state court systems:</p>
+
+                    <h4>Federal Courts</h4>
+                    <ul>
+                        <li><strong>U.S. Supreme Court</strong> - Highest court, final arbiter of federal law</li>
+                        <li><strong>Courts of Appeals</strong> - 13 circuits, hear appeals from district courts</li>
+                        <li><strong>District Courts</strong> - Trial courts for federal cases</li>
+                        <li><strong>Specialized Courts</strong> - Bankruptcy, tax, claims</li>
+                    </ul>
+
+                    <h4>State Courts</h4>
+                    <ul>
+                        <li><strong>State Supreme Court</strong> - Highest state court</li>
+                        <li><strong>Appellate Courts</strong> - Intermediate appeals</li>
+                        <li><strong>Trial Courts</strong> - General jurisdiction</li>
+                        <li><strong>Limited Jurisdiction Courts</strong> - Small claims, traffic, family</li>
+                    </ul>
+
+                    <div class="info-box note">
+                        <div class="info-box-icon">💡</div>
+                        <div class="info-box-content">
+                            <h4>Jurisdiction</h4>
+                            <p><span class="glossary-term" data-term="jurisdiction">Jurisdiction</span> determines which court can hear a case. It depends on geography, subject matter, and monetary amount in controversy.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-1" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">2</div>
+                    <h2 class="guide-section-title">Legal Research Methods</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="legal-research">Legal research</span> is the process of finding legal authorities to support legal arguments and decisions.</p>
+
+                    <h3 id="section-1-sub-0">Primary vs. Secondary Sources</h3>
+
+                    <h4>Primary Sources (Binding Authority)</h4>
+                    <ul>
+                        <li><strong>Constitutions</strong> - Federal and state</li>
+                        <li><strong>Statutes</strong> - United States Code (U.S.C.), state codes</li>
+                        <li><strong>Case Law</strong> - Published court decisions</li>
+                        <li><strong>Regulations</strong> - Code of Federal Regulations (CFR)</li>
+                    </ul>
+
+                    <h4>Secondary Sources (Persuasive)</h4>
+                    <ul>
+                        <li><strong>Legal Encyclopedias</strong> - Am. Jur., C.J.S.</li>
+                        <li><strong>Treatises</strong> - In-depth subject analysis</li>
+                        <li><strong>Law Reviews</strong> - Academic articles</li>
+                        <li><strong>Restatements</strong> - ALI summaries of common law</li>
+                    </ul>
+
+                    <h3 id="section-1-sub-1">Research Databases</h3>
+                    <ul>
+                        <li><strong>Westlaw</strong> - Comprehensive legal database, KeyCite citator</li>
+                        <li><strong>LexisNexis</strong> - Legal database, Shepard's citator</li>
+                        <li><strong>Google Scholar</strong> - Free case law access</li>
+                        <li><strong>CourtListener</strong> - Free court opinions</li>
+                        <li><strong>Justia</strong> - Free legal information</li>
+                    </ul>
+
+                    <h3 id="section-1-sub-2">Citation Checking</h3>
+                    <p>Always verify authorities are still good law using citators:</p>
+                    <ul>
+                        <li><strong>KeyCite (Westlaw)</strong> - Red/yellow flags indicate negative treatment</li>
+                        <li><strong>Shepard's (Lexis)</strong> - Shows subsequent history and citing references</li>
+                    </ul>
+
+                    <div class="code-block">
+                        <div class="code-block-header"><span class="code-block-lang">Citation Format Examples</span></div>
+                        <pre><code>Case: Brown v. Board of Education, 347 U.S. 483 (1954)
+       Case name, volume, reporter, page, (year)
+
+Statute: 42 U.S.C. § 1983
+        Title, code, section
+
+Regulation: 29 C.F.R. § 1630.2(g)
+           Title, code, section</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-2" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">3</div>
+                    <h2 class="guide-section-title">Contract Law Fundamentals</h2>
+                </div>
+                <div class="guide-content">
+                    <p>A <span class="glossary-term" data-term="contract">contract</span> is a legally enforceable agreement between two or more parties.</p>
+
+                    <h3 id="section-2-sub-0">Elements of a Valid Contract</h3>
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="offer">Offer</span></strong> - Clear proposal to enter into agreement</li>
+                        <li><strong><span class="glossary-term" data-term="acceptance">Acceptance</span></strong> - Unequivocal agreement to offer terms</li>
+                        <li><strong><span class="glossary-term" data-term="consideration">Consideration</span></strong> - Exchange of value (money, services, promises)</li>
+                        <li><strong>Capacity</strong> - Parties must have legal ability to contract</li>
+                        <li><strong>Legality</strong> - Purpose must be lawful</li>
+                    </ul>
+
+                    <h3 id="section-2-sub-1">Contract Interpretation</h3>
+                    <p>Rules for interpreting contract language:</p>
+                    <ul>
+                        <li><strong>Plain Meaning Rule</strong> - Words given ordinary meaning</li>
+                        <li><strong>Whole Contract</strong> - Read in context of entire agreement</li>
+                        <li><strong>Specific over General</strong> - Specific provisions control</li>
+                        <li><strong>Contra Proferentem</strong> - Ambiguity construed against drafter</li>
+                    </ul>
+
+                    <h3 id="section-2-sub-2">Common Contract Clauses</h3>
+                    <ul>
+                        <li><strong>Indemnification</strong> - One party protects other from losses</li>
+                        <li><strong>Limitation of Liability</strong> - Caps on damages</li>
+                        <li><strong>Force Majeure</strong> - Excuses performance for extraordinary events</li>
+                        <li><strong>Governing Law</strong> - Which state's law applies</li>
+                        <li><strong>Dispute Resolution</strong> - Arbitration vs. litigation</li>
+                        <li><strong>Non-Compete/Non-Disclosure</strong> - Restrictive covenants</li>
+                    </ul>
+
+                    <h3 id="section-2-sub-3">Breach and Remedies</h3>
+                    <p><span class="glossary-term" data-term="breach">Breach</span> occurs when a party fails to perform. Remedies include:</p>
+                    <ul>
+                        <li><strong>Compensatory Damages</strong> - Put injured party in position if performed</li>
+                        <li><strong>Consequential Damages</strong> - Foreseeable indirect losses</li>
+                        <li><strong>Specific Performance</strong> - Court orders performance (rare)</li>
+                        <li><strong>Rescission</strong> - Cancel contract, restore parties to pre-contract state</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section-3" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">4</div>
+                    <h2 class="guide-section-title">Civil Litigation Process</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="litigation">Litigation</span> is the process of taking legal action through the court system.</p>
+
+                    <h3>Stages of Civil Litigation</h3>
+
+                    <h4>1. Pre-Litigation</h4>
+                    <ul>
+                        <li>Investigation and evidence gathering</li>
+                        <li>Demand letters</li>
+                        <li>Settlement negotiations</li>
+                    </ul>
+
+                    <h4>2. Pleadings</h4>
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="complaint">Complaint</span></strong> - Plaintiff's initial filing stating claims</li>
+                        <li><strong><span class="glossary-term" data-term="answer">Answer</span></strong> - Defendant's response to allegations</li>
+                        <li><strong>Counterclaims/Cross-claims</strong> - Defendant's claims</li>
+                    </ul>
+
+                    <h4>3. Discovery</h4>
+                    <p><span class="glossary-term" data-term="discovery">Discovery</span> is the formal exchange of information between parties:</p>
+                    <ul>
+                        <li><strong>Interrogatories</strong> - Written questions</li>
+                        <li><strong>Requests for Production</strong> - Documents and things</li>
+                        <li><strong>Requests for Admission</strong> - Admit/deny facts</li>
+                        <li><strong><span class="glossary-term" data-term="deposition">Depositions</span></strong> - Sworn testimony under oath</li>
+                        <li><strong>E-Discovery</strong> - Electronic data discovery</li>
+                    </ul>
+
+                    <h4>4. Pre-Trial Motions</h4>
+                    <ul>
+                        <li><strong>Motion to Dismiss</strong> - Case has no legal basis</li>
+                        <li><strong><span class="glossary-term" data-term="summary-judgment">Summary Judgment</span></strong> - No genuine dispute of material fact</li>
+                        <li><strong>Motion in Limine</strong> - Exclude evidence at trial</li>
+                    </ul>
+
+                    <h4>5. Trial</h4>
+                    <ul>
+                        <li>Jury selection (if applicable)</li>
+                        <li>Opening statements</li>
+                        <li>Presentation of evidence</li>
+                        <li>Closing arguments</li>
+                        <li>Verdict</li>
+                    </ul>
+
+                    <h4>6. Post-Trial/Appeals</h4>
+                    <ul>
+                        <li>Post-trial motions</li>
+                        <li>Appeal to higher court</li>
+                        <li>Enforcement of judgment</li>
+                    </ul>
+
+                    <div class="info-box warning">
+                        <div class="info-box-icon">⚠️</div>
+                        <div class="info-box-content">
+                            <h4>Statutes of Limitations</h4>
+                            <p>Claims must be filed within time limits. Missing the <span class="glossary-term" data-term="sol">statute of limitations</span> bars the claim entirely. Time limits vary by claim type and jurisdiction.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-4" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">5</div>
+                    <h2 class="guide-section-title">Regulatory Compliance</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="compliance">Regulatory compliance</span> means adhering to laws, regulations, and guidelines relevant to business operations.</p>
+
+                    <h3>Major Regulatory Areas</h3>
+
+                    <h4>Employment Law</h4>
+                    <ul>
+                        <li><strong>Title VII</strong> - Prohibits employment discrimination</li>
+                        <li><strong>FLSA</strong> - Minimum wage, overtime, child labor</li>
+                        <li><strong>ADA</strong> - Disability accommodation</li>
+                        <li><strong>FMLA</strong> - Family and medical leave</li>
+                    </ul>
+
+                    <h4>Data Privacy</h4>
+                    <ul>
+                        <li><strong>GDPR</strong> - EU data protection</li>
+                        <li><strong>CCPA/CPRA</strong> - California privacy rights</li>
+                        <li><strong>HIPAA</strong> - Health information privacy</li>
+                    </ul>
+
+                    <h4>Financial Regulations</h4>
+                    <ul>
+                        <li><strong>SOX</strong> - Corporate governance, financial reporting</li>
+                        <li><strong>Dodd-Frank</strong> - Financial system reform</li>
+                        <li><strong>AML/BSA</strong> - Anti-money laundering</li>
+                    </ul>
+
+                    <h4>Environmental</h4>
+                    <ul>
+                        <li><strong>EPA regulations</strong> - Environmental protection</li>
+                        <li><strong>OSHA</strong> - Workplace safety</li>
+                    </ul>
+
+                    <h3>Compliance Program Elements</h3>
+                    <ul>
+                        <li>Written policies and procedures</li>
+                        <li>Training and communication</li>
+                        <li>Monitoring and auditing</li>
+                        <li>Reporting mechanisms (hotlines)</li>
+                        <li>Corrective action procedures</li>
+                        <li>Documentation and recordkeeping</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section-5" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">6</div>
+                    <h2 class="guide-section-title">Intellectual Property Basics</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="ip">Intellectual property (IP)</span> refers to creations of the mind protected by law.</p>
+
+                    <h3>Types of IP Protection</h3>
+
+                    <h4>Patents</h4>
+                    <p>Protect inventions - utility, design, or plant patents. 20-year term for utility patents.</p>
+
+                    <h4>Trademarks</h4>
+                    <p>Protect brand identifiers - names, logos, slogans. Can last indefinitely with use and renewal.</p>
+
+                    <h4>Copyrights</h4>
+                    <p>Protect original creative works - writing, music, art, software. Life + 70 years for individuals.</p>
+
+                    <h4>Trade Secrets</h4>
+                    <p>Protect confidential business information. No registration; requires reasonable secrecy measures.</p>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr><th>IP Type</th><th>What It Protects</th><th>Duration</th><th>Registration</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Patent</td><td>Inventions, processes</td><td>20 years (utility)</td><td>Required</td></tr>
+                                <tr><td>Trademark</td><td>Brand identifiers</td><td>Indefinite (with renewal)</td><td>Recommended</td></tr>
+                                <tr><td>Copyright</td><td>Creative works</td><td>Life + 70 years</td><td>Optional but beneficial</td></tr>
+                                <tr><td>Trade Secret</td><td>Confidential info</td><td>Indefinite (if kept secret)</td><td>Not applicable</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-6" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">7</div>
+                    <h2 class="guide-section-title">Paralegal Skills & Practice</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="paralegal">Paralegals</span> assist attorneys with legal work under attorney supervision. They cannot give legal advice or represent clients in court.</p>
+
+                    <h3>Core Paralegal Duties</h3>
+                    <ul>
+                        <li>Legal research and writing</li>
+                        <li>Document drafting and review</li>
+                        <li>Case management and organization</li>
+                        <li>Client communication (supervised)</li>
+                        <li>Discovery assistance</li>
+                        <li>Court filing and calendaring</li>
+                    </ul>
+
+                    <h3>Document Drafting Tips</h3>
+                    <ul>
+                        <li><strong>Use templates</strong> - Start with firm templates</li>
+                        <li><strong>Define terms</strong> - Capitalize and define key terms</li>
+                        <li><strong>Be precise</strong> - Avoid ambiguity</li>
+                        <li><strong>Proofread</strong> - Check names, dates, numbers</li>
+                        <li><strong>Track changes</strong> - Document revisions</li>
+                    </ul>
+
+                    <h3>Ethics Rules</h3>
+                    <ul>
+                        <li><strong>Confidentiality</strong> - Protect client information</li>
+                        <li><strong>Conflicts of Interest</strong> - Avoid representing adverse parties</li>
+                        <li><strong>Competence</strong> - Work within abilities</li>
+                        <li><strong>Supervision</strong> - Work under attorney direction</li>
+                        <li><strong>Unauthorized Practice</strong> - Cannot practice law</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section-7" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">8</div>
+                    <h2 class="guide-section-title">Resources & Career Development</h2>
+                </div>
+                <div class="guide-content">
+                    <h3>Legal Research Resources</h3>
+                    <ul>
+                        <li><strong>cornell.law.edu</strong> - Free legal information</li>
+                        <li><strong>law.justia.com</strong> - Cases and codes</li>
+                        <li><strong>courtlistener.com</strong> - Court opinions database</li>
+                        <li><strong>regulations.gov</strong> - Federal regulations</li>
+                        <li><strong>congress.gov</strong> - Federal legislation</li>
+                    </ul>
+
+                    <h3>Paralegal Certifications</h3>
+                    <ul>
+                        <li><strong>CP (Certified Paralegal)</strong> - NALA</li>
+                        <li><strong>RP (Registered Paralegal)</strong> - NFPA</li>
+                        <li><strong>PP (Professional Paralegal)</strong> - NALA advanced</li>
+                        <li><strong>State certifications</strong> - Some states have programs</li>
+                    </ul>
+
+                    <h3>Career Paths</h3>
+                    <ul>
+                        <li><strong>Law Firm Paralegal</strong> - Various practice areas</li>
+                        <li><strong>Corporate Legal Department</strong> - In-house support</li>
+                        <li><strong>Government</strong> - Courts, agencies, public defenders</li>
+                        <li><strong>Legal Aid</strong> - Pro bono and nonprofit work</li>
+                        <li><strong>Law School</strong> - Path to attorney licensure</li>
+                    </ul>
+
+                    <div class="info-box tip">
+                        <div class="info-box-icon">✅</div>
+                        <div class="info-box-content">
+                            <h4>Specialization</h4>
+                            <p>Consider specializing in a practice area: litigation, corporate, real estate, IP, family law, immigration, bankruptcy. Specialization increases value and career options.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="content-length-controller">
+            <span class="content-length-label">Content Depth:</span>
+            <input type="range" class="content-length-slider" min="1" max="12" value="12">
+            <span class="content-length-value">12 pages</span>
+        </div>
+        <div id="definition-window"></div>
+    </div>
+
+    <script src="../js/core.js"></script>
+    <script>
+        const legalGlossary = {
+            'legal-system': { term: 'Legal System', category: 'Fundamentals', definition: 'The framework of rules, procedures, and institutions through which laws are created, interpreted, and enforced in a society.', example: 'The U.S. legal system includes federal and state courts, legislative bodies, and administrative agencies.', relatedTerms: ['jurisdiction', 'common-law', 'civil-law'] },
+            'constitutional-law': { term: 'Constitutional Law', category: 'Sources of Law', definition: 'Body of law derived from a constitution, establishing government structure, powers, and individual rights. Supreme over other laws.', example: 'The First Amendment protects freedom of speech under constitutional law.', relatedTerms: ['statutory-law', 'bill-of-rights'] },
+            'statutory-law': { term: 'Statutory Law', category: 'Sources of Law', definition: 'Written laws enacted by legislative bodies (Congress, state legislatures). Codified in codes and statutes.', example: 'Title VII of the Civil Rights Act is federal statutory law prohibiting employment discrimination.', relatedTerms: ['case-law', 'legislation'] },
+            'case-law': { term: 'Case Law (Common Law)', category: 'Sources of Law', definition: 'Law developed through court decisions that interpret statutes, regulations, and constitutional provisions. Based on precedent.', example: 'Roe v. Wade established constitutional right to abortion through case law.', relatedTerms: ['precedent', 'stare-decisis'] },
+            'administrative-law': { term: 'Administrative Law', category: 'Sources of Law', definition: 'Rules, regulations, and decisions of administrative agencies that have the force of law.', example: 'EPA regulations on air quality are administrative law.', relatedTerms: ['cfr', 'agency', 'rulemaking'] },
+            'jurisdiction': { term: 'Jurisdiction', category: 'Courts', definition: 'The authority of a court to hear and decide a case. Can be based on geography, subject matter, or monetary amount.', example: 'Federal courts have jurisdiction over cases involving federal questions or diversity of citizenship.', relatedTerms: ['venue', 'subject-matter', 'personal-jurisdiction'] },
+            'legal-research': { term: 'Legal Research', category: 'Research', definition: 'The process of finding and analyzing legal authorities (cases, statutes, regulations) relevant to a legal issue.', example: 'Researching whether a contract clause is enforceable requires finding relevant case law.', relatedTerms: ['primary-source', 'secondary-source', 'citator'] },
+            'contract': { term: 'Contract', category: 'Contract Law', definition: 'A legally enforceable agreement between two or more parties creating mutual obligations.', example: 'A lease agreement is a contract between landlord and tenant.', relatedTerms: ['offer', 'acceptance', 'consideration'] },
+            'offer': { term: 'Offer', category: 'Contract Law', definition: 'A manifestation of willingness to enter into a bargain, creating power of acceptance in the offeree.', example: 'I will sell you my car for $5,000 is an offer.', relatedTerms: ['acceptance', 'revocation', 'counteroffer'] },
+            'acceptance': { term: 'Acceptance', category: 'Contract Law', definition: 'Unequivocal agreement to the exact terms of an offer, creating a binding contract.', example: 'I accept your offer to sell the car for $5,000 creates a contract.', relatedTerms: ['offer', 'mirror-image-rule'] },
+            'consideration': { term: 'Consideration', category: 'Contract Law', definition: 'Something of value exchanged between parties to a contract - can be money, services, goods, or a promise.', example: 'In a sales contract, the consideration is the price paid for goods.', relatedTerms: ['bargain', 'gift', 'promissory-estoppel'] },
+            'breach': { term: 'Breach of Contract', category: 'Contract Law', definition: 'Failure to perform a contractual obligation without legal excuse.', example: 'Not delivering goods by the agreed date is a breach of contract.', relatedTerms: ['damages', 'remedy', 'material-breach'] },
+            'litigation': { term: 'Litigation', category: 'Civil Procedure', definition: 'The process of taking legal action through the court system to resolve disputes.', example: 'After negotiations failed, the parties proceeded to litigation.', relatedTerms: ['lawsuit', 'plaintiff', 'defendant'] },
+            'complaint': { term: 'Complaint', category: 'Civil Procedure', definition: 'The initial pleading filed by a plaintiff that begins a lawsuit, stating claims against the defendant.', example: 'The complaint alleged breach of contract and sought $100,000 in damages.', relatedTerms: ['pleading', 'answer', 'cause-of-action'] },
+            'answer': { term: 'Answer', category: 'Civil Procedure', definition: 'The defendants response to the complaints allegations, admitting or denying each claim.', example: 'In the answer, defendant denied all material allegations.', relatedTerms: ['complaint', 'affirmative-defense'] },
+            'discovery': { term: 'Discovery', category: 'Civil Procedure', definition: 'The pre-trial phase where parties exchange information, documents, and evidence relevant to the case.', example: 'During discovery, plaintiff requested all emails related to the contract.', relatedTerms: ['deposition', 'interrogatory', 'subpoena'] },
+            'deposition': { term: 'Deposition', category: 'Discovery', definition: 'Sworn, out-of-court testimony of a witness recorded for later use in court proceedings.', example: 'The key witness was deposed for three days about the accident.', relatedTerms: ['discovery', 'testimony', 'oath'] },
+            'summary-judgment': { term: 'Summary Judgment', category: 'Civil Procedure', definition: 'A judgment entered by a court without full trial, finding no genuine dispute of material fact exists.', example: 'The court granted summary judgment because the contract was unambiguous.', relatedTerms: ['motion', 'material-fact'] },
+            'sol': { term: 'Statute of Limitations', category: 'Civil Procedure', definition: 'Legal deadline by which a lawsuit must be filed. Varies by claim type and jurisdiction.', example: 'Personal injury claims in California have a 2-year statute of limitations.', relatedTerms: ['deadline', 'tolling', 'limitations-period'] },
+            'compliance': { term: 'Regulatory Compliance', category: 'Compliance', definition: 'Adhering to laws, regulations, and standards applicable to an organizations operations.', example: 'Healthcare organizations must maintain HIPAA compliance.', relatedTerms: ['regulation', 'audit', 'policy'] },
+            'ip': { term: 'Intellectual Property', category: 'IP Law', definition: 'Legal rights over creations of the mind - patents, trademarks, copyrights, and trade secrets.', example: 'The company protects its brand through trademark intellectual property rights.', relatedTerms: ['patent', 'trademark', 'copyright'] },
+            'paralegal': { term: 'Paralegal', category: 'Legal Profession', definition: 'A person qualified by education or training to perform legal work under the supervision of an attorney.', example: 'The paralegal drafted the discovery requests for attorney review.', relatedTerms: ['legal-assistant', 'attorney', 'ethics'] }
+        };
+        document.addEventListener('DOMContentLoaded', () => { app.glossary.addTerms(legalGlossary); });
+    </script>
+</body>
+</html>
