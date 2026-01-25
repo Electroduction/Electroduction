@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carpentry Trade Research Portal - Woodworking, Framing, Finishing">
+    <title>Carpentry Trade Portal - Research Aggregator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-portal="construction">
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-icon">🪚</div>
+                    <h1>Carpentry Trade</h1>
+                </div>
+            </div>
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Navigation</div>
+                    <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>Dashboard</span></a>
+                    <a href="#guide" class="nav-item active"><span class="nav-item-icon">📖</span><span>Carpentry Guide</span></a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Related Trades</div>
+                    <a href="electrical.html" class="nav-item"><span class="nav-item-icon">⚡</span><span>Electrical</span></a>
+                    <a href="plumbing.html" class="nav-item"><span class="nav-item-icon">🔧</span><span>Plumbing</span></a>
+                </div>
+            </div>
+        </nav>
+        <main class="main-content">
+            <header class="page-header">
+                <div class="page-header-top">
+                    <div>
+                        <h1 class="page-title">Carpentry Trade</h1>
+                        <p class="page-subtitle">Woodworking, framing, finishing, and construction</p>
+                    </div>
+                </div>
+            </header>
+            <section id="section-0" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">1</div>
+                    <h2 class="guide-section-title">Introduction to Carpentry</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="carpentry">Carpentry</span> is the skilled trade of cutting, shaping, and installing building materials during construction.</p>
+                    <h3>Types of Carpentry</h3>
+                    <ul>
+                        <li><strong>Rough Carpentry</strong> - Framing, structural work</li>
+                        <li><strong>Finish Carpentry</strong> - Trim, molding, cabinetry</li>
+                        <li><strong>Cabinetmaking</strong> - Custom cabinets and furniture</li>
+                        <li><strong>Formwork</strong> - Concrete forms</li>
+                    </ul>
+                    <h3>Essential Tools</h3>
+                    <ul>
+                        <li><strong>Measuring</strong> - Tape measure, speed square, level</li>
+                        <li><strong>Cutting</strong> - Circular saw, miter saw, hand saw</li>
+                        <li><strong>Fastening</strong> - Hammer, nail gun, drill</li>
+                        <li><strong>Layout</strong> - Chalk line, laser level</li>
+                    </ul>
+                    <div class="info-box note">
+                        <div class="info-box-icon">💡</div>
+                        <div class="info-box-content">
+                            <h4>Coming Soon</h4>
+                            <p>Full carpentry guide including framing techniques, joinery methods, blueprint reading, and tool safety.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div class="content-length-controller">
+            <span class="content-length-label">Content Depth:</span>
+            <input type="range" class="content-length-slider" min="1" max="12" value="12">
+            <span class="content-length-value">12 pages</span>
+        </div>
+        <div id="definition-window"></div>
+    </div>
+    <script src="../js/core.js"></script>
+    <script>
+        const carpentryGlossary = {
+            'carpentry': { term: 'Carpentry', category: 'Fundamentals', definition: 'The skilled trade of cutting, shaping, and installing wood and other building materials during construction and renovation.', example: 'A carpenter frames walls, installs doors, and adds trim and molding.', relatedTerms: ['framing', 'joinery'] }
+        };
+        document.addEventListener('DOMContentLoaded', () => { app.glossary.addTerms(carpentryGlossary); });
+    </script>
+</body>
+</html>

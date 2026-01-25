@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plumbing Trade Research Portal - Pipe Systems, Fixtures, Codes">
+    <title>Plumbing Trade Portal - Research Aggregator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-portal="construction">
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-icon">🔧</div>
+                    <h1>Plumbing Trade</h1>
+                </div>
+            </div>
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Navigation</div>
+                    <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>Dashboard</span></a>
+                    <a href="#guide" class="nav-item active"><span class="nav-item-icon">📖</span><span>Plumbing Guide</span></a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Related Trades</div>
+                    <a href="electrical.html" class="nav-item"><span class="nav-item-icon">⚡</span><span>Electrical</span></a>
+                    <a href="hvac.html" class="nav-item"><span class="nav-item-icon">❄️</span><span>HVAC</span></a>
+                </div>
+            </div>
+        </nav>
+        <main class="main-content">
+            <header class="page-header">
+                <div class="page-header-top">
+                    <div>
+                        <h1 class="page-title">Plumbing Trade</h1>
+                        <p class="page-subtitle">Water supply, drainage, and fixture installation</p>
+                    </div>
+                </div>
+            </header>
+            <section id="section-0" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">1</div>
+                    <h2 class="guide-section-title">Introduction to Plumbing</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="plumbing">Plumbing</span> is the system of pipes, fixtures, and fittings that conveys water and removes waterborne waste.</p>
+                    <h3>Plumbing Systems</h3>
+                    <ul>
+                        <li><strong>Water Supply</strong> - Delivers potable water to fixtures</li>
+                        <li><strong>DWV (Drain-Waste-Vent)</strong> - Removes wastewater and gases</li>
+                        <li><strong>Gas Piping</strong> - Delivers natural gas/propane</li>
+                        <li><strong>Hydronic</strong> - Hot water heating systems</li>
+                    </ul>
+                    <div class="info-box note">
+                        <div class="info-box-icon">💡</div>
+                        <div class="info-box-content">
+                            <h4>Coming Soon</h4>
+                            <p>Full plumbing guide including pipe materials, fitting methods, code requirements, and troubleshooting.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div class="content-length-controller">
+            <span class="content-length-label">Content Depth:</span>
+            <input type="range" class="content-length-slider" min="1" max="12" value="12">
+            <span class="content-length-value">12 pages</span>
+        </div>
+        <div id="definition-window"></div>
+    </div>
+    <script src="../js/core.js"></script>
+    <script>
+        const plumbingGlossary = {
+            'plumbing': { term: 'Plumbing', category: 'Fundamentals', definition: 'The system of pipes, fixtures, and fittings installed for the distribution of water and removal of waterborne waste.', example: 'Residential plumbing includes supply lines, drain lines, and vent stacks.', relatedTerms: ['dwv', 'supply'] }
+        };
+        document.addEventListener('DOMContentLoaded', () => { app.glossary.addTerms(plumbingGlossary); });
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Art & Design Research Portal - Visual Arts, Graphic Design, UX/UI, Color Theory">
+    <title>Art & Design Portal - Research Aggregator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-portal="art">
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-icon">🎨</div>
+                    <h1>Art & Design Portal</h1>
+                </div>
+            </div>
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Navigation</div>
+                    <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>Dashboard</span></a>
+                    <a href="#guide" class="nav-item active"><span class="nav-item-icon">📖</span><span>Art Guide</span></a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div class="page-header-top">
+                    <div>
+                        <h1 class="page-title">Art & Design</h1>
+                        <p class="page-subtitle">Visual arts, graphic design, UX/UI, and creative principles</p>
+                    </div>
+                </div>
+            </header>
+
+            <section id="section-0" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">1</div>
+                    <h2 class="guide-section-title">Introduction to Art & Design</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="design">Design</span> is the intentional arrangement of elements to create visual communication and solve problems.</p>
+
+                    <h3>Design Disciplines</h3>
+                    <ul>
+                        <li><strong>Graphic Design</strong> - Visual communication for print and digital</li>
+                        <li><strong>UX/UI Design</strong> - User experience and interface design</li>
+                        <li><strong>Industrial Design</strong> - Physical product design</li>
+                        <li><strong>Motion Design</strong> - Animation and video graphics</li>
+                        <li><strong>Typography</strong> - The art of arranging type</li>
+                    </ul>
+
+                    <h3>Principles of Design</h3>
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="balance">Balance</span></strong> - Visual weight distribution</li>
+                        <li><strong><span class="glossary-term" data-term="contrast">Contrast</span></strong> - Difference between elements</li>
+                        <li><strong><span class="glossary-term" data-term="hierarchy">Hierarchy</span></strong> - Order of importance</li>
+                        <li><strong>Repetition</strong> - Consistent elements throughout</li>
+                        <li><strong>Proximity</strong> - Grouping related elements</li>
+                        <li><strong>White Space</strong> - Breathing room in design</li>
+                    </ul>
+
+                    <div class="info-box note">
+                        <div class="info-box-icon">💡</div>
+                        <div class="info-box-content">
+                            <h4>Coming Soon</h4>
+                            <p>Full art and design guide including color theory, typography fundamentals, composition, digital tools, and portfolio development.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div class="content-length-controller">
+            <span class="content-length-label">Content Depth:</span>
+            <input type="range" class="content-length-slider" min="1" max="12" value="12">
+            <span class="content-length-value">12 pages</span>
+        </div>
+        <div id="definition-window"></div>
+    </div>
+    <script src="../js/core.js"></script>
+    <script>
+        const artGlossary = {
+            'design': { term: 'Design', category: 'Fundamentals', definition: 'The intentional arrangement of visual elements to communicate a message, solve a problem, or create an aesthetic experience.', example: 'A logo design communicates brand identity through shape, color, and typography.', relatedTerms: ['composition', 'typography'] },
+            'balance': { term: 'Balance', category: 'Principles', definition: 'The visual distribution of weight in a composition. Can be symmetrical (formal) or asymmetrical (informal).', example: 'A centered layout creates symmetrical balance; an off-center focal point creates asymmetrical balance.', relatedTerms: ['composition', 'hierarchy'] },
+            'contrast': { term: 'Contrast', category: 'Principles', definition: 'The difference between elements in a design - color, size, shape, texture. Creates visual interest and hierarchy.', example: 'White text on a black background creates strong contrast and readability.', relatedTerms: ['hierarchy', 'emphasis'] },
+            'hierarchy': { term: 'Hierarchy', category: 'Principles', definition: 'The arrangement of elements to show their order of importance. Guides the viewer through the design.', example: 'Large headlines, medium subheads, and small body text create clear visual hierarchy.', relatedTerms: ['contrast', 'typography'] }
+        };
+        document.addEventListener('DOMContentLoaded', () => { app.glossary.addTerms(artGlossary); });
+    </script>
+</body>
+</html>

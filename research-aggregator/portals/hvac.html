@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HVAC Trade Research Portal - Heating, Ventilation, Air Conditioning">
+    <title>HVAC Trade Portal - Research Aggregator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-portal="construction">
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-icon">❄️</div>
+                    <h1>HVAC Trade</h1>
+                </div>
+            </div>
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Navigation</div>
+                    <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>Dashboard</span></a>
+                    <a href="#guide" class="nav-item active"><span class="nav-item-icon">📖</span><span>HVAC Guide</span></a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Related Trades</div>
+                    <a href="electrical.html" class="nav-item"><span class="nav-item-icon">⚡</span><span>Electrical</span></a>
+                    <a href="plumbing.html" class="nav-item"><span class="nav-item-icon">🔧</span><span>Plumbing</span></a>
+                </div>
+            </div>
+        </nav>
+        <main class="main-content">
+            <header class="page-header">
+                <div class="page-header-top">
+                    <div>
+                        <h1 class="page-title">HVAC Trade</h1>
+                        <p class="page-subtitle">Heating, ventilation, air conditioning, and refrigeration</p>
+                    </div>
+                </div>
+            </header>
+            <section id="section-0" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">1</div>
+                    <h2 class="guide-section-title">Introduction to HVAC</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="hvac">HVAC</span> (Heating, Ventilation, and Air Conditioning) systems control indoor climate and air quality.</p>
+                    <h3>HVAC Components</h3>
+                    <ul>
+                        <li><strong>Heating</strong> - Furnaces, boilers, heat pumps</li>
+                        <li><strong>Cooling</strong> - Air conditioners, chillers, evaporative coolers</li>
+                        <li><strong>Ventilation</strong> - Air exchange, ductwork, exhaust fans</li>
+                        <li><strong>Refrigeration</strong> - Commercial cooling systems</li>
+                    </ul>
+                    <h3>The Refrigeration Cycle</h3>
+                    <p>The <span class="glossary-term" data-term="refrigeration-cycle">refrigeration cycle</span> transfers heat using compression and expansion of refrigerant.</p>
+                    <div class="info-box note">
+                        <div class="info-box-icon">💡</div>
+                        <div class="info-box-content">
+                            <h4>Coming Soon</h4>
+                            <p>Full HVAC guide including refrigeration principles, system sizing, ductwork design, and EPA certifications.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div class="content-length-controller">
+            <span class="content-length-label">Content Depth:</span>
+            <input type="range" class="content-length-slider" min="1" max="12" value="12">
+            <span class="content-length-value">12 pages</span>
+        </div>
+        <div id="definition-window"></div>
+    </div>
+    <script src="../js/core.js"></script>
+    <script>
+        const hvacGlossary = {
+            'hvac': { term: 'HVAC', category: 'Fundamentals', definition: 'Heating, Ventilation, and Air Conditioning - the technology of indoor environmental comfort through temperature and humidity control.', example: 'A central HVAC system includes a furnace, AC unit, and ductwork throughout the building.', relatedTerms: ['refrigeration-cycle', 'heat-pump'] },
+            'refrigeration-cycle': { term: 'Refrigeration Cycle', category: 'Theory', definition: 'The process by which heat is removed from a space using compression and expansion of refrigerant through four stages: compression, condensation, expansion, and evaporation.', example: 'In an AC unit, refrigerant absorbs heat indoors and releases it outdoors.', relatedTerms: ['hvac', 'compressor'] }
+        };
+        document.addEventListener('DOMContentLoaded', () => { app.glossary.addTerms(hvacGlossary); });
+    </script>
+</body>
+</html>

