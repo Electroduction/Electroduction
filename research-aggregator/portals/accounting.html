@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accounting Research Portal - GAAP, Auditing, Tax, Financial Reporting">
+    <title>Accounting Portal - Research Aggregator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-portal="accounting">
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-icon">📊</div>
+                    <h1>Accounting Portal</h1>
+                </div>
+            </div>
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Navigation</div>
+                    <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>Dashboard</span></a>
+                    <a href="#guide" class="nav-item active"><span class="nav-item-icon">📖</span><span>Accounting Guide</span></a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Related Portals</div>
+                    <a href="finance.html" class="nav-item"><span class="nav-item-icon">💰</span><span>Finance</span></a>
+                    <a href="legal.html" class="nav-item"><span class="nav-item-icon">⚖️</span><span>Legal</span></a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div class="page-header-top">
+                    <div>
+                        <h1 class="page-title">Accounting</h1>
+                        <p class="page-subtitle">Financial reporting, auditing, and compliance</p>
+                    </div>
+                </div>
+            </header>
+
+            <section id="section-0" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">1</div>
+                    <h2 class="guide-section-title">Introduction to Accounting</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="accounting">Accounting</span> is the systematic recording, analyzing, and reporting of financial transactions. It provides the financial information needed for business decisions.</p>
+
+                    <h3>Branches of Accounting</h3>
+                    <ul>
+                        <li><strong>Financial Accounting</strong> - External reporting per GAAP/IFRS</li>
+                        <li><strong>Managerial Accounting</strong> - Internal decision-making</li>
+                        <li><strong>Tax Accounting</strong> - Tax compliance and planning</li>
+                        <li><strong>Auditing</strong> - Independent verification</li>
+                        <li><strong>Forensic Accounting</strong> - Fraud investigation</li>
+                    </ul>
+
+                    <h3>The Accounting Equation</h3>
+                    <div class="code-block">
+                        <pre><code>Assets = Liabilities + Equity
+
+This equation must ALWAYS balance.
+Every transaction affects at least two accounts.</code></pre>
+                    </div>
+
+                    <div class="info-box note">
+                        <div class="info-box-icon">💡</div>
+                        <div class="info-box-content">
+                            <h4>Coming Soon</h4>
+                            <p>Full accounting guide including GAAP principles, journal entries, financial statement analysis, and CPA exam preparation.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div class="content-length-controller">
+            <span class="content-length-label">Content Depth:</span>
+            <input type="range" class="content-length-slider" min="1" max="12" value="12">
+            <span class="content-length-value">12 pages</span>
+        </div>
+        <div id="definition-window"></div>
+    </div>
+    <script src="../js/core.js"></script>
+    <script>
+        const accountingGlossary = {
+            'accounting': { term: 'Accounting', category: 'Fundamentals', definition: 'The systematic process of recording, classifying, and summarizing financial transactions to provide useful information for business decisions.', example: 'Recording a sale involves debiting cash/receivables and crediting revenue.', relatedTerms: ['gaap', 'financial-statements'] }
+        };
+        document.addEventListener('DOMContentLoaded', () => { app.glossary.addTerms(accountingGlossary); });
+    </script>
+</body>
+</html>

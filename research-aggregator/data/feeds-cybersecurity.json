@@ -1,0 +1,45 @@
+{
+    "portal": "cybersecurity",
+    "feeds": [
+        {
+            "id": "krebs-security",
+            "name": "Krebs on Security",
+            "url": "https://krebsonsecurity.com/feed/",
+            "category": "cybersecurity",
+            "icon": "🔒",
+            "description": "In-depth security news and investigation"
+        },
+        {
+            "id": "bleeping-computer",
+            "name": "BleepingComputer",
+            "url": "https://www.bleepingcomputer.com/feed/",
+            "category": "cybersecurity",
+            "icon": "💻",
+            "description": "Security news and tutorials"
+        },
+        {
+            "id": "the-hacker-news",
+            "name": "The Hacker News",
+            "url": "https://feeds.feedburner.com/TheHackersNews",
+            "category": "cybersecurity",
+            "icon": "📰",
+            "description": "Cyber security news"
+        },
+        {
+            "id": "schneier-security",
+            "name": "Schneier on Security",
+            "url": "https://www.schneier.com/feed/",
+            "category": "cybersecurity",
+            "icon": "🛡️",
+            "description": "Security analysis and commentary"
+        },
+        {
+            "id": "cisa-alerts",
+            "name": "CISA Alerts",
+            "url": "https://www.cisa.gov/uscert/ncas/alerts.xml",
+            "category": "cybersecurity",
+            "icon": "⚠️",
+            "description": "US Cybersecurity alerts"
+        }
+    ]
+}

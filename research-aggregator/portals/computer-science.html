@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Computer Science Research Portal - Algorithms, Data Structures, AI/ML, Software Engineering">
+    <title>Computer Science Portal - Research Aggregator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-portal="cs">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-icon">💾</div>
+                    <h1>CS Portal</h1>
+                </div>
+            </div>
+
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Navigation</div>
+                    <a href="../index.html" class="nav-item">
+                        <span class="nav-item-icon">🏠</span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#feeds" class="nav-item">
+                        <span class="nav-item-icon">📡</span>
+                        <span>RSS Feeds</span>
+                        <span class="nav-item-badge">Live</span>
+                    </a>
+                    <a href="#guide" class="nav-item active">
+                        <span class="nav-item-icon">📖</span>
+                        <span>Zero-to-Hero Guide</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Related Portals</div>
+                    <a href="cybersecurity.html" class="nav-item">
+                        <span class="nav-item-icon">🔐</span>
+                        <span>Cybersecurity</span>
+                    </a>
+                    <a href="mathematics.html" class="nav-item">
+                        <span class="nav-item-icon">📐</span>
+                        <span>Mathematics</span>
+                    </a>
+                    <a href="engineering.html" class="nav-item">
+                        <span class="nav-item-icon">⚙️</span>
+                        <span>Engineering</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Page Header -->
+            <header class="page-header">
+                <div class="page-header-top">
+                    <div>
+                        <h1 class="page-title">Computer Science</h1>
+                        <p class="page-subtitle">From fundamentals to advanced topics in computing</p>
+                    </div>
+                </div>
+
+                <!-- Search -->
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" placeholder="Search computer science topics...">
+                </div>
+                <div class="search-results"></div>
+            </header>
+
+            <!-- Guide Index -->
+            <aside class="guide-index">
+                <div class="guide-index-header">
+                    <h3 class="guide-index-title">📑 Guide Index</h3>
+                    <button class="guide-index-toggle">−</button>
+                </div>
+                <ul class="guide-index-list">
+                    <!-- Populated by JavaScript -->
+                </ul>
+                <div class="guide-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                    <p class="progress-text">Start reading to track progress</p>
+                </div>
+            </aside>
+
+            <!-- RSS Feeds Section -->
+            <section id="feeds" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">📡</div>
+                    <h2 class="guide-section-title">Live Research Feeds</h2>
+                </div>
+                <div class="guide-content">
+                    <div class="rss-feed-header">
+                        <p>Latest articles from top computer science sources</p>
+                        <div class="rss-feed-actions">
+                            <button class="rss-refresh-btn" onclick="app.refreshFeeds()">
+                                🔄 Refresh
+                            </button>
+                        </div>
+                    </div>
+                    <div class="rss-feed-list">
+                        <div class="loading">
+                            <div class="loading-spinner"></div>
+                            <p class="loading-text">Loading feeds...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Zero-to-Hero Guide -->
+            <section id="section-0" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">1</div>
+                    <h2 class="guide-section-title">Introduction to Computer Science</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Computer Science is the study of <span class="glossary-term" data-term="computation">computation</span>, <span class="glossary-term" data-term="algorithms">algorithms</span>, and information processing. It encompasses both theoretical foundations and practical applications, from understanding how computers work at a fundamental level to building complex software systems.</p>
+
+                    <h3>What is Computer Science?</h3>
+                    <p>At its core, computer science is about solving problems efficiently. Unlike other sciences that study natural phenomena, computer science is largely a constructed discipline - we study systems that humans have created and continue to create. This gives it a unique character: the laws we discover are often laws we've designed.</p>
+
+                    <div class="info-box note">
+                        <div class="info-box-icon">💡</div>
+                        <div class="info-box-content">
+                            <h4>Key Insight</h4>
+                            <p>Computer science is not just about programming. Programming is a tool we use to implement solutions, but the real work is in understanding problems, designing solutions, and analyzing their efficiency.</p>
+                        </div>
+                    </div>
+
+                    <h3>Core Areas of Computer Science</h3>
+                    <ul>
+                        <li><strong>Theory of Computation</strong> - What can be computed? What are the limits of computation?</li>
+                        <li><strong>Algorithms & Data Structures</strong> - How do we solve problems efficiently?</li>
+                        <li><strong>Programming Languages</strong> - How do we express computations?</li>
+                        <li><strong>Computer Architecture</strong> - How do computers physically work?</li>
+                        <li><strong>Operating Systems</strong> - How do we manage computer resources?</li>
+                        <li><strong>Networks & Distributed Systems</strong> - How do computers communicate?</li>
+                        <li><strong>Artificial Intelligence</strong> - Can computers think?</li>
+                        <li><strong>Software Engineering</strong> - How do we build large, reliable systems?</li>
+                    </ul>
+
+                    <h3>Prerequisites for This Guide</h3>
+                    <p>This guide assumes basic familiarity with using computers but no prior programming experience. We'll build from the ground up, explaining each concept as we encounter it. Mathematical concepts will be introduced as needed.</p>
+                </div>
+            </section>
+
+            <section id="section-1" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">2</div>
+                    <h2 class="guide-section-title">Algorithms & Data Structures Fundamentals</h2>
+                </div>
+                <div class="guide-content">
+                    <p>An <span class="glossary-term" data-term="algorithm">algorithm</span> is a step-by-step procedure for solving a problem. A <span class="glossary-term" data-term="data-structure">data structure</span> is a way of organizing data so that it can be used efficiently. Together, they form the foundation of all software.</p>
+
+                    <h3 id="section-1-sub-0">What Makes a Good Algorithm?</h3>
+                    <p>A good algorithm is:</p>
+                    <ul>
+                        <li><strong>Correct</strong> - It produces the right answer for all valid inputs</li>
+                        <li><strong>Efficient</strong> - It uses minimal time and memory</li>
+                        <li><strong>Simple</strong> - It's easy to understand and implement</li>
+                        <li><strong>Robust</strong> - It handles edge cases gracefully</li>
+                    </ul>
+
+                    <h3 id="section-1-sub-1">Big O Notation</h3>
+                    <p><span class="glossary-term" data-term="big-o">Big O notation</span> is how we describe algorithm efficiency. It tells us how the running time or space requirements grow as the input size grows.</p>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Notation</th>
+                                    <th>Name</th>
+                                    <th>Example</th>
+                                    <th>10 items</th>
+                                    <th>1000 items</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>O(1)</code></td>
+                                    <td>Constant</td>
+                                    <td>Array access</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td><code>O(log n)</code></td>
+                                    <td>Logarithmic</td>
+                                    <td>Binary search</td>
+                                    <td>3</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td><code>O(n)</code></td>
+                                    <td>Linear</td>
+                                    <td>Simple search</td>
+                                    <td>10</td>
+                                    <td>1000</td>
+                                </tr>
+                                <tr>
+                                    <td><code>O(n log n)</code></td>
+                                    <td>Linearithmic</td>
+                                    <td>Merge sort</td>
+                                    <td>30</td>
+                                    <td>10000</td>
+                                </tr>
+                                <tr>
+                                    <td><code>O(n²)</code></td>
+                                    <td>Quadratic</td>
+                                    <td>Bubble sort</td>
+                                    <td>100</td>
+                                    <td>1000000</td>
+                                </tr>
+                                <tr>
+                                    <td><code>O(2^n)</code></td>
+                                    <td>Exponential</td>
+                                    <td>Brute force</td>
+                                    <td>1024</td>
+                                    <td>Impractical</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 id="section-1-sub-2">Essential Data Structures</h3>
+
+                    <h4>Arrays</h4>
+                    <p>An <span class="glossary-term" data-term="array">array</span> is a contiguous block of memory storing elements of the same type. Access is O(1), but insertion/deletion can be O(n).</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">Python</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code># Array operations
+arr = [1, 2, 3, 4, 5]
+
+# Access - O(1)
+element = arr[2]  # Gets 3
+
+# Append - O(1) amortized
+arr.append(6)  # [1, 2, 3, 4, 5, 6]
+
+# Insert at position - O(n)
+arr.insert(0, 0)  # [0, 1, 2, 3, 4, 5, 6]
+
+# Search - O(n)
+index = arr.index(3)  # Returns 3</code></pre>
+                    </div>
+
+                    <h4>Linked Lists</h4>
+                    <p>A <span class="glossary-term" data-term="linked-list">linked list</span> stores elements in nodes, each pointing to the next. Insertion/deletion is O(1) at known positions, but access is O(n).</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">Python</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code>class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+
+    def prepend(self, data):  # O(1)
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node</code></pre>
+                    </div>
+
+                    <h4>Hash Tables</h4>
+                    <p>A <span class="glossary-term" data-term="hash-table">hash table</span> provides O(1) average-case access, insertion, and deletion by using a hash function to map keys to array indices.</p>
+
+                    <div class="info-box tip">
+                        <div class="info-box-icon">✅</div>
+                        <div class="info-box-content">
+                            <h4>When to Use Hash Tables</h4>
+                            <p>Use hash tables when you need fast lookups by key, counting occurrences, or detecting duplicates. They're the go-to data structure for many interview problems.</p>
+                        </div>
+                    </div>
+
+                    <h4>Trees</h4>
+                    <p>A <span class="glossary-term" data-term="tree">tree</span> is a hierarchical structure with a root node and child nodes. <span class="glossary-term" data-term="binary-search-tree">Binary Search Trees (BSTs)</span> maintain sorted order, enabling O(log n) operations on balanced trees.</p>
+
+                    <h4>Graphs</h4>
+                    <p>A <span class="glossary-term" data-term="graph">graph</span> consists of vertices (nodes) and edges (connections). Graphs model relationships: social networks, road maps, dependencies, and more.</p>
+                </div>
+            </section>
+
+            <section id="section-2" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">3</div>
+                    <h2 class="guide-section-title">Programming Paradigms</h2>
+                </div>
+                <div class="guide-content">
+                    <p>A <span class="glossary-term" data-term="programming-paradigm">programming paradigm</span> is a fundamental style of programming that determines how we structure and organize code. Understanding different paradigms makes you a more versatile programmer.</p>
+
+                    <h3 id="section-2-sub-0">Imperative Programming</h3>
+                    <p><span class="glossary-term" data-term="imperative">Imperative programming</span> tells the computer exactly what steps to take. You write sequences of statements that change program state.</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">Python - Imperative Style</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code># Imperative: explicit step-by-step instructions
+def sum_squares_imperative(numbers):
+    result = 0
+    for n in numbers:
+        squared = n * n
+        result = result + squared
+    return result</code></pre>
+                    </div>
+
+                    <h3 id="section-2-sub-1">Functional Programming</h3>
+                    <p><span class="glossary-term" data-term="functional">Functional programming</span> treats computation as mathematical function evaluation. It emphasizes <span class="glossary-term" data-term="immutability">immutability</span> and avoiding side effects.</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">Python - Functional Style</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code># Functional: describe what, not how
+def sum_squares_functional(numbers):
+    return sum(map(lambda x: x * x, numbers))
+
+# Or using list comprehension
+def sum_squares_comprehension(numbers):
+    return sum(x * x for x in numbers)</code></pre>
+                    </div>
+
+                    <h3 id="section-2-sub-2">Object-Oriented Programming</h3>
+                    <p><span class="glossary-term" data-term="oop">Object-Oriented Programming (OOP)</span> organizes code around objects that combine data and behavior. Key concepts include <span class="glossary-term" data-term="encapsulation">encapsulation</span>, <span class="glossary-term" data-term="inheritance">inheritance</span>, and <span class="glossary-term" data-term="polymorphism">polymorphism</span>.</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">Python - OOP Style</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code>class Shape:
+    """Base class for shapes - demonstrates encapsulation"""
+    def __init__(self, color):
+        self._color = color  # Protected attribute
+
+    def area(self):
+        raise NotImplementedError
+
+    def describe(self):
+        return f"A {self._color} shape with area {self.area()}"
+
+class Rectangle(Shape):
+    """Inheritance: Rectangle is a Shape"""
+    def __init__(self, color, width, height):
+        super().__init__(color)
+        self.width = width
+        self.height = height
+
+    def area(self):  # Polymorphism: different shapes calculate area differently
+        return self.width * self.height
+
+class Circle(Shape):
+    def __init__(self, color, radius):
+        super().__init__(color)
+        self.radius = radius
+
+    def area(self):
+        import math
+        return math.pi * self.radius ** 2
+
+# Usage - polymorphism in action
+shapes = [Rectangle("red", 4, 5), Circle("blue", 3)]
+for shape in shapes:
+    print(shape.describe())  # Same method call, different behavior</code></pre>
+                    </div>
+
+                    <div class="info-box warning">
+                        <div class="info-box-icon">⚠️</div>
+                        <div class="info-box-content">
+                            <h4>OOP Pitfalls</h4>
+                            <p>Avoid deep inheritance hierarchies. Favor composition over inheritance when possible. Not everything needs to be a class - sometimes a function is simpler and clearer.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-3" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">4</div>
+                    <h2 class="guide-section-title">Software Engineering Principles</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Software engineering is about building software that works, is maintainable, and can evolve over time. These principles guide professional software development.</p>
+
+                    <h3 id="section-3-sub-0">SOLID Principles</h3>
+                    <p>The <span class="glossary-term" data-term="solid">SOLID principles</span> are five design principles for object-oriented software:</p>
+
+                    <ul>
+                        <li><strong>S - Single Responsibility</strong>: A class should have only one reason to change</li>
+                        <li><strong>O - Open/Closed</strong>: Open for extension, closed for modification</li>
+                        <li><strong>L - Liskov Substitution</strong>: Subtypes must be substitutable for their base types</li>
+                        <li><strong>I - Interface Segregation</strong>: Many specific interfaces are better than one general interface</li>
+                        <li><strong>D - Dependency Inversion</strong>: Depend on abstractions, not concretions</li>
+                    </ul>
+
+                    <h3 id="section-3-sub-1">Design Patterns</h3>
+                    <p><span class="glossary-term" data-term="design-pattern">Design patterns</span> are reusable solutions to common problems. Here are essential patterns every developer should know:</p>
+
+                    <h4>Singleton Pattern</h4>
+                    <p>Ensures a class has only one instance. Useful for configurations, connection pools, or logging.</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">Python</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code>class DatabaseConnection:
+    _instance = None
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.connection = cls._create_connection()
+        return cls._instance
+
+    @staticmethod
+    def _create_connection():
+        return "Database connection established"
+
+# Both variables reference the same instance
+db1 = DatabaseConnection()
+db2 = DatabaseConnection()
+print(db1 is db2)  # True</code></pre>
+                    </div>
+
+                    <h4>Factory Pattern</h4>
+                    <p>Creates objects without specifying the exact class. Useful when object creation is complex or depends on configuration.</p>
+
+                    <h4>Observer Pattern</h4>
+                    <p>Defines a subscription mechanism to notify multiple objects about events. Foundation of event-driven programming.</p>
+
+                    <h3 id="section-3-sub-2">Version Control with Git</h3>
+                    <p><span class="glossary-term" data-term="git">Git</span> is the industry-standard version control system. Understanding Git is essential for collaboration.</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">Bash</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code># Essential Git workflow
+git init                        # Initialize repository
+git add .                       # Stage all changes
+git commit -m "Description"     # Commit with message
+git branch feature-name         # Create branch
+git checkout feature-name       # Switch to branch
+git merge feature-name          # Merge branch
+git push origin main            # Push to remote
+
+# Useful commands
+git status                      # See current state
+git log --oneline               # View commit history
+git diff                        # See uncommitted changes
+git stash                       # Temporarily save changes
+git rebase main                 # Rebase onto main branch</code></pre>
+                    </div>
+
+                    <div class="info-box tip">
+                        <div class="info-box-icon">✅</div>
+                        <div class="info-box-content">
+                            <h4>Git Best Practices</h4>
+                            <p>Write meaningful commit messages. Commit often, push regularly. Use branches for features. Never commit secrets or credentials. Review your changes before committing.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-4" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">5</div>
+                    <h2 class="guide-section-title">Databases & Data Management</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Databases are systems for storing, retrieving, and managing data. Choosing the right database and using it effectively is crucial for application performance.</p>
+
+                    <h3 id="section-4-sub-0">Relational Databases (SQL)</h3>
+                    <p><span class="glossary-term" data-term="sql">SQL</span> (Structured Query Language) databases organize data into tables with relationships between them. They ensure data integrity through <span class="glossary-term" data-term="acid">ACID</span> properties.</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">SQL</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code>-- Create tables with relationships
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE posts (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    title VARCHAR(200) NOT NULL,
+    content TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Query with JOIN
+SELECT users.username, posts.title, posts.created_at
+FROM posts
+JOIN users ON posts.user_id = users.id
+WHERE users.username = 'john_doe'
+ORDER BY posts.created_at DESC;
+
+-- Aggregation
+SELECT users.username, COUNT(posts.id) as post_count
+FROM users
+LEFT JOIN posts ON users.id = posts.user_id
+GROUP BY users.id
+HAVING COUNT(posts.id) > 5;</code></pre>
+                    </div>
+
+                    <h3 id="section-4-sub-1">NoSQL Databases</h3>
+                    <p><span class="glossary-term" data-term="nosql">NoSQL</span> databases provide flexible schemas and horizontal scaling. Types include document stores (MongoDB), key-value stores (Redis), and graph databases (Neo4j).</p>
+
+                    <h3 id="section-4-sub-2">Database Optimization</h3>
+                    <p>Key optimization techniques:</p>
+                    <ul>
+                        <li><strong>Indexing</strong> - Create indexes on frequently queried columns</li>
+                        <li><strong>Query optimization</strong> - Use EXPLAIN to analyze query plans</li>
+                        <li><strong>Normalization</strong> - Reduce redundancy (but denormalize for read performance)</li>
+                        <li><strong>Connection pooling</strong> - Reuse database connections</li>
+                        <li><strong>Caching</strong> - Cache frequently accessed data</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section-5" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">6</div>
+                    <h2 class="guide-section-title">System Design Fundamentals</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="system-design">System design</span> is the process of defining the architecture, components, and interfaces of a system to satisfy specified requirements. It's essential for building scalable applications.</p>
+
+                    <h3 id="section-5-sub-0">Scalability Concepts</h3>
+                    <p><span class="glossary-term" data-term="scalability">Scalability</span> is a system's ability to handle increased load. Two approaches:</p>
+
+                    <ul>
+                        <li><strong>Vertical Scaling (Scale Up)</strong> - Add more resources to a single machine</li>
+                        <li><strong>Horizontal Scaling (Scale Out)</strong> - Add more machines to distribute load</li>
+                    </ul>
+
+                    <h3 id="section-5-sub-1">Load Balancing</h3>
+                    <p>A <span class="glossary-term" data-term="load-balancer">load balancer</span> distributes incoming requests across multiple servers. Common algorithms include round-robin, least connections, and IP hash.</p>
+
+                    <h3 id="section-5-sub-2">Caching Strategies</h3>
+                    <p><span class="glossary-term" data-term="cache">Caching</span> stores frequently accessed data in fast storage. Cache strategies:</p>
+
+                    <ul>
+                        <li><strong>Cache-aside</strong> - Application checks cache first, loads from DB if miss</li>
+                        <li><strong>Write-through</strong> - Write to cache and DB simultaneously</li>
+                        <li><strong>Write-behind</strong> - Write to cache, async write to DB</li>
+                    </ul>
+
+                    <h3 id="section-5-sub-3">Microservices Architecture</h3>
+                    <p><span class="glossary-term" data-term="microservices">Microservices</span> break applications into small, independent services that communicate via APIs. Benefits include independent deployment, technology flexibility, and fault isolation.</p>
+
+                    <div class="info-box warning">
+                        <div class="info-box-icon">⚠️</div>
+                        <div class="info-box-content">
+                            <h4>Microservices Complexity</h4>
+                            <p>Microservices add operational complexity: distributed transactions, service discovery, network latency. Start with a monolith and extract services as needed.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-6" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">7</div>
+                    <h2 class="guide-section-title">Artificial Intelligence & Machine Learning</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="ai">Artificial Intelligence (AI)</span> enables machines to perform tasks that typically require human intelligence. <span class="glossary-term" data-term="machine-learning">Machine Learning (ML)</span> is a subset where systems learn from data.</p>
+
+                    <h3 id="section-6-sub-0">Types of Machine Learning</h3>
+
+                    <h4>Supervised Learning</h4>
+                    <p>Learn from labeled examples. Given input-output pairs, predict outputs for new inputs.</p>
+                    <ul>
+                        <li><strong>Classification</strong> - Predict categories (spam/not spam)</li>
+                        <li><strong>Regression</strong> - Predict continuous values (house prices)</li>
+                    </ul>
+
+                    <h4>Unsupervised Learning</h4>
+                    <p>Find patterns in unlabeled data.</p>
+                    <ul>
+                        <li><strong>Clustering</strong> - Group similar items (customer segments)</li>
+                        <li><strong>Dimensionality Reduction</strong> - Compress features while preserving information</li>
+                    </ul>
+
+                    <h4>Reinforcement Learning</h4>
+                    <p>Learn by interacting with an environment to maximize rewards. Used in game AI and robotics.</p>
+
+                    <h3 id="section-6-sub-1">Neural Networks & Deep Learning</h3>
+                    <p><span class="glossary-term" data-term="neural-network">Neural networks</span> are computing systems inspired by biological brains. <span class="glossary-term" data-term="deep-learning">Deep learning</span> uses neural networks with many layers to learn complex patterns.</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header">
+                            <span class="code-block-lang">Python - Simple Neural Network</span>
+                            <button class="code-block-copy">Copy</button>
+                        </div>
+                        <pre><code>import numpy as np
+
+# Simple 2-layer neural network
+class NeuralNetwork:
+    def __init__(self, input_size, hidden_size, output_size):
+        # Initialize weights randomly
+        self.W1 = np.random.randn(input_size, hidden_size) * 0.01
+        self.W2 = np.random.randn(hidden_size, output_size) * 0.01
+
+    def sigmoid(self, x):
+        return 1 / (1 + np.exp(-x))
+
+    def forward(self, X):
+        # Forward propagation
+        self.z1 = np.dot(X, self.W1)
+        self.a1 = self.sigmoid(self.z1)
+        self.z2 = np.dot(self.a1, self.W2)
+        output = self.sigmoid(self.z2)
+        return output
+
+# Usage
+nn = NeuralNetwork(3, 4, 1)
+input_data = np.array([[1, 0, 1]])
+prediction = nn.forward(input_data)</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-7" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">8</div>
+                    <h2 class="guide-section-title">Research Directions & Resources</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Computer science evolves rapidly. Here are current research frontiers and resources for continued learning.</p>
+
+                    <h3>Current Research Frontiers</h3>
+                    <ul>
+                        <li><strong>Quantum Computing</strong> - Using quantum mechanics for computation</li>
+                        <li><strong>Large Language Models</strong> - GPT, Claude, and next-generation AI</li>
+                        <li><strong>Edge Computing</strong> - Processing data close to its source</li>
+                        <li><strong>Formal Verification</strong> - Mathematically proving software correctness</li>
+                        <li><strong>Privacy-Preserving Computation</strong> - Computing on encrypted data</li>
+                    </ul>
+
+                    <h3>Recommended Learning Resources</h3>
+
+                    <h4>Books</h4>
+                    <ul>
+                        <li>"Introduction to Algorithms" (CLRS) - The algorithm bible</li>
+                        <li>"Clean Code" by Robert Martin - Professional coding practices</li>
+                        <li>"Designing Data-Intensive Applications" by Martin Kleppmann - System design</li>
+                        <li>"Structure and Interpretation of Computer Programs" - CS fundamentals</li>
+                    </ul>
+
+                    <h4>Online Courses</h4>
+                    <ul>
+                        <li>MIT OpenCourseWare - Free university courses</li>
+                        <li>Coursera/edX - Structured learning paths</li>
+                        <li>freeCodeCamp - Hands-on projects</li>
+                    </ul>
+
+                    <h4>Practice Platforms</h4>
+                    <ul>
+                        <li>LeetCode - Algorithm challenges</li>
+                        <li>HackerRank - Coding practice</li>
+                        <li>Project Euler - Mathematical programming</li>
+                    </ul>
+
+                    <div class="info-box tip">
+                        <div class="info-box-icon">✅</div>
+                        <div class="info-box-content">
+                            <h4>Learning Strategy</h4>
+                            <p>Build projects. Reading and watching tutorials isn't enough - you need to write code, debug problems, and ship working software. Start small, iterate, and always be building something.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Content Length Controller -->
+        <div class="content-length-controller">
+            <span class="content-length-label">Content Depth:</span>
+            <input type="range" class="content-length-slider" min="1" max="12" value="12">
+            <span class="content-length-value">12 pages</span>
+        </div>
+
+        <!-- Definition Window (populated by JS) -->
+        <div id="definition-window"></div>
+    </div>
+
+    <script src="../js/core.js"></script>
+    <script>
+        // Computer Science Glossary Terms
+        const csGlossary = {
+            'computation': {
+                term: 'Computation',
+                category: 'Fundamentals',
+                definition: 'The process of calculating or determining something by mathematical or logical methods. In computer science, computation refers to any type of calculation that follows a well-defined model, including arithmetic, data processing, and algorithmic problem-solving.',
+                example: 'Adding two numbers, sorting a list, or running a web server are all forms of computation.',
+                relatedTerms: ['algorithm', 'turing-machine']
+            },
+            'algorithm': {
+                term: 'Algorithm',
+                category: 'Fundamentals',
+                definition: 'A finite sequence of well-defined instructions for solving a class of problems or performing a computation. Algorithms are the step-by-step procedures that computers follow to process data and produce results.',
+                example: 'Binary search is an algorithm that finds an item in a sorted list by repeatedly dividing the search interval in half.',
+                relatedTerms: ['big-o', 'data-structure', 'computation']
+            },
+            'data-structure': {
+                term: 'Data Structure',
+                category: 'Fundamentals',
+                definition: 'A specialized format for organizing, processing, retrieving, and storing data. Different data structures are suited for different types of operations - arrays for random access, linked lists for frequent insertions, hash tables for fast lookups.',
+                example: 'An array stores elements in contiguous memory locations, allowing O(1) access by index.',
+                relatedTerms: ['array', 'linked-list', 'hash-table', 'tree', 'graph']
+            },
+            'big-o': {
+                term: 'Big O Notation',
+                category: 'Analysis',
+                definition: 'Mathematical notation describing the limiting behavior of a function as the input approaches infinity. In computer science, it characterizes algorithm efficiency by describing how runtime or space requirements grow with input size, ignoring constants and lower-order terms.',
+                example: 'O(n) means runtime grows linearly with input size. Doubling input doubles runtime.',
+                relatedTerms: ['algorithm', 'time-complexity', 'space-complexity']
+            },
+            'array': {
+                term: 'Array',
+                category: 'Data Structures',
+                definition: 'A contiguous block of memory storing a fixed-size sequential collection of elements of the same type. Arrays provide O(1) random access but O(n) insertion/deletion in the middle.',
+                example: 'int[] numbers = {1, 2, 3, 4, 5}; numbers[2] returns 3.',
+                relatedTerms: ['data-structure', 'linked-list', 'dynamic-array']
+            },
+            'linked-list': {
+                term: 'Linked List',
+                category: 'Data Structures',
+                definition: 'A linear data structure where elements are stored in nodes, each containing data and a reference to the next node. Provides O(1) insertion/deletion at known positions but O(n) random access.',
+                example: 'A singly linked list: Head -> Node1 -> Node2 -> Node3 -> null',
+                relatedTerms: ['data-structure', 'array', 'node']
+            },
+            'hash-table': {
+                term: 'Hash Table',
+                category: 'Data Structures',
+                definition: 'A data structure that implements an associative array, mapping keys to values using a hash function. Provides O(1) average-case access, insertion, and deletion. Handles collisions through chaining or open addressing.',
+                example: 'Python dictionaries and JavaScript objects are hash table implementations.',
+                relatedTerms: ['data-structure', 'hash-function', 'collision']
+            },
+            'tree': {
+                term: 'Tree',
+                category: 'Data Structures',
+                definition: 'A hierarchical data structure consisting of nodes connected by edges. Has a root node and child nodes, forming a parent-child relationship. No cycles allowed. Used for hierarchical data, searching, and sorting.',
+                example: 'File systems use tree structures: root directory contains subdirectories and files.',
+                relatedTerms: ['binary-search-tree', 'graph', 'node', 'root']
+            },
+            'binary-search-tree': {
+                term: 'Binary Search Tree (BST)',
+                category: 'Data Structures',
+                definition: 'A binary tree where each node has at most two children, and for each node, all values in the left subtree are smaller and all values in the right subtree are larger. Enables O(log n) search, insert, and delete on balanced trees.',
+                example: 'BST with root 5: left child 3 (with children 1, 4), right child 7 (with children 6, 8).',
+                relatedTerms: ['tree', 'balanced-tree', 'avl-tree', 'red-black-tree']
+            },
+            'graph': {
+                term: 'Graph',
+                category: 'Data Structures',
+                definition: 'A non-linear data structure consisting of vertices (nodes) and edges connecting pairs of vertices. Can be directed or undirected, weighted or unweighted. Models relationships between entities.',
+                example: 'Social networks (users as vertices, friendships as edges), road maps (cities as vertices, roads as edges).',
+                relatedTerms: ['tree', 'vertex', 'edge', 'bfs', 'dfs']
+            },
+            'programming-paradigm': {
+                term: 'Programming Paradigm',
+                category: 'Programming',
+                definition: 'A fundamental style of computer programming that dictates how programs are structured and organized. Major paradigms include imperative, functional, object-oriented, and declarative programming.',
+                example: 'Python supports multiple paradigms: imperative, functional, and object-oriented.',
+                relatedTerms: ['imperative', 'functional', 'oop']
+            },
+            'imperative': {
+                term: 'Imperative Programming',
+                category: 'Programming',
+                definition: 'A programming paradigm using statements that change program state. The programmer explicitly specifies the sequence of operations to perform. Includes procedural and object-oriented programming.',
+                example: 'for (int i = 0; i < n; i++) { sum += array[i]; } - explicit step-by-step instructions.',
+                relatedTerms: ['programming-paradigm', 'procedural', 'state']
+            },
+            'functional': {
+                term: 'Functional Programming',
+                category: 'Programming',
+                definition: 'A programming paradigm treating computation as evaluation of mathematical functions. Emphasizes immutability, pure functions (no side effects), and function composition. Makes code more predictable and testable.',
+                example: 'map(lambda x: x*2, [1,2,3]) returns [2,4,6] without modifying the original list.',
+                relatedTerms: ['programming-paradigm', 'immutability', 'pure-function', 'higher-order-function']
+            },
+            'oop': {
+                term: 'Object-Oriented Programming',
+                category: 'Programming',
+                definition: 'A programming paradigm based on the concept of objects containing data (attributes) and code (methods). Key principles include encapsulation, inheritance, polymorphism, and abstraction.',
+                example: 'A Car class with attributes (color, speed) and methods (accelerate, brake).',
+                relatedTerms: ['encapsulation', 'inheritance', 'polymorphism', 'class', 'object']
+            },
+            'encapsulation': {
+                term: 'Encapsulation',
+                category: 'OOP',
+                definition: 'Bundling data and methods that operate on that data within a single unit (class), and restricting direct access to some components. Hides internal implementation details and exposes only necessary interfaces.',
+                example: 'A BankAccount class hides the balance variable but exposes deposit() and withdraw() methods.',
+                relatedTerms: ['oop', 'information-hiding', 'access-modifier']
+            },
+            'inheritance': {
+                term: 'Inheritance',
+                category: 'OOP',
+                definition: 'A mechanism where a new class (subclass) is derived from an existing class (superclass), inheriting its attributes and methods. Enables code reuse and establishes an is-a relationship.',
+                example: 'class Dog(Animal): Dog inherits from Animal, so Dog "is an" Animal.',
+                relatedTerms: ['oop', 'polymorphism', 'superclass', 'subclass']
+            },
+            'polymorphism': {
+                term: 'Polymorphism',
+                category: 'OOP',
+                definition: 'The ability of different classes to be treated as instances of the same class through a common interface. "Many forms" - the same operation can behave differently on different classes.',
+                example: 'Both Dog and Cat have speak() method, but Dog.speak() returns "bark" while Cat.speak() returns "meow".',
+                relatedTerms: ['oop', 'inheritance', 'interface', 'method-overriding']
+            },
+            'immutability': {
+                term: 'Immutability',
+                category: 'Programming',
+                definition: 'The property of an object whose state cannot be modified after creation. Instead of changing existing objects, operations create new objects. Eliminates many bugs related to shared state.',
+                example: 'In Python, strings are immutable: "hello".upper() returns "HELLO" but doesn\'t change the original string.',
+                relatedTerms: ['functional', 'state', 'side-effect']
+            },
+            'solid': {
+                term: 'SOLID Principles',
+                category: 'Software Engineering',
+                definition: 'Five design principles for object-oriented software that make systems more understandable, flexible, and maintainable: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.',
+                example: 'Single Responsibility: A class should have only one reason to change.',
+                relatedTerms: ['oop', 'design-pattern', 'clean-code']
+            },
+            'design-pattern': {
+                term: 'Design Pattern',
+                category: 'Software Engineering',
+                definition: 'A general, reusable solution to a commonly occurring problem in software design. Not finished code, but templates for how to solve problems that can be adapted to specific situations.',
+                example: 'Singleton pattern ensures only one instance of a class exists (e.g., database connection pool).',
+                relatedTerms: ['solid', 'singleton', 'factory', 'observer']
+            },
+            'git': {
+                term: 'Git',
+                category: 'Tools',
+                definition: 'A distributed version control system for tracking changes in source code. Enables multiple developers to work together, maintains complete history of changes, and supports branching and merging workflows.',
+                example: 'git commit -m "Add user authentication" saves current changes with a descriptive message.',
+                relatedTerms: ['version-control', 'branch', 'merge', 'commit']
+            },
+            'sql': {
+                term: 'SQL',
+                category: 'Databases',
+                definition: 'Structured Query Language - a domain-specific language for managing and querying relational databases. Used for creating, reading, updating, and deleting data (CRUD operations).',
+                example: 'SELECT * FROM users WHERE age > 18 ORDER BY name;',
+                relatedTerms: ['database', 'relational-database', 'acid', 'query']
+            },
+            'acid': {
+                term: 'ACID Properties',
+                category: 'Databases',
+                definition: 'Four properties guaranteeing reliable database transactions: Atomicity (all or nothing), Consistency (valid state to valid state), Isolation (concurrent transactions don\'t interfere), Durability (committed changes persist).',
+                example: 'Bank transfer: either both accounts update or neither does (atomicity).',
+                relatedTerms: ['sql', 'transaction', 'database', 'consistency']
+            },
+            'nosql': {
+                term: 'NoSQL',
+                category: 'Databases',
+                definition: 'A category of database management systems that don\'t use traditional relational tables. Includes document stores (MongoDB), key-value stores (Redis), column stores (Cassandra), and graph databases (Neo4j).',
+                example: 'MongoDB stores data as JSON-like documents: {name: "John", age: 30, hobbies: ["reading", "coding"]}',
+                relatedTerms: ['sql', 'database', 'document-store', 'key-value']
+            },
+            'system-design': {
+                term: 'System Design',
+                category: 'Architecture',
+                definition: 'The process of defining the architecture, modules, interfaces, and data for a system to satisfy specified requirements. Involves trade-offs between scalability, reliability, maintainability, and cost.',
+                example: 'Designing a URL shortener requires considering: database choice, caching strategy, load balancing, and API design.',
+                relatedTerms: ['scalability', 'microservices', 'load-balancer', 'cache']
+            },
+            'scalability': {
+                term: 'Scalability',
+                category: 'Architecture',
+                definition: 'A system\'s ability to handle growing amounts of work by adding resources. Vertical scaling adds more power to existing machines; horizontal scaling adds more machines.',
+                example: 'Netflix scales horizontally by adding more servers during peak viewing hours.',
+                relatedTerms: ['system-design', 'horizontal-scaling', 'vertical-scaling', 'load-balancer']
+            },
+            'load-balancer': {
+                term: 'Load Balancer',
+                category: 'Architecture',
+                definition: 'A device or software that distributes incoming network traffic across multiple servers to ensure no single server bears too much load. Improves responsiveness and availability.',
+                example: 'Round-robin load balancing sends requests to servers in rotation: Server1, Server2, Server3, Server1...',
+                relatedTerms: ['system-design', 'scalability', 'reverse-proxy', 'high-availability']
+            },
+            'cache': {
+                term: 'Cache',
+                category: 'Architecture',
+                definition: 'A hardware or software component that stores data so future requests can be served faster. Caching reduces database load and latency by keeping frequently accessed data in fast storage.',
+                example: 'Redis caches user session data in memory for sub-millisecond access instead of database queries.',
+                relatedTerms: ['system-design', 'redis', 'cdn', 'cache-invalidation']
+            },
+            'microservices': {
+                term: 'Microservices',
+                category: 'Architecture',
+                definition: 'An architectural style where an application is composed of small, independent services communicating over APIs. Each service is deployable, scalable, and maintainable independently.',
+                example: 'An e-commerce app might have separate services for: user authentication, product catalog, shopping cart, payment processing.',
+                relatedTerms: ['system-design', 'api', 'monolith', 'service-mesh']
+            },
+            'ai': {
+                term: 'Artificial Intelligence',
+                category: 'AI/ML',
+                definition: 'The simulation of human intelligence in machines programmed to think and learn. Encompasses machine learning, natural language processing, computer vision, robotics, and expert systems.',
+                example: 'Virtual assistants like Siri use AI for speech recognition and natural language understanding.',
+                relatedTerms: ['machine-learning', 'deep-learning', 'neural-network', 'nlp']
+            },
+            'machine-learning': {
+                term: 'Machine Learning',
+                category: 'AI/ML',
+                definition: 'A subset of AI where systems learn from data to improve performance on tasks without being explicitly programmed. Types include supervised, unsupervised, and reinforcement learning.',
+                example: 'Email spam filters learn from examples of spam and non-spam emails to classify new emails.',
+                relatedTerms: ['ai', 'deep-learning', 'supervised-learning', 'neural-network']
+            },
+            'neural-network': {
+                term: 'Neural Network',
+                category: 'AI/ML',
+                definition: 'A computing system inspired by biological neural networks. Consists of layers of interconnected nodes (neurons) that process information. Foundation of deep learning.',
+                example: 'A neural network for digit recognition has input neurons for pixels, hidden layers for feature detection, output neurons for digits 0-9.',
+                relatedTerms: ['deep-learning', 'machine-learning', 'perceptron', 'backpropagation']
+            },
+            'deep-learning': {
+                term: 'Deep Learning',
+                category: 'AI/ML',
+                definition: 'A subset of machine learning using neural networks with many layers (deep neural networks). Automatically learns hierarchical representations of data. Powers image recognition, language models, and more.',
+                example: 'GPT models use deep learning with transformer architecture to generate human-like text.',
+                relatedTerms: ['neural-network', 'machine-learning', 'cnn', 'transformer']
+            }
+        };
+
+        // Initialize glossary when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            app.glossary.addTerms(csGlossary);
+        });
+    </script>
+</body>
+</html>

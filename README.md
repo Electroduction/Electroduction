@@ -2,20 +2,16 @@
 <b>Projects:</b>
 https://drive.google.com/drive/folders/1KOyzP4kdgR71ya3HPVXrweMN9Op7SqWX?usp=sharing
 
-<b>Summer Project Video Game</b>
-WIP
+<b></b>
 
-<b>Summer Project Machine Learning</b>
-WIP
-Took the Google ML AND AI courses.
+<b></b>
 
-<b>Summer Project File Save Script</b>
-Developed file save program
+<b></b>
 
-<b>Python Data Scraper</b>
-Python scraper sucessfully developed using Selienium and Webdriver
+<b></b>
 
-<b>IT Capstone: Set Up and Secure a Website</b>
+
+<b></b>
 Set up website with security and maintenance.
 https://docs.google.com/document/d/1ZJRpx_zMxTA050lJfydK9I8Q8G-CvEMZdKdaIRWPRYU/edit?usp=sharing
 
@@ -34,7 +30,7 @@ https://docs.google.com/document/d/1Uxo761lpYhRSRG63ESPG-30bDoJmsmkcjf-NxmqAVJ0/
 <h2>📘 Education and Experience:</h2>
 Triple Major:
 Bachelor of Science in Information Systems and Technology (Cybersecurity) - CSUSB
-Pursuing degrees in Software Engineering and Finance through Study.com, WGU/Georgia Tech transfer programs.
+Pursuing degrees in Software Engineering and Finance through Wgu programs.
 
 Work Experience:
 AI Tutor: Gained hands-on experience in AI and machine learning with tools like MongoDB and Swift.
@@ -42,9 +38,7 @@ AI Tutor: Gained hands-on experience in AI and machine learning with tools like 
 Interests:
 Software development, cybersecurity, fintech, IT, and bioinformatics.
 <h2>📚 Learning and Research Interests:</h2>
-Exploring AI Projects and Machine Learning Applications.
-Developing skills in MongoDB, Swift, and Advanced Cybersecurity Systems.
-Gaining deeper understanding of Fintech Innovations and Bioinformatics Systems.
+
 <h2>🤝 Connect with Me:</h2>
 <img align="left" alt="Kenny Situ | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" /> <img align="left" alt="Kenny Situ | GitHub" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg" /> <img align="left" alt="Kenny Situ | Portfolio" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/google.svg" />
 
