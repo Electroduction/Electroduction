@@ -1,0 +1,120 @@
+{
+  "_source": "Berklee College of Music curriculum, Hooktheory dataset, Jazz Theory resources",
+  "_note": "Long-tail music theory. Specific voicings, extensions, substitutions not in generic training.",
+  "chord_types": {
+    "triads": {
+      "major": {"intervals": [0, 4, 7], "symbol": "maj", "sound": "bright, stable", "example_C": ["C", "E", "G"]},
+      "minor": {"intervals": [0, 3, 7], "symbol": "m", "sound": "dark, sad", "example_C": ["C", "Eb", "G"]},
+      "diminished": {"intervals": [0, 3, 6], "symbol": "dim", "sound": "tense, unstable", "example_C": ["C", "Eb", "Gb"]},
+      "augmented": {"intervals": [0, 4, 8], "symbol": "aug", "sound": "mysterious, unresolved", "example_C": ["C", "E", "G#"]}
+    },
+    "seventh_chords": {
+      "major_7": {"intervals": [0, 4, 7, 11], "symbol": "maj7", "sound": "dreamy, sophisticated", "use": "I chord in jazz/R&B"},
+      "dominant_7": {"intervals": [0, 4, 7, 10], "symbol": "7", "sound": "bluesy, wants resolution", "use": "V7→I resolution; blues"},
+      "minor_7": {"intervals": [0, 3, 7, 10], "symbol": "m7", "sound": "mellow, jazzy", "use": "ii chord in major key"},
+      "half_diminished": {"intervals": [0, 3, 6, 10], "symbol": "m7b5 or ø", "sound": "dark, tense", "use": "ii chord in minor key"},
+      "fully_diminished": {"intervals": [0, 3, 6, 9], "symbol": "dim7 or °7", "sound": "maximum tension", "use": "vii° in classical; chromatic passing"},
+      "minor_major_7": {"intervals": [0, 3, 7, 11], "symbol": "mMaj7", "sound": "dark, cinematic", "use": "Horror/film scores; James Bond chord"},
+      "dominant_7_flat5": {"intervals": [0, 4, 6, 10], "symbol": "7b5", "sound": "jazz, polytonal"},
+      "augmented_7": {"intervals": [0, 4, 8, 10], "symbol": "7#5", "sound": "jazz, unsettled"}
+    },
+    "extended_chords": {
+      "9th": {"add9_vs_maj9": "add9 = triad + 9 (no 7th); maj9 = full maj7 + 9th", "dominant_9": "7+9; most common in jazz/R&B"},
+      "11th": {"dominant_11": "Often written 7sus4; suspended sound", "major_11": "#11 (Lydian sound) avoids clash with major 3rd"},
+      "13th": {"description": "Ultimate jazz chord; technically 7 stacked notes", "voicing_tip": "Drop inner notes; play 1-3-7-9-13 minimum"}
+    },
+    "sus_chords": {
+      "sus2": {"intervals": [0, 2, 7], "description": "Replace 3rd with 2nd; open, ambiguous", "use": "Pop; opening chords"},
+      "sus4": {"intervals": [0, 5, 7], "description": "Replace 3rd with 4th; wants to resolve down", "use": "Rock, pop; Dsus4→D classic resolution"}
+    },
+    "altered_dominants": {
+      "7b9": {"description": "Tritone + b9; maximum tension; bebop staple"},
+      "7#9": {"description": "Hendrix chord (E7#9); rock + jazz crossover"},
+      "7b13": {"description": "Altered dominant; jazz substitution"},
+      "alt_chord": {"description": "7 with b9 OR #9 AND b5 OR #5; 'altered' = max alterations; leads strongly to I"}
+    }
+  },
+  "chord_progressions": {
+    "functional_harmony": {
+      "ii_V_I": {
+        "C_major": ["Dm7", "G7", "Cmaj7"],
+        "C_minor": ["Dm7b5", "G7b9", "Cm"],
+        "description": "Most fundamental progression in jazz; 80% of jazz standards",
+        "voice_leading": "Root moves down 5ths; creates smooth motion"
+      },
+      "I_vi_IV_V": {
+        "C_major": ["C", "Am", "F", "G"],
+        "use": "50s doo-wop, countless pop songs",
+        "examples": ["Stand By Me", "Earth Angel", "every bubble gum pop song"]
+      },
+      "I_V_vi_iii_IV": {
+        "C_major": ["C", "G", "Am", "Em", "F"],
+        "examples": ["Canon in D", "Pachelbel; countless pop songs use this"]
+      }
+    },
+    "genre_specific": {
+      "jazz_rhythm_changes": {
+        "A_section": ["Bb", "G7", "Cm7", "F7", "Bb", "G7", "Cm7", "F7"],
+        "B_section": ["D7", "D7", "G7", "G7", "C7", "C7", "F7", "F7"],
+        "description": "Based on 'I Got Rhythm'; hundreds of jazz heads built on this"
+      },
+      "blues_12_bar": {
+        "standard": ["I7", "I7", "I7", "I7", "IV7", "IV7", "I7", "I7", "V7", "IV7", "I7", "V7"],
+        "quick_four": "IV in bar 2 adds harmonic movement",
+        "jazz_blues_substitutions": "iii-VI-ii-V instead of V7 in final 4 bars"
+      },
+      "modal_jazz": {
+        "so_what_voicing": "Minor 11 chord; 2 perfect 4ths + major 3rd on top",
+        "dorian_mode": "Natural minor with raised 6th; Dm dorian over D-7 for 16+ bars",
+        "examples": "Miles Davis 'Kind of Blue'; John Coltrane 'A Love Supreme' (quartal harmony)"
+      },
+      "neo_soul": {
+        "characteristics": "maj7#11, min9, 9sus4 chords; borrowed chords; chromatic voice leading",
+        "examples": ["D'Angelo", "Erykah Badu", "Robert Glasper"],
+        "signature_chord": "9sus2 or 9sus4 voicings (Herbie Hancock style)"
+      },
+      "lofi_hip_hop": {
+        "characteristics": "Jazzy chords (maj7, min7, 9ths); samples; vinyl crackle; slowed BPM",
+        "typical_progression": ["Fmaj7", "Em7", "Am7", "Dm7"],
+        "bpm_range": [70, 95],
+        "key_elements": "Dusty sample + chopped drums + simple progression + lo-fi production"
+      }
+    },
+    "chord_substitutions": {
+      "tritone_substitution": {
+        "description": "Replace V7 with chord a tritone away (b5/b2 interval)",
+        "example": "G7→Db7 in key of C; both have tritone Bb-E (enharmonic to Cb-F)",
+        "use": "Creates chromatic bass line when going to I"
+      },
+      "secondary_dominants": "V7 of any chord; adds temporary tonicization; borrows outside key",
+      "borrowed_chords": {
+        "bVII": "Major chord from parallel minor; common in rock (Bb in C major)",
+        "iv_in_major": "Minor 4 chord; borrowed from parallel minor; very emotional",
+        "bIII_and_bVI": "Also from parallel minor; adds dark color to major key"
+      },
+      "neapolitan_chord": "bII major chord (flat-2 major); used before V7; dramatic cadence"
+    }
+  },
+  "scales_and_modes": {
+    "major_modes": {
+      "ionian": "Standard major scale; happy, stable",
+      "dorian": "2nd mode; minor with raised 6; jazzy, soulful; Carlos Santana / Daft Punk",
+      "phrygian": "3rd mode; minor with b2; Spanish, Flamenco sound",
+      "lydian": "4th mode; major with #4; dreamy, cinematic; John Williams, Ennio Morricone",
+      "mixolydian": "5th mode; major with b7; bluesy, rock; 'Norwegian Wood'",
+      "aeolian": "6th mode = natural minor; sad, classical",
+      "locrian": "7th mode; diminished; dissonant; rare; heavy metal"
+    },
+    "melodic_minor_modes": {
+      "melodic_minor": "Minor with raised 6 AND 7; smooth ascending line",
+      "lydian_dominant": "4th mode of melodic minor; #4 + b7; 'outside' jazz sound",
+      "altered_scale": "7th mode of melodic minor; all notes altered; maximum outside jazz"
+    },
+    "pentatonic_scales": {
+      "major_pentatonic": [0, 2, 4, 7, 9],
+      "minor_pentatonic": [0, 3, 5, 7, 10],
+      "blue_note": "Add b5 to minor pentatonic; blues scale",
+      "use": "Most common improvisation starting point; works over almost any chord"
+    }
+  }
+}

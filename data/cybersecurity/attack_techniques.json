@@ -1,0 +1,148 @@
+{
+  "_source": "MITRE ATT&CK v15, NVD, CISA Advisories",
+  "_note": "Long-tail attack technique data. Each technique includes detection logic for SOC teams.",
+  "techniques": [
+    {
+      "id": "T1059.001",
+      "name": "Command and Scripting Interpreter: PowerShell",
+      "tactic": "Execution",
+      "description": "Adversaries abuse PowerShell to execute malicious code. Commonly used for fileless malware, lateral movement, and data exfiltration.",
+      "sub_techniques": ["T1059.001", "T1059.003", "T1059.004"],
+      "prevalence": "High — used in >60% of enterprise attacks",
+      "detection_signals": [
+        "powershell.exe with -EncodedCommand or -enc flag",
+        "PowerShell downloading content: (IEX)(New-Object Net.WebClient)",
+        "Base64 encoded payloads in command line",
+        "powershell.exe spawned by Office apps (Word, Excel) — critical alert",
+        "AMSI bypass attempts: [Ref].Assembly.GetType"
+      ],
+      "falco_rule": "- rule: Suspicious PowerShell Execution\n  condition: spawned_process and proc.name=powershell.exe and proc.args contains \"-enc\"\n  output: PowerShell with encoded args (user=%user.name args=%proc.args)\n  priority: WARNING",
+      "mitigations": ["T1059.001 — PowerShell constrained language mode", "Application whitelisting (WDAC)", "Windows Defender Credential Guard"],
+      "real_world_campaigns": ["Emotet", "APT29/Cozy Bear", "Carbanak"]
+    },
+    {
+      "id": "T1078",
+      "name": "Valid Accounts",
+      "tactic": "Defense Evasion, Persistence, Privilege Escalation",
+      "description": "Using legitimate credentials to access systems. Often obtained via phishing, credential stuffing, or purchase on dark web.",
+      "prevalence": "Very High — #1 initial access vector in 2024-2025",
+      "detection_signals": [
+        "Login from unusual geolocation/IP (impossible travel)",
+        "Login outside business hours with privileged account",
+        "Successful login after multiple failures",
+        "Account accessing resources it never accessed before",
+        "Service account used interactively"
+      ],
+      "falco_rule": "- rule: Privileged Account Unusual Activity\n  condition: user.name in (admin_accounts) and not proc.name in (authorized_procs)\n  priority: CRITICAL",
+      "mitigations": ["MFA everywhere", "Privileged Access Workstations (PAW)", "Zero Trust Network Access"],
+      "real_world_campaigns": ["Scattered Spider", "Lapsus$", "Solar Winds (UNC2452)"]
+    },
+    {
+      "id": "T1566.001",
+      "name": "Phishing: Spearphishing Attachment",
+      "tactic": "Initial Access",
+      "description": "Targeted phishing email with malicious attachment. Attacker researches target for personalization (LinkedIn, company website).",
+      "prevalence": "High — 36% of all breaches (Verizon DBIR 2025)",
+      "file_types_weaponized": [".docm", ".xlsm", ".pdf (JS)", ".lnk", ".iso", ".html (QR)"],
+      "detection_signals": [
+        "Office macros enabled after receiving external email",
+        "Email with .lnk or .iso attachment from external sender",
+        "Child process of Outlook/Teams: cmd.exe, wscript.exe, mshta.exe",
+        "HTML smuggling: script creating blob URL download"
+      ],
+      "mitigations": ["Mark external emails clearly", "Block macro execution from internet-sourced files", "Email sandbox detonation"],
+      "evasion_techniques": ["Password-protected ZIP to bypass sandbox", "HTML smuggling", "QR codes (evade text filters)"]
+    },
+    {
+      "id": "T1055",
+      "name": "Process Injection",
+      "tactic": "Defense Evasion, Privilege Escalation",
+      "description": "Injecting malicious code into legitimate processes to evade detection. Code runs under trusted process (lsass.exe, svchost.exe).",
+      "techniques": {
+        "DLL_injection": "LoadLibrary called with malicious DLL path",
+        "process_hollowing": "Create suspended process, replace memory, resume",
+        "reflective_DLL": "DLL loads itself without touching disk (fileless)",
+        "thread_hijacking": "Suspend thread, modify instruction pointer, resume"
+      },
+      "detection_signals": [
+        "Unexpected network connections from system processes (svchost, lsass)",
+        "Memory regions with RWX (Read-Write-Execute) permissions",
+        "Cross-process memory writes to critical processes",
+        "lsass.exe accessed by non-system processes"
+      ],
+      "falco_rule": "- rule: LSASS Memory Access\n  condition: proc.name != lsass.exe and fd.name contains lsass\n  priority: CRITICAL",
+      "tools_using_this": ["Cobalt Strike", "Metasploit", "Sliver C2"]
+    },
+    {
+      "id": "T1486",
+      "name": "Data Encrypted for Impact (Ransomware)",
+      "tactic": "Impact",
+      "description": "Encrypting victim files and demanding ransom. Modern ransomware uses double extortion: encrypt + exfiltrate then threaten to publish.",
+      "ransomware_families_2025": [
+        {"name": "LockBit 3.0", "avg_ransom": "$1.4M", "note": "Most prolific; RaaS model"},
+        {"name": "AlphV/BlackCat", "avg_ransom": "$2.1M", "note": "Cross-platform; Rust-based"},
+        {"name": "Cl0p", "avg_ransom": "$3.8M", "note": "MOVEit exploitation specialist"},
+        {"name": "AKIRA", "avg_ransom": "$1.2M", "note": "Targets SMBs; VMware ESXi focus"}
+      ],
+      "detection_signals": [
+        "Mass file rename operations (appending .locked, .enc etc.)",
+        "Shadow copy deletion: vssadmin delete shadows",
+        "Encryption of file types (.docx, .xlsx, .pdf, .jpg) in rapid succession",
+        "README or ransom note creation across multiple directories",
+        "Disable Windows Defender: Set-MpPreference -DisableRealtimeMonitoring"
+      ],
+      "falco_rule": "- rule: Ransomware Indicator - Shadow Copy Deletion\n  condition: spawned_process and proc.name=vssadmin.exe and proc.args contains delete\n  priority: CRITICAL\n  output: Shadow copy deletion attempt (user=%user.name)\n  tags: [ransomware, critical]",
+      "immediate_response": ["Isolate affected host from network", "Snapshot evidence before remediation", "Notify CISA if critical infrastructure"]
+    },
+    {
+      "id": "T1021.001",
+      "name": "Remote Services: Remote Desktop Protocol",
+      "tactic": "Lateral Movement",
+      "description": "Using RDP to move laterally across network. Often follows valid credential compromise.",
+      "detection_signals": [
+        "RDP connections to non-standard ports (3389 common, but 443/22 used to evade)",
+        "RDP from workstation to workstation (should only be server-to-server or admin)",
+        "Multiple failed RDP auths followed by success",
+        "RDP login with service account or shared admin account"
+      ],
+      "mitigations": ["Network segmentation", "RDP only via jump server/VPN", "Restrict via Windows Firewall rules"],
+      "rogue_rdp": "RDP hijacking: attacker takes over existing session without credentials (requires SYSTEM)"
+    },
+    {
+      "id": "T1110",
+      "name": "Brute Force",
+      "tactic": "Credential Access",
+      "description": "Systematically attempting passwords. Variants: online brute force, password spray, credential stuffing.",
+      "password_spray": {
+        "definition": "One password tried against many accounts (avoids lockout)",
+        "common_passwords": ["Company_Season_Year", "Welcome123!", "P@ssw0rd"],
+        "detection": "Multiple failed logins across different accounts from same IP within short window",
+        "falco_equivalent": "SIEM rule: >20 failed logins across 10+ accounts in 10 minutes from same source"
+      },
+      "credential_stuffing": {
+        "definition": "Using breached username/password pairs from data dumps",
+        "data_sources": "HaveIBeenPwned has 12B+ credentials; dark web markets sell fresh dumps",
+        "detection": "Successful logins from TOR exit nodes or known proxy IPs"
+      }
+    },
+    {
+      "id": "T1190",
+      "name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access",
+      "description": "Exploiting vulnerabilities in internet-exposed applications: web servers, VPN, email gateways.",
+      "high_value_targets_2024_2025": [
+        {"product": "Citrix NetScaler (CVE-2023-4966)", "severity": "9.4 CRITICAL", "impact": "Authentication bypass"},
+        {"product": "Ivanti Connect Secure (CVE-2024-21887)", "severity": "9.1 CRITICAL", "impact": "Command injection"},
+        {"product": "Palo Alto PAN-OS (CVE-2024-3400)", "severity": "10.0 CRITICAL", "impact": "OS command injection via GlobalProtect"},
+        {"product": "FortiGate SSL-VPN (CVE-2023-27997)", "severity": "9.8 CRITICAL", "impact": "Heap buffer overflow; pre-auth RCE"},
+        {"product": "MOVEit Transfer (CVE-2023-34362)", "severity": "9.8 CRITICAL", "impact": "SQL injection; Cl0p ransomware mass exploitation"}
+      ],
+      "detection_signals": [
+        "Web application scanner signatures in logs",
+        "Unusual HTTP methods (OPTIONS, TRACE, PUT to unexpected endpoints)",
+        "SQL injection patterns in web logs: UNION SELECT, -- comment, OR 1=1",
+        "Path traversal: ../../../../etc/passwd"
+      ]
+    }
+  ]
+}

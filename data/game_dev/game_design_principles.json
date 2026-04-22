@@ -1,0 +1,73 @@
+{
+  "_source": "Jesse Schell 'The Art of Game Design', GDC talks, Sid Meier, Will Wright",
+  "_note": "Long-tail design philosophy data. Specific principles with practical application.",
+  "core_principles": {
+    "flow_state": {
+      "mihaly_csikszentmihalyi": "Optimal experience between anxiety and boredom",
+      "challenge_skill_balance": "Game must continuously calibrate difficulty to player skill growth",
+      "practical_implementation": "Track death count per section; auto-adjust if >5 deaths (offer skip or reduce HP of enemy)"
+    },
+    "sid_meier_interesting_decisions": {
+      "rule": "A game is a series of interesting decisions",
+      "bad_decision": "Obvious choice (one option is clearly best) or meaningless choice",
+      "good_decision": "Tradeoffs with no clear winner; depends on context, player style, future plans"
+    },
+    "juiciness": {
+      "definition": "Maximum feedback for minimum input; every action has sound, visual, haptic response",
+      "examples": [
+        "Coin collect: sound + sparkle + +1 float text + counter increment",
+        "Enemy death: hitstop + ragdoll + drop items + score popout + rumble"
+      ],
+      "overuse_warning": "Too much juice = sensory overload; pause after major events"
+    },
+    "onboarding_design": {
+      "never_say_never_tutorial": "Teach by doing, not by wall of text",
+      "mario_world_1-1_model": "Environment teaches mechanics; goomba at safe distance to teach jump",
+      "contextualize_every_mechanic": "Introduce in safe environment before combat use",
+      "tooltip_fatigue": "Maximum 2 tooltips simultaneously; queue extras"
+    },
+    "progression_feel": {
+      "power_fantasy": "Player must feel more powerful each session, even if just marginally",
+      "visible_progress_bar": "Progress bars in UI trigger dopamine; use for XP, quest completion, crafting",
+      "unexpected_reward": "Slot machine effect — variable reward schedule creates engagement; random rare drops"
+    },
+    "game_feel_basics": {
+      "hitstop": "Brief (3-6 frame) pause on impact; makes hits feel heavy",
+      "screen_shake": "0.1-0.3s on big hits; adds weight",
+      "animation_anticipation": "Wind-up before swing; tells player what's coming",
+      "squash_and_stretch": "Deforms objects on impact/jump; adds life and bounce"
+    }
+  },
+  "enemy_design": {
+    "telegraphing": {
+      "rule": "Player must always be able to react to an attack they haven't seen before",
+      "animation_budget": "100-300ms warning before hitbox active; longer for slower player mobility",
+      "visual_telegraph": "Red glow/color change + warning sound cue",
+      "dark_souls_model": "Long wind-ups; punish reaction time; learnable with practice"
+    },
+    "ai_behavior_patterns": {
+      "finite_state_machines": "Idle → Patrol → Alert → Attack → Retreat; most common basic AI",
+      "behavior_trees": "Hierarchical; checks conditions in order; Unity/Unreal standard",
+      "goal_oriented_action_planning": "GOAP: agent has goals, finds action sequences; F.E.A.R. used this, felt emergent",
+      "flocking": "Boids algorithm; 3 rules (separation, alignment, cohesion); natural horde movement"
+    },
+    "difficulty_archetypes": {
+      "fodder": "Low HP; dies in 1-2 hits; teaches basic combat; cannon fodder for crowds",
+      "bruiser": "High HP; slow; telegraphed heavy attacks; damage sponge",
+      "ranged": "Forces movement; breaks player comfort zone of standing still",
+      "elite": "Mini-boss tier; unique mechanic; requires specific counter-strategy",
+      "boss": "Multiple phases; unique arena mechanic; narrative weight"
+    }
+  },
+  "monetization_design": {
+    "ethical_vs_predatory": {
+      "ethical": ["Cosmetic-only (Fortnite skins)", "DLC expansions", "One-time purchase", "Battle pass with earnable content"],
+      "predatory": ["Pay-to-win mechanics", "Loot boxes with duplicate commons", "Artificial scarcity timers", "FOMO-inducing limited-time offers on children's games"]
+    },
+    "gacha_mechanics": {
+      "pity_system": "Guaranteed pull at N attempts; reduces worst-case frustration; industry standard",
+      "sparkle_rate": "0.6-1% legendary rate typical; psychological pressure around pity",
+      "regulation": "Belgium/Netherlands banned loot boxes as gambling; comply with local law"
+    }
+  }
+}

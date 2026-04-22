@@ -1,0 +1,90 @@
+{
+  "_source": "MrBeast team strategy (public interviews), Colin & Samir research, Charisma on Command analysis",
+  "_note": "Long-tail video scripting data. Specific formulas with psychological mechanisms explained.",
+  "hook_formulas": {
+    "curiosity_gap": {
+      "mechanism": "Reveal partial information that creates desire to close the knowledge gap",
+      "template": "[Fascinating fact or number] + [Why it matters to viewer] + [What they'll learn]",
+      "example": "'$2.3 million in one year — and he started with $0. I'm going to show you exactly how he did it.'",
+      "psychological_basis": "Loewenstein's information gap theory; incompleteness creates tension"
+    },
+    "pattern_interrupt": {
+      "mechanism": "Violate expected pattern to capture attention",
+      "types": ["Unexpected visual (unusual location, appearance)", "Counterintuitive claim", "Jump cut mid-sentence", "Sound effect or music change"],
+      "tiktok_version": "First frame must be visually unusual; stops thumb scroll"
+    },
+    "problem_agitation": {
+      "template": "State problem → Agitate (show how bad it is) → Hint at solution",
+      "example": "'If you're doing [common thing], you're losing money every single month. Most people don't realize this until it's too late. Today I'll show you the fix.'",
+      "use_case": "Finance, health, productivity content; targets existing pain"
+    },
+    "bold_claim_test": {
+      "template": "Make bold claim → immediately prove you can deliver → show glimpse of proof",
+      "example": "'I built a $10K/month passive income stream in 47 days. Here's the exact blueprint.' (show earnings screenshot in hook)",
+      "social_proof_boost": "Any visual evidence (screenshot, before/after) in first 5 seconds massively increases retention"
+    },
+    "story_hook": {
+      "template": "[Time/place] + [conflict/tension] + [stakes for viewer]",
+      "example": "'In March 2024, I lost everything. My company, my savings, my reputation. This is how I rebuilt it — and why it made me stronger.'",
+      "mechanism": "Narrative transportation — people can't look away from stories mid-conflict"
+    }
+  },
+  "script_structures": {
+    "youtube_long_form": {
+      "hook": {"duration_seconds": [0, 30], "purpose": "State promise; establish why viewer should stay"},
+      "credibility_bridge": {"duration_seconds": [30, 90], "purpose": "Who you are; why listen to you"},
+      "main_content": {"duration_pct": "60-70% of video", "structure": "Problem → Framework → Examples → Application"},
+      "pattern_interrupts": "Every 60-90 seconds: B-roll, graphics, clip change, music transition",
+      "call_to_action": {"placement": "Mid-video (50%) AND end", "content": "Subscribe if this is useful; comment question"},
+      "strong_ending": "Callback to hook; summarize 3 key points; preview next video"
+    },
+    "tiktok_short": {
+      "hook": {"duration_seconds": [0, 3], "note": "Single sentence; immediately intriguing"},
+      "content": {"duration_seconds": [3, 45], "pace": "One new piece of information every 5-8 seconds"},
+      "call_to_action": {"duration_seconds": [45, 60], "options": ["Follow for more", "Comment your answer", "Save this for later"]},
+      "no_slow_reveals": "All information at consistent pace; never make viewer wait"
+    },
+    "tutorial_structure": {
+      "intro": "What you'll build/learn + who it's for (15-30s)",
+      "context": "Why this matters; common mistake to avoid (60s)",
+      "step_by_step": "Number each step; on-screen text for each; zoom in on key moments",
+      "mistakes_section": "Common errors; prevents support questions; adds SEO long-tail",
+      "conclusion": "Show final result; what to do next"
+    }
+  },
+  "retention_tactics": {
+    "open_loops": {
+      "definition": "Leave questions unanswered early; answer them later",
+      "zeigarnik_effect": "Unfinished tasks remembered better than completed ones",
+      "implementation": "Ask question at 2-min mark; answer at 8-min mark; hook viewer through middle"
+    },
+    "pace_variation": {
+      "fast_vs_slow": "Vary speaking pace; dramatic points slower; lists faster",
+      "b_roll_ratio": "High-quality channels: 50-70% b-roll; talking head alone = lower retention",
+      "jump_cuts": "Remove all 'um', 'uh', pauses >0.5s; rapid editing pace"
+    },
+    "reward_scheduling": {
+      "near_win": "Tease upcoming insight; 'In 3 minutes I'll show you the trick that changes everything'",
+      "chapter_markers": "YouTube chapters improve navigation; don't just reward viewers for watching through"
+    },
+    "audience_interaction": {
+      "direct_address": "Say 'you' not 'viewers' or 'everyone'; personal connection",
+      "comment_prompt": "Ask specific answerable question; not 'what do you think?' but 'which tip surprised you most?'",
+      "reply_to_comments": "First 30 minutes of comments are weighted; reply fast to boost engagement"
+    }
+  },
+  "editing_patterns": {
+    "color_grading": {
+      "skin_tones": "Protect skin tones in selective hue; shift highlights toward warm (yellow-orange), shadows cool (blue-green)",
+      "luts": "Creative LUT on top of corrective grade; lower opacity (30-60%); don't cook the image",
+      "vlog_look": "Lifted blacks (not crushed); warm highlights; slight desaturation",
+      "cinematic_look": "Teal-orange split tone; slight vignette; film grain overlay"
+    },
+    "audio_for_video": {
+      "voice_eq": "High-pass 80Hz (remove rumble); cut 400-500Hz (reduce muddiness); boost 3kHz (clarity); gentle shelf 8kHz (air)",
+      "room_treatment": "Acoustic panels behind camera; moving blankets work; kill hard reflections",
+      "microphone_hierarchy": "Lav clip > Shotgun on boom > Built-in > Phone mic",
+      "music_levels": "Background music: -20 to -25dB under voice; swell during b-roll"
+    }
+  }
+}

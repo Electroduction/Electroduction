@@ -1,0 +1,98 @@
+{
+  "_source": "NIST SP 800-61, CISA IRPBs, SANS Incident Handler Handbook",
+  "_note": "Long-tail IR data. Specific enough to execute under pressure. Covers 2026 threat landscape.",
+  "ir_phases": {
+    "1_preparation": ["Asset inventory current", "Runbook tested in tabletop", "IR retainer in place", "Forensic toolkit ready", "Legal/PR notified of process"],
+    "2_identification": ["Detect via SIEM/EDR alert", "Validate vs false positive", "Scope assessment", "Declare incident and severity"],
+    "3_containment": ["Isolate affected systems", "Block IOCs at perimeter", "Preserve evidence (do NOT reimage yet)", "Revoke compromised credentials"],
+    "4_eradication": ["Remove malware artifacts", "Patch exploited vulnerability", "Reset all affected accounts"],
+    "5_recovery": ["Restore from clean backups", "Harden before reconnecting", "Monitor for re-compromise"],
+    "6_lessons_learned": ["Root cause analysis", "Update runbooks", "Report to leadership + regulators if required"]
+  },
+  "playbooks": {
+    "ransomware": {
+      "severity": "CRITICAL — P1",
+      "first_30_minutes": [
+        "ISOLATE: Disconnect affected hosts from network (pull cable, not shutdown)",
+        "PRESERVE: Snapshot memory + disk before any changes",
+        "SCOPE: Check if domain controller, backup servers, ESXi hosts affected",
+        "NOTIFY: CISO, Legal, Executive team, Cyber Insurance carrier",
+        "LOCK: Reset all service account passwords, disable VPN access",
+        "CHECK: Are backups intact? Air-gapped? Test restore immediately"
+      ],
+      "do_not": [
+        "Do NOT reboot (may trigger ransom trigger or destroy volatile evidence)",
+        "Do NOT pay without consulting law enforcement and legal",
+        "Do NOT communicate over compromised email (attacker may monitor)",
+        "Do NOT image over evidence before forensic collection"
+      ],
+      "evidence_to_collect": ["Memory dump (winpmem)", "Event logs (Security, System, Application)", "Prefetch files", "MFT ($MFT)", "Registry hives"],
+      "law_enforcement": "Notify FBI IC3 (ic3.gov) + CISA (1-888-282-0870); required for critical infrastructure",
+      "average_recovery_time": "21 days with backups; 45+ days without clean backups"
+    },
+    "data_breach_exfiltration": {
+      "severity": "HIGH — P1/P2",
+      "detection_signals": ["Large outbound data transfer to unknown IP", "Compression tools (7zip, rar) executed on sensitive file servers", "DNS tunneling: abnormally long DNS queries"],
+      "first_steps": [
+        "IDENTIFY: What data was accessed? (PII, PHI, PCI, IP?)",
+        "SCOPE: Source IP, user account, timeframe, volume",
+        "CONTAIN: Block egress at firewall; revoke cloud API keys if involved",
+        "LEGAL: Breach notification laws vary by jurisdiction — start clock (GDPR 72hr, CCPA, HIPAA 60 day)"
+      ],
+      "notification_timelines": {
+        "GDPR": "72 hours to supervisory authority",
+        "HIPAA": "60 days; HHS + patients if >500 records",
+        "PCI_DSS": "Immediately to payment brands and acquirer",
+        "SEC_public_companies": "4 business days after determining material"
+      }
+    },
+    "phishing_account_compromise": {
+      "severity": "HIGH",
+      "first_steps": [
+        "REVOKE: Invalidate all active sessions (Azure AD: Revoke-AzureADUserAllRefreshToken)",
+        "RESET: Password + MFA re-enroll",
+        "AUDIT: Check email forwarding rules, OAuth app grants, inbox rules created",
+        "SEARCH: Did attacker create new accounts, add MFA devices, change recovery email?",
+        "INVESTIGATE: What did attacker access? Email, SharePoint, Teams, OneDrive?"
+      ],
+      "common_post_compromise": ["Business Email Compromise (BEC) — invoice fraud", "Internal phishing from trusted account", "Data collection for extortion"]
+    },
+    "insider_threat": {
+      "severity": "HIGH — sensitive due to HR/legal involvement",
+      "indicators": ["Bulk download of sensitive files before resignation", "Accessing files unrelated to job function", "Emailing to personal account or USB transfers", "Accessing competitor websites on corporate network"],
+      "key_caveat": "Must involve HR, Legal, and management before interviewing subject",
+      "evidence_sources": ["DLP alerts", "CASB logs", "Print logs", "Physical access logs", "Email logs"]
+    }
+  },
+  "forensic_commands": {
+    "windows": {
+      "check_persistence": [
+        "reg query HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "schtasks /query /fo LIST /v",
+        "sc query state= all"
+      ],
+      "network_connections": ["netstat -ano", "Get-NetTCPConnection | Where State -eq Established"],
+      "active_processes": ["tasklist /svc", "Get-Process | Select Name,Id,CPU,Path"],
+      "recent_files": "dir /s /od /b C:\\Users\\%USERNAME%\\AppData\\Roaming",
+      "event_log_query": "wevtutil qe Security /count:100 /rd:true /format:text",
+      "prefetch_analysis": "Get-ChildItem C:\\Windows\\Prefetch | Sort LastWriteTime -Desc"
+    },
+    "linux": {
+      "check_persistence": ["crontab -l", "ls /etc/cron*", "cat /etc/rc.local", "systemctl list-units --type=service"],
+      "network_connections": ["ss -tupn", "netstat -tupn"],
+      "recent_logins": ["last -a -F", "lastb | head -20"],
+      "active_processes": "ps auxf",
+      "suspicious_files": "find / -mtime -1 -perm -4000 -type f 2>/dev/null"
+    }
+  },
+  "threat_intelligence_feeds": {
+    "free": [
+      {"name": "CISA KEV", "url": "cisa.gov/known-exploited-vulnerabilities", "type": "CVE priority list"},
+      {"name": "AlienVault OTX", "url": "otx.alienvault.com", "type": "IOC sharing"},
+      {"name": "Abuse.ch", "url": "abuse.ch", "type": "Malware hashes, URLs, botnet C2"},
+      {"name": "MalwareBazaar", "url": "bazaar.abuse.ch", "type": "Malware samples"},
+      {"name": "URLhaus", "url": "urlhaus.abuse.ch", "type": "Malicious URLs"}
+    ],
+    "paid": ["Mandiant", "Recorded Future", "CrowdStrike Intelligence", "Secureworks CTU"]
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "_source": "IDEO Design Thinking, TRIZ, Alex Osborn, Edward de Bono, Steve Jobs interviews",
+  "_note": "Long-tail creativity data. Specific frameworks with actionable prompts and examples.",
+  "frameworks": {
+    "scamper": {
+      "overview": "Structured ideation checklist; each letter = transformation type",
+      "techniques": {
+        "substitute": {
+          "questions": ["What materials, parts, rules, or processes can be substituted?", "What other ingredient can be used?", "Who else could do it?"],
+          "example_product": "Replace plastic packaging with mushroom mycelium (Ecovative Design)",
+          "example_service": "Substitute in-person therapy with AI therapist (Woebot)"
+        },
+        "combine": {
+          "questions": ["What ideas or materials can be combined?", "What if two products merged?"],
+          "example": "Combine watch + phone = smartwatch (Apple Watch)",
+          "innovation_type": "Most common source of breakthrough products"
+        },
+        "adapt": {
+          "questions": ["What else is like this? What other context uses this approach?", "What could be copied or adapted?"],
+          "example": "Adapt Velcro from burr seeds (George de Mestral)",
+          "cross_domain": "Best innovations often adapt solutions from completely different fields"
+        },
+        "modify_magnify_minify": {
+          "questions": ["What to make larger, stronger, longer, more frequent?", "What to compress, miniaturize, streamline?"],
+          "examples": ["Super-size marketing (McDonald's)", "Miniaturize: Sony Walkman", "Magnify: Grand Theft Auto open world scale"]
+        },
+        "put_to_other_uses": {
+          "questions": ["What else can this be used for?", "Who else could use this product?"],
+          "examples": ["WD-40 designed for rockets; now consumer lubricant", "Post-it Notes: failed adhesive turned office staple"]
+        },
+        "eliminate": {
+          "questions": ["What if I removed a core component?", "What rules can be broken?"],
+          "examples": ["Remove keyboard from phone = iPhone revolution", "Remove TV from TV subscription = Netflix streaming"],
+          "principle": "Subtraction is often more powerful than addition"
+        },
+        "reverse_rearrange": {
+          "questions": ["What if I did the opposite?", "What if I reversed the roles?"],
+          "examples": ["Reverse: instead of customer going to store, store comes to customer (Uber Eats)", "Rearrange: Airbnb — make guests the product, hosts the supply"]
+        }
+      }
+    },
+    "design_thinking": {
+      "phases": {
+        "empathize": {
+          "tools": ["User interviews (5 whys technique)", "Shadowing/observation", "Empathy mapping (think/feel/say/do)"],
+          "key_insight": "People can't articulate what they want; observe what they DO, not what they say"
+        },
+        "define": {
+          "problem_statement": "Point of view: [User] needs [Need] because [Insight]",
+          "how_might_we": "Reframe problem as opportunity: 'HMW help seniors feel connected?'"
+        },
+        "ideate": {
+          "brainstorming_rules": ["No criticism during generation", "Quantity over quality (aim for 100 ideas)", "Wild ideas welcome; refine later", "Build on others' ideas"],
+          "techniques": ["Brainwriting (silent parallel ideation)", "Crazy 8s (8 ideas in 8 minutes)", "Reverse brainstorming (how do we make problem worse?)"]
+        },
+        "prototype": {
+          "fidelity_rule": "Start lowest fidelity possible; paper prototype before Figma; Figma before code",
+          "time_box": "8-hour prototype rule; if you can't test a concept in a day, rethink it"
+        },
+        "test": {
+          "5_user_rule": "Nielsen Norman: 5 users find 85% of usability problems; diminishing returns after",
+          "think_aloud": "Ask users to verbalize thoughts while using; most revealing feedback method"
+        }
+      }
+    },
+    "triz": {
+      "overview": "Theory of Inventive Problem Solving (Russian: ТРИЗ); 40 inventive principles",
+      "key_principles": [
+        {"number": 1, "name": "Segmentation", "description": "Divide object into independent parts", "example": "Modular furniture (IKEA)"},
+        {"number": 3, "name": "Local quality", "description": "Different parts of object have different functions", "example": "Multi-tool knife"},
+        {"number": 10, "name": "Prior action", "description": "Perform required changes in advance", "example": "Pre-cooked meal kits"},
+        {"number": 13, "name": "Inversion", "description": "Invert the object or process", "example": "Inverted umbrella for drainage"},
+        {"number": 15, "name": "Dynamics", "description": "Make characteristics optimal at each stage", "example": "Self-adjusting chair"},
+        {"number": 22, "name": "Blessing in disguise", "description": "Use harmful factors to get positive effect", "example": "Noise-canceling uses ambient sound to cancel it"},
+        {"number": 35, "name": "Parameter changes", "description": "Change degree or concentration", "example": "Concentrated cleaning tablets"}
+      ],
+      "contradiction_matrix": "40 principles mapped to 39 engineering parameters; find which principles resolve your specific contradiction"
+    },
+    "jobs_to_be_done": {
+      "origin": "Clayton Christensen, Harvard; 'customers hire products to do a job'",
+      "question": "What job is the customer hiring this product/service to do?",
+      "milkshake_example": "McDonald's milkshake wasn't competing with other milkshakes; it was hired for morning commute boredom",
+      "application": "Interview customers: 'What were you doing before you discovered this product? What was frustrating?'",
+      "key_insight": "Circumstances matter more than customer demographics; focus on the job, not the customer profile"
+    },
+    "six_thinking_hats": {
+      "origin": "Edward de Bono",
+      "hats": {
+        "white": "Facts and data only; what do we know?",
+        "red": "Emotions and intuition; how do you feel about this?",
+        "black": "Critical judgment; what could go wrong?",
+        "yellow": "Optimism; what's best case?",
+        "green": "Creativity; new ideas and alternatives",
+        "blue": "Process management; control the thinking process"
+      },
+      "usage": "Separate different types of thinking; everyone wears same hat simultaneously"
+    }
+  },
+  "product_ideation": {
+    "pain_point_discovery": {
+      "reddit_mining": "Search '[topic] + sucks', '[topic] + frustrated', 'wish there was'; find unmet needs",
+      "amazon_review_mining": "1-star reviews reveal pain points; 5-star reveals delight factors",
+      "twitter_complaint_search": "'I hate [product]' OR 'why can't [product]' for specific frustrations"
+    },
+    "market_validation": {
+      "presell_rule": "Sell before you build; landing page + waitlist + stripe payment = real demand test",
+      "mkbhd_rule": "If you can't explain product in one sentence, it's not ready",
+      "landing_page_metrics": "5%+ conversion on paid traffic = strong signal; <2% = rethink"
+    },
+    "innovation_types": {
+      "sustaining": "Improving existing product for existing customers; incremental",
+      "disruptive": "Start worse but cheaper/accessible; improve until replacing incumbent (Christensen)",
+      "blue_ocean": "Create uncontested new market space; not compete in red ocean (W. Chan Kim)"
+    }
+  },
+  "cross_domain_inspiration": {
+    "principle": "Breakthroughs often come from applying solutions from one domain to another",
+    "examples": [
+      {"source_domain": "Nature (termite mounds)", "target_domain": "Architecture", "innovation": "Eastgate Centre Zimbabwe — passive cooling system"},
+      {"source_domain": "Military OODA loops", "target_domain": "Startups", "innovation": "Lean startup build-measure-learn cycle"},
+      {"source_domain": "Kaizen manufacturing", "target_domain": "Software", "innovation": "Agile/Scrum continuous improvement"},
+      {"source_domain": "Hospital checklists", "target_domain": "Aviation", "innovation": "Atul Gawande applied aviation checklists to surgery; saved thousands of lives"},
+      {"source_domain": "Video games (progress bars, leaderboards)", "target_domain": "Apps", "innovation": "Duolingo gamification of language learning"}
+    ],
+    "technique": "Take your problem. Pick unrelated field (nature, military, cooking, sports). Find how THEY solve analogous problems. Map back."
+  }
+}
