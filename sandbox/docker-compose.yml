@@ -1,0 +1,101 @@
+version: "3.9"
+
+services:
+
+  # ── Verification runner ──────────────────────────────────────────────────
+  verify:
+    build:
+      context: ..
+      dockerfile: sandbox/Dockerfile
+    image: electroduction-sandbox:latest
+    container_name: electroduction-verify
+    command: python verification/run_checks.py
+    volumes:
+      - ../data:/app/data:ro              # read-only: real data
+      - ../databases:/app/databases:ro    # read-only: organized DBs
+      - cpo_triplets:/app/databases/cpo_triplets  # writable: CPO output
+    environment:
+      - LOG_LEVEL=INFO
+      - DB_ROOT_PATH=/app/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    networks:
+      - sandbox_net
+
+  # ── MCP Skill Server ────────────────────────────────────────────────────
+  mcp_server:
+    build:
+      context: ..
+      dockerfile: sandbox/Dockerfile
+    image: electroduction-sandbox:latest
+    container_name: electroduction-mcp
+    command: python mcp_server/mcp_skill_server.py
+    volumes:
+      - ../data:/app/data:ro
+      - ../databases:/app/databases:ro
+      - cpo_triplets:/app/databases/cpo_triplets
+    environment:
+      - LOG_LEVEL=DEBUG
+      - DB_ROOT_PATH=/app/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    networks:
+      - sandbox_net
+    stdin_open: true
+    tty: true
+
+  # ── Pytest test runner ──────────────────────────────────────────────────
+  tests:
+    build:
+      context: ..
+      dockerfile: sandbox/Dockerfile
+    image: electroduction-sandbox:latest
+    container_name: electroduction-tests
+    command: python -m pytest tests/ -v --tb=short
+    volumes:
+      - ../data:/app/data:ro
+      - ../databases:/app/databases:ro
+      - cpo_triplets:/app/databases/cpo_triplets
+      - ../tests:/app/tests:ro
+    environment:
+      - LOG_LEVEL=WARNING
+      - DB_ROOT_PATH=/app/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    networks:
+      - sandbox_net
+
+  # ── Cybersecurity sandbox (extra-locked down) ───────────────────────────
+  cyber_sandbox:
+    build:
+      context: ..
+      dockerfile: sandbox/Dockerfile
+    image: electroduction-sandbox:latest
+    container_name: electroduction-cyber
+    command: python -c "from mcp_server.mcp_skill_server import DatabaseConnector; print('Cybersecurity sandbox ready')"
+    volumes:
+      - ../data/cybersecurity:/app/data/cybersecurity:ro
+    environment:
+      - LOG_LEVEL=DEBUG
+      - DB_ROOT_PATH=/app/data
+    # Maximum isolation: no network access for cyber analysis
+    network_mode: none
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  cpo_triplets:
+    driver: local
+
+networks:
+  sandbox_net:
+    driver: bridge
+    internal: true   # no external internet access from containers

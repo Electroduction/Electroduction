@@ -1,0 +1,8 @@
+algorithms/__pycache__/
+mcp_server/__pycache__/
+tests/__pycache__/
+databases/cpo_triplets/
+*.pyc
+__pycache__/
+.env
+verification/last_report.json
