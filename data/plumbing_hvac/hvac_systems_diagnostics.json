@@ -1,0 +1,198 @@
+{
+  "_source": "ASHRAE Fundamentals, HVAC troubleshooting guides, EPA 608 certification materials",
+  "_note": "Long-tail HVAC data. System diagnostics, refrigeration cycle, psychrometrics, load calculations.",
+  "refrigeration_cycle": {
+    "four_components": {
+      "compressor": "Pumps refrigerant; raises pressure and temperature; heart of system",
+      "condenser": "Outdoor coil; refrigerant rejects heat to outside air; gas → liquid",
+      "metering_device": "TXV or piston; restricts flow; causes pressure/temp drop",
+      "evaporator": "Indoor coil; refrigerant absorbs heat from indoor air; liquid → gas"
+    },
+    "pressure_temperature_relationship": {
+      "r410a_common_pressures": {
+        "low_side_cooling": "118 PSI @ 40°F (evaporator temp)",
+        "high_side_cooling": "278 PSI @ 100°F (condenser temp)",
+        "subcool_target": "10-15°F below saturation temp at condenser outlet",
+        "superheat_target": "8-12°F above saturation temp at evaporator outlet (TXV); 10-20°F (piston)"
+      },
+      "r22_legacy_pressures": {
+        "low_side": "68 PSI @ 40°F",
+        "high_side": "226 PSI @ 100°F",
+        "note": "R22 production banned; retrofit to R410A requires new system (incompatible pressures)"
+      }
+    },
+    "superheat_and_subcool": {
+      "superheat_definition": "Temperature above boiling point; ensures no liquid to compressor",
+      "superheat_measurement": "Measure suction line temp; measure suction pressure; convert pressure to temp (PT chart); superheat = actual temp - saturation temp",
+      "superheat_diagnosis": {
+        "high_superheat": ">15°F indicates undercharge or restricted metering device",
+        "low_superheat": "<5°F indicates overcharge or TXV stuck open; risk of slugging compressor"
+      },
+      "subcool_definition": "Temperature below condensing point; ensures liquid to metering device",
+      "subcool_measurement": "Measure liquid line temp; measure liquid pressure; convert to temp; subcool = saturation temp - actual temp",
+      "subcool_diagnosis": {
+        "high_subcool": ">18°F indicates overcharge",
+        "low_subcool": "<8°F indicates undercharge or restricted liquid line"
+      }
+    }
+  },
+  "system_diagnostics": {
+    "no_cooling": {
+      "compressor_not_running": {
+        "check_thermostat": "Set to cool; temp below room temp; display on",
+        "check_24v": "R to C should read 24VAC; if not, transformer blown or breaker off",
+        "check_contactor": "24V to contactor coil; should pull in; if not, bad coil or low voltage",
+        "check_compressor": "If contactor closed but compressor silent, check capacitor and windings"
+      },
+      "compressor_running_no_cool": {
+        "check_charge": "Measure superheat/subcool; most common issue is low charge from leak",
+        "check_airflow": "Dirty filter, frozen coil, bad blower; 400 CFM per ton required",
+        "reversing_valve_stuck": "Heat pump only; valve stuck in wrong position; replace valve",
+        "compressor_failed": "Running but not pumping; low amp draw; no pressure differential; replace compressor"
+      }
+    },
+    "short_cycling": {
+      "dirty_filter": "Airflow restricted; evaporator freezes; pressure switch trips; wait 4 hours to thaw",
+      "low_charge": "Low pressure cutout trips; runs 2-5 minutes then stops; add charge, find leak",
+      "oversized_unit": "Cools space too quickly; humidity remains high; replace with smaller unit or multi-stage",
+      "thermostat_location": "In direct sun, near vent, or draft; false readings; relocate thermostat"
+    },
+    "high_electric_bill": {
+      "low_charge": "Compressor runs longer to achieve setpoint; +30% energy use",
+      "dirty_coils": "Reduced heat transfer; outdoor coil dirty; clean with coil cleaner and hose",
+      "oversized_ductwork_leaks": "30% loss typical in old systems; seal with mastic (not duct tape)",
+      "old_inefficient_unit": "SEER 8 vs SEER 16 = 50% energy savings; upgrade if >15 years old"
+    },
+    "frozen_evaporator_coil": {
+      "causes": ["Dirty filter (most common)", "Low refrigerant charge", "Blower motor failure", "Closed or blocked supply vents", "Outdoor temp <60°F in cooling mode"],
+      "diagnosis": "Remove filter and panel; ice on coil; measure airflow and superheat",
+      "immediate_action": "Turn off AC; turn fan to ON; wait 4+ hours for ice to melt; do not run until cause corrected",
+      "prevention": "Change filter monthly; maintain proper charge; ensure minimum 400 CFM per ton"
+    }
+  },
+  "airflow_and_ductwork": {
+    "cfm_requirements": {
+      "rule_of_thumb": "400 CFM per ton of cooling; 12,000 BTU = 1 ton",
+      "example": "3-ton system needs 1200 CFM; verify with Magnehelic and flow hood",
+      "low_airflow_effects": "Frozen coil, high superheat, reduced capacity, compressor overheating"
+    },
+    "duct_sizing": {
+      "velocity_method": "Trunk ducts: 600-900 FPM; branch ducts: 400-600 FPM; too high = noise",
+      "friction_loss_method": "0.08\" to 0.1\" water column per 100ft for residential",
+      "oversized_ducts": "Low velocity; poor throw; stratification; noise at registers",
+      "undersized_ducts": "High velocity; noise; increased static pressure; blower works harder"
+    },
+    "static_pressure_testing": {
+      "measure_total_external_static": "Magnehelic across supply and return plenums; should be <0.5\" WC",
+      "high_static_causes": ["Dirty filter", "Undersized ductwork", "Too many/closed dampers", "Restrictive filter (MERV 13+)"],
+      "high_static_effects": "Reduced airflow, frozen coil, blower overheating, increased energy use",
+      "corrective_action": "Open dampers, upsize ducts, use lower MERV filter, check for crushed flex duct"
+    },
+    "duct_leakage": {
+      "testing": "Duct blaster; pressurize to 25 Pa; measure CFM leakage",
+      "acceptable_leakage": "<10% for new construction; <20% for existing",
+      "sealing": "Mastic (wet sealant) superior to tape; seal all joints, boots, plenums"
+    }
+  },
+  "heat_pumps": {
+    "heating_mode_operation": {
+      "reversing_valve": "Energized in cooling (most common); de-energized in heating; reverses refrigerant flow",
+      "defrost_cycle": "Outdoor coil ices in heating mode <40°F; reversing valve switches to cooling for 5-10 min to melt ice",
+      "auxiliary_heat": "Electric resistance strips; activate when outdoor temp <balance point (~30°F) or during defrost",
+      "balance_point": "Outdoor temp where heat pump capacity = building heat loss; varies by climate and insulation"
+    },
+    "cop_and_hspf": {
+      "cop": "Coefficient of Performance; heat output / energy input; COP 3.0 = 300% efficient",
+      "hspf": "Heating Seasonal Performance Factor; 8.2 minimum; 10+ high efficiency",
+      "eer_seer": "EER = steady-state cooling; SEER = seasonal average; SEER 16 = good; 20+ = excellent"
+    },
+    "cold_weather_performance": {
+      "capacity_loss": "Heat pump loses 50% capacity at 0°F vs 47°F; aux heat needed",
+      "low_temp_compressor": "Inverter compressor + vapor injection operates to -15°F",
+      "backup_heat": "Dual-fuel system switches to gas furnace below setpoint (e.g., 35°F)"
+    }
+  },
+  "psychrometrics": {
+    "sensible_vs_latent": {
+      "sensible_heat": "Changes temperature; measured by thermometer",
+      "latent_heat": "Changes moisture; phase change (evaporation/condensation); measured by humidity",
+      "sensible_heat_ratio": "SHR = sensible / total; 0.7-0.8 typical residential; <0.7 = high humidity removal"
+    },
+    "relative_humidity": {
+      "definition": "Actual moisture / maximum moisture at given temp × 100%",
+      "comfort_range": "40-60% RH; <30% dry skin, static; >60% mold growth",
+      "dew_point": "Temp at which air saturates; condensation forms; 65°F dew point = muggy"
+    },
+    "enthalpy": {
+      "definition": "Total heat content; sensible + latent; measured in BTU/lb",
+      "use": "Calculating cooling load; comparing indoor vs outdoor air for economizer control"
+    }
+  },
+  "load_calculations": {
+    "manual_j": {
+      "purpose": "ACCA Manual J; room-by-room heat gain/loss calculation; proper sizing",
+      "inputs": ["Square footage", "Insulation R-values", "Window area and U-factor", "Infiltration rate", "Occupancy", "Lighting/appliance loads", "Climate zone"],
+      "output": "Heating and cooling BTU/hr for each room and whole house"
+    },
+    "rules_of_thumb_are_wrong": {
+      "bad_rule": "1 ton per 500 sq ft or 600 sq ft",
+      "why_wrong": "Ignores insulation, windows, orientation, climate, ceiling height",
+      "consequences": "Oversizing: short cycling, humidity, inefficiency; undersizing: inadequate comfort",
+      "correct_method": "Manual J calculation; can range from 1 ton per 400 sq ft (leaky old house) to 1 ton per 1200 sq ft (tight modern)"
+    },
+    "equipment_selection": {
+      "manual_s": "Equipment selection; match capacity to Manual J load; allow <15% oversizing",
+      "manual_d": "Duct design; size ducts for calculated airflow; minimize friction loss",
+      "manual_t": "Air distribution; register placement and sizing for proper throw and mixing"
+    }
+  },
+  "refrigerant_handling": {
+    "epa_608_certification": {
+      "required": "Federal law; handle refrigerants only if certified",
+      "type_1": "Small appliances (<5 lbs charge)",
+      "type_2": "High-pressure (R410A residential)",
+      "type_3": "Low-pressure (chillers)",
+      "universal": "All types"
+    },
+    "recovery_requirements": {
+      "prohibited": "Venting refrigerant to atmosphere; $37,500+ fine per violation",
+      "recovery_machine": "Required; capture refrigerant into recovery cylinder before opening system",
+      "reclaim_vs_recycle": "Reclaim: send to reprocessor; recycle: clean on-site for reuse in same system"
+    },
+    "leak_detection": {
+      "methods": ["Electronic sniffer (most sensitive)", "Bubble solution (soap test)", "UV dye + UV light", "Ultrasonic detector (large leaks)"],
+      "common_leak_locations": ["Schrader valve cores", "Flare fittings", "Brazed joints", "Evaporator coil (pinhole leaks from formicary corrosion)", "Service valve stems"]
+    },
+    "charging_methods": {
+      "superheat_method": "Fixed orifice/piston; add until superheat 10-15°F",
+      "subcool_method": "TXV; add until subcool 10-15°F",
+      "weigh_in_method": "Most accurate; recover all refrigerant; weigh in nameplate charge ±2%",
+      "never_charge_liquid_to_suction": "Destroys compressor; charge liquid to liquid line only; vapor to suction"
+    }
+  },
+  "combustion_analysis": {
+    "gas_furnace_combustion": {
+      "complete_combustion": "CH₄ + 2O₂ → CO₂ + 2H₂O + heat",
+      "incomplete_combustion": "Insufficient air; produces CO (carbon monoxide); deadly; adjust air shutter",
+      "combustion_analyzer": "Measures O₂, CO, CO₂, efficiency, draft; required for proper adjustment"
+    },
+    "target_values": {
+      "natural_gas": {
+        "o2": "5-9% oxygen in flue gas; <5% incomplete combustion; >9% excess air (heat loss)",
+        "co": "<100 PPM air-free; <50 PPM ideal; >100 PPM indicates problem",
+        "efficiency": "80% mid-efficiency; 95%+ condensing furnace"
+      },
+      "draft": {
+        "natural_draft": "-0.02 to -0.04\" WC in flue; negative = pulling air up chimney",
+        "induced_draft": "-0.10 to -0.20\" WC; fan-assisted; more consistent",
+        "spillage_test": "Hold match near draft hood; flame should pull in; if blows out, spillage (dangerous)"
+      }
+    },
+    "flame_appearance": {
+      "good_flame": "Blue with orange tips; stable; minimal yellow; lazy rolling flame",
+      "yellow_flame": "Incomplete combustion; high CO; soot; adjust air shutter or clean burners",
+      "lifting_flame": "Flame lifts off burner; too much air; reduce air shutter",
+      "delayed_ignition": "Flame rolls out; dirty burners or heat exchanger cracks; clean or replace"
+    }
+  }
+}

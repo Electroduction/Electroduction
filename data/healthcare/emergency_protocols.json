@@ -1,0 +1,111 @@
+{
+  "_source": "AHA CPR Guidelines 2025, Emergency Nursing Procedures, Pharmacology texts",
+  "_note": "Long-tail nursing data. Specific protocols, not generic care plans. Critical for ER/ICU.",
+  "emergency_protocols": {
+    "cardiac_arrest_acls": {
+      "cpr_sequence": {
+        "compression_rate": "100-120 per minute",
+        "compression_depth_adult": "2-2.4 inches (5-6 cm)",
+        "compression_to_ventilation": "30:2 (single rescuer), continuous with advanced airway",
+        "minimize_interruptions": "Limit pauses to <10 seconds",
+        "change_compressor": "Every 2 minutes to prevent fatigue"
+      },
+      "shockable_rhythms": {
+        "vfib_vtach": {
+          "immediate_action": "Defibrillate 200J biphasic (360J monophasic); resume CPR immediately",
+          "drug_after_2nd_shock": "Epinephrine 1mg IV/IO every 3-5 minutes",
+          "drug_after_3rd_shock": "Amiodarone 300mg IV/IO (or lidocaine 1-1.5mg/kg)",
+          "second_amiodarone_dose": "150mg after 3-5 minutes if still in VF/VT"
+        }
+      },
+      "non_shockable_rhythms": {
+        "asystole_pea": {
+          "immediate_action": "High-quality CPR + search for reversible causes (H's and T's)",
+          "epinephrine": "1mg IV/IO every 3-5 minutes as soon as access obtained",
+          "hs_and_ts": ["Hypovolemia", "Hypoxia", "Hydrogen ion (acidosis)", "Hypo/hyperkalemia", "Hypothermia", "Tension pneumothorax", "Tamponade cardiac", "Toxins", "Thrombosis pulmonary", "Thrombosis coronary"]
+        }
+      }
+    },
+    "sepsis_protocol": {
+      "sepsis_criteria_sofa": "Sequential Organ Failure Assessment ≥2 points",
+      "septic_shock_definition": "Sepsis + vasopressor needed to maintain MAP ≥65 + lactate >2 despite fluid resuscitation",
+      "hour_1_bundle": {
+        "measure_lactate": "If ≥2 mmol/L, remeasure within 2-4 hours",
+        "obtain_blood_cultures": "Before antibiotics, but don't delay antibiotics >45 min",
+        "administer_broad_spectrum_abx": "Within 1 hour of sepsis recognition",
+        "begin_30ml_kg_crystalloid": "For hypotension or lactate ≥4",
+        "apply_vasopressors": "If hypotensive during or after fluid resuscitation; target MAP ≥65"
+      },
+      "antibiotic_selection": {
+        "community_acquired_pneumonia": "Ceftriaxone 1g + Azithromycin 500mg",
+        "healthcare_associated_pneumonia": "Pip-Tazo 4.5g q6h or Meropenem 1g q8h + Vancomycin",
+        "intra_abdominal": "Pip-Tazo or Meropenem + Metronidazole",
+        "urosepsis": "Ceftriaxone 2g (adjust after culture)",
+        "neutropenic_fever": "Cefepime 2g q8h or Meropenem"
+      }
+    },
+    "stroke_code": {
+      "time_is_brain": "1.9 million neurons lost per minute in untreated stroke",
+      "cincinnati_stroke_scale": {
+        "facial_droop": "Ask to smile; one side doesn't move",
+        "arm_drift": "Close eyes, hold arms out; one arm drifts down",
+        "speech": "Repeat phrase 'You can't teach an old dog new tricks'; slurred or wrong words"
+      },
+      "ct_head_timing": "Within 20 minutes of ED arrival",
+      "tpa_eligibility": {
+        "time_window": "Within 4.5 hours of symptom onset (3 hours if >80 years old or anticoagulated)",
+        "exclusions": ["Intracranial hemorrhage on CT", "BP >185/110", "Platelets <100k", "Glucose <50", "INR >1.7", "Recent surgery <14 days"],
+        "dose": "0.9 mg/kg (max 90mg); 10% IV bolus, rest over 60 minutes"
+      },
+      "thrombectomy_window": "Up to 24 hours if large vessel occlusion + salvageable tissue on imaging"
+    }
+  },
+  "medication_administration": {
+    "high_alert_medications": {
+      "insulin": {
+        "error_prevention": "Never abbreviate 'U' as 'u' (looks like 0); always use 'units'",
+        "sliding_scale_caution": "Verify scale matches patient's sensitivity",
+        "two_nurse_verification": "Required before administration"
+      },
+      "heparin": {
+        "dosing_weight_based": "80 units/kg bolus, then 18 units/kg/hr infusion",
+        "monitoring": "aPTT 6 hours after rate change; goal 60-80 seconds",
+        "reversal": "Protamine sulfate 1mg per 100 units heparin given in last 2-3 hours"
+      },
+      "potassium_iv": {
+        "max_peripheral_concentration": "10 mEq/100mL",
+        "max_central_concentration": "20 mEq/100mL",
+        "max_rate": "10 mEq/hour peripheral; 40 mEq/hour central with cardiac monitoring",
+        "never_iv_push": "Cardiac arrest risk; always dilute and infuse slowly"
+      }
+    },
+    "pain_management": {
+      "who_analgesic_ladder": ["Step 1: Non-opioid (acetaminophen, NSAID)", "Step 2: Weak opioid (codeine, tramadol)", "Step 3: Strong opioid (morphine, hydromorphone, fentanyl)"],
+      "opioid_conversions_mme": {
+        "morphine_10mg_po": "Baseline (10 MME)",
+        "oxycodone_5mg_po": "7.5 MME (1.5x morphine)",
+        "hydrocodone_5mg_po": "5 MME (1x morphine)",
+        "hydromorphone_2mg_po": "8 MME (4x morphine)",
+        "fentanyl_patch_25mcg_hr": "60 MME/day"
+      },
+      "reversal_agent": "Naloxone (Narcan) 0.4mg IV; may repeat q2-3min; watch for re-sedation"
+    }
+  },
+  "vital_signs_interpretation": {
+    "early_warning_scores": {
+      "news2": {
+        "parameters": ["Respiratory rate", "SpO2", "Supplemental O2", "Systolic BP", "Heart rate", "Level of consciousness", "Temperature"],
+        "scoring": "0-20 scale; ≥7 = critical illness risk; trigger rapid response",
+        "escalation_protocol": "Score 5-6: increase monitoring; 7+: urgent MD review + consider ICU"
+      }
+    },
+    "hemodynamics": {
+      "map_calculation": "(SBP + 2*DBP) / 3",
+      "map_targets": {
+        "septic_shock": "≥65 mmHg",
+        "traumatic_brain_injury": "80-100 mmHg",
+        "general": "≥60 mmHg for organ perfusion"
+      }
+    }
+  }
+}

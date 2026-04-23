@@ -1,0 +1,223 @@
+{
+  "_source": "PMBOK Guide 7th Edition, Scrum Guide, SAFe framework, PMI-ACP materials",
+  "_note": "Long-tail project management. Agile ceremonies, risk management, PMP processes, stakeholder management.",
+  "agile_frameworks": {
+    "scrum": {
+      "roles": {
+        "product_owner": "Owns product vision and backlog; prioritizes features; accepts completed work; voice of customer",
+        "scrum_master": "Facilitates process; removes blockers; coaches team; protects from interruptions; not a manager",
+        "development_team": "Cross-functional; self-organizing; 3-9 people; delivers working increments"
+      },
+      "ceremonies": {
+        "sprint_planning": {
+          "when": "Start of sprint; 2-4 hours for 2-week sprint",
+          "inputs": "Product backlog; velocity; sprint goal",
+          "outputs": "Sprint backlog; commitment to sprint goal",
+          "questions": "What can we deliver? How will we do it?"
+        },
+        "daily_standup": {
+          "when": "Daily; same time/place; 15 minutes max; stand to keep it short",
+          "format": "Each person: yesterday's work, today's plan, blockers",
+          "not": "Status report to manager; problem-solving session (take offline)"
+        },
+        "sprint_review": {
+          "when": "End of sprint; 1-2 hours",
+          "purpose": "Demo working software to stakeholders; gather feedback",
+          "outcome": "Product backlog updates based on feedback"
+        },
+        "sprint_retrospective": {
+          "when": "After review; end of sprint; 1-1.5 hours",
+          "purpose": "Team reflects on process; what went well, what to improve, action items",
+          "formats": "Start-stop-continue; glad-sad-mad; sailboat (wind/anchors)"
+        },
+        "backlog_refinement": {
+          "when": "Mid-sprint; 1 hour per week typical",
+          "purpose": "Break down user stories; estimate; clarify acceptance criteria; 2-3 sprints ahead",
+          "goal": "10-15% of team's time; stories 'ready' for sprint planning"
+        }
+      },
+      "artifacts": {
+        "product_backlog": "Prioritized list of features; user stories; epics; owned by PO",
+        "sprint_backlog": "User stories committed for current sprint + tasks",
+        "increment": "Sum of completed backlog items; potentially shippable; meets DoD",
+        "burndown_chart": "Work remaining vs time; ideal trend line vs actual; shows progress"
+      },
+      "definition_of_done": {
+        "purpose": "Shared understanding of 'complete'; quality gate; prevents undone work",
+        "examples": ["Code complete", "Unit tests written and passing", "Code reviewed", "Integrated to main", "Acceptance criteria met", "Documented", "Deployed to staging"]
+      }
+    },
+    "kanban": {
+      "principles": "Visualize work; limit WIP; manage flow; make policies explicit; feedback loops; improve collaboratively",
+      "wip_limits": "Maximum items in each column; prevents overload; forces finishing before starting; typical 1-2× team size",
+      "flow_metrics": {
+        "cycle_time": "Time from start to done for single item; lower is better",
+        "throughput": "Items completed per time period; higher is better",
+        "wip": "Work in progress; lower WIP usually improves cycle time (Little's Law)"
+      },
+      "board_structure": "To Do | In Progress (WIP limit 3) | Code Review (WIP limit 2) | Done"
+    },
+    "safe_scaled_agile": {
+      "levels": "Team (scrum) > Program (ART) > Large Solution > Portfolio",
+      "art": "Agile Release Train; 5-12 teams; aligned to common cadence and vision; 8-12 week PI",
+      "pi_planning": "Program Increment planning; all teams; 2 days; plan 8-12 weeks; dependencies identified; team commitments",
+      "inspect_and_adapt": "End of PI; demo, quantitative metrics review, retrospective, improvement backlog"
+    }
+  },
+  "user_story_writing": {
+    "format": "As a [role], I want [feature], so that [benefit]",
+    "invest_criteria": {
+      "independent": "Minimal dependencies on other stories; can be developed in any order",
+      "negotiable": "Details negotiable; not a contract; conversation over documentation",
+      "valuable": "Delivers value to user/business; not technical tasks",
+      "estimable": "Team can estimate size; if not, needs refinement or spike",
+      "small": "Completable in one sprint; split if too large; 1-5 days ideal",
+      "testable": "Clear acceptance criteria; can verify done"
+    },
+    "acceptance_criteria": {
+      "format": "Given [context], when [action], then [outcome]",
+      "example": "Given user logged in, when click 'Export', then CSV downloads with all visible data",
+      "purpose": "Defines done; enables testing; prevents misunderstanding"
+    },
+    "story_splitting": {
+      "patterns": ["By workflow steps", "By business rules", "By CRUD operations", "By data variations", "By spike then implementation"],
+      "avoid": "Splitting by layer (frontend/backend); want vertical slices delivering value"
+    }
+  },
+  "estimation": {
+    "story_points": {
+      "definition": "Relative size; complexity + effort + uncertainty; unitless; not hours",
+      "fibonacci_scale": "1, 2, 3, 5, 8, 13, 21; forces coarse estimates; diminishing precision at larger sizes",
+      "planning_poker": "Team estimates simultaneously; discuss outliers; converge on estimate; prevents anchoring"
+    },
+    "velocity": {
+      "calculation": "Average story points completed per sprint over last 3-5 sprints",
+      "use": "Forecast completion; 'we do 30 points/sprint, 120 points remaining = 4 sprints'",
+      "not": "Comparison between teams; performance metric for individuals; changes over time with team changes"
+    },
+    "t_shirt_sizing": {
+      "scale": "XS, S, M, L, XL; coarse estimate for early planning",
+      "conversion": "XS=1, S=2, M=5, L=8, XL=13 story points approximately",
+      "use": "Epics and features; refine to story points closer to sprint"
+    }
+  },
+  "risk_management": {
+    "identify_risks": {
+      "sources": "Brainstorming; lessons learned; stakeholder interviews; assumptions; dependencies",
+      "categories": "Technical; schedule; cost; resource; external; regulatory; market"
+    },
+    "qualitative_analysis": {
+      "probability": "High (>70%), Medium (30-70%), Low (<30%)",
+      "impact": "High (major cost/schedule impact), Medium (moderate), Low (minimal)",
+      "risk_matrix": "High prob + high impact = critical; low prob + low impact = accept",
+      "risk_score": "Probability × Impact; prioritize by score"
+    },
+    "quantitative_analysis": {
+      "pert": "(Optimistic + 4×Most Likely + Pessimistic) / 6; for time/cost estimates",
+      "monte_carlo": "Simulate 1000s iterations; probability distribution of outcomes; requires software",
+      "decision_tree": "Expected Monetary Value = Probability × Impact for each branch; choose highest EMV"
+    },
+    "response_strategies": {
+      "avoid": "Eliminate threat; change plan; prove technology with POC before committing",
+      "mitigate": "Reduce probability or impact; add buffer; extra testing; redundant suppliers",
+      "transfer": "Shift to third party; insurance; fixed-price contract; warranty",
+      "accept": "Acknowledge but don't act; contingency reserve for if it occurs",
+      "escalate": "Outside PM authority; escalate to sponsor; regulatory risks",
+      "opportunities": "Exploit (ensure it happens); Enhance (increase probability); Share (with partner); Accept"
+    },
+    "contingency_reserve": {
+      "purpose": "Budget/schedule buffer for known unknowns (identified risks)",
+      "sizing": "10-20% of budget typical; risk-adjusted based on analysis",
+      "management_reserve": "Separate from contingency; for unknown unknowns; requires sponsor approval to use"
+    }
+  },
+  "stakeholder_management": {
+    "identification": {
+      "power_interest_grid": {
+        "high_power_high_interest": "Manage closely; frequent updates; key decision makers",
+        "high_power_low_interest": "Keep satisfied; don't overload with detail; executives",
+        "low_power_high_interest": "Keep informed; willing supporters; team members, users",
+        "low_power_low_interest": "Monitor; minimal effort; peripheral stakeholders"
+      },
+      "salience_model": "Power, Legitimacy, Urgency; stakeholders with all three are 'definitive' (highest priority)"
+    },
+    "engagement_strategies": {
+      "resistant": "Aware but opposed; understand objections; address concerns; involve in decisions; WIIFM (what's in it for me)",
+      "neutral": "Aware but uncommitted; educate on benefits; demonstrate quick wins",
+      "supportive": "Aware and supportive; leverage as champions; amplify their voice",
+      "leading": "Actively engaged and promoting; empower; give visibility"
+    },
+    "communication_plan": {
+      "elements": "Who (stakeholder); What (info); When (frequency); How (medium); Who sends",
+      "example": "Steering committee; project status; monthly; presentation; PM sends",
+      "tailor": "Executives want summary; team wants detail; customers want benefits; adjust message and medium"
+    }
+  },
+  "pmbok_process_groups": {
+    "initiating": {
+      "develop_project_charter": "Formal authorization; high-level scope, milestones, budget; sponsor approval",
+      "identify_stakeholders": "Who's affected or can influence; power/interest grid; engagement strategy"
+    },
+    "planning": {
+      "scope_management": "Collect requirements; define scope; create WBS; scope baseline",
+      "schedule_management": "Define activities; sequence; estimate durations; develop schedule; critical path",
+      "cost_management": "Estimate costs; determine budget; cost baseline",
+      "quality_management": "Plan quality; define metrics (defect rate <2%); quality assurance and control",
+      "resource_management": "Estimate resources; acquire team; team charter; RACI matrix",
+      "communications_management": "Who needs what info when; distribution list; cadence",
+      "risk_management": "Identify, analyze, plan responses; risk register",
+      "procurement_management": "Make or buy; RFP; vendor selection criteria"
+    },
+    "executing": {
+      "direct_and_manage": "Lead team; implement plan; manage changes",
+      "manage_quality": "Audits; process improvements; follow quality plan",
+      "acquire_resources": "Hire or assign team; procure materials",
+      "develop_team": "Training; team building; co-location; motivation",
+      "conduct_procurements": "Solicit bids; select vendors; negotiate contracts"
+    },
+    "monitoring_and_controlling": {
+      "monitor_and_control": "Track performance; compare to baseline; variance analysis",
+      "perform_integrated_change_control": "Change requests; CCB approval; update baselines",
+      "validate_scope": "Customer acceptance of deliverables",
+      "control_schedule": "Analyze variance; forecast completion; take corrective action",
+      "control_costs": "EV analysis; CPI, SPI; forecast EAC",
+      "control_quality": "Inspect deliverables; root cause analysis; defect fixes"
+    },
+    "closing": {
+      "close_project": "Final deliverable acceptance; release resources; lessons learned; celebrate; archive"
+    }
+  },
+  "earned_value_management": {
+    "key_metrics": {
+      "pv": "Planned Value; budgeted cost of scheduled work; baseline",
+      "ev": "Earned Value; budgeted cost of completed work; what you got",
+      "ac": "Actual Cost; actual cost of completed work; what you paid",
+      "bac": "Budget at Completion; total planned budget"
+    },
+    "variance": {
+      "cv": "Cost Variance = EV - AC; positive is under budget; negative is over budget",
+      "sv": "Schedule Variance = EV - PV; positive is ahead; negative is behind"
+    },
+    "performance_indices": {
+      "cpi": "Cost Performance Index = EV / AC; >1.0 is under budget; <1.0 is over budget; 1.0 is on budget",
+      "spi": "Schedule Performance Index = EV / PV; >1.0 is ahead; <1.0 is behind"
+    },
+    "forecasting": {
+      "eac": "Estimate at Completion = BAC / CPI (if current trends continue); or AC + (BAC - EV) if atypical variance",
+      "etc": "Estimate to Complete = EAC - AC; how much more we'll spend",
+      "vac": "Variance at Completion = BAC - EAC; final expected variance"
+    },
+    "example": {
+      "scenario": "Project 50% complete; PV=$100k, EV=$80k, AC=$90k, BAC=$200k",
+      "analysis": "CV = 80-90 = -$10k (over budget); SV = 80-100 = -$20k (behind schedule); CPI = 80/90 = 0.89; SPI = 80/100 = 0.8",
+      "forecast": "EAC = 200/0.89 = $225k; project will finish $25k over budget if trends continue"
+    }
+  },
+  "critical_path_method": {
+    "process": "Sequence activities; estimate durations; draw network diagram; calculate early/late dates; identify critical path",
+    "critical_path": "Longest path through network; zero float; determines minimum project duration; delay on CP delays project",
+    "float_slack": "Total Float = LS - ES (or LF - EF); amount activity can be delayed without delaying project",
+    "fast_tracking": "Perform activities in parallel normally done in sequence; increases risk",
+    "crashing": "Add resources to shorten duration; increases cost; crash activities on critical path only"
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "_source": "International Residential Code, carpentry textbooks, Framing practices guides",
+  "_note": "Long-tail carpentry knowledge. Framing techniques, lumber sizing, code requirements, structural principles.",
+  "lumber_dimensions": {
+    "nominal_vs_actual": {
+      "2x4": "Actual 1.5\" × 3.5\"",
+      "2x6": "Actual 1.5\" × 5.5\"",
+      "2x8": "Actual 1.5\" × 7.25\"",
+      "2x10": "Actual 1.5\" × 9.25\"",
+      "2x12": "Actual 1.5\" × 11.25\"",
+      "reason": "Nominal size is rough-cut; planing and drying reduces to actual"
+    },
+    "grades": {
+      "select_structural": "Highest grade; fewest knots; strongest; headers, beams",
+      "no1_no2": "Standard framing grade; studs, joists, rafters; most economical",
+      "stud_grade": "Vertical use only; straightness important; not for joists/rafters",
+      "utility": "Lowest; blocking, bracing, non-structural"
+    },
+    "species": {
+      "douglas_fir": "Strong; straight; premium framing lumber",
+      "spf": "Spruce-Pine-Fir; softer; common; economical",
+      "hem_fir": "Hemlock-Fir; moderate strength; western US",
+      "southern_pine": "Dense; strong; pressure-treats well; southeast US"
+    }
+  },
+  "wall_framing": {
+    "components": {
+      "sole_plate": "Bottom horizontal; nailed to floor/subfloor",
+      "top_plate": "Two 2x members on top; laps at corners for strength; ties walls together",
+      "studs": "Vertical members; 16\" or 24\" on-center (o.c.); support loads",
+      "headers": "Over openings (doors, windows); carries load; sized for span",
+      "cripple_studs": "Short studs above/below openings; maintain stud spacing",
+      "king_stud": "Full-height stud beside opening; supports header",
+      "jack_stud": "Trimmer; under header; supports vertical load; same depth as header"
+    },
+    "stud_spacing": {
+      "16_inch_oc": "Standard; stronger; more lumber; better for drywall (less sag)",
+      "24_inch_oc": "Allowed for 1-story or 2nd floor; saves lumber; requires 5/8\" drywall",
+      "code": "IRC allows 24\" o.c. for 2x4 studs in 1-story or 2nd floor; 16\" o.c. for 2x3; verify local"
+    },
+    "header_sizing": {
+      "rule_of_thumb": "Span in feet ÷ 2 = depth in inches for typical loads; 8 ft span = 2x8 header",
+      "proper_method": "Calculate load; use span tables; factors: snow load, floor loads, span",
+      "examples": {
+        "3_ft_window": "Single 2x6 or double 2x4",
+        "6_ft_door": "Double 2x8 or single LVL",
+        "8_ft_garage": "Double 2x12 or triple 2x10 or LVL",
+        "16_ft_garage": "Engineered beam (LVL, glulam); consult engineer"
+      },
+      "bearing": "Header bears on jack studs; header length = opening + 2× jack stud width (3\")"
+    }
+  },
+  "floor_framing": {
+    "joist_sizing": {
+      "factors": "Span, spacing (12\"/16\"/24\" o.c.), species, grade, load (live + dead)",
+      "span_tables": "IRC Table R502.3.1; must consult for code compliance",
+      "examples_16_oc": {
+        "2x8_no2_spf": "12 ft span max for 40 psf live load",
+        "2x10_no2_spf": "15 ft span",
+        "2x12_no2_spf": "18 ft span"
+      },
+      "rim_joist": "Joist-depth member at perimeter; boxes in floor frame; same depth as joists"
+    },
+    "bridging": {
+      "purpose": "Prevent joist rotation; distribute loads; stiffen floor",
+      "types": {
+        "cross_bridging": "Diagonal wood or metal; X-pattern between joists; 8 ft o.c. rows",
+        "solid_blocking": "Full-depth solid 2x between joists; strongest; more labor",
+        "continuous_blocking": "Row of solid blocking at mid-span for >8 ft spans"
+      },
+      "code": "Required for joists >12\" deep or spanning >8 ft (varies by jurisdiction)"
+    },
+    "cantilevers": {
+      "rule": "Cantilever up to 1/4 of back span; 8 ft back span allows 2 ft cantilever",
+      "code": "IRC R502.3.3; limit 2x8 cantilever to 24\" max; 2x10 to 30\"; back span must be 2× cantilever min",
+      "framing": "Joists run perpendicular; extend beyond beam; block between joists at beam"
+    },
+    "subfloor": {
+      "thickness": "23/32\" (3/4\") OSB or plywood; 16\" o.c. joists; 19/32\" for 24\" o.c. not recommended",
+      "tongue_and_groove": "T&G edges; no blocking needed on edges; glue and screw; prevents squeaks",
+      "fastening": "Glue (PL400 or equivalent) + screws or ring-shank nails; 6\" edges, 12\" field",
+      "expansion": "1/8\" gap at edges for expansion; caulk before subfloor to prevent squeak"
+    }
+  },
+  "roof_framing": {
+    "rafter_basics": {
+      "rise_run": "Rise = vertical change in inches per foot of run; 6/12 pitch = 6\" rise per 12\" run",
+      "common_rafter": "Runs from ridge to top plate; perpendicular to ridge",
+      "hip_rafter": "45° from corner; connects ridge to outside corner; longer than common",
+      "valley_rafter": "Inside corner; connects two roof sections; longer than common",
+      "jack_rafter": "Runs from hip/valley to top plate or ridge; shorter than common"
+    },
+    "rafter_sizing": {
+      "factors": "Span (horizontal projection), spacing, species, grade, snow load, dead load",
+      "span_tables": "IRC Table R802.4.1; based on ground snow load",
+      "example_30psf_snow": "2x6 @ 16\" o.c. = 11 ft span; 2x8 = 14 ft; 2x10 = 18 ft; 2x12 = 22 ft"
+    },
+    "roof_pitch": {
+      "low_slope": "<4/12; requires membrane roofing or metal; prone to leaks with shingles",
+      "standard": "4/12 to 9/12; shingles, metal, tile; 6/12 most common",
+      "steep": ">9/12; 12/12 = 45°; walkability issues; dramatic appearance",
+      "walkable": "6/12 and under walkable with caution; >8/12 needs staging/harness"
+    },
+    "truss_vs_stick": {
+      "stick_framing": "Site-built rafters + ridge beam; allows attic space/cathedral ceiling; more labor; traditional",
+      "trusses": "Pre-engineered; stronger; faster; cheaper; web members occupy attic; can't modify",
+      "truss_spacing": "24\" o.c. typical; engineered for span and load; must follow truss drawings exactly"
+    },
+    "birdsmouth_cut": {
+      "definition": "Notch in rafter where it sits on top plate; provides bearing",
+      "depth": "Seat cut depth ≤1/3 rafter depth; deeper weakens rafter; 2x6 rafter = 1.75\" max seat cut",
+      "layout": "Plumb cut (vertical) + seat cut (horizontal); angles determined by pitch"
+    }
+  },
+  "connections_and_fastening": {
+    "nails": {
+      "common": "Thick shank; large head; framing; 16d (3.5\") for 2x to 2x; 8d (2.5\") for sheathing",
+      "box": "Thinner shank than common; less splitting; finish work",
+      "sinker": "Coated; tapered head; nail guns; 16d sinker = 3.25\" (shorter than common 16d)",
+      "ring_shank": "Spiral/ring grooves; high withdrawal resistance; subfloor, sheathing; prevent pops/squeaks"
+    },
+    "screws": {
+      "structural": "GRK, Spax, FastenMaster; high shear/withdrawal; no pre-drill; replace bolts for some applications",
+      "deck_screws": "Exterior rated; coated; composite-compatible; #8 or #10; 2.5\"-3.5\"",
+      "drywall_screws": "Not for structural; brittle; shear easily; fine thread for wood studs"
+    },
+    "hangers_and_hardware": {
+      "joist_hanger": "Metal bracket; suspends joist from beam/ledger; use hanger-specific nails (10d × 1.5\")",
+      "hurricane_ties": "Strap tie rafter to top plate; prevents uplift in high wind; required in coastal zones",
+      "hold_downs": "Anchor shear wall to foundation; prevents overturning; requires engineered design for high shear",
+      "simpson_strong_tie": "Brand; catalog with capacities; specify model for inspections; use correct fasteners"
+    }
+  },
+  "code_requirements": {
+    "bearing": {
+      "minimum_bearing": "1.5\" for sawn lumber on wood; 3\" on masonry/concrete",
+      "bearing_area": "Must be sufficient for load; crushing perpendicular to grain = 625 psi for most species",
+      "notching_joists": {
+        "top_edge": "No notches in middle 1/3 span; outer 1/3 max depth = 1/6 joist depth",
+        "bottom_edge": "Max depth = 1/6 joist depth; outer 1/3 only",
+        "holes": "Max diameter = 1/3 depth; min 2\" from edge; not in middle 1/3"
+      }
+    },
+    "fire_blocking": {
+      "purpose": "Prevent vertical fire spread in concealed spaces",
+      "locations": "Between floors; at ceiling/roof; vertical stud runs >10 ft; soffits, drops",
+      "material": "2x4 blocking, 3/4\" plywood, gypsum board, fire-rated material"
+    },
+    "shear_walls": {
+      "purpose": "Resist lateral loads (wind, seismic); braced walls prevent racking",
+      "bracing_methods": "Structural sheathing (most common), diagonal let-in bracing, portal frames",
+      "amount": "Based on seismic/wind zone; IRC prescriptive tables; engineered for high-risk areas",
+      "fastening": "Edge nailing 4-6\" o.c.; field 12\" o.c.; specific for shear rating"
+    }
+  },
+  "measurements_and_layout": {
+    "layout": {
+      "crown_up": "Dimensional lumber has crown (arch); install crown up in joists/rafters so sag doesn't increase deflection",
+      "layout_marks": "X = center on mark; O = stud/joist at mark; measure from same end consistently",
+      "story_pole": "Mark all vertical measurements on single board; ensures consistency; faster than measuring each stud"
+    },
+    "squaring": {
+      "3_4_5_triangle": "3 ft + 4 ft = 5 ft hypotenuse if square; scale up: 6-8-10, 9-12-15",
+      "diagonal_method": "Measure corner to corner both ways; equal = square; adjust until match",
+      "framing_square": "Check for square; 16\" and 24\" markings for stud layout"
+    }
+  }
+}

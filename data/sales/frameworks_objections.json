@@ -1,0 +1,198 @@
+{
+  "_source": "SPIN Selling, Challenger Sale, Sales acceleration research, Revenue enablement",
+  "_note": "Long-tail sales methodology. Objection handling, qualification frameworks, negotiation tactics.",
+  "discovery_frameworks": {
+    "spin_selling": {
+      "situation_questions": {
+        "purpose": "Understand current state; background facts; build context",
+        "examples": ["What's your current process for X?", "How large is your team?", "What tools are you using today?"],
+        "caution": "Don't overuse; prospects find boring; 2-3 max then move to problem questions"
+      },
+      "problem_questions": {
+        "purpose": "Uncover pain points; dissatisfaction with current state",
+        "examples": ["What challenges are you facing with X?", "How much time does that take?", "What happens when Y goes wrong?"],
+        "goal": "Get prospect to acknowledge pain; 'yes, that's a problem for us'"
+      },
+      "implication_questions": {
+        "purpose": "Amplify pain; show consequences; create urgency",
+        "examples": ["What impact does that have on revenue?", "How does that affect your team's productivity?", "If this continues for 6 months, what happens?"],
+        "most_powerful": "Turns small problem into big problem; 'we lose $50k/month' creates urgency"
+      },
+      "need_payoff_questions": {
+        "purpose": "Get prospect to articulate value of solving problem",
+        "examples": ["If you could solve X, what would that mean for you?", "How would that help your team?", "What would you be able to do that you can't do now?"],
+        "outcome": "Prospect sells themselves; 'we could double our output' → your solution is critical"
+      }
+    },
+    "meddic_qualification": {
+      "metrics": "Quantifiable economic impact; '$50k/month saved'; 'reduce time by 40%'; if no metrics, deal may not close",
+      "economic_buyer": "Who controls budget? Not always your champion; must get access; without EB, you're at risk",
+      "decision_criteria": "What factors matter? Price, features, integration, support? Rank them; position your strengths against criteria",
+      "decision_process": "Who's involved? Timeline? Approval steps? Legal/security review? Map entire process or you'll be surprised",
+      "identify_pain": "Specific pain tied to metrics; 'manual data entry costs us $50k/month in labor' not generic 'we want to be more efficient'",
+      "champion": "Internal advocate; has power/credibility; will sell for you when you're not in the room; coach you on politics; essential for complex deals"
+    },
+    "bant": {
+      "budget": "Can they afford it? $X allocated? If no budget, can they create one? No budget ≠ disqualify if pain is high",
+      "authority": "Are you speaking to decision-maker? If not, can you get to them? Avoid wasting time with non-decision-makers",
+      "need": "Do they have pain you solve? Is it urgent? 'Nice to have' vs 'must have' determines close probability",
+      "timeline": "When do they need to decide? Buying process stages? No timeline = low urgency = long sales cycle"
+    }
+  },
+  "objection_handling": {
+    "price_objection": {
+      "its_too_expensive": {
+        "bad_response": "We can give you a discount",
+        "good_responses": [
+          "Expensive compared to what? (Anchor to ROI not competitors)",
+          "What's the cost of not solving this problem? (Quantify cost of inaction)",
+          "Let's look at the value: you said this costs you $50k/month, our solution is $5k/month, that's a 10x return"
+        ],
+        "isolate_objection": "'If price were not an issue, is this the right solution?' → if yes, price is real objection; if no, uncover real objection"
+      },
+      "we_dont_have_budget": {
+        "responses": [
+          "When does your next budget cycle start? (Future opportunity)",
+          "If we can show ROI that justifies budget allocation, can you bring this to finance? (Create budget)",
+          "What if we structure this as operational expense vs capital expense? (Financing option)"
+        ],
+        "tactical": "Offer pilot/POC for lower cost; prove value; expand in next budget cycle"
+      },
+      "your_competitor_is_cheaper": {
+        "responses": [
+          "What are you comparing? (Feature parity check; apples to oranges)",
+          "Cheapest vs best value - which matters more for [their specific use case]?",
+          "What's the total cost of ownership? (Implementation, training, support, switching costs)"
+        ],
+        "differentiate_on_value": "Our customers see 30% faster implementation; that's 2 months of lost productivity with cheaper solution"
+      }
+    },
+    "timing_objection": {
+      "we_need_to_think_about_it": {
+        "diagnosis": "Unclear value, fear of making wrong decision, or polite rejection",
+        "response": "I understand. What specifically do you need to think about? (Isolate concern)",
+        "follow_up": "Is it the [price/features/fit]? (Name potential concerns; they'll correct you with real issue)"
+      },
+      "not_a_priority_right_now": {
+        "diagnosis": "Pain not urgent or you didn't create urgency",
+        "response": "What would have to happen for this to become a priority?",
+        "create_urgency": "You mentioned [pain] costs you [amount]; even delaying 1 quarter costs [$X]. What's the risk of waiting?"
+      },
+      "well_revisit_next_quarter": {
+        "response": "What's happening next quarter that changes the situation?",
+        "calendar_close": "Let's schedule a call for [date in next quarter] to revisit. What metrics should we track between now and then?"
+      }
+    },
+    "authority_objection": {
+      "i_need_to_talk_to_my_boss": {
+        "response": "Makes sense. Help me understand - what will your boss want to know?",
+        "champion_coaching": "What concerns might they have? How can I help you present this?",
+        "request_introduction": "Would it make sense for me to join that conversation to answer questions directly?"
+      },
+      "were_still_evaluating_options": {
+        "response": "What's your evaluation criteria? How do the options compare?",
+        "positioning": "Based on your criteria, where do we rank? What would make us #1?"
+      }
+    },
+    "product_objection": {
+      "youre_missing_feature_x": {
+        "if_on_roadmap": "That's coming in [timeframe]. How critical is it for your decision? Can you launch without it?",
+        "if_not_on_roadmap": "Help me understand how you'd use that. Is it a must-have or nice-to-have?",
+        "workaround": "Our customers solve that with [workaround/integration]. Would that work for you?"
+      },
+      "your_competitor_has_x": {
+        "response": "That's true. They also have [disadvantages]. What matters most for your use case?",
+        "reframe": "Our customers chose us because [differentiation]. Is that more important than [feature X] for you?"
+      }
+    }
+  },
+  "negotiation_tactics": {
+    "anchoring": {
+      "principle": "First number sets reference point; anchor high",
+      "example": "Start at $100k list price; discount to $85k feels like win; starting at $85k, same discount lands at $72k",
+      "counter_anchor": "If they anchor low, ignore it; present your price with value justification; don't negotiate down from their anchor"
+    },
+    "flinch": {
+      "technique": "React with surprise to their counter-offer; 'I don't think we can do that' with pause",
+      "purpose": "Makes them question their position; often they counter themselves; 'well, maybe we could do $X instead'"
+    },
+    "silence": {
+      "after_quoting_price": "Quote price; shut up; let them speak first; whoever speaks first loses",
+      "power_of_pause": "Creates pressure; they may accept, justify, or reveal concerns; don't fill silence with discounts"
+    },
+    "trade_concessions": {
+      "never_give_for_free": "Every discount/concession requires something in return",
+      "examples": [
+        "I can do $X if you sign by end of week (urgency)",
+        "I can include feature Y if you expand to [more users/longer contract] (expansion)",
+        "I can do 15% off if you agree to be a reference customer (value exchange)"
+      ]
+    },
+    "good_cop_bad_cop": {
+      "internal_approval": "'I want to give you this deal but my manager needs to approve; what can you give me to justify it?'",
+      "legal_finance": "'Finance requires minimum $X; they won't approve below that' (create external constraint; not you saying no)"
+    },
+    "nibbling": {
+      "definition": "After agreement, ask for small extra; 'can you throw in [small thing]?'",
+      "defense": "That wasn't in scope; we can add it for $X or include in next renewal",
+      "offense": "After they agree, 'and you'll include implementation support?' (small ask seems reasonable after big commitment)"
+    }
+  },
+  "closing_techniques": {
+    "assumptive_close": {
+      "language": "'When we get started...' not 'If you decide to buy...'",
+      "examples": ["Should we schedule your kickoff for next Monday or Wednesday?", "I'll send the contract to [name] - is that the right person?"]
+    },
+    "summary_close": {
+      "recap_value": "So you'll save $50k/month, reduce time by 40%, and improve accuracy. The investment is $5k/month. Does that make sense to move forward?",
+      "tie_to_pain": "Earlier you said [pain] was costing you [amount]. Our solution solves that for [price]. Shall we proceed?"
+    },
+    "urgency_close": {
+      "scarcity": "This price is only available until [date]; after that it goes to [higher price]",
+      "event_based": "If you sign by quarter-end, we can start implementation immediately; otherwise 4-week delay",
+      "caution": "Use sparingly; false urgency destroys trust; must be real constraint"
+    },
+    "alternative_close": {
+      "binary_choice": "Would you prefer the annual plan or quarterly?",
+      "both_assume_yes": "Either choice moves forward; avoids yes/no decision"
+    },
+    "trial_close": {
+      "test_readiness": "'On a scale of 1-10, how ready are you to move forward?'",
+      "if_not_10": "'What would it take to get to 10?' (Uncovers objections)"
+    }
+  },
+  "deal_acceleration": {
+    "mutual_action_plan": {
+      "definition": "Shared document with milestones, owners, dates for both buyer and seller",
+      "includes": ["Technical evaluation complete by [date]", "Security review by [date]", "Executive approval by [date]", "Contract signed by [date]"],
+      "power": "Creates joint commitment; reveals if timeline is realistic; identifies blockers early"
+    },
+    "champion_development": {
+      "characteristics": "Has power/credibility; personally gains from your success; will navigate politics",
+      "coaching": "Give them tools to sell internally; ROI calculator, case studies, competitive comparison, demo recordings",
+      "alignment": "Understand their personal win; promotion? Bonus tied to outcomes? Visibility to exec team?"
+    },
+    "multi_threading": {
+      "definition": "Relationships with multiple stakeholders; not just champion",
+      "why": "Champion leaves, blocked, or loses influence → deal dies if single-threaded",
+      "who": "Economic buyer, technical buyer, end users, influencers, legal, procurement"
+    }
+  },
+  "sales_metrics": {
+    "pipeline_health": {
+      "coverage": "Pipeline value / quota; 3-4x coverage needed to hit quota (25-33% close rate)",
+      "stage_distribution": "Even spread across stages; too much in early stages = not progressing; too much in late = not enough new opps",
+      "velocity": "Days in each stage; >30 days in discovery = not qualified; >60 days in negotiation = stalled"
+    },
+    "activity_metrics": {
+      "talk_time": "Hours on phone/video with prospects; 15-20 hours/week for quota attainment",
+      "emails_sent": "Leading indicator but quality > quantity; personalized > templated",
+      "demos_given": "Middle-funnel metric; 4-6 demos/week typical for SaaS AE"
+    },
+    "conversion_rates": {
+      "lead_to_opp": "10-20% typical; lower = poor qualification",
+      "opp_to_closed_won": "20-30% typical SaaS; varies by deal size and sales cycle",
+      "win_rate_by_source": "Inbound 30-40%; outbound 15-25%; referral 40-50%"
+    }
+  }
+}

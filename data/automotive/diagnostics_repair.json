@@ -1,0 +1,195 @@
+{
+  "_source": "ASE Certification Study Guides, Mitchell1 diagnostic procedures, OEM service manuals",
+  "_note": "Long-tail automotive diagnostics. Specific failure modes, sensor specs, OBD-II codes interpretation.",
+  "obd_ii_diagnostics": {
+    "dtc_code_structure": {
+      "first_character": {
+        "P": "Powertrain (engine, transmission)",
+        "B": "Body (airbags, climate, locks)",
+        "C": "Chassis (ABS, suspension, steering)",
+        "U": "Network (CAN bus, communication)"
+      },
+      "second_character": {
+        "0": "Generic SAE code (same across all manufacturers)",
+        "1": "Manufacturer-specific code",
+        "2": "Manufacturer-specific (alternate)",
+        "3": "Reserved"
+      },
+      "third_character": {
+        "1": "Fuel/air metering",
+        "2": "Fuel/air metering (injector circuit)",
+        "3": "Ignition system",
+        "4": "Auxiliary emissions",
+        "5": "Idle speed control",
+        "6": "PCM/ECM and outputs",
+        "7": "Transmission",
+        "8": "Transmission"
+      }
+    },
+    "common_codes_interpretation": {
+      "P0300": {
+        "definition": "Random/multiple cylinder misfire",
+        "causes": ["Bad spark plugs/wires", "Vacuum leak", "Low compression", "Clogged fuel injectors", "Low fuel pressure", "Lean mixture"],
+        "diagnosis": "Check freeze frame data; identify which cylinders; compression test; spark test; fuel pressure test"
+      },
+      "P0171_P0174": {
+        "definition": "System too lean (Bank 1 / Bank 2)",
+        "causes": ["Vacuum leak (intake manifold, brake booster, PCV)", "MAF sensor dirty/failed", "Exhaust leak before O2 sensor", "Weak fuel pump", "Clogged fuel filter"],
+        "diagnosis": "Smoke test for vacuum leaks; clean MAF with MAF cleaner; check fuel pressure (should be 40-60 PSI most vehicles); check fuel trims (LTFT/STFT)"
+      },
+      "P0420_P0430": {
+        "definition": "Catalyst efficiency below threshold (Bank 1 / Bank 2)",
+        "causes": ["Failed catalytic converter (most common)", "Exhaust leak", "O2 sensor failure", "Rich/lean condition damaging cat"],
+        "diagnosis": "Check upstream/downstream O2 sensor switching; downstream should be flat ~0.5V; if switching like upstream, cat failed; also check for rattling (broken substrate)"
+      },
+      "P0128": {
+        "definition": "Coolant thermostat below regulating temperature",
+        "causes": ["Stuck-open thermostat (95% of cases)", "Bad coolant temp sensor", "Low coolant level"],
+        "diagnosis": "Check coolant temp reaches 195-220°F; if stays <180°F, thermostat stuck; IR temp gun on upper radiator hose"
+      },
+      "P0455": {
+        "definition": "EVAP system large leak",
+        "causes": ["Missing or loose gas cap (80% of cases)", "Cracked EVAP canister", "Purge valve stuck open", "Leak in EVAP lines"],
+        "diagnosis": "Tighten/replace gas cap; clear code; if returns, smoke test EVAP system; check purge valve operation"
+      }
+    },
+    "fuel_trims": {
+      "stft_short_term": "Real-time correction; -10% to +10% normal; >±10% indicates problem being actively corrected",
+      "ltft_long_term": "Learned average correction; -10% to +10% normal; represents chronic condition",
+      "positive_trim": "+15% LTFT = adding 15% more fuel = lean condition (vacuum leak, weak pump, clogged filter)",
+      "negative_trim": "-15% LTFT = subtracting fuel = rich condition (leaking injector, bad MAF, bad O2 sensor)",
+      "combined_trim": "STFT + LTFT; if combined >±25%, drivability issues likely; investigate cause"
+    }
+  },
+  "sensor_testing": {
+    "maf_sensor": {
+      "function": "Measures air mass entering engine; PCM uses to calculate fuel",
+      "testing": "Key on engine off: 0-0.1V; idle (warm): 0.6-1.2V; 2500 RPM: 2.0-3.0V; readings in grams/sec on scan tool",
+      "failure_modes": ["Contaminated (oil, dirt) reads low → rich mixture, black smoke", "Failed reads 0V → default fuel map, poor performance"],
+      "cleaning": "MAF-specific cleaner only; do not touch sensor wire; 2 sprays; let dry; never use throttle body cleaner or carb cleaner"
+    },
+    "oxygen_sensors": {
+      "upstream_narrowband": {
+        "voltage": "Switches 0.1-0.9V; ~0.5V stoichiometric (14.7:1 AFR)",
+        "switching_rate": "Should switch lean/rich 1-3x per second at idle; slow switching = lazy sensor",
+        "lifespan": "60-100k miles; contamination from oil burning or coolant leak kills sensor"
+      },
+      "downstream_narrowband": {
+        "voltage": "Should be stable ~0.5V; if switching like upstream, cat failed",
+        "purpose": "Monitor catalyst efficiency; not used for fuel control"
+      },
+      "wideband_afr": {
+        "voltage": "Linear output; 0-5V or current output; measures exact AFR from 10:1 to 20:1",
+        "used_in": "Bank 1 sensor 1 on newer vehicles (2010+); more precise fuel control"
+      }
+    },
+    "coolant_temp_sensor": {
+      "resistance": "Negative temperature coefficient (NTC); resistance decreases as temp increases",
+      "typical_values": {
+        "32F_0C": "5000-7000 ohms",
+        "68F_20C": "2000-3000 ohms",
+        "194F_90C": "200-300 ohms",
+        "212F_100C": "150-200 ohms"
+      },
+      "testing": "Unplug connector; measure resistance across sensor terminals; compare to chart; out of range = bad sensor",
+      "symptoms_if_failed": "Hard start when cold (reads hot, too little fuel); poor fuel economy (reads cold, too much fuel)"
+    },
+    "throttle_position_sensor": {
+      "function": "Tells PCM throttle opening angle",
+      "voltage": "Closed throttle: 0.5-1.0V; wide open: 4.0-5.0V; should sweep smoothly",
+      "testing": "Scan tool graphing or multimeter; slowly open throttle; watch for jumps or dead spots",
+      "failure": "Stumble or hesitation at certain throttle positions; check voltage sweep for glitches"
+    },
+    "crankshaft_position_sensor": {
+      "function": "Tells PCM engine RPM and piston position; required for fuel and spark timing",
+      "testing": "AC voltage test: crank engine, should see 0.3-1.0V AC; or scope pattern shows pulses",
+      "symptoms": "No start or stalling; PCM needs crank signal to fire injectors and coils",
+      "common_failure": "Heat-related; works when cold, fails when hot; repl sensor and check air gap (0.020-0.050\")"
+    }
+  },
+  "ignition_system_diagnostics": {
+    "coil_on_plug": {
+      "design": "Individual coil per cylinder; no distributor",
+      "testing": "Swap coils between cylinders; if misfire moves to new cylinder, coil bad",
+      "resistance": "Primary: 0.5-2.0 ohms; secondary: 5k-15k ohms (varies by design)",
+      "failure_mode": "Misfire on one cylinder; code P030X where X is cylinder number"
+    },
+    "spark_plugs": {
+      "gap_specification": "0.035-0.060\" typical; wider gap for more power, requires stronger coil",
+      "reading_plugs": {
+        "tan_brown_electrode": "Correct mixture and temp",
+        "black_sooty": "Rich mixture or oil burning",
+        "white_blistered": "Too lean or overheating",
+        "oil_fouled": "Worn rings or valve seals",
+        "wet_with_fuel": "Ignition misfire or flooding"
+      },
+      "replacement_interval": "Copper: 30k miles; platinum: 60k; iridium: 100k"
+    },
+    "ignition_timing": {
+      "base_timing": "Timing with advance disconnected; typically 6-10° BTDC at idle",
+      "total_advance": "Base + mechanical + vacuum; ~32-36° at 2500 RPM cruise",
+      "check_with_timing_light": "Warm engine; disconnect vacuum advance; check marks align with spec; reconnect vacuum; should advance 10-15°"
+    }
+  },
+  "fuel_system_diagnostics": {
+    "fuel_pressure_specs": {
+      "port_fuel_injection": "40-60 PSI typical; 35-45 PSI GM, 55-65 PSI Ford/Chrysler",
+      "direct_injection": "2000-3000 PSI at high-pressure pump; 50-60 PSI at low-pressure pump",
+      "testing": "Install fuel pressure gauge; key on engine off (KOEO); should meet spec; start engine, should hold; load engine, should not drop >5 PSI"
+    },
+    "fuel_pump_testing": {
+      "current_draw": "4-8A typical for in-tank pump; >10A indicates pump laboring (clogged filter or failing pump)",
+      "pressure_decay": "Turn off engine; pressure should hold >30 PSI for 5 minutes; rapid drop = leaking injector or check valve",
+      "volume_test": "Disconnect return line; run pump; should flow 1 pint in 30 seconds; low volume = clogged strainer or weak pump"
+    },
+    "injector_testing": {
+      "resistance": "12-16 ohms typical for saturated (high-impedance); 2-5 ohms for peak-and-hold (low-impedance)",
+      "flow_test": "Remove injectors; pulse with power supply; collect fuel in graduated cylinders; all should flow within 5% of each other",
+      "balance_test": "Run engine; disable one injector at a time; RPM drop should be similar for all cylinders; low drop = clogged injector or bad cylinder",
+      "cleaning": "On-car: pressurized cleaner through fuel rail; off-car: ultrasonic cleaning; replace if >100k miles and clogged"
+    }
+  },
+  "electrical_diagnostics": {
+    "battery_testing": {
+      "voltage": "12.6V = 100% charged; 12.4V = 75%; 12.2V = 50%; 12.0V = 25%; <12V = discharged",
+      "load_test": "Load to half CCA rating for 15 seconds; voltage should stay >9.6V; <9.6V = bad battery",
+      "parasitic_draw": "Acceptable: <50mA (0.05A); disconnect negative cable; insert ammeter; pull fuses one-by-one to isolate circuit"
+    },
+    "alternator_testing": {
+      "output_voltage": "13.8-14.4V at idle with accessories on; <13.5V = undercharge; >15V = overcharge (bad regulator)",
+      "output_current": "Load alternator with headlights, blower, heated seats; should maintain voltage and provide rated amps (80-150A typical)",
+      "ripple_test": "AC voltage across battery; should be <0.5V AC; >0.5V indicates bad diodes in alternator"
+    },
+    "starter_testing": {
+      "voltage_drop": "Positive side: <0.5V drop from battery + to starter +; negative side: <0.5V drop from battery - to starter case",
+      "current_draw": "150-250A typical for 4-cyl; 250-350A for V8; >400A indicates high resistance (bad starter or engine mechanical issue)",
+      "bench_test": "Remove starter; apply 12V directly; should spin fast and draw <100A no-load"
+    }
+  },
+  "transmission_diagnostics": {
+    "fluid_condition": {
+      "color": "Red or pink = good; brown = oxidized (change fluid); black/burnt smell = severe damage",
+      "level": "Check hot in park (most vehicles); low level = slipping, burnt fluid; high level = foaming, erratic shifts",
+      "metal_particles": "Small amount on magnet normal; chunks or glitter = internal wear; drain and inspect pan"
+    },
+    "shift_problems": {
+      "no_upshift": "Check governor pressure sensor; check shift solenoids; check throttle position sensor; TCM may need reprogramming",
+      "harsh_shifts": "High line pressure; bad pressure control solenoid; worn clutches; TCM adaptive learning may help",
+      "slipping": "Low fluid level first; then worn clutches or bands; pressure test required; rebuild likely",
+      "delayed_engagement": "Worn clutch packs; low line pressure; cold weather thickens fluid (normal if <5 sec delay when cold)"
+    }
+  },
+  "brake_system": {
+    "abs_diagnostics": {
+      "wheel_speed_sensors": "AC voltage signal; test by spinning wheel, should see 0.5V+ AC; also check reluctor ring for damage",
+      "abs_codes": "C0035-C0050 typically wheel speed sensors; compare all four sensors at same speed; mismatched = bad sensor",
+      "bleeding_abs": "Some systems require scan tool to cycle ABS pump; traditional bleeding won't remove air from ABS module"
+    },
+    "brake_noise_diagnosis": {
+      "squealing": "Worn pads (wear indicator tab touching rotor); glazed pads; lack of anti-squeal paste",
+      "grinding": "Metal-to-metal; pads worn through; immediate replacement; likely rotor damage",
+      "pulsation": "Warped rotors; check runout with dial indicator; >0.003\" = resurface or replace",
+      "pulling": "Uneven pad wear; seized caliper; contaminated pad (oil/grease); air in one side of system"
+    }
+  }
+}

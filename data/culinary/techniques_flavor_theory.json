@@ -1,0 +1,183 @@
+{
+  "_source": "Culinary Institute textbooks, The Flavor Bible, ServSafe certification, Professional kitchen SOPs",
+  "_note": "Long-tail culinary knowledge. Cooking techniques, flavor pairing, food safety, kitchen operations.",
+  "cooking_methods": {
+    "dry_heat": {
+      "roasting": {
+        "temperature": "325-450°F; lower for large cuts, higher for vegetables/small proteins",
+        "technique": "Uncovered in oven; hot air circulation; browning via Maillard reaction",
+        "proteins": "Beef 325-350°F for roasts; chicken 375-425°F; pork 350-375°F",
+        "vegetables": "400-450°F; toss in oil; spread single layer; caramelization"
+      },
+      "grilling": {
+        "direct_heat": "Food directly over flame; high heat 450-550°F; steaks, burgers, vegetables",
+        "indirect_heat": "Food to side of flame; lid closed; convection; large cuts, whole chickens",
+        "two_zone": "Hot zone for searing; cool zone for finishing; prevents burning",
+        "resting": "5 min for steaks; 15-20 min for roasts; redistributes juices; temp rises 5-10°F"
+      },
+      "sautéing": {
+        "technique": "High heat; small amount fat; keep food moving; quick cooking",
+        "pan_selection": "Stainless steel (fond for sauces); nonstick (eggs, delicate fish); cast iron (heat retention)",
+        "temperature": "Medium-high to high; oil shimmers but not smoking; protein sizzles immediately",
+        "crowding": "Don't overcrowd; steams instead of browns; work in batches"
+      },
+      "pan_searing": {
+        "process": "Pat dry; season; hot pan; oil; protein; don't move 3-4 min; flip once",
+        "crust_formation": "Maillard reaction 285-330°F; browning and flavor development",
+        "finishing": "Finish in 350-400°F oven for thick cuts; ensures even doneness"
+      }
+    },
+    "moist_heat": {
+      "braising": {
+        "steps": "1) Sear protein, 2) Remove, sauté aromatics, 3) Deglaze, 4) Return protein, add liquid 1/3 up sides, 5) Cover, low heat or oven 300-325°F",
+        "cuts": "Tough cuts with connective tissue; chuck roast, short ribs, pork shoulder, lamb shanks",
+        "liquid": "Stock, wine, beer; aromatic (onion, carrot, celery, garlic, herbs)",
+        "time": "2-4 hours until fork-tender; collagen → gelatin; low slow cooking essential"
+      },
+      "poaching": {
+        "temperature": "160-180°F; small bubbles on bottom, no breaking surface",
+        "proteins": "Delicate; fish, chicken breast, eggs",
+        "liquid": "Court bouillon (water, wine, aromatics); milk; stock",
+        "shallow_vs_submersion": "Shallow (1/2 covered) for fish; submersion for chicken"
+      },
+      "steaming": {
+        "method": "Boiling water below, steam cooks food above; no direct contact",
+        "advantages": "Retains nutrients, moisture, shape; no added fat",
+        "vegetables": "3-7 min for most; bright color, slight crunch",
+        "proteins": "Fish, dumplings, tamales; gentle cooking"
+      }
+    },
+    "combination": {
+      "stir_frying": {
+        "wok_technique": "Highest heat; constant motion; cook in order (longest first); add sauce last",
+        "mise_en_place": "Everything prepped before starting; uniform sizes for even cooking",
+        "order": "Aromatics (garlic, ginger) 30 sec → protein → hard vegetables → soft vegetables → sauce",
+        "cornstarch_slurry": "1:1 cornstarch:water; add at end; thickens sauce; stir constantly"
+      }
+    }
+  },
+  "knife_skills": {
+    "cuts": {
+      "julienne": "1/8\" × 1/8\" × 2-2.5\" matchsticks; garnish, stir-fry",
+      "brunoise": "1/8\" × 1/8\" × 1/8\" dice; julienne then dice; fine dice for garnish",
+      "small_dice": "1/4\" cubes; macedoine for vegetables",
+      "medium_dice": "1/2\" cubes; parmentier; most common",
+      "large_dice": "3/4\" cubes; carré; stews, roasts",
+      "chiffonade": "Thin ribbons; stack leaves, roll, slice; basil, spinach, herbs",
+      "mince": "Finest cut; garlic, ginger, herbs; nearly paste"
+    },
+    "technique": {
+      "claw_grip": "Fingers curled under; knuckles guide blade; fingertips safe",
+      "rocking_motion": "Tip stays on board; heel rocks up/down; forward motion; efficient",
+      "sharpening": "Honing steel realigns; whetstone sharpens; 15-20° angle; weekly honing, monthly stone"
+    }
+  },
+  "flavor_theory": {
+    "five_tastes": {
+      "sweet": "Sugars; honey, fruits, caramelization; balances bitter, sour, spicy",
+      "salty": "Salt, soy sauce, fish sauce, parmesan; enhances other flavors; essential",
+      "sour": "Acids; lemon, vinegar, tomatoes, yogurt; brightens, balances richness",
+      "bitter": "Coffee, dark chocolate, kale, radicchio; complexity; balance with sweet/fat",
+      "umami": "Glutamates; mushrooms, tomatoes, soy sauce, parmesan, miso, fish sauce; savory depth"
+    },
+    "balancing_flavors": {
+      "too_salty": "Add acid (lemon, vinegar), fat (cream, butter), or dilute (more liquid, bulk)",
+      "too_sweet": "Add acid (vinegar, citrus), salt, or bitter (greens, zest)",
+      "too_sour": "Add fat (cream, oil), sweet (sugar, honey), or salt",
+      "too_spicy": "Add fat (dairy, coconut milk), sweet (sugar, honey), or acid (lime)",
+      "bland": "Salt first, then acid (lemon, vinegar), then fat"
+    },
+    "classic_pairings": {
+      "tomato_basil": "Aromatic compounds overlap; natural affinity",
+      "lemon_fish": "Acid cuts fat; brightens delicate flavor",
+      "pork_apple": "Sweet fruit balances rich savory; classic combination",
+      "beef_mushroom": "Umami × umami; depth and earthiness",
+      "chocolate_coffee": "Bitter complements bitter; complexity",
+      "strawberry_balsamic": "Sweet fruit + aged acid; surprising synergy"
+    },
+    "building_complexity": {
+      "layers": "Add ingredients at different stages; raw garlic vs roasted vs toasted",
+      "textural_contrast": "Crispy + creamy; crunchy + soft; fried shallots on soup",
+      "temperature_contrast": "Warm protein + cold salsa; ice cream on warm pie",
+      "fresh_finish": "Add fresh herbs, citrus zest, drizzle of oil at end; brightness"
+    }
+  },
+  "mother_sauces": {
+    "béchamel": {
+      "base": "Roux (butter + flour) + milk; white sauce",
+      "ratio": "3 oz butter, 3 oz flour (roux) per quart milk",
+      "technique": "Cook roux 2-3 min (blonde); add warm milk gradually; whisk constantly; simmer 20 min",
+      "derivatives": "Mornay (+cheese), Soubise (+onion purée)"
+    },
+    "velouté": {
+      "base": "Roux + light stock (chicken, fish, veal)",
+      "ratio": "3 oz butter, 3 oz flour per quart stock",
+      "derivatives": "Allemande (+cream, egg yolk), Suprême (+cream), Bercy (+shallots, white wine)"
+    },
+    "espagnole": {
+      "base": "Roux + brown stock + tomato; brown sauce",
+      "technique": "Brown roux; add stock; add tomato paste; mirepoix; simmer 2-3 hours; strain",
+      "derivatives": "Demi-glace (+ equal brown stock, reduced), Bordelaise (+red wine, shallots, marrow)"
+    },
+    "tomato": {
+      "base": "Tomatoes + aromatics + stock",
+      "technique": "Sauté mirepoix; add tomatoes, stock, herbs; simmer 1 hour; strain or purée",
+      "derivatives": "Marinara (simple, quick), Bolognese (+meat, dairy), Arrabbiata (+chili)"
+    },
+    "hollandaise": {
+      "base": "Egg yolks + butter + acid; emulsified",
+      "ratio": "3 egg yolks, 1 lb clarified butter, 2 tbsp lemon juice",
+      "technique": "Whisk yolks + water in double boiler; slowly drizzle butter while whisking; 180°F max",
+      "derivatives": "Béarnaise (+tarragon, shallots, white wine), Choron (+tomato paste)",
+      "broken_sauce": "Too hot (scrambled); too cold (separated); fix: new yolk + slowly add broken sauce"
+    }
+  },
+  "food_safety": {
+    "temperature_danger_zone": "41-135°F; bacteria multiply rapidly; keep food out of zone",
+    "cooking_temperatures": {
+      "poultry": "165°F all parts; stuffing, casseroles also 165°F",
+      "ground_meat": "160°F (beef, pork, lamb); 165°F (turkey, chicken)",
+      "whole_cuts": "145°F + 3 min rest (beef, pork, lamb, veal); 145°F fish",
+      "eggs": "160°F for egg dishes; 145°F if served immediately"
+    },
+    "cooling_food": {
+      "two_stage": "135°F to 70°F within 2 hours; 70°F to 41°F within 4 hours; total 6 hours max",
+      "methods": "Ice bath; shallow pans (<2\" deep); blast chiller; separate large batches"
+    },
+    "cross_contamination": {
+      "color_coded_boards": "Red = raw meat; yellow = poultry; blue = fish; green = produce; white = dairy/bread",
+      "separate_storage": "Raw below cooked; lowest shelf for raw meat; wrapped to prevent drips",
+      "clean_sanitize": "1) Scrape, 2) Wash (soap, hot water), 3) Rinse, 4) Sanitize (bleach solution or commercial), 5) Air dry"
+    },
+    "allergens": {
+      "big_8": "Milk, eggs, fish, shellfish, tree nuts, peanuts, wheat, soybeans (90% of reactions)",
+      "prevention": "Separate storage; dedicated equipment; clear labeling; train staff; inform customers"
+    }
+  },
+  "stocks_and_broths": {
+    "white_stock": {
+      "ingredients": "Bones (chicken, veal, fish) + mirepoix (onion, carrot, celery 2:1:1) + bouquet garni (bay, thyme, parsley stems, peppercorns)",
+      "process": "Cold water; bring to simmer; skim impurities; simmer 3-4 hours chicken, 6-8 hours veal, 45 min fish; strain",
+      "never_boil": "Clouds stock; gentle simmer only"
+    },
+    "brown_stock": {
+      "roasting": "Roast bones 400°F until browned; roast mirepoix; adds color and depth",
+      "tomato_paste": "Adds color, umami, body; 2-3 tbsp per gallon",
+      "deglazing": "Deglaze roasting pan; add to stock; captures fond"
+    },
+    "ratios": "1 lb bones per quart water (approx); adjust for concentration"
+  },
+  "baking_basics": {
+    "leavening": {
+      "yeast": "Biological; fermentation produces CO₂; bread, pizza dough; requires time (rise)",
+      "baking_powder": "Chemical; double-acting (first in liquid, second in heat); quick breads, cakes",
+      "baking_soda": "Requires acid (buttermilk, vinegar, cocoa); single-acting; immediate reaction"
+    },
+    "gluten_development": {
+      "formation": "Gluten proteins (glutenin + gliadin) + water + agitation = elastic network",
+      "desired_high": "Bread; knead 8-10 min; chewy, structure",
+      "desired_low": "Pie crust, biscuits; minimal mixing; butter coats proteins; flaky, tender",
+      "inhibitors": "Fat (shortening, butter); sugar; acid; coat proteins, prevent gluten formation"
+    }
+  }
+}

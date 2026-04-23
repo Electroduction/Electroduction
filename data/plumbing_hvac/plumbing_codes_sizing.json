@@ -1,0 +1,156 @@
+{
+  "_source": "International Plumbing Code 2021, Uniform Plumbing Code, Contractor field manuals",
+  "_note": "Long-tail plumbing code data. Pipe sizing, venting, fixture units, drain slopes - specific calculations.",
+  "pipe_sizing": {
+    "water_supply_fixture_units": {
+      "definition": "WSFU = standardized demand unit; accounts for intermittent use",
+      "common_fixtures": {
+        "toilet_tank_type": {"wsfu": 3, "min_pipe": "3/8\""},
+        "lavatory_faucet": {"wsfu": 1, "min_pipe": "3/8\""},
+        "kitchen_sink": {"wsfu": 1.5, "min_pipe": "1/2\""},
+        "shower": {"wsfu": 2, "min_pipe": "1/2\""},
+        "bathtub": {"wsfu": 2, "min_pipe": "1/2\""},
+        "dishwasher": {"wsfu": 1.5, "min_pipe": "1/2\""},
+        "washing_machine": {"wsfu": 3, "min_pipe": "1/2\""},
+        "hose_bibb": {"wsfu": 2.5, "min_pipe": "1/2\""},
+        "water_heater": {"wsfu": 0, "min_pipe": "3/4\" (flow requirement, not fixture-based)"}
+      }
+    },
+    "water_supply_sizing_table": {
+      "explanation": "Size based on total WSFU and developed length (actual pipe run including fittings)",
+      "copper_type_l": {
+        "1/2_inch": {"max_wsfu_under_50ft": 5, "max_wsfu_50_to_150ft": 4},
+        "3/4_inch": {"max_wsfu_under_50ft": 15, "max_wsfu_50_to_150ft": 12},
+        "1_inch": {"max_wsfu_under_50ft": 30, "max_wsfu_50_to_150ft": 27},
+        "1_1/4_inch": {"max_wsfu_under_50ft": 50, "max_wsfu_50_to_150ft": 45},
+        "1_1/2_inch": {"max_wsfu_under_50ft": 80, "max_wsfu_50_to_150ft": 75}
+      },
+      "pex_tubing": {
+        "note": "PEX has higher friction loss than copper; reduce capacity 10-15% or size up",
+        "1/2_inch_pex": "Equivalent to 3/8\" copper for long runs; use 3/4\" PEX for >50ft runs or >3 fixtures",
+        "manifold_system": "Home-run PEX to each fixture; no tees; 1/2\" adequate for individual fixtures"
+      }
+    },
+    "water_velocity_limits": {
+      "max_velocity": "5-8 fps recommended; 10 fps absolute max",
+      "reason": "Exceeding velocity causes water hammer, erosion, noise",
+      "calculation": "Velocity (fps) = (0.4085 × GPM) / (pipe ID in inches)²",
+      "example": "10 GPM through 1/2\" (0.625\" ID): V = 10.5 fps; too high; use 3/4\""
+    },
+    "pressure_considerations": {
+      "minimum_required": "20 PSI at highest fixture; 40-60 PSI typical residential",
+      "maximum_allowed": "80 PSI code limit; install PRV if street pressure >80 PSI",
+      "pressure_loss": "Approx 5 PSI per 100ft elevation gain; 10 PSI per 100ft horizontal (depends on flow rate and pipe size)"
+    }
+  },
+  "drain_waste_vent_dwv": {
+    "drainage_fixture_units": {
+      "definition": "DFU = drainage demand; 1 DFU = 7.5 gallons/minute (1 cubic foot/minute)",
+      "common_fixtures": {
+        "toilet": {"dfu": 3, "min_trap": "built-in", "min_drain": "3\""},
+        "lavatory": {"dfu": 1, "min_trap": "1.25\"", "min_drain": "1.25\""},
+        "kitchen_sink": {"dfu": 2, "min_trap": "1.5\"", "min_drain": "1.5\""},
+        "shower": {"dfu": 2, "min_trap": "2\"", "min_drain": "2\""},
+        "bathtub": {"dfu": 2, "min_trap": "1.5\"", "min_drain": "1.5\""},
+        "washing_machine": {"dfu": 3, "min_trap": "2\"", "min_drain": "2\""},
+        "floor_drain": {"dfu": 2, "min_trap": "2\"", "min_drain": "2\""}
+      }
+    },
+    "horizontal_drain_sizing": {
+      "slope_requirement": "1/4\" per foot minimum for drains ≤3\"; 1/8\" per foot for ≥4\" drains",
+      "max_slope": "Code allows vertical (90°), but practical max 45° to prevent solids racing ahead of water",
+      "pipe_capacity_at_1/4_slope": {
+        "1_1/4_inch": "1 DFU",
+        "1_1/2_inch": "3 DFU",
+        "2_inch": "6 DFU",
+        "3_inch": "20 DFU (typical toilet + sink branch)",
+        "4_inch": "160 DFU (typical residential building drain)"
+      }
+    },
+    "vent_sizing_and_rules": {
+      "purpose": "Allow air into drain system; prevents siphoning trap seals; equalizes pressure",
+      "individual_vent": "Each fixture; vent size ≥ drain size up to 1.5\"; 1.5\" vent for 2\" drain",
+      "wet_vent": "Drain pipe also acts as vent for upstream fixtures; limited applications; toilets downstream only",
+      "common_vent": "Single vent serves two traps (back-to-back sinks); traps at same level",
+      "circuit_vent": "Vent serves multiple fixtures on horizontal drain; vent at upstream end",
+      "vent_distance_limits": {
+        "trap_to_vent_max_distance": {
+          "1_1/4_inch": "2.5 feet",
+          "1_1/2_inch": "3.5 feet",
+          "2_inch": "5 feet",
+          "3_inch": "6 feet",
+          "4_inch": "10 feet"
+        },
+        "exceeding_distance": "Trap seal siphoned; vent must be within these distances from trap weir"
+      },
+      "vent_termination": "6\" above roof; 10ft from vertical surfaces; extend through roof (not sidewall vent unless special provisions)"
+    },
+    "studor_vent_aav": {
+      "description": "Air Admittance Valve; allows air in but not out; one-way valve",
+      "code_acceptance": "Allowed by IPC; prohibited by some local codes; check jurisdiction",
+      "limitations": "Cannot use for entire system; must have at least one open-air vent; individual fixture or fixture group only",
+      "installation": "6\" above flood rim of highest fixture served; accessible location"
+    }
+  },
+  "trap_requirements": {
+    "trap_seal_depth": "2\" to 4\" water seal required",
+    "each_fixture_trapped": "Every fixture must have trap; toilets have integral trap; sinks/tubs use P-trap",
+    "no_double_trapping": "Only one trap per fixture; double trap creates air lock",
+    "no_s_traps": "Illegal; siphons trap seal; replace with P-trap and proper vent",
+    "trap_arm_slope": "1/4\" per foot toward drain; prevents standing water in trap arm",
+    "cleanout_requirements": "Within 5ft of base of every vertical stack; horizontal drain direction changes >45°; every 100ft horizontal run"
+  },
+  "pipe_materials": {
+    "water_supply": {
+      "copper_type_l": "Standard for residential; soldered joints; long life; freeze-sensitive",
+      "copper_type_m": "Thinner wall; cheaper; adequate for residential per code",
+      "pex": "Cross-linked polyethylene; flexible; freeze-tolerant; crimped or cinch clamps; no torch",
+      "cpvc": "Chlorinated PVC; solvent welded; cheaper than copper; brittle in cold; less common now",
+      "galvanized_steel": "Old homes; corrodes; rust reduces flow; replace don't extend"
+    },
+    "dwv_drain": {
+      "abs": "Black plastic; solvent weld; common in western US",
+      "pvc_schedule_40": "White plastic; solvent weld; common nationwide; primer required",
+      "cast_iron": "Heavy; quiet; expensive; rubber couplings (no-hub) or oakum/lead joints",
+      "galvanized_steel": "Old; corrodes; illegal for new work in most jurisdictions"
+    },
+    "transition_fittings": {
+      "copper_to_pex": "Brass crimp fitting or push-connect SharkBite",
+      "abs_to_pvc": "Green transition cement approved for both",
+      "cast_iron_to_pvc": "Fernco rubber coupling; allows dissimilar material connection"
+    }
+  },
+  "water_heater_requirements": {
+    "sizing": {
+      "first_hour_rating": "Most important; gallons delivered in first hour of heavy use",
+      "1_to_2_people": "30-40 gallon tank; 40-50 FHR",
+      "3_to_4_people": "40-50 gallon; 60-70 FHR",
+      "5_plus_people": "50+ gallon or tankless"
+    },
+    "installation_code": {
+      "tpr_valve": "Temperature/Pressure Relief valve; 210°F or 150 PSI trips; discharge pipe to floor or outdoors",
+      "discharge_pipe": "Same size as valve outlet (3/4\"); terminate 6\" from floor; no threads on end; no valve in discharge line",
+      "drain_pan": "Required if indoors above living space; 1\" drain to safe location",
+      "seismic_strapping": "Two straps; upper 1/3 and lower 1/3 of tank in seismic zones",
+      "clearances": "Gas: 6\" from combustibles; electric: none required; follow manual"
+    },
+    "venting_gas_heaters": {
+      "natural_draft": "Single-wall vent; 1\" clearance to combustibles; rise 1/4\" per foot minimum",
+      "direct_vent": "Sealed combustion; PVC or AL29-4C; intake and exhaust through wall",
+      "power_vent": "Fan-assisted; PVC vent; horizontal run allowed; more flexible placement"
+    },
+    "expansion_tank": {
+      "purpose": "Closed system (with backflow preventer) needs thermal expansion relief",
+      "sizing": "2 gallon tank for 40-50 gallon heater; 5 gallon for 80+ gallon heater",
+      "installation": "On cold inlet; pressurize air side to match system pressure (typically 50 PSI)"
+    }
+  },
+  "common_code_violations": {
+    "vent_too_far": "Trap to vent exceeds maximum distance; trap siphons; sewer gas enters home",
+    "improper_slope": "Drain slope too shallow (water stands) or too steep (solids left behind)",
+    "no_cleanout": "Drain clog inaccessible; must snake from roof; expensive; cleanout required",
+    "s_trap_bootleg": "Drain goes down then up then down; air lock; siphons trap seal",
+    "galvanized_to_copper": "Direct connection; galvanic corrosion; use dielectric union",
+    "vent_terminates_under_overhang": "Sewer gas re-enters home; must extend above roof or 10ft horizontal from windows"
+  }
+}

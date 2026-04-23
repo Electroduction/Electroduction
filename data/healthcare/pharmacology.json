@@ -1,0 +1,81 @@
+{
+  "_source": "Davis's Drug Guide, Micromedex, Lexicomp",
+  "_note": "Long-tail pharmacology. Specific dosing, interactions, contraindications nurses must know.",
+  "drug_classes": {
+    "beta_blockers": {
+      "mechanism": "Block beta-adrenergic receptors; reduce HR, contractility, BP",
+      "examples": {
+        "metoprolol": {"selectivity": "Beta-1 selective", "dose": "25-200mg PO BID or 5mg IV q5min x3 for ACS", "use": "HTN, MI, CHF, AFib"},
+        "carvedilol": {"selectivity": "Non-selective + alpha-1 blocker", "dose": "3.125-25mg PO BID", "use": "CHF (mortality benefit proven)"},
+        "propranolol": {"selectivity": "Non-selective", "dose": "10-40mg PO TID-QID", "use": "HTN, tremor, thyrotoxicosis, migraine prophylaxis"}
+      },
+      "contraindications": ["Decompensated heart failure", "Severe bradycardia (<50 bpm)", "2nd/3rd degree AV block", "Asthma/COPD (non-selective forms)"],
+      "nursing_considerations": ["Hold if HR <60 or SBP <100", "Monitor for bronchospasm in COPD patients", "Never abruptly discontinue (rebound tachycardia, HTN crisis)"]
+    },
+    "ace_inhibitors": {
+      "mechanism": "Block angiotensin-converting enzyme; reduce BP, afterload; prevent cardiac remodeling",
+      "examples": {
+        "lisinopril": {"dose": "5-40mg PO daily", "half_life": "12 hours"},
+        "enalapril": {"dose": "2.5-20mg PO BID", "iv_form": "Enalaprilat 1.25mg IV q6h"},
+        "ramipril": {"dose": "2.5-10mg PO daily", "use": "Post-MI, CHF, CKD"}
+      },
+      "adverse_effects": {
+        "dry_cough": "10-15% of patients; bradykinin accumulation; switch to ARB if intolerable",
+        "hyperkalemia": "Monitor K+; especially with CKD or K-sparing diuretics",
+        "angioedema": "Rare but life-threatening; African Americans higher risk; contraindicated if prior angioedema",
+        "hypotension": "First-dose effect; start low in elderly or volume-depleted"
+      },
+      "black_box_warning": "TERATOGENIC — Category D in pregnancy; causes fetal renal failure, oligohydramnios, death"
+    },
+    "anticoagulants": {
+      "warfarin": {
+        "mechanism": "Vitamin K antagonist; inhibits factors II, VII, IX, X",
+        "monitoring": "INR; goal 2-3 for DVT/PE/AFib, 2.5-3.5 for mechanical valve",
+        "time_to_therapeutic": "3-5 days; bridge with heparin initially",
+        "reversal": "Vitamin K 2.5-10mg PO/IV (onset 6-24 hours); FFP or PCC (immediate)",
+        "drug_interactions": [
+          {"drug": "Amiodarone", "effect": "Increases INR; reduce warfarin dose 30-50%"},
+          {"drug": "Rifampin", "effect": "Decreases INR; may need double warfarin dose"},
+          {"drug": "NSAIDs", "effect": "GI bleed risk; use with caution"},
+          {"drug": "Antibiotics", "effect": "Kill gut flora making vitamin K; INR may rise"}
+        ],
+        "food_interactions": "Vitamin K-rich foods (kale, spinach, broccoli) lower INR; consistency matters more than avoidance"
+      },
+      "doacs": {
+        "apixaban": {"dose": "5mg PO BID (2.5mg if ≥2: age >80, weight <60kg, Cr >1.5)", "half_life": "12 hours", "reversal": "Andexanet alfa"},
+        "rivaroxaban": {"dose": "20mg PO daily with food", "half_life": "5-9 hours", "reversal": "Andexanet alfa"},
+        "dabigatran": {"dose": "150mg PO BID", "mechanism": "Direct thrombin inhibitor", "reversal": "Idarucizumab (Praxbind)"},
+        "advantage_over_warfarin": "No INR monitoring, fewer drug interactions, predictable dosing",
+        "disadvantage": "Expensive, some irreversible (except dabigatran), contraindicated if CrCl <30"
+      }
+    },
+    "antibiotics": {
+      "penicillins": {
+        "mechanism": "Inhibit cell wall synthesis",
+        "spectrum": {
+          "penicillin_g": "Strep, syphilis; poor gram-negative coverage",
+          "ampicillin": "Broader; covers Listeria, Enterococcus; first-line for GBS in pregnancy",
+          "amoxicillin": "Better PO absorption; add clavulanate for beta-lactamase producers",
+          "nafcillin_oxacillin": "Anti-staphylococcal; MSSA coverage"
+        },
+        "allergy_crossreactivity": "Cephalosporin cross-reactivity <2% if no anaphylaxis history; avoid if prior anaphylaxis"
+      },
+      "vancomycin": {
+        "use": "MRSA, C. diff (PO form), coag-negative staph",
+        "dosing": "15-20 mg/kg IV q8-12h; goal trough 15-20 mcg/mL for serious infections",
+        "monitoring": "Trough before 4th dose; also SCr and hearing (ototoxicity)",
+        "red_man_syndrome": "Histamine release; flushing, hypotension; slow infusion to 2 hours, premedicate with diphenhydramine",
+        "nephrotoxicity_risk": "Increases with aminoglycosides, NSAIDs, loop diuretics"
+      }
+    }
+  },
+  "drug_calculations": {
+    "weight_based_dosing": {
+      "example": "Dopamine 5 mcg/kg/min for 70kg patient",
+      "calculation": "5 mcg/kg/min * 70 kg = 350 mcg/min = 21,000 mcg/hr = 21 mg/hr",
+      "if_concentration_400mg_250ml": "21 mg/hr / (400mg/250mL) = 13.1 mL/hr"
+    },
+    "drip_rate_formula": "Rate (mL/hr) = [Dose (mcg/min) * Weight (kg) * 60 min] / [Concentration (mcg/mL)]",
+    "common_concentration_errors": ["Confusing mg/mL with mcg/mL (1000x error)", "Using patient weight in pounds instead of kg (2.2x error)"]
+  }
+}

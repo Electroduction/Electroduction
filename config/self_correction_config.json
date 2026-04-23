@@ -1,0 +1,291 @@
+{
+  "_description": "Self-correcting and data validation system configuration",
+  "_usage": "Toggle validation modes, set correction thresholds, configure injection rules",
+  "_note": "Controls how AI validates database answers and injects corrections into responses",
+
+  "system_status": {
+    "enabled": true,
+    "mode": "full",
+    "last_updated": "2026-04-23",
+    "version": "1.0.0"
+  },
+
+  "validation_modes": {
+    "off": {
+      "description": "Validation disabled; AI uses databases without verification",
+      "enabled": false,
+      "use_case": "Development, testing, or when speed > accuracy"
+    },
+    "passive": {
+      "description": "Validation runs but doesn't block responses; logs issues only",
+      "enabled": false,
+      "log_failures": true,
+      "block_response": false,
+      "use_case": "Monitoring data quality without impacting user experience"
+    },
+    "active": {
+      "description": "Validation runs and flags issues; adds warning to response",
+      "enabled": false,
+      "log_failures": true,
+      "block_response": false,
+      "add_warning": true,
+      "use_case": "Alert users to potential data quality issues"
+    },
+    "strict": {
+      "description": "Validation runs and blocks low-confidence responses; requires manual review",
+      "enabled": false,
+      "log_failures": true,
+      "block_response": true,
+      "confidence_threshold": 0.80,
+      "use_case": "Safety-critical queries (healthcare, electrical, legal)"
+    },
+    "full": {
+      "description": "Complete validation pipeline with self-correction injection",
+      "enabled": true,
+      "log_failures": true,
+      "block_response": false,
+      "auto_correct": true,
+      "inject_corrections": true,
+      "confidence_threshold": 0.60,
+      "use_case": "Production system with self-healing capabilities"
+    }
+  },
+
+  "validation_rules": {
+    "database_integrity": {
+      "enabled": true,
+      "checks": [
+        {
+          "name": "json_validity",
+          "description": "Ensure all database files are valid JSON",
+          "severity": "critical",
+          "auto_fix": false
+        },
+        {
+          "name": "schema_compliance",
+          "description": "Verify databases follow expected structure",
+          "severity": "high",
+          "auto_fix": false
+        },
+        {
+          "name": "cross_reference_integrity",
+          "description": "Check internal references are valid",
+          "severity": "medium",
+          "auto_fix": true
+        }
+      ]
+    },
+    "answer_verification": {
+      "enabled": true,
+      "checks": [
+        {
+          "name": "source_citation",
+          "description": "Verify answer cites actual database content",
+          "severity": "high",
+          "required_for": ["safety_critical", "compliance", "medical"],
+          "format": "[Source: <domain>/<file> | Rule: <rule_name>]"
+        },
+        {
+          "name": "numerical_accuracy",
+          "description": "Verify numbers match database exactly",
+          "severity": "critical",
+          "tolerance": 0.0,
+          "examples": ["NEC ampacity ratings", "drug dosages", "load calculations"]
+        },
+        {
+          "name": "contradiction_check",
+          "description": "Detect contradictions between answer and database",
+          "severity": "high",
+          "method": "semantic_similarity",
+          "threshold": 0.90
+        },
+        {
+          "name": "completeness",
+          "description": "Ensure answer addresses all parts of query",
+          "severity": "medium",
+          "check_keywords": true
+        }
+      ]
+    },
+    "chain_of_thought_validation": {
+      "enabled": true,
+      "description": "Validate reasoning steps cite database sources",
+      "min_confidence": 0.60,
+      "checks": [
+        {
+          "name": "step_verification",
+          "description": "Each reasoning step must trace to database or be labeled as inference",
+          "require_citation": true
+        },
+        {
+          "name": "logical_consistency",
+          "description": "Steps must not contradict each other or database",
+          "severity": "high"
+        }
+      ]
+    }
+  },
+
+  "correction_injection": {
+    "enabled": true,
+    "description": "Automatically inject corrections when database data conflicts with AI response",
+    "strategies": {
+      "inline_correction": {
+        "enabled": true,
+        "format": "[CORRECTION: Database shows <correct_value>, not <ai_stated_value>]",
+        "position": "immediately_after_error",
+        "highlight": true
+      },
+      "footnote_correction": {
+        "enabled": true,
+        "format": "* See correction in footnote",
+        "accumulate_at_end": true
+      },
+      "rewrite": {
+        "enabled": true,
+        "description": "Rewrite entire answer using database as source of truth",
+        "trigger_confidence": 0.30,
+        "fallback": "inline_correction"
+      },
+      "warning_banner": {
+        "enabled": true,
+        "trigger": "critical_mismatch",
+        "format": "⚠️ WARNING: AI response conflicts with database. Database answer used.",
+        "domains": ["healthcare", "electrical", "legal", "accounting"]
+      }
+    },
+    "correction_priority": {
+      "database_always_wins": true,
+      "confidence_boost": 0.20,
+      "description": "CPO-style: database answer always preferred over LLM knowledge"
+    }
+  },
+
+  "data_quality_monitoring": {
+    "enabled": true,
+    "metrics": {
+      "validation_pass_rate": {
+        "target": 0.95,
+        "alert_threshold": 0.85,
+        "window": "7_days"
+      },
+      "correction_injection_rate": {
+        "target": 0.05,
+        "alert_threshold": 0.15,
+        "window": "24_hours",
+        "note": "High rate indicates AI frequently contradicts database"
+      },
+      "database_coverage": {
+        "target": 0.80,
+        "description": "Percentage of queries with database match",
+        "alert_threshold": 0.60
+      },
+      "citation_compliance": {
+        "target": 0.95,
+        "description": "Percentage of answers with proper source citations",
+        "domains": ["healthcare", "electrical", "cybersecurity", "accounting"],
+        "alert_threshold": 0.85
+      }
+    },
+    "logging": {
+      "log_level": "INFO",
+      "log_file": "logs/validation.log",
+      "failed_validations_file": "logs/failed_validations.json",
+      "corrections_file": "logs/corrections_applied.json"
+    }
+  },
+
+  "domain_specific_rules": {
+    "healthcare": {
+      "validation_mode": "strict",
+      "require_source_citation": true,
+      "block_unverified": true,
+      "numerical_tolerance": 0.0,
+      "critical_fields": ["dosage", "temperature", "pressure", "time_window"]
+    },
+    "electrical": {
+      "validation_mode": "strict",
+      "require_source_citation": true,
+      "numerical_tolerance": 0.0,
+      "critical_fields": ["ampacity", "voltage", "wire_size", "breaker_size"]
+    },
+    "legal": {
+      "validation_mode": "strict",
+      "require_source_citation": true,
+      "jurisdiction_check": true,
+      "disclaimer": "Legal information for educational purposes. Consult licensed attorney."
+    },
+    "accounting": {
+      "validation_mode": "strict",
+      "require_source_citation": true,
+      "numerical_tolerance": 0.01,
+      "critical_fields": ["tax_rate", "deduction", "calculation", "deadline"]
+    },
+    "creative": {
+      "validation_mode": "passive",
+      "require_source_citation": false,
+      "allow_interpretation": true,
+      "note": "Creative domains allow more AI flexibility"
+    }
+  },
+
+  "learning_and_adaptation": {
+    "enabled": true,
+    "feedback_loop": {
+      "description": "Learn from corrections to improve routing and weighting",
+      "update_frequency": "weekly",
+      "mechanisms": [
+        {
+          "name": "weight_adjustment",
+          "description": "Increase weight of databases that frequently correct AI",
+          "adjustment_rate": 0.05,
+          "max_adjustment": 0.20
+        },
+        {
+          "name": "keyword_expansion",
+          "description": "Add keywords when queries match domain but keywords didn't trigger",
+          "auto_add": true,
+          "require_confidence": 0.75
+        },
+        {
+          "name": "failure_pattern_detection",
+          "description": "Identify systematic AI errors in specific domains/topics",
+          "log_patterns": true,
+          "generate_training_data": true
+        }
+      ]
+    }
+  },
+
+  "api_controls": {
+    "toggle_validation": {
+      "endpoint": "/api/validation/toggle",
+      "methods": ["POST"],
+      "parameters": {
+        "mode": ["off", "passive", "active", "strict", "full"],
+        "domain": "optional_domain_override"
+      }
+    },
+    "get_validation_status": {
+      "endpoint": "/api/validation/status",
+      "methods": ["GET"],
+      "returns": ["enabled", "mode", "metrics", "recent_corrections"]
+    },
+    "force_revalidate": {
+      "endpoint": "/api/validation/revalidate",
+      "methods": ["POST"],
+      "parameters": {
+        "query_id": "string",
+        "strict_mode": "boolean"
+      }
+    }
+  },
+
+  "emergency_override": {
+    "enabled": false,
+    "description": "Disable all validation temporarily in case of system issues",
+    "auto_disable_after_hours": 24,
+    "require_reason": true,
+    "alert_on_activation": true
+  }
+}
