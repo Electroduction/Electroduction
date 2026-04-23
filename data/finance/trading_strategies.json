@@ -1,0 +1,98 @@
+{
+  "_source": "Investopedia, CMT Association, Jane Street alum talks, Institutional investor research",
+  "_note": "Long-tail trading strategy data. Specific rules, not generic descriptions.",
+  "technical_analysis": {
+    "moving_averages": {
+      "sma_200": {
+        "rule": "Price above SMA200 = bullish; price below = bearish",
+        "golden_cross": "SMA50 crosses above SMA200; bullish signal; S&P 500 has +12% avg 12-month return after",
+        "death_cross": "SMA50 crosses below SMA200; bearish; S&P 500 has -2% avg 12-month return after",
+        "limitation": "Lagging indicator; trades the past; significant lag at reversals"
+      },
+      "ema_vs_sma": "EMA weights recent prices more; faster signal; more false positives. SMA smoother; less noise.",
+      "vwap": {
+        "definition": "Volume-Weighted Average Price; institutional benchmark",
+        "trading_rule": "Institutions buy below VWAP (getting good execution); sell above VWAP",
+        "day_trading_use": "Price above VWAP = bullish for day; below = bearish; strong breakouts start from VWAP"
+      }
+    },
+    "rsi_relative_strength_index": {
+      "formula": "100 - [100 / (1 + RS)] where RS = avg gain / avg loss over 14 periods",
+      "overbought_oversold": {
+        "above_70": "Overbought; potential reversal or pullback",
+        "below_30": "Oversold; potential bounce",
+        "caveat": "Trending stocks stay overbought/oversold for extended periods; confirmation needed"
+      },
+      "divergence": {
+        "bullish": "Price makes lower low; RSI makes higher low; momentum diverging; potential reversal up",
+        "bearish": "Price makes higher high; RSI makes lower high; losing momentum; potential reversal down"
+      },
+      "2_period_rsi": "Larry Connors variant; below 5 = extreme oversold bounce signal; short-term mean reversion"
+    },
+    "bollinger_bands": {
+      "setup": "20-period SMA ± 2 standard deviations",
+      "squeeze": "Bands narrow = low volatility period; typically precedes big move in either direction",
+      "walk_the_band": "Strong trend: price consistently touches upper/lower band; don't fade it",
+      "mean_reversion": "Price beyond bands tends to return to middle (only in ranging markets)"
+    },
+    "support_resistance": {
+      "psychological_levels": "Round numbers ($100, $200, $1000) attract significant orders",
+      "volume_profile": "High volume nodes = strong support/resistance; price attracted to high-volume areas",
+      "previous_all_time_high": "Once broken, prior resistance becomes support; and vice versa"
+    }
+  },
+  "quantitative_strategies": {
+    "momentum": {
+      "cross_sectional_momentum": "Buy top 10% performers over past 12 months; short bottom 10%; monthly rebalance",
+      "time_series_momentum": "If asset up over 12 months, go long; if down, avoid or short",
+      "academic_evidence": "Fama-French: momentum factor +8.3% premium annualized; strong but crashes (2009, 2020)",
+      "implementation": "Sort S&P 500 by 12-1 month return (skip last month); long top decile"
+    },
+    "mean_reversion": {
+      "pairs_trading": "Cointegrated pairs; when spread widens beyond 2 std dev, expect convergence",
+      "statistical_arbitrage": "Use co-integration testing (ADF test); pairs: Coke/Pepsi, JPM/GS, XOM/CVX",
+      "half_life": "How long spread takes to revert; if half-life > 30 days, trade may tie up capital too long"
+    },
+    "value_factor": {
+      "book_to_market_sort": "Buy lowest P/B stocks; sell highest P/B; annual rebalance",
+      "earnings_yield": "E/P (inverse of PE); sort high to low; long high-yield; cheap vs expensive",
+      "implementation_note": "Value factor had decade-long underperformance (2010-2020); revived 2022+"
+    },
+    "volatility_trading": {
+      "vix_strategies": {
+        "sell_vix_spikes": "VIX > 30 + VIX > VXMT = sell volatility (buy SPX calls); mean-reverts quickly",
+        "short_vix": "SVXY/UVXY inverse products; collect VIX roll yield; blows up in crisis",
+        "calendar_spread": "Sell near VIX; buy far VIX; profit from term structure"
+      }
+    },
+    "jane_street_frameworks": {
+      "market_making": {
+        "bid_ask_spread": "Profit is the spread; risk is inventory accumulation",
+        "adverse_selection": "Only trades with informed traders against you; protect with wider spread on large orders",
+        "delta_hedging": "Immediately hedge directional risk; profit from spread not direction"
+      },
+      "probabilistic_thinking": {
+        "expected_value": "Every trade is an EV bet: P(win)*reward - P(loss)*risk; take any positive EV trade",
+        "kelly_sizing": "Bet fraction proportional to edge; don't bet 100% even with 90% win rate",
+        "think_in_distributions": "Not 'will it go up?' but 'what's the full probability distribution of outcomes?'"
+      }
+    }
+  },
+  "risk_management_rules": {
+    "position_sizing": {
+      "1_pct_rule": "Never risk more than 1-2% of portfolio on single trade",
+      "volatility_sizing": "Position size = Risk_Amount / (ATR * 1.5); adjust for volatility",
+      "kelly_criterion_practical": "Use half-Kelly; full Kelly too volatile for 95%+ of traders"
+    },
+    "stop_losses": {
+      "technical_stop": "Below key support level or recent swing low",
+      "atr_stop": "1.5-3x ATR below entry; volatility-adjusted",
+      "time_stop": "Exit if trade hasn't worked in planned timeframe (e.g., 10 days)"
+    },
+    "portfolio_limits": {
+      "sector_concentration": "No more than 25% in single sector",
+      "correlation_limit": "Avoid portfolio of highly correlated positions (all tech in 2022)",
+      "drawdown_halt": "Pre-define: at 10% portfolio drawdown, reduce size 50%; at 20%, stop trading"
+    }
+  }
+}

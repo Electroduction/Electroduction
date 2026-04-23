@@ -1,0 +1,134 @@
+{
+  "chord_progressions": {
+    "pop": {
+      "I-V-vi-IV": {
+        "examples": [
+          "Let It Be",
+          "Don't Stop Believin'",
+          "Someone Like You"
+        ],
+        "key_C": [
+          "C",
+          "G",
+          "Am",
+          "F"
+        ],
+        "mood": "uplifting"
+      },
+      "vi-IV-I-V": {
+        "examples": [
+          "Poker Face",
+          "Grenade"
+        ],
+        "key_C": [
+          "Am",
+          "F",
+          "C",
+          "G"
+        ],
+        "mood": "emotional"
+      }
+    },
+    "jazz": {
+      "ii-V-I": {
+        "description": "Most common jazz progression",
+        "key_C": [
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ],
+        "function": "turnaround"
+      }
+    },
+    "blues": {
+      "12_bar_blues": {
+        "bars": [
+          "I",
+          "I",
+          "I",
+          "I",
+          "IV",
+          "IV",
+          "I",
+          "I",
+          "V",
+          "IV",
+          "I",
+          "V"
+        ],
+        "key_C": [
+          "C7",
+          "C7",
+          "C7",
+          "C7",
+          "F7",
+          "F7",
+          "C7",
+          "C7",
+          "G7",
+          "F7",
+          "C7",
+          "G7"
+        ]
+      }
+    }
+  },
+  "scales": {
+    "C_major": {
+      "notes": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "A",
+        "B"
+      ],
+      "semitones": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        11
+      ]
+    },
+    "A_minor": {
+      "notes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "semitones": [
+        9,
+        11,
+        0,
+        2,
+        4,
+        5,
+        7
+      ]
+    },
+    "C_pentatonic": {
+      "notes": [
+        "C",
+        "D",
+        "E",
+        "G",
+        "A"
+      ],
+      "semitones": [
+        0,
+        2,
+        4,
+        7,
+        9
+      ]
+    }
+  }
+}

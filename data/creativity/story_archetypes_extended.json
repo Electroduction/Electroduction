@@ -1,0 +1,115 @@
+{
+  "_source": "Christopher Vogler 'The Writer's Journey', Joseph Campbell 'Hero with a Thousand Faces', TV Tropes",
+  "_note": "Long-tail narrative data. Deep archetype descriptions with cross-media examples and subversions.",
+  "character_archetypes": {
+    "hero": {
+      "description": "Character who grows through adversity; audience identification vessel",
+      "attributes": ["Ordinary initially", "Chosen or thrust into adventure", "Has a fatal flaw", "Transforms through trials"],
+      "subtypes": {
+        "reluctant_hero": "Refuses the call initially; dragged into adventure; more relatable (Frodo, Jon Snow)",
+        "anti_hero": "Does right for wrong reasons or wrong for right reasons; morally complex (Walter White, Deadpool)",
+        "tragic_hero": "Noble character destroyed by fatal flaw (hamartia); Shakespearean (Macbeth, Anakin Skywalker)",
+        "everyman_hero": "No special powers; audience surrogate; strength through determination (John McClane)"
+      },
+      "shadow": "The hero's dark potential; what they could become without growth"
+    },
+    "mentor": {
+      "description": "Wise guide who prepares hero for journey then steps back",
+      "attributes": ["Gives hero tools/wisdom", "Often sacrifices themselves at critical moment", "Cannot fight hero's battles"],
+      "function": "Represents hero's higher self; what they could become",
+      "examples": ["Gandalf", "Obi-Wan Kenobi", "Morpheus", "Alfred"],
+      "subversion": "Mentor who is wrong or limited; hero must surpass them (Rocky's Mickey, Whiplash's Fletcher)"
+    },
+    "shadow_villain": {
+      "description": "Antagonist representing the dark side of the hero's journey",
+      "attributes": ["Mirror of hero's potential failure", "Often shares hero's origin/skills", "Believes they're right"],
+      "best_villains": "Have understandable motivation; audience can see their point (Thanos, Magneto, Erik Killmonger)",
+      "types": {
+        "ideological": "Believes their cause justifies means (Killmonger, Ra's al Ghul)",
+        "trauma_driven": "Origin wound that hero must address empathetically (Darth Vader, Loki)",
+        "pure_chaos": "Rare; works when contrast with order is the point (Joker in The Dark Knight)"
+      }
+    },
+    "trickster": {
+      "description": "Agent of change through chaos and humor; disrupts status quo",
+      "function": "Comic relief + reveals truth through jokes + challenges assumptions",
+      "examples": ["Loki", "Bugs Bunny", "Jack Sparrow", "Deadpool"],
+      "importance": "Prevents story from taking itself too seriously; humanizes drama"
+    },
+    "shapeshifter": {
+      "description": "Character whose allegiance or nature is ambiguous; creates uncertainty",
+      "function": "Keeps audience off-balance; can be ally or enemy",
+      "examples": ["Snape (Harry Potter)", "Catwoman", "Amy Dunne (Gone Girl)"],
+      "writing_tip": "Best when final alignment is surprising but inevitable in retrospect"
+    },
+    "herald": {
+      "description": "Announces change; delivers the call to adventure",
+      "function": "Catalyst for plot; brings news that disrupts hero's ordinary world"
+    },
+    "threshold_guardian": {
+      "description": "Tests hero's readiness before each new world/stage",
+      "function": "Filters out unprepared; often not truly an enemy"
+    }
+  },
+  "story_structures": {
+    "heros_journey_12_stages": {
+      "1_ordinary_world": "Show hero's normal life and deficiency",
+      "2_call_to_adventure": "Disruption of ordinary world; new problem or opportunity",
+      "3_refusal_of_call": "Resistance and fear; stakes revealed",
+      "4_meeting_mentor": "Receives guidance, tools, or confidence",
+      "5_crossing_threshold": "Commits to adventure; point of no return",
+      "6_tests_allies_enemies": "Learn the rules of new world; form relationships",
+      "7_approach_to_inmost_cave": "Preparation for major challenge; raise stakes",
+      "8_ordeal": "Hero's lowest point; death/rebirth moment; transformation begins",
+      "9_reward": "Survives ordeal; gains sword/knowledge/treasure",
+      "10_road_back": "Return journey; antagonist may be resurgent",
+      "11_resurrection": "Final climax; hero is truly transformed; all they've learned tested",
+      "12_return_with_elixir": "Brings transformation back to ordinary world"
+    },
+    "three_act_structure": {
+      "act_1_setup": {"percent": "25%", "beats": ["Hook", "Establish character + world", "Inciting incident", "Hero accepts quest (first turning point)"]},
+      "act_2_confrontation": {"percent": "50%", "beats": ["Rising stakes", "Midpoint (false victory or false defeat)", "Complications", "All is lost moment (second turning point)"]},
+      "act_3_resolution": {"percent": "25%", "beats": ["Final push", "Climax", "Denouement", "New equilibrium"]}
+    },
+    "seven_point_structure": {
+      "hook": "Start in interesting place; who is hero now (before change)",
+      "plot_turn_1": "Something forces hero toward the midpoint",
+      "pinch_1": "Apply pressure; hint at stakes",
+      "midpoint": "Hero commits; turns from reactive to proactive",
+      "pinch_2": "All is lost moment",
+      "plot_turn_2": "Hero discovers what they need to win",
+      "resolution": "Final climax and aftermath"
+    },
+    "save_the_cat": {
+      "overview": "Blake Snyder's screenwriting structure; 15 beats mapped to page numbers",
+      "key_beats": {
+        "opening_image": "Visual statement of theme; before state",
+        "theme_stated": "Someone tells hero what story is REALLY about (usually ignored)",
+        "catalyst": "Page 12; inciting incident; what changes everything",
+        "break_into_2": "Hero enters new world; act 1→2 transition",
+        "midpoint": "Page 55; false victory or false defeat; stakes raised",
+        "dark_night_of_soul": "Hero's worst moment; rock bottom",
+        "break_into_3": "A-story and B-story combine; hero has what they need",
+        "finale": "Hero synthesizes lessons and defeats the antagonist"
+      }
+    },
+    "nonlinear_structures": {
+      "in_medias_res": "Start in middle of action; fill in backstory gradually",
+      "parallel_storylines": "Multiple POVs converging; reveal connections late (Babel, Crash)",
+      "unreliable_narrator": "Protagonist's account cannot be trusted; revelation reframes everything (Fight Club, Gone Girl)",
+      "reverse_chronology": "Begin at end; work backward; audience pieces together how we arrived (Memento)"
+    }
+  },
+  "dialogue_principles": {
+    "subtext": "Characters rarely say what they mean; reveal through what they DON'T say",
+    "conflict_in_every_scene": "Every scene should have at least micro-conflict; agreement = boring scene",
+    "voice_differentiation": "Each character should sound distinct without explanation",
+    "exposition_rule": "Never have characters explain things they both already know ('As you know, Bob...')"
+  },
+  "theme_development": {
+    "theme_vs_premise": "Theme = central idea (love conquers fear). Premise = setup (orphan discovers magic).",
+    "theme_in_opposition": "Best themes are argued through characters who represent opposite sides",
+    "show_dont_tell": "Character actions that embody theme > characters saying theme aloud",
+    "symbolism": "Recurring visual/object/word that accumulates meaning; gun on wall in act 1 fires in act 3 (Chekhov)"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "_source": "Federal Reserve, BLS, BEA, IMF",
+  "_updated": "2026-04",
+  "_note": "Long-tail macro data. Context for equity/bond market positioning.",
+  "us_key_indicators_2026": {
+    "fed_funds_rate_target": {"range": "4.25-4.50", "last_change": "cut 25bps Dec 2024", "next_meeting": "FOMC 7x/year"},
+    "cpi_yoy": {"current": 2.8, "core_cpi": 3.1, "target": 2.0, "note": "Shelter and services sticky"},
+    "gdp_growth_real_annualized": {"current": 2.1, "q_ago": 2.8, "consensus_2026": 1.9},
+    "unemployment_rate": {"current": 4.2, "natural_rate_estimate": 4.0, "participation_rate": 62.5},
+    "10yr_treasury_yield": {"current": 4.48, "2yr": 4.21, "30yr": 4.72},
+    "yield_curve_spread_2s10s": {"current": 27, "note": "Positive; inverted 2022-2024 preceded slowdown"},
+    "us_dollar_index_dxy": {"current": 104.2, "impact": "Strong dollar = headwind for US multinational earnings"},
+    "wti_crude_oil": {"current": 74.80, "brent": 78.90},
+    "gold_price": {"current": 3250, "note": "All-time high; geopolitical safe haven + de-dollarization"},
+    "m2_money_supply_yoy": {"current": 3.2, "note": "Normalized post-pandemic; no inflationary surge"}
+  },
+  "yield_curve_interpretation": {
+    "normal": "Long rates > short rates; growth expected",
+    "flat": "Rates equal across maturities; transition period",
+    "inverted": "Short > long; historically predicts recession within 12-18 months",
+    "historical_accuracy": "Yield curve inverted before every recession since 1970",
+    "2s10s_spread_significance": "Most watched inversion signal; -50bps or below = strong recession warning",
+    "current_2026_reading": "Steepening again; Fed cut cycle underway; watch for normalization"
+  },
+  "fed_policy_framework": {
+    "dual_mandate": "Price stability (2% inflation) + Maximum employment",
+    "forward_guidance": "Fed signals future intentions; markets price in before action",
+    "quantitative_tightening_qt": "Fed reduces balance sheet by not reinvesting maturing bonds",
+    "dot_plot": "Quarterly FOMC median rate projections; market signal for rate path",
+    "taylor_rule": {
+      "formula": "Fed rate = 2.5 + 0.5*(inflation - 2) + 0.5*(output_gap)",
+      "current_implied_rate": 4.3,
+      "note": "Suggests current rates roughly appropriate"
+    }
+  },
+  "business_cycle_phases": {
+    "early_expansion": {
+      "characteristics": ["GDP accelerating", "unemployment falling", "credit expanding"],
+      "best_sectors": ["Financials", "Consumer Discretionary", "Industrials"],
+      "worst_sectors": ["Utilities", "Consumer Staples"]
+    },
+    "mid_expansion": {
+      "characteristics": ["GDP at trend", "full employment", "inflation rising moderately"],
+      "best_sectors": ["Technology", "Energy", "Materials"],
+      "worst_sectors": ["Utilities", "Bonds"]
+    },
+    "late_expansion": {
+      "characteristics": ["GDP slowing", "wage inflation", "Fed tightening", "yield curve flattening"],
+      "best_sectors": ["Energy", "Materials", "Consumer Staples"],
+      "worst_sectors": ["Consumer Discretionary", "Financials"]
+    },
+    "recession": {
+      "characteristics": ["GDP negative 2+ quarters", "unemployment rising", "credit tightening"],
+      "best_sectors": ["Consumer Staples", "Healthcare", "Utilities", "Bonds"],
+      "worst_sectors": ["Financials", "Industrials", "Consumer Discretionary"]
+    }
+  },
+  "leading_indicators": {
+    "ism_manufacturing_pmi": {
+      "above_50": "Expansion",
+      "below_50": "Contraction",
+      "current": 49.8,
+      "note": "Below 45 for 3+ months often precedes recession"
+    },
+    "conference_board_lei": {
+      "consecutive_monthly_declines": "6+ months of decline = recession signal",
+      "current_trend": "Rising; positive for 2026 outlook"
+    },
+    "housing_starts": "Leads economy by 6-12 months; sensitive to mortgage rates",
+    "credit_spreads": {
+      "high_yield_vs_treasury": {"current": 265, "note": "Wide spreads = credit stress; narrow = risk appetite"},
+      "investment_grade_vs_treasury": {"current": 88, "note": "Very tight = complacency"}
+    },
+    "consumer_confidence": "Michigan Sentiment + Conference Board; leads consumer spending 2-3 months",
+    "initial_jobless_claims": "Weekly leading indicator; >300K 4-week avg = labor market weakening"
+  },
+  "global_macro_factors": {
+    "china_gdp_growth": 4.8,
+    "ecb_rate": 2.75,
+    "japan_policy_rate": 0.50,
+    "emerging_market_risks": ["China property sector", "Dollar strength debt service", "Political instability"],
+    "geopolitical_risk_premium": "Russian Ukraine ongoing; Middle East conflict; Taiwan strait tension adds ~5% oil premium",
+    "us_debt_gdp": 123,
+    "deficit_gdp": 6.8,
+    "note_on_deficit": "High deficit in non-recession environment is unusual; bond vigilantes could push long rates higher"
+  }
+}

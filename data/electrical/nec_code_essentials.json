@@ -1,0 +1,147 @@
+{
+  "_source": "National Electrical Code 2023, Mike Holt's Illustrated Guide, NECA standards",
+  "_note": "Long-tail electrical code data. Specific ampacity, conduit fill, grounding rules electricians must know.",
+  "wire_sizing_and_ampacity": {
+    "copper_wire_ratings_75C": {
+      "14_awg": {"ampacity": "20A", "common_breaker": "15A", "use": "Lighting circuits, receptacles"},
+      "12_awg": {"ampacity": "25A", "common_breaker": "20A", "use": "Kitchen counter, bathroom, garage"},
+      "10_awg": {"ampacity": "35A", "common_breaker": "30A", "use": "Electric dryer, water heater, AC"},
+      "8_awg": {"ampacity": "50A", "common_breaker": "40A", "use": "Electric range, large AC units"},
+      "6_awg": {"ampacity": "65A", "common_breaker": "50A", "use": "Sub-panels, welder"},
+      "4_awg": {"ampacity": "85A", "common_breaker": "70A", "use": "Sub-panels, large equipment"},
+      "3_awg": {"ampacity": "100A", "common_breaker": "90A", "use": "Service entrance, large sub-panel"},
+      "2_awg": {"ampacity": "115A", "common_breaker": "100A", "use": "100A service, sub-panel"},
+      "1/0_awg": {"ampacity": "150A", "common_breaker": "125A", "use": "125A service"},
+      "2/0_awg": {"ampacity": "175A", "common_breaker": "150A", "use": "150A service"},
+      "3/0_awg": {"ampacity": "200A", "common_breaker": "175A", "use": "175A service"},
+      "4/0_awg": {"ampacity": "230A", "common_breaker": "200A", "use": "200A service"}
+    },
+    "derating_factors": {
+      "temperature_correction": "Above 86°F ambient, derate per NEC Table 310.15(B)(1)",
+      "conduit_fill": "4-6 conductors: 80% ampacity; 7-9: 70%; 10-20: 50%; 21-30: 45%; 31-40: 40%",
+      "continuous_load": "Load on circuit for 3+ hours; size wire for 125% of continuous load"
+    },
+    "voltage_drop_rule": {
+      "nec_recommendation": "Max 3% drop on branch circuits; 5% total feeders + branch",
+      "formula": "VD = (2 × K × I × L) / CM where K=12.9 (copper), I=current, L=one-way length(ft), CM=circular mils",
+      "practical": "For 120V 20A circuit 100ft run: 12 AWG has 2.4% drop (acceptable); 14 AWG has 3.8% (upgrade to 12)"
+    }
+  },
+  "box_fill_calculations": {
+    "nec_314_16": "Every wire, device, clamp, fitting counts toward box fill capacity",
+    "volume_allowances": {
+      "14_awg": "2.0 cubic inches per conductor",
+      "12_awg": "2.25 cubic inches",
+      "10_awg": "2.5 cubic inches",
+      "8_awg": "3.0 cubic inches",
+      "6_awg": "5.0 cubic inches"
+    },
+    "counting_rules": {
+      "each_conductor": "Count each unbroken conductor entering box",
+      "cable_clamps": "Count one conductor size for one or more clamps",
+      "device_yoke": "Count two conductor sizes for each device (switch, receptacle)",
+      "equipment_ground": "Count one conductor for all grounds combined",
+      "pigtails": "Do not count; only count conductors originating outside box"
+    },
+    "example_calculation": {
+      "scenario": "Standard single-gang box with one switch, 12 AWG wire, 2 cables entering",
+      "count": "2 hot (in/out) + 2 neutral + 1 ground (all combined) + 1 clamp + 2 switch = 8 conductors",
+      "volume_needed": "8 × 2.25 = 18 cubic inches",
+      "box_options": "Single-gang deep box (20.3 cu in) acceptable; standard (14 cu in) NOT acceptable"
+    }
+  },
+  "grounding_and_bonding": {
+    "grounding_vs_bonding": {
+      "grounding": "Intentional connection to earth; provides fault current path and voltage stabilization",
+      "bonding": "Connection between metal parts to ensure electrical continuity and equal potential"
+    },
+    "equipment_grounding_conductor_sizing": {
+      "rule": "NEC Table 250.122; size based on overcurrent device, not wire size",
+      "common_sizes": {
+        "15A_or_20A_breaker": "14 AWG ground minimum",
+        "30A_breaker": "10 AWG ground",
+        "60A_breaker": "10 AWG ground",
+        "100A_breaker": "8 AWG ground",
+        "200A_breaker": "6 AWG ground"
+      }
+    },
+    "grounding_electrode_system": {
+      "required_electrodes": ["Metal underground water pipe (10ft min)", "Concrete-encased electrode (Ufer ground)", "Ground ring (2 AWG min, 20ft buried)"],
+      "supplemental_electrodes": ["Ground rods (2 required, 8ft min, 6ft apart)", "Ground plates"],
+      "grounding_electrode_conductor": "Service size ≤100A: 8 AWG copper minimum; 101-200A: 6 AWG; >200A: consult Table 250.66"
+    },
+    "gfci_and_afci_requirements": {
+      "gfci_required_locations": ["Bathrooms (all receptacles)", "Kitchens (countertop)", "Garages", "Outdoors", "Crawl spaces", "Unfinished basements", "Within 6ft of sinks", "Laundry"],
+      "afci_required": "All 120V 15A and 20A branch circuits in dwelling units (bedrooms, living, dining, etc) NEC 210.12",
+      "gfci_trip_threshold": "4-6 mA imbalance; protects against electrocution",
+      "afci_function": "Detects arc faults (damaged wires, loose connections); prevents fires"
+    }
+  },
+  "circuit_design_rules": {
+    "kitchen_requirements": {
+      "small_appliance_circuits": "Minimum 2 dedicated 20A circuits for countertop receptacles (NEC 210.11)",
+      "refrigerator": "Dedicated 15A or 20A circuit recommended (not required by code but best practice)",
+      "dishwasher": "Dedicated 15A circuit minimum",
+      "disposal": "Can share with dishwasher if on 20A circuit",
+      "range": "Dedicated 40A or 50A circuit (8/3 or 6/3 cable)"
+    },
+    "bathroom_requirements": {
+      "receptacle_circuit": "Minimum one 20A circuit for bathroom receptacles (can serve multiple bathrooms if only for receptacles)",
+      "cannot_share_with": "Bathroom receptacle circuit cannot also serve lights or exhaust fan per NEC 210.11(C)(3)"
+    },
+    "bedroom_requirements": {
+      "afci_protection": "Required on all bedroom circuits since NEC 2002",
+      "receptacle_spacing": "Max 12ft between receptacles; max 6ft from doorway",
+      "switched_lighting": "Every habitable room must have wall-switch controlled lighting"
+    }
+  },
+  "conduit_and_raceway": {
+    "conduit_types": {
+      "emt": "Electrical Metallic Tubing; most common indoor; lightweight; compression or set-screw fittings",
+      "rigid_metal": "Threaded; outdoor/underground; highest mechanical protection",
+      "pvc_schedule_40": "Underground; corrosion-proof; 18\" burial depth minimum",
+      "pvc_schedule_80": "Above-ground outdoor; thicker wall than Schedule 40",
+      "flexible_metal": "FMC; short runs to motors, fixtures; not suitable as equipment ground"
+    },
+    "conduit_fill_table": {
+      "1_conductor": "53% fill",
+      "2_conductors": "31% fill",
+      "3_or_more": "40% fill",
+      "example": "3/4\" EMT with 3+ conductors: max 0.213 sq in; fits five 12 AWG THHN (0.0133 sq in each = 0.0665 total)"
+    },
+    "bending_rules": {
+      "max_degrees_between_boxes": "360° total (four 90° bends max)",
+      "reason": "Beyond 360°, cannot pull wire without damaging insulation",
+      "radius_minimums": "EMT 3/4\": 4\" radius; 1\": 5.25\"; larger conduit requires larger sweep"
+    }
+  },
+  "load_calculations": {
+    "service_size_determination": {
+      "nec_220": "Standard method vs optional method (220.82)",
+      "general_lighting": "3 VA per sq ft dwelling; 2 VA commercial",
+      "small_appliance": "1500 VA per circuit × 2 minimum in kitchen",
+      "laundry": "1500 VA",
+      "appliances": "List nameplate ratings; apply demand factors per NEC 220.53"
+    },
+    "demand_factors": {
+      "electric_range": "8-12 kW range = 8000W demand (Table 220.55)",
+      "electric_heat": "100% of nameplate (no demand factor)",
+      "ac_cooling": "Larger of heat or AC (not both)",
+      "dryer": "5000W or nameplate, whichever is larger"
+    },
+    "example_200A_service": {
+      "2000_sq_ft_house": "General lighting: 6000 VA; small appliance: 3000 VA; laundry: 1500 VA; range: 8000 VA; dryer: 5000 VA; AC: 6000 VA; heat: 15000 VA",
+      "calculation": "First 10kVA @ 100% = 10000; remainder @ 40% = (6000+3000+1500-10000)×0.4 = 200; appliances: 8000+5000+15000 = 28000",
+      "total_va": "38200 VA / 240V = 159A → 200A service adequate"
+    }
+  },
+  "common_violations": {
+    "double_tapped_breaker": "Two wires under one terminal screw; violation unless breaker rated for it (most aren't); causes arcing",
+    "backstabbed_receptacles": "Push-in connections; legal but unreliable; leads to loose connections and heat",
+    "missing_gfci": "Bathroom, kitchen, outdoor without GFCI; immediate safety hazard",
+    "open_junction_box": "All splices must be in accessible, covered box; no buried splices in walls",
+    "wrong_breaker_size": "20A breaker on 14 AWG wire; fire hazard; wire must match breaker",
+    "unprotected_nm_cable": "Romex below 8ft needs conduit or guard strips; physical damage protection",
+    "improper_stapling": "NM cable must be stapled within 12\" of box and every 4.5ft along run"
+  }
+}

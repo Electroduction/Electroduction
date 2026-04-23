@@ -1,0 +1,111 @@
+{
+  "three_act": {
+    "acts": [
+      "setup",
+      "confrontation",
+      "resolution"
+    ],
+    "percentages": [
+      0.25,
+      0.5,
+      0.25
+    ],
+    "key_moments": {
+      "inciting_incident": 0.1,
+      "first_plot_point": 0.25,
+      "midpoint": 0.5,
+      "all_is_lost": 0.75,
+      "climax": 0.9
+    },
+    "examples": [
+      "Star Wars",
+      "The Matrix",
+      "Die Hard"
+    ]
+  },
+  "heros_journey": {
+    "stages": [
+      "ordinary_world",
+      "call_to_adventure",
+      "refusal_of_call",
+      "meeting_mentor",
+      "crossing_threshold",
+      "tests_allies_enemies",
+      "approach",
+      "ordeal",
+      "reward",
+      "road_back",
+      "resurrection",
+      "return_with_elixir"
+    ],
+    "examples": [
+      "The Lord of the Rings",
+      "Harry Potter",
+      "The Lion King"
+    ]
+  },
+  "save_the_cat": {
+    "beats": [
+      {
+        "name": "opening_image",
+        "page": 1
+      },
+      {
+        "name": "theme_stated",
+        "page": 5
+      },
+      {
+        "name": "setup",
+        "page": "1-10"
+      },
+      {
+        "name": "catalyst",
+        "page": 12
+      },
+      {
+        "name": "debate",
+        "page": "12-25"
+      },
+      {
+        "name": "break_into_two",
+        "page": 25
+      },
+      {
+        "name": "b_story",
+        "page": 30
+      },
+      {
+        "name": "fun_and_games",
+        "page": "30-55"
+      },
+      {
+        "name": "midpoint",
+        "page": 55
+      },
+      {
+        "name": "bad_guys_close_in",
+        "page": "55-75"
+      },
+      {
+        "name": "all_is_lost",
+        "page": 75
+      },
+      {
+        "name": "dark_night_of_soul",
+        "page": "75-85"
+      },
+      {
+        "name": "break_into_three",
+        "page": 85
+      },
+      {
+        "name": "finale",
+        "page": "85-110"
+      },
+      {
+        "name": "final_image",
+        "page": 110
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "project": "cybersecurity",
+  "datasets_collected": [
+    "NSL-KDD",
+    "ExploitDB",
+    "MITRE-ATTACK",
+    "Falco-Rules"
+  ],
+  "stats": {
+    "downloaded": 5,
+    "failed": 1,
+    "skipped": 0
+  },
+  "total_datasets": 4,
+  "collection_date": "2026-01-13 22:48:08"
+}

@@ -1,0 +1,239 @@
+{
+  "_description": "Domain-specific database weights for Claude AI query routing and answer confidence scoring",
+  "_usage": "Higher weight = higher priority when multiple domains match; affects retrieval ranking and answer synthesis",
+  "_note": "Adjust weights based on: data quality (1-10), completeness (1-10), specificity (1-10), update frequency needs",
+
+  "domain_weights": {
+    "healthcare": {
+      "weight": 0.95,
+      "priority": "critical",
+      "rationale": "Life-critical information; high accuracy requirement; frequently updated protocols",
+      "databases": {
+        "pharmacology": {"weight": 1.0, "algorithms": ["weak_to_strong", "cot_verification"]},
+        "emergency_protocols": {"weight": 1.0, "algorithms": ["cot_verification"]}
+      }
+    },
+    "electrical": {
+      "weight": 0.90,
+      "priority": "critical",
+      "rationale": "Safety-critical; NEC code compliance essential; fire/shock hazards",
+      "databases": {
+        "nec_code_essentials": {"weight": 1.0, "algorithms": ["cot_verification"]},
+        "troubleshooting_diagnostics": {"weight": 0.85, "algorithms": ["anomaly_to_signature", "weak_to_strong"]}
+      }
+    },
+    "plumbing_hvac": {
+      "weight": 0.88,
+      "priority": "high",
+      "rationale": "Code compliance; water damage risks; HVAC safety (combustion, refrigerants)",
+      "databases": {
+        "plumbing_codes_sizing": {"weight": 0.90, "algorithms": ["cot_verification"]},
+        "hvac_systems_diagnostics": {"weight": 0.85, "algorithms": ["anomaly_to_signature"]}
+      }
+    },
+    "welding": {
+      "weight": 0.82,
+      "priority": "high",
+      "rationale": "Structural safety; precise parameters; certification standards",
+      "databases": {
+        "welding_processes_parameters": {"weight": 0.90, "algorithms": ["weak_to_strong"]}
+      }
+    },
+    "automotive": {
+      "weight": 0.78,
+      "priority": "medium-high",
+      "rationale": "Diagnostic precision; safety systems (brakes, airbags); emissions compliance",
+      "databases": {
+        "diagnostics_repair": {"weight": 0.85, "algorithms": ["anomaly_to_signature", "weak_to_strong"]}
+      }
+    },
+    "data_science": {
+      "weight": 0.85,
+      "priority": "high",
+      "rationale": "Rapidly evolving field; high-value decisions; model quality impacts",
+      "databases": {
+        "ml_techniques_validation": {"weight": 0.90, "algorithms": ["weak_to_strong", "cot_verification"]}
+      }
+    },
+    "devops": {
+      "weight": 0.83,
+      "priority": "high",
+      "rationale": "Production system reliability; incident response speed; security implications",
+      "databases": {
+        "kubernetes_troubleshooting": {"weight": 0.88, "algorithms": ["anomaly_to_signature", "cot_verification"]}
+      }
+    },
+    "sales": {
+      "weight": 0.72,
+      "priority": "medium",
+      "rationale": "Revenue impact; relationship management; strategic but less prescriptive than technical domains",
+      "databases": {
+        "frameworks_objections": {"weight": 0.80, "algorithms": ["weak_to_strong"]}
+      }
+    },
+    "marketing": {
+      "weight": 0.70,
+      "priority": "medium",
+      "rationale": "ROI impact; platform changes frequent; mix of art and science",
+      "databases": {
+        "seo_ppc_conversion": {"weight": 0.75, "algorithms": ["weak_to_strong"]}
+      }
+    },
+    "accounting": {
+      "weight": 0.92,
+      "priority": "critical",
+      "rationale": "Regulatory compliance (GAAP, IRS); financial accuracy; legal implications",
+      "databases": {
+        "bookkeeping_gaap": {"weight": 0.95, "algorithms": ["cot_verification"]}
+      }
+    },
+    "legal": {
+      "weight": 0.88,
+      "priority": "high",
+      "rationale": "Legal consequences; procedural precision; jurisdiction-specific but patterns generalizable",
+      "databases": {
+        "contract_litigation_procedures": {"weight": 0.90, "algorithms": ["cot_verification"]}
+      }
+    },
+    "real_estate": {
+      "weight": 0.75,
+      "priority": "medium-high",
+      "rationale": "Financial impact; market-dependent; regulatory but regional variation",
+      "databases": {
+        "investing_valuation": {"weight": 0.80, "algorithms": ["weak_to_strong"]}
+      }
+    },
+    "culinary": {
+      "weight": 0.68,
+      "priority": "medium",
+      "rationale": "Food safety critical (high weight subset); technique has creative flexibility",
+      "databases": {
+        "techniques_flavor_theory": {"weight": 0.70, "algorithms": ["weak_to_strong"], "safety_subsection_weight": 0.95}
+      }
+    },
+    "carpentry": {
+      "weight": 0.85,
+      "priority": "high",
+      "rationale": "Structural safety; building code compliance; load-bearing precision",
+      "databases": {
+        "framing_codes": {"weight": 0.90, "algorithms": ["cot_verification"]}
+      }
+    },
+    "project_management": {
+      "weight": 0.77,
+      "priority": "medium-high",
+      "rationale": "Organizational impact; frameworks well-established; execution varies by context",
+      "databases": {
+        "agile_pmp_risk": {"weight": 0.80, "algorithms": ["weak_to_strong"]}
+      }
+    },
+    "cybersecurity": {
+      "weight": 0.98,
+      "priority": "critical",
+      "rationale": "Security incidents; threat detection; compliance; rapidly evolving",
+      "databases": {
+        "attack_techniques": {"weight": 1.0, "algorithms": ["anomaly_to_signature", "cot_verification"]},
+        "cve_critical_catalog": {"weight": 0.95, "algorithms": ["anomaly_to_signature"]},
+        "falco_rules_extended": {"weight": 0.90, "algorithms": ["anomaly_to_signature"]},
+        "incident_response_playbooks": {"weight": 0.93, "algorithms": ["cot_verification"]}
+      }
+    },
+    "finance": {
+      "weight": 0.80,
+      "priority": "high",
+      "rationale": "Financial decisions; risk management; market data time-sensitive",
+      "databases": {
+        "fundamental_metrics": {"weight": 0.85, "algorithms": ["weak_to_strong"]},
+        "valuation_rules": {"weight": 0.82, "algorithms": ["weak_to_strong"]},
+        "risk_metrics": {"weight": 0.80, "algorithms": ["weak_to_strong"]},
+        "macroeconomic_indicators": {"weight": 0.75, "algorithms": ["weak_to_strong"], "time_decay": "monthly"},
+        "trading_strategies": {"weight": 0.78, "algorithms": ["weak_to_strong"]}
+      }
+    },
+    "game_dev": {
+      "weight": 0.65,
+      "priority": "medium-low",
+      "rationale": "Creative domain; best practices but high variation; less critical consequences",
+      "databases": {
+        "genre_mechanics": {"weight": 0.70, "algorithms": ["pcg_logic_tables", "latent_interpolation"]},
+        "game_design_principles": {"weight": 0.68, "algorithms": ["weak_to_strong"]}
+      }
+    },
+    "music": {
+      "weight": 0.60,
+      "priority": "medium-low",
+      "rationale": "Creative domain; theory foundational but application subjective",
+      "databases": {
+        "chord_dictionary": {"weight": 0.75, "algorithms": ["latent_interpolation"]},
+        "production_techniques": {"weight": 0.65, "algorithms": ["weak_to_strong"]},
+        "song_structures": {"weight": 0.62, "algorithms": ["latent_interpolation", "pcg_logic_tables"]}
+      }
+    },
+    "video": {
+      "weight": 0.58,
+      "priority": "medium-low",
+      "rationale": "Platform-specific; rapidly changing algorithms; creative with data-driven elements",
+      "databases": {
+        "platform_specs": {"weight": 0.70, "algorithms": ["weak_to_strong"], "time_decay": "quarterly"},
+        "hook_and_script_formulas": {"weight": 0.60, "algorithms": ["weak_to_strong"]}
+      }
+    },
+    "creativity": {
+      "weight": 0.55,
+      "priority": "low",
+      "rationale": "Frameworks useful but highly contextual; ideation support not prescriptive",
+      "databases": {
+        "innovation_frameworks": {"weight": 0.60, "algorithms": ["latent_interpolation"]},
+        "story_archetypes_extended": {"weight": 0.58, "algorithms": ["latent_interpolation", "pcg_logic_tables"]}
+      }
+    }
+  },
+
+  "weight_adjustments": {
+    "safety_critical_boost": {
+      "description": "Boost weight for safety-critical queries regardless of domain",
+      "keywords": ["emergency", "life-threatening", "critical", "urgent", "safety", "hazard", "fatal"],
+      "multiplier": 1.15,
+      "max_weight": 1.0
+    },
+    "compliance_boost": {
+      "description": "Boost weight for regulatory/code compliance queries",
+      "keywords": ["code", "regulation", "compliance", "legal requirement", "standard", "OSHA", "NEC", "IPC", "GAAP"],
+      "multiplier": 1.10,
+      "max_weight": 1.0
+    },
+    "recency_decay": {
+      "description": "Apply time decay to time-sensitive domains",
+      "affected_domains": ["finance.macroeconomic_indicators", "video.platform_specs", "cybersecurity.cve_critical_catalog"],
+      "decay_function": "exponential",
+      "half_life_days": {
+        "finance.macroeconomic_indicators": 90,
+        "video.platform_specs": 120,
+        "cybersecurity.cve_critical_catalog": 180
+      }
+    },
+    "user_expertise_adjustment": {
+      "description": "Adjust based on user expertise level (if known)",
+      "novice": {"technical_domains_boost": 1.1, "explanation_detail": "high"},
+      "intermediate": {"balanced": 1.0, "explanation_detail": "medium"},
+      "expert": {"nuance_boost": 1.05, "explanation_detail": "low"}
+    }
+  },
+
+  "algorithm_assignment": {
+    "description": "Which algorithms to use for each domain category",
+    "safety_critical": ["cot_verification"],
+    "diagnostic_troubleshooting": ["anomaly_to_signature", "weak_to_strong"],
+    "creative_generative": ["latent_interpolation", "pcg_logic_tables"],
+    "procedural_rule_based": ["cot_verification", "weak_to_strong"],
+    "financial_analytical": ["weak_to_strong"]
+  },
+
+  "query_routing_thresholds": {
+    "single_domain_confidence": 0.80,
+    "multi_domain_threshold": 0.60,
+    "fallback_to_llm": 0.30,
+    "verification_required": 0.90,
+    "description": "Confidence thresholds for routing decisions; <fallback uses general LLM; >verification requires database source citation"
+  }
+}

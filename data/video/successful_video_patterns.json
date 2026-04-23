@@ -1,0 +1,52 @@
+{
+  "high_retention_techniques": [
+    {
+      "technique": "pattern_interrupt",
+      "description": "Change visuals every 3-5 seconds"
+    },
+    {
+      "technique": "open_loop",
+      "description": "Promise reveal later to keep watching"
+    },
+    {
+      "technique": "music_build",
+      "description": "Use music to build anticipation"
+    },
+    {
+      "technique": "visual_effects",
+      "description": "Add zooms, pans, transitions"
+    }
+  ],
+  "hook_formulas": [
+    {
+      "formula": "unexpected_statement",
+      "example": "You've been doing X wrong your entire life"
+    },
+    {
+      "formula": "question",
+      "example": "What if I told you..."
+    },
+    {
+      "formula": "result_first",
+      "example": "Here's the final result..."
+    },
+    {
+      "formula": "controversy",
+      "example": "Everyone says X, but they're wrong"
+    }
+  ],
+  "retention_metrics": {
+    "excellent": {
+      ">90%": "first_10_seconds",
+      ">60%": "full_video"
+    },
+    "good": {
+      ">80%": "first_10_seconds",
+      ">40%": "full_video"
+    },
+    "average": {
+      ">70%": "first_10_seconds",
+      ">30%": "full_video"
+    }
+  }
+}

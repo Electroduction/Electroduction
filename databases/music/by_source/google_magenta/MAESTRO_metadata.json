@@ -1,0 +1,7 @@
+{
+  "name": "MAESTRO",
+  "source": "https://magenta.tensorflow.org",
+  "path": "maestro_metadata.json",
+  "format": "midi/wav",
+  "note": "Piano performances"
+}

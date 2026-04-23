@@ -1,0 +1,131 @@
+{
+  "_source": "YouTube Creator Academy, TikTok Business Center, Meta Business Help, Sprout Social 2026",
+  "_note": "Long-tail platform data. Specific specs, algorithm factors, and optimization tactics.",
+  "youtube": {
+    "video_specs": {
+      "recommended_resolution": "3840x2160 (4K) preferred; 1920x1080 minimum for monetization quality",
+      "frame_rates": [24, 25, 30, 48, 50, 60],
+      "max_file_size": "256GB or 12 hours",
+      "recommended_codec": "H.264 or H.265 for upload; YouTube re-encodes anyway",
+      "audio": "AAC-LC 384kbps; stereo or 5.1",
+      "containers": ["MP4", "MOV", "AVI", "MKV"]
+    },
+    "algorithm_factors_ranked": [
+      {"factor": "Click-through rate (CTR)", "weight": "Very High", "target": "4-10% average; >10% exceptional"},
+      {"factor": "Average view duration (AVD)", "weight": "Very High", "target": "40-60% retention is good; >60% excellent"},
+      {"factor": "Absolute watch time (minutes)", "weight": "High", "target": "Total minutes watched across all viewers"},
+      {"factor": "Post-watch behavior", "weight": "High", "description": "Do viewers watch more YouTube after your video?"},
+      {"factor": "Engagement (likes/comments/shares)", "weight": "Medium", "note": "Comments weighted higher than likes"},
+      {"factor": "Subscribers gained", "weight": "Medium"},
+      {"factor": "Session start", "weight": "Medium", "description": "Does your video start a YouTube session?"},
+      {"factor": "Upload frequency", "weight": "Low-Medium", "note": "Consistency matters more than frequency"}
+    ],
+    "thumbnail_optimization": {
+      "dimensions": "1280x720 minimum; 2560x1440 for quality",
+      "file_size": "<2MB",
+      "human_face_rule": "Thumbnails with faces get 38% higher CTR (YouTube internal study)",
+      "contrast_rule": "High contrast; readable at 180px wide (suggested video size)",
+      "text_rule": "Max 6 words; 90pt+ font; bold; outline or drop shadow for readability",
+      "color_rule": "Avoid YouTube red/white — blends with interface; use blue, green, orange, yellow",
+      "a_b_testing": "YouTube Studio allows title/thumbnail testing; test after first 500 impressions"
+    },
+    "title_optimization": {
+      "character_limit": "100 chars; truncates at ~70 in feed",
+      "keyword_placement": "Primary keyword in first 5 words",
+      "patterns_that_work": [
+        "How to [Outcome] Without [Common Objection]",
+        "[Number] Mistakes [Target Audience] Makes",
+        "I Tried [Thing] for [Time] — Here's What Happened",
+        "[Specific Result] in [Timeframe]"
+      ]
+    },
+    "upload_timing": {
+      "best_days": ["Thursday", "Friday", "Saturday"],
+      "best_time_utc": "15:00-17:00 UTC (catches US morning + EU afternoon)",
+      "caveat": "Analyze YOUR audience analytics; generic advice may not apply"
+    },
+    "retention_engineering": {
+      "0_30_seconds": "Hook: State the promise + why viewer should watch to end",
+      "30_90_seconds": "Establish credibility + expand on the hook",
+      "average_drop_off_points": ["30s (failed hook)", "50% mark", "End card (55-60% mark)"],
+      "pattern_interrupts": "Change of scene, graphic, music, tone every 60-90 seconds",
+      "loop_open_loops": "State a question early, answer it late; creates psychological need to watch through"
+    },
+    "monetization_thresholds": {
+      "adsense": "1,000 subscribers + 4,000 watch hours (12 months) OR 10M Shorts views",
+      "channel_memberships": "500 subscribers",
+      "super_thanks_super_chats": "1,000 subscribers",
+      "shopping": "10,000 subscribers",
+      "rpm_ranges": {
+        "finance_tech": "$8-$25 RPM",
+        "entertainment": "$2-$6 RPM",
+        "gaming": "$2-$5 RPM",
+        "education": "$4-$12 RPM"
+      }
+    }
+  },
+  "tiktok": {
+    "video_specs": {
+      "resolution": "1080x1920 (9:16 vertical) primary; 1080x1080 (1:1) supported",
+      "duration": "15s to 10 minutes; 60-90s sweet spot for most content",
+      "file_size": "<287MB",
+      "frame_rate": "24-60fps",
+      "audio": "Must have audio; captions + music dramatically boost completion"
+    },
+    "algorithm_factors": {
+      "completion_rate": "Most weighted signal; 100% completion much preferred",
+      "rewatch_rate": "Watched multiple times = very high signal",
+      "shares": "Most valuable engagement; signals strong content",
+      "comments": "Especially questions that creator responds to",
+      "follows_from_video": "Strong positive signal",
+      "early_exit": "User swipes away in <3s = strong negative signal (punishes bad hooks)"
+    },
+    "for_you_page_mechanics": {
+      "initial_test_pool": "Video shown to 200-300 accounts; if engagement rate >X → next pool",
+      "pool_sizes": ["300 → 1,000 → 10,000 → 100,000 → viral"],
+      "niche_hashtags": "Smaller, specific communities get content shown to interested users first",
+      "trending_audio": "Using trending sounds boosts initial distribution"
+    },
+    "hook_principles": {
+      "first_3_seconds": "Must stop scroll; pattern interrupt; question or claim",
+      "on_screen_text": "Show first message in first 0-1 second; reader wants to know before committing",
+      "hook_types": [
+        "Controversy: 'This is why [common advice] is wrong'",
+        "Story: 'Two years ago I was [problem]; now [transformation]'",
+        "Curiosity: 'I found a [secret/trick] that [result]'",
+        "Stakes: 'If you [situation], watch this before you [action]'"
+      ]
+    }
+  },
+  "instagram": {
+    "reels": {
+      "dimensions": "1080x1920 (9:16); 1080x1080 (1:1) also works",
+      "duration": "15s-90s optimal; 15-30s highest completion",
+      "algorithm_note": "Watch time and shares weighted highest; Reels pushed heavily in 2025-2026"
+    },
+    "feed_posts": {
+      "dimensions": "1080x1350 portrait (4:5) gets most real estate; 1080x1080 square",
+      "carousel": "Up to 10 slides; algorithm pushes because multiple swipes = higher engagement time"
+    }
+  },
+  "content_strategy": {
+    "niche_selection": {
+      "too_broad": "'Tech' — impossible to differentiate",
+      "right_level": "'Python automation for accountants' — clear audience, underserved",
+      "monetization_check": "Can audience spend money on: courses, tools, services, products?"
+    },
+    "content_pillars": {
+      "definition": "3-5 core topics that define your channel; rotate between them",
+      "example": "Finance channel: [Stock picks] [Economic analysis] [Investing mistakes] [Book reviews] [Portfolio updates]",
+      "benefit": "Algorithm learns what your channel is about; subscribers know what to expect"
+    },
+    "hooks_and_retention": {
+      "open_loop_examples": [
+        "Start: 'Before I tell you the #1 way to [X], let me tell you the mistake everyone makes first'",
+        "Start: 'By the end of this video, you'll know exactly why [surprising fact]'"
+      ],
+      "callbacks": "Reference earlier content in later videos; rewards long-time viewers",
+      "cliffhangers": "End video with preview of next part; increases subscriber notification open rate"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "three_act": [
+    "setup",
+    "confrontation",
+    "resolution"
+  ],
+  "heros_journey": [
+    "ordinary_world",
+    "call_to_adventure",
+    "refusal",
+    "meeting_mentor",
+    "crossing_threshold",
+    "tests",
+    "ordeal",
+    "reward",
+    "road_back",
+    "resurrection",
+    "return"
+  ],
+  "save_the_cat": [
+    "opening_image",
+    "setup",
+    "theme_stated",
+    "catalyst",
+    "debate",
+    "break_into_two",
+    "b_story",
+    "fun_and_games",
+    "midpoint",
+    "bad_guys_close_in",
+    "all_is_lost",
+    "dark_night",
+    "break_into_three",
+    "finale",
+    "final_image"
+  ]
+}

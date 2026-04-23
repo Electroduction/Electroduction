@@ -1,0 +1,167 @@
+{
+  "_source": "Kubernetes documentation, SRE workbooks, Production incident post-mortems",
+  "_note": "Long-tail DevOps/SRE knowledge. K8s debugging, observability, incident response, platform reliability.",
+  "pod_troubleshooting": {
+    "pod_states": {
+      "pending": {
+        "meaning": "Pod accepted but not running yet",
+        "common_causes": ["Insufficient resources (CPU/memory)", "No nodes match pod selector/affinity", "ImagePullBackOff", "Volume mount failures"],
+        "debug": "kubectl describe pod <name> | Look for Events section; check Conditions; verify resource requests vs node capacity"
+      },
+      "crashloopbackoff": {
+        "meaning": "Container exits shortly after starting; k8s restarts with exponential backoff",
+        "common_causes": ["Application error on startup", "Liveness probe failing", "Missing dependencies (DB not ready)", "Wrong command/entrypoint"],
+        "debug": "kubectl logs <pod> --previous; check exit code; increase initialDelaySeconds on probes; add init containers for dependencies"
+      },
+      "imagepullbackoff": {
+        "meaning": "Cannot pull container image from registry",
+        "common_causes": ["Image doesn't exist (typo in name/tag)", "Private registry needs imagePullSecrets", "Rate limit (Docker Hub)", "Network policy blocking registry"],
+        "debug": "kubectl describe pod; check 'Failed to pull image' message; verify image exists: docker pull <image>; create imagePullSecret if needed"
+      },
+      "oomkilled": {
+        "meaning": "Pod exceeded memory limit; kernel OOM killer terminated it",
+        "prevention": "Set appropriate memory limits; monitor actual usage; add memory requests = limits for guaranteed QoS",
+        "debug": "kubectl describe pod | grep -A5 'Last State'; see exit code 137; check metrics-server: kubectl top pod"
+      }
+    },
+    "networking_issues": {
+      "pod_to_pod_fails": {
+        "check_cni": "kubectl get pods -n kube-system | grep -E 'calico|flannel|weave'; CNI plugin must be running",
+        "check_network_policy": "kubectl get networkpolicy -A; policies can block pod-to-pod traffic; describe and review ingress/egress rules",
+        "test_connectivity": "kubectl exec -it <pod> -- ping <other-pod-ip>; curl <service-name>.<namespace>.svc.cluster.local"
+      },
+      "service_not_reachable": {
+        "check_endpoints": "kubectl get endpoints <service-name>; should list pod IPs; empty = label selector mismatch",
+        "label_mismatch": "kubectl get pods --show-labels; compare to service selector: kubectl get svc <name> -o yaml | grep selector",
+        "port_mismatch": "Service targetPort must match container containerPort; common mistake: targetPort=80 but app listens on 8080"
+      },
+      "ingress_not_working": {
+        "ingress_controller": "kubectl get pods -n ingress-nginx (or traefik, etc.); controller must be running",
+        "ingress_class": "Check ingressClassName matches controller; missing = default controller; multiple controllers need explicit class",
+        "dns_propagation": "curl -H 'Host: example.com' <ingress-ip>; bypasses DNS; if works, DNS issue; if fails, ingress config issue",
+        "tls_issues": "Verify cert secret exists in same namespace; check CN/SAN matches hostname; cert-manager logs for ACME failures"
+      }
+    }
+  },
+  "resource_management": {
+    "requests_vs_limits": {
+      "requests": "Guaranteed resources; kube-scheduler uses for placement; pod only scheduled if node has requests available",
+      "limits": "Maximum resources; pod throttled (CPU) or OOMKilled (memory) if exceeded; limits > requests = burstable",
+      "qos_classes": {
+        "guaranteed": "requests = limits for all containers; highest priority; last to be evicted",
+        "burstable": "requests < limits or only requests set; medium priority",
+        "besteffort": "No requests or limits; lowest priority; first to be evicted under pressure"
+      },
+      "recommendations": {
+        "cpu": "Set requests based on p50 usage; limits 2-4x requests (allow bursts); no limits for batch jobs",
+        "memory": "Set requests based on p90; limits = requests (memory not compressible); exceeding limit = OOMKill"
+      }
+    },
+    "hpa_horizontal_pod_autoscaling": {
+      "metrics_source": "Requires metrics-server; install: kubectl apply -f metrics-server.yaml",
+      "cpu_based": "kubectl autoscale deployment <name> --cpu-percent=70 --min=2 --max=10",
+      "custom_metrics": "Prometheus adapter; scale on requests/sec, queue depth, etc.; more accurate than CPU",
+      "troubleshooting": {
+        "hpa_not_scaling": "kubectl get hpa; check TARGETS column shows <unknown>, means metrics-server not installed or pod has no resource requests",
+        "flapping": "HPA scales up/down rapidly; increase stabilizationWindowSeconds to 300; adjust targetUtilization threshold"
+      }
+    },
+    "cluster_autoscaling": {
+      "node_autoscaler": "Adds nodes when pods pending due to insufficient resources; removes underutilized nodes",
+      "limitations": "Only works with cloud providers (GKE, EKS, AKS); 5-10 minute delay to add node; pods with local storage or anti-affinity may block scale-down",
+      "pod_disruption_budget": "Prevents autoscaler from draining node if would violate PDB; ensure PDB allows some disruption (maxUnavailable=1)"
+    }
+  },
+  "persistent_storage": {
+    "pvc_states": {
+      "pending": "PVC waiting for PV; dynamic provisioning may be creating; or no PV matches claim",
+      "bound": "PVC matched to PV; pod can use volume",
+      "lost": "PV deleted but PVC still references it; data likely lost"
+    },
+    "storage_classes": {
+      "dynamic_provisioning": "StorageClass with provisioner; PVC automatically creates PV; cloud-specific (gp2, pd-ssd, etc.)",
+      "reclaim_policy": {
+        "delete": "PV and backing storage deleted when PVC deleted; default; dangerous for prod data",
+        "retain": "PV marked released but not deleted; manual cleanup required; safe for prod"
+      },
+      "volume_binding_mode": {
+        "immediate": "PV created immediately; may be in wrong zone for pod",
+        "waitforfirstconsumer": "PV created when pod scheduled; ensures PV in same zone as pod; recommended"
+      }
+    },
+    "troubleshooting": {
+      "mount_failed": "kubectl describe pod; check Events; common: PV filesystem type mismatch, PV in different AZ than node, SELinux blocking mount",
+      "read_only_filesystem": "PV mounted read-only; check fsGroup and runAsUser in securityContext; may need initContainer to chown",
+      "performance_issues": "Use storage class with SSD backing (gp3, pd-ssd); check IOPS limits; consider local-path-provisioner for high-IOPS needs"
+    }
+  },
+  "observability": {
+    "logging": {
+      "kubectl_logs": "kubectl logs <pod> -f --tail=100; -c <container> for multi-container; --previous for crashed container",
+      "centralized_logging": "Fluentd/Fluent Bit + Elasticsearch + Kibana; or Loki + Grafana; collects logs from all pods",
+      "structured_logging": "Log JSON; easier to parse and search; include request_id, user_id, trace_id for correlation"
+    },
+    "metrics": {
+      "prometheus": "De facto standard; scrapes /metrics endpoint; long-term storage with Thanos or Cortex",
+      "key_metrics": {
+        "golden_signals": ["Latency (p50, p95, p99)", "Traffic (req/sec)", "Errors (error rate)", "Saturation (CPU, memory, disk)"],
+        "red_method": "Rate, Errors, Duration; for request-driven services",
+        "use_method": "Utilization, Saturation, Errors; for resources (CPU, disk, network)"
+      },
+      "recording_rules": "Pre-compute expensive queries; rate(http_requests_total[5m]); reduces dashboard load time",
+      "alerting_rules": "Alert on symptoms, not causes; 'API latency p99 > 1s' not 'CPU > 80%'; use for loop to avoid flapping"
+    },
+    "tracing": {
+      "jaeger_zipkin": "Distributed tracing; follows request through microservices; identifies slow services",
+      "instrumentation": "OpenTelemetry SDK; auto-instruments frameworks (Flask, Express, Spring); adds trace_id to logs",
+      "sampling": "Trace 1-10% of requests; head-based (sample before decision) or tail-based (sample slow requests)"
+    }
+  },
+  "security": {
+    "rbac": {
+      "roles_vs_clusterroles": "Role = namespace-scoped; ClusterRole = cluster-wide (nodes, PVs) or namespace-agnostic",
+      "rolebinding": "Binds Role to User/Group/ServiceAccount; namespace-scoped",
+      "debugging": "kubectl auth can-i <verb> <resource> --as=<user>; check if user can perform action",
+      "principle_of_least_privilege": "Grant minimum permissions; avoid cluster-admin except for admins; use namespaced roles"
+    },
+    "network_policies": {
+      "default_deny": "Create 'deny all' policy; then whitelist specific traffic; zero-trust model",
+      "ingress_egress": "Ingress = incoming to pod; Egress = outgoing from pod; both can be restricted",
+      "example_allow_from_label": "Allow pods with label app=frontend to access app=backend on port 8080; blocks all other traffic",
+      "testing": "kubectl exec into pod; curl other service; should be blocked if policy working; check policy with kubectl describe networkpolicy"
+    },
+    "pod_security": {
+      "security_context": {
+        "runAsNonRoot": true,
+        "readOnlyRootFilesystem": true,
+        "allowPrivilegeEscalation": false,
+        "drop_capabilities": "Drop ALL, add only needed (NET_BIND_SERVICE for port <1024)"
+      },
+      "pod_security_standards": "Privileged, Baseline, Restricted; enforce with Pod Security Admission (PSA); replaces PodSecurityPolicy",
+      "seccomp_apparmor": "Restrict syscalls; prevent container breakout; default seccomp profile blocks ~300 dangerous syscalls"
+    },
+    "secrets_management": {
+      "kubernetes_secrets": "Base64 encoded NOT encrypted; etcd encryption at rest must be enabled",
+      "external_secrets": "External Secrets Operator; sync from Vault, AWS Secrets Manager, GCP Secret Manager; secrets never stored in etcd",
+      "sealed_secrets": "Encrypt secrets in Git; controller decrypts in-cluster; gitops-friendly"
+    }
+  },
+  "disaster_recovery": {
+    "backup": {
+      "etcd_backup": "etcdctl snapshot save; backs up all cluster state; critical for disaster recovery",
+      "velero": "Backs up k8s resources and PVs; supports scheduled backups; cloud-specific volume snapshots",
+      "frequency": "etcd: daily; Velero: daily + before cluster upgrades"
+    },
+    "ha_considerations": {
+      "control_plane": "3 or 5 master nodes (odd number for quorum); across availability zones; load balancer for API server",
+      "worker_nodes": "Spread across AZs; pod anti-affinity for replicas; PDBs to prevent full service outage during node drain",
+      "multi_cluster": "Federation or service mesh (Istio multi-cluster); failover between clusters; complexity vs. availability tradeoff"
+    }
+  },
+  "performance_tuning": {
+    "api_server": "Increase --max-requests-inflight (default 400); --max-mutating-requests-inflight (200); for large clusters >1000 nodes",
+    "etcd": "Use SSD; 3 or 5 node cluster (not 4 or 6); separate etcd from master for large clusters; defrag regularly",
+    "kubelet": "Increase --max-pods (default 110); --kube-api-qps (default 5 too low); --kube-api-burst (10)",
+    "dns": "CoreDNS autoscaling; increase replicas for large clusters; pod antiaffinity; local DNS cache (NodeLocal DNSCache)"
+  }
+}

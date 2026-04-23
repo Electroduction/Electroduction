@@ -1,0 +1,117 @@
+{
+  "_source": "Recording Engineer's Handbook, Sound on Sound magazine, MusicTech, Pensado's Place",
+  "_note": "Long-tail production data. Specific settings that make professional tracks stand out.",
+  "mixing": {
+    "eq_fundamentals": {
+      "frequency_ranges": {
+        "sub_bass": {"hz": "20-60Hz", "feel": "Feel rather than hear; mono only", "tip": "High-pass most instruments below 80Hz to clean up mix"},
+        "bass": {"hz": "60-200Hz", "feel": "Weight and warmth", "tip": "Kick drum fundamental 60-100Hz; bass guitar 80-200Hz; compete for space"},
+        "low_mid": {"hz": "200-500Hz", "feel": "Muddiness or warmth", "tip": "Cut 200-400Hz on most instruments to clean up mix (muddy zone)"},
+        "mid": {"hz": "500Hz-2kHz", "feel": "Presence, nasal quality", "tip": "Boost 1-2kHz for cut; cut 500-800Hz to reduce boxiness"},
+        "high_mid": {"hz": "2-6kHz", "feel": "Harshness or clarity", "tip": "3-5kHz de-ess region for vocals; boost for attack on snare"},
+        "high": {"hz": "6-12kHz", "feel": "Air and sparkle", "tip": "High shelf boost 8-12kHz adds 'air' (Neve 1073 character)"},
+        "ultra_high": {"hz": "12-20kHz", "feel": "Sibilance, shimmer"}
+      },
+      "surgical_vs_broad": "Narrow Q (0.5-1) for cuts/problem frequencies. Wide Q (2-4) for boosts.",
+      "subtractive_first": "Cut problems before boosting; less phase issues; cleaner result"
+    },
+    "compression": {
+      "parameters": {
+        "attack": {"fast": "1-5ms catches transients; can sound pumped", "slow": "30-100ms lets transients through; adds punch"},
+        "release": {"fast": "50-100ms; can sound pumpy on slow material", "slow": "300-500ms; smooth transparent compression", "auto": "Many compressors have program-dependent auto release"},
+        "ratio": {
+          "2:1": "Gentle; barely audible; glue",
+          "4:1": "Standard; gentle-moderate limiting",
+          "8:1": "Moderate; controls dynamics noticeably",
+          "20:1_plus": "Limiting; hard ceiling"
+        },
+        "knee": {"hard": "Compression engages abruptly; aggressive", "soft": "Gradual onset; transparent; gentle"}
+      },
+      "genre_settings": {
+        "kick_drum": {"attack": "5-20ms", "release": "50-100ms", "ratio": "4:1", "goal": "Control sustain; keep punch"},
+        "snare": {"attack": "5-10ms", "release": "150-300ms", "ratio": "4:1-6:1", "goal": "Consistent level"},
+        "bass_guitar": {"attack": "30-80ms", "release": "200-400ms", "ratio": "4:1", "goal": "Tighten low end"},
+        "lead_vocal": {"attack": "10-30ms", "release": "200-400ms", "ratio": "3:1-6:1", "goal": "Even, intimate"},
+        "mix_bus": {"attack": "50-100ms", "release": "auto", "ratio": "1.5:1-2:1", "goal": "Glue mix together"}
+      },
+      "parallel_compression": "Blend dry + compressed signal; keeps transients but adds sustain; NYC compression technique"
+    },
+    "reverb": {
+      "types": {
+        "room": "Small, realistic space; 50-200ms pre-delay; drums, percussion",
+        "hall": "Large natural space; 1-3s decay; strings, orchestral",
+        "plate": "Bright, dense; 0.8-2s; classic for vocals/snare",
+        "spring": "Surf/vintage sound; guitar amp reverb",
+        "convolution": "Impulse response of real space; realistic but CPU heavy"
+      },
+      "send_reverb_rule": "Never insert reverb on track; use send/return; keeps reverb controllable + saves CPU",
+      "pre_delay": "10-30ms gap before reverb; separates dry signal; helps clarity",
+      "room_in_a_box": "Put all instruments in same reverb at different levels to create coherent 3D space"
+    },
+    "stereo_field": {
+      "mono_rule": "Sub bass + kick + bass MUST be mono; stereo low end causes phase issues on mono systems",
+      "widening": "Mid-Side EQ: boost S channel 8-12kHz adds width; cut M channel adds sense of space",
+      "pan_law": "-3dB or -6dB when centered vs panned; compensate gain when panning",
+      "haas_effect": "Delay one channel 10-30ms from other; perceived as stereo width (binaural fusion)"
+    }
+  },
+  "mastering": {
+    "loudness_targets": {
+      "spotify": -14.0,
+      "apple_music": -16.0,
+      "youtube": -14.0,
+      "cd_standard": -9.0,
+      "tidal_mqa": -18.0,
+      "note": "Integrated LUFS (loudness units relative to full scale); use Youlean meter or iZotope"
+    },
+    "true_peak": "Never exceed -1dBTP (true peak); prevents inter-sample peaks causing distortion on streaming",
+    "mastering_chain_order": [
+      "EQ (corrective) → Compression → EQ (tonal) → Stereo Enhancement → Limiter"
+    ],
+    "loudness_war_note": "Over-limiting squashes dynamics; modern streaming normalizes anyway; aim for quality not loudness"
+  },
+  "genre_specific_production": {
+    "trap": {
+      "bpm": [130, 150],
+      "drums": "Roland TR-808 bass drum with pitch/decay; hi-hat rolls (1/8 to 1/32 triplets); clap on 2+4",
+      "808_tuning": "Tune 808 to key of song; 808 is pitched — B, C, Db, F are common starting notes",
+      "melodies": "Minor key; simple 4-8 note melodies; lots of space; slight detuning for feel",
+      "key_vsts": ["Nexus", "Serum (for melodic leads)", "Native Instruments Battery (drums)"]
+    },
+    "house": {
+      "bpm": [120, 130],
+      "drums": "Four-on-the-floor kick (every quarter note); open hi-hat on off-beats; clap or snare on 2+4",
+      "bassline": "Pumping sidechain compression against kick; synth bass or Chicago piano",
+      "arrangement": "32-bar sections; breakdown at 3-4 min mark; 8-bar builds; kick drops",
+      "key_vsts": ["Sylenth1 (chords)", "Kickstart (sidechain)"]
+    },
+    "lo_fi_hip_hop": {
+      "bpm": [70, 90],
+      "production": "Chop and pitch-shift sample; add vinyl crackle, tape hiss; detuned instruments",
+      "drums": "Boom bap pattern; slightly behind the beat (laid back feel); shuffled hi-hats",
+      "recording_trick": "Record through cheap cassette deck for authentic lo-fi texture",
+      "chord_extensions": "Maj7, min9, 9sus4 voicings on piano or Rhodes"
+    },
+    "edm_progressive_house": {
+      "bpm": [126, 132],
+      "drop_design": "2-bar tension (no kick) → 1-bar anticipation → DROP (kick + bass + synths + FX)",
+      "supersaw_chord": "Detune 7 sawtooth oscillators; spread across stereo; massive chord sound",
+      "buildup_elements": "Riser (pitch up); snare roll (accelerating 1/4 → 1/8 → 1/16); filter open; white noise",
+      "fx_automation": "Filter cutoff, reverb wet, delay feedback — automate aggressively during transitions"
+    }
+  },
+  "sound_design": {
+    "synthesis_types": {
+      "subtractive": "Start with harmonically rich wave (saw, square); filter down; most common (Moog, Prophet-5)",
+      "additive": "Build from sine waves; complex timbres; very CPU heavy historically",
+      "fm_synthesis": "Frequency modulation; complex metallic/bell timbres; Yamaha DX7 (80s sound); great for keys",
+      "wavetable": "Scan through wave tables; modern evolution; Serum, Vital, Massive",
+      "granular": "Chop sample into grains; manipulate; excellent for textures/atmospheres"
+    },
+    "foley_and_sampling": {
+      "layering": "Stack 3 sounds: body (fundamental), attack (transient), tail (sustain/decay)",
+      "transient_design": "High-pass + heavy attack compression on attack layer; add crack to any hit",
+      "pitch_shifting_limit": "±5 semitones without artifacts; beyond use formant correction"
+    }
+  }
+}

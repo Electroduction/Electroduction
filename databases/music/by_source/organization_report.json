@@ -1,0 +1,28 @@
+{
+  "project": "music",
+  "sources": {
+    "fma": {
+      "description": "Free Music Archive",
+      "datasets": [
+        {
+          "name": "FMA-Small",
+          "expected_path": "fma_small.zip",
+          "status": "missing"
+        }
+      ]
+    },
+    "google_magenta": {
+      "description": "Google Magenta datasets",
+      "datasets": [
+        {
+          "name": "MAESTRO",
+          "original_path": "data/music/maestro_metadata.json",
+          "metadata": "databases/music/by_source/google_magenta/MAESTRO_metadata.json",
+          "status": "found"
+        }
+      ]
+    }
+  },
+  "total_datasets": 2,
+  "total_size_mb": 0
+}

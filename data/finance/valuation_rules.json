@@ -1,0 +1,108 @@
+{
+  "_source": "CFA Institute, Graham, Damodaran frameworks",
+  "_note": "Long-tail valuation rules. Context-dependent — always cross-reference sector median.",
+  "pe_thresholds": {
+    "general": {
+      "deep_value": {"max": 10, "interpretation": "Distressed or cyclical trough; high risk"},
+      "value": {"min": 10, "max": 15, "interpretation": "Below market average; potential value"},
+      "fair_value": {"min": 15, "max": 20, "interpretation": "Roughly market-priced"},
+      "growth_premium": {"min": 20, "max": 30, "interpretation": "Market pricing in growth; check PEG"},
+      "high_growth": {"min": 30, "max": 50, "interpretation": "Must deliver 20%+ EPS growth to justify"},
+      "speculative": {"min": 50, "interpretation": "Priced for perfection; margin of safety minimal"}
+    },
+    "sector_specific": {
+      "technology": {"fair_range": [20, 35], "note": "Cloud/SaaS often 35-60x on ARR growth"},
+      "financials": {"fair_range": [8, 14], "note": "Banks use P/Book; PB < 1 may signal distress"},
+      "healthcare": {"fair_range": [15, 25], "note": "Biotech PE meaningless pre-revenue; use EV/Pipeline"},
+      "utilities": {"fair_range": [14, 20], "note": "Regulated; value = dividend + stability"},
+      "consumer_staples": {"fair_range": [18, 26], "note": "Premium for defensive recession-resistant earnings"},
+      "energy": {"fair_range": [8, 15], "note": "Cyclical; EV/EBITDA better; check oil price assumption"},
+      "real_estate_reits": {"fair_range": null, "use_instead": "Price/FFO 12-20x; cap rate 4-7%"}
+    }
+  },
+  "pb_ratio_rules": {
+    "below_1": "Liquidation value or distress signal — check why assets overvalued on books",
+    "1_to_2": "Value territory; common for banks and industrials",
+    "2_to_5": "Premium; justified by high ROIC and brand (consumer staples)",
+    "above_5": "Asset-light business model (software, platforms) or bubble territory",
+    "exception_banks": "PB < 1 for banks often means market expects credit losses exceed reserves"
+  },
+  "peg_ratio_rules": {
+    "below_1": "Growth at a reasonable price (GARP) — possibly undervalued",
+    "1_to_1_5": "Fairly valued for growth company",
+    "1_5_to_2": "Slight premium; needs consistent execution",
+    "above_2": "Priced for perfection; any miss punished severely",
+    "peter_lynch_rule": "PEG < 1 is ideal; Lynch popularized; works best for 15-30% growers",
+    "limitation": "Meaningless for companies with negative growth or PE > 100"
+  },
+  "debt_equity_thresholds": {
+    "0_to_0_5": "Conservative; strong balance sheet; room to lever up for growth",
+    "0_5_to_1_5": "Moderate; standard for stable businesses",
+    "1_5_to_3": "Elevated; monitor interest coverage and cash flow",
+    "above_3": "High risk; especially if rates rise or EBITDA declines",
+    "bank_note": "D/E inapplicable to banks; use Tier 1 Capital Ratio > 12% for safety",
+    "interest_coverage_safety": "Coverage > 3x = safe; < 1.5x = distress signal"
+  },
+  "roe_benchmarks": {
+    "below_0_05": "Poor capital allocation; consider management quality",
+    "0_05_to_0_10": "Below average; acceptable for capital-intensive industries",
+    "0_10_to_0_20": "Good; market average range",
+    "0_20_to_0_40": "Excellent; indicates strong competitive advantage",
+    "above_0_40": "Outstanding (or overleveraged); Buffett threshold is 20%+ sustained",
+    "buffett_rule": "ROE > 15% for 10 consecutive years = durable moat"
+  },
+  "margin_analysis": {
+    "gross_margin_by_sector": {
+      "software_saas": {"target": ">70%", "excellent": ">80%"},
+      "hardware": {"target": "30-50%", "excellent": ">50%"},
+      "retail": {"target": "25-40%", "excellent": ">45%"},
+      "banking": {"use_net_interest_margin": true, "target": "2.5-4%"},
+      "pharma": {"target": "60-80%", "note": "R&D burns margin; check pipeline value"}
+    },
+    "operating_leverage": "Revenue grows faster than costs = high operating leverage; amplifies both gains and losses in downturns",
+    "fcf_conversion": "FCF Margin / Net Margin > 0.8 = high quality earnings; < 0.5 = working capital or capex concern"
+  },
+  "dcf_assumptions": {
+    "wacc_ranges": {
+      "large_cap_stable": [7, 9],
+      "mid_cap_growth": [9, 12],
+      "small_cap_risky": [12, 16],
+      "emerging_market": [14, 20]
+    },
+    "terminal_growth_rates": {
+      "us_gdp_proxy": 2.5,
+      "above_gdp_warning": "Terminal growth > 3.5% implies company outgrows economy — rare",
+      "typical_range": [1.5, 3.5]
+    },
+    "sensitivity_rule": "±1% WACC change moves fair value 15-25%; always run 3x3 scenario grid"
+  },
+  "enterprise_value_multiples": {
+    "ev_ebitda_by_sector": {
+      "technology": [15, 30],
+      "consumer": [10, 18],
+      "industrials": [8, 14],
+      "healthcare": [12, 20],
+      "energy": [5, 10],
+      "telecom": [6, 9]
+    },
+    "ev_revenue_saas": {
+      "below_5x": "Value; check churn rate",
+      "5x_to_10x": "Standard for 20-30% ARR growers",
+      "10x_to_20x": "High growth 40%+; needs net revenue retention > 120%",
+      "above_20x": "Priced for dominant market position; very high execution risk"
+    }
+  },
+  "short_interest_signals": {
+    "below_3pct": "Normal; shorts disagree with bulls",
+    "3_to_10pct": "Elevated short interest; worth researching bear thesis",
+    "above_10pct": "High conviction shorts; potential squeeze if wrong",
+    "above_20pct": "GameStop territory — short squeeze risk substantial",
+    "days_to_cover": "Short interest / avg daily volume; > 5 days = potential squeeze catalyst"
+  },
+  "dividends_and_buybacks": {
+    "dividend_sustainability": "Payout ratio < 60% = safe for most sectors; utilities/REITs can sustain 70-80%",
+    "dividend_growth_rule": "Aristocrats (25+ years of consecutive increases) = highest quality dividend income",
+    "buyback_yield": "Buyback yield + dividend yield = total shareholder yield; compare to bond yields",
+    "buyback_quality": "Buybacks at low PB = value-accretive; at high PB = destroys value (e.g. some buybacks at peak)"
+  }
+}

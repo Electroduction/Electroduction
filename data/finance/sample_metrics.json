@@ -1,0 +1,20 @@
+{
+  "AAPL": {
+    "pe_ratio": 28.5,
+    "pb_ratio": 39.8,
+    "debt_to_equity": 1.73,
+    "roe": 1.47,
+    "current_ratio": 0.93,
+    "market_cap": 2800000000000,
+    "sector": "Technology"
+  },
+  "JPM": {
+    "pe_ratio": 10.2,
+    "pb_ratio": 1.5,
+    "debt_to_equity": 1.2,
+    "roe": 0.15,
+    "current_ratio": 1.1,
+    "market_cap": 450000000000,
+    "sector": "Financials"
+  }
+}

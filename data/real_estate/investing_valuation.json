@@ -1,0 +1,162 @@
+{
+  "_source": "Real estate investment analysis guides, Appraisal Institute, Property management standards",
+  "_note": "Long-tail real estate investing. Valuation methods, deal analysis, property management, financing structures.",
+  "valuation_methods": {
+    "comparable_sales": {
+      "process": "Find 3-5 similar properties sold recently; adjust for differences; determine value",
+      "adjustments": {
+        "location": "+$10k for better neighborhood; -$5k for busy street",
+        "size": "$100-150/sq ft; adjust for square footage difference",
+        "condition": "+$15k for recent renovation; -$20k for deferred maintenance",
+        "features": "+$5k for garage; +$3k for fireplace; -$8k for no central AC",
+        "time": "+3-5%/year for appreciation (varies by market)"
+      },
+      "best_for": "Residential; single-family homes; condos; adequate comparable sales data"
+    },
+    "income_approach": {
+      "cap_rate_method": "Value = NOI / Cap Rate",
+      "noi_calculation": "Gross Rental Income - Vacancy - Operating Expenses (exclude debt service and depreciation)",
+      "cap_rate_determination": "Market cap rates; 4-5% class A urban; 8-10% class C suburban; 12%+ risky/tertiary markets",
+      "example": "NOI $100k, cap rate 8% → Value = $100k / 0.08 = $1,250,000",
+      "best_for": "Income properties; multifamily; commercial; industrial"
+    },
+    "gross_rent_multiplier": {
+      "formula": "GRM = Sale Price / Gross Annual Rent",
+      "usage": "Quick estimate; value = GRM × gross rent; less accurate than cap rate",
+      "typical_grm": "8-12 for residential; 4-8 for commercial",
+      "example": "Comp sold $400k with $40k rent = GRM 10; subject has $35k rent → $35k × 10 = $350k value"
+    },
+    "cost_approach": {
+      "formula": "Land Value + (Replacement Cost - Depreciation) = Property Value",
+      "use": "New construction; special use properties; insurance; not common for investors",
+      "depreciation_types": {
+        "physical": "Wear and tear; deferred maintenance; weather damage",
+        "functional": "Outdated layout; poor design; obsolete features",
+        "external": "Location issues; economic conditions; neighborhood decline"
+      }
+    }
+  },
+  "investment_analysis": {
+    "key_metrics": {
+      "cash_on_cash_return": {
+        "formula": "Annual Pre-Tax Cash Flow / Total Cash Invested",
+        "example": "$10k annual cash flow, $100k down payment = 10% CoC return",
+        "target": "8-12% considered good; <5% marginal"
+      },
+      "cap_rate": {
+        "formula": "NOI / Purchase Price",
+        "unlevered": "Ignores financing; measures property performance",
+        "comparison": "Higher cap rate = higher return but usually higher risk/lower quality"
+      },
+      "debt_service_coverage_ratio": {
+        "formula": "NOI / Annual Debt Service",
+        "lender_requirement": "Minimum 1.20-1.25 DSCR; means NOI must be 20-25% above debt payments",
+        "example": "NOI $100k, debt service $80k = 1.25 DSCR; meets lender requirement",
+        "below_1.0": "Property doesn't cover debt; negative cash flow; lender won't approve"
+      },
+      "break_even_occupancy": {
+        "formula": "(Operating Expenses + Debt Service) / Gross Potential Income",
+        "interpretation": "Occupancy needed to cover expenses and debt; <85% is good; >90% is risky",
+        "example": "$70k opex + $40k debt = $110k / $150k GPI = 73% break-even; safe cushion"
+      }
+    },
+    "pro_forma_analysis": {
+      "income": {
+        "gross_potential_income": "All units at market rent × 12 months",
+        "vacancy_allowance": "5-10% typical; higher for new property, class C, or weak market",
+        "other_income": "Laundry, parking, pet fees, late fees, storage; 2-5% of GPI typical",
+        "effective_gross_income": "GPI - Vacancy + Other Income"
+      },
+      "operating_expenses": {
+        "property_taxes": "Assessed value × tax rate; often reassessed after sale; budget for increase",
+        "insurance": "$500-1500/unit/year; flood zone higher; claims history affects rate",
+        "utilities": "Common area; vacant units; tenant-paid excludes",
+        "repairs_maintenance": "5-10% of EGI; $500-1000/unit/year; age and condition vary",
+        "property_management": "8-10% of collected rents; even if self-managing, account for time value",
+        "reserves": "Capital expenditures; $250-500/unit/year; roof, HVAC, parking lot, appliances",
+        "other": "Trash, landscaping, pest control, legal, marketing"
+      },
+      "noi": "EGI - Operating Expenses (no debt service, no depreciation)",
+      "cash_flow": "NOI - Debt Service = Before-Tax Cash Flow"
+    },
+    "one_percent_rule": {
+      "guideline": "Monthly rent should be ≥1% of purchase price for cash flow",
+      "example": "$200k property should rent for $2k/month",
+      "limitations": "Rough filter; doesn't account for expenses, financing, taxes; varies by market"
+    },
+    "fifty_percent_rule": {
+      "guideline": "Operating expenses ≈50% of gross income (excluding debt service)",
+      "use": "Quick estimate; actual expenses vary 35-65%; verify with detailed pro forma"
+    }
+  },
+  "financing": {
+    "residential_investment": {
+      "conventional": "20-25% down; rates ~0.5-1% higher than owner-occupied; 6-10 properties max per investor",
+      "portfolio_lenders": "10+ properties; relationship-based; flexible terms; higher rates",
+      "hard_money": "12-18% rate; 2-5 points; short-term (6-24 months); asset-based (65-75% LTV); fix-and-flip"
+    },
+    "commercial_multifamily": {
+      "agency_debt": "Fannie Mae, Freddie Mac; 5+ units; 75-80% LTV; 10-30 year; non-recourse; 1.25 DSCR min",
+      "life_insurance": "Large loans (>$5M); low rates; prepayment penalties; 10-25 year",
+      "cmbs": "Conduit loans; securitized; 65-75% LTV; inflexible; 10 year with 25-30 amortization",
+      "bank_portfolio": "Local banks; relationship; 5-25 year; often recourse; may require other deposits/business"
+    },
+    "creative_financing": {
+      "seller_financing": "Seller acts as lender; negotiable terms; often higher rate but flexible; easier qualification",
+      "subject_to": "Buy subject to existing mortgage; assume payments without bank approval; due-on-sale clause risk",
+      "lease_option": "Lease with option to buy; builds equity via credits; seller retains title until purchase",
+      "wraparound": "Seller keeps existing mortgage; buyer makes payment to seller; seller pays underlying mortgage; spread is seller's profit"
+    }
+  },
+  "property_management": {
+    "tenant_screening": {
+      "income_verification": "3x rent in gross income; paystubs, W2, tax returns, bank statements",
+      "credit_check": "Minimum 600 score typical; look for evictions, collections, payment history",
+      "background_check": "Criminal history; sex offender registry; prior evictions",
+      "landlord_references": "Last 2 landlords; verify rent paid on time; reason for leaving; would they rent again?",
+      "employment_verification": "Call employer; confirm position, salary, duration; avoid job-hoppers"
+    },
+    "lease_clauses": {
+      "late_fees": "$50-100 or 5-10% of rent if >5 days late; check state law limits",
+      "security_deposit": "1-2 months rent; held in separate account (some states); itemized deductions within 30 days of moveout",
+      "maintenance_responsibilities": "Landlord: structural, major systems, code compliance; Tenant: minor repairs, cleanliness, damage they caused",
+      "entry_notice": "24-48 hours required in most states; emergencies exempt",
+      "pet_policy": "Pet deposit $200-500; pet rent $25-50/month; breed/size restrictions; ESA/service animals exempt (FHA)"
+    },
+    "eviction_process": {
+      "notice": "3-day pay or quit (non-payment); 30-day no cause (month-to-month); comply with state law",
+      "filing": "Unlawful detainer complaint; file with court; pay filing fee $200-500",
+      "service": "Sheriff serves tenant; must be proper service or case dismissed",
+      "court_hearing": "5-30 days depending on jurisdiction; bring lease, ledger, proof of notice",
+      "writ_of_possession": "If win, sheriff removes tenant 5-10 days later; don't self-help evict (illegal)",
+      "timeline": "30-90 days typical; longer in tenant-friendly states (CA, NY, NJ)",
+      "cost": "$1500-5000 total including legal, lost rent, turnover; avoid if possible via screening"
+    },
+    "maintenance_systems": {
+      "preventive": "HVAC service 2x/year; gutter cleaning; smoke detector testing; extends life, prevents emergency",
+      "vendor_relationships": "Plumber, electrician, HVAC, handyman, cleaner; negotiate rates; fast response",
+      "emergency_protocol": "24/7 phone line; define emergency (water leak, no heat, lock out); response within 2-4 hours",
+      "capital_reserve": "$250-500/unit/year; roof (20-25 years), HVAC (15-20), water heater (10-12), appliances (8-12), parking lot (20-30)"
+    }
+  },
+  "tax_strategies": {
+    "depreciation": {
+      "residential": "27.5 year straight-line; building only (not land); $200k building = $7,273/year",
+      "commercial": "39 year; same concept",
+      "cost_segregation": "Accelerate depreciation; classify components (flooring, lighting, landscaping) as 5/7/15 year; upfront deduction; worth it for $500k+ properties"
+    },
+    "1031_exchange": {
+      "rule": "Defer capital gains by exchanging into like-kind property",
+      "timeline": "45 days to identify replacement; 180 days to close; strict deadlines",
+      "like_kind": "Any real estate for any real estate (investment/business use)",
+      "qualified_intermediary": "Must use QI; can't touch proceeds between sale and purchase",
+      "boot": "Mortgage reduction, cash received, or non-like-kind property triggers taxable gain to extent of boot"
+    },
+    "deductions": {
+      "operating_expenses": "All ordinary and necessary; repairs, utilities, management, insurance, taxes",
+      "travel": "To/from property; 67¢/mile (2024) or actual expenses; inspect, repair, show, manage",
+      "home_office": "If regular and exclusive use for RE business; simplified or actual method",
+      "passive_losses": "Limited to $25k if AGI <$100k; phases out $100-150k AGI; suspended losses carry forward or released on sale"
+    }
+  }
+}

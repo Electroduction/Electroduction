@@ -1,0 +1,174 @@
+{
+  "_source": "GAAP standards, CPA exam materials, QuickBooks certification guides",
+  "_note": "Long-tail accounting knowledge. Journal entries, reconciliation, financial statement preparation, tax considerations.",
+  "double_entry_bookkeeping": {
+    "fundamental_equation": "Assets = Liabilities + Equity",
+    "debit_credit_rules": {
+      "assets": "Debit increases, Credit decreases",
+      "liabilities": "Credit increases, Debit decreases",
+      "equity": "Credit increases, Debit decreases",
+      "revenue": "Credit increases, Debit decreases",
+      "expenses": "Debit increases, Credit decreases"
+    },
+    "acronym": "DEALER - Debits: Expenses, Assets, Losses increase; Credits: Equity, Revenue increase"
+  },
+  "common_journal_entries": {
+    "revenue_recognition": {
+      "cash_basis": "DR Cash $1000, CR Revenue $1000 (when cash received)",
+      "accrual_basis": "DR Accounts Receivable $1000, CR Revenue $1000 (when earned); then DR Cash $1000, CR AR $1000 (when collected)",
+      "unearned_revenue": "DR Cash $1200, CR Unearned Revenue $1200 (prepayment); then DR Unearned Revenue $100, CR Revenue $100 (monthly recognition)"
+    },
+    "expense_recognition": {
+      "immediate": "DR Office Supplies Expense $500, CR Cash $500",
+      "prepaid": "DR Prepaid Insurance $1200, CR Cash $1200; then monthly: DR Insurance Expense $100, CR Prepaid Insurance $100",
+      "accrued": "DR Wages Expense $5000, CR Wages Payable $5000 (earned but not paid); then DR Wages Payable $5000, CR Cash $5000 (payment)"
+    },
+    "depreciation": {
+      "straight_line": "DR Depreciation Expense $1000, CR Accumulated Depreciation $1000",
+      "calculation": "(Cost - Salvage Value) / Useful Life; $10,000 asset, $1,000 salvage, 10 years = $900/year",
+      "contra_account": "Accumulated Depreciation reduces asset value; not direct credit to asset"
+    },
+    "inventory": {
+      "purchase": "DR Inventory $5000, CR Accounts Payable $5000",
+      "sale_perpetual": "DR AR $8000, CR Sales $8000; DR COGS $5000, CR Inventory $5000 (two entries)",
+      "sale_periodic": "DR AR $8000, CR Sales $8000 (only one entry; inventory counted at period end)"
+    },
+    "payroll": {
+      "gross_to_net": "DR Wages Expense $10,000, CR Wages Payable $7,500, CR Payroll Taxes Payable $2,500",
+      "employer_taxes": "DR Payroll Tax Expense $1,500, CR FICA/Medicare/UI Payable $1,500",
+      "payment": "DR Wages Payable $7,500, CR Cash $7,500; DR Payroll Taxes Payable $4,000, CR Cash $4,000"
+    }
+  },
+  "bank_reconciliation": {
+    "purpose": "Match bank statement to cash account in ledger; identify errors and timing differences",
+    "book_side_adjustments": {
+      "nsf_check": "Non-sufficient funds; customer check bounced; DR AR, CR Cash",
+      "bank_fees": "Service charges not recorded; DR Bank Fees Expense, CR Cash",
+      "interest_earned": "Bank interest not recorded; DR Cash, CR Interest Income",
+      "errors": "Transposition error in recording; $450 recorded as $540; correct entry needed"
+    },
+    "bank_side_reconciling_items": {
+      "deposits_in_transit": "Deposited but not on bank statement; add to bank balance; no journal entry",
+      "outstanding_checks": "Written but not cashed; subtract from bank balance; no journal entry",
+      "bank_errors": "Bank mistake; contact bank; no journal entry unless bank won't correct"
+    },
+    "formula": "Bank Balance + Deposits in Transit - Outstanding Checks ± Bank Errors = Adjusted Bank Balance = Adjusted Book Balance"
+  },
+  "financial_statements": {
+    "income_statement": {
+      "format": "Revenue - COGS = Gross Profit - Operating Expenses = Operating Income ± Other Income/Expense = Net Income",
+      "revenue": "Sales, Service Revenue, Interest Income",
+      "cogs": "Beginning Inventory + Purchases - Ending Inventory (for merchandising)",
+      "operating_expenses": "Salaries, Rent, Utilities, Depreciation, Marketing",
+      "other": "Interest Expense, Gain on Sale of Asset",
+      "multi_step_vs_single_step": "Multi-step separates operating from non-operating; single-step groups all revenue and expenses"
+    },
+    "balance_sheet": {
+      "format": "Assets = Liabilities + Equity (at specific point in time)",
+      "current_assets": "Cash, AR, Inventory, Prepaid (<1 year); liquidity order",
+      "fixed_assets": "PP&E (Property, Plant, Equipment); at cost - accumulated depreciation",
+      "current_liabilities": "AP, Accrued Expenses, Unearned Revenue, Current Portion LT Debt (<1 year)",
+      "long_term_liabilities": "Loans, Bonds Payable, Deferred Tax (>1 year)",
+      "equity": "Common Stock, Additional Paid-In Capital, Retained Earnings, Treasury Stock"
+    },
+    "cash_flow_statement": {
+      "operating_activities": "Net income adjusted for non-cash (depreciation) and changes in working capital (AR, Inventory, AP)",
+      "investing_activities": "Purchase/sale of PP&E, investments, other long-term assets",
+      "financing_activities": "Borrowing/repaying debt, issuing stock, paying dividends",
+      "indirect_method": "Start with net income; add back depreciation; subtract increase in AR; add increase in AP",
+      "direct_method": "Cash receipts from customers - cash paid to suppliers - cash paid for expenses"
+    },
+    "retained_earnings": {
+      "formula": "Beginning RE + Net Income - Dividends = Ending RE",
+      "links_statements": "Income statement net income flows to retained earnings; retained earnings on balance sheet"
+    }
+  },
+  "inventory_methods": {
+    "fifo": {
+      "name": "First-In, First-Out",
+      "assumption": "Oldest inventory sold first",
+      "effect_rising_prices": "Lower COGS, higher net income, higher ending inventory value, higher taxes",
+      "use": "Perishables, most businesses; matches physical flow"
+    },
+    "lifo": {
+      "name": "Last-In, First-Out",
+      "assumption": "Newest inventory sold first",
+      "effect_rising_prices": "Higher COGS, lower net income, lower taxes, lower ending inventory value",
+      "use": "US only; tax benefit during inflation; not allowed under IFRS",
+      "lifo_reserve": "Difference between FIFO and LIFO inventory value; disclosed in notes"
+    },
+    "weighted_average": {
+      "calculation": "Total Cost / Total Units; recalculated after each purchase (perpetual) or at period end (periodic)",
+      "effect": "Between FIFO and LIFO; smooths price fluctuations"
+    },
+    "specific_identification": {
+      "use": "Unique expensive items (cars, jewelry, real estate)",
+      "tracking": "Each item individually tracked; actual cost of sold item used for COGS"
+    }
+  },
+  "accounts_receivable": {
+    "allowance_method": {
+      "purpose": "Estimate uncollectible accounts; match expense to revenue period (accrual)",
+      "initial_entry": "DR Bad Debt Expense $5000, CR Allowance for Doubtful Accounts $5000",
+      "write_off": "DR Allowance $1000, CR AR $1000 (when specific account deemed uncollectible)",
+      "recovery": "DR AR $1000, CR Allowance $1000; DR Cash $1000, CR AR $1000 (if later collected)"
+    },
+    "estimation_methods": {
+      "percentage_of_sales": "Credit Sales × % (e.g., 2%); focuses on income statement matching",
+      "aging_of_receivables": "Current (1%), 1-30 days (5%), 31-60 days (10%), 61-90 days (25%), >90 days (50%); focuses on balance sheet accuracy",
+      "example_aging": "Current $100k × 1% = $1k; 1-30 $50k × 5% = $2.5k; total allowance needed $3.5k"
+    }
+  },
+  "fixed_assets": {
+    "capitalization_vs_expense": {
+      "capitalize": "Adds future value; extends useful life; improves beyond original condition; >$2500 (varies by policy)",
+      "expense": "Repairs, maintenance, <$2500, <1 year benefit",
+      "examples_capitalize": "New roof, building addition, major equipment overhaul",
+      "examples_expense": "Painting, minor repairs, routine maintenance"
+    },
+    "depreciation_methods": {
+      "straight_line": "Equal expense each year; (Cost - Salvage) / Life",
+      "double_declining_balance": "Accelerated; 2 × (1/Life) × Book Value; ignore salvage until final year",
+      "units_of_production": "(Cost - Salvage) × (Units This Period / Total Expected Units); matches usage",
+      "macrs": "Modified Accelerated Cost Recovery System; tax depreciation (US); different from book depreciation"
+    }
+  },
+  "financial_ratios": {
+    "liquidity": {
+      "current_ratio": "Current Assets / Current Liabilities; >2.0 is strong; <1.0 is concerning",
+      "quick_ratio": "(Current Assets - Inventory) / Current Liabilities; >1.0 is good; acid test",
+      "working_capital": "Current Assets - Current Liabilities; absolute amount, not ratio"
+    },
+    "profitability": {
+      "gross_margin": "(Revenue - COGS) / Revenue; varies by industry; retail 20-40%, software 70-90%",
+      "net_margin": "Net Income / Revenue; 5-10% is typical; <0% is loss",
+      "roa": "Net Income / Total Assets; measures asset efficiency; 5-10% is good",
+      "roe": "Net Income / Shareholders' Equity; measures return to owners; 15-20% is strong"
+    },
+    "leverage": {
+      "debt_to_equity": "Total Liabilities / Total Equity; <1.0 is conservative; >2.0 is aggressive",
+      "debt_to_assets": "Total Liabilities / Total Assets; >0.6 is highly leveraged",
+      "interest_coverage": "Operating Income / Interest Expense; >3.0 is safe; <1.5 is risky"
+    },
+    "efficiency": {
+      "inventory_turnover": "COGS / Average Inventory; 6-12x typical retail; higher is better (less tied up)",
+      "days_sales_in_inventory": "365 / Inventory Turnover; 30-60 days typical",
+      "receivables_turnover": "Credit Sales / Average AR; higher is better (faster collection)",
+      "days_sales_outstanding": "365 / AR Turnover; 30-45 days typical; >60 days concerning"
+    }
+  },
+  "tax_considerations": {
+    "business_entities": {
+      "sole_proprietorship": "Schedule C; self-employment tax; QBI deduction; simple but no liability protection",
+      "s_corporation": "Pass-through; avoid SE tax on distributions; must pay reasonable salary; <100 shareholders",
+      "c_corporation": "Double taxation (corporate + dividend); can retain earnings; unlimited shareholders; venture-backed",
+      "llc": "Flexible; can elect S-corp or partnership taxation; liability protection; state-level entity"
+    },
+    "deductions": {
+      "ordinary_and_necessary": "IRS requirement; reasonable amount; directly related to business",
+      "home_office": "Exclusive and regular use; simplified method $5/sq ft up to 300 sq ft; or actual expense method",
+      "vehicle": "Standard mileage ($0.67/mile 2024) or actual expenses; keep mileage log; business % only",
+      "meals_entertainment": "50% deductible (meals); 100% if company event for all employees; 0% pure entertainment"
+    }
+  }
+}

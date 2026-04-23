@@ -1,0 +1,160 @@
+{
+  "_source": "Legal practice guides, Federal Rules of Civil Procedure, Contract law casebooks",
+  "_note": "Long-tail legal knowledge. Contract drafting, litigation procedures, legal research methods.",
+  "contract_fundamentals": {
+    "essential_elements": {
+      "offer": "Definite proposal; specific terms; communicated to offeree; 'I will sell you X for $Y'",
+      "acceptance": "Unqualified agreement to exact terms; mirror image rule (common law); UCC allows modifications",
+      "consideration": "Bargained-for exchange; each party gives something of value; past consideration doesn't count",
+      "capacity": "Legal ability to contract; 18+ years; mentally competent; not under duress/undue influence",
+      "legality": "Lawful purpose; illegal contracts void (gambling in most states, contracts to commit crimes)"
+    },
+    "statute_of_frauds": {
+      "must_be_written": ["Real estate sales", "Contracts >$500 (UCC)", "Contracts not performable within 1 year", "Suretyship (guarantee another's debt)", "Marriage"],
+      "writing_requirement": "Material terms identified; signed by party to be charged; doesn't need to be formal contract",
+      "exceptions": "Partial performance; merchant's confirmatory memo; admission in pleadings"
+    }
+  },
+  "contract_drafting": {
+    "key_clauses": {
+      "recitals": "'WHEREAS' clauses; background and purpose; not binding but aids interpretation",
+      "definitions": "Define ambiguous terms; 'Software means the Licensed Software described in Exhibit A'; capitalized when used",
+      "payment_terms": "Amount, schedule, method; late fees; 'Net 30 means payment due within 30 days of invoice date'",
+      "term_and_termination": {
+        "term": "1 year from Effective Date; auto-renew for successive 1-year terms",
+        "termination_for_convenience": "Either party may terminate with 30 days written notice",
+        "termination_for_cause": "Material breach; 15-day cure period; immediate termination if not cured"
+      },
+      "warranties": {
+        "express": "Seller warrants Software will perform substantially as described for 90 days",
+        "disclaimer": "EXCEPT AS EXPRESSLY PROVIDED, SOFTWARE PROVIDED 'AS IS' WITHOUT WARRANTIES"
+      },
+      "limitation_of_liability": {
+        "cap": "IN NO EVENT SHALL TOTAL LIABILITY EXCEED AMOUNTS PAID IN PRIOR 12 MONTHS",
+        "exclusions": "EXCLUDES CONSEQUENTIAL, INCIDENTAL, PUNITIVE DAMAGES",
+        "carveouts": "Except for breach of confidentiality, IP infringement, gross negligence"
+      },
+      "indemnification": "Party A shall defend, indemnify, hold harmless Party B from third-party claims arising from A's breach",
+      "confidentiality": "Non-disclosure of proprietary information; exceptions: public domain, independently developed, required by law",
+      "governing_law": "This Agreement shall be governed by laws of State of Delaware without regard to conflicts of law",
+      "dispute_resolution": {
+        "arbitration": "Binding arbitration under AAA rules; waives right to jury trial; limits appeals",
+        "jurisdiction_venue": "Exclusive jurisdiction in courts of New York County; consent to personal jurisdiction"
+      },
+      "entire_agreement": "This Agreement constitutes entire understanding; supersedes prior agreements; amendments must be in writing",
+      "severability": "If any provision held invalid, remaining provisions remain in effect",
+      "force_majeure": "Excuses performance for events beyond control (war, natural disaster, pandemic)"
+    },
+    "interpretation_principles": {
+      "plain_meaning": "Words given ordinary meaning unless defined otherwise",
+      "contra_proferentem": "Ambiguities construed against drafter; reason to be precise",
+      "ejusdem_generis": "'Cars, trucks, and other vehicles' - 'vehicles' limited to similar items (not planes)",
+      "entire_agreement_clause": "Parol evidence rule; prior negotiations inadmissible to contradict written agreement"
+    }
+  },
+  "civil_litigation": {
+    "pre_litigation": {
+      "demand_letter": "Outline claim; damages sought; deadline to respond; settlement demand; preserves claim record",
+      "statute_of_limitations": {
+        "contract": "4-6 years (varies by state); written vs oral",
+        "personal_injury": "2-3 years; discovery rule (when injury discovered) vs occurrence",
+        "fraud": "2-6 years; often from discovery of fraud",
+        "calculation": "Claim accrues when cause of action complete; breach of contract = date of breach"
+      }
+    },
+    "pleadings": {
+      "complaint": {
+        "caption": "Court, parties, case number, title",
+        "jurisdiction_venue": "Basis for subject matter jurisdiction (diversity >$75k, federal question) and venue",
+        "statement_of_claim": "Numbered paragraphs; factual allegations; short and plain statement",
+        "prayer_for_relief": "Damages sought (specify amount if required); equitable relief; costs and fees",
+        "rule_11": "Attorney certifies factual/legal basis; sanctions for frivolous filing"
+      },
+      "answer": {
+        "due": "21 days after service (FRCP 12); 60 days if waiver of service",
+        "admit_deny": "Each paragraph admitted, denied, or insufficient knowledge (treated as denial)",
+        "affirmative_defenses": "Must be pled or waived: statute of limitations, accord and satisfaction, assumption of risk, failure to state claim",
+        "counterclaim": {
+          "compulsory": "Arises from same transaction/occurrence; must be filed or waived",
+          "permissive": "Unrelated claim; may be filed separately"
+        }
+      }
+    },
+    "discovery": {
+      "interrogatories": {
+        "limit": "25 interrogatories (FRCP 33); each subpart counts",
+        "response_time": "30 days; objections must be specific; can't object 'overly broad' without more",
+        "use": "Identify witnesses, documents, factual contentions; subject to attorney-client privilege"
+      },
+      "document_requests": {
+        "scope": "Relevant and proportional to needs of case; need not be admissible",
+        "production": "30 days; organize as kept in ordinary course or labeled to correspond to request",
+        "privilege_log": "List withheld documents; identify privilege; author, recipient, date, description"
+      },
+      "depositions": {
+        "notice": "30 days; subpoena if non-party; corporate representative (30(b)(6)) designated by organization",
+        "conduct": "Sworn testimony; recorded; objections preserved; defending counsel can instruct not to answer (privilege, harassment)",
+        "use": "Impeachment at trial; summary judgment; admissible if witness unavailable"
+      },
+      "privilege": {
+        "attorney_client": "Confidential communication for legal advice; client holds privilege; waived if disclosed to third party",
+        "work_product": "Materials prepared in anticipation of litigation; opinion work product nearly absolute; fact work product if substantial need and undue hardship"
+      }
+    },
+    "summary_judgment": {
+      "standard": "No genuine dispute of material fact; entitled to judgment as matter of law (FRCP 56)",
+      "timing": "30 days after close of discovery (default); movant can file earlier",
+      "burden": "Movant shows no genuine dispute; non-movant must come forward with evidence creating dispute",
+      "evidence": "Affidavits, deposition testimony, documents; personal knowledge; admissible form; no conclusory statements",
+      "viewed_in_light": "All evidence and inferences viewed in light most favorable to non-movant"
+    },
+    "trial": {
+      "jury_demand": "Within 14 days of last pleading; waived if not timely; right to jury for legal claims (damages) not equitable (injunction)",
+      "voir_dire": "Jury selection; challenges for cause (unlimited); peremptory challenges (limited; can't be race/gender-based)",
+      "opening_statements": "Roadmap of evidence; not argument; plaintiff first",
+      "burden_of_proof": "Preponderance of evidence (>50%); plaintiff has burden; defendant burden on affirmative defenses",
+      "direct_examination": "Open-ended questions; can't lead your own witness (except preliminary, hostile witness)",
+      "cross_examination": "Leading questions allowed; limited to scope of direct; impeachment allowed",
+      "closing_argument": "Draw inferences; argue credibility; apply law to facts; plaintiff goes first and has rebuttal",
+      "jury_instructions": "Submitted in advance; conference with judge; given before or after closing",
+      "verdict": "Unanimous in federal (unless stipulated); majority in some states; special verdict form (specific findings) vs general verdict"
+    },
+    "post_trial": {
+      "judgment_notwithstanding_verdict": "JNOV; no reasonable jury could have found for prevailing party; rarely granted",
+      "new_trial": "Motion within 28 days; errors in trial; verdict against weight of evidence; excessive damages",
+      "appeal": "Notice within 30 days of judgment; appellate court reviews law de novo, facts for clear error; abuse of discretion on evidentiary rulings"
+    }
+  },
+  "legal_research": {
+    "primary_authority": {
+      "constitutions": "Supreme law; federal and state",
+      "statutes": "Enacted by legislature; organized by code (U.S.C., state codes)",
+      "regulations": "Administrative agencies; C.F.R. (federal), state regs; notice and comment rulemaking",
+      "case_law": "Court decisions; binding (mandatory) vs persuasive (other jurisdictions)"
+    },
+    "hierarchy": {
+      "federal": "Supreme Court > Circuit Court of Appeals > District Court",
+      "binding": "Lower courts bound by higher courts in same jurisdiction; not bound by other circuits (persuasive only)",
+      "state": "State Supreme Court > Appellate Courts > Trial Courts; not bound by federal courts except on federal questions"
+    },
+    "research_process": {
+      "identify_issue": "What is the legal question? Jurisdiction? Area of law?",
+      "secondary_sources": "Law review articles, treatises, restatements; get overview; find key cases",
+      "primary_sources": "Read statutes and cases; note citations; shepardize/keycite for validity",
+      "updating": {
+        "shepards_keycite": "Case still good law? Overruled? Distinguished? Criticized?",
+        "red_flag": "Negative treatment; yellow flag = caution; green = positive"
+      }
+    },
+    "case_briefing": {
+      "elements": {
+        "facts": "Relevant facts giving rise to dispute",
+        "procedural_history": "Lower court decisions; how case arrived at this court",
+        "issue": "Legal question before court; framed as yes/no",
+        "holding": "Court's answer to issue; rule of law",
+        "reasoning": "Court's analysis; policy considerations; application of law to facts",
+        "disposition": "Affirmed, reversed, remanded, etc."
+      }
+    }
+  }
+}

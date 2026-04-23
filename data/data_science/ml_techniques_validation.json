@@ -1,0 +1,165 @@
+{
+  "_source": "Scikit-learn documentation, Kaggle competition strategies, MLOps best practices",
+  "_note": "Long-tail data science knowledge. Feature engineering, model selection, validation strategies, production considerations.",
+  "feature_engineering": {
+    "numerical_features": {
+      "scaling_methods": {
+        "standardization": "z = (x - μ) / σ; centers at 0, std 1; for algorithms assuming normal distribution (linear, logistic regression)",
+        "min_max_normalization": "x' = (x - min) / (max - min); scales to [0,1]; preserves zero; for neural networks, image data",
+        "robust_scaling": "Uses median and IQR instead of mean/std; resistant to outliers; for data with extreme values",
+        "log_transform": "log(x+1); for right-skewed data; income, population, counts; makes multiplicative relationships additive"
+      },
+      "binning_discretization": {
+        "equal_width": "Split range into equal intervals; simple but sensitive to outliers",
+        "equal_frequency": "Quantile-based; each bin has same number of samples; better for skewed distributions",
+        "domain_knowledge": "Age groups: 0-18, 18-30, 30-50, 50+; income brackets; custom business logic"
+      },
+      "polynomial_features": {
+        "interaction_terms": "x1 * x2; captures non-linear relationships; quadratic (x²) for curves",
+        "example": "predicting house price: size * location_score interaction; size² for diminishing returns on very large homes",
+        "caution": "Degree 3+ creates feature explosion; 10 features → 1000+ polynomial features; use sparse models or regularization"
+      }
+    },
+    "categorical_features": {
+      "encoding_methods": {
+        "one_hot_encoding": "Binary column per category; for nominal data (color, country); use when <10-15 categories",
+        "label_encoding": "Integer 0,1,2,...; only for ordinal data (small/medium/large); tree models can use for nominal if cardinality high",
+        "target_encoding": "Replace category with mean target value; powerful but overfits; must use CV to encode train set",
+        "frequency_encoding": "Replace with count or percentage; treats common categories differently; for high-cardinality features",
+        "embedding": "Neural network learned representation; for high-cardinality (user_id, product_id); converts to dense vector"
+      },
+      "handling_rare_categories": {
+        "threshold_grouping": "Categories appearing <1% of time → 'Other' bin; reduces dimensionality",
+        "hierarchical_encoding": "Use category hierarchy; city→state→country; encode multiple levels"
+      }
+    },
+    "time_series_features": {
+      "lag_features": "Previous values: t-1, t-7, t-30; sales_yesterday, sales_last_week",
+      "rolling_statistics": "7-day moving average; 30-day rolling std; captures trends and volatility",
+      "date_features": "Day of week (0-6), month (1-12), quarter, is_weekend, is_holiday, days_since_event",
+      "cyclical_encoding": "sin/cos transform for month, day of week; preserves circular nature (Dec and Jan are close)"
+    },
+    "text_features": {
+      "bag_of_words": "CountVectorizer; word counts; sparse matrix; simple baseline",
+      "tfidf": "TF-IDF weights; downweights common words; better than raw counts for most tasks",
+      "n_grams": "Bigrams (2-word), trigrams; captures 'not good' vs 'good'; increases dimensionality",
+      "embeddings": "Word2Vec, GloVe, BERT; pre-trained semantic vectors; transfer learning"
+    }
+  },
+  "model_selection": {
+    "regression": {
+      "linear_regression": {
+        "use_when": "Linear relationship; interpretability required; fast prediction",
+        "assumptions": "Linearity, independence, homoscedasticity, normality of residuals",
+        "regularization": "Ridge (L2): shrinks coefficients; Lasso (L1): feature selection (drives coefficients to 0); ElasticNet: combination"
+      },
+      "tree_based": {
+        "random_forest": "Ensemble of decision trees; handles non-linearity; robust to outliers; no scaling needed; interpretable via feature importance",
+        "gradient_boosting": "XGBoost, LightGBM, CatBoost; sequential trees correcting errors; best tabular data performance; hyperparameter-sensitive",
+        "xgboost_tips": "max_depth 3-10; learning_rate 0.01-0.3; n_estimators 100-1000; colsample_bytree 0.3-0.8 prevents overfitting"
+      },
+      "neural_networks": {
+        "mlp": "Multi-layer perceptron; 2-3 hidden layers; ReLU activation; for complex non-linear patterns",
+        "when_to_use": "Large datasets (>10k samples); complex interactions; time to tune; GPU available"
+      }
+    },
+    "classification": {
+      "logistic_regression": "Binary/multi-class; outputs probabilities; interpretable coefficients; baseline model",
+      "svm": "Support Vector Machine; kernel trick for non-linearity; good for high-dimensional data; slow on large datasets",
+      "naive_bayes": "Fast; works well with text; assumes feature independence (often violated but still works)",
+      "lightgbm": "Faster than XGBoost; handles categorical features natively; best for large datasets (>100k rows)",
+      "catboost": "Handles categorical features without encoding; prevents overfitting on categoricals; slower training but good accuracy"
+    },
+    "imbalanced_classification": {
+      "techniques": {
+        "class_weights": "sklearn class_weight='balanced'; penalizes misclassifying minority class more",
+        "smote": "Synthetic Minority Oversampling; creates synthetic minority samples; use with caution (can create unrealistic samples)",
+        "undersampling": "Random undersample majority class; fast but loses data; use when majority class is huge",
+        "threshold_tuning": "Default 0.5 threshold; shift to 0.3 to catch more positives; use precision-recall curve to optimize"
+      },
+      "metrics": {
+        "accuracy_misleading": "99% accuracy on 1% fraud dataset = predicting all negative",
+        "precision_recall": "Precision = TP/(TP+FP); Recall = TP/(TP+FN); F1 = harmonic mean; prioritize based on cost of FP vs FN",
+        "roc_auc": "Area under ROC curve; threshold-independent; good for comparing models",
+        "pr_auc": "Precision-Recall AUC; better than ROC for imbalanced data"
+      }
+    }
+  },
+  "validation_strategies": {
+    "train_test_split": {
+      "standard": "80/20 or 70/30 split; stratify=y for classification; random_state for reproducibility",
+      "time_series": "No random split! Use time-based split; train on past, test on future; prevents data leakage"
+    },
+    "cross_validation": {
+      "k_fold": "5 or 10 folds; shuffled; gives mean and std of performance; more reliable than single split",
+      "stratified_k_fold": "Preserves class distribution in each fold; essential for imbalanced data",
+      "group_k_fold": "Groups (e.g., user_id) stay together; prevents same user in train and test; avoids leakage",
+      "time_series_cv": "TimeSeriesSplit; expanding window; respects temporal order; essential for forecasting"
+    },
+    "data_leakage_prevention": {
+      "fit_on_train_only": "fit_transform(X_train); transform(X_test); NEVER fit scaler on full dataset",
+      "target_leakage": "Feature contains information unavailable at prediction time; purchase_amount predicting purchase_binary",
+      "group_leakage": "Same entity in train and test; user_id, patient_id; use GroupKFold or time-based split",
+      "preprocessing_in_pipeline": "Use sklearn Pipeline; ensures correct fit/transform order; prevents accidental leakage"
+    }
+  },
+  "hyperparameter_tuning": {
+    "grid_search": {
+      "method": "GridSearchCV; exhaustive search over parameter grid",
+      "pros": "Complete coverage; finds global optimum in grid",
+      "cons": "Exponential time; 5 params × 5 values = 3125 combinations",
+      "use_when": "Few parameters; known good ranges; small dataset"
+    },
+    "random_search": {
+      "method": "RandomizedSearchCV; samples N random combinations",
+      "pros": "Faster; explores wider space; better than grid if interactions unknown",
+      "recommended": "n_iter=50-100 usually sufficient",
+      "distributions": "Use loguniform for learning_rate (0.001-0.3); uniform for subsample (0.5-1.0)"
+    },
+    "bayesian_optimization": {
+      "method": "Optuna, Hyperopt; builds probabilistic model of objective function",
+      "pros": "Fewer iterations than random; focuses on promising regions; handles conditional parameters",
+      "use_when": "Expensive model training (neural networks); >5 hyperparameters; need best performance"
+    }
+  },
+  "production_ml": {
+    "model_serialization": {
+      "pickle": "import pickle; pickle.dump(model, file); standard but version-sensitive",
+      "joblib": "from joblib import dump, load; faster than pickle for large numpy arrays; sklearn recommended",
+      "onnx": "Cross-platform; deploy sklearn/pytorch model to C++/Java; standardized format"
+    },
+    "model_monitoring": {
+      "data_drift": {
+        "definition": "Input distribution changes over time; feature mean/std shifts; new categories appear",
+        "detection": "KL divergence, KS test between train and production data; alert if p<0.05",
+        "mitigation": "Retrain monthly/quarterly; add new data; update feature engineering"
+      },
+      "concept_drift": {
+        "definition": "Relationship between X and y changes; fraud patterns evolve; customer preferences shift",
+        "detection": "Monitor model performance on ground truth; precision/recall declining over time",
+        "mitigation": "Online learning; sliding window retraining; A/B test new model"
+      },
+      "metrics_to_track": ["Prediction latency p50/p99", "Prediction volume", "Feature null rate", "Model accuracy/F1 on labeled data", "Data drift score"]
+    },
+    "feature_store": {
+      "purpose": "Centralized feature computation and storage; ensures train/serve consistency",
+      "tools": "Feast, Tecton, AWS SageMaker Feature Store",
+      "benefits": "Reuse features across models; versioning; point-in-time correctness for time series"
+    },
+    "ab_testing": {
+      "champion_challenger": "Route 95% traffic to current model, 5% to new model; compare metrics",
+      "sample_size": "Calculate required N for statistical power; typically 1000+ predictions per variant",
+      "duration": "Run 1-2 weeks minimum; account for weekly seasonality",
+      "success_criteria": "Pre-define threshold (e.g., +5% F1 score, p<0.05); avoid peeking"
+    }
+  },
+  "common_mistakes": {
+    "data_leakage": "Most common failure; fit scaler on full data; target info in features; same entity in train/test",
+    "not_validating_properly": "Single train/test split; no CV; optimistic results; fails in production",
+    "ignoring_class_imbalance": "Using accuracy on 1:99 dataset; predicting majority class gets 99% accuracy",
+    "feature_engineering_after_split": "Computing stats on full dataset then splitting; leaks information",
+    "not_handling_missing_values": "Model crashes on null; or fills with mean computed on full dataset (leakage)",
+    "overfitting_to_test_set": "Tuning hyperparameters on test set; use train/val/test or nested CV",
+    "ignoring_business_context": "Optimizing F1 when cost of FP ≠ cost of FN; align metric with business objective"
+  }
+}

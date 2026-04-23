@@ -1,0 +1,22 @@
+{
+  "platformer": [
+    "jump",
+    "run",
+    "climb"
+  ],
+  "rpg": [
+    "combat",
+    "magic",
+    "inventory"
+  ],
+  "fps": [
+    "shoot",
+    "aim",
+    "reload"
+  ],
+  "puzzle": [
+    "match",
+    "solve",
+    "rotate"
+  ]
+}

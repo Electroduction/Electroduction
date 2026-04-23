@@ -1,0 +1,122 @@
+{
+  "_source": "CFA curriculum, Damodaran NYU, CAIA frameworks",
+  "_note": "Long-tail risk metrics. Most retail investors miss these. Critical for portfolio construction.",
+  "sharpe_ratio": {
+    "formula": "(Return - Risk_Free_Rate) / Portfolio_StdDev",
+    "risk_free_rate_2026": 4.35,
+    "interpretation": {
+      "below_0": "Risk-adjusted return negative vs risk-free; reject",
+      "0_to_0_5": "Poor risk-adjusted return",
+      "0_5_to_1": "Acceptable; below good hedge fund threshold",
+      "1_to_2": "Good; most well-run equity funds land here",
+      "above_2": "Excellent; top decile managers",
+      "above_3": "Exceptional; often short timeframe or small strategy"
+    },
+    "limitation": "Assumes normal distribution; understates tail risk in crisis periods"
+  },
+  "sortino_ratio": {
+    "formula": "(Return - Target_Return) / Downside_StdDev",
+    "difference_from_sharpe": "Only penalizes downside volatility (not upside); better for skewed strategies",
+    "interpretation": {
+      "above_2": "Good; sufficient downside protection",
+      "below_1": "Too much downside risk relative to return"
+    }
+  },
+  "max_drawdown": {
+    "definition": "Largest peak-to-trough decline over period",
+    "benchmarks": {
+      "sp500_2008_2009": -56.8,
+      "sp500_2020_covid": -33.9,
+      "nasdaq_2000_2002": -78.0,
+      "bitcoin_2022": -77.0
+    },
+    "interpretation": "Max drawdown > 30% strains most portfolios; affects investor behavior (panic selling)",
+    "calmar_ratio": "Annual Return / Max Drawdown; > 1.0 is acceptable; > 3.0 is excellent"
+  },
+  "beta_analysis": {
+    "definition": "Sensitivity to market (S&P 500 = beta 1.0)",
+    "examples": {
+      "utilities_typical": [0.2, 0.6],
+      "consumer_staples_typical": [0.4, 0.7],
+      "tech_typical": [1.0, 1.8],
+      "biotech_typical": [0.8, 2.5],
+      "gold": [-0.1, 0.2]
+    },
+    "alpha": "Return above beta-predicted return; Jensen's alpha = R - [Rf + B(Rm-Rf)]",
+    "smart_beta": "Factor investing (value, momentum, quality, low-vol) to generate alpha systematically"
+  },
+  "var_value_at_risk": {
+    "definition": "Maximum expected loss at confidence level over time horizon",
+    "example": "1-day 95% VaR of $1M portfolio at 2% = $20,000 max loss 95% of days",
+    "cvar_expected_shortfall": "Average loss when VaR breach occurs; more conservative; preferred post-2008",
+    "limitations": [
+      "Historical VaR underestimates tail events (black swans)",
+      "Assumes normal distribution",
+      "Correlation breakdown in crisis invalidates diversification assumptions"
+    ],
+    "monte_carlo_approach": "Run 10,000+ simulations with fat-tailed distributions (Student-t); more robust"
+  },
+  "volatility_metrics": {
+    "historical_vol_annualized": "StdDev(daily returns) * sqrt(252)",
+    "implied_volatility": "VIX = S&P 500 30-day implied vol; fear gauge",
+    "vix_interpretation": {
+      "below_15": "Complacency; corrections often occur in low-vol regimes",
+      "15_to_20": "Normal market anxiety",
+      "20_to_30": "Elevated fear; monitor position sizing",
+      "above_30": "Crisis mode; 2020 peak was 82, 2008 was 80"
+    },
+    "volatility_clustering": "High vol follows high vol (GARCH effect); risk is not constant"
+  },
+  "portfolio_construction": {
+    "correlation_matrix_importance": "Low/negative correlation between holdings reduces portfolio vol without sacrificing return",
+    "correlations_2026_approx": {
+      "sp500_vs_bonds_10yr": -0.08,
+      "sp500_vs_gold": 0.01,
+      "sp500_vs_bitcoin": 0.48,
+      "sp500_vs_real_estate_reits": 0.71,
+      "growth_vs_value_factor": -0.31
+    },
+    "optimal_number_of_stocks": "20-30 stocks eliminates ~90% of idiosyncratic risk per Markowitz",
+    "kelly_criterion": {
+      "formula": "f = (bp - q) / b where b=odds, p=win_prob, q=1-p",
+      "practitioner_use": "Half-Kelly typical; full Kelly requires perfect probability estimates",
+      "application": "Position sizing for high-conviction bets"
+    }
+  },
+  "factor_investing": {
+    "fama_french_5_factors": [
+      {"factor": "Market (Rm-Rf)", "premium_annualized": 6.1, "description": "Equity risk premium"},
+      {"factor": "Size (SMB)", "premium_annualized": 2.1, "description": "Small beats large long-term"},
+      {"factor": "Value (HML)", "premium_annualized": 3.5, "description": "Cheap beats expensive"},
+      {"factor": "Profitability (RMW)", "premium_annualized": 2.9, "description": "Profitable beats unprofitable"},
+      {"factor": "Investment (CMA)", "premium_annualized": 2.1, "description": "Conservative investment beats aggressive"}
+    ],
+    "momentum_factor": {"premium_annualized": 8.3, "note": "Highest premium but crashes hard in reversals"},
+    "quality_factor": "Composite of ROE + low accruals + low leverage; most consistent across cycles",
+    "low_volatility_anomaly": "Low-beta stocks outperform theory (CAPM paradox); attributed to leverage constraints"
+  },
+  "options_greeks": {
+    "delta": {
+      "definition": "Rate of change of option price per $1 move in underlying",
+      "call_range": [0, 1], "put_range": [-1, 0],
+      "at_money": 0.50, "deep_in_money": 1.0, "deep_out_money": 0.05,
+      "use_case": "Hedge 100 shares: buy 1 put delta=0.50, need 2 contracts to delta-hedge"
+    },
+    "gamma": {
+      "definition": "Rate of change of delta per $1 move; second derivative",
+      "risk": "Long gamma profitable in volatile markets; short gamma (selling options) loses big on moves",
+      "gamma_squeeze": "Heavy short option positions force dealers to hedge → amplifies moves (GME, AMC)"
+    },
+    "theta": {
+      "definition": "Option time decay per day; always negative for option buyer",
+      "at_money_behavior": "Theta accelerates in final 30 days; steepest last week before expiry",
+      "seller_advantage": "Selling options = positive theta; collecting time premium systematically"
+    },
+    "vega": {
+      "definition": "Sensitivity to 1% change in implied volatility",
+      "long_vega": "Benefits from vol expansion (buying calls/puts before earnings)",
+      "short_vega": "Benefits from vol compression (selling after earnings; IV crush typical)"
+    },
+    "implied_vol_skew": "Puts trade richer than calls (downside protection premium); 25-delta put IV typically 3-8 vol points above calls"
+  }
+}

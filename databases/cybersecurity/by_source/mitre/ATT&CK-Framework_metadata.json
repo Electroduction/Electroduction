@@ -1,0 +1,7 @@
+{
+  "name": "ATT&CK-Framework",
+  "source": "https://github.com/mitre/cti",
+  "path": "mitre-attack.json",
+  "format": "json",
+  "size_mb": "44MB"
+}

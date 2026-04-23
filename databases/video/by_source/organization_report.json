@@ -1,0 +1,17 @@
+{
+  "project": "video",
+  "sources": {
+    "youtube": {
+      "description": "YouTube trending data",
+      "datasets": [
+        {
+          "name": "YouTube-Trending",
+          "expected_path": "youtube_trending.csv",
+          "status": "missing"
+        }
+      ]
+    }
+  },
+  "total_datasets": 1,
+  "total_size_mb": 0
+}

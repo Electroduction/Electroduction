@@ -1,0 +1,131 @@
+{
+  "_source": "Falco community rules, Sysdig threat research, CNCF security working group",
+  "_note": "Long-tail Falco rules. Production-tested detection rules beyond the defaults.",
+  "falco_rules": [
+    {
+      "rule_id": "FR001",
+      "rule_name": "Container Shell Spawned",
+      "category": "container_escape",
+      "severity": "WARNING",
+      "description": "A shell has been spawned in a container. Legitimate applications should not need interactive shells.",
+      "condition": "spawned_process and container and proc.name in (shell_binaries) and not (proc.pname in (shell_binaries, container_entrypoints))",
+      "macros": {"shell_binaries": ["bash", "sh", "zsh", "ksh", "fish"], "container_entrypoints": ["containerd-shim", "runc"]},
+      "output": "Shell spawned in container (user=%user.name container=%container.name image=%container.image.repository shell=%proc.name parent=%proc.pname cmdline=%proc.cmdline)",
+      "detection_rationale": "Attackers use interactive shells after initial foothold; containers should run processes not shells",
+      "false_positives": ["Debugging sessions", "CI/CD build containers that intentionally run scripts"],
+      "tuning": "Add exceptions for CI/CD namespace or debug containers"
+    },
+    {
+      "rule_id": "FR002",
+      "rule_name": "Sensitive File Access - /etc/shadow",
+      "category": "credential_access",
+      "severity": "CRITICAL",
+      "description": "Attempt to read /etc/shadow which contains hashed passwords. No legitimate process needs this at runtime.",
+      "condition": "open_read and fd.name=/etc/shadow and not proc.name in (allowed_shadow_readers)",
+      "macros": {"allowed_shadow_readers": ["pam_unix", "unix_chkpwd", "passwd", "chpasswd"]},
+      "output": "Sensitive file access: /etc/shadow (user=%user.name proc=%proc.name parent=%proc.pname)",
+      "priority": "CRITICAL",
+      "tags": ["credential_access", "T1003.008"]
+    },
+    {
+      "rule_id": "FR003",
+      "rule_name": "Suspicious Network Tool Execution",
+      "category": "discovery",
+      "severity": "WARNING",
+      "description": "Network reconnaissance tools executed; may indicate attacker mapping internal network.",
+      "condition": "spawned_process and proc.name in (network_tools) and not (proc.pname in (authorized_scanners))",
+      "macros": {"network_tools": ["nmap", "masscan", "zmap", "nc", "netcat", "socat", "hping3", "tcpdump", "tshark", "wireshark"]},
+      "output": "Network tool executed (user=%user.name tool=%proc.name cmdline=%proc.cmdline)",
+      "tags": ["discovery", "lateral_movement", "T1046"]
+    },
+    {
+      "rule_id": "FR004",
+      "rule_name": "Write Below Root Directory",
+      "category": "defense_evasion",
+      "severity": "ERROR",
+      "description": "Write attempt to unexpected directory under root. Attackers write backdoors/webshells here.",
+      "condition": "write_file and fd.name startswith / and not fd.name startswith /tmp and not fd.name startswith /var/log and not proc.name in (legitimate_writers)",
+      "output": "Write below root (user=%user.name file=%fd.name proc=%proc.name)",
+      "false_positive_hotspots": ["/var/lib/ for package managers", "/etc/ for config tools", "/opt/ for installations"]
+    },
+    {
+      "rule_id": "FR005",
+      "rule_name": "Kernel Module Injection",
+      "category": "privilege_escalation",
+      "severity": "CRITICAL",
+      "description": "Attempt to load kernel module. Rootkits use this to persist and hide.",
+      "condition": "spawned_process and proc.name in (kmod_tools) and not (proc.pname in (authorized_module_loaders))",
+      "macros": {"kmod_tools": ["insmod", "modprobe", "rmmod"]},
+      "output": "Kernel module load attempt (user=%user.name module=%proc.args proc=%proc.name)",
+      "tags": ["rootkit", "T1547.006", "privilege_escalation"]
+    },
+    {
+      "rule_id": "FR006",
+      "rule_name": "Crypto Mining Process",
+      "category": "resource_hijacking",
+      "severity": "WARNING",
+      "description": "Known cryptocurrency mining software executed. Indicates cloud resource hijacking.",
+      "condition": "spawned_process and proc.name in (crypto_miners)",
+      "macros": {"crypto_miners": ["xmrig", "minerd", "cgminer", "bfgminer", "ethminer", "t-rex", "nbminer", "phoenixminer"]},
+      "output": "Cryptocurrency miner executed (user=%user.name miner=%proc.name container=%container.name)",
+      "also_detect": "High CPU + network to mining pools (pool.minexmr.com etc.)"
+    },
+    {
+      "rule_id": "FR007",
+      "rule_name": "kubectl Executed in Container",
+      "category": "lateral_movement",
+      "severity": "WARNING",
+      "description": "kubectl run inside a container suggests attempted Kubernetes cluster takeover.",
+      "condition": "spawned_process and proc.name=kubectl and container",
+      "output": "kubectl in container (user=%user.name container=%container.name args=%proc.args)",
+      "tags": ["kubernetes", "lateral_movement", "T1611"]
+    },
+    {
+      "rule_id": "FR008",
+      "rule_name": "Outbound Connection to Tor Exit Node",
+      "category": "command_and_control",
+      "severity": "ERROR",
+      "description": "Network connection to known Tor exit node IP. Strong indicator of C2 or data exfiltration.",
+      "condition": "outbound and fd.rip in (tor_exit_nodes)",
+      "note": "Maintain updated Tor exit node list from dan.me.uk/torlist; update daily",
+      "output": "Tor exit node connection (user=%user.name proc=%proc.name remote=%fd.rip:%fd.rport)",
+      "tags": ["C2", "exfiltration", "T1090.003"]
+    },
+    {
+      "rule_id": "FR009",
+      "rule_name": "Mass File Encryption (Ransomware Indicator)",
+      "category": "impact",
+      "severity": "CRITICAL",
+      "description": "High rate of file rename/write operations; potential ransomware encryption activity.",
+      "condition": "write_file and fd.name pmatch (/home/%, /var/www/%) and count(fd.name) > 100 within 30s",
+      "note": "Requires Falco with counting support or SIEM aggregation",
+      "output": "Potential ransomware: high rate file modification (proc=%proc.name user=%user.name)",
+      "also_watch": "vssadmin.exe delete shadows; bcdedit /set recoveryenabled no"
+    },
+    {
+      "rule_id": "FR010",
+      "rule_name": "SETUID Binary Execution Outside Whitelist",
+      "category": "privilege_escalation",
+      "severity": "WARNING",
+      "description": "SETUID binary executed by non-root user. SUID binaries run with file owner's privileges.",
+      "condition": "execve and proc.is_suid=true and proc.name not in (known_suid_binaries)",
+      "macros": {"known_suid_binaries": ["sudo", "su", "passwd", "ping", "mount", "umount"]},
+      "output": "Unusual SUID binary (user=%user.name binary=%proc.name parent=%proc.pname)",
+      "attacker_use": "Write SUID shell (/tmp/rootshell with SUID bit); execute to get root"
+    }
+  ],
+  "falco_tuning_guide": {
+    "reducing_false_positives": [
+      "Use Kubernetes namespace exceptions for CI/CD",
+      "Whitelist specific process names that legitimately trigger rules",
+      "Use priority levels; start WARNING, escalate after tuning",
+      "Tag rules by MITRE technique for context"
+    ],
+    "performance_tuning": [
+      "Avoid broad 'write_file' rules on busy servers; use fd.name filters",
+      "Use macros to share condition logic; reduces compilation overhead",
+      "Limit output fields; each field lookup has cost",
+      "Drop rules not relevant to your environment"
+    ]
+  }
+}

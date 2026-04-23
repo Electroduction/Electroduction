@@ -1,0 +1,193 @@
+{
+  "_source": "Master Electrician field guides, Fluke application notes, Industrial troubleshooting manuals",
+  "_note": "Long-tail electrical troubleshooting. Specific diagnostic procedures, meter readings, failure modes.",
+  "multimeter_diagnostics": {
+    "voltage_testing": {
+      "120v_outlet": {
+        "hot_to_neutral": "Should read 118-122V; <110V indicates voltage drop problem",
+        "hot_to_ground": "Should read 118-122V; if significantly different from hot-neutral, indicates neutral problem",
+        "neutral_to_ground": "Should read 0-2V; >2V indicates loose neutral or shared neutral issue",
+        "reversed_polarity": "Hot in neutral slot; reads 120V both ways; dangerous; rewire immediately"
+      },
+      "240v_circuit": {
+        "leg_to_leg": "Should read 235-245V",
+        "each_leg_to_neutral": "Should read 118-122V each",
+        "leg_to_ground": "Should read 118-122V each",
+        "high_leg_delta": "Wild leg (orange wire) reads 208V to neutral; 240V to other legs"
+      }
+    },
+    "continuity_testing": {
+      "procedure": "Power OFF; discharge capacitors; test conductor end-to-end",
+      "good_reading": "<0.5 ohms for short runs; <2 ohms for 100ft run",
+      "open_circuit": "OL (overload) on meter; broken conductor",
+      "intermittent": "Wiggle wire while testing; fluctuating reading indicates damaged conductor"
+    },
+    "insulation_resistance_megger": {
+      "test_voltage": "500V for 120/240V systems; 1000V for 480V systems",
+      "minimum_acceptable": ">1 megohm (1000 kΩ) for new work; >0.5 megohm for old work",
+      "concerning_readings": "<0.5 megohm indicates insulation degradation; investigate before energizing",
+      "procedure": "Disconnect load; isolate circuit; test conductor to ground; duration: 1 minute",
+      "polarization_index": "Ratio of 10-minute to 1-minute reading; should be >2.0 for good insulation"
+    },
+    "current_measurement": {
+      "clamp_meter_use": "Clamp around single conductor only; clamping full cable reads net current (cancels out)",
+      "balanced_load": "Measure each leg; should be within 10% of each other; >20% difference indicates problem",
+      "identifying_shared_neutral": "Clamp neutral wire; if reading higher than expected, multiple circuits sharing neutral",
+      "inrush_vs_running": "Motor inrush 6-8x running current; use min/max capture to measure startup surge"
+    }
+  },
+  "common_failure_modes": {
+    "breaker_tripping": {
+      "immediate_trip": {
+        "likely_cause": "Short circuit; current >1000A instantaneous",
+        "diagnostic": "Disconnect all loads; if still trips, fault in wiring; if doesn't trip, fault in load",
+        "thermal_vs_magnetic": "Immediate = magnetic trip (short); delayed = thermal trip (overload)"
+      },
+      "trips_after_time": {
+        "likely_cause": "Overload; circuit drawing >100% rated current continuously",
+        "calculation": "Add up all connected loads; if >80% breaker rating continuously, circuit overloaded",
+        "solution": "Redistribute loads to other circuits or upgrade wire and breaker"
+      },
+      "nuisance_tripping": {
+        "afci_issues": "Loose connections, damaged wire, incompatible devices (some dimmers, LED drivers)",
+        "gfci_issues": "Ground fault (wet location, damaged tool), shared neutral, improper wiring",
+        "diagnostic": "Plug in loads one-by-one to isolate offending device"
+      },
+      "breaker_hot_to_touch": {
+        "cause": "Loose connection at breaker terminal or bus bar",
+        "resistance_heating": "Even small resistance (0.5Ω) at 20A = 200W heat = fire risk",
+        "action": "Power down panel; inspect connection; torque to spec (check breaker listing); replace if damaged"
+      }
+    },
+    "flickering_lights": {
+      "whole_house_flicker": {
+        "loose_service_connection": "Utility connection, meter base, or service entrance; call utility and electrician",
+        "undersized_service": "Voltage sag when large load starts (AC, dryer); measure voltage drop; upgrade service if chronic",
+        "shared_neutral_problem": "Lights brighten/dim when other circuits turn on; lost neutral creates 240V across 120V loads"
+      },
+      "single_circuit_flicker": {
+        "loose_connection": "At switch, outlet, or fixture; creates resistance and arcing; fire hazard",
+        "diagnostic": "IR camera shows hot spot at loose connection; or use voltage drop test under load",
+        "backstabbed_outlets": "Common failure point; rewire with screw terminals"
+      },
+      "led_specific_flicker": {
+        "incompatible_dimmer": "LED needs electronic low-voltage dimmer; magnetic dimmer causes flicker",
+        "driver_issue": "Cheap LED drivers; upgrade to quality bulbs with better power supply filtering",
+        "minimum_load": "Some dimmers need 25W minimum; single LED <10W may flicker; add dummy load or upgrade dimmer"
+      }
+    },
+    "outlets_not_working": {
+      "gfci_tripped": "Test/reset button popped; check all GFCIs on circuit (first GFCI protects downstream outlets)",
+      "open_neutral": "Outlet reads 0V hot-neutral but 120V hot-ground; neutral disconnected upstream",
+      "lost_neutral_shared": "Outlet reads 0V or 240V (if shared neutral lost); extremely dangerous; correct immediately",
+      "backstab_failure": "Outlet worked then stopped; wiggle plug and outlet; loose backstab connection; rewire",
+      "series_wiring_failure": "One bad outlet takes out all downstream; check outlets in sequence; find failed connection point"
+    },
+    "motor_issues": {
+      "hums_but_doesnt_start": {
+        "single_phase_lost": "240V motor on single 120V leg; bad breaker or lost phase; check voltage leg-to-leg and leg-to-neutral",
+        "capacitor_failure": "Start capacitor open; motor has no starting torque; test capacitor with capacitance meter",
+        "mechanical_binding": "Seized bearing; excessive load; disconnect load and try motor; if starts, mechanical problem"
+      },
+      "thermal_overload_trips": {
+        "overload_condition": "Motor drawing >nameplate FLA; check current; reduce load or upgrade motor",
+        "low_voltage": "Voltage <90% rated causes high current draw; check voltage at motor under load",
+        "cooling_issue": "Blocked vents; failed fan; motor overheats even at rated load; clean and inspect",
+        "incorrect_overload_setting": "Overload set too low; should be 115-125% motor FLA"
+      },
+      "reverse_rotation": {
+        "three_phase": "Swap any two legs at motor or starter",
+        "single_phase": "Reverse rotation requires reversing start winding; consult motor diagram; some motors not reversible"
+      }
+    }
+  },
+  "power_quality_issues": {
+    "voltage_sag": {
+      "definition": "Voltage drops 10-20% for short duration (cycles to seconds)",
+      "causes": "Motor starting, utility fault clearing, transformer tap change",
+      "effects": "Lights dim, computer UPS switches to battery, motor stalls",
+      "mitigation": "Voltage regulator, soft starter for large motors, UPS for sensitive loads"
+    },
+    "harmonics": {
+      "sources": "Switch-mode power supplies, VFDs, LED drivers, computer equipment",
+      "effects": "Neutral conductor overheating (triplen harmonics add in neutral), transformer overheating, nuisance breaker trips",
+      "measurement": "Total Harmonic Distortion (THD); >5% THD problematic; >20% severe",
+      "mitigation": "K-rated transformers, derate neutral, harmonic filters, phase-shifting transformers"
+    },
+    "transients": {
+      "lightning_induced": "kV spikes; sub-microsecond duration; destroys electronics",
+      "switching_transients": "Breaker or contactor operation; few hundred volts; nanosecond to microsecond",
+      "protection": "Whole-house surge protector (Type 1/2 at panel); Type 3 at sensitive equipment; MOV or TVS diodes"
+    }
+  },
+  "load_testing_procedures": {
+    "circuit_load_check": {
+      "steps": [
+        "Turn on all devices on circuit to maximum setting",
+        "Measure current with clamp meter on hot conductor",
+        "Compare to breaker rating; should be <80% for continuous loads",
+        "If >80%, redistribute loads or upgrade circuit"
+      ],
+      "example": "20A kitchen circuit: toaster 1200W, microwave 1500W, kettle 1500W = 4200W / 120V = 35A; grossly overloaded; never run all three simultaneously"
+    },
+    "voltage_drop_field_test": {
+      "procedure": "Measure voltage at panel (V1); measure at furthest outlet under full load (V2); VD% = (V1-V2)/V1 × 100",
+      "acceptable": "<3% branch circuit; <5% total feeder+branch",
+      "example": "Panel: 120.5V; outlet under 15A load: 116.2V; drop = 4.3V = 3.6%; borderline; consider upsizing wire"
+    },
+    "ground_fault_location": {
+      "insulation_resistance_method": {
+        "step_1": "Megger circuit from panel; reads low resistance to ground",
+        "step_2": "Disconnect circuit at midpoint; megger each half separately",
+        "step_3": "Fault will show in one half; repeat subdivision until fault isolated to single run",
+        "resolution": "Can locate fault to specific junction box or damaged section"
+      }
+    }
+  },
+  "three_phase_systems": {
+    "phase_sequence_testing": {
+      "why_it_matters": "Incorrect sequence causes motor reverse rotation, malfunctions",
+      "tools": "Phase rotation meter; should indicate A-B-C or clockwise rotation",
+      "correcting": "Swap any two phases at service or at motor to reverse rotation"
+    },
+    "phase_balance": {
+      "measurement": "Clamp each phase; currents should be within 10% of average",
+      "unbalanced_loads": "Single-phase loads distributed unevenly; causes neutral current, transformer overheating",
+      "unbalanced_voltage": "One phase significantly different; indicates utility problem or bad transformer; call utility",
+      "effect_on_motors": "Voltage imbalance causes current imbalance squared; 2% V imbalance → 20% I imbalance → overheating"
+    },
+    "open_phase_detection": {
+      "symptoms": "Three-phase motor runs on two phases; draws 2x current, reduced power, severe overheating",
+      "voltage_readings": "Dead leg reads 0V to other legs (if open at source); may read partial voltage through motor windings",
+      "current_readings": "Two legs draw excessive current; third leg reads zero",
+      "protection": "Phase loss relay required for critical motors; trips on voltage or current imbalance"
+    }
+  },
+  "safety_procedures": {
+    "lockout_tagout": {
+      "steps": [
+        "1. Identify all energy sources; include control circuits, capacitors, stored energy",
+        "2. Notify affected personnel",
+        "3. Shut down equipment using normal procedures",
+        "4. Isolate energy sources; open breaker/disconnect",
+        "5. Apply lockout device (each worker applies own lock)",
+        "6. Apply tag with name, date, reason",
+        "7. Release/dissipate stored energy (capacitors, springs, hydraulic pressure)",
+        "8. Verify isolation with meter; check all phases to ground and phase-to-phase"
+      ],
+      "verification": "Test for voltage with known-live source first, then dead circuit, then known-live again (prove meter working)"
+    },
+    "arc_flash_boundaries": {
+      "limited_approach": "3.5ft for 480V; shock hazard boundary; unqualified persons must not cross",
+      "restricted_approach": "1ft for 480V; qualified only with PPE",
+      "prohibited_approach": "<1 inch; same as energized work distance; avoid if possible",
+      "arc_flash_boundary": "Based on incident energy; 4ft to 10ft typical; full PPE required; calculate per NFPA 70E"
+    },
+    "ppe_requirements": {
+      "category_0": "Untreated cotton; <2 cal/cm²; basic work",
+      "category_1": "4 cal/cm² arc-rated shirt/pants; 120/240V panels up to 25kA",
+      "category_2": "8 cal/cm² arc flash suit; 480V work; typical industrial",
+      "category_3_4": "25-40 cal/cm²; full face shield; high energy work; avoid with de-energization"
+    }
+  }
+}

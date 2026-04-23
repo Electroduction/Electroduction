@@ -1,0 +1,228 @@
+{
+  "_source": "AWS Welding Handbook, CWI certification materials, Fabrication shop standards",
+  "_note": "Long-tail welding data. Process parameters, electrode selection, joint prep, defect identification.",
+  "welding_processes": {
+    "smaw_stick": {
+      "full_name": "Shielded Metal Arc Welding (Stick)",
+      "process": "Consumable electrode with flux coating; manual; DC or AC",
+      "advantages": ["Portable", "No shielding gas", "Works outdoors in wind", "Inexpensive equipment"],
+      "limitations": ["Slow", "Slag removal required", "Spatter", "Lower quality than TIG/MIG"],
+      "common_applications": "Construction, pipeline, repair, field work, structural steel",
+      "electrode_classification": {
+        "e6010": {"current": "DCEP", "penetration": "Deep", "position": "All", "use": "Pipeline root pass"},
+        "e6011": {"current": "AC/DCEP", "penetration": "Deep", "position": "All", "use": "General purpose dirty/rusty steel"},
+        "e7018": {"current": "AC/DCEP", "penetration": "Medium", "position": "All", "use": "Structural steel, low hydrogen"},
+        "e7024": {"current": "AC/DC", "penetration": "Shallow", "position": "Flat/horizontal", "use": "High deposition rate fillet welds"}
+      },
+      "electrode_suffix": {
+        "first_two_digits": "Tensile strength in ksi (60, 70, 80, etc.)",
+        "third_digit": "Welding position (1=all, 2=flat/horizontal, 4=flat/overhead/horizontal/vertical down)",
+        "fourth_digit": "Current type, coating, penetration"
+      }
+    },
+    "gmaw_mig": {
+      "full_name": "Gas Metal Arc Welding (MIG)",
+      "process": "Continuous wire electrode; shielding gas; semi-automatic",
+      "advantages": ["Fast", "No slag", "Easy to learn", "High deposition rate", "Good for thin material"],
+      "limitations": ["Requires shielding gas", "Not for outdoor/windy conditions", "More expensive equipment"],
+      "transfer_modes": {
+        "short_circuit": {
+          "voltage": "17-22V",
+          "current": "60-160A for 0.035\" wire",
+          "characteristics": "Wire touches puddle; short circuits 50-200x/sec; low heat; thin material",
+          "applications": "Sheet metal, auto body, thin-wall tubing"
+        },
+        "spray_transfer": {
+          "voltage": "25-32V",
+          "current": ">200A for steel",
+          "characteristics": "Wire never touches puddle; axial droplets; requires 85%+ argon; smooth, spatter-free",
+          "applications": "Thick material, flat/horizontal only, high-quality welds"
+        },
+        "pulse_spray": {
+          "characteristics": "Alternates high and low current; spray transfer at lower average current; all positions",
+          "applications": "Aluminum, stainless, out-of-position work"
+        },
+        "globular": {
+          "characteristics": "Large, erratic droplets; high spatter; avoid if possible; occurs with CO₂ or low voltage",
+          "applications": "None preferred; transition between short circuit and spray"
+        }
+      },
+      "shielding_gas_selection": {
+        "steel": {
+          "100_co2": "Cheapest; deep penetration; high spatter; shop fabrication",
+          "75ar_25co2": "Most common; balanced penetration and spatter; C25",
+          "90ar_10co2": "Spray transfer; cleaner; stainless and critical welds"
+        },
+        "aluminum": {
+          "100_argon": "Standard for aluminum; spray or pulse modes only"
+        },
+        "stainless": {
+          "90ar_10co2": "Spray transfer",
+          "98ar_2co2": "TIG-like appearance; pulse MIG",
+          "tri_mix": "He/Ar/CO₂; high heat input; thick stainless"
+        }
+      }
+    },
+    "gtaw_tig": {
+      "full_name": "Gas Tungsten Arc Welding (TIG)",
+      "process": "Non-consumable tungsten electrode; separate filler rod; inert gas shielding",
+      "advantages": ["Highest quality", "Precise control", "No spatter", "No slag", "Welds all metals"],
+      "limitations": ["Slow", "Requires high skill", "Not for thick material (>1/4\" impractical)", "Expensive"],
+      "tungsten_electrode_types": {
+        "pure_tungsten": {"color": "Green", "current": "AC only", "use": "Aluminum, magnesium"},
+        "2_thoriated": {"color": "Red", "current": "DCEN", "use": "Steel, stainless (radioactive, being phased out)"},
+        "2_lanthanated": {"color": "Blue", "current": "AC/DCEN", "use": "All materials; thorium replacement"},
+        "2_ceriated": {"color": "Orange", "current": "AC/DCEN", "use": "Low-current precision work"}
+      },
+      "electrode_grind": {
+        "dcen": "Grind to sharp point (20-30° included angle); lengthwise grinding for stable arc",
+        "ac": "Balled end; electrode end forms ball during arc; 1/8\" electrode = 1/8\" ball"
+      },
+      "shielding_gas": {
+        "argon": "Standard for all TIG; 100% argon most common",
+        "helium_mix": "75Ar/25He; hotter arc; faster travel on aluminum or thick material",
+        "argon_hydrogen": "Ar/H₂ for stainless; hotter, faster; austenitic stainless only (not carbon steel)"
+      },
+      "ac_vs_dc": {
+        "dcen": "Electrode negative; deep penetration; steel, stainless, copper",
+        "dcep": "Electrode positive; shallow penetration; rarely used; severe tungsten erosion",
+        "ac": "Alternates DCEN/DCEP; cleaning action on aluminum oxide; use for aluminum"
+      }
+    },
+    "fcaw_flux_core": {
+      "full_name": "Flux-Cored Arc Welding",
+      "process": "Tubular wire filled with flux; gas-shielded or self-shielded",
+      "self_shielded_fcaw": "No external gas; flux creates shielding; outdoor/field work; structural steel",
+      "gas_shielded_fcaw": "Uses CO₂ or 75/25; higher deposition rate than MIG; less spatter than self-shielded",
+      "advantages": ["High deposition rate", "Deep penetration", "Good for thick material", "Self-shielded works outdoors"],
+      "limitations": ["Slag removal", "More expensive wire than solid", "Heavy spatter (self-shielded)"],
+      "applications": "Shipbuilding, heavy fabrication, structural steel, high-production welding"
+    }
+  },
+  "joint_design_and_prep": {
+    "joint_types": {
+      "butt_joint": {
+        "square_groove": "No bevel; material ≤1/8\"; full penetration with backing or from both sides",
+        "single_v": "60° included angle; 1/8\" root gap; 1/16\" land; material 1/8\" to 3/4\"",
+        "double_v": "Both sides beveled; thick material >3/4\"; reduces filler metal; minimizes distortion",
+        "single_bevel": "One plate beveled; backup plate on other side; 45° bevel angle"
+      },
+      "fillet_weld": {
+        "tee_joint": "90° plates; fillet weld both sides for strength",
+        "lap_joint": "Overlapping plates; fillet weld edges",
+        "corner_joint": "90° corner; fillet or full-penetration groove",
+        "leg_size": "Fillet size; 1/4\" fillet = 1/4\" legs; throat = leg × 0.707"
+      }
+    },
+    "edge_preparation": {
+      "grinding": "Remove mill scale, rust, paint, oil; clean to bare metal",
+      "beveling_methods": ["Grinder", "Torch cut", "Plasma cut", "Machined"],
+      "fit_up_tolerance": {
+        "root_gap": "1/8\" typical for SMAW/FCAW; 0-1/16\" for MIG",
+        "root_face_land": "1/16\" prevents burn-through on root pass",
+        "alignment": "Within 10% of thickness offset; excessive offset = stress concentration"
+      }
+    }
+  },
+  "welding_parameters": {
+    "current_settings_mig": {
+      "0.035_wire_steel": {
+        "18_gauge": "60-100A, 17-19V",
+        "1/8_inch": "100-130A, 18-20V",
+        "1/4_inch": "150-180A, 20-22V",
+        "3/8_inch": "180-220A, 22-24V"
+      },
+      "wire_feed_speed": "Higher WFS = higher current; 250-400 IPM typical range",
+      "voltage_effect": "Higher voltage = wider, flatter bead; lower voltage = narrower, higher crown"
+    },
+    "current_settings_stick": {
+      "e6010_1/8": "75-125A DCEP",
+      "e7018_1/8": "90-120A AC or DCEP",
+      "e7018_5/32": "120-160A",
+      "rule_of_thumb": "1A per 0.001\" electrode diameter (e.g., 1/8\" = 125\" = 125A)"
+    },
+    "travel_speed": {
+      "too_fast": "Narrow bead, undercut, lack of fusion, wormhole appearance",
+      "too_slow": "Wide bead, excessive buildup, spatter, burned edges, slag inclusions",
+      "correct_speed": "Bead width 2-3× electrode diameter; uniform ripples; good tie-in at toes"
+    },
+    "arc_length": {
+      "short_arc": "Electrode close to puddle; e6010/e6011 drag the rod; 7018 short arc 1/16\" to 1/8\"",
+      "long_arc": "Excessive arc length; spatter, porosity, weak weld; maintain proper distance"
+    }
+  },
+  "weld_defects": {
+    "porosity": {
+      "appearance": "Gas holes in weld; rounded cavities",
+      "causes": ["Contamination (oil, paint, rust)", "Moisture in flux or on base metal", "Insufficient shielding gas", "Wind blowing gas away", "Arc length too long"],
+      "prevention": "Clean base metal; dry electrodes; increase gas flow (20-25 CFM); block wind"
+    },
+    "undercut": {
+      "appearance": "Groove melted into base metal at toe of weld; not filled by weld metal",
+      "causes": ["Current too high", "Arc length too long", "Travel speed too fast", "Improper electrode angle"],
+      "prevention": "Reduce current; shorten arc; slow down; adjust angle to 10-15° from perpendicular"
+    },
+    "lack_of_fusion": {
+      "appearance": "Weld metal did not fuse to base metal or previous pass",
+      "causes": ["Current too low", "Travel speed too fast", "Improper joint prep", "Electrode too large", "Wrong angle"],
+      "detection": "Crack-like indication on RT or UT; destructive bend test shows separation",
+      "prevention": "Increase current; slow down; clean joint faces; manipulate to wet out edges"
+    },
+    "lack_of_penetration": {
+      "appearance": "Weld did not penetrate through full thickness",
+      "causes": ["Current too low", "Root gap too small", "Land too large", "Travel speed too fast"],
+      "prevention": "Increase current; open root gap to 1/8\"; grind land to 1/16\"; back-gouge and weld from both sides"
+    },
+    "slag_inclusions": {
+      "appearance": "Non-metallic particles trapped in weld",
+      "causes": ["Poor slag removal between passes", "Trapped slag in undercut or overlap", "Wrong electrode angle"],
+      "prevention": "Wire brush and chip slag completely; inspect before next pass; use proper technique"
+    },
+    "cracks": {
+      "hot_cracks": "Form during solidification; centerline or crater cracks; caused by high sulfur/carbon, restraint",
+      "cold_cracks": "Form after cooling; hydrogen-induced; high-carbon steel; thermal stress",
+      "prevention": "Preheat high-carbon steel; use low-hydrogen electrodes (7018); post-weld heat treatment; reduce restraint"
+    }
+  },
+  "inspection_methods": {
+    "visual": {
+      "check": ["Uniform bead appearance", "No cracks or porosity", "Proper size and profile", "No undercut", "Good tie-in"],
+      "tools": "Weld gauge, fillet gauge, straight edge, magnifier"
+    },
+    "dye_penetrant": {
+      "process": "Apply penetrant; wait 10-30 min; clean; apply developer; indications show surface cracks",
+      "use": "Non-ferrous metals, welds, castings; detects surface-breaking defects only"
+    },
+    "magnetic_particle": {
+      "process": "Magnetize part; apply iron particles; defects disrupt magnetic field; particles concentrate at cracks",
+      "use": "Ferrous metals only; surface and slightly subsurface cracks"
+    },
+    "radiographic": {
+      "process": "X-ray or gamma ray through weld; film or digital detector; shadows show internal defects",
+      "detects": "Porosity, inclusions, lack of fusion, cracks, incomplete penetration",
+      "limitations": "Expensive, slow, radiation safety requirements, crack orientation matters"
+    },
+    "ultrasonic": {
+      "process": "Ultrasonic transducer sends sound waves; reflections from defects detected",
+      "advantages": "Fast, portable, no radiation, detects deep defects",
+      "limitations": "Requires skilled operator, calibration, couplant, surface finish affects results"
+    }
+  },
+  "metallurgy_basics": {
+    "carbon_content": {
+      "low_carbon": "<0.3% C; mild steel; easy to weld; no preheat needed; 1018, A36",
+      "medium_carbon": "0.3-0.6% C; preheat 200-400°F; AISI 1040, 1045",
+      "high_carbon": ">0.6% C; preheat 400-600°F; difficult to weld; crack-sensitive; tool steel"
+    },
+    "heat_affected_zone": {
+      "definition": "Base metal adjacent to weld; heated but not melted; microstructure changed",
+      "grain_growth": "High heat causes grain growth; reduced toughness; minimize with lower heat input",
+      "hardening": "High-carbon steel hardens in HAZ; becomes brittle; preheat and slow cooling prevents"
+    },
+    "weld_metal_matching": {
+      "undermatching": "Weld weaker than base metal; acceptable for ductile materials; weld yields first",
+      "matching": "Weld strength equals base metal; most common",
+      "overmatching": "Weld stronger than base metal; HAZ becomes weak point; common practice for safety margin"
+    }
+  }
+}

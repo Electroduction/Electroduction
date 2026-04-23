@@ -1,0 +1,116 @@
+{
+  "_source": "Hooktheory database analysis, Spotify hit analysis, Music theory curricula",
+  "_note": "Long-tail song structure data. Genre-specific templates with commercial success patterns.",
+  "structures": {
+    "standard_pop": {
+      "template": "Intro → Verse 1 → Pre-Chorus → Chorus → Verse 2 → Pre-Chorus → Chorus → Bridge → Chorus (x2) → Outro",
+      "timing_3min30sec": {
+        "intro": "0:00-0:15",
+        "verse_1": "0:15-0:45",
+        "pre_chorus": "0:45-1:00",
+        "chorus": "1:00-1:30",
+        "verse_2": "1:30-2:00",
+        "pre_chorus_2": "2:00-2:10",
+        "chorus_2": "2:10-2:40",
+        "bridge": "2:40-3:00",
+        "final_chorus": "3:00-3:30"
+      },
+      "function_of_each": {
+        "intro": "Set mood, introduce sonic palette; 8-16 bars",
+        "verse": "Tell the story; grow in energy each verse; varies lyrically",
+        "pre_chorus": "Build tension; raises expectation; shorter bars",
+        "chorus": "Emotional peak; most memorable; hooky title lyric; repeats",
+        "bridge": "Contrast and relief; different key or groove; fresh perspective",
+        "outro": "Wind down; can be fadeout or definitive end"
+      },
+      "hit_pattern": "Chorus first (or within 45s) = higher streaming completion rate (Spotify data)"
+    },
+    "verse_chorus": {
+      "template": "V → Ch → V → Ch → Ch",
+      "use": "Country, rock, folk; straightforward; relies on strong hook",
+      "example": "Most country radio hits"
+    },
+    "aaba_32_bar": {
+      "template": "A (8 bars) → A (8 bars) → B (8 bars bridge) → A (8 bars)",
+      "use": "Jazz standards, Tin Pan Alley, Great American Songbook",
+      "examples": ["Over the Rainbow", "Somewhere Over the Rainbow", "Autumn Leaves"],
+      "B_section_function": "Release tension built in A sections; often goes to relative major/minor"
+    },
+    "blues_12_bar": {
+      "bars": {
+        "1-4": "I chord (tonic; establish tonality)",
+        "5-6": "IV chord (subdominant; movement)",
+        "7-8": "I chord (return)",
+        "9": "V chord (dominant; maximum tension)",
+        "10": "IV chord",
+        "11-12": "I chord + turnaround to V"
+      },
+      "variations": {
+        "quick_four": "IV chord in bar 2; adds early movement",
+        "jazz_blues": "Replace turnaround with ii-V-I; adds sophistication",
+        "8_bar_blues": "Compressed version; Son House style"
+      }
+    },
+    "edm_structures": {
+      "four_on_floor_standard": {
+        "intro": "16-32 bars; beats only or minimal elements",
+        "breakdown_1": "32 bars; melodic elements introduced; no kick",
+        "build": "16-32 bars; riser, snare roll, filtering; energy builds",
+        "drop_1": "32 bars; full energy; main hook",
+        "break": "16-32 bars; reduce to half or minimal",
+        "build_2": "16-32 bars; second build",
+        "drop_2": "32-64 bars; can be variation of drop 1",
+        "outro": "16-32 bars; gradual strip-back"
+      },
+      "tension_release": "EDM is fundamentally about building and releasing tension; drop is the payoff"
+    },
+    "hip_hop_structure": {
+      "typical": "Intro → Verse 1 (16 bars) → Hook (8 bars) → Verse 2 (16 bars) → Hook → Bridge/Verse 3 → Hook → Outro",
+      "bar_counts": {
+        "verse": "16 bars standard; 8 bars for shorter modern flows; 32 bars for classics",
+        "hook_chorus": "8 bars; 4 bars can work for repetitive trap hooks",
+        "bridge": "Rare in hip-hop; when used, often instrumental or outro verse"
+      },
+      "modern_trap_structure": "Very hook-forward; hook in first 30s; short verses (8-12 bars); multiple hook repetitions"
+    },
+    "ambient_and_electronic": {
+      "no_structure": "Ambient often deliberately avoids structure; continuous evolution",
+      "drone_progression": "Slowly evolve one element at a time; patience is the technique",
+      "arrival_composition": "Build toward one moment of resolution; entire track is the journey (Burial, Arca)"
+    }
+  },
+  "bpm_by_genre": {
+    "ambient": [60, 80],
+    "lofi_hip_hop": [70, 90],
+    "hip_hop_boom_bap": [85, 100],
+    "pop": [90, 130],
+    "trap": [130, 160],
+    "house": [120, 130],
+    "techno": [130, 150],
+    "drum_and_bass": [160, 180],
+    "jazz": [60, 200],
+    "blues": [70, 140],
+    "reggae": [60, 80],
+    "metal": [120, 220]
+  },
+  "key_selection": {
+    "emotional_associations": {
+      "C_major": "Pure, innocent, simple; nursery rhymes, beginner exercises",
+      "G_major": "Bright, pastoral, hopeful; country, folk",
+      "D_major": "Triumphant, orchestral; Beethoven 9th, national anthems",
+      "A_major": "Joyful, open; guitar-friendly; 'Here Comes the Sun'",
+      "E_major": "Brilliant, strong; guitar-friendly; rock guitar",
+      "A_minor": "Dark, tender, melancholic; most common minor for pop",
+      "D_minor": "Saddest key (Mozart's opinion); minor with depth",
+      "F_minor": "Funereal, dark; Chopin Funeral March",
+      "Bb_major": "Big band, jazz; horn-friendly",
+      "Eb_major": "Heroic, majestic; symphonic; horn-friendly"
+    },
+    "modulation_techniques": {
+      "common_tone": "Move to new key sharing a chord; smooth transition",
+      "chromatic": "Step up half-step; dramatic lift; pop technique (last chorus modulation)",
+      "pivot_chord": "Chord functional in both keys; use it to bridge; most musical",
+      "direct_modulation": "Abrupt cut to new key; jarring but can be effective"
+    }
+  }
+}

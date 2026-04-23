@@ -1,0 +1,7 @@
+{
+  "name": "Falco-Rules",
+  "source": "https://github.com/falcosecurity/rules",
+  "path": "falco-rules",
+  "format": "yaml",
+  "size_mb": "~5MB"
+}

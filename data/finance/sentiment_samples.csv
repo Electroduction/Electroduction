@@ -1,0 +1,6 @@
+text,sentiment,score
+Company beats earnings expectations,positive,0.85
+Stock plunges on poor guidance,negative,-0.75
+Analyst upgrades rating to buy,positive,0.65
+Concerns over rising debt levels,negative,-0.55
+Neutral outlook for next quarter,neutral,0.05

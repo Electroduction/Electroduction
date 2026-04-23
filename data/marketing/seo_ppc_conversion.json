@@ -1,0 +1,161 @@
+{
+  "_source": "Google Analytics certification, SEMrush data, Conversion optimization case studies",
+  "_note": "Long-tail marketing data. SEO technical details, PPC bid strategies, conversion rate optimization tactics.",
+  "seo_technical": {
+    "on_page_factors": {
+      "title_tag": {
+        "optimal_length": "50-60 characters; Google displays ~600px width",
+        "structure": "Primary Keyword - Secondary Keyword | Brand",
+        "mistakes": "Keyword stuffing; duplicate titles across pages; missing brand; too generic"
+      },
+      "meta_description": {
+        "optimal_length": "150-160 characters; not a ranking factor but affects CTR",
+        "include": "Primary keyword, value prop, call-to-action",
+        "example": "Learn SEO from experts. 50+ video tutorials, tools, and templates. Start free trial today."
+      },
+      "header_tags": {
+        "h1": "One per page; includes primary keyword; describes page topic",
+        "h2_h3": "Subheadings; include secondary keywords; improve readability",
+        "structure": "Logical hierarchy; H2 under H1, H3 under H2"
+      },
+      "url_structure": {
+        "best_practice": "example.com/category/keyword-rich-slug",
+        "avoid": "example.com/?p=123; example.com/2024/01/15/post-title",
+        "slug_length": "3-5 words; hyphens not underscores; lowercase"
+      },
+      "internal_linking": {
+        "anchor_text": "Descriptive, keyword-rich; avoid 'click here'",
+        "link_depth": "Important pages within 3 clicks from homepage",
+        "orphan_pages": "Pages with no internal links; crawl issues; add to sitemap and link from relevant content"
+      }
+    },
+    "technical_seo": {
+      "site_speed": {
+        "core_web_vitals": {
+          "lcp": "Largest Contentful Paint <2.5s; main content visible",
+          "fid": "First Input Delay <100ms; interactivity",
+          "cls": "Cumulative Layout Shift <0.1; visual stability"
+        },
+        "optimization": "Compress images (WebP); minify CSS/JS; lazy load; CDN; defer non-critical JS"
+      },
+      "mobile_optimization": {
+        "mobile_first_indexing": "Google uses mobile version for ranking; must be mobile-responsive",
+        "viewport_meta": "<meta name='viewport' content='width=device-width, initial-scale=1'>",
+        "tap_targets": "Buttons >48px; sufficient spacing; avoid mobile popup penalties"
+      },
+      "crawlability": {
+        "robots_txt": "Allow/disallow crawlers; block admin, search results, duplicate content",
+        "sitemap_xml": "List all URLs; update frequency; priority; submit to Search Console",
+        "crawl_budget": "Large sites (>10k pages); fix broken links; remove duplicate content; use canonical tags"
+      },
+      "structured_data": {
+        "schema_markup": "JSON-LD format; helps rich snippets (stars, FAQ, breadcrumbs)",
+        "types": "Product (price, reviews); Article (author, date); LocalBusiness (hours, address); Recipe; Event",
+        "testing": "Google Rich Results Test; validate markup; check eligibility"
+      }
+    },
+    "link_building": {
+      "quality_signals": {
+        "domain_authority": "Moz DA, Ahrefs DR; 0-100 scale; >50 is strong",
+        "relevance": "Links from same industry/topic worth more than unrelated",
+        "anchor_text": "Mix of exact match, partial, branded, naked URL; avoid over-optimization",
+        "dofollow_vs_nofollow": "Dofollow passes PageRank; nofollow doesn't (but still valuable for traffic)"
+      },
+      "tactics": {
+        "guest_posting": "Write for industry blogs; include link in author bio or content; avoid low-quality link farms",
+        "broken_link_building": "Find broken links on industry sites; suggest your content as replacement; Ahrefs broken link checker",
+        "skyscraper_technique": "Find top content for keyword; create better/longer version; reach out to sites linking to original",
+        "digital_pr": "Newsworthy content; HARO (Help A Reporter Out); get press coverage; earns high-authority links"
+      },
+      "avoid": {
+        "pbn": "Private Blog Networks; footprint detected; manual penalty",
+        "link_schemes": "Reciprocal link exchanges; paid links without nofollow; anchor text manipulation",
+        "low_quality": "Directory submissions; blog comment spam; forum signature links"
+      }
+    }
+  },
+  "ppc_google_ads": {
+    "campaign_structure": {
+      "account_hierarchy": "Account > Campaign (budget, location, schedule) > Ad Group (keywords, ads) > Ads & Keywords",
+      "single_keyword_ad_groups": "SKAG; one keyword per ad group; highly relevant ads; better QS; labor-intensive",
+      "themed_ad_groups": "5-20 related keywords; easier to manage; slight QS sacrifice"
+    },
+    "keyword_match_types": {
+      "broad_match": "Widest reach; includes synonyms, misspellings, related; 'running shoes' shows for 'athletic footwear'",
+      "phrase_match": "\"running shoes\"; matches phrase + additional words; 'best running shoes' qualifies",
+      "exact_match": "[running shoes]; close variants only; most control; lowest reach",
+      "negative_keywords": "Exclude irrelevant searches; 'free' if selling paid products; 'jobs' if not hiring"
+    },
+    "quality_score": {
+      "components": "Expected CTR (40%), Ad Relevance (25%), Landing Page Experience (35%)",
+      "score_range": "1-10; 7+ is good; affects ad rank and CPC",
+      "improving": "Match ad copy to keywords; improve landing page relevance and speed; increase CTR with compelling copy"
+    },
+    "bidding_strategies": {
+      "manual_cpc": "Full control; set max CPC per keyword; time-intensive; good for testing",
+      "enhanced_cpc": "Manual + Google adjusts up to +30% for likely conversions; moderate automation",
+      "target_cpa": "Automated; optimize for cost per acquisition; needs 30+ conversions/month for learning",
+      "target_roas": "Optimize for return on ad spend; e.g., target 400% ROAS ($4 revenue per $1 spend); needs conversion value tracking",
+      "maximize_conversions": "Fully automated; spends budget to get most conversions; can overspend if not monitored"
+    },
+    "ad_copy_best_practices": {
+      "responsive_search_ads": "15 headlines, 4 descriptions; Google tests combinations; include keyword in 2-3 headlines",
+      "headline_formulas": {
+        "benefit": "Save 50% on Running Shoes",
+        "question": "Need Running Shoes? Shop Now",
+        "cta": "Buy Running Shoes Today - Free Shipping",
+        "brand": "Nike Running Shoes - Official Store"
+      },
+      "extensions": {
+        "sitelink": "Additional links (Sale, Reviews, Contact); increase CTR 10-15%",
+        "callout": "Free Shipping, 24/7 Support, Price Match Guarantee",
+        "structured_snippet": "Brands: Nike, Adidas, Brooks, Asics",
+        "call": "Phone number; mobile only; call tracking",
+        "location": "Address; local businesses; ties to Google My Business"
+      }
+    }
+  },
+  "conversion_optimization": {
+    "landing_page_elements": {
+      "headline": "Clear value prop; match ad copy; 'Get 50% Off Running Shoes' if ad promised 50% off",
+      "hero_image": "Relevant; high-quality; shows product/result; faces/people increase trust",
+      "cta_button": "Contrasting color; action-oriented text ('Start Free Trial' > 'Submit'); above fold + repeated below",
+      "social_proof": "Reviews (4.8★ 2,400 reviews); testimonials; logos of known customers; 'As seen in Forbes'",
+      "form_optimization": "Fewer fields = higher conversion; only ask essential info; multi-step forms can increase completion"
+    },
+    "ab_testing": {
+      "what_to_test": "Headline, CTA copy/color, form fields, page layout, pricing display, social proof",
+      "sample_size": "Minimum 100 conversions per variant; 95% statistical significance; avoid peeking early",
+      "testing_duration": "1-2 weeks minimum; account for weekly cycles; B2B needs longer (buying cycles)",
+      "tool": "Google Optimize, VWO, Optimizely; prioritize tests by potential impact × ease"
+    },
+    "persuasion_principles": {
+      "scarcity": "Only 3 left in stock; Sale ends in 24 hours; increases urgency",
+      "social_proof": "12,000 customers; Best seller; Featured in NYT; reduces perceived risk",
+      "authority": "Recommended by doctors; Award-winning; 20 years experience; builds credibility",
+      "reciprocity": "Free trial; Free shipping; Free ebook; creates obligation to give back",
+      "commitment": "Multi-step forms; 'Start with email' → 'Add name' → 'Choose plan'; foot-in-door technique"
+    }
+  },
+  "analytics_metrics": {
+    "google_analytics_4": {
+      "key_events": "Conversions renamed to key events; purchase, sign_up, contact, download",
+      "engagement_rate": "Engaged sessions / total sessions; >10 sec or 2+ pages or conversion",
+      "attribution": "Data-driven attribution (DDA) default; credits touchpoints by ML; replaces last-click"
+    },
+    "conversion_funnel": {
+      "awareness": "Traffic sources; top channels: organic, paid, direct, social, referral",
+      "acquisition": "Landing page views; bounce rate <40% is good; >70% investigate",
+      "activation": "Key action taken; account created, video watched, product viewed",
+      "revenue": "Purchase; average order value (AOV); conversion rate 2-5% typical ecommerce",
+      "retention": "Repeat purchase rate; cohort analysis; email remarketing"
+    },
+    "attribution_models": {
+      "last_click": "100% credit to last touchpoint; undervalues top-of-funnel",
+      "first_click": "100% credit to first touchpoint; ignores nurturing",
+      "linear": "Equal credit to all touchpoints; simple but ignores importance",
+      "time_decay": "More credit to recent touchpoints; 7-day half-life typical",
+      "data_driven": "ML model; analyzes actual conversion paths; most accurate but needs volume"
+    }
+  }
+}

