@@ -1,0 +1,244 @@
+{
+  "_source": "Fundamentals of Nursing, Med-Surg Nursing Textbooks, Hospital Protocols, NCLEX Review",
+  "_note": "Long-tail nursing knowledge. Assessment findings, interventions, patient safety, lab value interpretation.",
+  "vital_signs_assessment": {
+    "normal_adult_ranges": {
+      "temperature": {
+        "oral": "97.8-99.1°F (36.5-37.3°C)",
+        "rectal": "98.6-100.4°F (add 1°F to oral)",
+        "axillary": "96.8-98.1°F (subtract 1°F from oral)",
+        "tympanic": "98.2-100°F",
+        "temporal_artery": "99.1-100.4°F"
+      },
+      "heart_rate": {
+        "adult": "60-100 bpm",
+        "athlete": "40-60 bpm (normal for conditioned athletes)",
+        "elderly": "May be lower baseline; assess individual"
+      },
+      "respiratory_rate": {
+        "adult": "12-20 breaths/min",
+        "abnormal": "<12 (bradypnea) or >20 (tachypnea)"
+      },
+      "blood_pressure": {
+        "normal": "<120/<80 mmHg",
+        "elevated": "120-129/<80 mmHg",
+        "hypertension_stage1": "130-139/80-89 mmHg",
+        "hypertension_stage2": "≥140/≥90 mmHg",
+        "hypertensive_crisis": "≥180/≥120 mmHg; seek immediate care"
+      },
+      "oxygen_saturation": {
+        "normal": "95-100%",
+        "concerning": "<90%; administer O2 and assess respiratory status",
+        "chronic_copd": "88-92% may be acceptable baseline; verify with provider"
+      }
+    },
+    "orthostatic_vital_signs": {
+      "procedure": "Measure BP and HR lying, sitting, standing (1-3 min each position)",
+      "positive_finding": "SBP drop ≥20 mmHg or DBP drop ≥10 mmHg, or HR increase ≥20 bpm",
+      "indication": "Fall risk, dehydration, hypovolemia, medication side effect",
+      "nursing_action": "Fall precautions, notify provider, encourage fluids if appropriate"
+    },
+    "pain_assessment": {
+      "fifth_vital_sign": "Always assess pain; document location, quality, intensity, aggravating/alleviating factors",
+      "scales": {
+        "numeric": "0-10 scale; 0=no pain, 10=worst imaginable",
+        "faces": "For children or non-verbal; 6-10 face scale",
+        "flacc": "Face, Legs, Activity, Cry, Consolability; for infants/non-verbal (0-10 score)"
+      },
+      "reassessment": "Within 30-60 min after intervention; document effectiveness"
+    }
+  },
+  "medication_administration": {
+    "five_rights": {
+      "right_patient": "Check two identifiers (name + DOB or MRN); never use room number",
+      "right_medication": "Verify order against MAR; check drug name, dose, route",
+      "right_dose": "Calculate and verify; double-check high-alert meds with second nurse",
+      "right_route": "PO, IV, IM, SQ, topical, etc.; verify route is appropriate",
+      "right_time": "Within 30-60 min of scheduled time (institutional policy)"
+    },
+    "three_checks": [
+      "Check label when removing from dispensing unit",
+      "Check label before preparing/drawing up",
+      "Check label before administering to patient"
+    ],
+    "iv_medication_safety": {
+      "verify_patency": "Assess IV site before administration; flush with saline; check for infiltration/phlebitis",
+      "rate_calculation": "mL/hr = (total volume × drop factor) / time in minutes",
+      "example": "Infuse 100 mL over 30 min with 20 gtt/mL tubing: (100×20)/30 = 67 gtt/min",
+      "smart_pump": "Use when available; reduces calculation errors; still verify settings"
+    },
+    "insulin_administration": {
+      "types_and_onset": {
+        "rapid_acting": "Lispro, Aspart; onset 15 min; peak 1 hr; give with meals",
+        "short_acting": "Regular; onset 30 min; peak 2-3 hr; give 30 min before meals",
+        "intermediate": "NPH; onset 2-4 hr; peak 4-10 hr; cloudy; roll, don't shake",
+        "long_acting": "Glargine, Detemir; onset 2-4 hr; no peak; basal coverage"
+      },
+      "mixing_insulin": "Draw up clear (regular) before cloudy (NPH); 'clear before cloudy'",
+      "rotation_sites": "Abdomen (fastest absorption), arms, thighs, buttocks; rotate within same region",
+      "never_abbreviate": "Write 'units' not 'U'; 10U can be read as 100; fatal error"
+    },
+    "anticoagulation_monitoring": {
+      "heparin": {
+        "lab": "aPTT; goal 1.5-2.5× control (typically 60-80 sec)",
+        "frequency": "Check 6 hr after rate change or bolus, then daily when stable",
+        "reversal": "Protamine sulfate 1 mg per 100 units heparin (given in last 2-3 hr)"
+      },
+      "warfarin": {
+        "lab": "INR; goal 2-3 for most (DVT, AFib); 2.5-3.5 for mechanical valve",
+        "frequency": "Daily until stable, then weekly to monthly",
+        "reversal": "Vitamin K 2.5-10 mg (onset 6-24 hr); FFP or PCC for immediate reversal",
+        "teaching": "Consistent vitamin K intake; avoid cranberry juice; report bleeding"
+      }
+    }
+  },
+  "lab_value_interpretation": {
+    "complete_blood_count": {
+      "hemoglobin": {
+        "male": "13.5-17.5 g/dL",
+        "female": "12-16 g/dL",
+        "low": "Anemia; assess for bleeding, fatigue, pallor, tachycardia",
+        "critical_low": "<7 g/dL; may need transfusion; notify provider immediately"
+      },
+      "hematocrit": {
+        "male": "41-53%",
+        "female": "36-46%",
+        "relationship": "Hct approximately 3× Hgb; both decrease with bleeding/anemia"
+      },
+      "platelets": {
+        "normal": "150,000-400,000/µL",
+        "thrombocytopenia": "<150,000; bleeding risk if <50,000; severe if <20,000",
+        "precautions": "Avoid IM injections, rectal temps, NSAIDs; bleeding precautions; platelet transfusion if <10,000 or bleeding"
+      },
+      "wbc": {
+        "normal": "4,500-11,000/µL",
+        "leukocytosis": ">11,000; infection, inflammation, leukemia, stress",
+        "leukopenia": "<4,500; immunosuppression, chemotherapy, bone marrow disorders",
+        "neutropenia": "Absolute neutrophil count <1,500; infection risk; <500 is severe (neutropenic precautions)"
+      }
+    },
+    "basic_metabolic_panel": {
+      "sodium": {
+        "normal": "135-145 mEq/L",
+        "hyponatremia": "<135; confusion, seizures if severe (<120); causes: SIADH, diuretics, fluid overload",
+        "hypernatremia": ">145; confusion, seizures; causes: dehydration, diabetes insipidus, excessive sodium intake"
+      },
+      "potassium": {
+        "normal": "3.5-5.0 mEq/L",
+        "hypokalemia": "<3.5; dysrhythmias, muscle weakness, ileus; EKG: flat T waves, U waves, ST depression",
+        "hyperkalemia": ">5.0; life-threatening dysrhythmias; EKG: peaked T waves, wide QRS; >6.5 is critical",
+        "critical_high": ">6.0; notify provider stat; may need calcium gluconate, insulin + D50, kayexalate, dialysis"
+      },
+      "glucose": {
+        "fasting": "70-100 mg/dL",
+        "hypoglycemia": "<70; give 15g carbs (4 oz juice, 3-4 glucose tabs); recheck in 15 min",
+        "severe_hypoglycemia": "<50 or altered LOC; give D50 1 amp IV or glucagon 1 mg IM",
+        "hyperglycemia": ">200 fasting; assess for DKA (Kussmaul breathing, fruity breath, ketones)"
+      },
+      "creatinine": {
+        "male": "0.7-1.3 mg/dL",
+        "female": "0.6-1.1 mg/dL",
+        "elevated": "Kidney dysfunction; hold nephrotoxic drugs (NSAIDs, aminoglycosides); assess urine output"
+      },
+      "bun": {
+        "normal": "7-20 mg/dL",
+        "elevated": "Dehydration, renal failure, GI bleed, high protein diet",
+        "bun_cr_ratio": ">20:1 suggests dehydration; <10:1 suggests liver disease or malnutrition"
+      }
+    },
+    "arterial_blood_gas": {
+      "normal_values": {
+        "ph": "7.35-7.45",
+        "paco2": "35-45 mmHg (respiratory component)",
+        "hco3": "22-26 mEq/L (metabolic component)",
+        "pao2": "80-100 mmHg (oxygenation)"
+      },
+      "interpretation": {
+        "acidosis": "pH <7.35; respiratory if PaCO2 >45; metabolic if HCO3 <22",
+        "alkalosis": "pH >7.45; respiratory if PaCO2 <35; metabolic if HCO3 >26",
+        "compensation": "Opposite component moves to normalize pH; partial if pH still abnormal, full if pH normal"
+      },
+      "examples": {
+        "copd_exacerbation": "pH 7.32, PaCO2 58, HCO3 28; respiratory acidosis with partial metabolic compensation",
+        "diabetic_ketoacidosis": "pH 7.25, PaCO2 28, HCO3 14; metabolic acidosis with partial respiratory compensation"
+      }
+    }
+  },
+  "patient_safety": {
+    "fall_prevention": {
+      "risk_factors": "Age >65, history of falls, orthostatic hypotension, altered LOC, medications (sedatives, antihypertensives)",
+      "morse_fall_scale": "Score ≥45 = high risk; assess history of falls, secondary diagnosis, ambulatory aid, IV, gait, mental status",
+      "interventions": [
+        "Bed in low position, locked",
+        "Call bell within reach",
+        "Hourly rounding ('I'm here to help you with pain, potty, position, proximity')",
+        "Non-skid footwear",
+        "Adequate lighting",
+        "Clear path to bathroom",
+        "Bedside commode if indicated"
+      ],
+      "restraints_last_resort": "Try all alternatives first; require provider order; document every 2 hr; release q2h; never PRN order"
+    },
+    "pressure_injury_prevention": {
+      "braden_scale": "Score ≤18 = at risk; assess sensory perception, moisture, activity, mobility, nutrition, friction/shear",
+      "interventions": {
+        "repositioning": "Turn q2h minimum; 30° lateral positioning preferred over 90°",
+        "support_surfaces": "Pressure-redistributing mattress if Braden ≤18; specialty bed if multiple large ulcers",
+        "skin_care": "Keep clean and dry; moisturize; avoid massage over bony prominences (can damage tissue)",
+        "nutrition": "Adequate protein (1.25-1.5 g/kg); vitamin C, zinc for healing; consult dietitian"
+      },
+      "staging": {
+        "stage_1": "Non-blanchable erythema; intact skin",
+        "stage_2": "Partial thickness; shallow pink wound or intact/ruptured blister",
+        "stage_3": "Full thickness; visible fat; no bone/tendon visible",
+        "stage_4": "Full thickness; bone, tendon, or muscle exposed",
+        "unstageable": "Full thickness; obscured by eschar or slough",
+        "deep_tissue_injury": "Purple/maroon intact skin or blood-filled blister; suspect deep damage"
+      }
+    },
+    "infection_control": {
+      "hand_hygiene": "Before patient contact, before aseptic task, after body fluid exposure, after patient contact, after contact with patient surroundings",
+      "transmission_precautions": {
+        "standard": "All patients; hand hygiene, PPE for body fluid contact",
+        "contact": "C. diff, MRSA, VRE, scabies; gown + gloves; dedicated equipment",
+        "droplet": "Influenza, pertussis, meningococcus; surgical mask within 3 feet",
+        "airborne": "TB, measles, varicella; N95 respirator; negative pressure room"
+      },
+      "central_line_bundle": {
+        "insertion": "Maximal sterile barrier, chlorhexidine prep, avoid femoral site, daily assessment of need",
+        "maintenance": "Hand hygiene, sterile dressing changes, scrub hub 15 sec before access, assess daily for removal"
+      }
+    }
+  },
+  "common_nursing_diagnoses_interventions": {
+    "acute_pain": {
+      "assessment": "Location, quality, intensity (0-10), duration, aggravating/alleviating factors",
+      "interventions": [
+        "Administer analgesics as ordered; reassess 30-60 min post-administration",
+        "Non-pharmacologic: repositioning, heat/cold, distraction, relaxation techniques",
+        "Assess for adverse effects (sedation, respiratory depression, constipation)",
+        "Patient education on pain scale and when to request medication"
+      ]
+    },
+    "impaired_gas_exchange": {
+      "assessment": "Respiratory rate, depth, effort; SpO2; breath sounds; ABG if ordered; skin color",
+      "interventions": [
+        "Position: High Fowler's or orthopneic to maximize lung expansion",
+        "Administer oxygen as ordered; monitor SpO2 continuously",
+        "Encourage deep breathing, coughing, incentive spirometry q2h while awake",
+        "Assess for secretions; suction if unable to clear independently",
+        "Monitor ABG results; notify provider of abnormal values"
+      ]
+    },
+    "risk_for_infection": {
+      "high_risk_populations": "Neutropenic, post-op, invasive devices, immunosuppressed, diabetes",
+      "interventions": [
+        "Monitor temperature q4h; report >38°C (100.4°F)",
+        "Assess WBC; report abnormal values",
+        "Aseptic technique for all invasive procedures and dressing changes",
+        "Assess invasive sites for signs of infection (redness, warmth, drainage, pain)",
+        "Encourage adequate nutrition and hydration to support immune function"
+      ]
+    }
+  }
+}

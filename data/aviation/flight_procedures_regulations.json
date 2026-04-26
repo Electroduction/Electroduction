@@ -1,0 +1,221 @@
+{
+  "_source": "FAA Pilot's Handbook of Aeronautical Knowledge, FAR/AIM, Aviation Weather Handbook",
+  "_note": "Long-tail aviation knowledge. Specific regulations, procedures, performance calculations, weather minimums.",
+  "flight_regulations": {
+    "vfr_weather_minimums": {
+      "class_b_airspace": {
+        "visibility": "3 statute miles",
+        "cloud_clearance": "Clear of clouds",
+        "note": "Special VFR available with ATC clearance and 1 mile visibility"
+      },
+      "class_c_d_e_below_10000": {
+        "visibility": "3 statute miles",
+        "cloud_clearance": "500 feet below, 1000 feet above, 2000 feet horizontal"
+      },
+      "class_e_above_10000": {
+        "visibility": "5 statute miles",
+        "cloud_clearance": "1000 feet below, 1000 feet above, 1 statute mile horizontal",
+        "rationale": "Higher speeds at altitude require greater see-and-avoid distance"
+      },
+      "class_g_day_below_1200": {
+        "visibility": "1 statute mile",
+        "cloud_clearance": "Clear of clouds",
+        "note": "Day only; night requires 3 miles and standard cloud clearances"
+      }
+    },
+    "fuel_requirements": {
+      "vfr_day": "Destination + 30 minutes at normal cruise",
+      "vfr_night": "Destination + 45 minutes at normal cruise",
+      "ifr": "Destination + alternate (if required) + 45 minutes at normal cruise",
+      "alternate_required": "1-2-3 rule: if within 1 hour before to 1 hour after ETA, forecast is <2000 ft ceiling or <3 miles visibility",
+      "calculation_example": "Flight time 2.5 hours at 10 GPH = 25 gallons + 5 gallons reserve (30 min) = 30 gallons minimum"
+    },
+    "currency_requirements": {
+      "private_pilot": {
+        "flight_review": "Every 24 calendar months; 1 hour ground, 1 hour flight with CFI",
+        "passenger_carrying": {
+          "day": "3 takeoffs and landings within 90 days in same category/class",
+          "night": "3 takeoffs and landings to full stop between 1 hour after sunset to 1 hour before sunrise",
+          "tailwheel": "3 takeoffs and landings to full stop if tailwheel aircraft"
+        }
+      },
+      "instrument_currency": {
+        "6_month_rule": "6 approaches, holding, intercepting/tracking within preceding 6 months",
+        "grace_period": "Additional 6 months to regain with safety pilot (total 12 months before IPC required)",
+        "ipc": "Instrument Proficiency Check required if >12 months expired; with CFII"
+      }
+    },
+    "right_of_way_rules": {
+      "order_of_priority": [
+        "Aircraft in distress (highest priority)",
+        "Balloons",
+        "Gliders",
+        "Airships",
+        "Airplanes/Rotorcraft (lowest priority)"
+      ],
+      "converging": "Aircraft on right has right-of-way",
+      "head_on": "Both alter course to the right",
+      "overtaking": "Overtaking aircraft alters course to the right; aircraft being overtaken has right-of-way",
+      "landing": "Lower aircraft has right-of-way; don't cut in front of aircraft on final"
+    }
+  },
+  "performance_calculations": {
+    "density_altitude": {
+      "definition": "Pressure altitude corrected for non-standard temperature; affects aircraft performance",
+      "formula": "DA = PA + [120 × (OAT - ISA)]",
+      "isa_temperature": "15°C at sea level, -2°C per 1000 feet",
+      "example": "PA 5000 ft, OAT 30°C; ISA at 5000 = 15 - (2×5) = 5°C; DA = 5000 + [120×(30-5)] = 5000 + 3000 = 8000 ft",
+      "effects": "Higher DA = reduced thrust, lift, propeller efficiency; longer takeoff roll, reduced climb rate, longer landing distance"
+    },
+    "weight_and_balance": {
+      "moment": "Weight × Arm (distance from datum)",
+      "cg_calculation": "Total Moment / Total Weight = CG location",
+      "example": {
+        "empty_weight": "1500 lbs at 85 inch arm = 127,500 in-lbs",
+        "pilot_passenger": "340 lbs at 37 inch arm = 12,580 in-lbs",
+        "fuel": "300 lbs at 95 inch arm = 28,500 in-lbs",
+        "baggage": "100 lbs at 123 inch arm = 12,300 in-lbs",
+        "total": "2240 lbs, moment 180,880 in-lbs, CG = 80.75 inches",
+        "check": "Verify CG within envelope limits from POH"
+      },
+      "fuel_burn_effect": "CG shifts as fuel burns; check CG at takeoff, landing, and worst-case fuel state"
+    },
+    "takeoff_distance": {
+      "factors": [
+        "Altitude (higher = longer)",
+        "Temperature (hotter = longer)",
+        "Weight (heavier = longer)",
+        "Wind (headwind decreases, tailwind increases)",
+        "Runway slope (uphill increases)",
+        "Runway surface (grass/wet increases 15-25%)"
+      ],
+      "rule_of_thumb": "10% increase in takeoff distance per 1000 ft altitude or 10°F above standard",
+      "consult_poh": "Performance charts account for all factors; always use POH data"
+    },
+    "climb_performance": {
+      "vx": "Best angle of climb; max altitude gain per horizontal distance; obstacle clearance",
+      "vy": "Best rate of climb; max altitude gain per time; normal climb after obstacle cleared",
+      "speeds_increase_with_altitude": "Vx and Vy increase with altitude; meet at absolute ceiling",
+      "cruise_climb": "Higher airspeed than Vy; better cooling and visibility; lower climb rate acceptable"
+    }
+  },
+  "weather_theory": {
+    "atmospheric_stability": {
+      "stable_air": {
+        "characteristics": "Stratiform clouds, smooth air, steady precipitation, poor visibility in haze/fog",
+        "lapse_rate": "Temperature decrease <2°C per 1000 ft (less than standard)",
+        "flight_conditions": "Smooth but poor visibility; ice in clouds; widespread low IFR possible"
+      },
+      "unstable_air": {
+        "characteristics": "Cumuliform clouds, turbulent air, showery precipitation, good visibility except in rain",
+        "lapse_rate": "Temperature decrease >2°C per 1000 ft (more than standard)",
+        "flight_conditions": "Bumpy but good visibility between showers; thunderstorms possible"
+      }
+    },
+    "fronts": {
+      "cold_front": {
+        "movement": "Fast moving (25-30 kts typical); steep slope",
+        "weather": "Narrow band of intense weather; thunderstorms, heavy precip, wind shift, pressure rise, temp drop",
+        "before_passage": "Winds from south/southwest; pressure falling; cumulus development",
+        "after_passage": "Winds shift to west/northwest; pressure rising; temperature drops; clearing",
+        "flying": "Avoid by 100+ miles if severe; fast passage (few hours); good conditions after"
+      },
+      "warm_front": {
+        "movement": "Slow moving (10-15 kts); gradual slope",
+        "weather": "Wide area of stratiform clouds; steady rain; low ceilings; poor visibility; can last 24+ hours",
+        "cloud_sequence": "Cirrus → Cirrostratus → Altostratus → Nimbostratus → Stratus",
+        "flying": "Avoid or plan IFR; widespread low IFR; ice likely in clouds; slow improvement after passage"
+      },
+      "stationary_front": "Cold/warm front stalled; weather similar to warm front; prolonged poor conditions"
+    },
+    "thunderstorms": {
+      "lifecycle": {
+        "cumulus_stage": "Updrafts only; building clouds; lasts ~15 minutes",
+        "mature_stage": "Updrafts and downdrafts; precipitation begins; lightning; hail; most dangerous; lasts 15-30 min",
+        "dissipating_stage": "Downdrafts dominate; weakening; anvil top spreads"
+      },
+      "hazards": {
+        "turbulence": "Severe to extreme; can exceed structural limits; avoid by 20 miles",
+        "hail": "Up to 5 inch diameter; can occur 20 miles from storm; avoid by altitude or distance",
+        "lightning": "Strikes aircraft; brief blindness; electrical damage; EMI",
+        "icing": "Severe clear and rime ice; avoid freezing level to -15°C in precip",
+        "wind_shear": "Microburst downdrafts 3000+ FPM; loss of 50+ knots airspeed possible; usually <2 mile diameter"
+      },
+      "avoidance": "Avoid by 20 statute miles; never fly under anvil; never penetrate; use onboard radar/ADS-B"
+    },
+    "icing": {
+      "structural_ice_types": {
+        "rime": "Rough, milky white; small droplets freeze instantly; easy to see; breaks off in chunks",
+        "clear": "Smooth, transparent; large droplets spread before freezing; hard to remove; very dangerous",
+        "mixed": "Combination; worst of both; irregular shape; very dangerous"
+      },
+      "conditions": "Visible moisture + temperature 0°C to -20°C; worst at -10°C to -15°C",
+      "escape": {
+        "altitude_change": "Descend to above-freezing or climb above clouds if tops known",
+        "heading_change": "180° turn if unable to climb/descend",
+        "airspeed": "Maintain higher than normal; ice increases weight and drag, decreases lift",
+        "flaps": "Avoid or minimize; ice can jam or alter effectiveness"
+      },
+      "fiki_aircraft": "Flight Into Known Icing certified; has anti-ice/deice systems; still avoid if able"
+    }
+  },
+  "airspace": {
+    "class_a": {
+      "definition": "18,000 MSL to FL600",
+      "requirements": "IFR clearance, Mode C transponder, two-way radio",
+      "no_vfr": "IFR only; all aircraft IFR separated"
+    },
+    "class_b": {
+      "definition": "Surface to 10,000 MSL around busiest airports (upside-down wedding cake)",
+      "requirements": "ATC clearance before entry, Mode C transponder, two-way radio, private pilot minimum (except student with endorsement)",
+      "speed_limit": "250 KIAS below 10,000 MSL",
+      "examples": "ATL, ORD, LAX, DFW, JFK"
+    },
+    "class_c": {
+      "definition": "Surface to 4000 AGL around towered airports with radar approach; 5 NM inner, 10 NM outer shelf",
+      "requirements": "Two-way radio communication established, Mode C transponder",
+      "services": "Sequencing to primary airport, traffic advisories, safety alerts",
+      "speed_limit": "200 KIAS within 4 NM and 2500 AGL"
+    },
+    "class_d": {
+      "definition": "Surface to 2500 AGL (typical) around towered airports",
+      "requirements": "Two-way radio communication established before entry",
+      "no_mode_c": "Transponder not required unless within Mode C veil (30 NM of Class B)",
+      "services": "Traffic advisories on workload-permitting basis; no separation except runway"
+    },
+    "class_e": {
+      "definition": "Controlled airspace not A, B, C, or D; typically 1200 AGL (some surface, 700 AGL)",
+      "requirements": "None for VFR; IFR clearance for IFR operations",
+      "common": "Most airways, extensions from Class D, surface Class E at non-towered fields with instrument approaches"
+    },
+    "class_g": {
+      "definition": "Uncontrolled airspace; surface to 1200 AGL (or 700 AGL where Class E is 700)",
+      "requirements": "None; no ATC services",
+      "relaxed_minimums": "1 mile visibility, clear of clouds (day, <1200 AGL); see VFR minimums above"
+    }
+  },
+  "emergencies": {
+    "engine_failure": {
+      "memory_items": "Airspeed (best glide), Best field, Checklist, Declare emergency",
+      "best_glide_speed": "Specific to aircraft (typically 65-75 KIAS for trainers); maximizes glide distance",
+      "glide_ratio": "Cessna 172: ~9:1; from 5000 AGL = ~8 miles glide distance (no wind)",
+      "restart_attempt": "Fuel selector, mixture rich, carb heat on, mags both, primer locked, throttle forward; if no restart, secure engine",
+      "forced_landing": "Aim for large, flat, smooth field; land into wind if possible; avoid wires, buildings, water"
+    },
+    "electrical_fire": {
+      "procedure": [
+        "Master switch OFF (cuts power to source)",
+        "Vents/Cabin heat CLOSED (don't feed fire)",
+        "Fire extinguisher if accessible and fire visible",
+        "Ventilate cabin after fire out",
+        "Land as soon as practicable (not necessarily immediate; assess situation)"
+      ]
+    },
+    "vacuum_failure": {
+      "affected_instruments": "Attitude indicator (AI), heading indicator (HI), turn coordinator (if vacuum-driven)",
+      "flyable_instruments": "Airspeed, altimeter, VSI, turn coordinator (electric), magnetic compass",
+      "vfr": "Fly using outside references",
+      "ifr": "Partial panel procedures; use turn coordinator + airspeed + altimeter; declare emergency; request no-gyro vectors"
+    }
+  }
+}

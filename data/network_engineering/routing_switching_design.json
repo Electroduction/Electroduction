@@ -1,0 +1,218 @@
+{
+  "_source": "Cisco CCNA/CCNP Official Cert Guides, Network Warrior, TCP/IP Illustrated",
+  "_note": "Long-tail network engineering. Routing protocols, VLANs, subnetting, troubleshooting, network design.",
+  "subnetting": {
+    "cidr_notation": {
+      "slash_notation": "/24 = 255.255.255.0 = 256 addresses (254 usable)",
+      "common_masks": {
+        "/8": "255.0.0.0 (Class A)",
+        "/16": "255.255.0.0 (Class B)",
+        "/24": "255.255.255.0 (Class C)",
+        "/30": "255.255.255.252 (4 addresses, 2 usable; point-to-point links)",
+        "/31": "255.255.255.254 (2 addresses, RFC 3021; point-to-point only, no network/broadcast)",
+        "/32": "255.255.255.255 (host route; single address)"
+      }
+    },
+    "calculation_formula": {
+      "hosts_per_subnet": "2^(32-prefix) - 2 (subtract network and broadcast)",
+      "number_of_subnets": "2^(bits borrowed from host portion)",
+      "example": "/26 borrows 2 bits from /24; 2^2 = 4 subnets of 64 addresses (62 usable) each"
+    },
+    "vlsm_example": {
+      "scenario": "192.168.1.0/24 network; need 100-host subnet, two 50-host subnets, three 10-host subnets",
+      "allocation": [
+        "100 hosts needs /25 (126 usable): 192.168.1.0/25",
+        "50 hosts needs /26 (62 usable): 192.168.1.128/26, 192.168.1.192/26",
+        "10 hosts needs /28 (14 usable): 192.168.1.224/28, 192.168.1.240/28, 192.168.1.64/28 (from remaining space)"
+      ]
+    },
+    "private_address_ranges": {
+      "class_a": "10.0.0.0/8 (10.0.0.0 - 10.255.255.255)",
+      "class_b": "172.16.0.0/12 (172.16.0.0 - 172.31.255.255)",
+      "class_c": "192.168.0.0/16 (192.168.0.0 - 192.168.255.255)"
+    }
+  },
+  "vlan_configuration": {
+    "vlan_basics": {
+      "purpose": "Logical segmentation; broadcast domain separation; security; QoS",
+      "default_vlan": "VLAN 1; management VLAN by default; cannot be deleted",
+      "range": "1-4094; 1-1005 normal, 1006-4094 extended",
+      "voice_vlan": "Separate VLAN for VoIP; QoS priority; typically VLAN 100 or similar"
+    },
+    "trunk_vs_access": {
+      "access_port": "Single VLAN; end device connection; untagged traffic",
+      "trunk_port": "Multiple VLANs; switch-to-switch or switch-to-router; tagged traffic (802.1Q)",
+      "native_vlan": "Untagged traffic on trunk; default VLAN 1; should match on both sides; security: change from VLAN 1"
+    },
+    "inter_vlan_routing": {
+      "router_on_a_stick": "Single router interface; subinterfaces for each VLAN; 802.1Q encapsulation",
+      "l3_switch_svi": "Switch Virtual Interface; VLAN interface on L3 switch; 'ip routing' enabled; most common modern approach",
+      "example_config": [
+        "interface GigabitEthernet0/0.10",
+        " encapsulation dot1Q 10",
+        " ip address 192.168.10.1 255.255.255.0",
+        "interface GigabitEthernet0/0.20",
+        " encapsulation dot1Q 20",
+        " ip address 192.168.20.1 255.255.255.0"
+      ]
+    },
+    "vtp": {
+      "modes": {
+        "server": "Create/delete/modify VLANs; propagate changes; default mode",
+        "client": "Cannot create VLANs; receive updates; typically access switches",
+        "transparent": "Can create local VLANs; forwards VTP advertisements; doesn't synchronize",
+        "off": "VTP disabled; doesn't forward advertisements; VTPv3 only"
+      },
+      "best_practice": "Use transparent or off; VTP can accidentally delete all VLANs (higher revision number wins)",
+      "vtp_pruning": "Prevents unnecessary flooding of traffic to switches without members in that VLAN"
+    }
+  },
+  "spanning_tree_protocol": {
+    "purpose": "Prevent Layer 2 loops; redundant links but only one active path at a time",
+    "stp_types": {
+      "802_1d": "Original STP; 50 second convergence (20 max age + 2×15 forward delay); slow",
+      "rstp_802_1w": "Rapid STP; <2 second convergence; backwards compatible; most common",
+      "pvst_plus": "Per-VLAN STP; Cisco proprietary; separate instance per VLAN; load balancing possible",
+      "mstp_802_1s": "Multiple STP; groups VLANs into instances; scales better than PVST+"
+    },
+    "port_states_rstp": {
+      "discarding": "Blocking; receives BPDUs only; doesn't forward",
+      "learning": "Populates MAC table; doesn't forward",
+      "forwarding": "Full operation; forwards frames",
+      "transition": "Discarding → Learning → Forwarding (under 3 seconds with RSTP)"
+    },
+    "port_roles": {
+      "root_port": "Best path to root bridge; one per non-root switch",
+      "designated_port": "Forwarding port on segment; sends BPDUs",
+      "alternate_port": "Backup path to root; replaces root port if fails",
+      "backup_port": "Redundant designated port on same segment"
+    },
+    "root_bridge_election": {
+      "criteria": "Lowest bridge ID (priority + MAC); priority default 32768",
+      "best_practice": "Manually set root; primary priority 24576, secondary 28672",
+      "command": "spanning-tree vlan 10 root primary (sets priority to 24576 or 4096 less than current root)"
+    },
+    "portfast": {
+      "purpose": "Bypass listening/learning on access ports; immediate forwarding",
+      "when": "End devices only (PCs, printers); never on trunk or ports to switches",
+      "bpduguard": "Shutdown port if BPDU received; prevents loops from rogue switches",
+      "config": "spanning-tree portfast default (global); spanning-tree portfast (interface)"
+    }
+  },
+  "routing_protocols": {
+    "ospf": {
+      "type": "Link-state; open standard; hierarchical with areas; fast convergence",
+      "metric": "Cost = 100,000,000 / bandwidth (bps); Gi = 1, 10Gi = 1 (need to adjust reference)",
+      "areas": "Backbone Area 0 required; all other areas connect to Area 0; reduces LSAs and routing table size",
+      "neighbor_requirements": [
+        "Same area ID",
+        "Same subnet",
+        "Same hello/dead timers (default 10/40)",
+        "Same authentication",
+        "Same stub area flag"
+      ],
+      "dr_bdr_election": {
+        "purpose": "Reduce adjacencies on multi-access networks (Ethernet); all routers adjacent to DR/BDR only",
+        "election": "Highest priority (default 1); tie-break on highest router ID",
+        "priority_0": "Never becomes DR/BDR; use on spokes in hub-and-spoke",
+        "preemption": "No preemption; DR remains until failure even if higher priority router added"
+      },
+      "lsa_types": {
+        "type_1": "Router LSA; all routers in area; router links",
+        "type_2": "Network LSA; DR on multi-access segments",
+        "type_3": "Summary LSA; ABR; routes between areas",
+        "type_5": "External LSA; ASBR; redistributed routes"
+      }
+    },
+    "eigrp": {
+      "type": "Advanced distance-vector; Cisco proprietary; fast convergence; unequal cost load balancing",
+      "metric": "Composite: bandwidth (min), delay (sum), reliability, load; default uses bandwidth + delay only",
+      "formula": "Metric = 256 × [(10^7 / min_BW) + (sum_delay / 10)]",
+      "feasible_successor": "Backup route; AD < FD of successor; immediate failover without query",
+      "stuck_in_active": "Router doesn't receive query replies; usually topology problem; check for network loops or asymmetric routing",
+      "k_values": "K1 (BW) = 1, K3 (delay) = 1, K2/K4/K5 = 0; must match for neighbor adjacency"
+    },
+    "bgp": {
+      "type": "Path-vector; EGP; internet routing; policy-based; slow convergence",
+      "as_numbers": "16-bit (1-65535) or 32-bit; public vs private (64512-65534)",
+      "ibgp_vs_ebgp": {
+        "ibgp": "Within same AS; full mesh or route reflectors; AD 200; doesn't change next-hop",
+        "ebgp": "Between different AS; AD 20; changes next-hop to self; TTL 1 (directly connected)"
+      },
+      "path_selection": {
+        "order": [
+          "Weight (Cisco only; highest wins; local to router)",
+          "Local Preference (highest; within AS)",
+          "Locally originated (self > eBGP > iBGP)",
+          "AS Path (shortest)",
+          "Origin (IGP > EGP > incomplete)",
+          "MED (lowest; between AS)",
+          "eBGP > iBGP",
+          "Lowest IGP metric to next-hop",
+          "Oldest route",
+          "Lowest router ID"
+        ]
+      },
+      "route_summarization": "Reduces table size; aggregate-address command; can suppress more-specifics"
+    }
+  },
+  "troubleshooting": {
+    "osi_model_approach": {
+      "layer_1": "Physical; check cables, link lights, interface status (show interface); errors, CRC errors indicate bad cable/duplex",
+      "layer_2": "Data Link; check MAC table, ARP, VLAN assignment, trunk; 'show mac address-table', 'show arp'",
+      "layer_3": "Network; check routing table, default gateway, IP addressing; 'show ip route', ping, traceroute",
+      "layer_4_7": "Transport+; check ACLs, NAT, firewall rules; 'show access-lists', 'show ip nat translations', telnet to port"
+    },
+    "common_issues": {
+      "duplex_mismatch": {
+        "symptoms": "Slow performance, CRC errors, late collisions",
+        "detection": "show interface - one side full, other half; or both auto but negotiated different",
+        "fix": "Hard-set both sides to full duplex or both to auto; never mix"
+      },
+      "vlan_mismatch": {
+        "symptoms": "No connectivity; same subnet but can't ping",
+        "detection": "show vlan brief; verify access port in correct VLAN",
+        "fix": "switchport access vlan <correct-vlan>"
+      },
+      "routing_loop": {
+        "symptoms": "Packets loop, TTL expires, high CPU, routing table flapping",
+        "detection": "traceroute shows repeated hops; show ip route shows route flapping",
+        "fix": "Correct metrics, add route filters, implement split horizon/poison reverse"
+      },
+      "asymmetric_routing": {
+        "symptoms": "Traffic works one way but not return; stateful firewall drops return",
+        "detection": "Packet capture on both sides; see outbound but no inbound reply",
+        "fix": "Ensure both directions use same path or firewall allows asymmetric flows"
+      }
+    },
+    "useful_commands": {
+      "show_ip_interface_brief": "Quick status of all interfaces; IP, method, status, protocol",
+      "show_ip_route": "Routing table; codes (C=connected, S=static, O=OSPF, D=EIGRP, B=BGP)",
+      "show_cdp_neighbors": "Cisco Discovery Protocol; see directly connected Cisco devices",
+      "show_vlan_brief": "VLANs and assigned ports",
+      "show_spanning_tree": "STP status, root bridge, port roles/states",
+      "show_ip_ospf_neighbor": "OSPF adjacencies; state should be FULL or 2WAY",
+      "show_interfaces_status": "Port status, VLAN, duplex, speed; err-disabled",
+      "debug_ip_packet": "Real-time packet flow; use ACL to limit; 'debug ip packet <acl>'; CAUTION: high CPU"
+    }
+  },
+  "network_design": {
+    "three_tier_hierarchy": {
+      "core_layer": "High-speed backbone; redundancy; no packet manipulation; L3 switching",
+      "distribution_layer": "Routing between VLANs; policy enforcement; aggregation point; L3 switches",
+      "access_layer": "End user connection; port security; QoS; PoE; L2 switches",
+      "collapsed_core": "Combine core and distribution for small networks; cost savings"
+    },
+    "redundancy": {
+      "hsrp_vrrp": "First Hop Redundancy Protocol; virtual IP/MAC; active/standby gateways; HSRP Cisco, VRRP standard",
+      "etherchannel": "Bundle multiple links as one logical link; LACP (802.3ad standard) or PAgP (Cisco); load balances traffic",
+      "dual_homing": "Servers connected to two switches; NIC teaming; active/active or active/passive"
+    },
+    "qos": {
+      "classification": "Mark packets (DSCP, CoS); trust or rewrite; at network edge",
+      "queuing": "Priority queue for voice (LLQ); WFQ or CBWFQ for data",
+      "policing_shaping": "Police drops excess; shaping buffers and sends; shaping preferred for TCP",
+      "voice_requirements": "Latency <150ms, jitter <30ms, loss <1%; EF (DSCP 46) marking; priority queue"
+    }
+  }
+}

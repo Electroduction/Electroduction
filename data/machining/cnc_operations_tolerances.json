@@ -1,0 +1,233 @@
+{
+  "_source": "Machinery's Handbook, CNC Programming Handbook, NIST tolerances, Shop practices",
+  "_note": "Long-tail machining knowledge. Speeds/feeds calculations, GD&T, tool selection, tolerances, setup procedures.",
+  "speeds_and_feeds": {
+    "sfm_calculation": {
+      "formula": "SFM = (RPM × Diameter × π) / 12",
+      "reverse": "RPM = (SFM × 12) / (Diameter × π) = (SFM × 3.82) / Diameter",
+      "example": "1\" end mill, 400 SFM → RPM = (400 × 3.82) / 1 = 1528 RPM"
+    },
+    "recommended_sfm": {
+      "mild_steel": {
+        "hss": "50-100 SFM",
+        "carbide": "400-600 SFM",
+        "coated_carbide": "600-800 SFM"
+      },
+      "aluminum": {
+        "hss": "200-300 SFM",
+        "carbide": "800-1200 SFM"
+      },
+      "stainless_steel_304": {
+        "hss": "40-60 SFM",
+        "carbide": "250-400 SFM"
+      },
+      "cast_iron": {
+        "hss": "50-80 SFM",
+        "carbide": "400-600 SFM"
+      },
+      "titanium": {
+        "carbide": "200-350 SFM",
+        "note": "Use flood coolant; titanium work-hardens and catches fire easily"
+      }
+    },
+    "feed_rates": {
+      "ipt_chip_load": "Inches per tooth; how much material each tooth removes",
+      "formula": "Feed rate (IPM) = RPM × number of teeth × chip load",
+      "end_mill_chip_loads": {
+        "hss_steel": "0.001-0.003 IPT",
+        "carbide_steel": "0.003-0.008 IPT",
+        "aluminum": "0.005-0.015 IPT (can be aggressive)"
+      },
+      "example": "4-flute 1/2\" carbide end mill in aluminum, 3000 RPM, 0.010 IPT → Feed = 3000 × 4 × 0.010 = 120 IPM"
+    },
+    "depth_of_cut": {
+      "roughing": "50-75% of cutter diameter radial; full depth axial (within reason)",
+      "finishing": "10-20% radial; 0.010-0.030\" axial",
+      "slotting": "50% cutter diameter max width; full engagement is hardest on tool; reduce feed 50%",
+      "climb_vs_conventional": "Climb milling (down milling) preferred for carbide; cleaner finish, longer tool life; conventional for HSS or loose machines"
+    }
+  },
+  "geometric_dimensioning_and_tolerancing": {
+    "datum_reference_frame": {
+      "primary_datum": "3 points of contact; constrains 3 degrees of freedom (typically a plane)",
+      "secondary_datum": "2 points of contact; constrains 2 DOF (typically a line perpendicular to primary)",
+      "tertiary_datum": "1 point of contact; constrains 1 DOF (rotation about secondary)",
+      "order_matters": "A-B-C is different from A-C-B; datum order defines how part is fixtured"
+    },
+    "tolerance_types": {
+      "form_controls": {
+        "flatness": "Surface must lie between two parallel planes separated by tolerance; no datum needed",
+        "straightness": "Line elements must lie between two parallel lines; no datum; used on cylindrical features",
+        "circularity_roundness": "Cross-section must lie between two concentric circles separated by tolerance; no datum",
+        "cylindricity": "Surface must lie between two coaxial cylinders; combines roundness, straightness, taper; no datum"
+      },
+      "orientation_controls": {
+        "perpendicularity": "Feature must be 90° to datum within tolerance zone; requires datum",
+        "parallelism": "Feature must be parallel to datum within tolerance zone",
+        "angularity": "Feature at specified angle to datum; tolerance zone defined by two parallel planes"
+      },
+      "location_controls": {
+        "position": "Most common; defines true position; often uses MMC modifier for bonus tolerance",
+        "concentricity": "Median points of feature must lie within cylindrical tolerance zone centered on datum",
+        "symmetry": "Median points equidistant from datum plane"
+      },
+      "profile_controls": {
+        "profile_of_a_line": "2D tolerance zone; controls form of a cross-section",
+        "profile_of_a_surface": "3D tolerance zone; controls entire surface"
+      },
+      "runout_controls": {
+        "circular_runout": "Tolerance at each circular element when rotated about datum axis; like circularity + position",
+        "total_runout": "Tolerance for entire surface when rotated; like cylindricity + position; tighter control than circular runout"
+      }
+    },
+    "material_condition_modifiers": {
+      "mmc": "Maximum Material Condition; smallest hole or largest shaft; adds bonus tolerance as feature deviates from MMC",
+      "lmc": "Least Material Condition; largest hole or smallest shaft; less common",
+      "rfs": "Regardless of Feature Size; no bonus tolerance; default if not specified",
+      "example": "Hole Ø0.500 ±0.005, position Ø0.010 at MMC; at MMC (Ø0.495), position Ø0.010; at Ø0.505, position Ø0.020 (gains 0.010 bonus)"
+    }
+  },
+  "tolerances_and_fits": {
+    "standard_tolerances": {
+      "general_tolerances": ".X = ±0.1\", .XX = ±0.01\", .XXX = ±0.005\" (typical shop standard unless specified)",
+      "it_grades": "International Tolerance Grades; IT01 (tightest) to IT16 (loosest); IT7-IT9 common for machining",
+      "fractional": "±1/64\" typical for fractional dimensions unless otherwise specified"
+    },
+    "hole_basis_fits": {
+      "clearance_fits": {
+        "rc1_close_running": "0.0004-0.0016\" clearance; precision running fits",
+        "rc4_sliding": "0.0010-0.0040\" clearance; sliding mechanism parts",
+        "rc9_loose_running": "0.0050-0.0150\" clearance; large clearance, rough work"
+      },
+      "transition_fits": {
+        "lt1_locational_transition": "-0.0002 to +0.0008\" (can be slight interference or clearance); location of parts"
+      },
+      "interference_fits": {
+        "fn1_light_drive": "0.0003-0.0012\" interference; light press fits",
+        "fn4_medium_drive": "0.0014-0.0034\" interference; normal press fits",
+        "fn5_heavy_drive": "0.0020-0.0050\" interference; permanent assembly"
+      }
+    },
+    "surface_finish": {
+      "ra_microinches": {
+        "32_ra": "Rough machining; visible tool marks",
+        "16_ra": "Standard machining; slight tool marks",
+        "8_ra": "Fine machining; smooth to touch",
+        "4_ra": "Precision grinding; very smooth",
+        "1_ra": "Lapping/honing; mirror-like"
+      },
+      "achieving_finish": "Increase SFM, reduce feed, sharper tool, smaller nose radius, coolant, finer grit (grinding)"
+    }
+  },
+  "tooling": {
+    "end_mill_types": {
+      "square_end": "Flat bottom; most common; 90° corners",
+      "ball_end": "Hemispherical end; 3D contours, fillets",
+      "corner_radius": "Rounded corners; stronger than square; common in roughing",
+      "roughing_hog": "Serrated flutes; break chips; high material removal",
+      "finishing": "4-6 flutes; fine finish; lower chip load",
+      "high_helix": "45-60° helix; better chip evacuation; aluminum"
+    },
+    "insert_grades": {
+      "carbide_grades": {
+        "c1_c4": "Hardest, most wear resistant; cast iron, hard materials; brittle",
+        "c5_c8": "General purpose; steel, stainless; balanced toughness and wear resistance",
+        "c9_c12": "Toughest; interrupted cuts, roughing; less wear resistant"
+      },
+      "coatings": {
+        "tin": "Titanium Nitride; gold color; general purpose; 2-3× tool life",
+        "tialn": "Titanium Aluminum Nitride; purple/black; high heat; dry machining",
+        "altin": "Aluminum Titanium Nitride; black/gray; very high heat; hardened steel"
+      }
+    },
+    "tool_holding": {
+      "collets": "ER collets most common; 1 mm range per collet; 0.0003-0.0005\" TIR typical",
+      "end_mill_holders": "Set screw (cheap, low TIR), weldon (better), hydraulic (best, 0.0001\" TIR, expensive)",
+      "toolholder_taper": "CAT40, BT40, HSK63; taper holds tool; drawbar pulls tight; clean taper and spindle face critical",
+      "runout": "Check with indicator; >0.001\" TIR causes poor finish, premature wear, broken tools"
+    }
+  },
+  "cnc_programming": {
+    "g_code_fundamentals": {
+      "g00": "Rapid positioning; non-cutting move; machine max speed; use for tool changes, rapid traverse",
+      "g01": "Linear interpolation; cutting move; feed rate applied; most common cutting code",
+      "g02": "Circular interpolation CW; I, J, K or R format; arcs and circles",
+      "g03": "Circular interpolation CCW",
+      "g17_g18_g19": "Plane selection; G17 XY (most common), G18 XZ (lathe), G19 YZ",
+      "g20_g21": "G20 inch mode; G21 metric mode; set at program start",
+      "g28": "Return to home/reference position; often used at end of program",
+      "g40_g41_g42": "Cutter comp off/left/right; compensates for cutter diameter; uses D offset",
+      "g43": "Tool length compensation; uses H offset; accounts for different tool lengths",
+      "g54_g59": "Work coordinate systems; G54 most common; sets part zero",
+      "g80_g89": "Canned cycles; drilling, tapping, boring; G80 cancels cycle",
+      "g90_g91": "Absolute vs incremental positioning; G90 from part zero, G91 from current position"
+    },
+    "m_codes": {
+      "m00": "Program stop; manual restart required",
+      "m01": "Optional stop; only if optional stop button enabled",
+      "m02": "Program end; spindle/coolant off; often replaced by M30",
+      "m03_m04_m05": "Spindle on CW/CCW/off; S word sets speed",
+      "m06": "Tool change; T word calls tool; machine goes to change position",
+      "m08_m09": "Coolant on/off; flood coolant",
+      "m30": "Program end; reset to start; spindle/coolant off; preferred over M02"
+    },
+    "work_offsets": {
+      "setting_g54": "Touch off on part surface; zero Z; set X and Y to part zero location",
+      "multiple_offsets": "G54-G59; up to 6 (or more) work coordinate systems; useful for multiple parts or fixtures",
+      "tool_length_offset": "Touch off on gage or part surface; store in H offset; called with G43 H1 (for T1)"
+    },
+    "programming_example": {
+      "simple_pocket": [
+        "G17 G20 G40 G49 G80 G90 (safety line)",
+        "T1 M06 (call tool 1, change tool)",
+        "G54 (work offset 1)",
+        "S2000 M03 (spindle 2000 RPM CW)",
+        "G00 X0 Y0 (rapid to position)",
+        "G43 H1 Z0.1 (tool length comp, rapid to clearance)",
+        "M08 (coolant on)",
+        "G01 Z-0.25 F10. (plunge to depth, 10 IPM)",
+        "X1. F20. (cut to X1, 20 IPM)",
+        "Y1. (cut to Y1)",
+        "X0 (cut to X0)",
+        "Y0 (cut to Y0, pocket complete)",
+        "G00 Z0.1 (retract to clearance)",
+        "M09 (coolant off)",
+        "G28 Z0 M05 (home Z, spindle off)",
+        "M30 (program end)"
+      ]
+    }
+  },
+  "machining_troubleshooting": {
+    "chatter": {
+      "causes": "Tool stickout too long, dull tool, incorrect speeds/feeds, part not rigid",
+      "solutions": [
+        "Reduce stickout; use shortest tool possible",
+        "Increase/decrease RPM to find sweet spot; avoid harmonic frequencies",
+        "Reduce depth of cut or width of cut",
+        "Sharpen or replace tool",
+        "Improve work holding; add support"
+      ],
+      "surface_finish": "Chatter leaves wave pattern; perpendicular to cutting direction"
+    },
+    "poor_surface_finish": {
+      "causes": "Dull tool, incorrect feeds/speeds, built-up edge, rubbing",
+      "solutions": [
+        "Replace or sharpen tool",
+        "Increase SFM, decrease feed rate",
+        "Use coolant to prevent built-up edge (especially aluminum)",
+        "Check for tool deflection; reduce overhang",
+        "Use climb milling instead of conventional"
+      ]
+    },
+    "broken_tools": {
+      "causes": "Feed rate too high, depth of cut too aggressive, chip packing, tool runout",
+      "prevention": [
+        "Start conservative; increase feed gradually",
+        "Use proper chip load for material and tooling",
+        "Ensure good chip evacuation; use air or coolant",
+        "Check runout; should be <0.001\" for end mills",
+        "Peck drill deep holes; don't drill full depth at once"
+      ]
+    }
+  }
+}

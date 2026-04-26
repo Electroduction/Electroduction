@@ -186,6 +186,46 @@
         "innovation_frameworks": {"weight": 0.60, "algorithms": ["latent_interpolation"]},
         "story_archetypes_extended": {"weight": 0.58, "algorithms": ["latent_interpolation", "pcg_logic_tables"]}
       }
+    },
+    "aviation": {
+      "weight": 0.93,
+      "priority": "critical",
+      "rationale": "Flight safety; regulatory compliance FAR/AIM; life-critical decisions",
+      "databases": {
+        "flight_procedures_regulations": {"weight": 0.95, "algorithms": ["cot_verification"]}
+      }
+    },
+    "nursing": {
+      "weight": 0.94,
+      "priority": "critical",
+      "rationale": "Patient safety; medication administration; critical lab value interpretation",
+      "databases": {
+        "patient_care_assessment": {"weight": 0.96, "algorithms": ["cot_verification", "weak_to_strong"]}
+      }
+    },
+    "machining": {
+      "weight": 0.81,
+      "priority": "high",
+      "rationale": "Safety (rotating machinery); precision requirements; cost of errors high",
+      "databases": {
+        "cnc_operations_tolerances": {"weight": 0.85, "algorithms": ["weak_to_strong"]}
+      }
+    },
+    "network_engineering": {
+      "weight": 0.84,
+      "priority": "high",
+      "rationale": "Business-critical infrastructure; security implications; uptime requirements",
+      "databases": {
+        "routing_switching_design": {"weight": 0.87, "algorithms": ["anomaly_to_signature", "weak_to_strong"]}
+      }
+    },
+    "solar_energy": {
+      "weight": 0.89,
+      "priority": "high",
+      "rationale": "Electrical safety; NEC compliance; fire hazards; system performance impacts",
+      "databases": {
+        "pv_system_design_codes": {"weight": 0.92, "algorithms": ["cot_verification"]}
+      }
     }
   },
 
