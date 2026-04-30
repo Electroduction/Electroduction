@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Electrical Trade Research Portal - Wiring, Circuits, NEC Codes, Troubleshooting">
+    <title>Electrical Trade Portal - Research Aggregator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-portal="construction">
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-icon">⚡</div>
+                    <h1>Electrical Trade</h1>
+                </div>
+            </div>
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Navigation</div>
+                    <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>Dashboard</span></a>
+                    <a href="#feeds" class="nav-item"><span class="nav-item-icon">📡</span><span>Trade News</span><span class="nav-item-badge">Live</span></a>
+                    <a href="#guide" class="nav-item active"><span class="nav-item-icon">📖</span><span>Electrical Guide</span></a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Related Trades</div>
+                    <a href="plumbing.html" class="nav-item"><span class="nav-item-icon">🔧</span><span>Plumbing</span></a>
+                    <a href="hvac.html" class="nav-item"><span class="nav-item-icon">❄️</span><span>HVAC</span></a>
+                    <a href="carpentry.html" class="nav-item"><span class="nav-item-icon">🪚</span><span>Carpentry</span></a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div class="page-header-top">
+                    <div>
+                        <h1 class="page-title">Electrical Trade</h1>
+                        <p class="page-subtitle">From basic circuits to advanced electrical systems</p>
+                    </div>
+                </div>
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" placeholder="Search electrical topics, codes, troubleshooting...">
+                </div>
+                <div class="search-results"></div>
+            </header>
+
+            <aside class="guide-index">
+                <div class="guide-index-header">
+                    <h3 class="guide-index-title">📑 Guide Index</h3>
+                    <button class="guide-index-toggle">−</button>
+                </div>
+                <ul class="guide-index-list"></ul>
+                <div class="guide-progress">
+                    <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
+                    <p class="progress-text">Start reading to track progress</p>
+                </div>
+            </aside>
+
+            <section id="feeds" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">📡</div>
+                    <h2 class="guide-section-title">Electrical Industry News & Updates</h2>
+                </div>
+                <div class="guide-content">
+                    <div class="rss-feed-header">
+                        <p>Latest electrical trade news, code updates, and product innovations</p>
+                        <div class="rss-feed-actions">
+                            <button class="rss-refresh-btn" onclick="app.refreshFeeds()">🔄 Refresh</button>
+                        </div>
+                    </div>
+                    <div class="rss-feed-list">
+                        <div class="loading"><div class="loading-spinner"></div><p class="loading-text">Loading electrical feeds...</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-0" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">1</div>
+                    <h2 class="guide-section-title">Electrical Fundamentals</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Electricity is the flow of <span class="glossary-term" data-term="electrons">electrons</span> through a conductor. Understanding basic electrical theory is essential for safe and effective electrical work.</p>
+
+                    <h3>Ohm's Law</h3>
+                    <p><span class="glossary-term" data-term="ohms-law">Ohm's Law</span> is the fundamental relationship between voltage, current, and resistance:</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header"><span class="code-block-lang">Ohm's Law Formulas</span></div>
+                        <pre><code>V = I × R    (Voltage = Current × Resistance)
+I = V / R    (Current = Voltage / Resistance)
+R = V / I    (Resistance = Voltage / Current)
+
+Where:
+  V = Voltage (Volts, V)
+  I = Current (Amperes, A)
+  R = Resistance (Ohms, Ω)
+
+Example:
+  A circuit has 120V and 10Ω resistance
+  I = 120V / 10Ω = 12 Amps</code></pre>
+                    </div>
+
+                    <h3>Electrical Units</h3>
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="voltage">Voltage (V)</span></strong> - Electrical pressure or potential difference</li>
+                        <li><strong><span class="glossary-term" data-term="amperage">Amperage (A)</span></strong> - Rate of electron flow (current)</li>
+                        <li><strong><span class="glossary-term" data-term="resistance">Resistance (Ω)</span></strong> - Opposition to current flow</li>
+                        <li><strong><span class="glossary-term" data-term="wattage">Wattage (W)</span></strong> - Power (W = V × A)</li>
+                    </ul>
+
+                    <h3>Types of Current</h3>
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="dc">DC (Direct Current)</span></strong> - Current flows in one direction (batteries, solar panels)</li>
+                        <li><strong><span class="glossary-term" data-term="ac">AC (Alternating Current)</span></strong> - Current reverses direction cyclically (household power, 60Hz in US)</li>
+                    </ul>
+
+                    <div class="info-box danger">
+                        <div class="info-box-icon">🚨</div>
+                        <div class="info-box-content">
+                            <h4>Safety First</h4>
+                            <p>Electricity can kill. Always de-energize circuits before working on them. Use proper PPE. Test circuits with a voltmeter before touching. When in doubt, call a licensed electrician.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-1" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">2</div>
+                    <h2 class="guide-section-title">Electrical Circuits</h2>
+                </div>
+                <div class="guide-content">
+                    <p>An <span class="glossary-term" data-term="circuit">electrical circuit</span> is a complete path for current to flow from the source, through the load, and back to the source.</p>
+
+                    <h3 id="section-1-sub-0">Circuit Types</h3>
+
+                    <h4>Series Circuits</h4>
+                    <p>Components connected in a single path. Current is the same through all components.</p>
+                    <ul>
+                        <li>Total resistance = R1 + R2 + R3...</li>
+                        <li>If one component fails, circuit breaks</li>
+                        <li>Voltage divides among components</li>
+                    </ul>
+
+                    <h4>Parallel Circuits</h4>
+                    <p>Components connected across each other. Voltage is the same across all branches.</p>
+                    <ul>
+                        <li>Total resistance: 1/Rt = 1/R1 + 1/R2 + 1/R3...</li>
+                        <li>If one branch fails, others continue</li>
+                        <li>Current divides among branches</li>
+                    </ul>
+
+                    <h3 id="section-1-sub-1">Circuit Components</h3>
+
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="breaker">Circuit Breaker</span></strong> - Overcurrent protection device, can be reset</li>
+                        <li><strong><span class="glossary-term" data-term="fuse">Fuse</span></strong> - Overcurrent protection, must be replaced</li>
+                        <li><strong><span class="glossary-term" data-term="gfci">GFCI</span></strong> - Ground Fault Circuit Interrupter, prevents shock</li>
+                        <li><strong><span class="glossary-term" data-term="afci">AFCI</span></strong> - Arc Fault Circuit Interrupter, prevents fires</li>
+                        <li><strong>Switch</strong> - Controls circuit on/off</li>
+                        <li><strong>Receptacle (Outlet)</strong> - Connection point for plug-in devices</li>
+                    </ul>
+
+                    <h3 id="section-1-sub-2">Wire Sizing</h3>
+                    <p><span class="glossary-term" data-term="awg">AWG (American Wire Gauge)</span> - Lower number = larger wire. Size based on circuit amperage:</p>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr><th>AWG</th><th>Typical Ampacity</th><th>Common Uses</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>14</td><td>15A</td><td>Lighting circuits</td></tr>
+                                <tr><td>12</td><td>20A</td><td>General receptacles, kitchen</td></tr>
+                                <tr><td>10</td><td>30A</td><td>Dryers, water heaters</td></tr>
+                                <tr><td>8</td><td>40A</td><td>Ranges, large appliances</td></tr>
+                                <tr><td>6</td><td>55A</td><td>Sub-panels, AC units</td></tr>
+                                <tr><td>4</td><td>70A</td><td>Large sub-panels</td></tr>
+                                <tr><td>2</td><td>95A</td><td>Main service entrance</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-2" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">3</div>
+                    <h2 class="guide-section-title">National Electrical Code (NEC)</h2>
+                </div>
+                <div class="guide-content">
+                    <p>The <span class="glossary-term" data-term="nec">NEC (National Electrical Code)</span> is the standard for safe electrical installation in the United States. Updated every three years (2020, 2023, 2026...).</p>
+
+                    <h3 id="section-2-sub-0">Key NEC Articles</h3>
+                    <ul>
+                        <li><strong>Article 100</strong> - Definitions</li>
+                        <li><strong>Article 110</strong> - Requirements for electrical installations</li>
+                        <li><strong>Article 210</strong> - Branch circuits</li>
+                        <li><strong>Article 220</strong> - Load calculations</li>
+                        <li><strong>Article 240</strong> - Overcurrent protection</li>
+                        <li><strong>Article 250</strong> - Grounding and bonding</li>
+                        <li><strong>Article 300</strong> - Wiring methods</li>
+                        <li><strong>Article 310</strong> - Conductors</li>
+                        <li><strong>Article 334</strong> - NM cable (Romex)</li>
+                        <li><strong>Article 404</strong> - Switches</li>
+                        <li><strong>Article 406</strong> - Receptacles</li>
+                        <li><strong>Article 408</strong> - Panels</li>
+                        <li><strong>Article 680</strong> - Swimming pools</li>
+                    </ul>
+
+                    <h3 id="section-2-sub-1">GFCI Requirements (NEC 210.8)</h3>
+                    <p>GFCI protection required in:</p>
+                    <ul>
+                        <li>Bathrooms</li>
+                        <li>Kitchens (within 6 feet of sink)</li>
+                        <li>Garages and accessory buildings</li>
+                        <li>Outdoors</li>
+                        <li>Crawl spaces and unfinished basements</li>
+                        <li>Laundry areas</li>
+                        <li>Within 6 feet of sinks (NEC 2020+)</li>
+                    </ul>
+
+                    <h3 id="section-2-sub-2">AFCI Requirements (NEC 210.12)</h3>
+                    <p>AFCI protection required in:</p>
+                    <ul>
+                        <li>Bedrooms</li>
+                        <li>Living rooms, parlors, dens</li>
+                        <li>Dining rooms</li>
+                        <li>Hallways, closets</li>
+                        <li>Most dwelling unit locations (NEC 2020+)</li>
+                    </ul>
+
+                    <div class="info-box warning">
+                        <div class="info-box-icon">⚠️</div>
+                        <div class="info-box-content">
+                            <h4>Local Amendments</h4>
+                            <p>Many jurisdictions adopt the NEC with local amendments. Always check local codes and obtain required permits. The Authority Having Jurisdiction (AHJ) has final say.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-3" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">4</div>
+                    <h2 class="guide-section-title">Residential Wiring</h2>
+                </div>
+                <div class="guide-content">
+                    <h3>Service Entrance</h3>
+                    <p>The <span class="glossary-term" data-term="service-entrance">service entrance</span> is where utility power enters the building:</p>
+                    <ul>
+                        <li><strong>Service drop</strong> - Overhead wires from utility</li>
+                        <li><strong>Service lateral</strong> - Underground from utility</li>
+                        <li><strong>Meter base</strong> - Utility metering point</li>
+                        <li><strong>Main panel</strong> - Distribution point with main breaker</li>
+                    </ul>
+
+                    <h3>Common Residential Circuits</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr><th>Circuit</th><th>Voltage</th><th>Breaker</th><th>Wire</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Lighting</td><td>120V</td><td>15A</td><td>14 AWG</td></tr>
+                                <tr><td>General receptacles</td><td>120V</td><td>20A</td><td>12 AWG</td></tr>
+                                <tr><td>Kitchen/bath receptacles</td><td>120V</td><td>20A</td><td>12 AWG</td></tr>
+                                <tr><td>Electric dryer</td><td>240V</td><td>30A</td><td>10 AWG</td></tr>
+                                <tr><td>Electric range</td><td>240V</td><td>50A</td><td>6 AWG</td></tr>
+                                <tr><td>Water heater</td><td>240V</td><td>30A</td><td>10 AWG</td></tr>
+                                <tr><td>Central AC</td><td>240V</td><td>Varies</td><td>Per nameplate</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Wiring Methods</h3>
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="nm-cable">NM Cable (Romex)</span></strong> - Common for residential, contains hot, neutral, ground</li>
+                        <li><strong>MC Cable</strong> - Metal-clad, more robust</li>
+                        <li><strong>EMT</strong> - Electrical metallic tubing (conduit)</li>
+                        <li><strong>PVC</strong> - Plastic conduit for wet locations</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section-4" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">5</div>
+                    <h2 class="guide-section-title">Troubleshooting</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Systematic troubleshooting finds electrical problems efficiently and safely.</p>
+
+                    <h3>Essential Test Equipment</h3>
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="multimeter">Multimeter</span></strong> - Measures voltage, current, resistance</li>
+                        <li><strong>Non-contact voltage tester</strong> - Detects live circuits safely</li>
+                        <li><strong>Clamp meter</strong> - Measures current without breaking circuit</li>
+                        <li><strong>Circuit tracer</strong> - Identifies which breaker controls a circuit</li>
+                        <li><strong>Receptacle tester</strong> - Quick outlet check (open ground, reversed polarity)</li>
+                    </ul>
+
+                    <h3>Common Problems & Solutions</h3>
+
+                    <h4>Dead Outlet</h4>
+                    <ol>
+                        <li>Check breaker - reset if tripped</li>
+                        <li>Check GFCI - may be on same circuit</li>
+                        <li>Test outlet with voltmeter</li>
+                        <li>Check connections at outlet</li>
+                        <li>Check upstream outlets</li>
+                    </ol>
+
+                    <h4>Tripping Breaker</h4>
+                    <ul>
+                        <li><strong>Overload</strong> - Too many devices on circuit</li>
+                        <li><strong>Short circuit</strong> - Hot touching neutral or ground</li>
+                        <li><strong>Ground fault</strong> - Current leaking to ground</li>
+                        <li><strong>Arc fault</strong> - Damaged wire arcing</li>
+                    </ul>
+
+                    <h4>Flickering Lights</h4>
+                    <ul>
+                        <li>Loose bulb or fixture connection</li>
+                        <li>Loose wire connections</li>
+                        <li>Bad breaker or main lug connection</li>
+                        <li>Utility issue (multiple fixtures)</li>
+                    </ul>
+
+                    <div class="info-box tip">
+                        <div class="info-box-icon">✅</div>
+                        <div class="info-box-content">
+                            <h4>Troubleshooting Approach</h4>
+                            <p>Start at the load, work back to the source. Verify presence or absence of voltage at each point. Use process of elimination to isolate the problem.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-5" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">6</div>
+                    <h2 class="guide-section-title">Commercial & Industrial Systems</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Commercial and industrial electrical systems are more complex than residential.</p>
+
+                    <h3>Three-Phase Power</h3>
+                    <p><span class="glossary-term" data-term="three-phase">Three-phase power</span> delivers more power efficiently for large loads:</p>
+                    <ul>
+                        <li><strong>208V 3-phase</strong> - Common in commercial buildings</li>
+                        <li><strong>480V 3-phase</strong> - Industrial motors, large HVAC</li>
+                        <li><strong>Wye (Y) configuration</strong> - Neutral available</li>
+                        <li><strong>Delta configuration</strong> - No neutral, higher voltage</li>
+                    </ul>
+
+                    <h3>Motor Controls</h3>
+                    <ul>
+                        <li><strong>Starters</strong> - Control motor starting/stopping</li>
+                        <li><strong>Contactors</strong> - Heavy-duty switching</li>
+                        <li><strong>VFDs</strong> - Variable Frequency Drives for speed control</li>
+                        <li><strong>Overloads</strong> - Thermal motor protection</li>
+                    </ul>
+
+                    <h3>Lighting Systems</h3>
+                    <ul>
+                        <li><strong>LED</strong> - Energy efficient, long life</li>
+                        <li><strong>Emergency lighting</strong> - Battery backup required</li>
+                        <li><strong>Exit signs</strong> - Code required locations</li>
+                        <li><strong>Lighting controls</strong> - Occupancy sensors, photocells, timers</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section-6" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">7</div>
+                    <h2 class="guide-section-title">Safety & Best Practices</h2>
+                </div>
+                <div class="guide-content">
+                    <h3>Lockout/Tagout (LOTO)</h3>
+                    <p><span class="glossary-term" data-term="loto">LOTO</span> procedures prevent accidental energization:</p>
+                    <ol>
+                        <li>Notify affected personnel</li>
+                        <li>Identify energy sources</li>
+                        <li>Isolate and de-energize</li>
+                        <li>Apply lock and tag</li>
+                        <li>Verify zero energy state</li>
+                        <li>Perform work</li>
+                        <li>Remove locks when complete</li>
+                    </ol>
+
+                    <h3>Personal Protective Equipment</h3>
+                    <ul>
+                        <li>Safety glasses</li>
+                        <li>Insulated gloves (rated for voltage)</li>
+                        <li>Arc-flash rated clothing</li>
+                        <li>Hard hat (where required)</li>
+                        <li>Insulated tools</li>
+                    </ul>
+
+                    <h3>Arc Flash Safety</h3>
+                    <p>Arc flash can cause severe burns. Higher voltage = greater risk. Always:</p>
+                    <ul>
+                        <li>Check arc flash labels on equipment</li>
+                        <li>Wear appropriate PPE for the hazard level</li>
+                        <li>Maintain safe working distance</li>
+                        <li>De-energize when possible</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section-7" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">8</div>
+                    <h2 class="guide-section-title">Licensing & Career Development</h2>
+                </div>
+                <div class="guide-content">
+                    <h3>Electrician License Levels</h3>
+                    <ul>
+                        <li><strong>Apprentice</strong> - Learning under supervision (typically 4 years)</li>
+                        <li><strong>Journeyman</strong> - Completed apprenticeship, licensed to work independently</li>
+                        <li><strong>Master Electrician</strong> - Advanced license, can supervise and pull permits</li>
+                        <li><strong>Electrical Contractor</strong> - Business license to bid and perform work</li>
+                    </ul>
+
+                    <h3>Apprenticeship Programs</h3>
+                    <ul>
+                        <li><strong>IBEW/NECA</strong> - Union apprenticeship programs</li>
+                        <li><strong>ABC</strong> - Associated Builders and Contractors programs</li>
+                        <li><strong>IEC</strong> - Independent Electrical Contractors programs</li>
+                        <li><strong>Community colleges</strong> - Technical training programs</li>
+                    </ul>
+
+                    <h3>Continuing Education</h3>
+                    <ul>
+                        <li>NEC code updates (every 3 years)</li>
+                        <li>Specialty certifications (low voltage, fire alarm)</li>
+                        <li>State-required CE hours for license renewal</li>
+                    </ul>
+
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><strong>NFPA.org</strong> - National Fire Protection Association (NEC publisher)</li>
+                        <li><strong>Mike Holt Enterprises</strong> - NEC training and materials</li>
+                        <li><strong>Electrical Code Academy</strong> - Code training</li>
+                        <li><strong>OSHA.gov</strong> - Workplace safety regulations</li>
+                    </ul>
+
+                    <div class="info-box tip">
+                        <div class="info-box-icon">✅</div>
+                        <div class="info-box-content">
+                            <h4>Career Growth</h4>
+                            <p>Specializations increase earning potential: industrial controls, fire alarm, low voltage, solar/renewable energy, EV charging infrastructure. The trade is evolving - stay current.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="content-length-controller">
+            <span class="content-length-label">Content Depth:</span>
+            <input type="range" class="content-length-slider" min="1" max="12" value="12">
+            <span class="content-length-value">12 pages</span>
+        </div>
+        <div id="definition-window"></div>
+    </div>
+
+    <script src="../js/core.js"></script>
+    <script>
+        const electricalGlossary = {
+            'electrons': { term: 'Electrons', category: 'Fundamentals', definition: 'Negatively charged subatomic particles that flow through conductors to create electrical current.', example: 'When electrons flow through a wire, we have electric current.', relatedTerms: ['current', 'voltage'] },
+            'ohms-law': { term: 'Ohms Law', category: 'Fundamentals', definition: 'The fundamental electrical law stating that voltage equals current times resistance (V=IR).', example: 'If you have 120V and 10 ohms resistance, current is 12 amps.', relatedTerms: ['voltage', 'amperage', 'resistance'] },
+            'voltage': { term: 'Voltage', category: 'Fundamentals', definition: 'The electrical pressure or potential difference that pushes electrons through a circuit. Measured in volts (V).', example: 'Standard US household voltage is 120V for outlets and 240V for large appliances.', relatedTerms: ['amperage', 'wattage'] },
+            'amperage': { term: 'Amperage (Current)', category: 'Fundamentals', definition: 'The rate of electron flow through a circuit, measured in amperes (amps). More amps = more electrons flowing per second.', example: 'A 15-amp circuit can safely carry 15 amps of current.', relatedTerms: ['voltage', 'resistance'] },
+            'resistance': { term: 'Resistance', category: 'Fundamentals', definition: 'Opposition to current flow in a circuit, measured in ohms (Ω). Higher resistance = less current flow.', example: 'A longer wire has more resistance than a shorter wire.', relatedTerms: ['ohms-law', 'conductor'] },
+            'wattage': { term: 'Wattage (Power)', category: 'Fundamentals', definition: 'The rate of energy consumption or production. Watts = Volts × Amps.', example: 'A 100W bulb at 120V draws about 0.83 amps.', relatedTerms: ['voltage', 'amperage'] },
+            'dc': { term: 'Direct Current (DC)', category: 'Current Types', definition: 'Electrical current that flows in one direction only. Used in batteries, electronics, and solar panels.', example: 'A car battery provides 12V DC power.', relatedTerms: ['ac', 'voltage'] },
+            'ac': { term: 'Alternating Current (AC)', category: 'Current Types', definition: 'Electrical current that periodically reverses direction. Standard in homes and businesses (60Hz in US).', example: 'Your home outlets provide 120V AC power.', relatedTerms: ['dc', 'frequency'] },
+            'circuit': { term: 'Electrical Circuit', category: 'Circuits', definition: 'A complete path for electrical current to flow from a power source, through a load, and back to the source.', example: 'A light switch, wire, and light bulb form a simple circuit.', relatedTerms: ['series', 'parallel'] },
+            'breaker': { term: 'Circuit Breaker', category: 'Protection', definition: 'An overcurrent protection device that automatically opens (trips) when current exceeds its rating. Can be reset.', example: 'A 20A breaker trips if more than 20 amps flows through the circuit.', relatedTerms: ['fuse', 'gfci', 'afci'] },
+            'fuse': { term: 'Fuse', category: 'Protection', definition: 'An overcurrent protection device with a metal element that melts when current exceeds rating. Must be replaced after tripping.', example: 'An old fuse box uses screw-in fuses instead of breakers.', relatedTerms: ['breaker'] },
+            'gfci': { term: 'GFCI', category: 'Protection', definition: 'Ground Fault Circuit Interrupter - detects current leaking to ground (shock hazard) and trips in milliseconds. Required in wet locations.', example: 'Bathroom outlets must have GFCI protection per code.', relatedTerms: ['afci', 'breaker'] },
+            'afci': { term: 'AFCI', category: 'Protection', definition: 'Arc Fault Circuit Interrupter - detects dangerous arcing (fire hazard) from damaged wires and trips. Required in most living spaces.', example: 'Bedroom circuits require AFCI protection per NEC.', relatedTerms: ['gfci', 'breaker'] },
+            'awg': { term: 'AWG', category: 'Wire', definition: 'American Wire Gauge - standard wire sizing system. Smaller number = larger wire = more current capacity.', example: '12 AWG wire is larger than 14 AWG and can carry more current.', relatedTerms: ['ampacity', 'conductor'] },
+            'nec': { term: 'NEC', category: 'Codes', definition: 'National Electrical Code - the standard for safe electrical installation in the US, published by NFPA. Updated every 3 years.', example: 'NEC 210.12 requires AFCI protection in dwelling unit bedrooms.', relatedTerms: ['code', 'nfpa'] },
+            'service-entrance': { term: 'Service Entrance', category: 'Residential', definition: 'The point where utility power enters a building, including meter, main breaker, and main panel.', example: 'A typical residential service is 200A at 240V.', relatedTerms: ['panel', 'breaker'] },
+            'nm-cable': { term: 'NM Cable (Romex)', category: 'Wiring', definition: 'Non-metallic sheathed cable containing insulated conductors in a plastic jacket. Common in residential wiring.', example: '12/2 NM cable has two 12 AWG conductors plus ground.', relatedTerms: ['awg', 'wiring-methods'] },
+            'multimeter': { term: 'Multimeter', category: 'Tools', definition: 'A test instrument that measures voltage, current, and resistance. Essential for troubleshooting.', example: 'Use a multimeter to verify 120V is present at an outlet.', relatedTerms: ['voltage', 'resistance'] },
+            'three-phase': { term: 'Three-Phase Power', category: 'Commercial', definition: 'Power distribution using three alternating currents offset by 120 degrees. More efficient for large loads.', example: 'Industrial motors typically run on 480V three-phase power.', relatedTerms: ['ac', 'commercial'] },
+            'loto': { term: 'Lockout/Tagout', category: 'Safety', definition: 'Safety procedure to ensure equipment is de-energized and cannot be accidentally re-energized during maintenance.', example: 'Apply your lock to the breaker before working on the circuit.', relatedTerms: ['safety', 'osha'] }
+        };
+        document.addEventListener('DOMContentLoaded', () => { app.glossary.addTerms(electricalGlossary); });
+    </script>
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Finance Research Portal - Investment, Market Analysis, Financial Planning, Economic Research">
+    <title>Finance Portal - Research Aggregator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-portal="finance">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-icon">💰</div>
+                    <h1>Finance Portal</h1>
+                </div>
+            </div>
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Navigation</div>
+                    <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>Dashboard</span></a>
+                    <a href="#feeds" class="nav-item"><span class="nav-item-icon">📡</span><span>Market Feeds</span><span class="nav-item-badge">Live</span></a>
+                    <a href="#guide" class="nav-item active"><span class="nav-item-icon">📖</span><span>Finance Guide</span></a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Related Portals</div>
+                    <a href="accounting.html" class="nav-item"><span class="nav-item-icon">📊</span><span>Accounting</span></a>
+                    <a href="legal.html" class="nav-item"><span class="nav-item-icon">⚖️</span><span>Legal</span></a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <div class="page-header-top">
+                    <div>
+                        <h1 class="page-title">Finance & Investment</h1>
+                        <p class="page-subtitle">From personal finance to institutional investment strategies</p>
+                    </div>
+                </div>
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" placeholder="Search financial topics, ratios, strategies...">
+                </div>
+                <div class="search-results"></div>
+            </header>
+
+            <aside class="guide-index">
+                <div class="guide-index-header">
+                    <h3 class="guide-index-title">📑 Guide Index</h3>
+                    <button class="guide-index-toggle">−</button>
+                </div>
+                <ul class="guide-index-list"></ul>
+                <div class="guide-progress">
+                    <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
+                    <p class="progress-text">Start reading to track progress</p>
+                </div>
+            </aside>
+
+            <!-- RSS Feeds Section -->
+            <section id="feeds" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">📡</div>
+                    <h2 class="guide-section-title">Live Financial News & Market Data</h2>
+                </div>
+                <div class="guide-content">
+                    <div class="rss-feed-header">
+                        <p>Latest financial news, market analysis, and economic reports</p>
+                        <div class="rss-feed-actions">
+                            <button class="rss-refresh-btn" onclick="app.refreshFeeds()">🔄 Refresh</button>
+                        </div>
+                    </div>
+                    <div class="rss-feed-list">
+                        <div class="loading"><div class="loading-spinner"></div><p class="loading-text">Loading financial feeds...</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-0" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">1</div>
+                    <h2 class="guide-section-title">Introduction to Finance</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="finance">Finance</span> is the study of money management, including activities such as investing, borrowing, lending, budgeting, saving, and forecasting. It encompasses personal finance, corporate finance, and public finance.</p>
+
+                    <h3>Core Concepts</h3>
+                    <p>The foundation of finance rests on several key principles:</p>
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="time-value">Time Value of Money</span></strong> - A dollar today is worth more than a dollar tomorrow</li>
+                        <li><strong><span class="glossary-term" data-term="risk-return">Risk-Return Tradeoff</span></strong> - Higher potential returns require accepting higher risk</li>
+                        <li><strong><span class="glossary-term" data-term="diversification">Diversification</span></strong> - Don't put all your eggs in one basket</li>
+                        <li><strong><span class="glossary-term" data-term="compound-interest">Compound Interest</span></strong> - Interest earning interest over time</li>
+                    </ul>
+
+                    <div class="info-box note">
+                        <div class="info-box-icon">💡</div>
+                        <div class="info-box-content">
+                            <h4>The Power of Compounding</h4>
+                            <p>$10,000 invested at 7% annual return becomes $76,123 in 30 years. Time is your greatest asset in investing. Start early.</p>
+                        </div>
+                    </div>
+
+                    <h3>Types of Finance</h3>
+                    <ul>
+                        <li><strong>Personal Finance</strong> - Individual money management, budgeting, retirement planning</li>
+                        <li><strong>Corporate Finance</strong> - Business funding, capital structure, financial decisions</li>
+                        <li><strong>Public Finance</strong> - Government revenue, expenditure, and debt management</li>
+                        <li><strong>Behavioral Finance</strong> - Psychology's impact on financial decisions</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section-1" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">2</div>
+                    <h2 class="guide-section-title">Financial Statements Analysis</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Understanding <span class="glossary-term" data-term="financial-statements">financial statements</span> is essential for evaluating business health and making investment decisions.</p>
+
+                    <h3 id="section-1-sub-0">The Three Core Statements</h3>
+
+                    <h4>Income Statement (Profit & Loss)</h4>
+                    <p>Shows profitability over a period. Key items:</p>
+                    <ul>
+                        <li><strong>Revenue</strong> - Total sales/income</li>
+                        <li><strong><span class="glossary-term" data-term="gross-profit">Gross Profit</span></strong> - Revenue minus cost of goods sold</li>
+                        <li><strong><span class="glossary-term" data-term="operating-income">Operating Income (EBIT)</span></strong> - Gross profit minus operating expenses</li>
+                        <li><strong><span class="glossary-term" data-term="net-income">Net Income</span></strong> - Bottom line after all expenses and taxes</li>
+                    </ul>
+
+                    <h4>Balance Sheet</h4>
+                    <p>Snapshot of financial position at a point in time. The fundamental equation:</p>
+                    <div class="code-block">
+                        <div class="code-block-header"><span class="code-block-lang">Accounting Equation</span></div>
+                        <pre><code>Assets = Liabilities + Shareholders' Equity
+
+Assets: What the company owns
+  - Current Assets (cash, inventory, receivables)
+  - Non-current Assets (property, equipment, intangibles)
+
+Liabilities: What the company owes
+  - Current Liabilities (payables, short-term debt)
+  - Non-current Liabilities (long-term debt, leases)
+
+Equity: Owners' stake
+  - Common Stock
+  - Retained Earnings</code></pre>
+                    </div>
+
+                    <h4>Cash Flow Statement</h4>
+                    <p>Shows cash movements in three categories:</p>
+                    <ul>
+                        <li><strong>Operating Activities</strong> - Cash from core business operations</li>
+                        <li><strong>Investing Activities</strong> - Capital expenditures, acquisitions</li>
+                        <li><strong>Financing Activities</strong> - Debt, equity, dividends</li>
+                    </ul>
+
+                    <h3 id="section-1-sub-1">Key Financial Ratios</h3>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr><th>Ratio</th><th>Formula</th><th>What It Measures</th><th>Good Range</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="glossary-term" data-term="pe-ratio">P/E Ratio</span></td><td>Price / EPS</td><td>Valuation relative to earnings</td><td>15-25 (varies by industry)</td></tr>
+                                <tr><td><span class="glossary-term" data-term="roe">ROE</span></td><td>Net Income / Equity</td><td>Return on shareholder investment</td><td>>15%</td></tr>
+                                <tr><td><span class="glossary-term" data-term="debt-equity">Debt/Equity</span></td><td>Total Debt / Equity</td><td>Financial leverage</td><td><1.0 (varies)</td></tr>
+                                <tr><td>Current Ratio</td><td>Current Assets / Current Liabilities</td><td>Short-term liquidity</td><td>1.5-3.0</td></tr>
+                                <tr><td>Gross Margin</td><td>Gross Profit / Revenue</td><td>Production efficiency</td><td>Varies by industry</td></tr>
+                                <tr><td><span class="glossary-term" data-term="fcf">Free Cash Flow</span></td><td>Operating CF - CapEx</td><td>Cash available for distribution</td><td>Positive & growing</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-box warning">
+                        <div class="info-box-icon">⚠️</div>
+                        <div class="info-box-content">
+                            <h4>Context Matters</h4>
+                            <p>Always compare ratios to industry peers and historical trends. A tech company's "good" P/E differs from a utility company's. No single ratio tells the full story.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-2" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">3</div>
+                    <h2 class="guide-section-title">Investment Fundamentals</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Investing is putting money to work to generate returns over time. Understanding different <span class="glossary-term" data-term="asset-class">asset classes</span> and their characteristics is fundamental.</p>
+
+                    <h3 id="section-2-sub-0">Asset Classes</h3>
+
+                    <h4>Equities (Stocks)</h4>
+                    <p><span class="glossary-term" data-term="equity">Equities</span> represent ownership in companies. Higher risk, higher potential return. Types include:</p>
+                    <ul>
+                        <li><strong>Growth Stocks</strong> - Companies expected to grow faster than market</li>
+                        <li><strong>Value Stocks</strong> - Undervalued companies trading below intrinsic value</li>
+                        <li><strong>Dividend Stocks</strong> - Companies paying regular dividends</li>
+                        <li><strong>Small/Mid/Large Cap</strong> - Companies by market capitalization</li>
+                    </ul>
+
+                    <h4>Fixed Income (Bonds)</h4>
+                    <p><span class="glossary-term" data-term="bond">Bonds</span> are debt instruments where you lend money in exchange for interest payments and principal return. Generally lower risk than stocks.</p>
+                    <ul>
+                        <li><strong>Government Bonds</strong> - Treasuries (safest), municipal bonds</li>
+                        <li><strong>Corporate Bonds</strong> - Investment grade vs. high yield (junk)</li>
+                        <li><strong>Bond characteristics</strong> - <span class="glossary-term" data-term="yield">Yield</span>, duration, credit rating</li>
+                    </ul>
+
+                    <h4>Alternative Investments</h4>
+                    <ul>
+                        <li><strong>Real Estate</strong> - Direct ownership or REITs</li>
+                        <li><strong>Commodities</strong> - Gold, oil, agricultural products</li>
+                        <li><strong>Private Equity</strong> - Non-public company investments</li>
+                        <li><strong>Hedge Funds</strong> - Alternative strategies (long-short, arbitrage)</li>
+                    </ul>
+
+                    <h3 id="section-2-sub-1">Portfolio Theory</h3>
+                    <p><span class="glossary-term" data-term="mpt">Modern Portfolio Theory (MPT)</span> shows how to construct portfolios that maximize expected return for a given level of risk.</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header"><span class="code-block-lang">Portfolio Concepts</span></div>
+                        <pre><code>Expected Portfolio Return = Σ (weight_i × return_i)
+
+Portfolio Risk ≠ Weighted Average of Individual Risks
+  - Correlation between assets matters!
+  - Low/negative correlation = better diversification
+
+Efficient Frontier: Set of optimal portfolios offering
+highest expected return for each level of risk
+
+Sharpe Ratio = (Return - Risk-free Rate) / Standard Deviation
+  - Measures risk-adjusted return
+  - Higher is better</code></pre>
+                    </div>
+
+                    <h3 id="section-2-sub-2">Investment Strategies</h3>
+
+                    <h4>Passive Investing</h4>
+                    <p>Buy and hold diversified index funds. Low cost, tax-efficient. Based on efficient market hypothesis.</p>
+
+                    <h4>Active Investing</h4>
+                    <p>Attempt to outperform market through stock picking, market timing, or factor investing.</p>
+
+                    <h4>Dollar-Cost Averaging</h4>
+                    <p>Invest fixed amounts regularly regardless of price. Reduces impact of volatility.</p>
+
+                    <div class="info-box tip">
+                        <div class="info-box-icon">✅</div>
+                        <div class="info-box-content">
+                            <h4>Evidence-Based Investing</h4>
+                            <p>Research shows most active managers underperform indexes over time. Low-cost index funds are recommended for most investors. Focus on costs, diversification, and staying invested.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-3" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">4</div>
+                    <h2 class="guide-section-title">Valuation Methods</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="valuation">Valuation</span> is determining the current worth of an asset or company. Essential for investment decisions.</p>
+
+                    <h3 id="section-3-sub-0">Discounted Cash Flow (DCF)</h3>
+                    <p><span class="glossary-term" data-term="dcf">DCF</span> calculates present value of expected future cash flows:</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header"><span class="code-block-lang">DCF Formula</span></div>
+                        <pre><code>Value = Σ [CFt / (1 + r)^t] + Terminal Value / (1 + r)^n
+
+Where:
+  CFt = Cash flow in year t
+  r = Discount rate (WACC)
+  n = Projection period
+
+Terminal Value = CFn × (1 + g) / (r - g)
+  g = Long-term growth rate (usually 2-3%)
+
+Steps:
+1. Project free cash flows for 5-10 years
+2. Calculate terminal value
+3. Discount all to present value
+4. Sum = Intrinsic value</code></pre>
+                    </div>
+
+                    <h3 id="section-3-sub-1">Relative Valuation (Multiples)</h3>
+                    <p>Compare to similar companies using ratios:</p>
+                    <ul>
+                        <li><strong>P/E (Price/Earnings)</strong> - Most common, compare to peers/history</li>
+                        <li><strong>EV/EBITDA</strong> - Enterprise value to operating earnings</li>
+                        <li><strong>P/S (Price/Sales)</strong> - Useful for unprofitable companies</li>
+                        <li><strong>P/B (Price/Book)</strong> - Asset-heavy industries</li>
+                    </ul>
+
+                    <h3 id="section-3-sub-2">WACC (Weighted Average Cost of Capital)</h3>
+                    <p><span class="glossary-term" data-term="wacc">WACC</span> is the discount rate used in DCF, representing the cost of all capital sources:</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header"><span class="code-block-lang">WACC Formula</span></div>
+                        <pre><code>WACC = (E/V × Re) + (D/V × Rd × (1-T))
+
+Where:
+  E = Market value of equity
+  D = Market value of debt
+  V = E + D (total capital)
+  Re = Cost of equity (CAPM: Rf + β(Rm - Rf))
+  Rd = Cost of debt (interest rate)
+  T = Tax rate
+
+CAPM Components:
+  Rf = Risk-free rate (10-year Treasury)
+  β (Beta) = Stock's volatility vs. market
+  Rm - Rf = Market risk premium (~5-6%)</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-4" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">5</div>
+                    <h2 class="guide-section-title">Risk Management</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="risk-management">Risk management</span> involves identifying, assessing, and controlling threats to capital and earnings.</p>
+
+                    <h3>Types of Financial Risk</h3>
+                    <ul>
+                        <li><strong>Market Risk</strong> - Losses from market movements</li>
+                        <li><strong>Credit Risk</strong> - Counterparty fails to meet obligations</li>
+                        <li><strong>Liquidity Risk</strong> - Unable to sell assets quickly at fair price</li>
+                        <li><strong>Operational Risk</strong> - Failures in processes, systems, or people</li>
+                        <li><strong>Currency Risk</strong> - Exchange rate fluctuations</li>
+                        <li><strong>Interest Rate Risk</strong> - Changes in interest rates affect values</li>
+                    </ul>
+
+                    <h3>Risk Metrics</h3>
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="var">Value at Risk (VaR)</span></strong> - Maximum expected loss at confidence level</li>
+                        <li><strong>Beta</strong> - Volatility relative to market</li>
+                        <li><strong>Standard Deviation</strong> - Total volatility measure</li>
+                        <li><strong>Sharpe Ratio</strong> - Risk-adjusted return</li>
+                        <li><strong>Maximum Drawdown</strong> - Largest peak-to-trough decline</li>
+                    </ul>
+
+                    <h3>Hedging Strategies</h3>
+                    <ul>
+                        <li><strong>Options</strong> - Puts protect against downside</li>
+                        <li><strong>Futures</strong> - Lock in prices</li>
+                        <li><strong>Diversification</strong> - Reduce unsystematic risk</li>
+                        <li><strong>Asset Allocation</strong> - Mix of stocks, bonds, alternatives</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section-5" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">6</div>
+                    <h2 class="guide-section-title">Personal Finance Fundamentals</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Personal finance is managing your own financial resources effectively for short and long-term goals.</p>
+
+                    <h3>Budgeting</h3>
+                    <p>Track income and expenses. Popular methods:</p>
+                    <ul>
+                        <li><strong>50/30/20 Rule</strong> - 50% needs, 30% wants, 20% savings</li>
+                        <li><strong>Zero-Based</strong> - Every dollar has a job</li>
+                        <li><strong>Envelope System</strong> - Cash in category envelopes</li>
+                    </ul>
+
+                    <h3>Emergency Fund</h3>
+                    <p>3-6 months of expenses in liquid savings before investing.</p>
+
+                    <h3>Retirement Planning</h3>
+                    <ul>
+                        <li><strong>401(k)</strong> - Employer-sponsored, often with match (free money!)</li>
+                        <li><strong>IRA/Roth IRA</strong> - Individual retirement accounts with tax advantages</li>
+                        <li><strong>4% Rule</strong> - Withdraw 4% of portfolio annually in retirement</li>
+                    </ul>
+
+                    <h3>Debt Management</h3>
+                    <ul>
+                        <li><strong>High-interest debt first</strong> - Credit cards before mortgage</li>
+                        <li><strong>Avalanche Method</strong> - Pay highest interest first</li>
+                        <li><strong>Snowball Method</strong> - Pay smallest balance first (psychological wins)</li>
+                    </ul>
+
+                    <div class="info-box tip">
+                        <div class="info-box-icon">✅</div>
+                        <div class="info-box-content">
+                            <h4>Priority Order</h4>
+                            <p>1) Emergency fund, 2) Match employer 401(k), 3) Pay high-interest debt, 4) Max retirement accounts, 5) Taxable investing. Automate everything.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-6" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">7</div>
+                    <h2 class="guide-section-title">Financial Markets & Economics</h2>
+                </div>
+                <div class="guide-content">
+                    <p>Understanding how markets and the economy work provides context for financial decisions.</p>
+
+                    <h3>Market Structure</h3>
+                    <ul>
+                        <li><strong>Primary Market</strong> - New securities issued (IPOs)</li>
+                        <li><strong>Secondary Market</strong> - Trading existing securities (exchanges)</li>
+                        <li><strong>OTC Markets</strong> - Direct trading between parties</li>
+                    </ul>
+
+                    <h3>Economic Indicators</h3>
+                    <ul>
+                        <li><strong>GDP</strong> - Total economic output</li>
+                        <li><strong>Inflation (CPI)</strong> - Price level changes</li>
+                        <li><strong>Unemployment Rate</strong> - Labor market health</li>
+                        <li><strong>Interest Rates</strong> - Cost of borrowing, set by central banks</li>
+                        <li><strong>Yield Curve</strong> - Relationship between bond yields and maturities</li>
+                    </ul>
+
+                    <h3>Business Cycles</h3>
+                    <p>Economies move through phases: Expansion → Peak → Contraction → Trough → Expansion</p>
+                </div>
+            </section>
+
+            <section id="section-7" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">8</div>
+                    <h2 class="guide-section-title">Research Resources & Career Paths</h2>
+                </div>
+                <div class="guide-content">
+                    <h3>Research Resources</h3>
+                    <ul>
+                        <li><strong>SEC EDGAR</strong> - Company filings (10-K, 10-Q)</li>
+                        <li><strong>Federal Reserve (FRED)</strong> - Economic data</li>
+                        <li><strong>Yahoo Finance / Google Finance</strong> - Stock data</li>
+                        <li><strong>Bloomberg / Reuters</strong> - Professional terminals</li>
+                    </ul>
+
+                    <h3>Finance Careers</h3>
+                    <ul>
+                        <li><strong>Investment Banking</strong> - M&A, capital raising</li>
+                        <li><strong>Asset Management</strong> - Managing investment portfolios</li>
+                        <li><strong>Private Equity</strong> - Investing in private companies</li>
+                        <li><strong>Hedge Funds</strong> - Alternative investment strategies</li>
+                        <li><strong>Corporate Finance</strong> - Financial planning within companies</li>
+                        <li><strong>Financial Planning</strong> - Advising individuals</li>
+                    </ul>
+
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li><strong>CFA (Chartered Financial Analyst)</strong> - Investment management gold standard</li>
+                        <li><strong>CFP (Certified Financial Planner)</strong> - Personal financial planning</li>
+                        <li><strong>FRM (Financial Risk Manager)</strong> - Risk management</li>
+                        <li><strong>Series 7, 63, 65, 66</strong> - Securities licenses</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <div class="content-length-controller">
+            <span class="content-length-label">Content Depth:</span>
+            <input type="range" class="content-length-slider" min="1" max="12" value="12">
+            <span class="content-length-value">12 pages</span>
+        </div>
+        <div id="definition-window"></div>
+    </div>
+
+    <script src="../js/core.js"></script>
+    <script>
+        const financeGlossary = {
+            'finance': { term: 'Finance', category: 'Fundamentals', definition: 'The study and management of money, investments, and other financial instruments. Encompasses personal, corporate, and public finance.', example: 'Corporate finance decisions include capital budgeting, financing mix, and dividend policy.', relatedTerms: ['investment', 'capital', 'risk'] },
+            'time-value': { term: 'Time Value of Money', category: 'Core Concepts', definition: 'The principle that money available today is worth more than the same amount in the future due to its potential earning capacity.', example: '$100 today at 5% interest becomes $105 in one year.', relatedTerms: ['compound-interest', 'present-value', 'dcf'] },
+            'risk-return': { term: 'Risk-Return Tradeoff', category: 'Core Concepts', definition: 'The principle that potential return rises with an increase in risk. Low risk = low potential returns; high risk = high potential returns.', example: 'Stocks historically return more than bonds but with greater volatility.', relatedTerms: ['risk', 'volatility', 'sharpe-ratio'] },
+            'diversification': { term: 'Diversification', category: 'Portfolio Theory', definition: 'A risk management strategy that mixes a variety of investments within a portfolio to reduce exposure to any single asset or risk.', example: 'Owning stocks, bonds, and real estate reduces portfolio risk compared to 100% stocks.', relatedTerms: ['mpt', 'asset-allocation', 'correlation'] },
+            'compound-interest': { term: 'Compound Interest', category: 'Core Concepts', definition: 'Interest calculated on the initial principal and also on the accumulated interest from previous periods.', example: '$1,000 at 10% compounded annually: Year 1=$1,100, Year 2=$1,210, Year 3=$1,331.', relatedTerms: ['time-value', 'interest-rate'] },
+            'financial-statements': { term: 'Financial Statements', category: 'Accounting', definition: 'Formal records of financial activities of a business. The three main statements are income statement, balance sheet, and cash flow statement.', example: 'Investors analyze financial statements to assess company health before investing.', relatedTerms: ['income-statement', 'balance-sheet', 'cash-flow'] },
+            'gross-profit': { term: 'Gross Profit', category: 'Income Statement', definition: 'Revenue minus cost of goods sold (COGS). Shows profitability before operating expenses.', example: 'Revenue $1M - COGS $600K = Gross Profit $400K (40% gross margin).', relatedTerms: ['revenue', 'operating-income', 'net-income'] },
+            'operating-income': { term: 'Operating Income (EBIT)', category: 'Income Statement', definition: 'Earnings Before Interest and Taxes. Gross profit minus operating expenses. Measures core business profitability.', example: 'Gross Profit $400K - SG&A $200K - R&D $50K = Operating Income $150K.', relatedTerms: ['gross-profit', 'ebitda', 'net-income'] },
+            'net-income': { term: 'Net Income', category: 'Income Statement', definition: 'The bottom line - total profit after all expenses, interest, and taxes are deducted from revenue.', example: 'Operating Income $150K - Interest $20K - Taxes $30K = Net Income $100K.', relatedTerms: ['eps', 'profit-margin', 'retained-earnings'] },
+            'pe-ratio': { term: 'P/E Ratio', category: 'Valuation', definition: 'Price-to-Earnings ratio. Stock price divided by earnings per share. Indicates how much investors pay per dollar of earnings.', example: 'Stock at $50 with EPS of $2.50 has P/E of 20x.', relatedTerms: ['eps', 'valuation', 'growth'] },
+            'roe': { term: 'ROE (Return on Equity)', category: 'Ratios', definition: 'Net income divided by shareholders equity. Measures how effectively company uses equity to generate profits.', example: 'Net Income $100K / Equity $500K = 20% ROE.', relatedTerms: ['net-income', 'roa', 'profitability'] },
+            'debt-equity': { term: 'Debt-to-Equity Ratio', category: 'Ratios', definition: 'Total debt divided by total equity. Measures financial leverage and capital structure.', example: 'Debt $500K / Equity $500K = 1.0 D/E ratio.', relatedTerms: ['leverage', 'capital-structure'] },
+            'fcf': { term: 'Free Cash Flow', category: 'Cash Flow', definition: 'Cash generated from operations minus capital expenditures. Cash available to pay dividends, reduce debt, or invest.', example: 'Operating CF $200K - CapEx $50K = FCF $150K.', relatedTerms: ['cash-flow', 'dcf', 'dividend'] },
+            'asset-class': { term: 'Asset Class', category: 'Investing', definition: 'A group of investments with similar characteristics and behavior. Main classes: stocks, bonds, real estate, commodities, cash.', example: 'A 60/40 portfolio has 60% stocks (equity class) and 40% bonds (fixed income class).', relatedTerms: ['equity', 'bond', 'diversification'] },
+            'equity': { term: 'Equity', category: 'Investing', definition: 'Ownership interest in a company, represented by stock shares. Also refers to book value (assets minus liabilities).', example: 'Owning 100 shares of Apple means you own a tiny fraction of Apple equity.', relatedTerms: ['stock', 'shareholder', 'dividend'] },
+            'bond': { term: 'Bond', category: 'Fixed Income', definition: 'A debt instrument where the issuer owes the holder periodic interest payments and repays principal at maturity.', example: 'A 10-year Treasury bond pays 3% semi-annually and returns $1,000 at maturity.', relatedTerms: ['yield', 'credit-rating', 'duration'] },
+            'yield': { term: 'Yield', category: 'Fixed Income', definition: 'The income return on an investment, such as interest or dividends, usually expressed as a percentage.', example: 'A bond paying $30 annually on a $1,000 face value has a 3% yield.', relatedTerms: ['bond', 'dividend-yield', 'ytm'] },
+            'mpt': { term: 'Modern Portfolio Theory', category: 'Portfolio Theory', definition: 'Framework for constructing portfolios to maximize expected return for a given level of risk, emphasizing diversification.', example: 'MPT shows that a 60/40 stock/bond portfolio has better risk-adjusted returns than 100% stocks.', relatedTerms: ['diversification', 'efficient-frontier', 'sharpe-ratio'] },
+            'valuation': { term: 'Valuation', category: 'Analysis', definition: 'The process of determining the current worth of an asset or company using various methods and models.', example: 'DCF analysis values Apple at $180/share based on projected cash flows.', relatedTerms: ['dcf', 'pe-ratio', 'intrinsic-value'] },
+            'dcf': { term: 'Discounted Cash Flow', category: 'Valuation', definition: 'Valuation method that estimates the value of an investment based on its expected future cash flows, discounted to present value.', example: 'Project cash flows for 10 years, add terminal value, discount at WACC to find intrinsic value.', relatedTerms: ['time-value', 'wacc', 'terminal-value'] },
+            'wacc': { term: 'WACC', category: 'Corporate Finance', definition: 'Weighted Average Cost of Capital. The average rate a company pays to finance its assets, weighted by proportion of debt and equity.', example: 'WACC of 8% means the company needs to earn at least 8% on investments to create value.', relatedTerms: ['cost-of-equity', 'cost-of-debt', 'dcf'] },
+            'risk-management': { term: 'Risk Management', category: 'Risk', definition: 'The process of identifying, assessing, and controlling financial risks to minimize potential losses.', example: 'Using stop-loss orders, diversification, and hedging are risk management techniques.', relatedTerms: ['var', 'hedging', 'diversification'] },
+            'var': { term: 'Value at Risk (VaR)', category: 'Risk', definition: 'A statistical measure of the maximum expected loss over a specific time period at a given confidence level.', example: '1-day 95% VaR of $1M means 95% chance daily loss wont exceed $1M.', relatedTerms: ['risk-management', 'volatility', 'stress-test'] }
+        };
+        document.addEventListener('DOMContentLoaded', () => { app.glossary.addTerms(financeGlossary); });
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+    "portal": "computer-science",
+    "feeds": [
+        {
+            "id": "hackernews",
+            "name": "Hacker News",
+            "url": "https://hnrss.org/frontpage",
+            "category": "cs",
+            "icon": "🔶",
+            "description": "Top stories from Hacker News"
+        },
+        {
+            "id": "arxiv-cs",
+            "name": "arXiv CS",
+            "url": "https://rss.arxiv.org/rss/cs",
+            "category": "cs",
+            "icon": "📄",
+            "description": "Latest computer science papers"
+        },
+        {
+            "id": "reddit-programming",
+            "name": "r/programming",
+            "url": "https://www.reddit.com/r/programming/.rss",
+            "category": "cs",
+            "icon": "🤖",
+            "description": "Reddit programming community"
+        },
+        {
+            "id": "dev-to",
+            "name": "DEV Community",
+            "url": "https://dev.to/feed",
+            "category": "cs",
+            "icon": "👩‍💻",
+            "description": "Developer articles and tutorials"
+        },
+        {
+            "id": "github-trending",
+            "name": "GitHub Blog",
+            "url": "https://github.blog/feed/",
+            "category": "cs",
+            "icon": "🐙",
+            "description": "GitHub official blog"
+        }
+    ]
+}

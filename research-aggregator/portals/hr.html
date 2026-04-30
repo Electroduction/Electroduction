@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Human Resources Research Portal - Talent Acquisition, Employee Relations, Compensation, HR Analytics">
+    <title>Human Resources Portal - Research Aggregator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-portal="hr">
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-icon">👥</div>
+                    <h1>HR Portal</h1>
+                </div>
+            </div>
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Navigation</div>
+                    <a href="../index.html" class="nav-item"><span class="nav-item-icon">🏠</span><span>Dashboard</span></a>
+                    <a href="#feeds" class="nav-item"><span class="nav-item-icon">📡</span><span>HR News</span><span class="nav-item-badge">Live</span></a>
+                    <a href="#guide" class="nav-item active"><span class="nav-item-icon">📖</span><span>HR Guide</span></a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Related Portals</div>
+                    <a href="legal.html" class="nav-item"><span class="nav-item-icon">⚖️</span><span>Legal</span></a>
+                    <a href="finance.html" class="nav-item"><span class="nav-item-icon">💰</span><span>Finance</span></a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div class="page-header-top">
+                    <div>
+                        <h1 class="page-title">Human Resources Management</h1>
+                        <p class="page-subtitle">From talent acquisition to organizational development</p>
+                    </div>
+                </div>
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" placeholder="Search HR topics, policies, practices...">
+                </div>
+                <div class="search-results"></div>
+            </header>
+
+            <aside class="guide-index">
+                <div class="guide-index-header">
+                    <h3 class="guide-index-title">📑 Guide Index</h3>
+                    <button class="guide-index-toggle">−</button>
+                </div>
+                <ul class="guide-index-list"></ul>
+                <div class="guide-progress">
+                    <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
+                    <p class="progress-text">Start reading to track progress</p>
+                </div>
+            </aside>
+
+            <section id="feeds" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">📡</div>
+                    <h2 class="guide-section-title">HR Industry News & Trends</h2>
+                </div>
+                <div class="guide-content">
+                    <div class="rss-feed-header">
+                        <p>Latest HR news, employment law updates, and workplace trends</p>
+                        <div class="rss-feed-actions">
+                            <button class="rss-refresh-btn" onclick="app.refreshFeeds()">🔄 Refresh</button>
+                        </div>
+                    </div>
+                    <div class="rss-feed-list">
+                        <div class="loading"><div class="loading-spinner"></div><p class="loading-text">Loading HR feeds...</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-0" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">1</div>
+                    <h2 class="guide-section-title">Introduction to Human Resources</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="hr">Human Resources (HR)</span> is the organizational function responsible for managing people throughout the employee lifecycle - from recruitment to retirement.</p>
+
+                    <h3>Core HR Functions</h3>
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="talent-acquisition">Talent Acquisition</span></strong> - Recruiting and hiring employees</li>
+                        <li><strong><span class="glossary-term" data-term="onboarding">Onboarding</span></strong> - Integrating new employees into the organization</li>
+                        <li><strong><span class="glossary-term" data-term="compensation">Compensation & Benefits</span></strong> - Managing pay and rewards</li>
+                        <li><strong><span class="glossary-term" data-term="performance-management">Performance Management</span></strong> - Evaluating and developing employees</li>
+                        <li><strong><span class="glossary-term" data-term="employee-relations">Employee Relations</span></strong> - Maintaining positive workplace relationships</li>
+                        <li><strong><span class="glossary-term" data-term="learning-development">Learning & Development</span></strong> - Training and career growth</li>
+                        <li><strong><span class="glossary-term" data-term="compliance">HR Compliance</span></strong> - Ensuring legal adherence</li>
+                    </ul>
+
+                    <h3>Strategic HR</h3>
+                    <p>Modern HR is strategic, aligning people practices with business objectives. <span class="glossary-term" data-term="shrm">Strategic HRM</span> focuses on:</p>
+                    <ul>
+                        <li>Workforce planning aligned to business strategy</li>
+                        <li>Building organizational capabilities</li>
+                        <li>Creating competitive advantage through people</li>
+                        <li>Data-driven decision making (HR analytics)</li>
+                    </ul>
+
+                    <div class="info-box note">
+                        <div class="info-box-icon">💡</div>
+                        <div class="info-box-content">
+                            <h4>HR as Business Partner</h4>
+                            <p>HR has evolved from administrative function to strategic business partner. Understanding the business is as important as HR expertise.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-1" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">2</div>
+                    <h2 class="guide-section-title">Talent Acquisition & Recruitment</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="recruitment">Recruitment</span> is the process of attracting, screening, and selecting qualified candidates for open positions.</p>
+
+                    <h3 id="section-1-sub-0">The Recruitment Process</h3>
+
+                    <h4>1. Workforce Planning</h4>
+                    <ul>
+                        <li>Identify current and future staffing needs</li>
+                        <li>Analyze skills gaps</li>
+                        <li>Plan for succession and growth</li>
+                    </ul>
+
+                    <h4>2. Job Analysis & Description</h4>
+                    <p>A <span class="glossary-term" data-term="job-description">job description</span> should include:</p>
+                    <ul>
+                        <li>Job title and reporting structure</li>
+                        <li>Key responsibilities and duties</li>
+                        <li>Required qualifications and skills</li>
+                        <li>Compensation range (increasingly required by law)</li>
+                        <li>Physical requirements and work environment</li>
+                    </ul>
+
+                    <h4>3. Sourcing Candidates</h4>
+                    <ul>
+                        <li><strong>Job boards</strong> - Indeed, LinkedIn, Glassdoor</li>
+                        <li><strong>Employee referrals</strong> - Often highest quality hires</li>
+                        <li><strong>Social recruiting</strong> - LinkedIn, professional networks</li>
+                        <li><strong>Campus recruiting</strong> - Universities, career fairs</li>
+                        <li><strong>Staffing agencies</strong> - For specialized or volume hiring</li>
+                        <li><strong>Passive candidate outreach</strong> - Recruiting employed individuals</li>
+                    </ul>
+
+                    <h4>4. Screening & Selection</h4>
+                    <ul>
+                        <li><strong><span class="glossary-term" data-term="ats">Applicant Tracking System (ATS)</span></strong> - Resume screening software</li>
+                        <li><strong>Phone screens</strong> - Initial qualification calls</li>
+                        <li><strong>Interviews</strong> - Behavioral, technical, panel</li>
+                        <li><strong>Assessments</strong> - Skills tests, personality assessments</li>
+                        <li><strong>Background checks</strong> - Criminal, education, employment verification</li>
+                    </ul>
+
+                    <h3 id="section-1-sub-1">Interview Best Practices</h3>
+                    <p>Use <span class="glossary-term" data-term="behavioral-interview">behavioral interviewing</span> to predict future performance:</p>
+
+                    <div class="code-block">
+                        <div class="code-block-header"><span class="code-block-lang">STAR Method Questions</span></div>
+                        <pre><code>STAR Framework:
+S - Situation: Describe the context
+T - Task: What was your responsibility?
+A - Action: What did you do?
+R - Result: What was the outcome?
+
+Example Questions:
+"Tell me about a time you had to manage a difficult employee."
+"Describe a situation where you had to meet a tight deadline."
+"Give an example of how you handled conflict in your team."</code></pre>
+                    </div>
+
+                    <div class="info-box warning">
+                        <div class="info-box-icon">⚠️</div>
+                        <div class="info-box-content">
+                            <h4>Illegal Interview Questions</h4>
+                            <p>Never ask about: age, race, religion, national origin, marital/family status, pregnancy, disability (unless job-related), genetic information, or arrest record.</p>
+                        </div>
+                    </div>
+
+                    <h3 id="section-1-sub-2">Offer & Negotiation</h3>
+                    <ul>
+                        <li>Prepare competitive offer based on market data</li>
+                        <li>Be prepared for negotiation</li>
+                        <li>Document offer details in writing</li>
+                        <li>Complete background check before start date</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section-2" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">3</div>
+                    <h2 class="guide-section-title">Compensation & Benefits</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="total-rewards">Total rewards</span> includes all forms of compensation and benefits provided to employees.</p>
+
+                    <h3 id="section-2-sub-0">Compensation Components</h3>
+
+                    <h4>Base Pay</h4>
+                    <ul>
+                        <li><strong>Salary</strong> - Fixed annual amount for exempt employees</li>
+                        <li><strong>Hourly wages</strong> - Pay per hour for non-exempt employees</li>
+                        <li><strong>Pay grades/bands</strong> - Structured pay ranges by level</li>
+                    </ul>
+
+                    <h4>Variable Pay</h4>
+                    <ul>
+                        <li><strong>Bonuses</strong> - Annual, quarterly, spot bonuses</li>
+                        <li><strong>Commission</strong> - Sales-based compensation</li>
+                        <li><strong>Profit sharing</strong> - Company performance-based</li>
+                        <li><strong>Stock options/RSUs</strong> - Equity compensation</li>
+                    </ul>
+
+                    <h3 id="section-2-sub-1">Benefits Administration</h3>
+
+                    <h4>Required Benefits</h4>
+                    <ul>
+                        <li>Social Security and Medicare (FICA)</li>
+                        <li>Workers' compensation insurance</li>
+                        <li>Unemployment insurance</li>
+                        <li>FMLA leave (50+ employees)</li>
+                    </ul>
+
+                    <h4>Common Voluntary Benefits</h4>
+                    <ul>
+                        <li><strong>Health insurance</strong> - Medical, dental, vision</li>
+                        <li><strong>Retirement plans</strong> - 401(k), pension, profit sharing</li>
+                        <li><strong>Paid time off</strong> - Vacation, sick leave, holidays</li>
+                        <li><strong>Life and disability insurance</strong></li>
+                        <li><strong>Wellness programs</strong></li>
+                        <li><strong>Employee assistance programs (EAP)</strong></li>
+                    </ul>
+
+                    <h3 id="section-2-sub-2">Pay Equity</h3>
+                    <p><span class="glossary-term" data-term="pay-equity">Pay equity</span> ensures employees are paid fairly regardless of protected characteristics. Conduct regular pay audits to identify and address disparities.</p>
+                </div>
+            </section>
+
+            <section id="section-3" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">4</div>
+                    <h2 class="guide-section-title">Performance Management</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="performance-management">Performance management</span> is the continuous process of setting expectations, developing capabilities, and evaluating results.</p>
+
+                    <h3>Performance Management Cycle</h3>
+
+                    <h4>1. Goal Setting</h4>
+                    <p>Use <span class="glossary-term" data-term="smart-goals">SMART goals</span>:</p>
+                    <ul>
+                        <li><strong>S</strong>pecific - Clear and well-defined</li>
+                        <li><strong>M</strong>easurable - Quantifiable outcomes</li>
+                        <li><strong>A</strong>chievable - Realistic given resources</li>
+                        <li><strong>R</strong>elevant - Aligned with business objectives</li>
+                        <li><strong>T</strong>ime-bound - Clear deadline</li>
+                    </ul>
+
+                    <h4>2. Ongoing Feedback</h4>
+                    <ul>
+                        <li>Regular 1:1 meetings (weekly/biweekly)</li>
+                        <li>Real-time feedback and coaching</li>
+                        <li>Document feedback and progress</li>
+                    </ul>
+
+                    <h4>3. Formal Reviews</h4>
+                    <ul>
+                        <li><strong>Annual reviews</strong> - Comprehensive evaluation</li>
+                        <li><strong>Mid-year check-ins</strong> - Progress assessment</li>
+                        <li><strong>360-degree feedback</strong> - Multi-source input</li>
+                    </ul>
+
+                    <h4>4. Development Planning</h4>
+                    <ul>
+                        <li>Identify strengths and development areas</li>
+                        <li>Create individual development plans</li>
+                        <li>Provide resources and support</li>
+                    </ul>
+
+                    <h3>Performance Improvement Plans (PIPs)</h3>
+                    <p>A <span class="glossary-term" data-term="pip">PIP</span> is a formal document addressing performance deficiencies:</p>
+                    <ul>
+                        <li>Specific performance gaps identified</li>
+                        <li>Clear expectations and success metrics</li>
+                        <li>Timeline for improvement (typically 30-90 days)</li>
+                        <li>Support and resources provided</li>
+                        <li>Consequences of not meeting expectations</li>
+                    </ul>
+
+                    <div class="info-box tip">
+                        <div class="info-box-icon">✅</div>
+                        <div class="info-box-content">
+                            <h4>Documentation</h4>
+                            <p>Document all performance conversations. Good documentation protects both employees and the organization, and supports fair decision-making.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-4" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">5</div>
+                    <h2 class="guide-section-title">Employee Relations</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="employee-relations">Employee relations</span> focuses on maintaining positive relationships between employers and employees.</p>
+
+                    <h3>Workplace Policies</h3>
+                    <p>Essential policies for the <span class="glossary-term" data-term="employee-handbook">employee handbook</span>:</p>
+                    <ul>
+                        <li>At-will employment statement</li>
+                        <li>Equal employment opportunity</li>
+                        <li>Anti-harassment and discrimination</li>
+                        <li>Code of conduct</li>
+                        <li>Attendance and time off</li>
+                        <li>Remote work/hybrid policies</li>
+                        <li>Social media guidelines</li>
+                        <li>Drug and alcohol policy</li>
+                        <li>Safety and security</li>
+                    </ul>
+
+                    <h3>Handling Workplace Issues</h3>
+
+                    <h4>Complaint Investigation Process</h4>
+                    <ol>
+                        <li>Receive and document complaint</li>
+                        <li>Determine investigation scope</li>
+                        <li>Interview complainant, accused, witnesses</li>
+                        <li>Gather and review evidence</li>
+                        <li>Make findings and recommendations</li>
+                        <li>Take appropriate action</li>
+                        <li>Document and follow up</li>
+                    </ol>
+
+                    <h4>Progressive Discipline</h4>
+                    <p><span class="glossary-term" data-term="progressive-discipline">Progressive discipline</span> escalates consequences for repeated issues:</p>
+                    <ol>
+                        <li>Verbal warning (documented)</li>
+                        <li>Written warning</li>
+                        <li>Final written warning</li>
+                        <li>Suspension</li>
+                        <li>Termination</li>
+                    </ol>
+
+                    <div class="info-box warning">
+                        <div class="info-box-icon">⚠️</div>
+                        <div class="info-box-content">
+                            <h4>Consistency</h4>
+                            <p>Apply policies consistently to avoid discrimination claims. Document everything and treat similar situations similarly.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-5" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">6</div>
+                    <h2 class="guide-section-title">Employment Law Essentials</h2>
+                </div>
+                <div class="guide-content">
+                    <p>HR professionals must understand employment law to protect both the organization and employees.</p>
+
+                    <h3>Key Federal Employment Laws</h3>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr><th>Law</th><th>Coverage</th><th>Key Provisions</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Title VII</td><td>15+ employees</td><td>Prohibits discrimination based on race, color, religion, sex, national origin</td></tr>
+                                <tr><td>ADA</td><td>15+ employees</td><td>Prohibits disability discrimination; requires reasonable accommodation</td></tr>
+                                <tr><td>ADEA</td><td>20+ employees</td><td>Prohibits age discrimination (40+)</td></tr>
+                                <tr><td>FLSA</td><td>Most employers</td><td>Minimum wage, overtime, child labor</td></tr>
+                                <tr><td>FMLA</td><td>50+ employees</td><td>12 weeks unpaid leave for qualifying reasons</td></tr>
+                                <tr><td>COBRA</td><td>20+ employees</td><td>Continuation of health coverage</td></tr>
+                                <tr><td>OSHA</td><td>Most employers</td><td>Workplace safety standards</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Classification: Exempt vs. Non-Exempt</h3>
+                    <p><span class="glossary-term" data-term="exempt">Exempt employees</span> are not entitled to overtime under FLSA. To be exempt:</p>
+                    <ul>
+                        <li>Salary basis: Paid predetermined amount regardless of hours</li>
+                        <li>Salary level: Meet minimum salary threshold ($684/week as of 2024)</li>
+                        <li>Duties test: Perform exempt duties (executive, administrative, professional)</li>
+                    </ul>
+
+                    <h3>Termination Best Practices</h3>
+                    <ul>
+                        <li>Document performance/conduct issues</li>
+                        <li>Review for potential discrimination issues</li>
+                        <li>Prepare final paycheck per state law</li>
+                        <li>Plan logistics (return of property, system access)</li>
+                        <li>Conduct exit interview</li>
+                        <li>Provide COBRA notice if applicable</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section-6" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">7</div>
+                    <h2 class="guide-section-title">HR Technology & Analytics</h2>
+                </div>
+                <div class="guide-content">
+                    <p><span class="glossary-term" data-term="hris">HRIS (Human Resource Information System)</span> and analytics are transforming HR.</p>
+
+                    <h3>HR Technology Stack</h3>
+                    <ul>
+                        <li><strong>HRIS/HCM</strong> - Core HR data and processes (Workday, SAP SuccessFactors, BambooHR)</li>
+                        <li><strong>ATS</strong> - Applicant tracking (Greenhouse, Lever, Workable)</li>
+                        <li><strong>Payroll</strong> - Pay processing (ADP, Gusto, Paychex)</li>
+                        <li><strong>Benefits administration</strong> - Benefits enrollment and management</li>
+                        <li><strong>LMS</strong> - Learning management systems</li>
+                        <li><strong>Performance management</strong> - Goals and reviews (15Five, Lattice)</li>
+                        <li><strong>Engagement surveys</strong> - Employee feedback (Culture Amp, Peakon)</li>
+                    </ul>
+
+                    <h3>HR Analytics</h3>
+                    <p><span class="glossary-term" data-term="hr-analytics">HR analytics</span> uses data to improve people decisions.</p>
+
+                    <h4>Key HR Metrics</h4>
+                    <ul>
+                        <li><strong>Time to fill</strong> - Days from job posting to accepted offer</li>
+                        <li><strong>Cost per hire</strong> - Total recruiting costs / number of hires</li>
+                        <li><strong>Turnover rate</strong> - Separations / average headcount</li>
+                        <li><strong>Retention rate</strong> - Employees who stayed / starting headcount</li>
+                        <li><strong>Engagement scores</strong> - Survey-based engagement measurement</li>
+                        <li><strong>Revenue per employee</strong> - Revenue / number of employees</li>
+                        <li><strong>Training ROI</strong> - Return on training investment</li>
+                    </ul>
+
+                    <div class="code-block">
+                        <div class="code-block-header"><span class="code-block-lang">Common HR Calculations</span></div>
+                        <pre><code>Turnover Rate = (Separations / Avg Headcount) × 100
+
+Cost Per Hire = (Internal + External Recruiting Costs) / Hires
+
+Time to Fill = Date of Hire - Date Job Posted
+
+Engagement Rate = (Engaged Employees / Total Employees) × 100
+
+Retention Rate = ((Start Headcount - Separations) / Start Headcount) × 100</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-7" class="guide-section">
+                <div class="guide-section-header">
+                    <div class="guide-section-number">8</div>
+                    <h2 class="guide-section-title">HR Certifications & Career Development</h2>
+                </div>
+                <div class="guide-content">
+                    <h3>Professional HR Certifications</h3>
+
+                    <h4>SHRM Certifications</h4>
+                    <ul>
+                        <li><strong>SHRM-CP</strong> - Certified Professional (early/mid-career)</li>
+                        <li><strong>SHRM-SCP</strong> - Senior Certified Professional (senior/executive)</li>
+                    </ul>
+
+                    <h4>HRCI Certifications</h4>
+                    <ul>
+                        <li><strong>aPHR</strong> - Associate Professional in HR (entry-level)</li>
+                        <li><strong>PHR</strong> - Professional in HR</li>
+                        <li><strong>SPHR</strong> - Senior Professional in HR</li>
+                        <li><strong>GPHR</strong> - Global Professional in HR</li>
+                    </ul>
+
+                    <h3>HR Career Path</h3>
+                    <ul>
+                        <li><strong>Entry</strong> - HR Coordinator, HR Assistant</li>
+                        <li><strong>Specialist</strong> - Recruiter, Benefits Specialist, HRIS Analyst</li>
+                        <li><strong>Generalist</strong> - HR Generalist, HR Business Partner</li>
+                        <li><strong>Manager</strong> - HR Manager, Recruiting Manager</li>
+                        <li><strong>Director</strong> - HR Director, Director of Talent</li>
+                        <li><strong>Executive</strong> - VP HR, Chief People Officer (CPO)</li>
+                    </ul>
+
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><strong>SHRM.org</strong> - Society for Human Resource Management</li>
+                        <li><strong>HR Morning</strong> - Daily HR news</li>
+                        <li><strong>TLNT.com</strong> - Talent management insights</li>
+                        <li><strong>HR Dive</strong> - HR industry news</li>
+                        <li><strong>DOL.gov</strong> - Department of Labor resources</li>
+                        <li><strong>EEOC.gov</strong> - Equal Employment Opportunity Commission</li>
+                    </ul>
+
+                    <div class="info-box tip">
+                        <div class="info-box-icon">✅</div>
+                        <div class="info-box-content">
+                            <h4>Stay Current</h4>
+                            <p>Employment law changes frequently. Subscribe to legal updates, attend conferences, and maintain your certifications through continuing education.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="content-length-controller">
+            <span class="content-length-label">Content Depth:</span>
+            <input type="range" class="content-length-slider" min="1" max="12" value="12">
+            <span class="content-length-value">12 pages</span>
+        </div>
+        <div id="definition-window"></div>
+    </div>
+
+    <script src="../js/core.js"></script>
+    <script>
+        const hrGlossary = {
+            'hr': { term: 'Human Resources (HR)', category: 'Fundamentals', definition: 'The organizational function responsible for managing people and employment-related matters throughout the employee lifecycle.', example: 'HR handles recruiting, benefits administration, employee relations, and compliance.', relatedTerms: ['shrm', 'hris', 'employee-relations'] },
+            'talent-acquisition': { term: 'Talent Acquisition', category: 'Recruiting', definition: 'The strategic process of identifying, attracting, and hiring qualified candidates. Goes beyond recruiting to include employer branding and workforce planning.', example: 'Talent acquisition builds talent pipelines for future hiring needs.', relatedTerms: ['recruitment', 'ats', 'sourcing'] },
+            'onboarding': { term: 'Onboarding', category: 'Employee Lifecycle', definition: 'The process of integrating new employees into the organization, including orientation, training, and cultural assimilation.', example: 'Effective onboarding includes paperwork completion, equipment setup, introductions, and role-specific training.', relatedTerms: ['orientation', 'preboarding'] },
+            'compensation': { term: 'Compensation', category: 'Total Rewards', definition: 'The total monetary and non-monetary rewards provided to employees in exchange for their work, including salary, bonuses, and benefits.', example: 'Total compensation includes base salary, annual bonus, stock options, and health benefits.', relatedTerms: ['total-rewards', 'benefits', 'pay-equity'] },
+            'performance-management': { term: 'Performance Management', category: 'HR Functions', definition: 'The continuous process of setting expectations, providing feedback, developing capabilities, and evaluating employee performance.', example: 'Performance management includes goal setting, regular check-ins, and annual reviews.', relatedTerms: ['smart-goals', 'pip', 'feedback'] },
+            'employee-relations': { term: 'Employee Relations', category: 'HR Functions', definition: 'The HR function focused on maintaining positive relationships between the organization and its employees, handling workplace issues and conflicts.', example: 'Employee relations handles complaints, investigations, and disciplinary actions.', relatedTerms: ['progressive-discipline', 'investigation'] },
+            'learning-development': { term: 'Learning & Development', category: 'HR Functions', definition: 'The HR function responsible for employee training, skill development, and career growth programs.', example: 'L&D provides leadership training, technical skills courses, and mentorship programs.', relatedTerms: ['training', 'career-development'] },
+            'compliance': { term: 'HR Compliance', category: 'Legal', definition: 'Ensuring organizational policies and practices adhere to employment laws and regulations.', example: 'Compliance includes maintaining proper I-9 documentation and posting required notices.', relatedTerms: ['employment-law', 'audit'] },
+            'shrm': { term: 'Strategic HRM', category: 'Strategy', definition: 'Aligning HR practices with business strategy to build organizational capabilities and competitive advantage through people.', example: 'Strategic HR planning identifies future skill needs based on business growth plans.', relatedTerms: ['workforce-planning', 'hr-analytics'] },
+            'recruitment': { term: 'Recruitment', category: 'Talent Acquisition', definition: 'The process of attracting, screening, and selecting qualified candidates to fill open positions.', example: 'Recruitment includes job posting, resume screening, interviews, and offer management.', relatedTerms: ['talent-acquisition', 'sourcing', 'ats'] },
+            'job-description': { term: 'Job Description', category: 'Talent Acquisition', definition: 'A document outlining the duties, responsibilities, qualifications, and requirements of a position.', example: 'A good job description includes essential functions, required skills, and physical demands.', relatedTerms: ['job-analysis', 'ada'] },
+            'ats': { term: 'Applicant Tracking System (ATS)', category: 'HR Technology', definition: 'Software that manages the recruitment process, from job posting through hiring, including resume storage and candidate tracking.', example: 'The ATS automatically screens resumes for required keywords and qualifications.', relatedTerms: ['recruitment', 'hris'] },
+            'behavioral-interview': { term: 'Behavioral Interview', category: 'Selection', definition: 'Interview technique asking candidates to describe past experiences as indicators of future performance using the STAR method.', example: 'Tell me about a time when you had to deal with a difficult customer.', relatedTerms: ['star-method', 'interview'] },
+            'total-rewards': { term: 'Total Rewards', category: 'Compensation', definition: 'The complete package of compensation, benefits, and work experience provided to employees.', example: 'Total rewards includes salary, bonuses, benefits, work-life balance, and career development.', relatedTerms: ['compensation', 'benefits'] },
+            'pay-equity': { term: 'Pay Equity', category: 'Compensation', definition: 'The practice of compensating employees fairly regardless of gender, race, or other protected characteristics for substantially similar work.', example: 'Annual pay equity audits identify and address unjustified pay gaps.', relatedTerms: ['equal-pay', 'compensation'] },
+            'smart-goals': { term: 'SMART Goals', category: 'Performance', definition: 'Goal-setting framework: Specific, Measurable, Achievable, Relevant, Time-bound objectives.', example: 'Increase sales by 15% in Q2 through 20 new customer acquisitions.', relatedTerms: ['performance-management', 'okrs'] },
+            'pip': { term: 'Performance Improvement Plan', category: 'Performance', definition: 'A formal document outlining performance deficiencies and expectations for improvement over a defined period.', example: 'The 60-day PIP requires achieving 90% accuracy rate to continue employment.', relatedTerms: ['performance-management', 'progressive-discipline'] },
+            'employee-handbook': { term: 'Employee Handbook', category: 'Policy', definition: 'A document outlining company policies, procedures, expectations, and employee rights.', example: 'The handbook covers attendance policy, PTO accrual, and code of conduct.', relatedTerms: ['policy', 'compliance'] },
+            'progressive-discipline': { term: 'Progressive Discipline', category: 'Employee Relations', definition: 'A disciplinary approach that escalates consequences for repeated violations or performance issues.', example: 'Verbal warning, written warning, final warning, termination.', relatedTerms: ['discipline', 'documentation'] },
+            'exempt': { term: 'Exempt Employee', category: 'Classification', definition: 'An employee not entitled to overtime pay under FLSA because they meet salary and duties tests for executive, administrative, or professional exemptions.', example: 'The salaried manager is exempt and does not receive overtime pay.', relatedTerms: ['flsa', 'non-exempt', 'overtime'] },
+            'hris': { term: 'HRIS', category: 'Technology', definition: 'Human Resource Information System - software for managing HR data and processes including employee records, payroll, and benefits.', example: 'The HRIS stores employee demographics, job history, and compensation data.', relatedTerms: ['hcm', 'ats', 'payroll'] },
+            'hr-analytics': { term: 'HR Analytics', category: 'Technology', definition: 'Using data analysis to improve HR decision-making and demonstrate the impact of people practices on business outcomes.', example: 'Analytics revealed that employees who completed onboarding had 25% higher retention.', relatedTerms: ['metrics', 'data-driven'] }
+        };
+        document.addEventListener('DOMContentLoaded', () => { app.glossary.addTerms(hrGlossary); });
+    </script>
+</body>
+</html>
