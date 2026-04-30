@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialHub - Your Social Media Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background: #16213e;
+            padding: 2rem 1rem;
+        }
+
+        .sidebar-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: #0f3460;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .menu-item {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .menu-item:hover {
+            background: #0f3460;
+        }
+
+        .menu-item.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .main-content {
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .header-title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .stat-change {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .stat-change.positive {
+            color: #4ade80;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .posts-section {
+            background: #16213e;
+            border-radius: 15px;
+            padding: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .post {
+            background: #1a1a2e;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .post-info {
+            flex: 1;
+        }
+
+        .post-author {
+            font-weight: bold;
+        }
+
+        .post-time {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .post-content {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .post-stats {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .post-stat {
+            cursor: pointer;
+        }
+
+        .post-stat:hover {
+            color: #667eea;
+        }
+
+        .activity-section {
+            background: #16213e;
+            border-radius: 15px;
+            padding: 1.5rem;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid #1a1a2e;
+        }
+
+        .activity-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .activity-text {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+
+        .activity-time {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .new-post {
+            background: #16213e;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .post-input {
+            width: 100%;
+            background: #1a1a2e;
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .post-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="sidebar-header">📱 SocialHub</div>
+            <ul class="sidebar-menu">
+                <li class="menu-item active">
+                    <span>🏠</span> Dashboard
+                </li>
+                <li class="menu-item">
+                    <span>📊</span> Analytics
+                </li>
+                <li class="menu-item">
+                    <span>💬</span> Messages
+                </li>
+                <li class="menu-item">
+                    <span>👥</span> Followers
+                </li>
+                <li class="menu-item">
+                    <span>⚙️</span> Settings
+                </li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <h1 class="header-title">Dashboard</h1>
+                <div style="color: #888;">Welcome back, Alex! 👋</div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Total Followers</div>
+                    <div class="stat-value">12.5K</div>
+                    <div class="stat-change positive">+15% this month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Engagement Rate</div>
+                    <div class="stat-value">8.2%</div>
+                    <div class="stat-change positive">+2.3% this week</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Total Posts</div>
+                    <div class="stat-value">342</div>
+                    <div class="stat-change positive">+12 this week</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Impressions</div>
+                    <div class="stat-value">245K</div>
+                    <div class="stat-change positive">+28% this month</div>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div>
+                    <div class="new-post">
+                        <h3 class="section-title">Create New Post</h3>
+                        <textarea class="post-input" placeholder="What's on your mind?" id="newPostInput"></textarea>
+                        <button class="post-btn" onclick="createPost()">Post</button>
+                    </div>
+
+                    <div class="posts-section">
+                        <h3 class="section-title">Recent Posts</h3>
+                        <div id="postsContainer"></div>
+                    </div>
+                </div>
+
+                <div class="activity-section">
+                    <h3 class="section-title">Recent Activity</h3>
+                    <div class="activity-item">
+                        <div class="activity-icon">👍</div>
+                        <div class="activity-text">Sarah liked your post</div>
+                        <div class="activity-time">2m</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">💬</div>
+                        <div class="activity-text">Mike commented on your photo</div>
+                        <div class="activity-time">15m</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">👥</div>
+                        <div class="activity-text">Emma started following you</div>
+                        <div class="activity-time">1h</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">🔄</div>
+                        <div class="activity-text">John shared your post</div>
+                        <div class="activity-time">2h</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">❤️</div>
+                        <div class="activity-text">Lisa loved your story</div>
+                        <div class="activity-time">3h</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">💬</div>
+                        <div class="activity-text">David mentioned you in a comment</div>
+                        <div class="activity-time">5h</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const posts = [
+            {
+                id: 1,
+                author: 'Alex Johnson',
+                time: '2 hours ago',
+                content: 'Just launched my new website! 🚀 Check it out and let me know what you think. Really proud of how it turned out!',
+                likes: 234,
+                comments: 45,
+                shares: 12
+            },
+            {
+                id: 2,
+                author: 'Alex Johnson',
+                time: '1 day ago',
+                content: 'Working on some exciting new projects. Stay tuned for announcements! 💻✨',
+                likes: 189,
+                comments: 23,
+                shares: 8
+            },
+            {
+                id: 3,
+                author: 'Alex Johnson',
+                time: '3 days ago',
+                content: 'Great meeting with the team today. Amazing what we can accomplish when we work together! 🤝',
+                likes: 312,
+                comments: 56,
+                shares: 15
+            }
+        ];
+
+        function renderPosts() {
+            const container = document.getElementById('postsContainer');
+            container.innerHTML = posts.map(post => `
+                <div class="post">
+                    <div class="post-header">
+                        <div class="avatar">👤</div>
+                        <div class="post-info">
+                            <div class="post-author">${post.author}</div>
+                            <div class="post-time">${post.time}</div>
+                        </div>
+                    </div>
+                    <div class="post-content">${post.content}</div>
+                    <div class="post-stats">
+                        <div class="post-stat">👍 ${post.likes} likes</div>
+                        <div class="post-stat">💬 ${post.comments} comments</div>
+                        <div class="post-stat">🔄 ${post.shares} shares</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function createPost() {
+            const input = document.getElementById('newPostInput');
+            const content = input.value.trim();
+
+            if (!content) return;
+
+            posts.unshift({
+                id: Date.now(),
+                author: 'Alex Johnson',
+                time: 'Just now',
+                content: content,
+                likes: 0,
+                comments: 0,
+                shares: 0
+            });
+
+            input.value = '';
+            renderPosts();
+        }
+
+        renderPosts();
+    </script>
+</body>
+</html>

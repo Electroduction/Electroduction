@@ -1,0 +1,73 @@
+.about {
+  padding: 6rem 0;
+  background: var(--dark-bg);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  color: var(--gray-text);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.skills {
+  margin-top: 3rem;
+}
+
+.skills h3 {
+  color: var(--light-text);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tag {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.about-education h3 {
+  color: var(--light-text);
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.education-item {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--primary-color);
+}
+
+.education-item h4 {
+  color: var(--light-text);
+  margin-bottom: 0.5rem;
+}
+
+.education-item p {
+  color: var(--gray-text);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

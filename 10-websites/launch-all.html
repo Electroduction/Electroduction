@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Websites Launcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 3rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .websites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .website-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .website-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .website-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .website-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .website-type {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .website-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            color: #555;
+        }
+
+        .features-list li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .launch-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .launch-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .launch-all-container {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .launch-all-btn {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+
+        .launch-all-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .stats {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            padding: 1rem;
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 10 Unique Websites</h1>
+            <p>Production-ready web applications showcasing different designs and purposes</p>
+        </div>
+
+        <div class="stats">
+            <h2 style="color: #333; margin-bottom: 1rem;">Project Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">10</div>
+                    <div class="stat-label">Complete Websites</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">10</div>
+                    <div class="stat-label">Different Designs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">50+</div>
+                    <div class="stat-label">Unique Features</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Functional</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="launch-all-container">
+            <button class="launch-all-btn" onclick="launchAll()">🚀 Launch All 10 Websites</button>
+        </div>
+
+        <div class="websites-grid">
+            <div class="website-card" onclick="launch('1-ecommerce.html')">
+                <div class="website-icon">🛒</div>
+                <div class="website-title">TechShop</div>
+                <div class="website-type">E-Commerce Store</div>
+                <div class="website-description">
+                    Full-featured online store with shopping cart, product filtering, and checkout functionality.
+                </div>
+                <ul class="features-list">
+                    <li>Product catalog with categories</li>
+                    <li>Shopping cart system</li>
+                    <li>Category filters</li>
+                    <li>Modal checkout</li>
+                </ul>
+                <button class="launch-btn">Launch Website →</button>
+            </div>
+
+            <div class="website-card" onclick="launch('2-blog.html')">
+                <div class="website-icon">📰</div>
+                <div class="website-title">TechBlog</div>
+                <div class="website-type">Blog Platform</div>
+                <div class="website-description">
+                    Modern blog with article reading, category filtering, and featured content display.
+                </div>
+                <ul class="features-list">
+                    <li>Article management system</li>
+                    <li>Category filtering</li>
+                    <li>Full article view</li>
+                    <li>Clean typography</li>
+                </ul>
+                <button class="launch-btn">Launch Website →</button>
+            </div>
+
+            <div class="website-card" onclick="launch('3-social-dashboard.html')">
+                <div class="website-icon">📱</div>
+                <div class="website-title">SocialHub</div>
+                <div class="website-type">Social Media Dashboard</div>
+                <div class="website-description">
+                    Social media management dashboard with analytics, posting, and activity tracking.
+                </div>
+                <ul class="features-list">
+                    <li>Real-time stats display</li>
+                    <li>Post creation</li>
+                    <li>Activity feed</li>
+                    <li>Engagement metrics</li>
+                </ul>
+                <button class="launch-btn">Launch Website →</button>
+            </div>
+
+            <div class="website-card" onclick="launch('4-task-manager.html')">
+                <div class="website-icon">✅</div>
+                <div class="website-title">TaskFlow</div>
+                <div class="website-type">Task Management App</div>
+                <div class="website-description">
+                    Powerful task manager with priorities, filtering, and completion tracking.
+                </div>
+                <ul class="features-list">
+                    <li>Task creation with priorities</li>
+                    <li>Filter by status</li>
+                    <li>Live statistics</li>
+                    <li>Task completion tracking</li>
+                </ul>
+                <button class="launch-btn">Launch Website →</button>
+            </div>
+
+            <div class="website-card" onclick="launch('5-weather.html')">
+                <div class="website-icon">⛅</div>
+                <div class="website-title">WeatherNow</div>
+                <div class="website-type">Weather Dashboard</div>
+                <div class="website-description">
+                    Weather forecast application with current conditions and 7-day predictions.
+                </div>
+                <ul class="features-list">
+                    <li>City search functionality</li>
+                    <li>Current weather display</li>
+                    <li>7-day forecast</li>
+                    <li>Detailed weather metrics</li>
+                </ul>
+                <button class="launch-btn">Launch Website →</button>
+            </div>
+
+            <div class="website-card" onclick="launch('6-music-player.html')">
+                <div class="website-icon">🎵</div>
+                <div class="website-title">MusicStream</div>
+                <div class="website-type">Music Player</div>
+                <div class="website-description">
+                    Spotify-inspired music player with playlists, playback controls, and library management.
+                </div>
+                <ul class="features-list">
+                    <li>Song library browsing</li>
+                    <li>Playback controls</li>
+                    <li>Progress tracking</li>
+                    <li>Volume control</li>
+                </ul>
+                <button class="launch-btn">Launch Website →</button>
+            </div>
+
+            <div class="website-card" onclick="launch('7-recipe-site.html')">
+                <div class="website-icon">🍳</div>
+                <div class="website-title">RecipeHub</div>
+                <div class="website-type">Recipe Website</div>
+                <div class="website-description">
+                    Recipe discovery platform with detailed cooking instructions and ingredient lists.
+                </div>
+                <ul class="features-list">
+                    <li>Recipe browsing by category</li>
+                    <li>Search functionality</li>
+                    <li>Detailed instructions</li>
+                    <li>Difficulty ratings</li>
+                </ul>
+                <button class="launch-btn">Launch Website →</button>
+            </div>
+
+            <div class="website-card" onclick="launch('8-fitness-tracker.html')">
+                <div class="website-icon">💪</div>
+                <div class="website-title">FitTrack</div>
+                <div class="website-type">Fitness Tracker</div>
+                <div class="website-description">
+                    Fitness tracking app with workout logging, statistics, and goal tracking.
+                </div>
+                <ul class="features-list">
+                    <li>Workout logging system</li>
+                    <li>Calorie tracking</li>
+                    <li>Activity history</li>
+                    <li>Progress visualization</li>
+                </ul>
+                <button class="launch-btn">Launch Website →</button>
+            </div>
+
+            <div class="website-card" onclick="launch('9-finance-dashboard.html')">
+                <div class="website-icon">💰</div>
+                <div class="website-title">MoneyTrack</div>
+                <div class="website-type">Financial Dashboard</div>
+                <div class="website-description">
+                    Personal finance manager with transaction tracking, budgeting, and spending analysis.
+                </div>
+                <ul class="features-list">
+                    <li>Transaction management</li>
+                    <li>Balance overview</li>
+                    <li>Category spending</li>
+                    <li>Financial insights</li>
+                </ul>
+                <button class="launch-btn">Launch Website →</button>
+            </div>
+
+            <div class="website-card" onclick="launch('10-chat-app.html')">
+                <div class="website-icon">💬</div>
+                <div class="website-title">ChatHub</div>
+                <div class="website-type">Chat Application</div>
+                <div class="website-description">
+                    Real-time messaging app with contacts list, chat history, and message sending.
+                </div>
+                <ul class="features-list">
+                    <li>Contact management</li>
+                    <li>Real-time messaging</li>
+                    <li>Chat history</li>
+                    <li>Unread indicators</li>
+                </ul>
+                <button class="launch-btn">Launch Website →</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function launch(filename) {
+            window.open(filename, '_blank');
+        }
+
+        function launchAll() {
+            const websites = [
+                '1-ecommerce.html',
+                '2-blog.html',
+                '3-social-dashboard.html',
+                '4-task-manager.html',
+                '5-weather.html',
+                '6-music-player.html',
+                '7-recipe-site.html',
+                '8-fitness-tracker.html',
+                '9-finance-dashboard.html',
+                '10-chat-app.html'
+            ];
+
+            websites.forEach((site, index) => {
+                setTimeout(() => {
+                    window.open(site, '_blank');
+                }, index * 500); // Stagger opening by 500ms
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatHub - Real-time Messaging</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #e5ddd5;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .chat-container {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            height: 100vh;
+        }
+
+        .sidebar {
+            background: #2a2f32;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            background: #111b21;
+            padding: 1.5rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .search-container {
+            padding: 1rem;
+            background: #111b21;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            background: #2a2f32;
+            color: white;
+        }
+
+        .contacts-list {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid #111b21;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-item:hover {
+            background: #111b21;
+        }
+
+        .contact-item.active {
+            background: #111b21;
+        }
+
+        .contact-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-name {
+            font-weight: bold;
+            color: #e9edef;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-last-message {
+            color: #8696a0;
+            font-size: 0.9rem;
+        }
+
+        .contact-time {
+            color: #8696a0;
+            font-size: 0.8rem;
+        }
+
+        .chat-area {
+            display: flex;
+            flex-direction: column;
+            background: #0b141a;
+        }
+
+        .chat-header {
+            background: #111b21;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid #2a2f32;
+        }
+
+        .chat-header-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e9edef;
+        }
+
+        .chat-status {
+            font-size: 0.9rem;
+            color: #8696a0;
+        }
+
+        .messages-container {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjkyQkNCRjU5OTZBQTEXMTE5RkJCQTMxRDI4Rjk3QUI3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjkyQkNCRjU5OTZBQTEXMTE5RkJCQTMxRDI4Rjk3QUI3Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTJCQzYwNTk5NkFBMTFFMTlGQkJBMzFEMjhGOTdBQjciIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OTJCQzYwNUE5NkFBMTFFMTlGQkJBMzFEMjhGOTdBQjciLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4MDEGLAAAAJklEQVR42mJgYGD4////fwYGBgZGMJAIJP8TKYYDjIwAAQYA6HkDBS8qV0UAAAAASUVORK5CYII=') #0b141a;
+        }
+
+        .message {
+            max-width: 60%;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .message.sent {
+            background: #005c4b;
+            margin-left: auto;
+            color: white;
+        }
+
+        .message.received {
+            background: #1c2c33;
+            color: #e9edef;
+        }
+
+        .message-time {
+            font-size: 0.7rem;
+            color: #8696a0;
+            margin-top: 0.3rem;
+            text-align: right;
+        }
+
+        .input-area {
+            background: #111b21;
+            padding: 1rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .message-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: #2a2f32;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .send-btn {
+            background: #00a884;
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .unread-badge {
+            background: #00a884;
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">💬 ChatHub</div>
+                <div>⋮</div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search or start new chat">
+            </div>
+
+            <div class="contacts-list" id="contactsList"></div>
+        </div>
+
+        <div class="chat-area">
+            <div class="chat-header">
+                <div class="contact-avatar">👤</div>
+                <div>
+                    <div class="chat-header-title" id="currentChatName">Select a chat</div>
+                    <div class="chat-status">Online</div>
+                </div>
+            </div>
+
+            <div class="messages-container" id="messagesContainer"></div>
+
+            <div class="input-area">
+                <input
+                    type="text"
+                    class="message-input"
+                    id="messageInput"
+                    placeholder="Type a message"
+                    onkeypress="if(event.key === 'Enter') sendMessage()"
+                >
+                <button class="send-btn" onclick="sendMessage()">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const contacts = [
+            { id: 1, name: 'Alice Johnson', avatar: '👩', lastMessage: 'See you tomorrow!', time: '2:30 PM', unread: 2 },
+            { id: 2, name: 'Bob Smith', avatar: '👨', lastMessage: 'Thanks for the help', time: '1:15 PM', unread: 0 },
+            { id: 3, name: 'Carol Williams', avatar: '👩‍💼', lastMessage: 'Meeting at 3?', time: '12:45 PM', unread: 1 },
+            { id: 4, name: 'David Brown', avatar: '👨‍💼', lastMessage: 'Great work!', time: 'Yesterday', unread: 0 }
+        ];
+
+        let currentChat = null;
+        let messages = {
+            1: [
+                { text: 'Hey! How are you?', sent: false, time: '2:28 PM' },
+                { text: 'I\'m doing great! Just finished the project.', sent: true, time: '2:29 PM' },
+                { text: 'That\'s awesome! See you tomorrow!', sent: false, time: '2:30 PM' }
+            ],
+            2: [
+                { text: 'Thanks for helping with the code!', sent: false, time: '1:10 PM' },
+                { text: 'No problem! Happy to help.', sent: true, time: '1:12 PM' },
+                { text: 'Thanks for the help', sent: false, time: '1:15 PM' }
+            ]
+        };
+
+        function renderContacts() {
+            const list = document.getElementById('contactsList');
+            list.innerHTML = contacts.map(contact => `
+                <div class="contact-item ${currentChat === contact.id ? 'active' : ''}" onclick="openChat(${contact.id})">
+                    <div class="contact-avatar">${contact.avatar}</div>
+                    <div class="contact-info">
+                        <div class="contact-name">${contact.name}</div>
+                        <div class="contact-last-message">${contact.lastMessage}</div>
+                    </div>
+                    <div>
+                        <div class="contact-time">${contact.time}</div>
+                        ${contact.unread ? `<div class="unread-badge">${contact.unread}</div>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderMessages() {
+            const container = document.getElementById('messagesContainer');
+            const chatMessages = messages[currentChat] || [];
+            container.innerHTML = chatMessages.map(msg => `
+                <div class="message ${msg.sent ? 'sent' : 'received'}">
+                    <div>${msg.text}</div>
+                    <div class="message-time">${msg.time}</div>
+                </div>
+            `).join('');
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function openChat(contactId) {
+            currentChat = contactId;
+            const contact = contacts.find(c => c.id === contactId);
+            document.getElementById('currentChatName').textContent = contact.name;
+            contact.unread = 0;
+            renderContacts();
+            renderMessages();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const text = input.value.trim();
+            if (!text || !currentChat) return;
+
+            if (!messages[currentChat]) messages[currentChat] = [];
+
+            const now = new Date();
+            const time = now.getHours() + ':' + String(now.getMinutes()).padStart(2, '0');
+
+            messages[currentChat].push({
+                text: text,
+                sent: true,
+                time: time
+            });
+
+            input.value = '';
+            renderMessages();
+
+            // Update last message in contact
+            const contact = contacts.find(c => c.id === currentChat);
+            if (contact) {
+                contact.lastMessage = text;
+                contact.time = time;
+                renderContacts();
+            }
+        }
+
+        renderContacts();
+    </script>
+</body>
+</html>
