@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Rapid Certification Platform - Close Workforce Gaps with AI Education</title>
+    <meta name="description" content="Transform your workforce with AI-powered certification programs in IT, Healthcare, Engineering, Business, and more. All education grounded in verified sources.">
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>🎓 AI CertPro</h1>
+                    <p class="tagline">Workforce Development Through AI-Powered Education</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#hr-solutions">HR Solutions</a></li>
+                    <li><a href="#contact">Get Started</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Close Workforce Gaps with AI-Driven Certification Programs</h2>
+                <p class="hero-subtitle">
+                    Transform your team with rapid, job-ready certification programs powered by AI.
+                    All educational content verified and grounded in authoritative sources.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>12</h3>
+                        <p>Certification Programs</p>
+                    </div>
+                    <div class="stat">
+                        <h3>8-20</h3>
+                        <p>Weeks to Certify</p>
+                    </div>
+                    <div class="stat">
+                        <h3>100%</h3>
+                        <p>Remote Learning</p>
+                    </div>
+                    <div class="stat">
+                        <h3>AI-Powered</h3>
+                        <p>Adaptive Curriculum</p>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#programs" class="btn btn-primary">Explore Programs</a>
+                    <a href="#hr-solutions" class="btn btn-secondary">HR Solutions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why AI CertPro?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Education</h3>
+                    <p>Our AI engine continuously gathers and updates content from authoritative sources, ensuring students learn the most current industry practices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Source-Grounded Learning</h3>
+                    <p>Every lesson, fact, and technique is backed by verified sources with direct links to official documentation, regulations, and academic research.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Adaptive Learning Paths</h3>
+                    <p>Personalized curriculum that adapts based on student feedback, performance, and learning style for optimal knowledge retention.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Job-Ready Skills</h3>
+                    <p>Programs designed to prepare students for immediate employment with hands-on projects and real-world applications.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <h3>HR Workforce Solutions</h3>
+                    <p>Deploy training at scale, identify skill gaps, and track employee progress with our HR management dashboard.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>100% Remote</h3>
+                    <p>Learn anytime, anywhere with our fully remote platform. No classroom required.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <h2 class="section-title">Our Certification Programs</h2>
+            <p class="section-subtitle">Choose from 12 high-demand career paths with rapid certification</p>
+
+            <div class="programs-grid">
+                {% for program in programs %}
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>{{ program.name }}</h3>
+                        <span class="duration">{{ program.duration }}</span>
+                    </div>
+                    <div class="program-body">
+                        <div class="job-roles">
+                            <h4>Career Opportunities:</h4>
+                            <ul>
+                                {% for role in program.job_roles %}
+                                <li>{{ role }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="key-skills">
+                            <h4>Key Skills:</h4>
+                            <div class="skills-tags">
+                                {% for skill in program.key_skills %}
+                                <span class="skill-tag">{{ skill }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-footer">
+                        <a href="/program/{{ program.id }}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How Our AI-Powered Platform Works</h2>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>AI Gathers Verified Content</h3>
+                    <p>Our AI education engine continuously searches authoritative sources (government agencies, professional organizations, academic institutions) to gather the most current, accurate information for each certification program.</p>
+                    <div class="source-examples">
+                        <strong>Example Sources:</strong>
+                        <ul>
+                            <li>NIST Cybersecurity Framework</li>
+                            <li>AWS Official Documentation</li>
+                            <li>National Electrical Code (NEC)</li>
+                            <li>FDA Food Safety Guidelines</li>
+                            <li>SEC Financial Regulations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Source Verification & Grounding</h3>
+                    <p>Every piece of educational content is verified and linked back to its source. Students can click through to original documentation, ensuring complete transparency and reliability.</p>
+                    <ul>
+                        <li>Reliability scoring (0.0 - 1.0)</li>
+                        <li>Last verification timestamp</li>
+                        <li>Direct links to source material</li>
+                        <li>Proper academic citations</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Personalized Learning Paths</h3>
+                    <p>Based on your prior experience, education level, and career goals, our adaptive learning system creates a customized curriculum just for you.</p>
+                    <ul>
+                        <li>Skip content you already know</li>
+                        <li>Focus on areas aligned with your career goals</li>
+                        <li>Optimized for your learning style</li>
+                        <li>Adjusted pace based on performance</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Continuous Improvement via Feedback</h3>
+                    <p>Student feedback directly improves the curriculum. Low ratings trigger content regeneration with enhanced explanations, alternative resources, and updated examples.</p>
+                    <ul>
+                        <li>Rate every lesson and resource</li>
+                        <li>AI analyzes feedback patterns</li>
+                        <li>Content automatically improved</li>
+                        <li>Database updated in real-time</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Job-Ready Certification</h3>
+                    <p>Complete hands-on projects, pass assessments, and earn your certificate. Our programs prepare you for industry-recognized certifications and immediate employment.</p>
+                    <ul>
+                        <li>Verified digital certificates</li>
+                        <li>Portfolio of completed projects</li>
+                        <li>Preparation for industry exams</li>
+                        <li>Job placement assistance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HR Solutions Section -->
+    <section id="hr-solutions" class="hr-solutions">
+        <div class="container">
+            <h2 class="section-title">Enterprise HR Solutions</h2>
+            <p class="section-subtitle">Deploy AI-powered training to close workforce gaps at scale</p>
+
+            <div class="hr-features">
+                <div class="hr-feature">
+                    <h3>🎯 Workforce Gap Analysis</h3>
+                    <p>Upload your current team's skills and required competencies. Our AI identifies gaps and recommends specific certification programs to bridge them.</p>
+                    <pre class="code-example">
+POST /api/hr/workforce-analysis
+{
+  "current_skills": ["Python", "Excel", "SQL"],
+  "required_skills": ["Machine Learning", "TensorFlow", "Cloud Computing"],
+  "team_size": 25
+}
+
+Response:
+{
+  "gaps": ["Machine Learning", "TensorFlow", "Cloud Computing"],
+  "recommended_programs": ["AI & Machine Learning", "IT & Software"],
+  "estimated_timeline": "14-18 weeks",
+  "cost_per_employee": "$2,999"
+}
+                    </pre>
+                </div>
+
+                <div class="hr-feature">
+                    <h3>📊 Deploy Training at Scale</h3>
+                    <p>Enroll entire teams with one API call. Set deadlines, track progress, and manage completions from a centralized dashboard.</p>
+                    <pre class="code-example">
+POST /api/hr/deploy-training
+{
+  "company_id": "acme_corp",
+  "program_ids": ["it_software", "cybersecurity"],
+  "employee_ids": [101, 102, 103, ...],
+  "deadline": "2026-06-30"
+}
+
+Response:
+{
+  "deployment_id": 12345,
+  "enrollments": 25,
+  "message": "Successfully deployed training to 25 employees"
+}
+                    </pre>
+                </div>
+
+                <div class="hr-feature">
+                    <h3>📈 Real-Time Analytics</h3>
+                    <p>Track employee progress, completion rates, assessment scores, and time-to-certification with comprehensive analytics.</p>
+                    <ul>
+                        <li>Individual employee dashboards</li>
+                        <li>Team performance metrics</li>
+                        <li>Completion probability predictions</li>
+                        <li>Early intervention alerts for struggling learners</li>
+                        <li>ROI calculations</li>
+                    </ul>
+                </div>
+
+                <div class="hr-feature">
+                    <h3>🔗 Easy Integration</h3>
+                    <p>RESTful API integrates seamlessly with your existing HR systems, LMS, or HRIS platforms.</p>
+                    <ul>
+                        <li>Simple REST API</li>
+                        <li>Webhook notifications</li>
+                        <li>SSO/SAML authentication</li>
+                        <li>CSV bulk uploads</li>
+                        <li>Comprehensive API documentation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hr-cta">
+                <h3>Ready to Transform Your Workforce?</h3>
+                <p>Contact us for enterprise pricing and custom solutions</p>
+                <a href="#contact" class="btn btn-primary btn-large">Request Enterprise Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Source Transparency Section -->
+    <section class="source-transparency">
+        <div class="container">
+            <h2 class="section-title">Complete Source Transparency</h2>
+            <p class="section-subtitle">Every fact, every technique, every lesson - backed by verified sources</p>
+
+            <div class="transparency-grid">
+                <div class="transparency-card">
+                    <h3>Government & Regulatory Bodies</h3>
+                    <ul>
+                        <li>U.S. Department of Education</li>
+                        <li>NIST Cybersecurity Framework</li>
+                        <li>OSHA Safety Standards</li>
+                        <li>EPA Regulations</li>
+                        <li>SEC Financial Guidelines</li>
+                        <li>FDA Food Safety</li>
+                        <li>National Electrical Code (NFPA)</li>
+                    </ul>
+                </div>
+
+                <div class="transparency-card">
+                    <h3>Professional Organizations</h3>
+                    <ul>
+                        <li>CFA Institute</li>
+                        <li>ASME (Mechanical Engineers)</li>
+                        <li>ASHRAE (HVAC)</li>
+                        <li>AICPA (Accounting)</li>
+                        <li>PMI (Project Management)</li>
+                        <li>CompTIA (IT Certifications)</li>
+                        <li>ACF (Culinary)</li>
+                    </ul>
+                </div>
+
+                <div class="transparency-card">
+                    <h3>Academic & Research Institutions</h3>
+                    <ul>
+                        <li>MIT OpenCourseWare</li>
+                        <li>Google AI Education</li>
+                        <li>Microsoft Learn</li>
+                        <li>AWS Documentation</li>
+                        <li>Academic Journals (Peer-Reviewed)</li>
+                        <li>Research Publications</li>
+                        <li>University Curricula</li>
+                    </ul>
+                </div>
+
+                <div class="transparency-card">
+                    <h3>Industry Leaders</h3>
+                    <ul>
+                        <li>TensorFlow Documentation</li>
+                        <li>AWS/Azure/GCP Official Docs</li>
+                        <li>MDN Web Docs</li>
+                        <li>Intuit QuickBooks</li>
+                        <li>Autodesk Knowledge Base</li>
+                        <li>Industry Best Practices</li>
+                        <li>Technical Standards</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="reliability-info">
+                <h3>Source Reliability Scoring</h3>
+                <p>Every source is assigned a reliability score:</p>
+                <div class="score-legend">
+                    <div class="score-item">
+                        <span class="score-badge score-highest">0.95 - 1.0</span>
+                        <span>Government agencies, official standards</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-badge score-high">0.85 - 0.94</span>
+                        <span>Professional organizations, academic institutions</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-badge score-medium">0.70 - 0.84</span>
+                        <span>Industry publications, expert blogs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/CTA Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get Started Today</h2>
+
+            <div class="contact-options">
+                <div class="contact-option">
+                    <h3>Individual Learners</h3>
+                    <p>Start your certification journey today</p>
+                    <form class="enrollment-form">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <select required>
+                            <option value="">Select a Program</option>
+                            {% for program in programs %}
+                            <option value="{{ program.id }}">{{ program.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit" class="btn btn-primary">Enroll Now</button>
+                    </form>
+                </div>
+
+                <div class="contact-option">
+                    <h3>Enterprise & HR Teams</h3>
+                    <p>Transform your workforce at scale</p>
+                    <form class="enterprise-form">
+                        <input type="text" placeholder="Company Name" required>
+                        <input type="email" placeholder="Work Email" required>
+                        <input type="number" placeholder="Number of Employees" required>
+                        <textarea placeholder="Tell us about your workforce development needs"></textarea>
+                        <button type="submit" class="btn btn-primary">Request Demo</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AI CertPro</h4>
+                    <p>AI-Powered Workforce Development</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="#programs">All Programs</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="/catalog">Course Catalog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>For Business</h4>
+                    <ul>
+                        <li><a href="#hr-solutions">HR Solutions</a></li>
+                        <li><a href="/api-docs">API Documentation</a></li>
+                        <li><a href="/enterprise">Enterprise Plans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/sources">Source Database</a></li>
+                        <li><a href="/blog">Education Blog</a></li>
+                        <li><a href="/support">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AI CertPro. All rights reserved. All educational content grounded in verified sources.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

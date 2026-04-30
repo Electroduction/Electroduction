@@ -1,0 +1,211 @@
+{
+  "programs": {
+    "cybersecurity": {
+      "name": "Cybersecurity Specialist Certificate",
+      "duration_weeks": "12-16",
+      "target_hours_full": 10,
+      "target_hours_summary": 3,
+      "difficulty": "intermediate",
+      "prerequisites": ["Basic networking knowledge", "Computer fundamentals"],
+      "certifications_prep": ["CompTIA Security+", "CEH", "CISSP"],
+      "modules": [
+        {
+          "name": "Foundations of Cybersecurity",
+          "hours": 2,
+          "lessons": 5
+        },
+        {
+          "name": "Network Security",
+          "hours": 2.5,
+          "lessons": 6
+        },
+        {
+          "name": "Threat Detection and Analysis",
+          "hours": 2,
+          "lessons": 5
+        },
+        {
+          "name": "Hands-On Security Tools",
+          "hours": 2.5,
+          "lessons": 6
+        },
+        {
+          "name": "Incident Response",
+          "hours": 1,
+          "lessons": 3
+        }
+      ]
+    },
+    "it_software": {
+      "name": "IT & Software Development Certificate",
+      "duration_weeks": "12-16",
+      "target_hours_full": 12,
+      "target_hours_summary": 4,
+      "difficulty": "beginner-intermediate",
+      "prerequisites": ["None"],
+      "certifications_prep": ["AWS Solutions Architect", "CompTIA A+", "Microsoft Azure"],
+      "modules": [
+        {
+          "name": "Programming Fundamentals",
+          "hours": 3,
+          "lessons": 7
+        },
+        {
+          "name": "Web Development",
+          "hours": 3,
+          "lessons": 7
+        },
+        {
+          "name": "Database Management",
+          "hours": 2,
+          "lessons": 5
+        },
+        {
+          "name": "Cloud Computing",
+          "hours": 2,
+          "lessons": 5
+        },
+        {
+          "name": "DevOps & CI/CD",
+          "hours": 2,
+          "lessons": 5
+        }
+      ]
+    },
+    "nursing": {
+      "name": "Certified Nursing Assistant (CNA)",
+      "duration_weeks": "6-8",
+      "target_hours_full": 8,
+      "target_hours_summary": 2.5,
+      "difficulty": "beginner",
+      "prerequisites": ["High school diploma", "18+ years old"],
+      "certifications_prep": ["State CNA Certification"],
+      "modules": [
+        {
+          "name": "Introduction to Nursing Care",
+          "hours": 2,
+          "lessons": 5
+        },
+        {
+          "name": "Vital Signs and Monitoring",
+          "hours": 1.5,
+          "lessons": 4
+        },
+        {
+          "name": "Patient Safety and Infection Control",
+          "hours": 1.5,
+          "lessons": 4
+        },
+        {
+          "name": "Activities of Daily Living",
+          "hours": 2,
+          "lessons": 5
+        },
+        {
+          "name": "Special Care Procedures",
+          "hours": 1,
+          "lessons": 3
+        }
+      ]
+    },
+    "electrician": {
+      "name": "Licensed Electrician Certificate",
+      "duration_weeks": "16-20",
+      "target_hours_full": 12,
+      "target_hours_summary": 4,
+      "difficulty": "intermediate",
+      "prerequisites": ["Basic math", "Physical fitness"],
+      "certifications_prep": ["Journeyman Electrician", "Master Electrician"],
+      "modules": []
+    },
+    "hvac": {
+      "name": "HVAC Technician Certificate",
+      "duration_weeks": "12-16",
+      "target_hours_full": 10,
+      "target_hours_summary": 3,
+      "difficulty": "intermediate",
+      "prerequisites": ["Basic mechanical knowledge"],
+      "certifications_prep": ["EPA 608", "NATE Certification"],
+      "modules": []
+    },
+    "mechanical_engineering": {
+      "name": "Mechanical Engineering Technician",
+      "duration_weeks": "14-18",
+      "target_hours_full": 12,
+      "target_hours_summary": 4,
+      "difficulty": "intermediate-advanced",
+      "prerequisites": ["Math through algebra", "Physics basics"],
+      "certifications_prep": ["CMfgT", "SolidWorks Certification"],
+      "modules": []
+    },
+    "cooking": {
+      "name": "Professional Culinary Certificate",
+      "duration_weeks": "8-10",
+      "target_hours_full": 8,
+      "target_hours_summary": 2.5,
+      "difficulty": "beginner",
+      "prerequisites": ["None"],
+      "certifications_prep": ["ServSafe Manager", "Certified Culinarian"],
+      "modules": []
+    },
+    "finance": {
+      "name": "Finance & Investment Certificate",
+      "duration_weeks": "10-14",
+      "target_hours_full": 10,
+      "target_hours_summary": 3.5,
+      "difficulty": "intermediate",
+      "prerequisites": ["Basic math", "Economics basics helpful"],
+      "certifications_prep": ["CFA Level 1", "CFP", "Series 7"],
+      "modules": []
+    },
+    "accounting": {
+      "name": "Accounting & Bookkeeping Certificate",
+      "duration_weeks": "10-12",
+      "target_hours_full": 9,
+      "target_hours_summary": 3,
+      "difficulty": "beginner-intermediate",
+      "prerequisites": ["Basic math"],
+      "certifications_prep": ["QuickBooks Certification", "Certified Bookkeeper"],
+      "modules": []
+    },
+    "business": {
+      "name": "Business Administration Certificate",
+      "duration_weeks": "8-12",
+      "target_hours_full": 8,
+      "target_hours_summary": 2.5,
+      "difficulty": "beginner-intermediate",
+      "prerequisites": ["None"],
+      "certifications_prep": ["PMP", "CAPM", "Six Sigma"],
+      "modules": []
+    },
+    "education": {
+      "name": "Education & Teaching Certificate",
+      "duration_weeks": "8-12",
+      "target_hours_full": 8,
+      "target_hours_summary": 2.5,
+      "difficulty": "beginner-intermediate",
+      "prerequisites": ["Bachelor's degree for some roles"],
+      "certifications_prep": ["State Teaching Certification"],
+      "modules": []
+    },
+    "ai_education": {
+      "name": "AI & Machine Learning Certificate",
+      "duration_weeks": "14-18",
+      "target_hours_full": 12,
+      "target_hours_summary": 4.5,
+      "difficulty": "intermediate-advanced",
+      "prerequisites": ["Python programming", "Math through calculus"],
+      "certifications_prep": ["TensorFlow Developer", "AWS ML Certification"],
+      "modules": []
+    }
+  },
+  "settings": {
+    "min_lesson_minutes": 25,
+    "words_per_minute_reading": 250,
+    "target_words_per_lesson": 6250,
+    "enable_text_to_speech": true,
+    "enable_user_suggestions": true,
+    "suggestion_approval_threshold": 0.75,
+    "enable_mini_certificates": true
+  }
+}
