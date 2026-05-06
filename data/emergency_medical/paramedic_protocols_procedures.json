@@ -1,0 +1,216 @@
+{
+  "_source": "NREMT Paramedic standards, ACLS guidelines, PHTLS protocols, Emergency medicine references",
+  "_note": "Long-tail EMS/paramedic knowledge. Assessment protocols, medication dosing, trauma management, cardiac rhythms, advanced airways.",
+  "patient_assessment": {
+    "scene_size_up": {
+      "safety_first": "BSI (body substance isolation), scene safe for crew/patient/bystanders; PPE based on mechanism",
+      "mechanism_of_injury": "MOI determines injury pattern; high-speed MVC = spine precautions; fall >20 ft = multi-system trauma",
+      "number_of_patients": "Single patient = full ALS; multiple patients = triage and call for resources (MCI if >5-10 patients)",
+      "additional_resources": "Fire for extrication, law enforcement for safety, helicopter for critical trauma (transport >30 min to trauma center)"
+    },
+    "primary_assessment": {
+      "xabcs": "eXsanguinating hemorrhage (stop massive bleeding first with tourniquet), Airway, Breathing, Circulation, Disability (neuro), Exposure",
+      "general_impression": "Sick or not sick?; stable vs unstable; determines urgency of interventions and transport",
+      "level_of_consciousness": "AVPU: Alert, Verbal, Painful, Unresponsive; or GCS (Glasgow Coma Scale 3-15)",
+      "airway_assessment": "Patent? Maintainable with positioning? Need airway adjunct (OPA/NPA)? Need advanced airway (intubation)?",
+      "breathing_assessment": "Rate (normal 12-20), depth, work of breathing, lung sounds bilateral, SpO2; assist if <10 or >30, shallow, or SpO2 <94%",
+      "circulation_assessment": "Pulse rate/quality, skin color/temp/condition, capillary refill <2 sec, signs of shock",
+      "priority_determination": "Load and go (trauma, stroke, STEMI, severe respiratory distress) vs stay and play (stable medical, minor trauma)"
+    },
+    "secondary_assessment": {
+      "sample_history": "Symptoms, Allergies, Medications, Past medical history, Last oral intake, Events leading up",
+      "opqrst_pain": "Onset, Provocation/Palliation, Quality, Region/Radiation, Severity (0-10), Time/Timing",
+      "vital_signs": "BP, pulse, respirations, SpO2, temperature, ETCO2 (if capnography available), blood glucose",
+      "head_to_toe_exam": "Inspect and palpate; DCAP-BTLS (Deformities, Contusions, Abrasions, Punctures, Burns, Tenderness, Lacerations, Swelling)",
+      "focused_exam": "If medical or isolated injury, focus on chief complaint area; full head-to-toe if trauma with significant MOI or altered mental status"
+    },
+    "glasgow_coma_scale": {
+      "eye_opening": "4 = Spontaneous, 3 = To voice, 2 = To pain, 1 = None",
+      "verbal_response": "5 = Oriented, 4 = Confused, 3 = Inappropriate words, 2 = Incomprehensible sounds, 1 = None",
+      "motor_response": "6 = Obeys commands, 5 = Localizes pain, 4 = Withdraws from pain, 3 = Flexion to pain (decorticate), 2 = Extension to pain (decerebrate), 1 = None",
+      "interpretation": "15 = Normal, 13-14 = Mild TBI, 9-12 = Moderate TBI, 3-8 = Severe TBI (intubate if ≤8)",
+      "trending": "Decreasing GCS = deteriorating neurological status; repeat every 15 min or with any change"
+    }
+  },
+  "cardiac_emergencies": {
+    "acls_algorithms": {
+      "cardiac_arrest_vfib_vtach": {
+        "cpr": "High-quality: 100-120 compressions/min, 2-2.4 inch depth, full recoil, minimize interruptions (<10 sec), rotate compressor every 2 min",
+        "defibrillation": "Shock as soon as possible; biphasic 120-200J (device specific); resume CPR immediately for 2 min; recheck rhythm",
+        "medications": "Epinephrine 1 mg IV/IO every 3-5 min; Amiodarone 300 mg IV/IO after 3rd shock (repeat 150 mg once)",
+        "reversible_causes": "H's and T's: Hypovolemia, Hypoxia, Hydrogen ion (acidosis), Hypo/hyperkalemia, Hypothermia, Tension pneumothorax, Tamponade (cardiac), Toxins, Thrombosis (coronary or pulmonary)",
+        "rosc": "Return of spontaneous circulation: pulse check, ETCO2 >40 mmHg sudden rise, waveform capnography"
+      },
+      "cardiac_arrest_pea_asystole": {
+        "cpr": "Same as above; high-quality compressions",
+        "no_shock": "Non-shockable rhythms; continue CPR, search for reversible causes",
+        "epinephrine": "1 mg IV/IO every 3-5 min; give as soon as access obtained",
+        "treatable_causes": "H's and T's most likely; tension pneumothorax (needle decompression), hypovolemia (fluid bolus), hyperkalemia (calcium chloride)"
+      },
+      "bradycardia_with_pulse": {
+        "assessment": "Symptomatic? (Chest pain, SOB, altered mental status, hypotension, shock); HR typically <50 with symptoms",
+        "atropine": "0.5 mg IV every 3-5 min (max 3 mg) if symptomatic; may not work for 2nd/3rd degree block",
+        "pacing": "Transcutaneous pacing if atropine ineffective or 2nd/3rd degree block; 60-80 BPM, increase mA until capture, sedate if conscious",
+        "dopamine_epinephrine": "Dopamine 2-10 mcg/kg/min or Epinephrine 2-10 mcg/min infusion if pacing unavailable"
+      },
+      "tachycardia_with_pulse": {
+        "stable_vs_unstable": "Unstable = hypotension, acute altered mental status, chest pain, shock; stable = alert, BP adequate",
+        "unstable": "Synchronized cardioversion; sedate if possible; 50-100J initial (narrow complex), 120-200J (wide complex or AFib)",
+        "stable_narrow_complex": "Vagal maneuvers (Valsalva, carotid massage if no bruits); Adenosine 6 mg rapid IV push, flush, 12 mg if no conversion, 12 mg again",
+        "stable_wide_complex": "Assume VTach if unknown; Amiodarone 150 mg IV over 10 min, or Lidocaine 1-1.5 mg/kg if Amiodarone unavailable; prepare for cardioversion if deteriorates"
+      }
+    },
+    "12_lead_ecg_interpretation": {
+      "stemi_criteria": "ST elevation >1 mm in 2 contiguous limb leads or >2 mm in 2 contiguous precordial leads; new LBBB with symptoms = STEMI equivalent",
+      "stemi_localizations": {
+        "inferior": "Leads II, III, aVF; RCA occlusion; do right-sided ECG (V4R) to check RV involvement; avoid nitro if RV infarct",
+        "anterior": "Leads V1-V4; LAD occlusion; large infarct, high mortality; pump failure risk",
+        "lateral": "Leads I, aVL, V5-V6; LCX occlusion; often with inferior or anterior",
+        "posterior": "Tall R wave in V1-V2, ST depression V1-V3; do posterior leads V7-V9; LCX occlusion"
+      },
+      "pre_hospital_stemi_care": "Aspirin 324 mg chew, IV access, O2 if SpO2 <94%, Nitro 0.4 mg SL (if BP >100 systolic, no RV infarct), 12-lead transmission to hospital, direct to cath lab",
+      "time_goals": "Door-to-balloon <90 min; first medical contact to balloon <120 min; prehospital 12-lead reduces time by 15-30 min"
+    }
+  },
+  "airway_management": {
+    "basic_airways": {
+      "head_tilt_chin_lift": "Non-trauma; opens airway by lifting tongue off posterior pharynx",
+      "jaw_thrust": "Suspected C-spine injury; maintains neutral alignment; difficult to maintain for extended period",
+      "opa_oropharyngeal": "Unconscious patients without gag reflex; size = corner of mouth to earlobe; insert upside-down then rotate 180° (or use tongue blade)",
+      "npa_nasopharyngeal": "Semi-conscious with gag reflex; size = tip of nose to earlobe; lubricate, insert bevel toward septum; contraindicated in basilar skull fracture"
+    },
+    "supraglottic_airways": {
+      "king_lt": "Dual-cuff; insert until depth marker at teeth; inflate both cuffs with single syringe; ventilate through tube",
+      "igel": "Gel cuff conforms to anatomy; no inflation needed; insert until depth marker at teeth; easier insertion than King",
+      "lma": "Laryngeal mask airway; inflatable cuff; visualize vocal cords with glidescope if available; allows higher ventilation pressures than King/iGel",
+      "advantages": "Faster than intubation; less training; effective for BVM-difficult patients; rescue airway if intubation fails",
+      "limitations": "No protection from aspiration; limited ventilation pressures (20-25 cmH2O max); can dislodge during transport"
+    },
+    "endotracheal_intubation": {
+      "indications": "Apneic, unable to protect airway (GCS ≤8), prolonged ventilation needed, failure of other methods",
+      "equipment": "Laryngoscope (Mac 3-4 or Miller 2-3 blade), ETT (7.0-8.0 mm adult), stylet, 10cc syringe, ETCO2, suction ready",
+      "procedure": [
+        "1. Preoxygenate 100% O2 for 3-5 min (bag-valve-mask)",
+        "2. Position: ear-to-sternal-notch alignment (sniffing position)",
+        "3. RSI if conscious: Premedicate (Fentanyl, Lidocaine optional), Induction (Etomidate 0.3 mg/kg or Ketamine 1-2 mg/kg), Paralytic (Succinylcholine 1-2 mg/kg or Rocuronium 1 mg/kg)",
+        "4. Wait for paralysis (Sux 30-60 sec, Roc 60-90 sec); apply cricoid pressure if assistant available",
+        "5. Laryngoscopy: Mac blade in vallecula, Miller blade under epiglottis; lift handle up and forward (don't lever on teeth)",
+        "6. Visualize cords, pass tube through cords, inflate cuff 5-10cc air",
+        "7. Confirm: 5-point check: 1-Visualization, 2-Bilateral breath sounds, 3-No epigastric sounds, 4-Fogging in tube, 5-ETCO2 waveform 35-45 mmHg",
+        "8. Secure tube, note depth at teeth (21-23 cm adult male, 19-21 cm female), reconfirm after every move"
+      ],
+      "difficult_airway_predictors": "LEMON: Look (facial trauma, small mouth), Evaluate 3-3-2 (3 fingers mouth opening, 3 fingers mentum to hyoid, 2 fingers hyoid to thyroid), Mallampati (tongue size), Obstruction (epiglottitis, angioedema), Neck mobility",
+      "failed_airway": "Cannot intubate, cannot oxygenate; immediate surgical airway (cricothyrotomy) if BVM and supraglottic fail"
+    },
+    "cricothyrotomy": {
+      "indications": "Cannot intubate, cannot ventilate; massive facial trauma; airway obstruction above cords (angioedema, epiglottitis, foreign body)",
+      "landmark": "Cricothyroid membrane; between thyroid cartilage (Adam's apple) and cricoid cartilage; horizontal palpable space",
+      "procedure": "Stabilize larynx; vertical skin incision; horizontal membrane incision; insert tracheal hook to stabilize, dilate with forceps; insert 6.0 cuffed ETT or Shiley; confirm placement",
+      "commercial_kits": "Quicktrach, Melker (wire-guided Seldinger technique); faster but higher failure rate than open surgical",
+      "complications": "Bleeding, false passage, posterior tracheal wall perforation, subcutaneous emphysema; definitive airway at hospital"
+    }
+  },
+  "trauma_management": {
+    "hemorrhage_control": {
+      "direct_pressure": "First step; 3-5 min continuous pressure; upgrade if ineffective",
+      "tourniquet": "Extremity hemorrhage not controlled by pressure; high and tight (2-3 inches above wound); tighten until bleeding stops; note time; do not remove in field",
+      "hemostatic_gauze": "Combat Gauze, Celox, ChitoGauze; pack deep into wound (Z-fold technique); hold pressure 3 min; junctional hemorrhage (groin, axilla, neck)",
+      "blood_products": "Whole blood or 1:1:1 ratio (RBC:Plasma:Platelets) preferred over crystalloid; massive transfusion protocol; limit crystalloid to <1L to avoid dilutional coagulopathy"
+    },
+    "shock_types": {
+      "hypovolemic": "Blood or fluid loss; tachycardia, hypotension, cool skin, delayed cap refill; treat with blood products (trauma) or fluids (dehydration)",
+      "cardiogenic": "Pump failure (MI, CHF); tachycardia, hypotension, pulmonary edema, JVD; treat cause (STEMI to cath lab), avoid fluids",
+      "distributive": "Septic (infection), anaphylactic (allergen), neurogenic (spinal cord injury); vasodilation; warm skin (septic), hypotension; treat with fluids + vasopressors (septic), epinephrine (anaphylaxis), fluids + vasopressors (neurogenic)",
+      "obstructive": "Tension pneumothorax (needle decompression), cardiac tamponade (pericardiocentesis), pulmonary embolism (anticoagulation at hospital)"
+    },
+    "chest_trauma": {
+      "tension_pneumothorax": {
+        "signs": "Decreased breath sounds one side, hyperresonance to percussion, tracheal deviation (late), JVD, hypotension, respiratory distress",
+        "treatment": "Needle decompression: 14g or 16g IV catheter, 2nd intercostal space, midclavicular line (or 5th ICS anterior axillary line if obese), just over top of rib (avoid neurovascular bundle below rib); rush of air confirms; tape catheter, monitor",
+        "chest_tube": "Definitive treatment at hospital; needle decompression is temporary field fix"
+      },
+      "flail_chest": "≥3 ribs fractured in ≥2 places; paradoxical movement (segment moves in on inspiration); underlying pulmonary contusion common; positive pressure ventilation stabilizes; pain control",
+      "open_pneumothorax": "Sucking chest wound; 3-sided occlusive dressing (allows air out, not in); monitor for tension (if develops, burp dressing)",
+      "hemothorax": "Blood in pleural space; decreased breath sounds, dullness to percussion; IV access, blood products, rapid transport; chest tube at hospital"
+    },
+    "head_trauma": {
+      "cushing_triad": "Late sign of increased ICP: Hypertension, Bradycardia, Irregular respirations; indicates herniation imminent",
+      "management": "Maintain CPP (Cerebral Perfusion Pressure) = MAP - ICP; keep MAP >80; avoid hypotension and hypoxia (secondary brain injury); HOB 30° if no spinal injury; maintain ETCO2 35-40 (avoid hyperventilation unless signs of herniation)",
+      "hyperventilation": "Only if signs of herniation (blown pupil, posturing, Cushing's triad); target ETCO2 30-35; causes vasoconstriction reducing ICP but also reducing cerebral blood flow",
+      "mannitol_hypertonic_saline": "Hospital treatments for increased ICP; not typically given prehospital; Mannitol 0.25-1 g/kg, 3% saline 250cc bolus"
+    },
+    "spinal_immobilization": {
+      "indications": "Trauma with concerning MOI (MVC >40 mph, fall >3 ft, axial load, diving); midline spine pain/tenderness; altered mental status; neurological deficits; distracting injury",
+      "nexus_criteria": "Can clinically clear C-spine if all 5 present: No posterior midline tenderness, No focal neuro deficits, Normal alertness, No intoxication, No painful distracting injury",
+      "technique": "Manual stabilization → collar → backboard (or vacuum mattress) → secure torso then head; maintain neutral alignment; pad voids; reassess neurovascular after immobilization"
+    }
+  },
+  "medications": {
+    "vasopressors": {
+      "epinephrine": {
+        "cardiac_arrest": "1 mg (1:10,000) IV/IO every 3-5 min",
+        "anaphylaxis": "0.3-0.5 mg (1:1,000) IM lateral thigh; repeat every 5-15 min if needed",
+        "bradycardia": "2-10 mcg/min IV infusion (add 1 mg to 500cc = 2 mcg/mL)",
+        "mechanism": "Alpha (vasoconstriction) + Beta-1 (inotropy, chronotropy) + Beta-2 (bronchodilation)"
+      },
+      "dopamine": "2-20 mcg/kg/min IV infusion; 2-5 = renal, 5-10 = cardiac, 10-20 = vasopressor; dose-dependent receptor activity; second-line to epinephrine or norepinephrine",
+      "norepinephrine": "0.1-0.5 mcg/kg/min; potent alpha (vasoconstriction); used for septic shock; not typically carried prehospital"
+    },
+    "antiarrhythmics": {
+      "amiodarone": "Cardiac arrest VF/VTach: 300 mg IV/IO, repeat 150 mg once; Stable VTach: 150 mg IV over 10 min, repeat PRN to max 2.2 g/24hr; Side effects: hypotension (slow rate), bradycardia",
+      "lidocaine": "Cardiac arrest VF/VTach (if Amiodarone unavailable): 1-1.5 mg/kg IV/IO, repeat 0.5-0.75 mg/kg every 5-10 min to max 3 mg/kg; Stable VTach: 1-1.5 mg/kg, then 0.5-0.75 mg/kg every 5-10 min; Side effects: CNS toxicity (seizures, confusion) at high doses",
+      "adenosine": "SVT: 6 mg rapid IV push, flush immediately, 12 mg if no effect, 12 mg again; Half-life 10 sec; causes brief asystole (warn patient); contraindicated in WPW with AFib (can cause VFib)"
+    },
+    "rsi_medications": {
+      "induction_agents": {
+        "etomidate": "0.3 mg/kg IV; sedative-hypnotic; hemodynamically neutral (safe in shock); short-acting (5-10 min); no analgesia; adrenal suppression with repeated doses",
+        "ketamine": "1-2 mg/kg IV; dissociative; maintains airway reflexes better than others; bronchodilation (good for asthma); increases ICP (avoid in head injury per old protocols, controversial); causes emergence delirium (give benzodiazepine)",
+        "propofol": "1-2 mg/kg IV; rapid onset; causes hypotension (avoid in shock); burns on injection; white liquid (Diprivan)"
+      },
+      "paralytics": {
+        "succinylcholine": "1-2 mg/kg IV; depolarizing; rapid onset 30-60 sec; short duration 5-10 min; fasciculations; contraindicated in hyperkalemia, burns >24 hr old, crush injury, neuromuscular disease (causes hyperkalemia); malignant hyperthermia risk (rare)",
+        "rocuronium": "1 mg/kg IV (can use 1.2 mg/kg for faster onset); non-depolarizing; onset 60-90 sec; duration 30-60 min; safe in hyperkalemia; no fasciculations; reversible with Sugammadex (not widely available prehospital)"
+      },
+      "adjuncts": {
+        "fentanyl": "1-3 mcg/kg IV; opioid analgesic; blunts sympathetic response to laryngoscopy; short-acting; respiratory depression",
+        "lidocaine": "1.5 mg/kg IV; blunts ICP rise from laryngoscopy (theoretical); given 2-3 min before induction if head injury"
+      }
+    },
+    "naloxone": {
+      "indications": "Opioid overdose; respiratory depression <10/min or apnea; altered mental status",
+      "dosing": "0.4-2 mg IN/IV/IM/IO; can repeat every 2-3 min to max 10 mg; titrate to respirations >10, not full consciousness (avoid precipitated withdrawal)",
+      "intranasal": "Narcan spray 4 mg per nostril; easy, safe, bystander-friendly; absorbed through nasal mucosa",
+      "duration": "30-90 min; shorter than most opioids; patient can re-sedate; transport all overdoses, observe 2+ hours"
+    }
+  },
+  "special_situations": {
+    "stroke": {
+      "cincinnati_stroke_scale": "Facial droop, Arm drift, Speech slurred; 1 finding = 72% stroke probability",
+      "last_known_well": "Critical for tPA eligibility (within 3-4.5 hours); if wake-up stroke, use time last seen normal",
+      "pre_hospital_care": "Rapid assessment, FAST exam, blood glucose check (hypoglycemia mimics stroke), large-bore IV, direct to stroke center, pre-notification",
+      "stroke_scales": "LAMS (Los Angeles Motor Scale), RACE, VAN (Vision, Aphasia, Neglect); screen for large vessel occlusion (LVO) which needs thrombectomy",
+      "contraindications_to_note": "Recent surgery, bleeding disorder, seizure at onset (may not be stroke); hospital will decide tPA eligibility"
+    },
+    "sepsis": {
+      "qsofa": "Quick SOFA: Altered mental status, Respiratory rate ≥22, Systolic BP ≤100; 2 of 3 = high sepsis risk",
+      "lactate": "If available prehospital; >2 mmol/L concerning, >4 severe",
+      "treatment": "Large-bore IV access × 2, fluid bolus 30 mL/kg (≈2 liters adult) crystalloid, blood cultures before antibiotics (if hospital delay), pre-notification for early antibiotics",
+      "source_control": "Identify source (pneumonia, UTI, skin infection, abdominal); hospital needs to treat source plus antibiotics"
+    },
+    "toxicology": {
+      "toxidromes": {
+        "opioids": "Pinpoint pupils, respiratory depression, altered mental status; treat with naloxone",
+        "sympathomimetics": "Cocaine, meth; tachycardia, hypertension, hyperthermia, agitation, dilated pupils; cool, sedate (benzos), no beta-blockers",
+        "anticholinergics": "Antihistamines, jimson weed; 'mad as a hatter, blind as a bat, red as a beet, hot as a hare, dry as a bone'; treat supportively, benzos for agitation",
+        "cholinergics": "Organophosphates (pesticides), nerve agents; SLUDGE: Salivation, Lacrimation, Urination, Defecation, GI distress, Emesis; also bradycardia, bronchospasm; treat with Atropine 2-5 mg IV (double every 5 min until secretions dry), 2-PAM if nerve agent"
+      }
+    },
+    "obstetric_emergencies": {
+      "imminent_delivery": "Crowning, uncontrollable urge to push, contractions <2 min apart; prepare for field delivery",
+      "delivery_procedure": "Support head, check for nuchal cord (slip over head or clamp and cut if tight), deliver anterior shoulder then posterior, deliver body, dry and stimulate baby, clamp cord (2 clamps 6 inches apart, cut between), deliver placenta (don't pull, let it deliver naturally), fundal massage",
+      "apgar_score": "At 1 and 5 min: Appearance, Pulse, Grimace, Activity, Respiration; 0-2 points each; 7-10 = normal, 4-6 = moderate distress, 0-3 = severe distress",
+      "neonatal_resuscitation": "Dry, warm, stimulate; suction if needed; BVM if no respiratory effort after stimulation; compressions if HR <60 after 30 sec PPV; compressions 3:1 ratio with ventilations (90 compressions + 30 breaths = 120 events/min)",
+      "postpartum_hemorrhage": "Fundal massage, oxytocin 10 units IM (if available), position supine, large-bore IV, blood products if available, rapid transport"
+    }
+  }
+}

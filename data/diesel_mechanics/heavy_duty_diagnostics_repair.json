@@ -1,0 +1,206 @@
+{
+  "_source": "ASE Heavy Duty Truck certifications, Diesel engine manufacturer service manuals, Troubleshooting guides",
+  "_note": "Long-tail diesel mechanics knowledge. Engine diagnostics, air systems, emissions (DPF/SCR/EGR), electrical troubleshooting, driveline.",
+  "diesel_engine_fundamentals": {
+    "four_stroke_cycle": {
+      "intake": "Piston down, intake valve open; draws in air only (no fuel yet); turbo boost pressure increases air mass",
+      "compression": "Both valves closed, piston up; compression ratio 15:1 to 20:1 (higher than gas 10:1); air heated to 900-1000°F",
+      "power": "Fuel injected near TDC (top dead center); auto-ignites from heat of compression (no spark plug); expansion forces piston down",
+      "exhaust": "Piston up, exhaust valve open; pushes burnt gases out to exhaust manifold"
+    },
+    "fuel_injection_systems": {
+      "mechanical_inline_pump": "Bosch P7100; cam-driven plungers; mechanical governor; reliable, simple; pre-1994 mostly; no electronics; tunable",
+      "distributor_pump": "Bosch VE, DB2, Stanadyne; single pumping element distributes to all cylinders; lighter, cheaper; moderate pressure <2000 PSI",
+      "heui_hydraulic": "Navistar 7.3L/6.0L; uses engine oil pressure (3000 PSI) to pressurize fuel; injection pressure control (ICP) valve; oil quality critical",
+      "common_rail": "Current standard; high-pressure pump (30,000+ PSI) supplies rail; injectors electronically controlled; precise timing and quantity; quieter; multiple injections per cycle",
+      "eui_eup": "Electronic Unit Injector/Pump; Detroit Diesel Series 60, Caterpillar C15; cam-actuated injector; combines pump and injector; high pressure; precise control"
+    },
+    "turbocharging": {
+      "function": "Exhaust spins turbine, turbine spins compressor, compressor compresses intake air; more air + more fuel = more power",
+      "boost_pressure": "Typical 15-30 PSI; intercooled (air-to-air or air-to-water) to reduce intake temp; cooler air = denser = more oxygen",
+      "wastegate": "Controls max boost; diverts exhaust around turbine above set pressure; prevents overboosting and turbo damage",
+      "vgt_variable_geometry": "Movable vanes in turbine housing; changes A/R ratio; quick spool-up, high top-end boost; electronic or pneumatic control; common on modern diesels",
+      "turbo_failures": "Shaft play (bearing wear from lack of oil, dirty oil, lack of cool-down), compressor wheel damage (FOD, overspeeding), oil leaks (seal failure), exhaust leaks pre-turbo (loss of boost)"
+    },
+    "egr_exhaust_gas_recirculation": {
+      "purpose": "Reduces NOx emissions by lowering combustion temp; recirculates exhaust into intake",
+      "types": "Cooled EGR (heat exchanger cools exhaust before intake); uncooled EGR (older)",
+      "egr_valve": "Controls flow; vacuum or electronic; common failure (sticks open or closed from soot buildup)",
+      "egr_cooler": "Coolant-cooled heat exchanger; reduces EGR temp 1000°F+ to 300-400°F; failure = coolant in intake (white smoke, overheating, coolant loss)",
+      "problems": "Soot buildup clogs intake, EGR valve, cooler; carbon in intake manifold; reduced power; cleaning or replacement needed; EGR delete illegal but common"
+    }
+  },
+  "emissions_systems": {
+    "dpf_diesel_particulate_filter": {
+      "function": "Traps soot particulates; ceramic honeycomb filter; captures 95%+ soot; required since 2007",
+      "regeneration": {
+        "passive_regen": "Occurs during highway driving; high exhaust temp (600°F+) burns off soot naturally; no driver intervention",
+        "active_regen": "ECM initiates; injects fuel into exhaust to raise temp to 1000-1200°F; burns soot; takes 20-40 min; requires driving (not parked); DPF light may illuminate",
+        "parked_regen": "Forced regen using scan tool; truck stationary; used when DPF too full for active regen; requires high idle, parking brake set; monitor exhaust temp",
+        "cleaning": "If regens don't work, DPF needs cleaning (baked in oven to burn ash) or replacement; ash from oil additives doesn't burn, accumulates over time"
+      },
+      "soot_load": "Measured in grams or %; 0-100% typical; regen triggers at 80-100%; if >150%, cleaning needed; scan tool reads soot load",
+      "differential_pressure": "Delta-P sensor measures pressure drop across DPF; high delta-P = clogged filter; >30+ inches H2O at highway speed = restricted",
+      "problems": "Clogged DPF (short trips, idling, failed regens), cracked substrate (overheat), sensor failures (delta-P, temp sensors)"
+    },
+    "scr_selective_catalytic_reduction": {
+      "function": "Reduces NOx by 90%+; injects DEF (Diesel Exhaust Fluid) into exhaust; DEF decomposes to ammonia, reacts with NOx over catalyst, produces N2 + H2O",
+      "def_diesel_exhaust_fluid": "32.5% urea, 67.5% deionized water; freezes at 12°F (heater thaws); consumption 2-3% of fuel; must use DEF, not water or additives; stored in separate tank",
+      "dosing_system": "DEF pump, injector, lines; ECM controls dosing based on NOx sensors; dosing valve sprays DEF into decomposition tube",
+      "nox_sensors": "Upstream (pre-SCR) and downstream (post-SCR); monitors NOx levels and SCR efficiency; replacement $200-500 each",
+      "scr_catalyst": "Honeycomb structure coated with zeolite; 50,000-150,000 mile life typically; can be damaged by contaminated DEF or overheating",
+      "problems": "DEF contamination (diesel in DEF tank = entire system replacement $8,000+), crystallization (DEF solidifies in lines/injector), heater failures (cold climates), pump/injector failures, NOx sensor failures"
+    },
+    "doc_diesel_oxidation_catalyst": {
+      "function": "Oxidizes CO and hydrocarbons; converts to CO2 and H2O; first stage before DPF/SCR; helps with regen by creating heat",
+      "location": "Upstream of DPF; sometimes integrated into DPF housing",
+      "failures": "Rare; can be fouled by oil consumption or coolant contamination; coating can degrade with age/mileage"
+    },
+    "emissions_codes_derate": {
+      "mil_malfunction_indicator": "Check engine light; emissions fault detected; may or may not cause derate",
+      "amber_warning": "First level; emissions system fault; no derate immediately; may escalate if not repaired",
+      "red_stop_lamp": "Severe fault; derate imminent or active; requires immediate service",
+      "derate_levels": {
+        "5_mph_derate": "Severe; crawl speed only; must repair before operating; DEF system fault, SCR efficiency low",
+        "reduced_power": "25-75% power reduction; can still drive but limited; DPF full, NOx sensor faults",
+        "torque_limit": "Limits torque output; gradual reduction; encourages service soon"
+      },
+      "inducement": "EPA requires derate if emissions fault >100 miles or >100 engine hours; forces repair"
+    }
+  },
+  "air_brake_diagnostics": {
+    "system_components": {
+      "compressor": "Single or dual cylinder; belt or gear driven; governor cuts out at 120-135 PSI, cuts in at 100-105 PSI; pumps 10-14 CFM",
+      "air_dryer": "Removes moisture and oil; desiccant cartridge; purges when compressor cuts out; replace desiccant every 3 years or per schedule",
+      "reservoirs": "Wet tank (first, collects moisture), primary (rear brakes), secondary (front/steer brakes); drain daily in humid climates",
+      "brake_valves": "Foot valve (service brakes), trailer hand valve, spring brake valve (parking/emergency), quick release valves, relay valves",
+      "brake_chambers": "Type 20, 24, 30 (size); spring brakes on drive/trailer axles (spring applies, air releases); service chambers on all axles"
+    },
+    "air_system_tests": {
+      "build_time_test": "Pump down to 85 PSI, record time to build to 100 PSI; should be <2 min (25 PSI in <2 min); slow build = worn compressor, leak, governor issue",
+      "leakage_test": "Build to governor cutout; shut off engine; apply service brakes fully; should lose <3 PSI/min (single) or <4 PSI/min (combination); more = leak",
+      "applied_leak_test": "Build to max, shut off engine, release parking brake, apply service brake; <3 PSI/min single, <4 combination",
+      "low_air_warning": "Should activate at 60 PSI or above; buzzer and red light; test by pumping brakes with engine off",
+      "spring_brake_activation": "Should apply automatically at 20-40 PSI; parking brake pops out; emergency failsafe"
+    },
+    "troubleshooting": {
+      "slow_air_build": "Worn compressor valves/rings (rebuild kit $100-300), air leak (check all lines, fittings, valves with soapy water), governor not cutting in (adjust or replace), restricted intake/discharge lines",
+      "excessive_purging": "Air dryer purging constantly or very frequently; wet tank drain valve leaking (purge valve thinks system is at cutout), compressor discharge valve leaking, governor malfunction",
+      "brakes_not_releasing": "Insufficient air pressure (leak, compressor weak), spring brake not releasing (valve stuck, air leak in spring chamber line), frozen brake chamber (moisture in system, bad air dryer)",
+      "brakes_dragging": "Service chamber not venting (stuck valve, kinked hose), slack adjuster over-adjusted (1-2 inch stroke max), S-cam bushing worn (binds)",
+      "uneven_braking": "Out-of-adjustment (automatic slack adjusters stuck, manual not adjusted), contaminated linings (oil/grease), mismatched chambers, glad hand swapped (red/blue backwards)"
+    },
+    "abs_antilock_brakes": {
+      "components": "Wheel speed sensors (tone ring and sensor), ECU, modulator valves (holds/releases brake pressure)",
+      "operation": "Monitors wheel speed; if wheel decelerates too fast (locking), releases brake pressure briefly; cycles to maintain wheel rotation just before lockup",
+      "indicator": "ABS lamp on dash; illuminates if fault; amber light; truck still has brakes (ABS disabled, normal brakes work)",
+      "troubleshooting": "Check ABS light codes with scan tool; common faults: wheel speed sensor (damaged tone ring, sensor gap too large >0.050\", wiring damage), modulator valve stuck, ECU failure, voltage issues"
+    }
+  },
+  "electrical_diagnostics": {
+    "starting_charging": {
+      "batteries": "12V in series = 24V typical (some 12V systems); group 31 common (1000+ CCA); load test 1/2 CCA for 15 sec, should maintain >9.6V per battery",
+      "cranking_amperage": "Starter draws 300-800A; voltage should stay >9.6V (12V system) or >19V (24V system) while cranking; low voltage = weak battery, bad connection, starter issue",
+      "alternator_output": "24V system charges at 27.5-28.5V; 12V at 13.8-14.5V; load test: turn on loads (lights, fan), voltage should stay in range; below = alternator weak or regulator fault",
+      "voltage_drop_testing": "Starter circuit: <0.5V drop from battery positive to starter positive during crank; <0.5V ground side; more = bad cable or connection; replace or clean"
+    },
+    "j1939_can_bus": {
+      "function": "Multiplexed network; ECM, transmission, ABS, instrument cluster communicate; two-wire twisted pair (CAN-H, CAN-L); 250k or 500k baud",
+      "terminating_resistors": "120 ohm resistors at each end of network; measure between CAN-H and CAN-L with network unpowered: should read 60 ohms (two 120 in parallel)",
+      "troubleshooting": "Scan tool reads J1939 data; if no communication, check terminating resistors, wiring shorts/opens, damaged modules; disconnect modules one at a time to isolate bad module pulling bus down",
+      "dtcs": "Diagnostic Trouble Codes; SPN (Suspect Parameter Number, identifies sensor/component), FMI (Failure Mode Identifier, type of fault 0-31); example SPN 94 FMI 3 = Fuel delivery pressure voltage high"
+    },
+    "sensors_inputs": {
+      "thermistors": "NTC (Negative Temperature Coefficient); coolant temp, intake air temp, oil temp; resistance decreases as temp increases; 2000-3000 ohms at 70°F typical; test with ohmmeter and compare to chart",
+      "map_boost_pressure": "Manifold Absolute Pressure or boost sensor; 5V reference, signal voltage varies with pressure; 0.5V at atmospheric, 4.5V at full boost; test with vacuum/pressure pump and scan tool",
+      "tps_throttle_position": "Potentiometer; 5V reference; 0.5-1V closed throttle, 4-4.5V wide open; modern use pedal position sensors (two sensors for redundancy, compare voltages)",
+      "crankshaft_camshaft_position": "Magnetic or Hall-effect; generate signal as reluctor wheel passes; waveform should be clean; weak signal = no start; test with scope or signal voltage with meter"
+    },
+    "common_electrical_faults": {
+      "no_crank": "Check battery voltage >12.4V per battery; listen for starter solenoid click (if no click = open circuit to solenoid, bad ignition switch/neutral safety); if click but no crank = bad starter, poor ground, seized engine",
+      "crank_no_start": "Check fuel pressure (rail pressure 5,000+ PSI cranking for common rail), check for codes, verify crankshaft/camshaft sensors (need both for sync), check for air in fuel",
+      "intermittent_issues": "Wiggle test connectors and harnesses; check for chafed wires, corroded terminals; use scan tool freeze frame to see conditions when fault occurred",
+      "parasitic_draw": "Disconnect batteries negative; put ammeter in series; should be <50 mA (0.050A); more = something staying on; pull fuses one at a time to isolate circuit"
+    }
+  },
+  "drivetrain": {
+    "clutch": {
+      "types": "Single plate (light duty), dual plate (heavy duty), angle spring, perpendicular spring; self-adjusting most common now",
+      "clutch_brake": "Small friction disc on input shaft; depressed last 1-2 inches of pedal travel; stops input shaft for gear engagement when stopped",
+      "free_play": "1.5-2 inches pedal free travel before resistance; too little = clutch slipping, too much = clutch not releasing; adjust at linkage or self-adjusting mechanism",
+      "failure_modes": {
+        "slipping": "Engine RPM rises but road speed doesn't; smell of burning friction material; caused by worn disc, oil contamination, insufficient free play (riding clutch)",
+        "not_releasing": "Hard to shift, grinding gears; excessive free play, air in hydraulic system, warped disc, bad release bearing",
+        "chatter": "Vibration during engagement; oil on disc, worn springs, loose engine mounts, flywheel damaged"
+      }
+    },
+    "transmissions": {
+      "manual": {
+        "types": "Synchronized (Eaton Fuller 10-speed typical), non-synchronized (older, double-clutch required), automated manual (UltraShift, Volvo I-Shift)",
+        "splitter": "High/low range in same gear position; doubles gear count; 10-speed = 5 positions × 2 (range)",
+        "shift_problems": "Hard shifting = linkage adjustment, clutch not releasing, synchronizer worn; jumping out of gear = worn shift fork, detent spring weak, gear/slider worn; grinding = clutch issue, synchronizer bad"
+      },
+      "automatic_allison": {
+        "models": "1000/2000 series light/medium duty, 3000/4000 heavy duty; 5-6 speeds; torque converter; planetary gearsets",
+        "fluid": "TranSynd or Dexron; check hot in neutral; level critical (overfull = foaming, aeration; underfull = slipping, overheating)",
+        "prognostics": "Built-in monitoring; scan tool reads clutch wear, shift adapt values, temp history; predicts maintenance needs",
+        "common_issues": "Slipping (low fluid, worn clutches, valve body issue), no movement (low fluid, pump failure, torque converter failed), harsh shifts (dirty fluid, valve body, solenoid fault)"
+      }
+    },
+    "differentials": {
+      "types": "Single reduction, double reduction (higher torque capacity), tandem (forward/rear axles)",
+      "gear_ratios": "3.70, 4.10, 4.30 typical; higher number = more torque, lower speed; lower number = highway gearing",
+      "limited_slip_locking": "No-Spin (automatic locker), air-actuated diff lock, limited-slip clutches; prevents one wheel spin",
+      "oil_analysis": "Check for metal particles (gear wear), check level (weeping seals common), fluid type (synthetic vs conventional, GL-5 rating, 75W-90 or 80W-140)",
+      "failures": "Gear whine (worn gears, bearing preload incorrect), clunking (backlash excessive, worn spider gears), leaks (pinion seal, axle seals, cover gasket)"
+    },
+    "driveshaft_u_joints": {
+      "driveshaft_angles": "Operating angle <3° ideal, <5° acceptable; excessive angle = vibration, rapid u-joint wear; check with angle finder",
+      "u_joint_diagnosis": "Clunk on acceleration/deceleration = worn u-joint or slip yoke; vibration = out of balance, bad u-joint, phasing incorrect; check for play by rotating shaft and watching joint",
+      "replacement": "Mark yokes before removal (phasing critical); press out old caps, press in new, ensure clips seat; grease fittings, pump until grease comes out all four bearing caps",
+      "slip_yoke": "Splined connection allows driveshaft length change (suspension movement); must be lubricated; insufficient spline engagement = vibration, failure"
+    }
+  },
+  "cooling_fuel_systems": {
+    "cooling_system": {
+      "capacity": "20-40 gallons typical Class 8 truck; 50/50 ethylene glycol and water; testing: refractometer or test strips (not hydrometer like batteries)",
+      "sca_supplemental_coolant_additive": "Required for heavy duty (Detroit Diesel, Cummins); prevents cylinder liner pitting (cavitation erosion); test with strip, add if low; 3-6% concentration",
+      "thermostats": "180-195°F typical opening temp; some dual thermostats; stuck closed = overheat; stuck open = slow warm-up, poor heater, emissions issues (DPF won't regen)",
+      "water_pump": "Belt or gear-driven; leaks from weep hole (bearing failure warning); cavitation damage to impeller from poor coolant maintenance",
+      "failures": "Overheating (low coolant, air in system, failed thermostat, plugged radiator, fan clutch not engaging, blown head gasket), external leaks (hoses, gaskets), internal leaks (EGR cooler, head gasket = coolant in oil or exhaust)"
+    },
+    "fuel_system": {
+      "fuel_supply": "Lift pump draws fuel from tank, pushes to high-pressure pump (common rail) or injection pump; pressure 10-80 PSI typical at lift pump",
+      "fuel_filters": "Primary (water separator with drain), secondary (finer filtration 2-10 micron); change per interval (contamination = injector failure)",
+      "air_in_fuel": "Causes hard start, loss of power, rough idle, stalling; find leak on suction side (loose fittings, cracked lines, bad O-rings); prime system after filter change or repair",
+      "water_separator": "Collects water from fuel; must drain regularly; some have sensor (water in fuel light); water causes rust and injector failure",
+      "common_rail_pressure": "Cranking 5,000-10,000 PSI; running 20,000-30,000 PSI; low pressure = hard start, loss power; codes for rail pressure low; check high-pressure pump, pressure relief valve, injector leaks",
+      "return_fuel": "Excess fuel from injectors returns to tank; excessive return = injector leaking (perform return flow test, isolate bad injector); also cools injectors"
+    }
+  },
+  "diagnostics_procedures": {
+    "systematic_approach": {
+      "verify_complaint": "Talk to driver; reproduce issue if possible; note conditions when it occurs",
+      "pull_codes": "Use scan tool; note active and inactive codes; freeze frame data shows conditions when code set",
+      "research": "Look up codes in service manual or online; understand what system is affected; check TSBs (Technical Service Bulletins)",
+      "test": "Follow diagnostic tree; test components per manual; use multimeter, pressure gauges, scope as needed",
+      "fix": "Repair or replace faulty component; clear codes; road test; verify repair",
+      "document": "Record what was found, parts used, tests performed; helps with comebacks"
+    },
+    "tools": {
+      "scan_tool": "Required; reads codes, live data, performs tests (injector cutout, actuator tests); OEM software best (Cummins Insite, Detroit DDDL, Cat ET); generic tools limited",
+      "multimeter": "Voltage, resistance, continuity, amperage; Fluke or similar quality; most used diagnostic tool",
+      "pressure_gauges": "Fuel pressure, boost pressure, oil pressure, coolant pressure testing; specific to task",
+      "oscilloscope": "Waveform analysis; sensor outputs, injector drivers, CAN bus; advanced diagnostics; identifies intermittent issues",
+      "infrared_thermometer": "Non-contact temp; check cylinder temps (misfire = cooler), bearing temps, exhaust temps"
+    },
+    "common_driveability_issues": {
+      "hard_start": "Check fuel pressure, air in fuel, glow plugs (cold weather), crank/cam sensors, ECM power/grounds, battery voltage during crank",
+      "loss_of_power": "Check boost pressure (turbo, intercooler leak, intake leak), fuel pressure (pump, filter, injectors), EGR stuck open, DPF plugged, transmission not downshifting, pyrometer (exhaust temp high = restriction)",
+      "rough_idle": "Injector fault (perform contribution test, cutout test), air in fuel, low fuel pressure, EGR valve stuck, engine mounts broken",
+      "black_smoke": "Overfueling = injector leaking, turbo not boosting (leak, wastegate stuck, VGT fault), intake restriction (filter, EGR buildup), timing incorrect",
+      "white_smoke": "Coolant in combustion (head gasket, EGR cooler, cracked head); unburned fuel (low compression, bad injector, cold engine - normal on startup)",
+      "blue_smoke": "Oil consumption = worn rings, valve seals, turbo seals; check oil level, pull intake tube (oil in intake = turbo seals or EGR)"
+    }
+  }
+}

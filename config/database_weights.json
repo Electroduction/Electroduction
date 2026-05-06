@@ -274,6 +274,30 @@
       "databases": {
         "refrigeration_systems_diagnostics": {"weight": 0.89, "algorithms": ["anomaly_to_signature", "cot_verification"]}
       }
+    },
+    "emergency_medical": {
+      "weight": 0.93,
+      "priority": "critical",
+      "rationale": "Life-critical patient care; ACLS protocols; medication dosing precision; airway management; trauma stabilization",
+      "databases": {
+        "paramedic_protocols_procedures": {"weight": 0.95, "algorithms": ["cot_verification"]}
+      }
+    },
+    "diesel_mechanics": {
+      "weight": 0.83,
+      "priority": "high",
+      "rationale": "Heavy equipment safety; emissions compliance (EPA); diagnostic precision; electrical/fuel system complexity",
+      "databases": {
+        "heavy_duty_diagnostics_repair": {"weight": 0.85, "algorithms": ["anomaly_to_signature", "weak_to_strong"]}
+      }
+    },
+    "property_management": {
+      "weight": 0.80,
+      "priority": "high",
+      "rationale": "Fair Housing Act compliance (federal law); landlord-tenant law; legal liability; financial accuracy; habitability standards",
+      "databases": {
+        "operations_compliance_maintenance": {"weight": 0.85, "algorithms": ["cot_verification", "weak_to_strong"]}
+      }
     }
   },
 

@@ -1,0 +1,233 @@
+{
+  "_source": "Fair Housing Act, Landlord-Tenant law, IREM CPM standards, Property management best practices",
+  "_note": "Long-tail property management knowledge. Fair Housing compliance, tenant screening, lease agreements, maintenance scheduling, eviction procedures, accounting.",
+  "fair_housing_compliance": {
+    "protected_classes": {
+      "federal": "Race, Color, Religion, National origin, Sex (including sexual orientation and gender identity), Familial status (children under 18), Disability",
+      "state_local": "Many states add: Source of income (Section 8), Age, Marital status, Sexual orientation (if not covered by federal sex), Gender identity; check state/local laws"
+    },
+    "prohibited_actions": {
+      "refuse_to_rent": "Cannot refuse based on protected class; applies to advertising, showing, application, approval",
+      "different_terms": "Cannot charge different rent, deposits, fees, or have different rules based on protected class",
+      "discriminatory_advertising": "Cannot state preference or limitation based on protected class; 'No children', 'Adults only', 'Christian community' all illegal",
+      "steering": "Cannot direct people to specific units/buildings based on protected class; must show all available units that meet stated criteria",
+      "harassment": "Cannot harass based on protected class; includes sexual harassment; hostile environment",
+      "retaliation": "Cannot retaliate against tenants who file fair housing complaint or exercise fair housing rights"
+    },
+    "reasonable_accommodation_modification": {
+      "accommodation": "Policy/procedure change for disabled person; emotional support animals (not pets, no pet rent/deposit, but damage charges allowed), assigned parking near entrance, rent payment date change if disability affects income timing",
+      "modification": "Physical alteration for disabled person; grab bars, wheelchair ramps, lowered counters; tenant pays for modification; landlord can require restoration if not universally beneficial",
+      "process": "Tenant requests, provides documentation of disability and necessity; interactive process to find solution; cannot charge application/processing fee for request",
+      "denial": "Can only deny if undue financial/administrative burden or fundamental alteration of operations; must engage in good faith interactive process first"
+    },
+    "exemptions": {
+      "owner_occupied_1_4_units": "If owner lives in one unit of 1-4 unit building, exempt from Fair Housing Act (not state laws though); still cannot advertise discriminatorily",
+      "single_family_rental": "Exempt if owner doesn't own >3 single-family homes, no broker used, and no discriminatory advertising; limited exemption",
+      "religious_organizations": "Can give preference to members if nonprofit and not commercial",
+      "senior_housing": "62+ or 80% 55+ can exclude families with children; must meet HUD certification requirements"
+    },
+    "penalties": {
+      "first_violation": "Up to $21,039 civil penalty (2024 amount, adjusts annually)",
+      "within_5_years": "Up to $52,596",
+      "two_or_more_within_7_years": "Up to $105,193",
+      "damages": "Actual damages to victim, emotional distress, punitive damages (no cap), attorney fees; can exceed $100,000 easily",
+      "risk_management": "Fair housing training for all staff; standardized screening criteria applied to all; document everything; never mention protected class"
+    }
+  },
+  "tenant_screening": {
+    "application_process": {
+      "application_fee": "Can charge actual cost of screening (credit check, background check); typically $30-75; cannot profit; some states cap amount or prohibit",
+      "required_disclosure": "Must disclose screening criteria before application; rejection criteria (credit score, income, criminal history, rental history); consistency critical",
+      "written_criteria": "Objective, verifiable criteria; minimum credit score (600, 620, etc.), income 2.5-3× rent, no evictions last 5-7 years, references; apply equally to all"
+    },
+    "credit_check": {
+      "credit_score": "FICO typical; 620+ good, 580-619 marginal, <580 high risk; can require co-signer if below threshold",
+      "credit_history": "Payment history, collections, judgments, bankruptcies; bankruptcy cannot be sole reason for denial but can be considered with other factors",
+      "adverse_action": "If deny based on credit report, must provide adverse action notice with credit bureau info, score, factors; FCRA requirement"
+    },
+    "criminal_background": {
+      "hud_guidance": "Blanket ban on anyone with criminal history is discriminatory (disparate impact); must consider nature, severity, recency of crime; individualized assessment",
+      "violent_sexual_crimes": "Can deny for violent crimes, sexual offenses; especially recent (last 5-7 years); safety of other residents justifies",
+      "drug_related": "Can deny for drug manufacturing/distribution; simple possession less clear; consider timeframe and rehabilitation",
+      "arrest_vs_conviction": "Cannot use arrests without conviction; presumption of innocence; can use convictions",
+      "look_back_period": "7 years typical; some states limit how far back can look; consider nature of crime and time elapsed"
+    },
+    "income_verification": {
+      "income_requirement": "2.5-3× monthly rent in gross income standard; some use 30-40% of gross income for rent; must be consistent policy",
+      "acceptable_documentation": "Paystubs (2-3 recent), offer letter, tax returns (self-employed, commission), bank statements, pension/SS award letters, Section 8 voucher",
+      "self_employed": "2 years tax returns; average income; CPA letter; consider trends (increasing vs decreasing)",
+      "co_signers": "If applicant doesn't meet income, co-signer can guarantee; co-signer must meet income requirement (3-5× rent sometimes); separate application/screening"
+    },
+    "rental_history": {
+      "landlord_verification": "Contact prior landlords (not current - may have incentive to lie to get rid of problem tenant); verify tenancy dates, rent paid on time, lease violations, damage, would rent again",
+      "eviction_search": "Court records; shows evictions filed (even if dismissed); automatic denial for eviction last 5-7 years common; nuance: eviction filed doesn't mean tenant at fault",
+      "employment_verification": "Call employer (or letter from HR); verify position, hire date, salary; some employers only confirm dates/title (policy)",
+      "references": "Personal references low value (applicant chooses); professional references better; prior landlord reference most valuable"
+    },
+    "decision_making": {
+      "consistent_criteria": "CRITICAL: Apply same standards to all applicants; document reason for every denial; avoid subjective judgments ('seems flaky')",
+      "first_qualified_applicant": "Best practice: rent to first applicant who meets objective criteria; prevents discrimination claims; timestamp applications",
+      "denial_notice": "Must provide written notice with specific reason; adverse action notice if credit/background check used; allow opportunity to dispute inaccuracy",
+      "holding_deposits": "Some allow to hold unit while processing; typically applied to security deposit or refunded; rules vary by state; get agreement in writing"
+    }
+  },
+  "lease_agreements": {
+    "essential_terms": {
+      "parties": "Names of all adults; landlord/agent contact info; property address with unit number",
+      "term": "Start and end date (fixed-term), or month-to-month; auto-renewal clause (converts to month-to-month or renews for term)",
+      "rent": "Amount, due date, grace period (if any), late fee amount and when assessed, acceptable payment methods",
+      "security_deposit": "Amount, conditions for deductions, return timeline (state law typically 14-30 days), interest if required by state",
+      "utilities": "Who pays what (water, sewer, electric, gas, trash, internet); if tenant-paid, must be clearly stated",
+      "occupancy_limits": "Number of occupants; names of all residents; guest policy",
+      "use_restrictions": "Residential use only; no illegal activity; quiet enjoyment; no commercial use without permission"
+    },
+    "common_clauses": {
+      "maintenance_responsibilities": "Landlord: structure, roof, plumbing, electrical, HVAC, appliances; Tenant: cleanliness, minor repairs, changing filters, yard care (if applicable), damage caused by tenant",
+      "entry_notice": "Landlord entry with 24-48 hour notice (varies by state) except emergency; specify business hours; can enter without notice if emergency (fire, flood, gas leak)",
+      "pet_policy": "Pets allowed/prohibited; pet deposit/rent; restrictions (size, breed, number); emotional support animals exempt from pet fees (reasonable accommodation)",
+      "smoking_policy": "Smoke-free property or designated areas; many states/cities allow landlords to prohibit smoking",
+      "assignment_subletting": "Typically prohibited without landlord consent; or allowed with consent not to be unreasonably withheld",
+      "lead_paint_disclosure": "Required for pre-1978 properties; provide EPA pamphlet; disclosure form; 10-day inspection period; $11,000+ penalty for non-compliance",
+      "mold_disclosure": "Some states require disclosure of past mold issues; prevention responsibilities",
+      "bed_bugs": "Some jurisdictions require disclosure; prevention and treatment responsibilities; who pays for extermination"
+    },
+    "security_deposits": {
+      "maximum_limits": "Varies by state; 1-2 months' rent typical; some states no limit; check local law",
+      "allowable_deductions": "Unpaid rent, damage beyond normal wear and tear, cleaning if left excessively dirty, lease break fees if specified in lease",
+      "normal_wear_and_tear": "Expected deterioration from everyday use; minor carpet wear, nail holes, paint fading; NOT damage; cannot charge for normal wear and tear",
+      "itemized_deductions": "Must provide itemized list with receipts/invoices; cannot estimate; actual costs only; if fail to provide itemization within statutory time, may forfeit deposit and owe penalties",
+      "return_timeline": "14-60 days depending on state; California 21 days, Florida 15-30 days; penalties for late return (double or triple deposit common)",
+      "interest": "Some states require interest on deposits (NJ, IL, NH, NY); rate varies; annual or at lease end",
+      "separate_account": "Some states require separate account or posting of bond; cannot commingle with operating funds"
+    },
+    "lease_violations": {
+      "notice_to_cure": "Give tenant notice of violation and time to cure (3-10 days typical); 'Pay or Quit' (rent), 'Cure or Quit' (lease violation)",
+      "non_curable": "Some violations can't be cured: illegal activity, serious damage, repeated violations; can proceed directly to eviction",
+      "documentation": "Photograph violations, written notices (certified mail or hand-delivered with proof), keep copies, document communications",
+      "escalation": "First violation: warning/cure notice; second: cure notice with eviction threat; third: eviction filing; except serious violations (immediate eviction)"
+    }
+  },
+  "maintenance_operations": {
+    "preventive_maintenance_schedule": {
+      "monthly": "HVAC filter change (or educate tenants to do it), test GFCI outlets, check fire extinguishers, inspect common areas, landscape maintenance",
+      "quarterly": "HVAC professional service (coil cleaning, refrigerant check, belt inspection), gutter cleaning, pest control treatment, irrigation system check",
+      "semi_annual": "Water heater flush/anode rod check, dryer vent cleaning, window/door seal inspection, exterior paint touch-up, roof inspection",
+      "annual": "Appliance inspection/service, smoke/CO detector replacement (10-year lifespan), plumbing inspection, electrical panel inspection, tree trimming, parking lot seal coating, pool inspection/certification",
+      "benefits": "Prevents emergency repairs (cheaper to prevent than fix), extends asset life, maintains tenant satisfaction, fewer late-night calls"
+    },
+    "emergency_vs_routine": {
+      "emergency": "24-hour response required; health/safety hazard; fire, flood, gas leak, no heat in winter, no AC in extreme heat (>100°F), sewage backup, major water leak, electrical hazard, lockout (after hours), broken window/door (security)",
+      "urgent": "24-48 hour response; impacts habitability; minor leak, clogged drain, appliance failure (fridge, stove), broken lock, no hot water, pest infestation",
+      "routine": "5-7 day response; inconvenience but not habitability issue; dripping faucet, squeaky door, light fixture out, cosmetic damage, outlet not working",
+      "tenant_caused": "Tenant pays for damage they caused; clogged toilet (misuse), broken window (accident/negligence), lost keys, pest infestation (uncleanliness)"
+    },
+    "work_order_management": {
+      "intake": "Online portal, phone, email; log immediately with date/time, description, tenant name/unit, priority",
+      "assignment": "Assign to in-house or vendor; track status (open, assigned, in progress, completed); communicate timeline to tenant",
+      "access_coordination": "Schedule entry with tenant (24-48 hr notice unless emergency); confirm appointment; provide window (9-12, 1-4)",
+      "completion": "Tenant sign-off or photo documentation; close work order; invoice processing; follow-up satisfaction call",
+      "software": "AppFolio, Buildium, Propertyware; track all work orders; reporting (response time, cost per unit, vendor performance)"
+    },
+    "vendor_management": {
+      "qualified_vendors": "Licensed, insured (general liability $1M+, workers comp), bonded; W-9 for tax purposes; verify license/insurance annually",
+      "scope_of_work": "Written scope for all projects >$500; get 3 bids for major work (>$5,000); include timeline, materials, cost breakdown",
+      "service_agreements": "HVAC, plumbing, electrical, pest control, landscaping; preferred vendor status; pre-negotiated rates; priority response",
+      "performance_tracking": "Response time, quality of work, cost, tenant feedback; review quarterly; replace poor performers",
+      "1099_reporting": "Issue 1099-NEC if paid >$600/year; track payments; due January 31; penalties for non-compliance"
+    },
+    "capital_improvements": {
+      "capex_vs_repair": "Repair = returns to previous condition, expense immediately; Capital improvement = extends life, adds value, depreciate over 27.5 years (residential)",
+      "common_capex": "Roof replacement (20-30 year life), HVAC replacement (15-20 years), water heater (10-15 years), appliances (10-15 years), flooring, exterior paint, parking lot",
+      "reserve_study": "Estimate future capital needs; set aside reserves monthly; typical 5-10% of rent for reserves; prevents cash flow crunch",
+      "improvement_planning": "Budget annual capex; prioritize by necessity (roof leak) vs value-add (granite counters); coordinate with vacancy (floor/paint during turnover)"
+    }
+  },
+  "eviction_procedures": {
+    "grounds_for_eviction": {
+      "non_payment": "Most common; rent unpaid by end of grace period; send Pay or Quit notice (3-5 days typical); if not paid, file eviction",
+      "lease_violation": "Unauthorized occupant, pet, illegal activity, property damage, nuisance; send Cure or Quit notice (typically 10-30 days); if not cured, file eviction",
+      "holdover_tenancy": "Lease ended, tenant didn't vacate; send notice to vacate (30-60 days if month-to-month, none needed if fixed-term expired); file eviction if stays",
+      "no_fault": "End of lease term, owner move-in, sale, major renovation; notice required (30-60 days typically, 90-120 in some cities); just cause eviction laws limit this in some jurisdictions"
+    },
+    "eviction_process": {
+      "notice": "Proper notice required (Pay or Quit, Cure or Quit, Notice to Vacate); specific form requirements by state; hand-delivered or certified mail; wait period (3-30 days)",
+      "filing": "File eviction complaint with court; pay filing fee ($100-300); serve tenant with summons and complaint (process server or sheriff)",
+      "court_hearing": "Hearing within 10-30 days (varies); bring lease, notices, ledger, evidence; tenant can contest; judge issues judgment",
+      "writ_of_possession": "If landlord wins, court issues writ; sheriff enforces; posts notice to vacate (24-72 hours); if tenant doesn't leave, sheriff removes tenant and belongings",
+      "lockout": "Only sheriff can physically remove tenant; self-help eviction (changing locks, removing belongings without court order) is illegal and subjects landlord to liability"
+    },
+    "cash_for_keys": {
+      "concept": "Pay tenant to leave voluntarily; faster and cheaper than eviction ($200-2000 vs $1000-5000 and 1-3 months)",
+      "negotiation": "Offer lump sum; tenant surrenders possession and signs release; no eviction on record (better for tenant); immediate possession (better for landlord)",
+      "agreement": "Written agreement; move-out date, payment amount, release of claims, surrender of keys; pay at key handover; walk-through to verify vacant",
+      "when_to_use": "Cooperative tenant in financial hardship, faster than eviction, avoid court costs and lost rent, avoid eviction moratorium delays"
+    },
+    "abandoned_property": {
+      "determining_abandonment": "Rent unpaid >15 days, no response to notices, utilities off, belongings mostly gone, neighbors report tenant moved; state law defines criteria",
+      "notice_requirements": "Post notice on door or send certified mail; state intent to consider property abandoned; deadline to claim belongings (10-30 days)",
+      "disposal": "After notice period, can dispose of belongings; some states require storage for period; document with photos; sell valuable items or donate; trash the rest",
+      "vehicle_abandonment": "Separate process; title search, notice to owner/lienholder, tow if not claimed; check DMV procedure"
+    }
+  },
+  "financial_management": {
+    "rent_collection": {
+      "payment_methods": "ACH/electronic (cheapest, fastest, encourage with discount), check, money order, cash (require receipt, count with tenant present, deposit same day), credit card (high fees 2-3%, pass to tenant or absorb)",
+      "grace_period": "Rent due 1st, grace period to 3rd-5th typical; late fee after grace period; late fee $25-100 or 5-10% of rent; must be reasonable (some states cap)",
+      "partial_payments": "Policy decision; accepting partial can restart notice period (check state law); written agreement if accepting payment plan",
+      "non_payment_escalation": "Day 1: rent due; Day 6: late fee assessed, late notice; Day 10: Pay or Quit notice; Day 15: file eviction if unpaid; consistency crucial"
+    },
+    "accounting": {
+      "chart_of_accounts": "Income: rental income, late fees, pet rent, other income; Expenses: mortgage, property tax, insurance, repairs, maintenance, management fees, utilities, advertising, legal, bad debt",
+      "operating_account": "Separate account for each property (or all properties); receives rent, pays expenses; never commingle with personal funds (pierces corporate veil, complicates taxes)",
+      "reserve_account": "Separate savings for security deposits (if required) and capital reserves; don't touch for operating expenses",
+      "bank_reconciliation": "Monthly; reconcile bank statement to accounting software; catch errors, fraud, duplicate charges; tenant ledgers should match bank deposits"
+    },
+    "financial_reporting": {
+      "profit_loss_statement": "Monthly and annual; income minus expenses = net operating income (NOI); owner's report; track trends",
+      "balance_sheet": "Assets (cash, accounts receivable, property value), Liabilities (mortgage, accounts payable, security deposits held), Equity",
+      "cash_flow_statement": "Sources and uses of cash; operating activities, investing, financing; important for budgeting and liquidity",
+      "budget_vs_actual": "Annual budget; compare actual to budget monthly; variance analysis; adjust operations or budget as needed"
+    },
+    "tax_considerations": {
+      "rental_income": "All rent and fees are taxable income; report on Schedule E",
+      "deductible_expenses": "Mortgage interest, property tax, insurance, repairs, maintenance, management fees, utilities (if landlord-paid), advertising, legal, travel (to property), depreciation",
+      "depreciation": "27.5 year straight-line for residential; land not depreciable; improvement vs repair (capitalize vs expense)",
+      "1099_requirements": "Issue 1099-NEC to vendors paid >$600; corporations exempt (except attorneys); due to recipient by Jan 31, IRS by Mar 31",
+      "security_deposits": "Not income when received; becomes income if kept for damages/unpaid rent; refund is not expense (just returning tenant money)"
+    },
+    "key_performance_indicators": {
+      "occupancy_rate": "Occupied units / Total units; 95%+ good; <90% concerning; vacancy cost is rent lost plus turnover cost",
+      "collection_rate": "Rent collected / Rent charged; 98%+ excellent; includes evictions and bad debt; write off uncollectible after eviction",
+      "turnover_rate": "Move-outs / Total units; 30-50% annual typical; lower is better; cost to turn unit $1,000-3,000 (paint, clean, repairs, vacancy)",
+      "maintenance_cost_per_unit": "$500-1,500/unit/year average; track trends; spikes indicate deferred maintenance or mismanagement",
+      "net_operating_income": "Rental income - Operating expenses (excluding mortgage); used to calculate cap rate; cash flow = NOI - debt service"
+    }
+  },
+  "tenant_relations": {
+    "communication": {
+      "response_time": "Acknowledge within 24 hours; emergency = immediate; non-emergency = respond within 1 business day; update on progress every 2-3 days",
+      "channels": "Tenant portal (preferred, documented), email, phone, text; use portal for documentation trail",
+      "documentation": "Log all communications; date, time, method, summary; CYA for disputes; email confirmation of verbal conversations",
+      "professionalism": "Business relationship, not personal; friendly but not friends; boundaries important"
+    },
+    "lease_renewals": {
+      "timing": "Contact tenant 90 days before lease end; offer renewal or give non-renewal notice per lease terms",
+      "rent_increases": "Market analysis; 3-5% annual typical; larger increases risk vacancy; give 60-90 day notice; some jurisdictions have rent control limits",
+      "renewal_incentive": "Tenant retention cheaper than turnover; consider keeping rent same if good tenant, market soft, or recent improvements",
+      "non_renewal": "If not renewing tenant, give required notice (30-60 days typical, 90-120 in some cities); must have legitimate business reason in just-cause jurisdictions; be prepared for tenant to refuse to leave (eviction)"
+    },
+    "conflict_resolution": {
+      "tenant_complaints": "Listen, acknowledge, empathize, solve; most issues are miscommunication or unmet expectations; address promptly",
+      "neighbor_disputes": "Mediate if both your tenants; document noise complaints; warn violator; enforce lease quiet enjoyment clause; evict if necessary",
+      "reasonable_accommodation_requests": "Take seriously; engage in interactive process; verify disability and need; grant unless undue burden; document",
+      "rent_withholding": "Some states allow if landlord doesn't make required repairs; establish repair timeline immediately; document all actions; consult attorney if tenant withholds rent"
+    },
+    "move_out_process": {
+      "notice_to_vacate": "Tenant must give 30-60 days notice (per lease); earlier notice doesn't relieve rent obligation unless lease allows",
+      "move_out_inspection": "Schedule walk-through with tenant; document condition with photos/video; provide tenant with inspection checklist",
+      "cleaning_standards": "Broom-clean typical; professional cleaning not required unless specified in lease; stove, fridge, bathrooms cleaned",
+      "forwarding_address": "Required for security deposit return; if tenant doesn't provide, send to last known address (the rental unit) certified mail",
+      "turnover_timeline": "Clean 1-2 days, paint 1-2 days, repairs 2-5 days, flooring/major work 1-2 weeks; 7-14 day turnover typical; market during turnover to minimize vacancy"
+    }
+  }
+}
