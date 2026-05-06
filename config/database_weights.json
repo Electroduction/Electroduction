@@ -226,6 +226,30 @@
       "databases": {
         "pv_system_design_codes": {"weight": 0.92, "algorithms": ["cot_verification"]}
       }
+    },
+    "photography": {
+      "weight": 0.68,
+      "priority": "medium",
+      "rationale": "Technical precision required; creative with technical foundation",
+      "databases": {
+        "exposure_lighting_composition": {"weight": 0.72, "algorithms": ["weak_to_strong"]}
+      }
+    },
+    "graphic_design": {
+      "weight": 0.70,
+      "priority": "medium",
+      "rationale": "Design principles and print specs critical; creative application of rules",
+      "databases": {
+        "typography_color_print_specs": {"weight": 0.75, "algorithms": ["weak_to_strong"]}
+      }
+    },
+    "fitness": {
+      "weight": 0.76,
+      "priority": "medium-high",
+      "rationale": "Exercise safety; injury prevention; programming science-based",
+      "databases": {
+        "exercise_programming_nutrition": {"weight": 0.80, "algorithms": ["weak_to_strong"]}
+      }
     }
   },
 

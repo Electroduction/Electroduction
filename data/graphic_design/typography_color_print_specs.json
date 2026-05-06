@@ -1,0 +1,193 @@
+{
+  "_source": "The Elements of Typographic Style, Interaction of Color by Josef Albers, Print Production standards",
+  "_note": "Long-tail graphic design knowledge. Typography rules, color theory, grid systems, print specifications, file preparation.",
+  "typography": {
+    "type_classification": {
+      "serif": {
+        "old_style": "Garamond, Caslon; low contrast; angled stress; bracketed serifs; readable body text",
+        "transitional": "Baskerville, Times New Roman; higher contrast; vertical stress; workhorse fonts",
+        "modern": "Bodoni, Didot; extreme contrast; vertical stress; thin serifs; elegant, fashion",
+        "slab_serif": "Rockwell, Courier; thick serifs; minimal contrast; mechanical, typewriter feel"
+      },
+      "sans_serif": {
+        "grotesque": "Franklin Gothic; slight contrast; closed apertures; early sans serifs",
+        "neo_grotesque": "Helvetica, Arial; minimal contrast; neutral; corporate, modern",
+        "humanist": "Gill Sans, Frutiger; calligraphic influence; more organic; friendly",
+        "geometric": "Futura, Avant Garde; based on circles/rectangles; modernist, clean"
+      },
+      "script_display": "Brush Script, Lobster; decorative; use sparingly; headlines only; avoid all caps"
+    },
+    "hierarchy_principles": {
+      "size_contrast": "Minimum 2:1 ratio; headline 36pt, subhead 18pt, body 9pt; create clear levels",
+      "weight_contrast": "Bold headlines, regular body, light captions; don't use more than 3 weights",
+      "style_contrast": "Italic for emphasis, all caps for short headlines; NEVER all caps body text (unreadable)",
+      "color_contrast": "Dark headlines, medium subheads, lighter captions; guide eye through hierarchy"
+    },
+    "readability_rules": {
+      "line_length": "45-75 characters optimal (2-3 alphabets); 66 characters ideal; too long = lost line, too short = choppy",
+      "leading_line_height": "120-145% of point size; 12pt type = 14.4-17.4pt leading; more for long lines, less for short",
+      "tracking_letter_spacing": "0 for body text; slight positive (+10-25) for all caps; negative (-10 to -25) for large display",
+      "kerning": "Adjust space between specific letter pairs; AV, To, We need negative kerning; UPPERCASE needs more space",
+      "alignment": {
+        "left_aligned": "Best for body text; ragged right; natural reading flow; Western languages",
+        "justified": "Both edges aligned; professional; can create rivers (bad spacing); use with hyphenation",
+        "centered": "Formal, invitations; hard to read for long text; use for short headlines only",
+        "right_aligned": "Uncommon; captions, pull quotes; harder to read; use sparingly"
+      }
+    },
+    "pairing_fonts": {
+      "rules": {
+        "contrast": "Pair serif with sans; geometric with humanist; create visual interest",
+        "similar_proportions": "Match x-height and width; ensures harmony even with contrast",
+        "limit_fonts": "2-3 fonts max per project; use weights/sizes for variety within font family",
+        "avoid_similar": "Don't pair similar fonts (Helvetica + Arial); looks like mistake"
+      },
+      "proven_pairings": [
+        "Garamond (serif body) + Futura (sans headlines)",
+        "Georgia (serif) + Verdana (sans)",
+        "Playfair Display (serif display) + Source Sans Pro (sans body)",
+        "Montserrat (geometric sans) + Merriweather (serif)"
+      ]
+    },
+    "common_mistakes": {
+      "rivers": "Gaps in justified text forming vertical white space; adjust tracking or rewrite",
+      "widows_orphans": "Widow = single line at top of column; Orphan = single line at bottom; adjust tracking or rewrite",
+      "rags": "Uneven right edge in left-aligned text; manually adjust line breaks for smooth rag",
+      "fake_bold_italic": "Digitally slanting/thickening font; use actual font weights; fake versions look bad",
+      "too_many_fonts": "More than 3 fonts = chaotic; stick to one font family if unsure"
+    }
+  },
+  "color_theory": {
+    "color_models": {
+      "rgb": "Red, Green, Blue; additive; screens, digital; 0-255 per channel; sRGB for web",
+      "cmyk": "Cyan, Magenta, Yellow, Black; subtractive; print; 0-100% per channel; converts from RGB for print",
+      "hex": "#RRGGBB; web colors; #FF0000 = red; shorthand #F00 for #FF0000",
+      "pantone_pms": "Spot colors; consistent physical ink; brand colors; PMS 185 = Coca-Cola red"
+    },
+    "color_harmony": {
+      "complementary": "Opposite on color wheel; blue/orange, red/green; high contrast; vibrant",
+      "analogous": "Adjacent colors; blue, blue-green, green; harmonious, calm; nature",
+      "triadic": "Evenly spaced (120°); red, yellow, blue; balanced, vibrant; primary colors",
+      "split_complementary": "Base + two adjacent to complement; blue, red-orange, yellow-orange; less tension than complementary",
+      "tetradic_square": "Four colors evenly spaced; complex; use one dominant, others accents",
+      "monochromatic": "Single hue with different saturation/brightness; sophisticated, minimal; easy to execute"
+    },
+    "60_30_10_rule": {
+      "60_percent": "Dominant color; backgrounds, large areas; neutral or primary brand color",
+      "30_percent": "Secondary color; supports dominant; creates interest",
+      "10_percent": "Accent color; calls to action, highlights; punchy, high contrast"
+    },
+    "psychological_associations": {
+      "red": "Energy, passion, danger, urgency; raises heart rate; CTA buttons, sale tags",
+      "blue": "Trust, calm, professional, stability; most universally liked; corporate, healthcare, finance",
+      "green": "Nature, growth, health, money; calming; organic products, environmental",
+      "yellow": "Optimism, warmth, caution; grabs attention; use sparingly (hard on eyes)",
+      "purple": "Luxury, creativity, wisdom, royalty; premium products, beauty",
+      "orange": "Friendly, energetic, affordable; attention-grabbing; CTAs, casual brands",
+      "black": "Sophisticated, powerful, elegant, modern; luxury brands, minimalism",
+      "white": "Clean, pure, simple, minimal; healthcare, tech, modern design"
+    },
+    "accessibility_wcag": {
+      "contrast_ratios": {
+        "aa_normal_text": "4.5:1 minimum; 14pt+ regular or 18pt+ bold",
+        "aa_large_text": "3:1 minimum; larger text easier to read at lower contrast",
+        "aaa_normal_text": "7:1 minimum; enhanced; better for vision impairment",
+        "aaa_large_text": "4.5:1 minimum"
+      },
+      "testing": "WebAIM contrast checker; Figma plugins; ensure text readable for colorblind users",
+      "dont_rely_on_color_alone": "Use icons, patterns, or text labels in addition to color for meaning"
+    }
+  },
+  "layout_and_grids": {
+    "grid_systems": {
+      "column_grid": "Divide page into vertical columns; 12-column common (divisible by 2, 3, 4, 6); flexible layout",
+      "modular_grid": "Columns + rows; modules/cells; magazines, complex layouts; Swiss design",
+      "hierarchical_grid": "Intuitive, organic; not strict columns; web design; based on content importance",
+      "baseline_grid": "Horizontal lines for text alignment; 8pt or 4pt increments; aligns text across columns"
+    },
+    "margins_and_gutters": {
+      "margins": "Outer space; frame content; 0.5-1 inch print; 16-32px web; larger for elegance",
+      "gutters": "Space between columns; typically 20-30px web; 1-2 picas print; prevents column collision",
+      "golden_ratio": "1:1.618; aesthetically pleasing proportions; margins, column widths, image sizes"
+    },
+    "white_space": {
+      "purpose": "Breathing room; guides eye; creates sophistication; don't fill every inch",
+      "macro": "Space between major elements; sections, columns",
+      "micro": "Space between smaller elements; line spacing, letter spacing, padding around text",
+      "active_vs_passive": "Active directs attention; passive provides rest; balance both"
+    },
+    "visual_hierarchy": {
+      "z_pattern": "Eye moves Z-shape; top-left → top-right → bottom-left → bottom-right; simple layouts",
+      "f_pattern": "Eye scans top, then left side vertically; web reading; place important info in 'F' hotspots",
+      "focal_point": "Dominant element drawing attention; largest, highest contrast, or most colorful; one per layout"
+    }
+  },
+  "print_specifications": {
+    "resolution_and_size": {
+      "print_dpi": "300 DPI minimum; 450-600 DPI for fine art; lower DPI = pixelated print",
+      "screen_ppi": "72-96 PPI; higher wastes file size; 2× for retina displays (144-192 PPI)",
+      "calculation": "8×10 print at 300 DPI = 2400×3000 pixels",
+      "vector_vs_raster": "Vector (AI, PDF) = infinite scaling; Raster (JPG, PNG) = fixed resolution"
+    },
+    "bleed_and_safe_area": {
+      "bleed": "Extra image area beyond trim; 0.125\" (1/8\") standard; prevents white edges if cut misaligned",
+      "safe_area": "0.125-0.25\" inside trim; keep text/important elements inside; prevent accidental trimming",
+      "trim_line": "Final cut size; what customer receives",
+      "setup": "Design canvas = trim + bleed; 8.5×11 + 0.125\" bleed = 8.75×11.25\" canvas"
+    },
+    "color_mode_conversion": {
+      "rgb_to_cmyk": "Always convert before printing; colors shift (especially bright blues, greens); proof on calibrated monitor or physical proof",
+      "out_of_gamut": "Colors RGB can display but CMYK can't print; dulled in conversion; avoid neon colors for print",
+      "rich_black": "C:60 M:40 Y:40 K:100; deeper than K:100 alone; use for large black areas",
+      "four_color_black_text": "Never; causes registration issues; use K:100 only for text"
+    },
+    "file_formats": {
+      "pdf_x1a": "Print-ready PDF; CMYK only; fonts embedded; preferred by printers",
+      "tiff": "Raster; lossless; large files; compatible with all print workflows",
+      "eps": "Vector or raster; legacy format; being replaced by PDF",
+      "ai_indd": "Native Adobe; provide only if printer requests; include linked images and fonts (package for InDesign)"
+    },
+    "paper_stocks": {
+      "coated": "Glossy or matte coating; vibrant colors; magazines, brochures; ink sits on surface",
+      "uncoated": "Natural texture; ink absorbs; duller colors; letterhead, business cards, books",
+      "weight": {
+        "text_weight": "60-80 lb; regular paper; magazines, brochures",
+        "cover_weight": "80-130 lb; thick, sturdy; postcards, business cards, book covers",
+        "cardstock": "110-130 lb; very thick; invitations, premium cards"
+      }
+    }
+  },
+  "design_principles": {
+    "contrast": "Differentiate elements; size, color, weight, shape; creates interest and hierarchy",
+    "repetition": "Consistent use of colors, fonts, shapes; creates unity; brand recognition",
+    "alignment": "Nothing placed arbitrarily; everything connects; creates clean, organized appearance",
+    "proximity": "Related items grouped; creates relationships; whitespace separates unrelated items",
+    "balance": {
+      "symmetrical": "Mirror image; formal, stable; traditional, conservative",
+      "asymmetrical": "Unequal visual weight but balanced; dynamic, modern; more interesting",
+      "radial": "Elements radiate from center; movement, energy"
+    },
+    "emphasis": "Focal point; hierarchy; guides viewer's eye; one dominant element per composition",
+    "unity": "Cohesive whole; all elements work together; consistent style, color palette, spacing"
+  },
+  "file_preparation_checklist": {
+    "before_sending_to_print": [
+      "Convert to CMYK color mode",
+      "Check all images are 300 DPI minimum",
+      "Include 0.125\" bleed on all sides",
+      "Outline all fonts (convert text to paths) or embed fonts",
+      "Check for spot colors if unwanted (should be CMYK only unless intentional)",
+      "Ensure rich black used for large black areas (C:60 M:40 Y:40 K:100)",
+      "Set crop marks and bleed marks",
+      "Save as PDF/X-1a or printer's preferred format",
+      "Proof PDF on screen and request physical proof if critical"
+    ],
+    "web_export": [
+      "Convert to RGB color mode (sRGB color space)",
+      "Export at appropriate resolution (72-96 PPI standard; 144-192 for retina)",
+      "Optimize file size (compress JPG 70-85%; use PNG for transparency; WebP for modern browsers)",
+      "Ensure accessible color contrast (WCAG AA: 4.5:1 minimum)",
+      "Export assets at 1× and 2× for responsive images"
+    ]
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "_source": "NASM CPT, ACE Personal Trainer Manual, Exercise Physiology textbooks, Precision Nutrition",
+  "_note": "Long-tail fitness knowledge. Exercise science, program design, form cues, nutrition basics, injury prevention.",
+  "exercise_science": {
+    "energy_systems": {
+      "atp_cp_phosphagen": {
+        "duration": "0-10 seconds max effort",
+        "examples": "1RM lift, 40-yard dash, vertical jump",
+        "fuel": "Stored ATP and creatine phosphate",
+        "recovery": "30 sec to 3 min for full replenishment",
+        "training": "Heavy strength training, plyometrics, sprints"
+      },
+      "glycolytic_anaerobic": {
+        "duration": "10 seconds to 2 minutes high intensity",
+        "examples": "400m sprint, 30 rep set, HIIT interval",
+        "fuel": "Muscle glycogen converted to ATP without oxygen",
+        "byproduct": "Lactate accumulation causes burning sensation",
+        "recovery": "10-60 min for lactate clearance",
+        "training": "Hypertrophy training, metabolic conditioning"
+      },
+      "oxidative_aerobic": {
+        "duration": "2+ minutes sustained effort",
+        "examples": "Jogging, cycling, swimming steady state",
+        "fuel": "Carbs and fats with oxygen; unlimited duration if pace sustainable",
+        "training": "Zone 2 cardio (conversational pace), marathons, endurance"
+      }
+    },
+    "muscle_fiber_types": {
+      "type_i_slow_twitch": {
+        "characteristics": "Fatigue-resistant, aerobic, low force, slow contraction",
+        "training_response": "Endurance training increases mitochondrial density and capillaries",
+        "best_for": "Marathon running, cycling long distance, postural muscles"
+      },
+      "type_iia_fast_twitch_oxidative": {
+        "characteristics": "Moderate force, moderate fatigue resistance, hybrid aerobic/anaerobic",
+        "training_response": "Adaptable; can shift toward Type I or IIx based on training",
+        "best_for": "800m run, soccer, basketball, CrossFit"
+      },
+      "type_iix_fast_twitch_glycolytic": {
+        "characteristics": "High force, fast contraction, fatigue quickly, anaerobic",
+        "training_response": "Heavy strength training, plyometrics increase size and power",
+        "best_for": "Powerlifting, sprinting, jumping, explosive movements"
+      }
+    },
+    "progressive_overload": {
+      "principle": "Gradually increase stimulus to force adaptation",
+      "methods": [
+        "Increase weight (most common; 2.5-5 lb increments)",
+        "Increase reps (8 reps → 12 reps at same weight)",
+        "Increase sets (3 sets → 4 sets)",
+        "Decrease rest (90 sec → 60 sec between sets)",
+        "Increase tempo (slower eccentric 4 sec instead of 2 sec)",
+        "Increase frequency (2x/week → 3x/week)",
+        "Increase range of motion (half squat → full squat)"
+      ],
+      "minimum_effective_dose": "Smallest stimulus that produces adaptation; avoid excessive volume (diminishing returns and injury risk)"
+    }
+  },
+  "program_design": {
+    "rep_ranges_and_goals": {
+      "strength_1_5_reps": {
+        "intensity": "85-95% 1RM",
+        "rest": "3-5 minutes between sets",
+        "sets": "3-6 sets",
+        "frequency": "2-3x/week per movement pattern",
+        "adaptations": "Neural efficiency, maximal force production, minimal hypertrophy"
+      },
+      "hypertrophy_6_12_reps": {
+        "intensity": "65-85% 1RM",
+        "rest": "60-90 seconds",
+        "sets": "3-5 sets",
+        "frequency": "2x/week per muscle group (48-72 hr recovery)",
+        "adaptations": "Muscle growth, metabolic stress, mechanical tension",
+        "volume": "10-20 sets per muscle group per week"
+      },
+      "muscular_endurance_12_20_reps": {
+        "intensity": "50-65% 1RM",
+        "rest": "30-60 seconds",
+        "sets": "2-4 sets",
+        "adaptations": "Fatigue resistance, capillary density, mitochondrial function"
+      }
+    },
+    "periodization": {
+      "linear": "Progress from high volume/low intensity → low volume/high intensity over 8-12 weeks; beginner-friendly",
+      "undulating": "Vary intensity and volume within week; Monday strength, Wednesday hypertrophy, Friday endurance; prevents adaptation staleness",
+      "block": "Focus on one quality for 3-4 weeks, then switch; accumulation (volume) → intensification (load) → realization (peaking)",
+      "deload": "Every 4th week reduce volume 40-60% or intensity 10-20%; recovery week; prevents overtraining"
+    },
+    "movement_patterns": {
+      "horizontal_push": "Bench press, push-ups; pectorals, anterior deltoid, triceps",
+      "vertical_push": "Overhead press, handstand push-up; deltoids, upper chest, triceps",
+      "horizontal_pull": "Rows (barbell, dumbbell, cable); rhomboids, mid traps, lats, rear delts",
+      "vertical_pull": "Pull-ups, lat pulldowns; lats, lower traps, biceps",
+      "squat": "Back squat, front squat, goblet squat; quads, glutes, adductors",
+      "hinge": "Deadlift, RDL, kettlebell swing; hamstrings, glutes, spinal erectors",
+      "lunge": "Split squat, walking lunge, Bulgarian split squat; single-leg strength, stability",
+      "carry": "Farmer's walk, suitcase carry; core stability, grip, postural muscles"
+    },
+    "exercise_selection": {
+      "compound_vs_isolation": "Compound = multi-joint (squat, bench); most bang for buck; Isolation = single-joint (bicep curl, leg extension); targeted work",
+      "bilateral_vs_unilateral": "Bilateral = both limbs (barbell squat); more load; Unilateral = one limb (single-leg RDL); balance, address asymmetries",
+      "order": "Heavy compounds first (squat, deadlift, bench), then accessories, then isolation; fatigue management"
+    }
+  },
+  "exercise_technique": {
+    "squat_cues": {
+      "setup": "Feet shoulder-width, toes slightly out 10-15°; bar on upper traps (high bar) or rear delts (low bar)",
+      "descent": "Break at hips and knees simultaneously; knees track over toes; chest up; neutral spine",
+      "depth": "Hip crease below knee (parallel) for full ROM; partial if mobility limited",
+      "ascent": "Drive through midfoot; knees out; hips and chest rise together; avoid good morning squat (hips rise first)",
+      "breathing": "Inhale at top, brace core (Valsalva), descend, ascend, exhale at top or partway up",
+      "common_faults": "Knees caving (valgus collapse) - cue knees out; excessive forward lean - chest up; heels lifting - ankle mobility or squat shoes"
+    },
+    "deadlift_cues": {
+      "setup": "Feet hip-width; bar over midfoot; shins touch bar; grip just outside legs; shoulders over bar",
+      "starting_position": "Chest up; lats engaged (pull bar into shins); neutral spine; hips higher than knees but lower than shoulders",
+      "pull": "Push floor away with legs; bar drags up shins; hips and shoulders rise together; finish standing tall with glutes squeezed",
+      "lowering": "Hinge at hips first; bar path straight down; control descent; reset each rep",
+      "breathing": "Inhale before pull, brace, lift, exhale at top or after lowering",
+      "common_faults": "Rounded back - reset with chest up; bar drifts forward - lats not engaged; hips shoot up - start with hips slightly lower"
+    },
+    "bench_press_cues": {
+      "setup": "Feet flat on floor; arch in lower back; shoulder blades retracted and depressed; eyes under bar",
+      "unrack": "Straight up, then move over chest; lockout position",
+      "descent": "Elbows 45-75° from torso (not 90° flared); bar to nipple line or lower chest; forearms vertical",
+      "press": "Drive feet into floor; leg drive through arch; press bar up and slightly back to start position",
+      "breathing": "Inhale during descent, hold at bottom, exhale during press or at top",
+      "common_faults": "Elbows flared 90° - shoulder impingement risk; bouncing off chest - no control; butt off bench - lose stability"
+    },
+    "overhead_press_cues": {
+      "setup": "Feet hip-width; bar on front delts; elbows slightly forward of bar; grip just outside shoulders",
+      "press": "Press bar up and slightly back once past face; squeeze glutes to prevent hyperextending lumbar spine; shrug shoulders at top",
+      "lockout": "Bar over midfoot; biceps by ears; active overhead position",
+      "descent": "Control down to front delts; elbows track forward",
+      "breathing": "Inhale at bottom, brace, press, exhale at top",
+      "common_faults": "Leaning back excessively - hyperextends spine; bar path forward - loses power; not shrugging at top - incomplete lockout"
+    }
+  },
+  "injury_prevention": {
+    "warm_up_structure": {
+      "general_warm_up": "5-10 min low-intensity cardio; raise body temp, heart rate; cycling, rowing, dynamic movements",
+      "dynamic_stretching": "Leg swings, arm circles, walking lunges, inchworms; 5-10 min; active ROM",
+      "specific_warm_up": "Movement-specific prep; empty bar squat 10 reps, then 50% 1RM 5 reps, 70% 3 reps, working weight; grease the groove",
+      "activation": "Glute bridges, band pull-aparts, dead bugs; activate underactive muscles before compound lifts"
+    },
+    "mobility_vs_flexibility": {
+      "flexibility": "Passive range of motion; static stretching; hold 30-60 sec post-workout",
+      "mobility": "Active range of motion with control; dynamic movements; more functional than pure flexibility",
+      "priorities": "Hip flexor mobility (psoas); thoracic spine rotation; ankle dorsiflexion; shoulder external rotation"
+    },
+    "common_injuries": {
+      "lower_back_pain": {
+        "causes": "Poor squat/deadlift form; weak core; anterior pelvic tilt; tight hip flexors",
+        "prevention": "Master hip hinge; strengthen core (planks, dead bugs, bird dogs); stretch hip flexors; avoid hyperextension",
+        "management": "If acute, rest 2-3 days; ice; light movement; avoid loaded flexion; seek professional if persists >1 week"
+      },
+      "shoulder_impingement": {
+        "causes": "Overhead pressing with poor form; internal rotation dominance; weak rotator cuff",
+        "prevention": "Face pulls, band pull-aparts; external rotation work; avoid benching with flared elbows",
+        "management": "Reduce overhead volume; increase horizontal pulling 2:1 ratio to pressing; strengthen rotator cuff"
+      },
+      "knee_pain": {
+        "causes": "Valgus collapse in squat; excessive running volume; quad/hamstring imbalance; poor ankle mobility",
+        "prevention": "Knees out cue; strengthen glutes; balance quad and hamstring work; improve ankle dorsiflexion",
+        "management": "Reduce range of motion (box squat); terminal knee extensions; hip strengthening"
+      },
+      "tennis_elbow_lateral_epicondylitis": {
+        "causes": "Overuse; excessive gripping; bicep curls with too much weight; poor wrist position in pressing",
+        "prevention": "Neutral wrist in all exercises; don't over-grip bar; wrist extensor stretches",
+        "management": "Reduce volume; eccentric wrist extensions; theraband flexbar; avoid aggravating movements"
+      }
+    }
+  },
+  "nutrition_basics": {
+    "macronutrients": {
+      "protein": {
+        "calories": "4 cal/gram",
+        "recommendation": "0.7-1.0 g/lb bodyweight; 1.0-1.2 if lean/muscle building; 0.6-0.8 if high bodyfat",
+        "timing": "Distribute evenly across meals; 20-40g per meal; pre/post workout not critical if daily total met",
+        "sources": "Chicken, fish, lean beef, eggs, Greek yogurt, cottage cheese, whey protein, tofu, legumes"
+      },
+      "carbohydrates": {
+        "calories": "4 cal/gram",
+        "recommendation": "2-4 g/lb bodyweight depending on activity; higher for athletes, lower for sedentary",
+        "timing": "Pre-workout (1-3 hr before); post-workout (within 2 hr) for glycogen replenishment",
+        "sources": "Rice, oats, potatoes, sweet potatoes, fruit, whole grains, vegetables"
+      },
+      "fats": {
+        "calories": "9 cal/gram",
+        "recommendation": "0.3-0.5 g/lb bodyweight; minimum 0.3 for hormone production",
+        "types": "Prioritize unsaturated (avocado, nuts, olive oil, fatty fish); limit saturated; avoid trans fats",
+        "sources": "Avocado, nuts, nut butter, olive oil, salmon, eggs, seeds"
+      }
+    },
+    "calorie_targets": {
+      "maintenance": "Bodyweight (lbs) × 14-16; sedentary 14, active 16; or TDEE calculator",
+      "fat_loss": "Maintenance - 300-500 cal; 0.5-1% bodyweight loss per week; preserve muscle with high protein",
+      "muscle_gain": "Maintenance + 200-300 cal; 0.25-0.5% bodyweight gain per week; more = excessive fat gain",
+      "tracking": "MyFitnessPal, Cronometer; track 3-7 days to assess intake; adjust based on weekly average weight"
+    },
+    "hydration": {
+      "baseline": "Bodyweight (lbs) / 2 = oz per day; 180 lb = 90 oz water",
+      "activity": "Add 12-16 oz per hour of exercise",
+      "indicators": "Urine pale yellow; thirst rare; dark urine or persistent thirst = dehydrated"
+    },
+    "supplements": {
+      "essential": [
+        "Protein powder (convenience; not necessary if whole food protein adequate)",
+        "Creatine monohydrate 5g/day (strength, power, muscle; most researched supplement; safe)"
+      ],
+      "beneficial": [
+        "Caffeine 3-6 mg/kg (performance, focus; pre-workout 30-60 min before)",
+        "Vitamin D 2000-4000 IU if deficient (most people are; get tested)",
+        "Omega-3 2-3g/day (fish oil; anti-inflammatory; heart health)"
+      ],
+      "not_necessary": "BCAAs (protein already contains), glutamine (not ergogenic), testosterone boosters (ineffective unless prescription)"
+    }
+  },
+  "assessment": {
+    "body_composition": {
+      "methods": {
+        "scale_weight": "Least accurate for composition; affected by water, food, time of day; track weekly average",
+        "progress_photos": "Front, side, back; same lighting/time/clothing; every 2-4 weeks; most practical",
+        "measurements": "Waist, hips, chest, arms, thighs; track every 2-4 weeks; sensitive to fat loss/muscle gain",
+        "dexa_scan": "Gold standard; expensive ($100-200); shows body fat %, lean mass, bone density",
+        "bioelectrical_impedance": "Scale/handheld; inaccurate for absolute values; useful for trends if consistent timing"
+      }
+    },
+    "fitness_testing": {
+      "cardiovascular": "1-mile run, beep test, VO2 max test; track time or distance improvements",
+      "strength": "1RM test or 3RM; estimate 1RM = weight × reps × 0.0333 + weight",
+      "muscular_endurance": "Push-up test, plank hold, bodyweight squat reps in 1 min",
+      "flexibility": "Sit-and-reach test, overhead squat assessment",
+      "movement_screening": "FMS (Functional Movement Screen); identifies asymmetries and limitations; injury risk"
+    }
+  }
+}

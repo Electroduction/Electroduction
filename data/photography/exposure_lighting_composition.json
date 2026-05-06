@@ -1,0 +1,167 @@
+{
+  "_source": "Understanding Exposure by Bryan Peterson, Light Science & Magic, Digital Photography Complete Course",
+  "_note": "Long-tail photography knowledge. Exposure triangle, lighting ratios, metering modes, post-processing workflows.",
+  "exposure_fundamentals": {
+    "exposure_triangle": {
+      "aperture": {
+        "function": "Controls depth of field and light amount",
+        "f_stops": "f/1.4, f/2, f/2.8, f/4, f/5.6, f/8, f/11, f/16, f/22",
+        "relationship": "Each full stop = 2× or 1/2× light; f/2.8 to f/4 = -1 stop = half the light",
+        "depth_of_field": {
+          "wide_open": "f/1.4-f/2.8; shallow DOF; blurred background (bokeh); portraits",
+          "mid_range": "f/4-f/8; moderate DOF; environmental portraits, street photography",
+          "stopped_down": "f/11-f/22; deep DOF; landscapes, architecture; entire scene in focus"
+        },
+        "diffraction": "f/16+ causes diffraction; soft image; sweet spot typically f/8-f/11 for sharpness"
+      },
+      "shutter_speed": {
+        "function": "Controls motion blur and light amount",
+        "values": "1/8000, 1/4000, 1/2000, 1/1000, 1/500, 1/250, 1/125, 1/60, 1/30, 1/15, 1/8, 1/4, 1/2, 1\", 2\", etc.",
+        "reciprocal_rule": "Minimum handheld shutter = 1/focal_length; 50mm lens = 1/50s minimum (or use IBIS/VR)",
+        "motion": {
+          "freeze_action": "1/500s+ for sports; 1/1000s+ for fast action; 1/2000s+ for birds in flight",
+          "slight_blur": "1/60-1/125s; conveys motion; panning technique",
+          "creative_blur": "1/30s or slower; waterfalls, light trails, intentional camera movement",
+          "long_exposure": "Multiple seconds to minutes; ND filters needed in daylight; smooth water, star trails"
+        }
+      },
+      "iso": {
+        "function": "Sensor sensitivity; amplifies signal (and noise)",
+        "values": "100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600+",
+        "base_iso": "Usually 100 or 200; cleanest image, highest dynamic range",
+        "acceptable_range": "ISO 100-1600 on modern cameras; 3200-6400 acceptable with noise reduction",
+        "high_iso": "6400+ visible noise; use when aperture maxed and shutter can't go slower; denoise in post",
+        "auto_iso": "Set max ISO limit (e.g., 3200); camera adjusts to maintain exposure"
+      }
+    },
+    "metering_modes": {
+      "evaluative_matrix": "Analyzes entire scene; multi-zone; good general purpose; can be fooled by bright/dark backgrounds",
+      "center_weighted": "Emphasizes center 60-80%; ignores extreme edges; portraits",
+      "spot_metering": "Measures 1-5% of frame; precise control; meter off subject's face, expose for highlights",
+      "highlight_weighted": "Prevents blown highlights; useful for high-contrast scenes"
+    },
+    "exposure_compensation": {
+      "usage": "Override camera's meter; +/- EV; adjust when scene fools meter",
+      "examples": {
+        "snow_beach": "+1 to +2 EV; prevent gray snow/sand; expose brighter",
+        "dark_subjects": "-1 to -2 EV; prevent overexposure; black dog in shade",
+        "backlit_subjects": "+1 to +1.5 EV or use fill flash; prevent silhouette"
+      },
+      "zebras_blinkies": "Highlight warning; flashing areas = blown highlights; adjust exposure or use graduated ND"
+    }
+  },
+  "lighting": {
+    "natural_light": {
+      "golden_hour": "1 hour after sunrise, 1 hour before sunset; warm, soft, directional; best for portraits/landscapes",
+      "blue_hour": "Before sunrise, after sunset; diffused, even light; long exposures; cityscapes",
+      "midday_harsh": "Overhead sun; harsh shadows; high contrast; avoid for portraits or use fill flash/reflector",
+      "overcast": "Soft, diffused light; low contrast; great for portraits, even skin tones; colors saturated"
+    },
+    "studio_lighting_ratios": {
+      "lighting_ratio": "Key light to fill light ratio; controls contrast",
+      "ratios": {
+        "1_1": "Equal key and fill; flat, no shadows; product photography",
+        "2_1": "Key 1 stop brighter; subtle shadows; beauty, headshots",
+        "4_1": "Key 2 stops brighter; dramatic; fashion, character portraits",
+        "8_1": "Key 3 stops brighter; very dramatic; low-key, film noir"
+      },
+      "measurement": "Incident meter at subject position; point toward key, then fill; compare readings"
+    },
+    "lighting_patterns": {
+      "rembrandt": "Key 45° to side, slightly above; triangle of light on shadow cheek; classic portrait lighting",
+      "loop": "Key 30-45° to side, above; nose shadow points toward corner of mouth; flattering for most faces",
+      "split": "Key 90° to side; half face lit, half shadow; dramatic, masculine",
+      "butterfly": "Key directly in front, above; shadow under nose; beauty/glamour lighting",
+      "broad_short": "Broad = light on side of face toward camera; Short = light on side away; short slims face"
+    },
+    "light_modifiers": {
+      "softbox": "Large source = soft light; 2-4ft for portraits; closer = softer; quality of light depends on apparent size",
+      "umbrella": "Shoot-through (soft, even) or reflective (more directional); inexpensive, portable",
+      "beauty_dish": "Mid-contrast; punchy yet soft; fashion, beauty; 22-28\" typical",
+      "octabox": "8-sided softbox; round catchlights in eyes; flattering for portraits",
+      "grids_snoots": "Restrict light spread; focused beam; hair light, background accent, dramatic effects",
+      "scrims_flags": "Block or diffuse light; control spill; shape light"
+    },
+    "flash_techniques": {
+      "ttl_vs_manual": "TTL auto-adjusts power; fast but inconsistent; Manual consistent but requires test shots",
+      "high_speed_sync": "Flash above max sync speed (1/250s typical); fill flash in bright sun; reduces power",
+      "rear_curtain_sync": "Flash at end of exposure; motion blur before sharp freeze; light trails behind subject",
+      "stroboscopic": "Multiple pops during long exposure; multiple images of moving subject in one frame"
+    }
+  },
+  "composition": {
+    "rule_of_thirds": "Divide frame into 9 sections (3×3 grid); place subjects on intersections; horizon on top or bottom third",
+    "leading_lines": "Use lines (roads, fences, rivers) to guide eye to subject; create depth",
+    "framing": "Use natural frames (windows, arches, branches) around subject; adds depth and context",
+    "negative_space": "Empty space around subject; minimalist; draws attention to subject; breathing room",
+    "symmetry_patterns": "Symmetry (reflections, architecture); patterns broken by subject; visual interest",
+    "foreground_interest": "Include foreground element in landscapes; create depth; lead eye into frame",
+    "perspective": {
+      "eye_level": "Neutral; viewer feels connection; most common",
+      "low_angle": "Shoot upward; subject looks powerful, dominant; dramatic sky",
+      "high_angle": "Shoot downward; subject looks vulnerable, small; flat lay, birds-eye",
+      "dutch_angle": "Tilted horizon; dynamic, unsettling; action, energy"
+    }
+  },
+  "post_processing": {
+    "raw_workflow": {
+      "white_balance": "Correct color cast; 5500K daylight, 3200K tungsten, 6500K shade; use eyedropper on neutral gray",
+      "exposure_adjustment": "Adjust overall brightness; +/- 2 stops safe in RAW; watch histogram",
+      "highlights_shadows": "Recover blown highlights (-100); lift shadows (+30-50); maintain contrast",
+      "contrast": "S-curve for punch; lift blacks slightly, drop whites slightly; or use tone curve",
+      "clarity": "Midtone contrast; +10 to +30 typical; oversharpening >50; use radial filter for selective clarity"
+    },
+    "color_grading": {
+      "hsl_sliders": "Hue (shift color), Saturation (intensity), Luminance (brightness) per color channel",
+      "split_toning": "Different colors in highlights and shadows; teal/orange popular; subtle (saturation 10-25)",
+      "color_wheels": "Lift (shadows), Gamma (midtones), Gain (highlights); shift color in each tonal range",
+      "luts": "Lookup tables; apply color grade preset; starting point, adjust to taste"
+    },
+    "sharpening": {
+      "amount": "50-80 for portraits; 80-120 for landscapes; depends on subject detail",
+      "radius": "0.8-1.2 pixels typical; controls edge width; too high = halos",
+      "detail": "Controls fine detail vs broad sharpening; 20-40 typical",
+      "masking": "Hold Alt/Option while adjusting; white edges = sharpened; isolate sharpening to edges only"
+    },
+    "noise_reduction": {
+      "luminance_nr": "Reduces brightness noise; 30-60 typical; preserves detail",
+      "color_nr": "Reduces color speckles; 50-80 typical; less destructive than luminance",
+      "ai_denoise": "Topaz, DxO, Lightroom Denoise; excellent results; use on high-ISO images before other edits"
+    },
+    "frequency_separation": {
+      "purpose": "Separate texture from color/tone; retouch skin without losing texture",
+      "process": "Duplicate layer; blur one (color), high-pass other (texture); retouch blur layer for even skin tone",
+      "use": "Portrait retouching, product photography, remove blemishes without softening skin"
+    },
+    "dodging_burning": {
+      "dodge": "Lighten areas; bring out details in shadows; brighten eyes, teeth",
+      "burn": "Darken areas; add depth; tone down bright distractions; vignette",
+      "technique": "Low opacity brush (10-20%); build up gradually; non-destructive on separate layer"
+    }
+  },
+  "gear_specifications": {
+    "sensor_sizes": {
+      "full_frame": "36×24mm; equiv to 35mm film; no crop factor; shallow DOF, better low-light",
+      "aps_c": "~24×16mm; 1.5× crop (Nikon/Sony) or 1.6× (Canon); lighter, cheaper, more reach",
+      "micro_four_thirds": "17.3×13mm; 2× crop; compact, deep DOF, excellent for wildlife with long lenses",
+      "crop_factor": "Multiply focal length; 50mm on APS-C (1.5×) = 75mm equivalent field of view"
+    },
+    "lens_specifications": {
+      "prime_vs_zoom": "Prime = fixed focal length, sharper, wider aperture, lighter; Zoom = versatile, heavier, slower",
+      "focal_lengths": {
+        "ultra_wide": "10-24mm; landscapes, architecture, interiors; distortion",
+        "wide": "24-35mm; environmental portraits, street, events",
+        "normal": "40-60mm; similar to human vision; versatile; 50mm f/1.8 'nifty fifty'",
+        "portrait": "85-135mm; flattering compression; shallow DOF; 85mm f/1.8 ideal",
+        "telephoto": "200-400mm; wildlife, sports; compression; tripod or fast shutter needed",
+        "super_telephoto": "500-800mm; birds, distant wildlife; expensive, heavy, requires support"
+      },
+      "image_stabilization": "In-body (IBIS) or lens (VR/IS/OSS); 3-5 stops advantage; shoot handheld at slower speeds"
+    },
+    "file_formats": {
+      "raw": "Unprocessed sensor data; 12-14 bit; maximum editing flexibility; large files (20-50 MB)",
+      "jpeg": "Processed, compressed; 8-bit; smaller files (3-10 MB); less editing headroom; fine for most uses",
+      "tiff": "Uncompressed or lossless; 16-bit; huge files; use for archival or after editing RAW"
+    }
+  }
+}
