@@ -1,0 +1,192 @@
+{
+  "_source": "FMCSA regulations, CDL manual, Commercial driver training materials, DOT compliance guides",
+  "_note": "Long-tail CDL knowledge. Hours of service, air brake systems, pre-trip inspection, regulations, endorsements.",
+  "hours_of_service": {
+    "property_carrying_70_hour_rule": {
+      "driving_limit": "11 hours driving after 10 consecutive hours off duty",
+      "on_duty_limit": "14 hours on-duty window; once started, must complete within 14 hours; driving not permitted after 14th hour",
+      "cycle_limit": "60 hours in 7 days or 70 hours in 8 days; choose at company start",
+      "34_hour_restart": "Reset to 0 hours with 34 consecutive hours off duty; can be used once per week if includes two 1am-5am periods",
+      "30_minute_break": "Required after 8 cumulative hours driving; must be at least 30 min off duty or sleeper berth",
+      "sleeper_berth": "Split sleeper provision: 7/3 or 8/2 split; neither period counts against 14-hour clock if both total 10 hours"
+    },
+    "passenger_carrying_60_hour_rule": {
+      "driving_limit": "10 hours driving after 8 consecutive hours off duty",
+      "on_duty_limit": "15 hours on-duty window",
+      "cycle_limit": "60 hours in 7 days or 70 hours in 8 days",
+      "no_sleeper_berth": "Sleeper berth provision not available for passenger carriers"
+    },
+    "eld_electronic_logging": {
+      "required": "Most commercial drivers; exceptions for pre-2000 trucks, driveaway-towaway, short-haul exempt",
+      "duty_status": "Off duty, sleeper berth, driving, on duty not driving; automatic detection of driving",
+      "edits": "Driver can propose edits; carrier must review; both annotate; maintain paper logs as backup for 8 days",
+      "malfunctions": "If ELD malfunctions, revert to paper logs; must be repaired within 8 days"
+    },
+    "violations_penalties": {
+      "log_falsification": "Can result in CDL disqualification, fines up to $11,000, criminal charges",
+      "hours_violation": "Out-of-service order (immediate); CSA points (affects safety rating); fines $1,000-$11,000",
+      "form_and_manner": "Incomplete logs, missing signatures, not current; $100-$1,000 per violation"
+    }
+  },
+  "air_brake_system": {
+    "components": {
+      "air_compressor": "Belt or gear-driven from engine; compresses air to 120-125 PSI; governed to cut out at max pressure",
+      "air_tanks_reservoirs": "Store compressed air; wet tank (first, collects moisture), primary (rear brakes), secondary (front/tractor brakes)",
+      "air_dryer": "Removes moisture from air; prevents freezing in cold weather; purges when compressor cuts out (loud 'psssh')",
+      "brake_chambers": "Convert air pressure to mechanical force; push rod extends to apply brakes",
+      "slack_adjusters": "Lever arm on brake chamber; amplifies force; automatic (self-adjusting) or manual (require periodic adjustment)",
+      "brake_shoes_drums": "Friction material presses against rotating drum; heat dissipation critical",
+      "spring_brakes": "Spring applies brake, air releases; used for parking/emergency; yellow diamond knob on dash",
+      "relay_valves": "Speed up brake application on trailer; react to tractor brake signal"
+    },
+    "system_operation": {
+      "charging": "Compressor runs until pressure reaches 120-125 PSI (cut-out); restarts at 100-105 PSI (cut-in)",
+      "service_brakes": "Foot pedal; applies air to brake chambers; graduated pressure control",
+      "parking_brake": "Yellow diamond knob; releases spring brakes; DO NOT use while moving (can damage)",
+      "emergency_brake": "Red octagon knob; releases spring brakes on tractor; automatic if air pressure drops below 20-40 PSI",
+      "trailer_brakes": "Blue knob/lever; hand valve; applies trailer brakes only; use for trailer jackknife prevention on slippery roads"
+    },
+    "pre_trip_checks": {
+      "static_leak_test": {
+        "procedure": "Build to 120 PSI; shut off engine; release parking brake; apply and hold service brake",
+        "acceptable": "Pressure drop <3 PSI in 1 minute (single vehicle) or <4 PSI (combination); more = leak, find and repair"
+      },
+      "applied_leak_test": {
+        "procedure": "Build to 120 PSI; shut off engine; apply service brake fully; hold 1 minute",
+        "acceptable": "Pressure drop <3 PSI in 1 minute (single) or <4 PSI (combination)"
+      },
+      "brake_adjustment": "Check pushrod travel; should be <1 inch (manual slack adjusters) or <2 inches (auto); excessive travel = out of adjustment",
+      "low_air_warning": "Should activate at 60 PSI or above; usually buzzer and red light; test by running engine, pumping brakes",
+      "spring_brake_activation": "Should activate between 20-40 PSI; parking brake pops out automatically; test by depleting air with engine off"
+    },
+    "troubleshooting": {
+      "air_pressure_builds_slowly": "Worn compressor, air leak (check all fittings, tanks, hoses), governor malfunction",
+      "excessive_moisture_in_system": "Faulty air dryer, frequent short trips (doesn't heat up), drain tanks daily in humid/cold weather",
+      "brakes_dragging": "Parking brake not fully released, kinked hose, contaminated air (oil, water) in system, sticking brake chamber",
+      "brake_fade": "Excessive heat from prolonged braking; use lower gear on downgrades; driver error, not equipment fault",
+      "uneven_braking": "Out-of-adjustment brakes, oil-contaminated shoes, slack adjuster binding on one side"
+    }
+  },
+  "pre_trip_inspection": {
+    "engine_compartment": {
+      "fluid_levels": "Oil (full mark), coolant (full cold), power steering (full), windshield washer (at least 3/4)",
+      "belts": "Not frayed, cracked, or loose; 1/2 to 3/4 inch play on longest span",
+      "hoses": "No cracks, bulges, leaks; connections tight",
+      "air_compressor": "Mounted securely, no leaks, drive belt in good condition",
+      "leaks": "Check ground under truck; oil, fuel, coolant, or hydraulic leaks",
+      "wiring": "Secure, not frayed, no exposed wires"
+    },
+    "cab_and_controls": {
+      "gauges": "All working; oil pressure builds within seconds of starting; temperature in normal range; voltmeter/ammeter shows charging",
+      "warning_lights": "Check all illuminate at key-on, then go out after engine starts (except ABS indicator if trailer not connected)",
+      "mirrors": "Clean, adjusted, secure; can see down both sides of trailer and behind",
+      "steering": "Play <10° (approximately 2 inches on 20-inch wheel); no binding, jerking, or hard spots",
+      "horn": "Test; must be audible from 200 feet",
+      "wipers_washers": "Blades not torn, clean windshield effectively; washer reservoir full and functioning",
+      "lights_signals": "4-way flashers, turn signals, high beam, headlights, clearance lights, identification lights"
+    },
+    "wheels_and_tires": {
+      "tread_depth": "4/32 inch minimum on steer axle; 2/32 inch on all other axles; use tread depth gauge or penny test",
+      "tire_condition": "No cuts, bulges, exposed cords, flat spots, mismatched sizes; dual tires not touching",
+      "wheel_fasteners": "All present, no cracks around lug nut holes, rust trails indicate looseness, use wrench to check tightness",
+      "valve_caps": "Present and tight on all tires",
+      "hub_oil_seals": "No leaks, not over-full (can blow out seals when hot)",
+      "spacers": "Present and not damaged (between dual wheels)"
+    },
+    "suspension_and_brakes": {
+      "springs_air_bags": "Not broken, shifted, or missing; air bags inflated (no sagging); u-bolts tight",
+      "shock_absorbers": "Mounted securely; no leaks",
+      "torque_rod_arms": "Not cracked or damaged; bushings not worn",
+      "brake_drums": "No cracks longer than half the width of friction area; not excessively worn (can overheat)",
+      "brake_hoses": "Not cracked, chafed, or leaking; properly routed (not rubbing)",
+      "slack_adjusters": "90° to pushrod when brakes released; pushrod travel <1-2 inches when applied",
+      "brake_chambers": "Mounted securely, no leaks, no damage or dents"
+    },
+    "coupling_system": {
+      "fifth_wheel": {
+        "position": "Not too far forward (turns hit cab); platform tilts down toward rear of tractor",
+        "condition": "No cracks in frame or mounting; securely mounted to tractor frame",
+        "locking_jaws": "Closed around kingpin; safety latch engaged; no gap between upper and lower fifth wheel",
+        "release_handle": "Secured in locked position; not bent or damaged",
+        "grease": "Plate greased; prevents wear and binding during turns"
+      },
+      "kingpin_apron": "Not bent, cracked, or broken; apron plate secure",
+      "air_lines": "Glad hands locked and sealed (no air leaks); correct colors (blue service, red emergency); no kinks or damage",
+      "electrical_connection": "7-way plug secure, not corroded; check trailer lights work",
+      "landing_gear": "Fully raised, no missing parts, crank handle secured, no damage to legs"
+    }
+  },
+  "endorsements": {
+    "hazmat_h": {
+      "requirement": "TSA background check, written test, renewal every 5 years",
+      "placards": "Required if transporting >1,001 lbs of hazmat or any quantity of Table 1 materials",
+      "shipping_papers": "Must be within driver's reach; describe hazmat first; emergency response number required",
+      "emergency_procedures": "Know ERG (Emergency Response Guidebook); isolate area; notify authorities; don't touch spilled material",
+      "parking": "Cannot park within 300 feet of open fire, bridge, tunnel (loaded); safe haven parking at designated areas"
+    },
+    "tanker_n": {
+      "requirement": "Written test; for vehicles with tank capacity >1,000 gallons (aggregate if multiple tanks)",
+      "liquid_surge": "Baffles reduce but don't eliminate; brake early and gently; partially full tanks are worst",
+      "high_center_of_gravity": "Increased rollover risk; take curves slowly; posted speed limits may be too fast for loaded tanker",
+      "outage": "Space left in tank for liquid expansion; typically 5%; more in hot weather or if transporting heated material",
+      "emergency_procedures": "Product leaking? Isolate area; if on fire, stay upwind; tanker rollovers = hazmat incident (usually)"
+    },
+    "doubles_triples_t": {
+      "requirement": "Written test; for pulling two or three trailers",
+      "coupling_sequence": "Check converter dolly wheels chocked; back under second trailer; secure dolly; connect air lines last",
+      "uncoupling_sequence": "Disconnect air lines first; unlock pintle hook; pull out from under second trailer",
+      "offtracking": "Rear trailer wheels track inside front trailer on turns; allow extra room; longer combination = more offtracking",
+      "backward_amplification": "Rearmost trailer sways most; doubles/triples more unstable than single; avoid sudden steering/braking"
+    },
+    "passenger_p": {
+      "requirement": "Written test and skills test; for vehicles designed to carry 16+ passengers (including driver)",
+      "standees": "Allowed on buses; must stay behind standee line; prohibited on interstate routes",
+      "railroad_crossings": "MUST stop 15-50 feet before tracks; look and listen; open door to hear; proceed in low gear (don't shift on tracks)",
+      "emergency_exits": "Mark clearly; demonstrate to passengers; keep aisles clear; emergency roof hatches on most buses",
+      "passenger_management": "No standing in front of standee line; baggage secured; no smoking; disruptive passengers = stop safely, get help"
+    },
+    "school_bus_s": {
+      "requirement": "Written test, skills test, background check; most restrictive endorsement",
+      "loading_unloading": "Activate red lights 100-300 feet before stop; extend stop arm; count students on/off; check mirrors",
+      "railroad_crossings": "MUST stop, open door, look and listen; turn off radio and passengers quiet; proceed only when clear",
+      "special_dangers": "Students crossing in front of bus; students bending down to pick up items (can't see them); loading zone risks",
+      "evacuation_drills": "Required; practice emergency exits; rear door, roof hatches, windows; know procedures"
+    }
+  },
+  "safety_regulations": {
+    "drug_and_alcohol": {
+      "pre_employment": "Drug test required before first drive",
+      "random": "50% of drivers tested annually for drugs, 10% for alcohol; unannounced",
+      "post_accident": "Required if fatality, or driver receives citation + injury or vehicle towed",
+      "reasonable_suspicion": "If supervisor observes behavior/appearance indicating drug/alcohol use",
+      "bac_limit": "0.04% while on duty; 0.00% within 4 hours of duty; refusal to test = same as positive"
+    },
+    "medical_certification": {
+      "validity": "2 years typical; 1 year if certain conditions (high BP, diabetes); 3 months if temporary condition",
+      "requirements": "Vision 20/40 each eye (with correction); 70° peripheral; distinguish red/green/amber; hearing 5-foot whisper test or audiometric",
+      "disqualifying": "Insulin-dependent diabetes (waiver available), seizure disorder, current alcohol/drug use, untreated sleep apnea",
+      "self_certification": "Interstate (requires FMCSA medical card) or intrastate (state rules); must update state when medical status changes"
+    },
+    "vehicle_maintenance": {
+      "pre_trip_inspection": "Required before every trip; driver must be satisfied vehicle is safe",
+      "post_trip_inspection": "Must complete driver vehicle inspection report (DVIR) if defects found; list defects, sign",
+      "carrier_responsibility": "Review DVIR, certify defects corrected or not needing correction before next trip",
+      "annual_inspection": "Commercial vehicles must pass annual inspection; display sticker; inspection every 12 months"
+    }
+  },
+  "weight_and_cargo": {
+    "weight_limits": {
+      "federal_limits": "80,000 lbs gross vehicle weight; 34,000 lbs tandem axle; 20,000 lbs single axle",
+      "bridge_formula": "Limits weight based on axle spacing; closer axles = lower limit; prevents bridge damage",
+      "state_variations": "Some states allow higher weights on designated roads; check before operating",
+      "overweight_penalties": "Fines per pound over; out of service until weight reduced; can lose license for repeated violations"
+    },
+    "cargo_securement": {
+      "aggregate_working_load": "Sum of all tie-downs must be ≥50% of cargo weight; 10,000 lb cargo = 5,000 lb WLL minimum",
+      "minimum_tie_downs": "1 if <5 ft and <1,100 lbs; 2 if 5-10 ft; 2 + 1 per 10 ft if >10 ft",
+      "edge_protection": "Required if tie-down could be cut by cargo edge; prevents weakening straps",
+      "header_board": "Front wall rated for cargo; prevents forward movement; ≥3,000 lbs per square foot against cargo",
+      "inspection_intervals": "Within first 50 miles, every 150 miles or 3 hours, after break"
+    }
+  }
+}

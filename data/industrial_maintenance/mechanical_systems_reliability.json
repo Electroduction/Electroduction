@@ -1,0 +1,226 @@
+{
+  "_source": "Industrial maintenance handbooks, Reliability engineering guides, Vibration analysis standards, CMMS best practices",
+  "_note": "Long-tail industrial maintenance. Predictive maintenance, bearing analysis, alignment procedures, reliability metrics, troubleshooting.",
+  "predictive_maintenance": {
+    "vibration_analysis": {
+      "iso_standards": {
+        "zone_a": "<2.8 mm/s RMS; newly commissioned machines; excellent condition",
+        "zone_b": "2.8-7.1 mm/s; acceptable for unrestricted operation; normal condition",
+        "zone_c": "7.1-11.2 mm/s; unsatisfactory; plan corrective maintenance; degraded condition",
+        "zone_d": ">11.2 mm/s; unacceptable; immediate action required; severe faults present"
+      },
+      "fault_frequencies": {
+        "imbalance": "1× RPM; smooth sine wave; radial vibration; increases with speed; common cause: material buildup, lost balance weight",
+        "misalignment": "1×, 2×, 3× RPM (harmonics); axial and radial vibration; parallel or angular misalignment; requires realignment",
+        "looseness": "Many harmonics; erratic; may have half-order peaks; loose foundation bolts, worn bearings, loose fits",
+        "bearing_defects": {
+          "bpfi": "Ball Pass Frequency Inner race; high frequency; modulated by 1× RPM; inner race fault",
+          "bpfo": "Ball Pass Frequency Outer race; high frequency; not modulated; outer race fault",
+          "bsf": "Ball Spin Frequency; very high frequency; rolling element defect",
+          "ftf": "Fundamental Train Frequency (cage); low frequency; <1× RPM; cage defect"
+        },
+        "gear_mesh": "Number of teeth × RPM; sidebands at 1× RPM = misalignment; broken tooth = impulses at 1× shaft speed"
+      },
+      "data_collection": "Accelerometer on bearing housing; measure radial (horizontal/vertical) and axial; consistent location; same machine state (load, speed)",
+      "trending": "Plot vibration over time; sudden change = investigate; gradual rise = plan maintenance; stable = good"
+    },
+    "thermography": {
+      "electrical_hot_spots": {
+        "delta_t": "Temperature difference from ambient or similar component; >10°C = investigate; >20°C = urgent",
+        "causes": "Loose connections (high resistance), overloaded circuit, imbalanced phases, harmonic distortion",
+        "severity": "Hot bolted connections = fire risk; thermal cycling weakens connection further (positive feedback)",
+        "inspection_frequency": "Quarterly for critical equipment; annually for general; load equipment to >40% for accurate reading"
+      },
+      "mechanical_applications": "Bearing overheating, steam trap performance, insulation defects, refractory damage, heat exchanger fouling",
+      "emissivity": "Shiny surfaces (0.1-0.3) read low; paint or tape known emissivity surface; oxidized/painted metals (0.8-0.95) read accurately"
+    },
+    "oil_analysis": {
+      "wear_metals_ppm": {
+        "iron": "Gears, cylinder walls; <50 ppm normal; >200 ppm abnormal wear; sudden spike = investigate",
+        "copper": "Bearings, bushings; <20 ppm normal; >100 ppm excessive wear",
+        "aluminum": "Pistons, housings; <10 ppm normal; sudden increase = scuffing or cavitation",
+        "chromium": "Piston rings, bearings; <5 ppm normal; indicator of severe wear if elevated"
+      },
+      "oil_condition": {
+        "viscosity": "Should be within ±10% of new oil; low = dilution (fuel, coolant); high = oxidation or contamination",
+        "acid_number": "Measures oxidation; increases with use; replace oil when TAN exceeds limit (typically 2.0-2.5 mg KOH/g)",
+        "water_content": "<200 ppm acceptable; >500 ppm promotes rust and depletes additives; >1000 ppm urgent oil change"
+      },
+      "particle_count_iso_4406": "Counts particles >4µm, >6µm, >14µm per mL; example 18/16/13 = normal hydraulic system; 21/19/16 = dirty, service needed",
+      "sampling": "Take from circulating system mid-stream (not sump bottom); consistent location; label with equipment ID, hours, date"
+    },
+    "ultrasonic_testing": {
+      "applications": "Bearing condition (early fault detection), compressed air leaks, steam trap testing, electrical arcing/corona",
+      "bearing_monitoring": "Decibel level trending; compare to baseline; 8 dB increase from baseline = lubrication needed; 12-16 dB = early bearing fault",
+      "leak_detection": "Compressed air, vacuum systems; converts ultrasonic to audible; can hear leaks in noisy environments; quantify CFM loss",
+      "frequency": "40 kHz typical; detects high-frequency emissions not audible to human ear"
+    }
+  },
+  "shaft_alignment": {
+    "dial_indicator_reverse_method": {
+      "setup": "Mount indicators on one shaft; measure runout on other shaft; rotate shafts together; take readings at 0°, 90°, 180°, 270°",
+      "offset_calculation": "Vertical: (Top + Bottom) / 2; positive = move up, negative = move down; Horizontal: (Left + Right) / 2",
+      "angularity_calculation": "Difference in readings 180° apart; indicates angular misalignment; shim or move one machine",
+      "tolerances": "±2 mils offset, ±1 mil/inch angularity for general purpose; ±0.5 mils for high speed (>3600 RPM)"
+    },
+    "laser_alignment": {
+      "advantages": "Faster, more accurate (±0.1 mils), less skill required, can align without rotation (sag compensation)",
+      "procedure": "Mount laser and detector on shafts; rotate to 3+ positions; software calculates shims and movements",
+      "soft_foot_check": "Must correct before alignment; loosen each foot bolt individually; >2 mils deflection = soft foot; shim or machine base repair",
+      "thermal_growth": "Account for operating temperature expansion; vertical growth typical; laser tools have thermal compensation feature"
+    },
+    "coupling_types": {
+      "rigid": "No misalignment tolerance; perfect alignment required; used when precision alignment achievable and maintained",
+      "flexible": "Tolerates some misalignment; gear (high torque), grid (shock absorption), elastomeric (vibration damping); still needs good alignment for life",
+      "misalignment_effects": "Premature bearing failure, seal leaks, coupling wear, shaft fatigue, vibration, energy loss"
+    }
+  },
+  "bearing_maintenance": {
+    "bearing_types": {
+      "ball_bearings": "Point contact; high speed; moderate load; low friction; 10,000-50,000 hrs life",
+      "roller_bearings": {
+        "cylindrical": "Line contact; high radial load; no thrust; used in gearboxes",
+        "tapered": "High radial + thrust load; can preload; wheel bearings, gearboxes",
+        "spherical": "Self-aligning; handles misalignment; moderate load; used where alignment difficult"
+      },
+      "sleeve_bearings": "Hydrodynamic lubrication; oil wedge supports shaft; high load; low speed; requires minimum RPM for film"
+    },
+    "lubrication": {
+      "grease_lubrication": {
+        "nlgi_grade": "NLGI 2 most common (peanut butter consistency); NLGI 0-1 for low temp/high speed; NLGI 3 for high temp/vibration",
+        "grease_quantity": "Formula: Grease (oz) = 0.114 × OD (inches) × Width (inches); overfilling damages seals and overheats",
+        "frequency": "Hours / (14 × speed factor); 1800 RPM bearing might need regreasing every 2000 hours; adjust for environment",
+        "purging": "Add new grease; run bearing to purge old grease through relief port; prevents overpressurization"
+      },
+      "oil_lubrication": {
+        "oil_bath": "Oil level to center of lowest rolling element; overfilling = churning, overheating; underfilling = starvation",
+        "oil_ring": "Ring rotates in sump, carries oil to bearing; for horizontal shafts; simple, reliable; max speed ~3600 RPM",
+        "forced_lubrication": "Pump circulates oil; cooling, filtration possible; high-speed, high-load applications",
+        "oil_mist": "Fine oil mist delivered to bearing; for high speed; prevents contamination; used in paper mills"
+      },
+      "viscosity_selection": "ISO VG 32 for high speed; ISO VG 68 general purpose; ISO VG 150 low speed/high load; use bearing manufacturer chart"
+    },
+    "failure_modes": {
+      "spalling": "Flaking of bearing surface; normal end-of-life failure if occurs after calculated L10 life; premature if before",
+      "brinelling": "Impact damage; dents in races; causes vibration; from shock loads or installation damage",
+      "false_brinelling": "Fretting wear; looks like brinelling but from vibration while not rotating; oil/grease worn away; red/brown residue",
+      "smearing": "Sliding contact under load; inadequate lubrication; metal transfer; often from locked bearing during installation",
+      "electric_erosion": "Current passing through bearing; pitting, fluting; VFDs common cause; use insulated bearings or shaft grounding",
+      "contamination": "Dirt, water, metal particles; accelerates wear; 80% of bearing failures from contamination; use sealed bearings or purge seals"
+    },
+    "installation": {
+      "heating_method": "Induction heater or hot oil bath; heat to 100-120°C (212-250°F); thermal expansion allows easy installation on shaft",
+      "cold_mounting": "Press or drive on shaft; apply force to race being press-fit; NEVER through rolling elements (damages races)",
+      "clearance_check": "Measure internal clearance after installation; should be C3 (>normal) to account for interference fit reducing clearance",
+      "storage": "Keep in original packaging; horizontal position; vibration-free; moderate temperature; check preservation oil if >3 years old"
+    }
+  },
+  "reliability_metrics": {
+    "mtbf_mttf": {
+      "mtbf": "Mean Time Between Failures; repairable systems; MTBF = Total operating time / Number of failures",
+      "mttf": "Mean Time To Failure; non-repairable systems; expected life before failure",
+      "example": "10 pumps run 1000 hours each (10,000 total hours), 2 failures; MTBF = 10,000 / 2 = 5,000 hours"
+    },
+    "availability": {
+      "formula": "Availability = Uptime / (Uptime + Downtime) × 100%",
+      "world_class": ">95% for production equipment; >99% for critical equipment",
+      "calculation_example": "Equipment runs 8,000 hours, down for maintenance 200 hours; Availability = 8,000 / (8,000 + 200) = 97.6%"
+    },
+    "oee_overall_equipment_effectiveness": {
+      "formula": "OEE = Availability × Performance × Quality",
+      "availability": "Actual run time / Planned run time (accounts for breakdowns)",
+      "performance": "Actual output / Standard output (accounts for speed losses)",
+      "quality": "Good parts / Total parts (accounts for defects)",
+      "world_class": "OEE >85%; typical manufacturing 60-70%; reveals hidden losses",
+      "example": "Availability 90%, Performance 95%, Quality 98%; OEE = 0.90 × 0.95 × 0.98 = 83.8%"
+    },
+    "six_big_losses": {
+      "downtime_losses": "Breakdowns, setup/changeover",
+      "speed_losses": "Minor stops (<5 min), reduced speed",
+      "quality_losses": "Startup rejects, production rejects",
+      "improvement": "Track each loss category; address biggest contributors first (Pareto principle)"
+    }
+  },
+  "troubleshooting": {
+    "pump_problems": {
+      "no_flow_or_low_flow": {
+        "causes": "Pump not primed, suction line leak (air ingestion), clogged strainer, impeller damaged, wrong rotation",
+        "diagnostics": "Check for cavitation noise, feel suction line for air leaks (use soap), check amp draw (low = not moving fluid)",
+        "fixes": "Prime pump, repair air leaks, clean strainer, verify rotation (3-phase can be backwards)"
+      },
+      "excessive_vibration": {
+        "causes": "Cavitation (NPSHa < NPSHr), misalignment, imbalance, bearing wear, piping strain",
+        "diagnostics": "Vibration analysis, check suction pressure (cavitation), alignment check",
+        "fixes": "Increase NPSHa (lower pump, raise tank, reduce flow), realign, balance, replace bearings, support piping independently"
+      },
+      "seal_leaks": {
+        "causes": "Seal faces worn, dry running, misalignment, wrong seal for fluid, excessive vibration",
+        "diagnostics": "Check for scoring on seal faces, verify lubrication/cooling, alignment, vibration levels",
+        "fixes": "Replace seal, correct misalignment, reduce vibration, use seal flush plan if handling hot/dirty fluids"
+      }
+    },
+    "electric_motor_faults": {
+      "overheating": {
+        "causes": "Overload, single-phasing, blocked cooling, high ambient temp, voltage imbalance",
+        "diagnostics": "Measure amp draw on all 3 phases (should be balanced within 5%), check voltage (should be within 5%), verify cooling fan operation",
+        "fixes": "Reduce load, repair phase loss, clean cooling passages, improve ventilation, balance phases"
+      },
+      "bearing_noise": {
+        "causes": "Lack of lubrication, contamination, misalignment, imbalance, bearing worn",
+        "diagnostics": "Vibration analysis, ultrasonic testing, check bearing temperature (>180°F concerning)",
+        "fixes": "Relubricate (but not over-grease), replace bearing, realign load, balance rotor"
+      },
+      "high_amp_draw": {
+        "causes": "Overload, low voltage, shorted turns, rotor bar breakage",
+        "diagnostics": "Compare to nameplate FLA; measure voltage and current on all phases; check for mechanical binding",
+        "fixes": "Reduce load, correct voltage, rewind motor (if shorted turns), replace rotor or motor"
+      }
+    },
+    "gearbox_issues": {
+      "noise_and_vibration": {
+        "causes": "Worn gears, misalignment, contaminated oil, bearing failure, backlash excessive or insufficient",
+        "diagnostics": "Vibration analysis (gear mesh frequency), oil analysis (wear metals), backlash measurement",
+        "fixes": "Replace gears, realign, change oil, replace bearings, adjust backlash per manufacturer spec"
+      },
+      "oil_leaks": {
+        "causes": "Worn seals, vent plugged (pressure buildup), overfilled, cracked housing",
+        "diagnostics": "Check oil level, verify vent open, inspect for cracks, check seal condition",
+        "fixes": "Replace seals, open/clean vent, drain to proper level, repair housing"
+      },
+      "overheating": {
+        "causes": "Low oil level, wrong oil viscosity, overload, inadequate cooling, churning (overfilled)",
+        "diagnostics": "Check oil level and grade, measure load current, feel housing for hot spots",
+        "fixes": "Fill oil to proper level, use correct viscosity, reduce load, improve cooling, drain excess oil"
+      }
+    }
+  },
+  "maintenance_strategies": {
+    "reactive_run_to_failure": {
+      "when_appropriate": "Non-critical equipment, low failure consequence, low cost items",
+      "advantages": "No routine maintenance cost, simple",
+      "disadvantages": "Unplanned downtime, collateral damage, high repair cost, safety risk",
+      "typical": "Light bulbs, belts on non-critical equipment"
+    },
+    "preventive_time_based": {
+      "when_appropriate": "Predictable wear patterns, age-related failures, low criticality",
+      "advantages": "Planned downtime, prevents some failures",
+      "disadvantages": "Over-maintenance possible, doesn't catch all failures",
+      "intervals": "Based on manufacturer recommendations, historical data, hours/cycles",
+      "typical": "Oil changes, filter replacements, belt replacements"
+    },
+    "predictive_condition_based": {
+      "when_appropriate": "Critical equipment, high failure cost, measurable degradation",
+      "advantages": "Intervene before failure, optimize maintenance timing, reduce downtime",
+      "disadvantages": "Requires technology investment, skilled personnel, upfront cost",
+      "technologies": "Vibration, thermography, oil analysis, ultrasonic, motor current signature analysis",
+      "roi": "Typically 5-10× return; reduced downtime >> technology cost"
+    },
+    "proactive_reliability_centered": {
+      "when_appropriate": "Critical systems, high safety/environmental risk",
+      "advantages": "Addresses root causes, maximizes reliability, considers all failure modes",
+      "disadvantages": "Resource intensive, requires cross-functional teams",
+      "methods": "FMEA, root cause analysis, design improvements, precision maintenance",
+      "focus": "Prevent failures before they develop, not just detect them"
+    }
+  }
+}

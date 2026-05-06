@@ -1,0 +1,310 @@
+{
+  "_source": "HVAC Excellence standards, ASHRAE Handbook, EPA 608 certification materials, Refrigeration troubleshooting guides",
+  "_note": "Long-tail HVAC/refrigeration knowledge. Refrigeration cycle, diagnostics, EPA regulations, psychrometrics, load calculations.",
+  "refrigeration_cycle": {
+    "basic_principles": {
+      "four_main_components": "Compressor, condenser, metering device (TXV or piston), evaporator",
+      "phase_changes": "Liquid refrigerant evaporates (absorbs heat) in evaporator; vapor condenses (rejects heat) in condenser",
+      "pressure_temperature_relationship": "Higher pressure = higher saturation temperature; AC works by manipulating pressure to control phase change temperatures",
+      "superheat_subcool": "Superheat = vapor temp above saturation temp; Subcool = liquid temp below saturation temp; critical for charge verification"
+    },
+    "compressor": {
+      "function": "Pumps refrigerant; creates low pressure (suction) and high pressure (discharge); heart of system",
+      "types": {
+        "reciprocating": "Piston-driven; residential AC, small commercial; 1-10 ton; noisy but reliable",
+        "scroll": "Two spiral scrolls; quieter; residential/light commercial; 1.5-25 ton; fewer parts, higher efficiency",
+        "rotary": "Rotating vane or screw; commercial chillers; 20-500+ ton; continuous compression",
+        "centrifugal": "High-speed impeller; large buildings; 100-10,000 ton; most efficient for large loads"
+      },
+      "suction_pressure": "Low side; 60-80 PSIG typical for R-410A AC (varies with ambient); feeds compressor",
+      "discharge_pressure": "High side; 200-350 PSIG typical for R-410A AC (varies with ambient); exits compressor to condenser"
+    },
+    "condenser": {
+      "function": "Rejects heat to outdoors; high-pressure vapor enters, liquid exits; heat removed = heat absorbed at evaporator + compressor work",
+      "types": {
+        "air_cooled": "Fan blows air over coil; residential, small commercial; ambient dependent; cheaper, easier maintenance",
+        "water_cooled": "Water flows through tubes; large commercial; more efficient; requires cooling tower or water source",
+        "evaporative": "Water spray on coil; combines air and evaporation cooling; mid-size commercial; water usage concern"
+      },
+      "subcooling": "10-20°F typical; liquid line temp vs. saturation temp at condensing pressure; verifies full condensation and charge adequacy",
+      "fouling_impact": "Dirty condenser coil = high head pressure = reduced capacity, efficiency; wash coils annually"
+    },
+    "metering_device": {
+      "function": "Reduces refrigerant pressure; controls refrigerant flow into evaporator; creates pressure differential",
+      "txv_thermostatic_expansion_valve": {
+        "operation": "Modulates based on superheat; sensing bulb on suction line; maintains constant superheat (8-12°F typical)",
+        "advantages": "Efficient at varying loads; maintains performance; prevents flooding or starving evaporator",
+        "components": "Sensing bulb, diaphragm, needle and seat, adjustment screw",
+        "problems": "Bulb loses charge (starves evaporator), stuck closed (high superheat), stuck open (low superheat, flooding)"
+      },
+      "piston_fixed_orifice": {
+        "operation": "Fixed hole size; refrigerant flow varies with pressure difference; simple, cheap",
+        "advantages": "No moving parts; reliable; low cost",
+        "disadvantages": "Less efficient at part load; charge-critical; not ideal for heat pumps (need bi-flow piston)",
+        "sizing": "Matched to system tonnage; wrong size = poor performance; color-coded"
+      },
+      "eev_electronic_expansion_valve": {
+        "operation": "Stepper motor controls opening; microprocessor-controlled; can optimize for varying conditions",
+        "advantages": "Most efficient; precise control; diagnostic feedback",
+        "cost": "Expensive; requires compatible control board"
+      }
+    },
+    "evaporator": {
+      "function": "Absorbs heat indoors; low-pressure liquid enters, vapor exits; provides cooling effect",
+      "types": {
+        "a_coil": "Upright A-shape; fits above furnace; residential; compact",
+        "horizontal": "Flat in attic or crawlspace; space constraints",
+        "cased_uncased": "Cased has cabinet/drain pan built-in; uncased for custom installations"
+      },
+      "superheat": "8-12°F typical for TXV; 10-20°F for piston; suction line temp vs. saturation temp at suction pressure; verifies proper evaporation and no flooding",
+      "airflow": "400 CFM per ton standard; 350 for humid, 450 for dry climates; low airflow = low suction pressure, icing; high airflow = high superheat, reduced dehumidification",
+      "icing_causes": "Low airflow (dirty filter, closed registers, bad blower), low charge, dirty evaporator coil, low outdoor temp (<55°F), refrigerant restriction"
+    }
+  },
+  "refrigerants": {
+    "common_types": {
+      "r_22": "HCFC; phased out 2020; legacy systems only; no new production; reclaimed stock available",
+      "r_410a": "HFC; residential AC/heat pumps; higher pressure than R-22 (350 vs 250 PSIG); incompatible with R-22 systems; global warming potential concerns",
+      "r_32": "HFC; lower GWP than R-410A; emerging residential; fewer countries adopted; higher flammability (A2L classification)",
+      "r_134a": "HFC; automotive AC, chillers; lower pressure; GWP concerns; being replaced by R-1234yf",
+      "r_404a_r_507": "HFC; commercial refrigeration; medium/low temp; high GWP; being phased down",
+      "r_744_co2": "Natural refrigerant; low GWP; transcritical systems; high pressure (1400+ PSIG); emerging commercial refrigeration"
+    },
+    "epa_608_certification": {
+      "type_i": "Small appliances (<5 lbs charge); window AC, dehumidifiers, small refrigerators",
+      "type_ii": "High-pressure systems; AC, heat pumps, R-410A, R-134a systems",
+      "type_iii": "Low-pressure systems; chillers using R-123, centrifugal compressors",
+      "universal": "All of the above; most HVAC techs get universal",
+      "requirements": "Illegal to vent refrigerants; must recover to EPA levels; Type I 90%, Type II/III 0 PSIG or 10\" Hg vacuum",
+      "leak_repair": "Commercial systems >50 lbs: if annual leak rate >30% (comfort cooling) or >20% (commercial refrigeration), must repair within 30 days"
+    },
+    "pressure_temperature_charts": {
+      "usage": "Convert gauge pressure to saturation temperature; essential for superheat/subcool calculations",
+      "example_r410a": "118 PSIG suction = 40°F saturation; if suction line is 50°F, superheat = 10°F; 298 PSIG liquid line = 110°F saturation; if liquid line is 95°F, subcool = 15°F",
+      "rule": "Each refrigerant has unique PT curve; always use correct chart; mobile apps available"
+    },
+    "handling_safety": {
+      "never_mix": "Different refrigerants contaminate each other; ruins recovery cylinders; separate tanks for each type",
+      "ventilation": "Refrigerants heavier than air; displace oxygen in confined spaces; ensure ventilation",
+      "open_flame": "Refrigerants decompose into phosgene gas (toxic) near flame; use electronic leak detectors, not torch",
+      "liquid_contact": "Frostbite risk; wear gloves and safety glasses when handling; evaporates quickly removing heat from skin",
+      "recovery_cylinders": "DOT approved; color-coded; never fill above 80%; check certification dates"
+    }
+  },
+  "charging_methods": {
+    "superheat_method": {
+      "when_to_use": "Fixed orifice (piston) metering devices; critical charge systems",
+      "procedure": [
+        "1. Measure suction line temperature at compressor (insulated section)",
+        "2. Measure suction pressure; convert to saturation temp using PT chart",
+        "3. Superheat = Suction line temp - Saturation temp",
+        "4. Compare to target superheat (10-20°F typical, varies by outdoor temp and indoor humidity)"
+      ],
+      "target_superheat_calculation": "Use manufacturer chart or formula: Target SH = (outdoor temp - indoor wet bulb) / 2.5; typical range 10-18°F",
+      "adjustments": "Low superheat = overcharged, remove refrigerant; High superheat = undercharged, add refrigerant"
+    },
+    "subcool_method": {
+      "when_to_use": "TXV metering devices; systems with receiver; critical for charge verification",
+      "procedure": [
+        "1. Measure liquid line temperature (before metering device, after condenser)",
+        "2. Measure high-side (liquid line) pressure; convert to saturation temp using PT chart",
+        "3. Subcool = Saturation temp - Liquid line temp",
+        "4. Compare to target subcool (10-20°F typical, manufacturer specifies)"
+      ],
+      "target": "Usually 10-15°F for R-410A; check nameplate or installation manual",
+      "adjustments": "Low subcool = undercharged; High subcool = overcharged"
+    },
+    "weigh_in_method": {
+      "when_to_use": "Exact charge known from nameplate; complete evacuation done; factory charge (ductless mini-splits)",
+      "procedure": "Evacuate system completely; weigh in exact charge using refrigerant scale; most accurate method",
+      "advantages": "Eliminates guesswork; works even if superheat/subcool can't be measured",
+      "limitations": "Requires knowing exact charge; doesn't account for line set length variations unless specified"
+    },
+    "common_mistakes": {
+      "charging_liquid_into_compressor": "Causes slugging, damages compressor; always charge liquid into high side (when off) or vapor into low side (when running)",
+      "not_accounting_for_conditions": "Superheat/subcool targets change with outdoor temp; 95°F day vs 75°F day = different readings even with correct charge",
+      "charging_into_iced_coil": "Defrost first; ice blocks airflow giving false low pressure readings",
+      "ignoring_airflow": "Fix airflow issues first before adjusting charge; dirty filter or low CFM mimics low charge"
+    }
+  },
+  "diagnostics_troubleshooting": {
+    "low_suction_pressure": {
+      "causes": [
+        "Low charge (most common); verify with superheat/subcool",
+        "Restriction (filter drier, metering device, kinked line); subcool may be high, frost before restriction",
+        "Low airflow over evaporator (dirty filter, iced coil, bad blower); high superheat, iced coil",
+        "Low outdoor temperature (<55°F); not a fault, system not designed for low ambient",
+        "Compressor weak/worn (low pumping capacity); motor amps may be low"
+      ],
+      "symptoms": "Reduced cooling, longer run times, possible evaporator icing, high superheat (if low charge/restriction)"
+    },
+    "high_suction_pressure": {
+      "causes": [
+        "Overcharge; low superheat, high subcool",
+        "Metering device stuck open or oversized; flooding evaporator, low superheat",
+        "High load on evaporator (outdoor air entering, undersized unit); normal response",
+        "Compressor valves leaking (inefficient compression); low discharge pressure also"
+      ],
+      "symptoms": "Insufficient cooling, compressor runs hot, possible liquid slugging if severe"
+    },
+    "low_discharge_pressure": {
+      "causes": [
+        "Low charge; low suction pressure also, high superheat",
+        "Compressor valves worn/leaking; low compression efficiency, low suction pressure",
+        "Metering device stuck open; flooding evaporator"
+      ],
+      "symptoms": "Poor cooling, compressor may run cooler than normal, reduced capacity"
+    },
+    "high_discharge_pressure": {
+      "causes": [
+        "Dirty condenser coil (most common); clean coil, check fan operation",
+        "Condenser fan not running; check capacitor, motor, wiring, control board",
+        "Overcharge; high subcool (>20°F), liquid backing into condenser",
+        "Non-condensables in system (air); purge from high side, pull vacuum if significant",
+        "Restricted airflow (condenser blocked, recirculation)"
+      ],
+      "symptoms": "High amp draw, compressor overheating, safety cutout tripping, reduced capacity and efficiency"
+    },
+    "compressor_short_cycling": {
+      "causes": [
+        "Low charge; pressure cutout or overload trips, cools, resets, repeats",
+        "Dirty filters/coils; overheating, thermal overload trips",
+        "Oversized unit; satisfies thermostat too quickly, inefficient, poor dehumidification",
+        "Thermostat location or differential issue; in direct sun, near supply register",
+        "Failing capacitor; hard start, high amps, thermal overload trips",
+        "Low voltage; check supply voltage under load, should be within 10% of nameplate"
+      ],
+      "symptoms": "Frequent on-off, never runs long cycles, high electric bills, poor comfort"
+    },
+    "compressor_won_t_start": {
+      "causes": [
+        "Bad capacitor (most common); bulging, leaking oil, test with multimeter (should be within 6% of rating)",
+        "Seized compressor; ohm terminals (should show resistance, not open/short), try hard start kit",
+        "Contactor not pulling in; 24V control voltage present?, coil energized?, contacts pitted/worn?",
+        "Thermal overload open; compressor too hot, wait 1-2 hours to reset; if repeats, find cause (low airflow, low charge, bad capacitor)",
+        "Low voltage; check supply at disconnect; brownout conditions; undersized wire; loose connections",
+        "Control board not sending call; check thermostat, wiring, transformer, board"
+      ],
+      "troubleshooting": "Ohm compressor terminals: C-R, C-S, R-S should all show resistance (usually 1-20 ohms); C-R + C-S should equal R-S; any short to ground = bad compressor"
+    },
+    "refrigerant_restrictions": {
+      "symptoms": "Frost/ice before restriction; pressure drop across restriction; subcool may be high; capacity reduced",
+      "locations": "Filter drier (most common if recently replaced or system contaminated), liquid line, TXV screen, cap tube",
+      "diagnosis": "Temperature difference across component >10°F = restriction; feel line for sudden temp drop",
+      "fix": "Replace filter drier; if TXV screen, clean or replace valve; if cap tube, may need to replace metering device"
+    }
+  },
+  "psychrometrics": {
+    "properties_of_air": {
+      "dry_bulb_temperature": "Actual air temperature; what thermometer reads; sensible heat",
+      "wet_bulb_temperature": "Temperature with evaporative cooling; wet wick on thermometer; approaches dry bulb as humidity rises",
+      "dew_point": "Temperature at which moisture condenses; 100% RH at dew point; can't cool below without dehumidifying",
+      "relative_humidity": "% of moisture in air vs. saturation at that temperature; 50% RH comfortable; >60% feels muggy",
+      "humidity_ratio": "Grains of moisture per pound of dry air; 7000 grains = 1 lb water; absolute moisture content"
+    },
+    "psychrometric_chart": {
+      "usage": "Plot dry bulb and wet bulb to find all other properties; essential for load calculations and system design",
+      "total_cooling": "Sensible (temp reduction) + Latent (moisture removal); both shown on chart",
+      "comfort_zone": "68-75°F, 30-60% RH; ASHRAE Standard 55",
+      "process_lines": "Cooling and dehumidifying = down and left on chart; heating = horizontal right; humidifying = vertical up"
+    },
+    "sensible_heat_ratio": {
+      "definition": "SHR = Sensible cooling / Total cooling; 1.0 = all sensible (dry heat), 0.6 = 60% sensible 40% latent (moisture)",
+      "typical_values": "0.7-0.8 for comfort cooling; 0.95+ for computer room AC (little moisture load)",
+      "equipment_selection": "Match equipment SHR to building SHR; oversized unit = poor dehumidification (short cycles before removing moisture)"
+    }
+  },
+  "heat_load_calculations": {
+    "manual_j": {
+      "purpose": "ACCA standard for residential load calculation; determines proper equipment size",
+      "inputs": "Building dimensions, window area and orientation, insulation R-values, infiltration, occupancy, internal gains (lights, appliances), climate data",
+      "outputs": "Heating and cooling loads in BTU/hr; room-by-room breakdown; equipment sizing",
+      "importance": "Prevents oversizing (short cycling, poor dehumidification, higher cost) and undersizing (inadequate comfort)",
+      "software": "Wrightsoft, Elite Software, Manual J calculators; hand calc possible but tedious"
+    },
+    "rules_of_thumb": {
+      "caution": "Rules of thumb are rough estimates only; always use Manual J for actual installations",
+      "residential_cooling": "400-600 sq ft per ton; 400 in hot/humid, 600 in moderate climates; assumes 8 ft ceilings, moderate insulation",
+      "residential_heating": "25-40 BTU/hr per sq ft; 40 in cold climates, 25 in mild; fuel type and efficiency matter",
+      "oversizing_problems": "Short cycling, temperature swings, poor humidity control, higher equipment cost, reduced efficiency, shorter equipment life"
+    },
+    "heat_gain_sources": {
+      "solar": "Windows, especially west-facing; biggest afternoon load; shading and low-E glass reduce",
+      "conduction": "Through walls, roof, floor; insulation R-value determines; roof is biggest in summer",
+      "infiltration": "Air leaks; cracks, gaps, poor sealing; ducts in attic/crawlspace lose 20-30% if unsealed",
+      "internal_gains": "People (~400 BTU/hr each), lights (3.4 BTU/hr per watt), appliances (kitchen major source)",
+      "ventilation": "Outdoor air for IAQ; load on system; ERV/HRV reduce load"
+    }
+  },
+  "electrical_fundamentals": {
+    "single_phase_residential": {
+      "voltage": "120V (lights, receptacles, blower), 240V (compressor, heat strips); split-phase from transformer",
+      "circuit_requirements": "Dedicated circuit for AC; 15-60A typical (depends on tonnage); disconnect required within sight",
+      "wire_sizing": "Based on amp draw; 14 AWG for 15A, 12 AWG for 20A, 10 AWG for 30A; follow NEC Table 310.16",
+      "overcurrent_protection": "Breaker sized per manufacturer (usually max overcurrent protection on nameplate); must not exceed"
+    },
+    "compressor_circuits": {
+      "contactor": "24V coil energizes, closes contacts, sends 240V to compressor; contacts rated 20-40A typical",
+      "capacitors": {
+        "run_capacitor": "Stays in circuit while running; improves efficiency and torque; measured in µF (microfarads); should be within 6% of rating",
+        "start_capacitor": "High µF (100-400); only during startup; potential relay or solid-state relay kicks out after start; hard start kit",
+        "dual_capacitor": "Combined run cap for compressor and fan in one housing; common terminal (C), compressor (HERM), fan"
+      },
+      "overload_protector": "Thermal or current-sensing; mounted on compressor; opens if overheating or high amps; auto-reset when cools"
+    },
+    "control_voltage": {
+      "24vac": "Standard HVAC control voltage; transformer steps down 120V to 24V; powers thermostat, contactors, relays, gas valve",
+      "r_wire": "Red; 24V hot from transformer; powers thermostat",
+      "c_wire": "Common; return path to transformer; required for smart thermostats (most older stats used battery backup, didn't need C)",
+      "y_wire": "Yellow; cooling call; energizes compressor contactor",
+      "g_wire": "Green; fan call; energizes blower relay",
+      "w_wire": "White; heating call; energizes heat source (furnace, heat strips, heat pump reversing valve)"
+    },
+    "motor_troubleshooting": {
+      "blower_motor_amps": "Check nameplate FLA (full load amps); should run at or below; if high, check capacitor, bearing, duct restriction",
+      "fan_motor_amps": "Condenser fan; if high, check capacitor, blade damage, bearing; if low, check voltage, winding resistance",
+      "voltage_checks": "Measure at contactor under load; should be within 10% of nameplate; low voltage = high amps, overheating",
+      "capacitor_testing": "Discharge first (short across terminals with insulated screwdriver); test with multimeter capacitance setting; ±6% acceptable"
+    }
+  },
+  "service_procedures": {
+    "evacuation": {
+      "purpose": "Remove air and moisture from system; air causes high head pressure, moisture causes acid and ice",
+      "procedure": [
+        "1. Connect vacuum pump to both service ports",
+        "2. Open service valves, start pump, pull to 500 microns or below",
+        "3. Close valves, observe vacuum hold (should not rise >1000 microns in 10 min)",
+        "4. If doesn't hold, leak present; find and repair before charging"
+      ],
+      "micron_gauge": "Measures deep vacuum; 500 microns = good evacuation; 50,000 microns = atmospheric pressure",
+      "time_required": "Minimum 30-45 min for residential; longer for larger systems or if moisture present; use large hoses (3/8\" or 1/2\")"
+    },
+    "leak_detection": {
+      "methods": {
+        "electronic_leak_detector": "Most sensitive; heated diode or infrared sensor; can detect 0.1 oz/year; check all joints, valves, service ports",
+        "soap_bubbles": "Cheap, visual; works for large leaks; spray fittings, look for bubbles; not sensitive enough for small leaks",
+        "nitrogen_pressure_test": "Pressurize to 150-300 PSI with dry nitrogen; listen for hiss; soap test; hold pressure 30+ min",
+        "uv_dye": "Add to system, run, inspect with UV light; finds leaks over time; good for elusive leaks; must recover refrigerant to repair"
+      },
+      "common_leak_locations": "Schrader valve cores (tighten or replace), flare fittings (loosen, re-flare, re-tighten), brazed joints (pinhole from improper nitrogen flow), vibration points (liquid line at condenser)"
+    },
+    "brazing": {
+      "vs_soldering": "Brazing uses filler metal >840°F (silver-phos alloy); stronger joint; required for refrigerant lines; soldering <840°F, not strong enough",
+      "procedure": [
+        "1. Clean tube with emery cloth; remove oxidation",
+        "2. Apply flux if using brass/bronze filler (silver-phos is self-fluxing on copper)",
+        "3. Flow nitrogen through line at 1-2 PSI while brazing (prevents oxidation inside tube)",
+        "4. Heat joint evenly with torch; when hot enough, filler will flow into joint by capillary action",
+        "5. Let cool naturally; do not water-quench (weakens joint)"
+      ],
+      "nitrogen_flow": "Critical; prevents black scale (copper oxide) inside tubing which can clog metering device and contaminate oil",
+      "filler_metals": "SilFos 15% (copper-to-copper, no flux needed), SilFos 5% (copper-to-brass), 45% silver for dissimilar metals"
+    },
+    "oil_management": {
+      "oil_types": "Mineral oil (R-22), POE polyolester (R-410A), PVE (R-32); never mix; wrong oil = compressor failure",
+      "oil_return": "Oil circulates with refrigerant; must return to compressor; ensure line velocities adequate; trap oil in suction risers",
+      "acid_test": "If compressor burnout, oil becomes acidic; acid test kit; must replace oil and filter drier; flush if severe",
+      "oil_level_check": "Sight glass on compressor (if equipped); 1/4 to 3/4 full typical; too high = slugging, too low = lack of lubrication"
+    }
+  }
+}

@@ -250,6 +250,30 @@
       "databases": {
         "exercise_programming_nutrition": {"weight": 0.80, "algorithms": ["weak_to_strong"]}
       }
+    },
+    "commercial_driving": {
+      "weight": 0.88,
+      "priority": "high",
+      "rationale": "Safety-critical vehicle operation; federal regulations FMCSA; hours of service compliance; DOT enforcement",
+      "databases": {
+        "cdl_regulations_systems": {"weight": 0.90, "algorithms": ["cot_verification"]}
+      }
+    },
+    "industrial_maintenance": {
+      "weight": 0.84,
+      "priority": "high",
+      "rationale": "Equipment safety; predictive maintenance prevents failures; reliability impacts production; vibration/thermal analysis precision",
+      "databases": {
+        "mechanical_systems_reliability": {"weight": 0.86, "algorithms": ["anomaly_to_signature", "weak_to_strong"]}
+      }
+    },
+    "hvac": {
+      "weight": 0.87,
+      "priority": "high",
+      "rationale": "EPA 608 regulations; refrigerant safety; system diagnostics critical for comfort/safety; pressure/electrical hazards",
+      "databases": {
+        "refrigeration_systems_diagnostics": {"weight": 0.89, "algorithms": ["anomaly_to_signature", "cot_verification"]}
+      }
     }
   },
 
