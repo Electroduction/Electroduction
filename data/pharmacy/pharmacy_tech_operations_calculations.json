@@ -1,0 +1,213 @@
+{
+  "_source": "PTCB (Pharmacy Technician Certification Board), USP standards, Pharmacy law, Pharmaceutical calculations",
+  "_note": "Long-tail pharmacy technician knowledge. Medication classifications, dosage calculations, compounding, inventory, insurance, regulations.",
+  "pharmaceutical_calculations": {
+    "dosage_calculations": {
+      "basic_formula": "Dose ordered / Dose on hand × Quantity = Amount to give; Example: Order 500mg, Have 250mg tablets, Give 2 tablets",
+      "weight_based": "mg/kg × patient weight (kg) = total dose; Example: 10 mg/kg for 70 kg patient = 700 mg total dose; then apply basic formula",
+      "ratio_proportion": "Have/Want = Have/Want; cross-multiply; Example: 250mg/tablet = 500mg/X tablets, X = 2 tablets",
+      "pediatric_dosing": "Always weight-based; verify dose with reference; double-check math; weight in kg (lbs ÷ 2.2 = kg); BSA (body surface area) for some drugs"
+    },
+    "concentration_dilution": {
+      "percentage_strength": "% = grams per 100 mL (w/v) or 100g (w/w); 5% = 5g per 100mL; used for creams, solutions",
+      "ratio_strength": "1:1000 = 1g per 1000mL = 0.1%; epinephrine 1:1000 = 1mg/mL; 1:10,000 = 0.1mg/mL",
+      "mg_ml_conversion": "% to mg/mL: multiply by 10; 5% = 50mg/mL; 0.9% NaCl = 9mg/mL",
+      "dilution_formula": "C1 × V1 = C2 × V2 (initial concentration × initial volume = final concentration × final volume); Example: dilute 10mL of 50% to 20%, C1(50) × V1(10) = C2(20) × V2, V2 = 25mL total (add 15mL diluent)"
+    },
+    "iv_flow_rate": {
+      "drops_per_minute": "Volume (mL) × Drop factor / Time (min) = gtts/min; Example: 1000mL over 8hrs, drop factor 10gtts/mL = 1000 × 10 / 480 = 21 gtts/min",
+      "ml_per_hour": "Volume / Hours = mL/hr; Example: 1000mL over 8hrs = 125 mL/hr; set on infusion pump",
+      "mcg_per_min": "Dose (mcg/min) × 60 min / Concentration (mcg/mL) = mL/hr; Example: dopamine 400mcg/min from 400mg/250mL bag = 400mcg/min × 60 / 1600mcg/mL = 15 mL/hr",
+      "drop_factors": "Macrodrip 10, 15, or 20 gtts/mL; Microdrip 60 gtts/mL; must know tubing set drop factor"
+    },
+    "alligation": {
+      "purpose": "Mixing two concentrations to get intermediate concentration; Example: mix 20% and 5% to get 10%",
+      "method": "Tic-tac-toe grid; higher concentration top-left, lower bottom-left, desired center, subtract diagonally; ratio of parts; Example: 20% and 5% to make 10% = 5 parts 20% + 10 parts 5% (simplify to 1:2 ratio)",
+      "calculation": "Determine total volume needed; apply ratio; Example: need 300mL of 10%, ratio 1:2, so 100mL of 20% + 200mL of 5%"
+    },
+    "reconstitution": {
+      "powder_volume": "When adding diluent, powder displaces volume; final volume > diluent volume; label states final concentration after reconstitution",
+      "example": "Add 10mL sterile water to 1g powder, final volume 10.5mL, final concentration 1g/10.5mL = 95mg/mL; follow package insert",
+      "beyond_use_date": "Reconstituted drugs have short stability; label BUD per insert; refrigerate if required; typically 7-14 days refrigerated"
+    }
+  },
+  "medication_classes": {
+    "cardiovascular": {
+      "antihypertensives": {
+        "ace_inhibitors": "Lisinopril, Enalapril, Ramipril; block ACE enzyme; lower BP; -pril suffix; SE: dry cough, hyperkalemia, angioedema; avoid in pregnancy",
+        "arbs": "Losartan, Valsartan, Irbesartan; block angiotensin II receptor; lower BP; -sartan suffix; SE: hyperkalemia, dizziness; alternative to ACE if cough",
+        "beta_blockers": "Metoprolol, Atenolol, Carvedilol; block beta receptors; lower HR and BP; -lol suffix; SE: bradycardia, fatigue, mask hypoglycemia; taper when discontinuing",
+        "calcium_channel_blockers": "Amlodipine, Diltiazem, Nifedipine; block calcium channels; vasodilation; -dipine suffix (dihydropyridines); SE: peripheral edema, flushing, constipation (diltiazem)",
+        "diuretics": "Furosemide (Lasix, loop), HCTZ (thiazide), Spironolactone (K-sparing); remove fluid; lower BP; SE: dehydration, electrolyte imbalance, hyperglycemia"
+      },
+      "antiarrhythmics": {
+        "class_i": "Sodium channel blockers; quinidine, procainamide, lidocaine; rarely used now",
+        "class_ii": "Beta blockers; metoprolol, atenolol",
+        "class_iii": "Potassium channel blockers; amiodarone (multiple SE: thyroid, lung, liver), sotalol, dofetilide (requires hospitalization for initiation)",
+        "class_iv": "Calcium channel blockers; diltiazem, verapamil",
+        "other": "Digoxin (increases contractility, slows HR; narrow therapeutic index, toxicity risk), Adenosine (PSVT, brief asystole)"
+      },
+      "anticoagulants_antiplatelets": {
+        "warfarin": "Coumadin; Vitamin K antagonist; INR monitoring (target 2-3 typically); many drug/food interactions (Vitamin K foods); antidote: Vitamin K",
+        "doacs": "Direct oral anticoagulants; rivaroxaban (Xarelto), apixaban (Eliquis), dabigatran (Pradaxa); no routine monitoring; less interactions; expensive; reversal agents available but limited",
+        "heparin_lmwh": "Injectable; heparin (IV, monitor aPTT), enoxaparin/Lovenox (subQ, no monitoring); antidote: protamine",
+        "antiplatelets": "Aspirin 81mg (irreversible platelet inhibition), Clopidogrel/Plavix (P2Y12 inhibitor, prodrug, requires activation), Ticagrelor/Brilinta (P2Y12, reversible)"
+      },
+      "cholesterol": {
+        "statins": "Atorvastatin (Lipitor), Simvastatin, Rosuvastatin (Crestor); HMG-CoA reductase inhibitors; lower LDL; -statin suffix; SE: muscle pain (myopathy, check CK), liver enzymes (monitor); take at night (cholesterol synthesis peaks overnight)",
+        "ezetimibe": "Zetia; inhibits cholesterol absorption; lower LDL; add-on to statin; minimal SE",
+        "pcsk9_inhibitors": "Evolocumab (Repatha), Alirocumab (Praluent); injectable; very effective LDL lowering; expensive; resistant hyperlipidemia"
+      }
+    },
+    "diabetes": {
+      "insulin": {
+        "rapid_acting": "Lispro (Humalog), Aspart (Novolog), Glulisine (Apidra); onset 15 min, peak 1hr, duration 4hr; mealtime dosing",
+        "short_acting": "Regular (Humulin R, Novolin R); onset 30min, peak 2-3hr, duration 6-8hr; mealtime or IV",
+        "intermediate": "NPH (Humulin N, Novolin N); onset 2-4hr, peak 4-10hr, duration 12-18hr; basal; cloudy suspension; mix before use",
+        "long_acting": "Glargine (Lantus), Detemir (Levemir); onset 2-4hr, no peak, duration 24hr; basal once or twice daily; clear; cannot mix",
+        "ultra_long": "Degludec (Tresiba); duration 42hr; ultra-stable basal; flexible dosing time",
+        "mixing": "Can mix rapid/short with NPH (draw clear before cloudy); cannot mix with long-acting; premixed combos available (70/30, 75/25)",
+        "storage": "Unopened: refrigerate; opened: room temp 28 days (pens), 42 days (vials); do not freeze; discard if discolored or clumpy (except NPH cloudy)"
+      },
+      "oral_agents": {
+        "metformin": "First-line Type 2; decreases hepatic glucose production; SE: GI upset (take with food, start low), lactic acidosis (rare, hold if contrast dye or surgery); contraindicated in renal impairment (eGFR <30)",
+        "sulfonylureas": "Glipizide, Glyburide, Glimepiride; stimulate insulin release; -ide suffix; SE: hypoglycemia, weight gain; take before meals",
+        "sglt2_inhibitors": "Empagliflozin (Jardiance), Canagliflozin (Invokana), Dapagliflozin (Farxiga); block glucose reabsorption in kidney; glucose in urine; -gliflozin suffix; SE: UTI, yeast infections, euglycemic DKA (rare), dehydration; cardiovascular and renal benefits",
+        "glp1_agonists": "Semaglutide (Ozempic, Wegovy), Dulaglutide (Trulicity), Liraglutide (Victoza); incretin mimetic; injectable; -glutide suffix; SE: nausea, weight loss (desired), pancreatitis (rare), thyroid tumors (animal studies); cardiovascular benefits",
+        "dpp4_inhibitors": "Sitagliptin (Januvia), Linagliptin (Tradjenta), Saxagliptin (Onglyza); increase incretin levels; -gliptin suffix; SE: minimal, weight neutral; less effective than GLP-1"
+      }
+    },
+    "antibiotics": {
+      "penicillins": "Amoxicillin, Ampicillin, Penicillin VK; beta-lactam; cell wall synthesis inhibition; -cillin suffix; SE: allergic reaction (rash to anaphylaxis); augmentin = amoxicillin + clavulanate (beta-lactamase inhibitor)",
+      "cephalosporins": "Cephalexin (Keflex, 1st gen), Cefuroxime (2nd), Ceftriaxone (3rd); beta-lactam; ceph- or cef- prefix; generations 1-5; cross-allergy with penicillin ~10%; SE: similar to penicillins",
+      "macrolides": "Azithromycin (Z-pack), Clarithromycin, Erythromycin; protein synthesis inhibition; -mycin suffix; SE: GI upset, QT prolongation (azithro); penicillin alternative",
+      "fluoroquinolones": "Ciprofloxacin, Levofloxacin, Moxifloxacin; DNA gyrase inhibition; -floxacin suffix; broad spectrum; SE: tendon rupture (black box), QT prolongation, C.diff risk; avoid in children (cartilage damage)",
+      "tetracyclines": "Doxycycline, Minocycline; protein synthesis inhibition; SE: photosensitivity, teeth staining (children <8), esophagitis (take with water, sit upright); avoid dairy (chelation reduces absorption)",
+      "others": "Sulfamethoxazole/Trimethoprim (Bactrim, Septra; UTI, MRSA, PCP prophylaxis; SE: sulfa allergy, hyperkalemia), Metronidazole (Flagyl; anaerobes, C.diff; SE: metallic taste, disulfiram reaction with alcohol), Vancomycin (MRSA, C.diff oral; nephrotoxic, ototoxic; monitor levels)"
+    },
+    "controlled_substances": {
+      "opioids": {
+        "schedule_ii": "Oxycodone, Hydrocodone, Morphine, Fentanyl, Methadone; high abuse potential; no refills; written prescription only (some states allow e-script); pharmacist must verify legitimacy",
+        "schedule_iii": "Codeine combinations <90mg; limited refills; moderate abuse potential",
+        "schedule_iv": "Tramadol; lower abuse potential; up to 5 refills in 6 months",
+        "conversion": "Morphine equivalents; oxycodone 1.5× potent as morphine; hydrocodone 1×; fentanyl patch 100× (50mcg/hr patch = 5mg/hr morphine = 120mg oral morphine/day)",
+        "naloxone": "Narcan; opioid reversal; intranasal 4mg or injectable; OTC in many states; dispense with high-dose opioids"
+      },
+      "benzodiazepines": {
+        "short_acting": "Alprazolam (Xanax), Lorazepam (Ativan), Triazolam (Halcion); -azepam or -azolam suffix; Schedule IV; anxiety, insomnia",
+        "long_acting": "Diazepam (Valium), Clonazepam (Klonopin); longer half-life; seizures, muscle spasm, anxiety",
+        "risks": "Dependence, tolerance, withdrawal (seizures if abrupt stop); respiratory depression (especially with opioids, alcohol); taper when discontinuing"
+      },
+      "stimulants": {
+        "schedule_ii": "Amphetamine salts (Adderall), Methylphenidate (Ritalin, Concerta), Lisdexamfetamine (Vyvanse); ADHD; high abuse potential; no refills",
+        "monitoring": "Growth suppression in children; cardiovascular effects (BP, HR); appetite suppression; insomnia (dose early in day)"
+      }
+    }
+  },
+  "compounding": {
+    "non_sterile": {
+      "equipment": "Mortar and pestle (grinding), spatula (mixing), ointment slab (glass), graduate cylinders (measuring), balance (weighing Class III prescription balance, sensitivity 6mg)",
+      "techniques": {
+        "trituration": "Grinding solid to fine powder; mortar and pestle; reduces particle size",
+        "levigation": "Grinding with small amount liquid (levigating agent); makes smooth paste; for ointments",
+        "spatulation": "Mixing with spatula on ointment slab; for combining ointments, creams",
+        "geometric_dilution": "Mix small amount potent drug with equal amount diluent/base; double each time; ensures uniform distribution; prevents hot spots"
+      },
+      "formulations": {
+        "solutions": "Drug dissolved in solvent (water, alcohol); clear, homogeneous",
+        "suspensions": "Drug particles dispersed in liquid; shake well; settles on standing; example: amoxicillin suspension",
+        "ointments": "80% oil, 20% water; greasy; petrolatum base; occlusive",
+        "creams": "50/50 oil/water; less greasy than ointment; absorbs better; vanishing cream base",
+        "gels": "Jellies; water-based; non-greasy",
+        "capsules": "Fill gelatin capsules; punch method (powder in pile, scoop) or capsule machine",
+        "suppositories": "Rectal or vaginal; cocoa butter or PEG base; melt, add drug, pour into mold, cool"
+      },
+      "beyond_use_dating": "USP <795>; non-aqueous formulations 6 months; water-containing oral 14 days; topical/dermal/mucosal 30 days; all at room temp or refrigerated per formulation; cannot exceed shortest expiration of ingredients"
+    },
+    "sterile_compounding": {
+      "usp_797": "Standards for sterile compounding; risk levels (low, medium, high); cleanroom requirements; environmental monitoring; personnel training/testing",
+      "cleanroom": "ISO Class 7 (10,000 particles >0.5 micron per cubic ft); buffer room; anteroom (ISO 8); positive pressure; HEPA filtration",
+      "laminar_flow_hood": "ISO Class 5 (100 particles); horizontal or vertical flow; HEPA filter; primary engineering control; 30-min warm-up; clean before use (70% IPA, wipe toward HEPA)",
+      "aseptic_technique": "Sterile gloves, gown, hair cover, face mask; hand hygiene; no touching critical sites (needle tips, vial tops, ampule necks); work in center of hood 6 inches from sides",
+      "risk_levels": {
+        "low_risk": "Simple transfers; single-dose vials; 12-hr RT, 24-hr refrigerated, 45-day frozen (with passing sterility test)",
+        "medium_risk": "Multiple dose vials, multiple transfers, long preparation time; 30-hr RT, 9-day refrigerated, 45-day frozen",
+        "high_risk": "Non-sterile ingredients made sterile (terminal sterilization); open systems; 24-hr RT, 3-day refrigerated, 45-day frozen"
+      },
+      "iv_admixture": "Add drug to IV bag or syringe; swab vial tops (70% IPA, dry 10 sec); draw up drug (withdraw air first if vial); inject into IV port; invert bag gently (no shaking); label with drug, dose, date/time, initials, BUD"
+    },
+    "hazardous_drugs": {
+      "usp_800": "Hazardous drug handling; separate areas; closed-system transfer devices (CSTD); protective equipment (chemo gloves, gown, face shield); negative pressure room",
+      "examples": "Chemotherapy (antineoplastics), hormones, some antivirals, immunosuppressants; NIOSH list of hazardous drugs",
+      "spill_kit": "Gown, double gloves, face shield, absorbent pads, scoop/brush, waste bags; small spill <5mL (tech can clean with training); large spill (call supervisor, evacuate)"
+    }
+  },
+  "pharmacy_operations": {
+    "prescription_processing": {
+      "receiving": "Verify patient info, prescriber, drug, strength, quantity, directions, refills, DAW (dispense as written); scan/enter into system; insurance adjudication",
+      "daw_codes": "0 = substitution allowed, generic if available; 1 = prescriber DAW (brand medically necessary); 2 = patient requests brand (pay difference); 9 = generic not in stock",
+      "data_entry": "Accurate entry; NDC number; double-check similar names (look-alike/sound-alike); quantity, days supply, directions (SIG codes); allergies, interactions",
+      "fill": "Retrieve drug (check NDC, lot, expiration); count or pour (automated or manual); recount to verify; label (patient name, drug, strength, quantity, directions, prescriber, date, RX#, pharmacy info, warnings)",
+      "verification": "Pharmacist verifies: right patient, drug, dose, quantity, directions; checks for interactions, appropriateness; counsels patient or offers counseling; signs off",
+      "pickup": "Verify patient identity (name, DOB, address); counsel (new RX, changes, questions); provide written info (MedGuide, CMI); document counseling"
+    },
+    "insurance": {
+      "adjudication": "Submit claim electronically; response: approved, rejected, or prior authorization required; real-time processing",
+      "reject_codes": {
+        "70_product_not_covered": "Not on formulary; try alternative or prior authorization",
+        "75_prior_authorization": "PA required; prescriber must justify medical necessity; submit to insurance",
+        "79_refill_too_soon": "Days supply not elapsed; override if vacation, lost medication (with approval), or early refill allowed",
+        "65_patient_not_covered": "Insurance inactive, terminated, or wrong info; verify eligibility, update info"
+      },
+      "copay_vs_coinsurance": "Copay = fixed amount ($10, $30); Coinsurance = percentage (20%); deductible must be met first (patient pays full cost until deductible reached)",
+      "medicare_parts": "Part A (hospital), Part B (medical/outpatient), Part C (Medicare Advantage, private insurance), Part D (prescription drugs); donut hole (coverage gap, pays more in gap until catastrophic coverage)"
+    },
+    "inventory_management": {
+      "ordering": "Automated (perpetual inventory); par levels (reorder point); minimize inventory (cost, storage, expiration); order frequently (weekly) in small quantities",
+      "receiving": "Check against invoice; verify NDC, quantity, lot, expiration; date received; put away promptly; rotate stock (FEFO - first expire, first out)",
+      "returns": "Expired drugs (return to wholesaler if <1 year expired, else destroy); recalled drugs (follow FDA/manufacturer instructions); wrong drug ordered (return within timeframe)",
+      "controlled_substances": "Perpetual inventory (track every tablet); biannual inventory (count all C-II, document); C-II separate locked storage; DEA 222 form (old) or CSOS (electronic) for ordering; destroyed drugs require DEA 41 and witness",
+      "recalled_drugs": "Check FDA recalls regularly; pull from shelves; quarantine; notify patients if dispensed; document",
+      "expiration_dating": "Check monthly; rotate stock; 1-year rule (if drug expires <1 year, date prescription with expiration date); most prescriptions dated 1 year from fill or expiration, whichever sooner"
+    },
+    "medication_safety": {
+      "look_alike_sound_alike": "LASA drugs; HydrOXYzine vs hydrALAZINE; metFORMIN vs metroNIDAZOLE; tall man letters, separate storage, extra verification",
+      "high_alert_medications": "Insulin, heparin, chemotherapy, narcotics, potassium; extra verification; independent double-check; potential for harm if error",
+      "error_prevention": "Barcode scanning (verify 5 rights); independent double-check (high-alert drugs); do not disturb zone (reduce distractions); report near-misses; analyze root cause",
+      "five_rights": "Right patient, drug, dose, route, time; verify each; prevent medication errors"
+    }
+  },
+  "pharmacy_law": {
+    "prescriptions": {
+      "required_elements": "Patient name/DOB/address, prescriber name/DEA#/signature, date, drug/strength/dosage form, quantity, directions, refills; missing elements = invalid",
+      "verbal_orders": "Phone or verbal from prescriber; allowed for non-controlled (most states); C-III to C-V allowed verbal in emergency (limited quantity, written follow-up within 7 days); C-II no verbal except emergency supply (72-hr, written within 7 days)",
+      "electronic_prescriptions": "EPCS (Electronic Prescribing for Controlled Substances); allowed for all schedules if prescriber and pharmacy certified; more secure than written; required in some states",
+      "refill_limits": "C-II no refills; C-III and C-IV up to 5 refills in 6 months; C-V varies by state; non-controlled typically 1 year from date or 12 refills",
+      "transfer_prescriptions": "Non-controlled can transfer unlimited (original destroyed or voided); C-III to C-V one-time transfer (original voided); C-II no transfer; electronic refill transfer allowed (not one-time limit)"
+    },
+    "dea_schedules": {
+      "schedule_i": "No accepted medical use; high abuse potential; heroin, LSD, marijuana (federally, states vary); research only",
+      "schedule_ii": "High abuse potential; accepted medical use; severe dependence; morphine, oxycodone, amphetamine, cocaine; strict controls",
+      "schedule_iii": "Moderate abuse potential; moderate/low dependence; codeine <90mg, testosterone, ketamine, buprenorphine",
+      "schedule_iv": "Lower abuse potential; limited dependence; alprazolam, diazepam, tramadol, zolpidem",
+      "schedule_v": "Lowest abuse potential; cough preps with codeine <200mg/100mL; some states allow without prescription (must be 18+, log book)"
+    },
+    "hipaa": {
+      "phi": "Protected Health Information; name, DOB, address, phone, SSN, medical record number, diagnoses, medications; must protect",
+      "minimum_necessary": "Only access/disclose PHI necessary for job function; don't snoop; don't discuss patients outside work",
+      "permitted_disclosures": "Treatment, payment, operations (TPO); patient authorization; public health reporting; law enforcement with warrant",
+      "violations": "Civil penalties $100-50,000 per violation; criminal penalties up to $250,000 and 10 years prison for malicious; termination likely"
+    },
+    "state_boards": {
+      "licensure": "Technician registration or licensure (state-dependent); some require certification (PTCB or ExCPT); renewal every 1-3 years; CEU requirements",
+      "scope_of_practice": "Under pharmacist supervision; cannot counsel or interpret prescriptions; varies by state; know your state law",
+      "discipline": "Board can suspend, revoke, or place on probation for violations; drug diversion = automatic revocation and criminal charges; practice within scope"
+    }
+  },
+  "certification_exam": {
+    "ptcb_exam": "Pharmacy Technician Certification Exam; 90 questions, 2 hours; pass 1400/1600 score; 4 domains: Medications (40%), Federal Requirements (12.5%), Patient Safety/Quality Assurance (26.25%), Order Entry/Processing (21.25%)",
+    "eligibility": "High school diploma or equivalent; comply with standards; no felony drug convictions; some states require training program",
+    "recertification": "Every 2 years; 20 CE hours (1 hour pharmacy law, 1 hour patient safety); maintain certification to keep CPhT credential",
+    "study_tips": "Brand/generic names (top 200 drugs); calculations (practice daily); law (DEA schedules, refills, transfers, HIPAA); compounding (USP chapters); patient safety"
+  }
+}

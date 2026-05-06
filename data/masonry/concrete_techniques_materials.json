@@ -1,0 +1,240 @@
+{
+  "_source": "ACI (American Concrete Institute) standards, Masonry codes, NCMA Technical Manual, Trade practice guides",
+  "_note": "Long-tail masonry knowledge. Concrete mixing and finishing, block/brick laying, mortar types, reinforcement, expansion joints, waterproofing.",
+  "concrete_fundamentals": {
+    "portland_cement_types": {
+      "type_i": "General purpose; most common; moderate sulfate resistance; standard setting time 2-4 hours",
+      "type_ii": "Moderate sulfate resistance; slower heat generation; mass concrete, foundations; setting time 3-5 hours",
+      "type_iii": "High early strength; cold weather; fast track construction; 7-day strength in 3 days; higher heat generation",
+      "type_iv": "Low heat; mass concrete (dams); very slow strength gain; rarely used residentially",
+      "type_v": "High sulfate resistance; coastal areas, sewer systems, high groundwater sulfate; specialized applications"
+    },
+    "concrete_mix_design": {
+      "water_cement_ratio": "Critical for strength; 0.4-0.6 typical; lower ratio = higher strength but less workable; 0.45 gives ~4000 PSI at 28 days",
+      "aggregate_gradation": "Well-graded (various sizes) gives denser, stronger concrete; 60-75% of mix volume; coarse (>1/4\") and fine (sand)",
+      "admixtures": {
+        "water_reducers": "Plasticizers; maintain workability with less water; increase strength 10-15%; retard or accelerate set time",
+        "air_entrainers": "Creates tiny air bubbles; freeze-thaw resistance; required in cold climates; 4-8% air content; reduces strength slightly",
+        "accelerators": "Calcium chloride typical; faster setting/strength gain; cold weather; CANNOT use with reinforcing steel (corrosion)",
+        "retarders": "Slow setting time; hot weather; large pours; allows finishing time; sugar-based typically"
+      },
+      "slump": "Measure of consistency/workability; 3-4 inch typical for formed work; 5-6 inch for slabs; 6-8 inch with superplasticizer; too high = segregation",
+      "psi_strength": "2500 PSI residential slabs, 3000-4000 PSI driveways/structural, 4000-5000 PSI commercial, 5000+ PSI high-performance; specified at 28 days"
+    },
+    "proportions_by_weight": {
+      "1_2_3_rule": "Simplified: 1 part cement, 2 parts sand, 3 parts gravel; residential rule of thumb; add water to 0.5 ratio; not for engineered work",
+      "5_bag_mix": "5 bags cement per cubic yard; moderate strength ~3000 PSI; common residential",
+      "6_bag_mix": "6 bags per cubic yard; higher strength ~4000 PSI; driveways, commercial",
+      "calculating_cement": "Cubic yards × bags per yard = total bags; 1 bag = 94 lbs = 1 cubic foot; 27 cubic feet per cubic yard"
+    }
+  },
+  "concrete_placement": {
+    "subgrade_preparation": {
+      "compaction": "95% compaction minimum; plate compactor or jumping jack; prevents settlement and cracking; test with Proctor test",
+      "base_material": "4-6 inches crushed stone (3/4\" minus); allows drainage; stable platform; compact in lifts (2-3 inches)",
+      "vapor_barrier": "6 mil polyethylene under slab; prevents moisture from below; overlap seams 6 inches; protect from punctures",
+      "formwork": "2×4 or 2×6 for residential; 2×8+ for thicker slabs; stake every 3-4 feet; level and straight; grease or oil for release"
+    },
+    "reinforcement": {
+      "rebar": "#3 (3/8\"), #4 (1/2\"), #5 (5/8\") common; grid pattern 12-18 inches on center; support on chairs (dobies) to maintain 2-3 inch cover",
+      "wire_mesh": "6×6 W1.4×W1.4 (10 gauge) common residential; placed mid-slab (not on ground); overlap panels 6 inches; controls cracking but doesn't prevent",
+      "fiber_reinforcement": "Synthetic or steel fibers; replaces wire mesh for residential; 1.5 lbs per cubic yard typical; controls shrinkage cracks; mixes in concrete",
+      "control_joints": "Saw-cut or tooled grooves; 1/4 slab depth; space at 2-3× slab thickness in feet (4\" slab = 8-12 ft spacing); creates weak point for crack to form"
+    },
+    "pouring_procedure": {
+      "placement": "Start far corner; work backward toward exit; pour in layers <24 inches if deep; consolidate each layer before next",
+      "consolidation": "Vibrate to remove air pockets; internal vibrator (stinger) for walls/columns; don't over-vibrate (segregation); vibrate at 18-24 inch intervals",
+      "screeding": "Strike off excess concrete; 2×4 or magnesium screed; sawing motion; brings cream (fines) to surface",
+      "floating": "Bull float for large areas; hand float small areas; levels high spots, fills low spots; brings cream up for finishing; immediately after screeding",
+      "edging": "Round edges with edger tool; prevents chipping; run along forms; do after floating, before troweling",
+      "jointing": "Groover (jointer) tool for control joints; 1/4 depth; straightedge guide; do after edging, before troweling"
+    },
+    "finishing": {
+      "troweling": "Steel trowel; 2-4 passes; each pass increases smoothness and density; wait for bleed water to evaporate before troweling (shine disappears)",
+      "broom_finish": "Drag broom across surface; slip resistance; driveways, sidewalks, ramps; do as final step after troweling",
+      "exposed_aggregate": "Seed aggregate into surface or wash off cream; slip resistant; decorative; use retarder on surface, wash after initial set",
+      "stamped_concrete": "Stamp pattern (stone, brick) into surface; color with integral color or hardener; seal after curing; requires skill and speed",
+      "timing": "Too early = mar surface, tear cream; too late = difficult to work, weak surface; watch for shine to disappear (bleed water gone)"
+    }
+  },
+  "curing_protection": {
+    "curing_methods": {
+      "water_curing": "Keep wet 7 days; spray, pond, or cover with wet burlap; best method for strength; labor intensive",
+      "curing_compound": "Spray-on membrane; seals in moisture; apply immediately after finishing; wax or resin-based; economical; 200-400 sq ft per gallon",
+      "plastic_sheeting": "Cover slab with plastic; seal edges with dirt/weights; moisture stays in; economical; can leave marks if applied too soon",
+      "wet_burlap": "Cover with burlap, keep wet; prevents rapid drying; good for columns/walls; labor to re-wet frequently"
+    },
+    "importance_of_curing": {
+      "strength_gain": "Concrete gains 70% strength in 7 days, 90% in 28 days, continues years; inadequate curing = 50% strength loss",
+      "shrinkage_cracks": "Proper curing reduces shrinkage cracking; concrete shrinks ~0.05% (6 inches per 100 feet); rapid drying = surface cracks",
+      "durability": "Proper curing increases freeze-thaw resistance, abrasion resistance, impermeability; affects surface hardness"
+    },
+    "cold_weather_concrete": {
+      "definition": "Air temp <40°F or concrete temp <50°F for >3 consecutive hours",
+      "precautions": "Heat water and/or aggregates; use Type III cement or accelerator (non-chloride if reinforced); protect from freezing 48-72 hours; insulated blankets or heated enclosures",
+      "minimum_temp": "Maintain concrete >50°F for 3-7 days; never let freeze before reaching 500 PSI (~24-48 hours); frozen water expands, damages concrete",
+      "do_not": "Do NOT use salt-based accelerators with rebar (corrosion); do NOT pour on frozen ground (thaw first or insulate)"
+    },
+    "hot_weather_concrete": {
+      "definition": "Air temp >85°F or concrete temp >85°F; rapid evaporation, fast setting",
+      "precautions": "Cool aggregates (shade, spray with water); use ice as part of mix water; use retarder; shade forms; wet subgrade; start early morning or evening",
+      "placement": "Work quickly; have adequate crew; minimize time between batching and placement (<90 min); continuous pour for large areas",
+      "curing": "Critical; start immediately after finishing; fog spray or curing compound; plastic sheeting; prevent rapid moisture loss"
+    }
+  },
+  "masonry_units": {
+    "concrete_block_cmu": {
+      "sizes": "8×8×16 most common (nominal, actual 7-5/8×7-5/8×15-5/8); 6×8×16 and 12×8×16 also; 3/8\" mortar joint brings to nominal size",
+      "types": "Standard (hollow), solid, bond beam (U-shaped for rebar/grout), half block, corner block, lintel block",
+      "weight": "Lightweight (22-28 lbs, pumice/expanded shale aggregate), medium (35-40 lbs), heavyweight (50+ lbs, dense aggregate); lightweight easier to handle",
+      "strength": "1900-3000 PSI compressive strength typical; higher for structural; check specs for load-bearing vs partition"
+    },
+    "brick": {
+      "types": {
+        "common_brick": "Building brick; no special finish; structural; covered with stucco or siding; economical",
+        "face_brick": "Finished appearance; color consistency; exterior visible; higher cost; FBX (select), FBS (standard), FBA (architectural)",
+        "fire_brick": "Refractory; high heat resistance; fireplaces, chimneys, kilns; withstands 2000°F+",
+        "paving_brick": "High compressive strength; abrasion resistant; driveways, patios, streets"
+      },
+      "dimensions": "Modular 3-5/8×2-1/4×7-5/8 (nominal 4×2-2/3×8 with mortar); Standard 3-5/8×2-1/4×8; three courses = 8 inches with 3/8\" joints",
+      "grades": "Grade SW (severe weather, freeze-thaw), Grade MW (moderate weather), Grade NW (no weather, interior); SW for exterior in freezing climates"
+    },
+    "stone": {
+      "types": "Granite (hardest, durable, expensive), limestone (softer, easy to cut, moderate), sandstone (porous, varies), slate (layered, roof/floors), marble (beautiful, soft, stains)",
+      "veneer_vs_structural": "Veneer (thin <4\", facing only, tied to backup wall), Full-bed/Structural (thick, load-bearing); most residential is veneer",
+      "finishes": "Rough (natural face), split-face (cleft), honed (smooth matte), polished (glossy); affects slip resistance and appearance"
+    }
+  },
+  "mortar": {
+    "mortar_types": {
+      "type_n": "General purpose; above grade; interior/exterior; low strength 750 PSI; residential veneer; 1:1:6 ratio (cement:lime:sand)",
+      "type_s": "High strength 1800 PSI; below grade; retaining walls; structural; 1:0.5:4.5 ratio; good bond, flexural strength",
+      "type_m": "Highest strength 2500 PSI; heavy load, below grade; severe freeze-thaw; 1:0.25:3 ratio; rigid, less workable",
+      "type_o": "Low strength 350 PSI; interior; non-load bearing; repointing historic (matches old mortar); 1:2:9 ratio; very soft",
+      "selection": "Stronger wall = weaker mortar (allows movement); Type N residential, Type S structural/below grade, Type M heavy duty/commercial"
+    },
+    "mixing": {
+      "proportions": "By volume; measure with shovel or bucket; consistency more important than exact ratio; adjust for conditions",
+      "water_content": "Add gradually; workable but not soupy; should hang on trowel at 90°; too wet = weak, too dry = poor bond",
+      "mixing_time": "3-5 minutes in mixer; hand mixing: dry mix first, add water, mix thoroughly; don't over-mix (reduces workability)",
+      "retempering": "Add small amount water if stiffens during use; only within 2-1/2 hours of mixing; discard after (cement hydration started)"
+    },
+    "mortar_joints": {
+      "concave": "Rounded inward; best water resistance; most common; use jointer tool; compacts mortar",
+      "v_joint": "V-shaped; decorative; good water resistance; use V-jointer",
+      "flush": "Cut flush with wall; rustic appearance; poor water resistance; easy",
+      "raked": "Recessed; shadow lines; very poor water resistance; interior only or dry climates; not for freezing climates",
+      "struck": "Angled; traditional; moderate water resistance; slopes outward at top (bad for water)",
+      "timing": "Tool when thumbprint hard; typically 30-60 min after laying; too early = smears, too late = dark streaks"
+    }
+  },
+  "masonry_techniques": {
+    "block_laying": {
+      "preparation": "Snap chalk lines for layout; dry lay first course (no mortar) to check spacing; adjust for openings (doors, windows)",
+      "mortar_bed": "Face shell bedding (edges only, not webs) for standard block; full bed for first course on footing; 3/8-1/2 inch joint",
+      "laying_sequence": "Corners first (lead); build up 4-5 courses; check level and plumb frequently; string line between corners for intermediate blocks",
+      "butter_and_place": "Butter end of block (standing on end); place firmly, tap with trowel handle; squeeze mortar out; tool joint when thumbprint hard",
+      "level_plumb_straight": "Check each block: level (bubble level), plumb (4-ft level vertical), straight (string line); adjust immediately, tapping or adding mortar",
+      "cutting_blocks": "Score with brick set (chisel), strike to break; or use masonry saw (diamond blade); wet cut reduces dust; wear respirator if dry cutting"
+    },
+    "brick_laying": {
+      "patterns": {
+        "running_bond": "Offset 1/2 brick; most common; horizontal lines; each course shifts half brick; stagger vertical joints",
+        "stack_bond": "Vertical lines; modern look; weak (no interlock); requires horizontal reinforcement",
+        "flemish_bond": "Alternating headers (short end) and stretchers (long side); decorative; structural interlock; traditional",
+        "english_bond": "Alternating courses of all headers and all stretchers; strong; traditional"
+      },
+      "technique": "Mortar bed on previous course; butter one end of brick; push into place; tap level with trowel handle; maintain 3/8\" joints; check string line",
+      "closures": "Last brick in course; butter both ends; slide into place; may need to cut for fit",
+      "wythe": "Single width of brick; multi-wythe walls (cavity or solid); tie wythes with headers or metal ties"
+    },
+    "grout_reinforcement": {
+      "grout": "Fluid concrete; fills block cells; bonds with rebar; higher slump 8-11 inches; pea gravel aggregate; pour in 4-5 ft lifts",
+      "grouting_procedure": "Consolidate with rod or vibrator; reconsolidate after water absorption (30 min); don't over-vibrate (segregation); grout same day as top course",
+      "rebar_placement": "Vertical bars in cells (every 4 ft or per engineer); horizontal in bond beam courses; lap 40× diameter (40× 1/2\" = 20\" lap); chairs to hold position",
+      "bond_beam": "Horizontal reinforcement; U-block or knocked out webs; rebar runs continuous; at top of wall, openings, mid-height per code",
+      "inspection": "Special inspection often required for grouted/reinforced masonry; inspector verifies rebar placement before grout; tests grout samples"
+    }
+  },
+  "structural_considerations": {
+    "footings": {
+      "sizing": "Width 2× wall thickness minimum; 16\" wide for 8\" wall typical; depth below frost line (18-48\" depending on climate); bearing pressure on soil ~1500-2000 PSF",
+      "reinforcement": "2-#4 rebar continuous in footing; 3\" cover bottom, 2\" ends; dowels into wall every 4 ft; size per engineer for heavy loads",
+      "stepped_footings": "On slopes; step max 2 ft; overlap steps by thickness of footing or 2 ft (whichever greater); rebar continuous through steps"
+    },
+    "lintels": {
+      "purpose": "Span opening (door, window); carry load above; transfer to sides",
+      "steel_angle": "Most common; L-shaped; size depends on span and load; 3-1/2×3-1/2×1/4\" for 4 ft span typical; bear 8\" minimum each end",
+      "precast_concrete": "U-shaped lintel block with rebar and grout; or solid precast lintel; architectural (matches block); bear 8\" minimum",
+      "sizing": "8-10\" bearing each end; length = opening + 16-20\"; engineering required for heavy loads or long spans (>8 ft)"
+    },
+    "control_joints": {
+      "purpose": "Relieve stress from shrinkage, thermal movement, settlement; weak plane for crack to form (controlled crack)",
+      "spacing": "Concrete block: 25-30 ft on center, at openings, change in wall height, intersections; Brick: 20-25 ft",
+      "construction": "Rake out mortar; backer rod; sealant; or special control joint units (no bond between units); continuous from top to footing",
+      "movement_joints": "Include control joints (in-plane), expansion joints (allow growth), isolation joints (separate elements); don't forget!"
+    },
+    "flashing_weep_holes": {
+      "flashing": "Through-wall flashing; above openings, at base of wall, shelf angles; direct water out; copper, stainless, rubberized membrane",
+      "placement": "Extend through wall; slope to exterior; turn up at back wall 8\"; overlap end laps 6\"; seal laps",
+      "weep_holes": "Vent/drain cavity; rope wick, plastic tube, open head joint (leave out mortar); space 24\" o.c.; immediately above flashing",
+      "importance": "Water gets in masonry; flashing and weeps let it out; prevents rot, freeze-thaw damage, efflorescence, interior water damage"
+    }
+  },
+  "repairs_restoration": {
+    "repointing_tuckpointing": {
+      "assessment": "Deteriorated mortar (soft, crumbling, recessed >1/2\"); water infiltration; efflorescence; step cracks (settlement)",
+      "removal": "Grinder with diamond blade (controlled depth), or chisel (by hand, slow); remove 2-3× joint width depth (3/4-1\" typical); don't damage masonry",
+      "cleaning": "Blow out dust; wet joint (spray bottle); mortar bonds better to damp surface",
+      "mortar_matching": "Test existing mortar (hardness, color); match or slightly weaker than original; Type N for old brick (soft), Type O for historic",
+      "application": "Pack mortar firmly into joint; fill from back to front; compact in layers; tool to match existing profile; cure slowly (mist)"
+    },
+    "crack_repair": {
+      "hairline_cracks": "Cosmetic; <1/16\"; monitor for growth; seal with masonry sealer or leave; not structural",
+      "structural_cracks": ">1/4\", step pattern, widening, horizontal; indicate settlement, foundation issue, inadequate reinforcement; engineer evaluation required",
+      "epoxy_injection": "For structural cracks; inject epoxy under pressure; bonds concrete back together; restores strength; surface seal ports, inject from bottom up",
+      "routing_sealing": "Widen crack (V or U shape), clean, backer rod, flexible sealant (polyurethane, silicone); allows movement; not structural repair"
+    },
+    "spalling_damage": {
+      "causes": "Freeze-thaw (water in masonry freezes, expands, pops off face); rusting rebar (expands); salt damage; poor quality masonry",
+      "repair": "Remove loose material; clean; bonding agent; patch with mortar (thick) or overlay (thin); match color/texture; cure properly",
+      "prevention": "Seal masonry (breathable sealer); proper drainage/flashing; avoid salt in freeze-thaw climates; use air-entrained mortar in cold regions"
+    },
+    "efflorescence": {
+      "cause": "Water-soluble salts deposited on surface as water evaporates; white crystalline powder; from mortar, masonry units, soil, water",
+      "removal": "Dry brush; or dilute muriatic acid (1:10 with water); wet surface first, apply acid, scrub, rinse thoroughly; wear PPE (gloves, goggles, respirator)",
+      "prevention": "Reduce water infiltration (flashing, weeps, sealers); use low-alkali cement; cover masonry during construction; proper drainage"
+    }
+  },
+  "tools_safety": {
+    "essential_tools": {
+      "trowels": "Brick trowel (triangle), pointing trowel (small), margin trowel (small rectangle); butter and place mortar; sizes vary by preference",
+      "levels": "4-ft level (plumb, level), 2-ft level (blocks), torpedo level (small areas, tight spaces); check frequently",
+      "jointers": "Concave jointer (most common), V-jointer, slicker, raker; shape mortar joints; various sizes for different joint widths",
+      "cutting_tools": "Brick set (chisel) and hammer (score and break), masonry saw (wet or dry), angle grinder with diamond blade",
+      "mixing_tools": "Mortar mixer (electric/gas), mixing hoe, wheelbarrow or mortar board, shovel, buckets",
+      "string_and_line": "Mason's line (strong, doesn't stretch), line blocks or pins, chalk line (layout)"
+    },
+    "safety": {
+      "ppe": "Hard hat, safety glasses (or face shield for grinding), gloves (leather or rubber), steel toe boots, knee pads, dust mask (N95 for dry cutting)",
+      "silica_dust": "Masonry creates crystalline silica dust (lung disease, silicosis, cancer); wet cutting, local exhaust ventilation, respirator, OSHA regulations",
+      "lifting": "Blocks weigh 25-50 lbs; proper lifting (bend knees, not back), team lift if heavy, mechanical aids (hod, forklift) for bulk",
+      "scaffolding": "Proper setup (level, tied to structure, guardrails, toe boards); inspect daily; follow OSHA standards; max height 4:1 (height:base width)",
+      "alkaline_burns": "Wet cement/mortar is caustic (pH ~12); skin contact = burns; wash immediately; eyes = flush 15 min, medical attention; wear gloves"
+    }
+  },
+  "estimating_planning": {
+    "material_quantities": {
+      "concrete": "Length × Width × Depth (ft) / 27 = cubic yards; add 10% waste; 4\" slab: 1 sq ft = 0.012 CY; 100 sq ft = 1.2 CY",
+      "block": "Surface area / block face area + 10% waste; 8×16 block = 1.125 sq ft face (0.89 blocks per sq ft); 100 sq ft wall = 89 + 10% = 98 blocks",
+      "brick": "Modular brick: 7 per sq ft (with mortar joints); standard brick: 6.5 per sq ft; add 5-10% waste",
+      "mortar": "35-40 blocks per 80-lb bag mortar mix; 150 bricks per bag; 30 sq ft stone veneer per bag (varies by joint size)",
+      "rebar": "Linear feet needed + 40× diameter for laps + 10% waste; ties (wire) every 2 ft; chairs at 4 ft spacing"
+    },
+    "labor": {
+      "productivity": "Mason lays 100-150 blocks per day (8 hrs), 300-500 bricks per day; varies with skill, complexity, weather, height",
+      "crew": "1 mason + 1 tender/laborer typical; tender mixes mortar, brings materials, cleans up; 2:1 or 3:1 ratio for larger crews",
+      "time_estimate": "Blocks / productivity + 20% for setup, cleanup, breaks; 1000 block wall = 7-10 days for single mason + tender"
+    }
+  }
+}

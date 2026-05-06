@@ -1,0 +1,230 @@
+{
+  "_source": "Landscape design principles, Horticulture references, Irrigation design standards, Landscape maintenance best practices",
+  "_note": "Long-tail landscaping and horticulture knowledge. Plant identification and care, landscape design, irrigation systems, lawn care, pruning, IPM.",
+  "plant_fundamentals": {
+    "hardiness_zones": {
+      "usda_zones": "Zone 1 (-60°F) to Zone 13 (>60°F); based on average annual minimum temperature; determines which plants survive winter",
+      "zone_selection": "Choose plants rated for your zone or colder; zone 6 plant survives in zones 6-10; planting zone 8 plant in zone 6 = likely winter kill",
+      "microclimates": "South-facing walls (warmer), wind-protected areas, heat islands (pavement); can create 1/2 zone difference; use strategically"
+    },
+    "plant_classification": {
+      "annuals": "Complete life cycle in one year; flower profusely; replant each year; petunias, impatiens, marigolds; bedding plants",
+      "perennials": "Live 3+ years; die back to ground in winter (herbaceous) or maintain structure (woody); hostas, daylilies, coneflowers",
+      "biennials": "Two-year cycle; first year foliage, second year flower and die; foxglove, hollyhock, parsley; less common in landscapes",
+      "deciduous": "Lose leaves in fall; dormant in winter; oaks, maples, most flowering shrubs; seasonal interest",
+      "evergreen": "Keep foliage year-round; pines, spruces, hollies, boxwood; winter interest but less seasonal change",
+      "native_vs_exotic": "Native = indigenous to region, adapted to conditions, support local ecosystems; Exotic = non-native, may require more care, some invasive"
+    },
+    "sun_requirements": {
+      "full_sun": "6+ hours direct sun; most vegetables, roses, many flowering perennials; south or west exposures",
+      "part_sun_part_shade": "3-6 hours sun; many ornamentals, some vegetables; morning sun + afternoon shade ideal in hot climates",
+      "full_shade": "< 3 hours sun or dappled all day; hostas, ferns, astilbes; north side of buildings, under trees",
+      "assessing_site": "Observe through day and seasons; tree shade changes (less in spring before leaf-out); buildings block sun at different angles"
+    },
+    "soil_requirements": {
+      "ph": "Acid <6.5, Neutral 6.5-7.5, Alkaline >7.5; most plants 6.0-7.0; azaleas/blueberries like 4.5-5.5; test with probe or lab; adjust with lime (raise pH) or sulfur (lower pH)",
+      "texture": "Sand (drains fast, low nutrients), Silt (moderate), Clay (drains slow, high nutrients); loam = ideal mix of all three",
+      "drainage": "Well-drained = water drains within hours; poorly-drained = standing water; dig test hole, fill with water, observe; most plants need well-drained",
+      "organic_matter": "Improves all soils; lightens clay, adds nutrients to sand, increases water holding; compost 2-4 inches tilled in or top dressed"
+    }
+  },
+  "landscape_design": {
+    "design_principles": {
+      "unity": "Cohesive design; repeating elements (plants, materials, colors); connects parts into whole; avoid too much variety",
+      "balance": "Symmetrical (formal, mirror image) or Asymmetrical (informal, equal visual weight but different elements); stable feel",
+      "proportion_scale": "Relative size; plant to house, plant to plant, hardscape to space; 2 ft shrub next to 1-story house (good), next to 3-story (lost)",
+      "rhythm_repetition": "Repeat plants, colors, shapes at intervals; creates unity and movement; 3-5-7 rule (odd numbers more natural)",
+      "focalization": "Focal point draws eye; specimen tree, sculpture, fountain, front door; don't overdo (too many focal points = chaos)",
+      "simplicity": "Limit plant palette; 3-5 plant types for small yard, 5-9 for large; reduce maintenance, enhance unity"
+    },
+    "layout_planning": {
+      "site_analysis": "Measure property; note existing features (trees, utilities, drainage, views, buildings); sun/shade patterns; soil conditions; access",
+      "functional_areas": "Public (street view), Private (backyard entertaining), Service (trash, AC unit, storage); separate with plantings or hardscape",
+      "circulation": "Walkways, driveways, paths; 4-5 ft wide for main walks (two people), 3 ft for side paths; straight = formal, curved = informal",
+      "outdoor_rooms": "Define spaces with plantings, walls, or grade changes; dining area, play area, garden room; scale to use (8×10 ft minimum for seating)",
+      "utilities": "Locate before digging (call 811); avoid planting over septic, utilities; plan access for maintenance (HVAC, meters)"
+    },
+    "plant_selection": {
+      "layering": "Canopy (trees >25 ft), Understory (small trees 10-25 ft), Shrubs (3-10 ft), Perennials (1-3 ft), Groundcover (<1 ft); creates depth",
+      "texture": "Fine (small leaves, delicate), Medium, Coarse (large leaves, bold); contrast textures for interest; too much of one = monotony",
+      "color": "Foliage (green shades, variegated, purple, blue), Flowers (seasonal), Bark (winter interest); analogous (next to each other on color wheel) or complementary (opposite)",
+      "seasonal_interest": "Spring bloom (dogwood, azalea), Summer bloom (crape myrtle, daylily), Fall color (maple, burning bush), Winter structure (evergreens, ornamental grass)",
+      "mature_size": "CRITICAL: plant for mature size, not current size; foundation plantings often overgrow in 5-10 years; creates maintenance nightmare"
+    },
+    "hardscape_elements": {
+      "patios_walkways": "Concrete (durable, economical, 4×4 ft control joints), Pavers (brick, concrete pavers, permeable, pattern options), Flagstone (natural, irregular, mortared or dry-laid), Gravel (economical, drains well, needs edging)",
+      "retaining_walls": "Timber (economical, 3-4 ft max height), Segmental block (modular, interlocking, DIY-friendly, 3-6 ft), Stone (natural, expensive, 2-4 ft dry-laid or mortared), Poured concrete (engineered for tall >4 ft); drainage critical (weep holes, gravel backfill)",
+      "edging": "Defines beds; steel (invisible, durable), plastic (economical, visible), stone (natural, labor-intensive), brick (traditional); install flush with soil for mowing",
+      "mulch": "Wood chips (organic, decomposes, needs replacement every 2-3 years, 2-4 inches deep), Bark (longer lasting, decorative), Stone (permanent, no nutrients, retains heat), Rubber (controversial, doesn't decompose, expensive)"
+    }
+  },
+  "irrigation_systems": {
+    "sprinkler_types": {
+      "spray_heads": "Fixed pattern; 5-15 ft radius; residential lawns and beds; 1.5 inches/hr precipitation rate; relatively uniform coverage",
+      "rotors": "Rotating stream; 15-50 ft radius; large lawns, commercial; 0.5 inches/hr; wind-resistant; adjustable arc (40-360°)",
+      "drip_emitters": "Low volume; delivers water at roots; 0.5-2 GPH per emitter; beds, shrubs, trees; very efficient (95%+), minimal evaporation/runoff",
+      "bubblers": "Low-volume stream; tree basins; 0.5-4 GPH; flood small area; economical for spot watering",
+      "micro_spray": "Fine mist; small beds, tight spaces; 5-12 inch radius; 0.25-1 GPH; prevent clogging with filtration"
+    },
+    "system_design": {
+      "zoning": "Separate zones by: plant water needs (lawn vs shrubs), sun exposure (sunny vs shade), head type (sprays vs rotors = different precipitation rates), slope (runoff control)",
+      "head_spacing": "Head-to-head coverage; spray radius overlaps to next head; example: 15 ft spray heads spaced 15 ft apart (triangular or square pattern); prevents dry spots",
+      "water_pressure": "Residential 40-80 PSI typical; too high damages heads (use pressure regulator); too low reduces coverage; test at water source (hose bib)",
+      "flow_rate": "GPM (gallons per minute); each head has GPM rating; zone total GPM must not exceed available GPM (test with bucket: time to fill 5 gal = GPM)",
+      "pipe_sizing": "1\" mainline typical residential; 3/4\" laterals; 1/2\" for drip; size for flow and pressure loss; 3-5 ft/sec velocity prevents noise/erosion"
+    },
+    "installation": {
+      "trenching": "6-8 inches deep for lateral lines (below frost line in cold climates, or blow out system); 12+ inches for mainline; avoid tree roots",
+      "pipe": "PVC Schedule 40 (pressure-rated, white/grey); swing joints (reduces break risk from mowing/settling); glue per manufacturer (clean, primer, cement, hold 30 sec)",
+      "valves": "Solenoid valves (electric, controller-operated); one per zone; install in valve box; anti-siphon or backflow preventer required by code",
+      "wire": "18-gauge multi-strand; color-coded; one common (white) to all valves, one hot wire per valve (colors); bury 6-12 inches; waterproof connections (wire nuts + silicone grease + waterproof cap)",
+      "controller": "Timer; sets schedule (days, start times, run times per zone); rain sensor shuts off system when raining (code requirement many areas); WiFi smart controllers adjust for weather"
+    },
+    "scheduling_efficiency": {
+      "watering_depth": "Lawns 6 inches deep (6-12 inches roots), Shrubs 12 inches, Trees 12-24 inches; water infrequently and deeply (encourages deep roots)",
+      "frequency": "Clay soil: 1-2× per week; Loam: 2-3×; Sand: 3-5×; adjust for season (more in summer, less in spring/fall); new plantings more frequent until established",
+      "time_of_day": "Early morning best (4-8 AM); less wind, less evaporation, foliage dries during day (reduces disease); evening OK but foliage stays wet (disease risk); midday wastes water (evaporation)",
+      "run_time_calculation": "Determine precipitation rate (catch can test: run zone 15 min, measure depth in cans, multiply by 4 = inches per hour); divide desired depth by precip rate = hours",
+      "seasonal_adjust": "100% summer; 75% spring/fall; 50% or off in winter (dormant grass, rainfall sufficient); smart controllers auto-adjust using weather data",
+      "auditing": "Annual checkup; run each zone, look for broken heads, clogged emitters, misdirected spray, leaks; catch can test for uniformity; adjust heads and timing as needed"
+    }
+  },
+  "lawn_care": {
+    "turfgrass_types": {
+      "cool_season": {
+        "kentucky_bluegrass": "Dense, dark green; spreads by rhizomes (self-repairs); full sun; high maintenance; zones 3-7; slow to establish",
+        "perennial_ryegrass": "Quick germination (5-7 days); bright green; bunch-type (doesn't spread); tolerates traffic; overseeding lawns",
+        "tall_fescue": "Drought-tolerant; deep roots; bunch-type; low maintenance; tolerates heat better than others; coarse texture",
+        "fine_fescues": "Shade-tolerant; low maintenance; fine texture; low water needs; poor traffic tolerance; mix with bluegrass"
+      },
+      "warm_season": {
+        "bermudagrass": "Aggressive; spreads by stolons and rhizomes; full sun; turns brown in winter; high maintenance; zones 7-10; drought-tolerant",
+        "zoysiagrass": "Dense; slow-growing; tolerates shade; low maintenance once established; slow to green up in spring; zones 6-9",
+        "st_augustine": "Shade-tolerant; coarse texture; spreads by stolons; low mowing height tolerance; zones 8-10; chinch bugs susceptible",
+        "centipedegrass": "Low maintenance; acidic soil; slow-growing; light green; 'lazy man's grass'; zones 7-10; low fertility needs"
+      },
+      "selection": "Cool season for northern US; warm season for southern; transition zone (6-7) = challenge, choose heat-tolerant cool or cold-tolerant warm"
+    },
+    "mowing": {
+      "height": "Cool season: 2.5-3.5 inches (taller in summer heat); Warm season: 1-2.5 inches (bermuda 0.5-1.5, zoysia 1-2, St. Augustine 2.5-3); taller = deeper roots, drought tolerance, weed suppression",
+      "frequency": "One-third rule: never remove >1/3 of blade height in one mowing; if 3 inch target, mow when reaches 4.5 inches; more frequent in spring (rapid growth)",
+      "pattern": "Vary pattern each time; prevents soil compaction, ruts, grain (grass leans one direction); stripe with rear roller if desired",
+      "blade_sharpness": "Sharpen every 25-50 hours use (residential 2-3× per year); dull blade tears grass (brown tips, disease entry point); sharp blade clean cut",
+      "clipping_management": "Mulch clippings (return nutrients, nitrogen); bag if excessive (>1/3 height removed, clumping) or diseased; clippings don't cause thatch (roots/stems do)"
+    },
+    "fertilization": {
+      "npk_ratios": "N-P-K = Nitrogen-Phosphorus-Potassium; N = green growth, P = roots, K = disease resistance/stress tolerance; lawn fertilizers high in N (e.g., 29-0-4, 20-5-10)",
+      "cool_season_schedule": "Light spring (1 lb N per 1000 sq ft), heavy fall (1.5-2 lbs); fall most important (root growth); 3-4 lbs N total per year",
+      "warm_season_schedule": "Apply when actively growing (late spring through summer); 3-4 applications; 3-5 lbs N total per year; nothing in winter (dormant)",
+      "application": "Broadcast spreader (rotary or drop); calibrate (measure output); half-rate in two directions (prevent streaking); water in after (especially quick-release)",
+      "organic_vs_synthetic": "Synthetic (quick-release, predictable, cheaper, can burn); Organic (slow-release, builds soil, expensive, bulkier); milorganite popular organic"
+    },
+    "watering": {
+      "amount": "1-1.5 inches per week (including rain); measure with rain gauge or tuna cans; supplement as needed",
+      "technique": "Deep and infrequent (6 inches deep, 1-2× per week) better than shallow daily (encourages deep roots, drought tolerance)",
+      "signs_of_need": "Footprints remain (grass doesn't spring back), bluish tint, leaf blades fold/roll; water before severe wilting",
+      "new_seed": "Keep surface moist until germination (water daily or 2×daily lightly); after germination, water less frequently but deeper; transition to normal schedule after 3-4 weeks"
+    },
+    "aeration_dethatching": {
+      "core_aeration": "Pulls soil plugs 2-3 inches deep; relieves compaction; increases water/air penetration; do when actively growing (spring/fall cool season, late spring/summer warm season); heavy traffic areas annually, others every 2-3 years",
+      "thatch": "Layer of dead roots/stems between soil and green grass; >0.5 inch is problematic (water/nutrient barrier, disease harbor)",
+      "dethatching": "Power rake or vertical mower; pulls up thatch; stressful to lawn; do when grass can recover (actively growing); every few years as needed, not annually",
+      "overseeding": "After aeration or dethatching; spreads new seed; fills in bare spots; improves variety genetics; cool season grass in fall, warm season in spring; keep moist until established"
+    },
+    "weed_control": {
+      "pre_emergent": "Prevents weed seeds from germinating; crabgrass preventer (apply early spring, soil 55°F for 3 days); doesn't kill existing weeds; lasts 2-4 months; can't seed for 8-12 weeks after application",
+      "post_emergent": "Kills existing weeds; selective (kills weeds, not grass) or non-selective (kills everything, Roundup); broadleaf killers (2,4-D, dicamba) for dandelions, clover; apply when weeds actively growing, not drought-stressed",
+      "spot_treatment": "Hand-pull, dig out (dandelion digger), or spray individual weeds; prevents waste and reduces chemical use; effective for light infestations",
+      "cultural_control": "Dense healthy lawn crowds out weeds; proper mowing height, fertilization, watering reduces weed pressure; weed prevention > weed killing"
+    }
+  },
+  "pruning_plant_care": {
+    "pruning_principles": {
+      "timing": {
+        "dormant_pruning": "Late winter before spring growth; most trees/shrubs; easy to see structure; vigorous regrowth",
+        "after_flowering": "Spring bloomers (forsythia, lilac, azalea); bloom on old wood; prune immediately after bloom; next year's buds set in summer",
+        "summer_pruning": "Limit growth; remove water sprouts, suckers; formal hedges; slow regrowth compared to dormant pruning",
+        "avoid_fall": "Promotes new growth that won't harden off before winter (freeze damage); exception: remove dead/diseased anytime"
+      },
+      "the_3_ds": "Dead (no green under bark), Diseased (cankers, discoloration), Damaged (broken, rubbing, crossing) branches; always remove regardless of season",
+      "thinning_vs_heading": "Thinning = remove entire branch at junction (natural look, opens interior); Heading = cut mid-branch (stimulates dense regrowth, formal hedges)",
+      "branch_collar": "Swollen area where branch meets trunk; cut just outside collar (don't leave stub, don't cut flush); collar heals wound naturally"
+    },
+    "pruning_techniques": {
+      "trees": {
+        "young_trees": "Structural pruning; select scaffold branches (main framework); remove competing leaders, narrow crotch angles (<45°), low branches as tree grows",
+        "mature_trees": "Minimal pruning; remove dead/damaged; thin to reduce wind resistance (storms); raise canopy (clearance); reduce if too large (expensive, stressful)",
+        "three_cut_method": "Large branches: 1) undercut 12-18\" from trunk (prevents bark tear), 2) top cut farther out (removes weight), 3) final cut at branch collar"
+      },
+      "shrubs": {
+        "renewal_pruning": "Overgrown shrubs; cut 1/3 of oldest stems to ground each year; in 3 years, completely renewed; maintains size and vigor",
+        "rejuvenation_pruning": "Cut entire shrub to 6-12 inches in late winter; vigorous regrowth; works for many shrubs (spirea, barberry) but not all (rhododendron poor response)",
+        "shearing": "Formal hedges; hedge shears or power trimmer; wider at base than top (sunlight to lower branches); timing varies by plant"
+      },
+      "roses": {
+        "hybrid_teas_floribundas": "Prune hard in spring; remove dead/diseased; cut to 6-8 strong canes, 12-18 inches tall; 45° angle above outward-facing bud",
+        "climbing_roses": "Minimal pruning; remove dead; tie to support; bloom on old wood (don't prune after flowering); shape as needed",
+        "shrub_roses": "Light pruning; remove dead/diseased; shape; bloom on new wood (can prune spring or after bloom)"
+      }
+    },
+    "fertilization": {
+      "trees_shrubs": "Slow-release fertilizer early spring; 10-10-10 or specific formulation (acid-loving plants 10-5-4); broadcast around drip line, not trunk; 1-2 lbs per inch trunk diameter",
+      "perennials": "Balanced fertilizer (10-10-10) or bloom-boosting (5-10-5) early spring; side-dress or liquid feed during growing season; avoid high-N late summer (promotes soft growth)",
+      "acid_loving": "Azaleas, rhododendrons, blueberries, hollies; acidic fertilizer (ammonium sulfate) or sulfur to lower pH; iron for chlorosis (yellowing leaves, green veins)",
+      "avoid_overfertilization": "Burns plants; excessive vegetative growth (weak, disease-prone); environmental runoff; follow label rates; less is more"
+    },
+    "integrated_pest_management": {
+      "monitoring": "Scout regularly; identify pest (insect, disease, weed); determine threshold (how much damage is acceptable before treatment); not every bug requires pesticide",
+      "cultural_controls": "Sanitation (remove diseased leaves, prune dead wood), proper watering/fertilization (healthy plants resist pests), plant selection (disease-resistant varieties), crop rotation",
+      "mechanical_physical": "Hand-pick (Japanese beetles, caterpillars), barriers (row covers, tree wraps), traps (pheromone, sticky), pruning out (bagworms, tent caterpillars), water spray (aphids)",
+      "biological": "Beneficial insects (ladybugs eat aphids, parasitic wasps), Bt (Bacillus thuringiensis, kills caterpillars, organic), nematodes (kill soil grubs)",
+      "chemical": "Last resort; choose least-toxic effective option (insecticidal soap, horticultural oil, neem); target specific pest; follow label exactly (rate, timing, PPE, re-entry); rotate modes of action (resistance prevention)"
+    }
+  },
+  "seasonal_tasks": {
+    "spring": {
+      "early": "Remove winter mulch from perennials; prune summer-blooming shrubs; dormant oil spray (scale, mites); pre-emergent herbicide; divide perennials; test soil",
+      "mid": "Fertilize lawn (light) and beds; mulch beds; plant annuals after last frost; start mower maintenance; edge beds; begin mowing (raise deck initially)",
+      "late": "Deadhead spring bulbs (remove flower, leave foliage 6 weeks); monitor for pests; adjust irrigation for seasonal needs; plant warm-season vegetables"
+    },
+    "summer": {
+      "tasks": "Water deeply and infrequently; deadhead annuals and perennials (encourages rebloom); monitor for pests/diseases; fertilize annuals every 2-4 weeks; mow at higher height (heat stress); prune spring-blooming shrubs after bloom; weed control",
+      "heat_stress": "Water early morning; mulch to conserve moisture; avoid pruning and fertilizing during extreme heat; provide shade (shade cloth) for sensitive plants"
+    },
+    "fall": {
+      "early": "Fertilize lawn (heavy, most important application); overseed cool-season lawns; plant spring bulbs; divide perennials; plant trees/shrubs (good root establishment before winter)",
+      "mid": "Rake leaves (mulch or compost, don't pile on lawn); last mow (cool season continues, warm season slows); clean and store irrigation (blow out lines in freezing climates); cut back perennials or leave for winter interest",
+      "late": "Protect tender plants (mulch, burlap wrap); drain hoses and fountains; final leaf cleanup; tool maintenance; apply winter fertilizer (high K for hardiness); anti-desiccant spray on evergreens (dry winter areas)"
+    },
+    "winter": {
+      "tasks": "Plan next season; order seeds/plants; maintain tools; monitor for animal damage (deer, rabbits); brush snow off evergreens (prevent breakage); apply dormant oil spray (mild days); prune fruit trees; inspect for winter damage after storms"
+    }
+  },
+  "business_operations": {
+    "estimating_pricing": {
+      "labor_rates": "$25-50/hr per person for maintenance; $40-80/hr for installation; adjust for region, skill, overhead; calculate break-even, add markup 30-50%",
+      "maintenance_pricing": "Per visit (mow, trim, edge, blow = $30-60 for small yard, $60-150 large); monthly contract (stability); per hour (small jobs)",
+      "installation_pricing": "Materials × 2-3 for total price (materials + labor + overhead + profit); or estimate hours × labor rate + materials × markup (1.3-1.5)",
+      "bidding_jobs": "Walk site; measure; note access, obstacles, soil, disposal; list materials with quantities; estimate hours; present professional proposal; follow up"
+    },
+    "equipment": {
+      "mowing": "21\" push mower ($200-500, small yards); 32-48\" walk-behind ($1500-4000, residential); 48-60\" zero-turn ($3000-8000+, commercial/large); trailer ($500-2000)",
+      "power_tools": "String trimmer, edger, blower (backpack $300-600), hedge trimmer ($150-400), chainsaw ($200-600); 2-stroke vs 4-stroke vs battery; commercial grade for daily use",
+      "hand_tools": "Shovels, rakes (leaf, garden, landscape), pruners (hand, loppers, pole saw), wheelbarrow, digging bar, hoes; quality tools last",
+      "maintenance": "Sharpen mower blades regularly; change oil, air filter, spark plugs per schedule; clean equipment after use; winter storage (stabilizer in fuel, drain carbs); repair > replace for commercial equipment"
+    },
+    "licensing_insurance": {
+      "business_license": "Required in most areas; city/county; $50-500; annual renewal",
+      "pesticide_applicator_license": "Required to apply pesticides commercially; testing, CEUs; state-specific; serious penalties for unlicensed application",
+      "liability_insurance": "General liability $1-2M coverage; protects against property damage, injury; $500-2000/year; required by many commercial clients",
+      "workers_comp": "Required if employees; covers injury on job; rates vary by state and payroll; expensive but necessary",
+      "vehicle_insurance": "Commercial auto for trucks/trailers; higher limits than personal; covers equipment in transit"
+    },
+    "client_management": {
+      "contracts": "Written agreement; scope of work, price, schedule, payment terms, cancellation policy; protects both parties; reduces disputes",
+      "scheduling": "Route planning (minimize drive time); weekly maintenance accounts vs on-call; weather delays (build in buffer); software (Jobber, LMN)",
+      "communication": "Confirm appointments; update on delays; text/email for efficiency; professional appearance and demeanor",
+      "invoicing_payment": "Invoice promptly; payment terms (due upon receipt, net 15, net 30); accept credit cards (fee 2-3% but convenience); autopay for recurring clients; late fees (clearly stated in contract)"
+    }
+  }
+}

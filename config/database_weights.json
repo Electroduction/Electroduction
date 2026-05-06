@@ -298,6 +298,30 @@
       "databases": {
         "operations_compliance_maintenance": {"weight": 0.85, "algorithms": ["cot_verification", "weak_to_strong"]}
       }
+    },
+    "masonry": {
+      "weight": 0.85,
+      "priority": "high",
+      "rationale": "Structural safety; building codes; concrete strength specifications; proper mixing ratios; load-bearing requirements",
+      "databases": {
+        "concrete_techniques_materials": {"weight": 0.87, "algorithms": ["cot_verification", "weak_to_strong"]}
+      }
+    },
+    "landscaping": {
+      "weight": 0.76,
+      "priority": "medium-high",
+      "rationale": "Plant health and survival; irrigation system design; pesticide safety; design principles; seasonal timing critical",
+      "databases": {
+        "design_horticulture_maintenance": {"weight": 0.78, "algorithms": ["weak_to_strong"]}
+      }
+    },
+    "pharmacy": {
+      "weight": 0.92,
+      "priority": "critical",
+      "rationale": "Medication safety; dosage calculation accuracy; controlled substance regulations DEA; HIPAA compliance; high error consequences",
+      "databases": {
+        "pharmacy_tech_operations_calculations": {"weight": 0.94, "algorithms": ["cot_verification"]}
+      }
     }
   },
 
