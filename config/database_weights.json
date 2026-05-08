@@ -322,6 +322,30 @@
       "databases": {
         "pharmacy_tech_operations_calculations": {"weight": 0.94, "algorithms": ["cot_verification"]}
       }
+    },
+    "insurance": {
+      "weight": 0.82,
+      "priority": "high",
+      "rationale": "Claims liability; regulatory compliance; property damage assessment accuracy; fraud detection; contractual obligations",
+      "databases": {
+        "claims_adjusting_estimation": {"weight": 0.84, "algorithms": ["weak_to_strong", "cot_verification"]}
+      }
+    },
+    "food_service": {
+      "weight": 0.87,
+      "priority": "high",
+      "rationale": "Food safety critical; FDA regulations; temperature control prevents illness; allergen management; ServSafe compliance; health code violations",
+      "databases": {
+        "restaurant_management_safety": {"weight": 0.90, "algorithms": ["cot_verification"]}
+      }
+    },
+    "quality_control": {
+      "weight": 0.84,
+      "priority": "high",
+      "rationale": "Manufacturing quality; Six Sigma methodology; ISO 9001 compliance; statistical process control; measurement accuracy; defect prevention",
+      "databases": {
+        "manufacturing_inspection_six_sigma": {"weight": 0.86, "algorithms": ["weak_to_strong", "cot_verification"]}
+      }
     }
   },
 

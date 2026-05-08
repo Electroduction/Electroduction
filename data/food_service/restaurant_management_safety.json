@@ -1,0 +1,219 @@
+{
+  "_source": "ServSafe certification, Restaurant management guides, Food safety regulations FDA, Kitchen operations best practices",
+  "_note": "Long-tail food service knowledge. Food safety HACCP, kitchen operations, menu costing, staff management, health codes, ServSafe principles.",
+  "food_safety": {
+    "temperature_control": {
+      "danger_zone": "41-135°F; bacteria multiply rapidly; keep food out of danger zone (cold <41°F, hot >135°F); 2-hour rule (1 hour if ambient >90°F)",
+      "cooking_temps": {
+        "165f": "Poultry, stuffed foods, casseroles, reheated leftovers; highest risk; 15 seconds",
+        "155f": "Ground meats (beef, pork, fish), eggs for hot holding, injected meats; 15 seconds",
+        "145f": "Whole cuts (steaks, chops, roasts), fish, eggs for immediate service; 15 seconds; allow 3-min rest time for roasts",
+        "135f": "Vegetables, fruits, grains, legumes cooked for hot holding; commercial food safety, not USDA recommendations"
+      },
+      "cooling": "135°F to 70°F in 2 hours, 70°F to 41°F in additional 4 hours (6 hours total); use ice bath, shallow pans (<2 inches deep), ice wand; monitor with thermometer; if miss window, discard",
+      "reheating": "165°F for 15 seconds within 2 hours; applies to all leftovers; cannot reheat more than once; use stove, oven, microwave (not steam table or slow cooker for initial reheat)",
+      "holding": "Hot holding >135°F (steam table, warmer); cold holding <41°F (ice bath, refrigeration); check temps every 2-4 hours; no holding in danger zone"
+    },
+    "cross_contamination": {
+      "color_coded_cutting_boards": "Red = raw meat; Yellow = raw poultry; Green = fruits/vegetables; Blue = seafood; White = dairy/bread; prevents cross-contact",
+      "separate_equipment": "Dedicated cutting boards, knives, containers for raw animal products; wash between uses (raw to ready-to-eat = cross-contamination risk)",
+      "hand_washing": "20 seconds with soap and water (not sanitizer); after: touching raw animal products, bathroom, eating, smoking, touching face/hair, handling trash; before: food prep, gloves",
+      "glove_use": "Not required but recommended; change between tasks (raw to cooked); wash hands before putting on; single-use only; not substitute for hand washing",
+      "storage_order": "Top to bottom by cooking temp: ready-to-eat top, seafood, whole cuts, ground meat, poultry bottom; prevents drips contaminating lower-temp foods"
+    },
+    "allergen_management": {
+      "big_8_allergens": "Milk, Eggs, Fish, Shellfish, Tree nuts, Peanuts, Wheat, Soybeans; plus sesame (as of 2023); 90% of allergies",
+      "prevention": "Dedicated prep area, equipment, utensils for allergen-free; clean surfaces between; train staff to ask about allergies; clear menu labeling",
+      "cross_contact": "Different from cross-contamination (safety vs allergen); even trace amounts trigger reactions; cannot cook out allergens; dedicated fryer for allergen-free items",
+      "communication": "Server asks about allergies; communicates to kitchen; manager confirms with guest; separate ticket marking; verify ingredients (butter, flour coating, garnishes)"
+    },
+    "haccp": {
+      "principles": "Hazard Analysis Critical Control Points; systematic food safety; identify hazards, determine CCPs, establish limits, monitor, corrective actions, verify, record",
+      "critical_control_points": "Cooking (temperature), cooling (time/temp), cold holding (41°F), hot holding (135°F), reheating (165°F); monitor and document",
+      "corrective_actions": "If CCP not met (example: chicken cooked to 155°F not 165°F), continue cooking; if cannot correct, discard; document incident and action taken",
+      "verification": "Thermometer calibration (ice point 32°F, boiling point 212°F monthly); employee training; health inspection readiness; record review"
+    },
+    "personal_hygiene": {
+      "illness_policy": "Exclude from work if: vomiting, diarrhea, jaundice, sore throat with fever; report to manager; return after 24 hours symptom-free (some illnesses 48 hours or doctor clearance)",
+      "hand_washing_sinks": "Separate from food prep and dishwashing; hot water (100°F+), soap, paper towels; hands-free preferred (foot pedal, automatic); stocked at all times",
+      "hair_restraints": "Hat, visor, hairnet, beard net; prevent hair from contacting food or food-contact surfaces; required by health codes",
+      "jewelry": "Plain band ring only; no bracelets, watches, rings with stones (harbor bacteria, fall into food); remove before food prep",
+      "eating_drinking_smoking": "Only in designated areas away from food prep and storage; no gum chewing in food areas; drink in covered container with straw in designated area only"
+    }
+  },
+  "kitchen_operations": {
+    "mise_en_place": {
+      "definition": "Everything in place; prep work done before service; chop vegetables, portion proteins, prepare sauces, set up station",
+      "station_setup": "Line cook station; cutting board, knives, pans, spatulas, hotel pans with prepped ingredients, side towels, sanitizer bucket; efficient workflow",
+      "prep_lists": "Daily prep list; what needs to be prepared, quantities, priority; based on forecasted covers and 86'd items from previous day",
+      "batch_cooking": "Prep in batches throughout day; fresh product; avoid waste; estimate usage based on historical sales and reservations"
+    },
+    "line_cooking": {
+      "stations": {
+        "grill_broiler": "Steaks, chops, chicken, fish; high heat; sear marks; doneness by touch (rare/medium-rare/medium/medium-well/well)",
+        "sauté_station": "Sautéed dishes, pasta, sauces; stovetop; high volume; quick cook times; coordination with other stations",
+        "fry_station": "Deep fryer; 350-375°F typical; french fries, fried chicken, appetizers; manage oil quality (filter daily, change when dark/smoking/foaming)",
+        "pantry_cold": "Salads, cold appetizers, desserts; refrigerated station; plating; garnishes; no cooking",
+        "expediter_pass": "Final assembly, quality check, communicate with servers, coordinate timing (all plates for table ready together), run the kitchen during service"
+      },
+      "ticket_management": "Order comes in, call out to line, prioritize (appetizers → entrees → desserts), coordinate cook times (long-cook items fired first), all-day count (how many of each item total)",
+      "timing": "Cook times vary; steak 6-12 min, chicken 8-12 min, fish 5-8 min, pasta 8-12 min; start longest items first; everything finishes together; communicate with team ('6 minutes out')",
+      "plating": "Consistent presentation; protein at 6 o'clock, starch 2 o'clock, vegetable 10 o'clock; wipe plate rim; garnish; hot food hot, cold food cold; inspect before sending"
+    },
+    "inventory_management": {
+      "ordering": "Par levels for each item; on-hand count + usage = order quantity; daily orders (produce, dairy, bread), weekly (dry goods, frozen), monthly (paper goods); build in lead time",
+      "receiving": "Check delivery against invoice; inspect quality (temperature, freshness, damage, expiration dates); reject if not acceptable; date and rotate stock (FIFO); store immediately",
+      "fifo": "First In First Out; older product in front, newer in back; use oldest first; prevents spoilage; date all items when opened",
+      "storage": {
+        "dry_storage": "50-70°F; dark, dry, ventilated; off floor (6 inches minimum); away from walls (to allow air circulation); rotate stock; pest control",
+        "refrigeration": "Walk-in 36-40°F; reach-ins 38-42°F; monitor with thermometer; store raw below cooked (as described earlier); tight wrapping; label and date",
+        "freezer": "0°F or below; proper wrapping (prevent freezer burn); thaw in refrigerator (not counter); use within 3-6 months for quality"
+      },
+      "waste_tracking": "Log wasted food (spoilage, overproduction, customer returns); cost waste; identify patterns; adjust ordering and prep; goal <4% of food cost"
+    },
+    "equipment": {
+      "maintenance": "Preventive maintenance schedule; clean daily (grills, fryers, ovens); weekly deep clean (walk-ins, floors, walls); monthly (hood filters, equipment service); service contracts for major equipment",
+      "common_equipment": {
+        "ranges_ovens": "Gas or electric; 6-burner range typical; convection oven (fan circulates, cooks faster/more evenly); standard oven; calibrate temperature monthly",
+        "fryers": "Gas or electric; 40-50 lb capacity typical; filter oil daily (cone filters or machine); change oil when color dark, smoking point low, or foaming; temperature recovery time important",
+        "griddle": "Flat top; breakfast (eggs, pancakes), burgers; season before use (oil coating); clean with grill brick; maintain temperature zones (high, medium, low)",
+        "charbroiler": "Open flame grill; radiant heat; grill marks; clean grates daily; ceramic briquettes or lava rocks (replace when deteriorated)",
+        "reach_in_coolers_freezers": "Undercounter or upright; quick access; monitor temps; gaskets seal tight (replace if torn); defrost freezers regularly",
+        "dishwasher": "High-temp (180°F sanitize, requires booster heater) or low-temp (chemical sanitize); 1-3 minute cycle; scrape/rinse before loading; clean throughout day"
+      },
+      "safety": "Grease fires (Class K extinguisher, never water); equipment guards in place; training on operation; lockout-tagout for repairs; report damage immediately"
+    }
+  },
+  "menu_planning_costing": {
+    "menu_development": {
+      "balance": "Variety of proteins, preparations, flavors, textures; dietary options (vegetarian, vegan, gluten-free); seasonality (fresh, local ingredients when possible)",
+      "item_profitability": "Stars (high profit, high popularity), Plowhorses (low profit, high popularity - keep for volume), Puzzles (high profit, low popularity - promote or replace), Dogs (low profit, low popularity - remove)",
+      "menu_psychology": "Placement (top right corner = prime real estate), boxes/borders (draw attention), descriptions (sensory words increase sales 27%), avoid $ symbols (increases price sensitivity)",
+      "pricing_strategy": "Anchor pricing (expensive item makes others seem reasonable), bundle pricing (prix fixe, combo meals), odd pricing ($12.95 vs $13), competitive analysis"
+    },
+    "recipe_costing": {
+      "ingredient_costing": "Purchase price / yield = cost per usable unit; example: $30 for 10 lb chicken, yields 6.5 lb after butchering = $4.62/lb usable; cost each ingredient in recipe",
+      "portion_costing": "Sum all ingredient costs for recipe; divide by number of portions = cost per portion; example: pasta recipe costs $18, makes 8 servings = $2.25 per serving",
+      "ideal_food_cost": "30-35% typical full-service restaurant; 25-30% fine dining (higher menu prices); 20-25% fast food; Portion cost / Menu price = food cost %; example: $2.25 portion cost / $12.95 menu price = 17.4%",
+      "cost_markup": "Portion cost × markup = menu price; typical markup 3-4× in full-service (1 / target food cost %); example: $2.25 × 3.5 = $7.88, round to $8.95 menu price"
+    },
+    "yield_testing": {
+      "ap_vs_ep": "AP = As Purchased weight; EP = Edible Portion weight after trim/cooking; Yield % = EP / AP × 100",
+      "examples": "Lettuce 75% yield (25% waste from core, outer leaves); Beef tenderloin 60% yield (trimming fat, silver skin); Chicken 65% yield (bones, skin, fat)",
+      "cooking_loss": "Meat shrinks during cooking; 25-30% weight loss typical (moisture evaporation, fat rendering); factor into portion sizing; 6 oz raw = 4.5 oz cooked"
+    }
+  },
+  "financial_management": {
+    "prime_cost": {
+      "definition": "COGS (Cost of Goods Sold) + Labor = Prime Cost; largest expenses; target 60-65% of revenue",
+      "cogs": "(Beginning inventory + Purchases - Ending inventory) / Revenue × 100 = Food Cost %; track weekly; goal 28-35%",
+      "labor_cost": "(Gross payroll + benefits) / Revenue × 100 = Labor Cost %; goal 25-35%; varies by service level (fine dining higher, fast food lower)",
+      "controlling": "Reduce waste, portion control, prevent theft (food and time), efficient scheduling, menu engineering (promote high-profit items)"
+    },
+    "revenue_forecasting": {
+      "covers": "Number of guests; track daily, weekly, monthly; identify patterns (days, seasons, events, weather); historical average + trends + events = forecast",
+      "per_person_average": "Total revenue / covers = PPA or check average; increase through upselling (appetizers, desserts, beverages, premium items)",
+      "revenue_centers": "Food revenue, beverage revenue (alcohol, non-alcohol), catering, retail; track separately; different margins"
+    },
+    "break_even_analysis": {
+      "fixed_costs": "Rent, insurance, salaries (management), loan payments, utilities (base), licenses; remain constant regardless of sales",
+      "variable_costs": "COGS, hourly labor, supplies (to-go containers, napkins), credit card fees; increase with sales",
+      "break_even_point": "Fixed costs / (1 - Variable cost %) = Break-even revenue; example: $30k fixed, 55% variable cost = $30k / 0.45 = $66,667 monthly revenue to break even"
+    },
+    "profit_and_loss": {
+      "revenue": "Total sales (food + beverage + other)",
+      "cogs": "Food cost + beverage cost; subtract from revenue = Gross profit",
+      "labor": "Wages, payroll taxes, benefits; subtract from gross profit",
+      "operating_expenses": "Rent, utilities, marketing, supplies, repairs, insurance; subtract",
+      "ebitda": "Earnings Before Interest, Taxes, Depreciation, Amortization; operating profit; goal 10-15% of revenue in full-service",
+      "net_profit": "After all expenses; goal 5-10% of revenue (varies widely); independent restaurants 3-5% average, franchises/chains 6-9%"
+    }
+  },
+  "staff_management": {
+    "hiring": {
+      "positions": "Front of house (servers, hosts, bartenders, bussers); Back of house (cooks, prep cooks, dishwashers); Management (general manager, kitchen manager, FOH manager)",
+      "interview": "Ask about availability, experience, reason for leaving last job, scenarios (difficult customer, mistake on order); trail shift (working interview, 2-4 hours, observe skills)",
+      "onboarding": "I-9 employment verification, W-4, direct deposit, handbook review, sexual harassment training, food safety training, menu knowledge, POS training, shadow experienced staff"
+    },
+    "scheduling": {
+      "labor_budget": "Target labor % (25-35% of revenue); forecast revenue, multiply by target % = labor budget dollars; divide by average hourly wage = labor hours available",
+      "coverage": "Peak hours need more staff; lunch 11-2, dinner 5-9; slower times skeleton crew; day of week matters (Friday/Saturday busiest, Monday/Tuesday slowest); adjust based on forecast",
+      "positions_needed": "1 server per 3-4 tables (full service), 1 cook per station, 1 expediter, 1 busser per 2-3 servers, 1 dishwasher minimum (2 if high volume), host, bartender; scale to covers",
+      "shift_types": "AM (prep and lunch), PM (prep and dinner), double (all day), split (AM and PM with break), on-call (called in if busy); 2-week schedule posted in advance"
+    },
+    "training": {
+      "foh_training": "Menu knowledge (ingredients, allergies, descriptions), POS system, upselling, service steps (greet, drinks, apps, entrees, check), handling complaints, alcohol service (check ID, recognize intoxication, cut off)",
+      "boh_training": "Food safety, recipes, cooking techniques, equipment operation, knife skills, station procedures, ticket reading, timing, communication",
+      "ongoing": "Menu changes, new recipes, quarterly food safety review, performance feedback, cross-training (build versatility)"
+    },
+    "motivation_retention": {
+      "turnover": "Industry average 70-80% annually; expensive (recruiting, training costs); reduce with competitive pay, positive culture, growth opportunities, recognition",
+      "incentives": "Employee meal discounts (50% or free shift meal), tips (servers, bartenders), bonuses (kitchen, managers - monthly or quarterly), contests (most desserts sold, perfect attendance)",
+      "culture": "Respect all positions, teamwork, open communication, family meal (pre-shift meal together), celebrate successes, provide feedback (positive and constructive)"
+    }
+  },
+  "service_standards": {
+    "table_service_steps": {
+      "greeting": "Within 1 minute of seating; introduce self, specials, drink order; make eye contact, smile, welcoming",
+      "drinks": "Deliver within 3-5 minutes; take appetizer or entree order if ready; suggest cocktails, wine, specialty drinks (upsell)",
+      "order_taking": "Suggest appetizers, sides, wine pairings; repeat order for accuracy; note allergies/modifications; submit to kitchen promptly; enter correctly in POS",
+      "course_timing": "Appetizers within 10 min of order; entrees 15-20 min; check back within 2 min of delivery ('How is everything?'); refill drinks proactively",
+      "check_presentation": "Present when requested or after clearing entree plates; return promptly with change or card; thank guest; invite back"
+    },
+    "upselling": {
+      "techniques": "Suggestive selling (not pushy); appetizers ('Our calamari is fantastic'), premium proteins ('Upgrade to filet mignon for $8'), desserts ('Save room for our famous cheesecake'), cocktails ('Our mojitos are refreshing')",
+      "impact": "Increases check average 15-30%; small incremental sales add up; benefits server (tips), kitchen (higher revenue), owner (profit)"
+    },
+    "handling_complaints": {
+      "listen": "Let guest speak without interruption; empathize ('I understand, I would be upset too'); apologize (even if not restaurant's fault)",
+      "resolve": "Offer solution (remake dish, discount, comped item, manager visit); empower staff to comp up to $25 without manager approval (speeds resolution)",
+      "follow_up": "Check back after resolution ('Is everything better now?'); ensure satisfaction; note in POS for manager review"
+    }
+  },
+  "alcohol_service": {
+    "responsible_service": {
+      "legal_drinking_age": "21 in US; check ID for anyone appearing under 30-40 (house policy); acceptable IDs: driver's license, state ID, passport, military ID; verify photo, DOB, not expired",
+      "signs_of_intoxication": "Slurred speech, glassy eyes, impaired coordination, loud/obnoxious behavior, drowsiness; if observed, slow service (water, food), cut off if necessary, offer taxi/Uber",
+      "cutting_off": "Private conversation; 'I cannot serve you more alcohol; I can call you a ride'; do not argue; involve manager; guest safety priority; liability for overserving (dram shop laws)",
+      "serving_limits": "1 drink per person at a time (no doubles), no alcohol to minors or intoxicated persons (law), last call 30-60 min before close (state law varies)"
+    },
+    "bartending_basics": {
+      "standard_pour": "1.5 oz liquor (jigger or count pour 4-5 seconds); 5 oz wine; 12 oz beer; standardize for consistency and cost control",
+      "inventory_control": "Par stock, bottle counts, daily reconciliation (sales vs depletion); identify theft or over-pouring; liquor cost 18-24% goal",
+      "cocktails": "Know classic cocktails (Martini, Manhattan, Margarita, Old Fashioned, Mojito); use recipes for consistency; fresh ingredients for quality"
+    }
+  },
+  "health_inspections": {
+    "inspection_preparation": {
+      "daily_readiness": "Clean as you go; food properly labeled/dated/stored; temps logged; hand sinks stocked; no bare-hand contact with RTE foods; employees healthy",
+      "inspection_focus": "Food temperatures, cross-contamination prevention, hand washing, food storage, cleanliness, pest control, equipment function, employee knowledge"
+    },
+    "common_violations": {
+      "critical": "Improper holding temps (most common), inadequate cooking temps, bare-hand contact with ready-to-eat, ill employee working; can cause foodborne illness; must correct immediately",
+      "non_critical": "Inadequate cleaning, missing labels/dates, minor equipment damage; doesn't cause immediate illness risk; correct within timeframe (days to weeks)"
+    },
+    "inspection_outcome": {
+      "pass": "No critical violations or corrected on-site; routine follow-up",
+      "conditional_pass": "Critical violations noted; must correct within 3-10 days; re-inspection",
+      "fail": "Imminent health hazard (no hot water, sewage backup, pest infestation); shut down until corrected; re-inspection required before reopening"
+    }
+  },
+  "legal_compliance": {
+    "employment_law": {
+      "minimum_wage": "Federal $7.25 (as of 2024); many states higher; tipped employees $2.13 federal (employer makes up difference if tips don't reach minimum wage)",
+      "overtime": "1.5× regular rate for hours >40 per week; some states daily overtime; salaried exempt employees (managers >$684/week + duties test) no overtime",
+      "breaks": "Federal law doesn't require; many states mandate (10-min paid break per 4 hours, 30-min unpaid meal break per 6 hours); check state law"
+    },
+    "licenses_permits": {
+      "business_license": "City/county; required to operate; annual renewal; $50-500",
+      "food_service_permit": "Health department; inspection required; annual fee; $200-1000",
+      "liquor_license": "State ABC (Alcohol Beverage Control); expensive ($5,000-$500,000 depending on state, type, transferability); beer/wine vs full liquor; on-premise vs off-premise; strict regulations",
+      "food_handler_cards": "Employees certified in food safety; $15-30; online course and test; renew every 3-5 years; manager food safety certification (ServSafe Manager) required in many jurisdictions"
+    },
+    "liability_insurance": {
+      "general_liability": "$1-2M coverage; slip-and-fall, foodborne illness claims; $1,500-5,000/year",
+      "liquor_liability": "Dram shop coverage; overserving claims; $1-2M; $1,000-10,000/year (varies widely by state, sales volume)",
+      "workers_compensation": "Required in all states except TX; covers employee injuries on job; rates vary by state and risk classification (kitchen higher than office)"
+    }
+  }
+}

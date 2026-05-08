@@ -1,0 +1,191 @@
+{
+  "_source": "Insurance adjuster licensing materials, Xactimate estimation software, Property damage assessment guides, Auto collision repair standards",
+  "_note": "Long-tail insurance claims knowledge. Property damage assessment, Xactimate estimating, auto collision evaluation, liability investigation, claims handling.",
+  "property_claims": {
+    "loss_assessment": {
+      "initial_inspection": "Document everything with photos/video before cleanup; measure affected areas; identify source of loss; determine scope of damage; note pre-existing damage separately",
+      "water_damage": {
+        "categories": "Cat 1 clean water (supply line break); Cat 2 gray water (washing machine, dishwasher); Cat 3 black water (sewage, flooding); category affects restoration cost and method",
+        "classes": "Class 1 (minimal absorption, <10% area); Class 2 (significant, carpet/walls <24 inches); Class 3 (ceiling, walls >24 inches, insulation); Class 4 (specialty drying, hardwood, plaster)",
+        "mitigation": "Emergency services within 24-48 hours; extract water, set dehumidifiers/air movers; monitor moisture levels with meter; prevent mold growth (appears 24-72 hours); dry to <15% moisture content",
+        "coverage_issues": "Sudden and accidental = covered; gradual seepage/maintenance = excluded; check if water damage or ensuing mold covered; flood requires separate policy"
+      },
+      "fire_damage": {
+        "smoke_types": "Wet smoke (low heat, smoldering, sticky residue, pungent); Dry smoke (high heat, fast-burning, powdery, easier to clean); Protein smoke (kitchen fires, invisible, strong odor)",
+        "scope": "Structural damage to framing, roof, walls; contents damage (smoke, heat, water from firefighting); smoke odor permeates porous materials; need thermal imaging for hidden damage",
+        "restoration": "Board-up and tarping immediate; structural engineer if compromised; demo fire-damaged materials; clean smoke residue; seal surfaces; ozone treatment or hydroxyl generators for odor; contents cleaning or pack-out"
+      },
+      "wind_hail_damage": {
+        "roof_inspection": "Shingle damage (missing, lifted, creased, granule loss); flashing damage; ridge cap; penetrations (vents, chimneys); use ladder, walk roof if safe or drone; photos with EXIF data",
+        "hail_damage": "Impact marks on shingles (bruising, divots, loss of granules in circular pattern); test hits (self-seal strip damage); soft metals (flashing, vents, gutters show dings); must have matching damage pattern across roof",
+        "siding_damage": "Vinyl cracks, dents; wood splits; aluminum dings; distinguish storm damage from age/wear; document with close-up photos",
+        "claim_pitfalls": "Cosmetic vs functional damage (cosmetic may not be covered or full replacement); aging roof (ACV vs RCV payment); wind-driven rain requires wind damage to opening first"
+      }
+    },
+    "estimating_xactimate": {
+      "sketch": "Draw floor plan to scale; measure perimeter (laser measure or tape); room dimensions; ceiling heights; note openings (doors, windows); elevation walls for height measurements; roof sketch (pitch, squares, complexity)",
+      "line_items": {
+        "structure": "Demo (R&R = remove and replace, RMV = remove only); framing (LF linear feet, SF square feet, EA each); drywall (SF with waste factor 10-15%); insulation (SF); flooring (SF + waste); paint (SF walls + ceiling)",
+        "contents": "Furniture, electronics, clothing; research RCV (replacement cost value); apply depreciation for ACV (actual cash value); total loss if repair > RCV or restoration not feasible",
+        "labor_materials": "Xactimate prices regional (zip code); includes labor and materials for most line items; overhead and profit (O&P) for contractor (10% each = 20% total) if 3+ trades involved"
+      },
+      "depreciation": {
+        "straight_line": "Useful life method; example: roof 20-year life, 10 years old = 50% depreciated; ACV = RCV × (remaining life / total life)",
+        "per_year": "Fixed % per year; carpet 10% per year (10-year life); flooring 5% per year (20-year life); appliances 10-20% per year",
+        "recoverable": "ACV paid up front; depreciation held back; after repairs complete, policyholder submits invoices, receives depreciation (recoverable depreciation); if don't repair, keep ACV only"
+      },
+      "overhead_profit": {
+        "when_applicable": "General contractor needed (3+ trades); large loss requiring coordination; not for small repairs or single-trade jobs",
+        "calculation": "10% overhead + 10% profit on subtotal (not including O&P itself); some carriers allow on all labor/materials, others only contractor-performed items",
+        "dispute": "Common point of contention; document need for GC (complexity, multiple trades, scheduling); some states mandate O&P payment if required"
+      }
+    },
+    "coverage_determination": {
+      "policy_types": {
+        "ho3_special": "Most common homeowners; dwelling replacement cost (open peril - all risks except exclusions); personal property ACV (named peril - only listed causes); 16 named perils for contents",
+        "ho5_comprehensive": "Premium policy; both dwelling and contents replacement cost; open peril for both; broader coverage",
+        "ho6_condo": "Walls-in coverage; condo association covers building; HO-6 covers interior improvements, contents, loss assessment",
+        "dp3_rental": "Dwelling policy; landlord; covers structure; no contents (landlord's property separate); can add loss of rents coverage"
+      },
+      "coverage_limits": {
+        "dwelling": "Coverage A; amount to rebuild (not market value); should be replacement cost estimate; increased cost of construction if updated codes require upgrades",
+        "other_structures": "Coverage B; 10% of dwelling (typically); detached garage, shed, fence; separate limit",
+        "personal_property": "Coverage C; 50-70% of dwelling; contents; applies sublimits (jewelry $1,500, money $200, electronics $2,500); schedule high-value items separately",
+        "loss_of_use": "Coverage D; 20% of dwelling; additional living expenses (ALE); hotel, meals, storage while uninhabitable; actual expenses up to limit",
+        "liability": "Coverage E; $100k-$500k standard; covers legal liability for bodily injury or property damage to others; defense costs; umbrella policy adds $1M+",
+        "medical_payments": "Coverage F; $1k-$5k; pays medical bills for others injured on property regardless of fault; goodwill coverage"
+      },
+      "exclusions": {
+        "common": "Flood (separate policy through NFIP or private); earth movement (earthquake, landslide, sinkhole - separate earthquake policy); maintenance/wear and tear; intentional loss; war/nuclear",
+        "water_damage_fine_print": "Surface water, groundwater, sewer backup (can add rider) often excluded; but resulting damage may be covered (pipe bursts = covered, mold from long-term leak = excluded)",
+        "mold": "Limited or excluded; typically $10k sublimit if ensuing from covered loss (sudden pipe break); not covered if from maintenance issue (leaky roof for months)"
+      }
+    }
+  },
+  "auto_claims": {
+    "collision_assessment": {
+      "damage_inspection": "Exterior panels (hoods, fenders, doors, bumpers); frame/unibody (measure for structural damage); suspension/steering; lights; glass; interior damage from impact",
+      "total_loss_threshold": "Varies by state (70-100% of ACV); if repair cost + salvage value > ACV, total loss; example: car worth $10k, repairs $8k, salvage $3k = $11k > $10k = total",
+      "structural_damage": "Frame or unibody damage; measure with laser or mechanical measuring system (Celette, Car-O-Liner); compare to factory specs; if >6mm out of spec, may be frame damage notation on title",
+      "hidden_damage": "Disassemble to find; suspension damage, subframe damage, cooling system; create supplement estimate for additional damage found during repair; 30-50% of estimates have supplements",
+      "airbag_deployment": "Airbags deployed = expensive ($1,000-3,000 per bag); SRS computer must be replaced; seat belts (pretensioners); steering wheel, dash; often pushes toward total loss"
+    },
+    "estimating_systems": {
+      "ccc_mitchell_audatex": "Auto estimating software; parts pricing databases; labor times from manufacturers or aftermarket guides; regional labor rates",
+      "parts_pricing": {
+        "oem": "Original Equipment Manufacturer; new parts from vehicle manufacturer; highest cost; best quality/fit; some policies require OEM",
+        "aftermarket": "Non-OEM new parts; certified (CAPA, NSF) or non-certified; 20-50% cheaper than OEM; quality varies; insurer can specify unless policy states OEM",
+        "used_lkq": "Like Kind and Quality; salvage yard parts; 50-70% of OEM cost; for older vehicles (5+ years); must match year, make, model; warranty varies",
+        "reconditioned": "Remanufactured; common for mechanical parts (engines, transmissions); core charge (return old part)"
+      },
+      "labor_operations": {
+        "labor_rate": "Regional; $40-100 per hour body labor; $80-150 mechanical; higher in metro areas; insurer database rates vs shop rates (negotiate)",
+        "overlap": "Some operations overlap (remove bumper required for multiple repairs); estimating software calculates; don't pay full time for overlapping removal/installation",
+        "paint_materials": "Separate from labor; paint, clear coat, reducer, hardener; calculated by refinish time × material rate ($30-60 per hour typically)"
+      },
+      "diminished_value": {
+        "inherent_dv": "Loss of value due to accident history; even after perfect repair, vehicle worth less; third-party claim (other party's insurance) must pay in most states; first-party (your insurance) varies",
+        "calculation": "17c formula (Georgia): ACV × 10% × damage modifier (0-1.0) × mileage modifier (0-1.0); or appraisal-based; typical 10-30% of ACV for moderate damage",
+        "eligibility": "Not for total losses (already compensated at ACV); newer vehicles (<5 years) with significant damage; must show value loss (appraisal, comparable sales)"
+      }
+    },
+    "liability_investigation": {
+      "fault_determination": "Police report (not binding but influential); witness statements; physical evidence (point of impact, debris, skid marks, dash cam, surveillance footage); applicable traffic laws",
+      "comparative_negligence": "States vary: pure comparative (fault % reduces recovery, can collect even if 99% at fault), modified comparative (bar at 50-51% at fault), contributory (1% at fault = no recovery)",
+      "subrogation": "Insurer pays insured, then pursues other party's insurance to recover; insured may have deductible waived if full recovery; arbitration if insurers dispute fault",
+      "uninsured_motorist": "UM coverage; if at-fault party has no insurance; insured collects from own policy; may require police report; UIM if other party underinsured (limits too low)",
+      "hit_and_run": "Uninsured motorist covers if state allows (some require UM to apply); collision coverage always applies (with deductible); police report typically required within 24 hours"
+    }
+  },
+  "claims_handling": {
+    "first_notice_of_loss": {
+      "fnol_intake": "Date/time/location of loss; description of what happened; parties involved; police/fire report number; injuries; immediate needs (emergency services, housing)",
+      "coverage_verification": "Policy in force on date of loss; coverage applicable to peril; limits available; deductible; prior claims history (affects renewal, not current claim unless fraud)",
+      "assignment": "Route to appropriate adjuster; property, auto, liability, CAT (catastrophe team for major events); complexity level (simple desk review vs field inspection)",
+      "initial_contact": "24-48 hour contact requirement in most states; set expectations (process, timeline, documentation needed); authorize emergency mitigation if needed"
+    },
+    "investigation": {
+      "documentation": "Photos/video of damage; measurements; receipts for emergency expenses; contractor estimates; medical records (injury claims); employment records (loss of income)",
+      "recorded_statements": "Optional but common; insured, claimant, witnesses; document version of events before memories fade; can be used if story changes later; must inform being recorded",
+      "site_inspection": "In-person inspection for significant claims; verify damage matches reported; identify pre-existing damage; take measurements; create estimate",
+      "expert_referrals": "Engineer (structural damage assessment), appraiser (contents valuation), medical examiner (injury claims), fire investigator (cause and origin), accountant (business interruption)"
+    },
+    "reserve_setting": {
+      "initial_reserve": "Estimate of claim payout; based on preliminary information; includes indemnity (payment to insured) + expenses (adjuster, engineer, legal)",
+      "reserve_adequacy": "Update as information develops; supplements, additional damage, liability assessment changes; under-reserving = poor planning; over-reserving = ties up capital",
+      "ibnr": "Incurred But Not Reported; reserves for claims not yet filed but expected (latent injury, delayed reporting); company-wide, not claim-specific"
+    },
+    "settlement": {
+      "payment_types": {
+        "rcv": "Replacement Cost Value; pays full cost to replace with new of like kind and quality; no depreciation; common for dwelling, sometimes contents",
+        "acv": "Actual Cash Value; RCV minus depreciation; for older roofs, vehicles, sometimes contents; payment at time of loss",
+        "agreed_value": "Pre-agreed amount (classic cars, artwork); no depreciation dispute; pays agreed value if total loss",
+        "functional_replacement": "Replace with less expensive but functionally equivalent; ornate plaster = drywall if policy allows; reduces payout"
+      },
+      "partial_payments": "ACV up front; hold depreciation until repairs complete; or progress payments during construction; retain 10% until final inspection (ensure quality)",
+      "release": "Full and final release of all claims related to loss; sign to receive final payment; cannot reopen claim after signing (except for hidden damage provisions)",
+      "mortgage_clause": "If mortgage on property, check to mortgagee and insured jointly; mortgagee endorses to release funds; protects lender's interest; insured can't collect and not repair"
+    },
+    "disputes": {
+      "appraisal": "Policy provision; if disagree on amount of loss (not coverage), either party can demand; each selects appraiser, appraisers select umpire, majority rules; binding",
+      "public_adjuster": "Insured hires PA (3-15% of settlement); PA represents insured, creates estimate, negotiates; can increase payout but fee reduces net; useful for complex claims or if overwhelmed",
+      "bad_faith": "Insurer unfairly denies, delays, or underpays claim; varies by state; penalties can include policy limits + consequential damages + punitive damages + attorney fees; serious allegations",
+      "department_of_insurance": "File complaint with state regulator; DOI investigates; can result in fines for insurer, required payment; free to consumer; insurer takes seriously"
+    }
+  },
+  "specialty_claims": {
+    "business_interruption": {
+      "coverage": "Lost income during shutdown due to covered loss (fire, storm); pays net income + continuing expenses (payroll, rent, loan payments); requires direct physical loss",
+      "calculation": "Historical financials (last 12 months); project lost revenue during shutdown; subtract non-continuing expenses (COGS, commissions); add continuing expenses; monthly indemnity",
+      "extended_period": "30-360 days after reopening to return to normal revenue; business doesn't immediately bounce back; policy must include extended period of indemnity",
+      "civil_authority": "Shutdown due to government order; requires physical damage in area; pandemic exclusions common after COVID (communicable disease exclusions added)"
+    },
+    "large_loss_commercial": {
+      "cat_claims": "Catastrophe events (hurricanes, wildfires, tornadoes, hail storms); adjuster deployed to area; hundreds or thousands of claims; prioritize by severity; temporary housing, emergency repairs",
+      "equipment_breakdown": "Boilers, HVAC, electrical systems, computers; sudden mechanical/electrical failure; requires inspection, cause determination; may need engineer",
+      "construction_defect": "Builder's risk, CGL claims; defective workmanship claims; construction defect litigation; long-tail (claims arise years later); complex"
+    },
+    "liability_claims": {
+      "premises_liability": "Slip and fall, inadequate security, dog bite; injured party claims negligent maintenance or security; must prove duty, breach, causation, damages",
+      "bodily_injury": "Medical bills, lost wages, pain and suffering; settle or litigate; demand package (medical records, bills, lost wage verification); 3× medical specials rule of thumb for settlement",
+      "property_damage_liability": "Damage to other's property; car accident, tree falls on neighbor's house, contractor damages customer property; repair or replace; diminished value claims",
+      "attorney_representation": "Insurer provides defense under liability coverage; defense costs outside policy limits (duty to defend); insured cannot settle without insurer consent (duty to indemnify)"
+    }
+  },
+  "regulations_licensing": {
+    "adjuster_licensing": {
+      "types": {
+        "staff_adjuster": "Employee of insurance company; resident license in home state; reciprocity or temporary licenses for other states",
+        "independent_adjuster": "Contractor; works for adjusting firms; deployed for CAT or daily claims; needs license in each state worked (or reciprocity); more flexible",
+        "public_adjuster": "Represents policyholders; negotiates with insurers; 3-15% fee; separate license; fiduciary duty to insured; some states heavily regulate"
+      },
+      "requirements": "Pre-licensing education (20-40 hours varies by state); state exam (pass 70-75%); background check; surety bond ($5k-$50k for PA); E&O insurance; CE (continuing education 24 hours biannually typical)",
+      "catastrophe_licenses": "Emergency adjuster license; some states waive requirements during declared emergencies; 90-day temporary license; allows out-of-state adjusters to help"
+    },
+    "claims_regulations": {
+      "prompt_payment": "State laws; 30-90 days to pay or deny after proof of loss submitted; penalties for late payment (interest, attorney fees, bad faith damages)",
+      "unfair_claims_practices": "Cannot misrepresent coverage, alter policy terms, fail to investigate, lowball without justification; state insurance codes define; penalties and fines",
+      "privacy": "GLBA (Gramm-Leach-Bliley Act); protect customer financial information; privacy policy disclosure; secure data; cannot share without consent",
+      "fraud_detection": "SIU (Special Investigations Unit); red flags (inconsistent statements, prior claims history, staged accidents, inflated estimates); refer suspicious claims; cooperate with law enforcement"
+    }
+  },
+  "industry_tools": {
+    "estimating_software": {
+      "xactimate": "Property claims; market leader; sketch tools; line-item database; Xactimate price list (regional); mobile app XactContents",
+      "ccc_one": "Auto claims; total loss valuation (market comparable sales); repair estimating; photo estimating (AI damage recognition)",
+      "mitchell": "Auto claims; estimating, total loss, subrogation; WorkCenter platform",
+      "symbility": "Property claims; competitor to Xactimate; mobile estimating; cloud-based"
+    },
+    "claims_management_systems": {
+      "guidewire": "Enterprise claims management; large insurers; configurable workflows; integrates with estimating tools",
+      "duck_creek": "Policy and claims platform; mid to large carriers",
+      "applied_epic": "Independent agency management; smaller carriers and MGAs"
+    },
+    "investigation_tools": {
+      "iso_claims_search": "Database of prior claims; detect fraud (multiple claims same person); underwriting tool",
+      "carfax_autocheck": "Vehicle history; prior accidents, title brands, odometer; total loss valuation",
+      "moisture_meters": "Pinless or pin-type; measure moisture content in materials; verify dry before closing water claim",
+      "thermal_imaging": "FLIR camera; detect moisture in walls, roof leaks, HVAC issues, electrical hot spots"
+    }
+  }
+}

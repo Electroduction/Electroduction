@@ -1,0 +1,199 @@
+{
+  "_source": "ASQ Quality standards, Six Sigma methodology, ISO 9001 quality management, Statistical process control references",
+  "_note": "Long-tail quality control knowledge. Inspection procedures, SPC charts, Six Sigma DMAIC, measurement systems, ISO standards, quality tools.",
+  "inspection_procedures": {
+    "incoming_inspection": {
+      "sampling_plans": "AQL (Acceptable Quality Limit); ANSI/ASQ Z1.4 standard; sample size based on lot size and inspection level; accept/reject criteria; example: Lot 1000 pcs, General Inspection Level II, AQL 1.0% = sample 80 pcs, accept if ≤2 defects, reject if ≥3",
+      "receiving_inspection": "Verify quantity against packing slip; check for shipping damage; measure critical dimensions; test functionality (if applicable); compare to specification sheet; quarantine until approved",
+      "certificate_of_conformance": "Supplier certifies material meets specs; reduces inspection burden for trusted suppliers; verify periodically (skip lot inspection); maintain records",
+      "supplier_quality": "Approved vendor list; audit suppliers; performance metrics (defect rate, on-time delivery); corrective action for issues; develop partnerships"
+    },
+    "in_process_inspection": {
+      "first_article_inspection": "FAI; inspect first piece after setup; verify all dimensions, features, specifications before production run; prevents batch of defects; AS9102 in aerospace",
+      "patrol_inspection": "Periodic checks during production; every hour, every 50 pieces, etc.; catch process drift before many defects made; plot on control charts",
+      "operator_self_inspection": "Operator checks own work; immediate feedback; reduces defects passed to next operation; requires training and trust",
+      "critical_characteristics": "Key dimensions/features affecting fit, function, safety; 100% inspection or high-frequency sampling; SPC monitoring; may use automated inspection (vision systems, CMM)"
+    },
+    "final_inspection": {
+      "100_percent_inspection": "Every unit inspected; critical safety items, low-volume high-value, customer requirement; expensive but ensures quality",
+      "sampling_inspection": "Statistical sample represents lot; faster, cheaper than 100%; risk of accepting bad lot or rejecting good lot (producer/consumer risk); use when destructive testing or high volume",
+      "functional_testing": "Operate product to verify performance; leak test, pressure test, electrical test, cycle test; simulate end-use conditions; record data",
+      "cosmetic_inspection": "Appearance; scratches, dents, color, finish; often subjective; use visual standards (limit samples showing acceptable vs defect); lighting critical"
+    },
+    "measurement_tools": {
+      "micrometers": "0.001\" (0.01mm) accuracy; outside mic (OD), inside mic (ID), depth mic; anvil faces parallel; calibrate regularly; zero before use",
+      "calipers": "0.001\" (0.02mm digital, 0.001\" vernier) accuracy; OD, ID, depth, step; digital easier to read; battery life issue; vernier mechanical backup",
+      "height_gage": "Measure height from surface plate; 0.001\" accuracy; scribing, layout, comparative measurement; granite surface plate (Grade A ±0.00005\"/ft)",
+      "cmm": "Coordinate Measuring Machine; 0.0001\" accuracy; 3D measurement; CNC probing; expensive ($50k-$500k+); climate-controlled room; aerospace, automotive",
+      "optical_comparator": "Project magnified shadow; overlay tolerance chart; 10-50× magnification; 2D profile inspection; threads, gears, complex shapes",
+      "gage_blocks": "Precision reference standards; 0.00002\" accuracy (Grade 0); calibrate other tools; set fixtures; expensive, handle carefully"
+    }
+  },
+  "statistical_process_control": {
+    "control_charts": {
+      "xbar_r_chart": "Variable data (measurements); X-bar (average) and R (range) charts; subgroup size 2-10; monitors process center and variation; most common",
+      "individuals_chart": "X and mR (moving range); subgroup size 1; slow processes, destructive testing, expensive measurements",
+      "p_chart": "Attribute data (pass/fail); proportion defective; variable sample size; example: % defective parts per shift",
+      "c_chart": "Count of defects; constant sample size; example: number of surface defects per panel",
+      "control_limits": "UCL (Upper Control Limit) = X-bar + A2×R-bar; LCL = X-bar - A2×R-bar; calculated from data (not specifications); ±3 sigma from mean; 99.73% of data within if in control"
+    },
+    "interpreting_charts": {
+      "out_of_control_signals": "Point beyond control limit (immediate action); 7+ consecutive points above or below center line (trend); 7+ consecutive points increasing or decreasing (run); 2 of 3 points >2σ from center (Zone A); 4 of 5 points >1σ (Zone B); 15 points in Zone C (hugging center line, stratification)",
+      "common_cause_variation": "Natural process variation; random; within control limits; stable over time; reduce only by process improvement (not adjustments)",
+      "special_cause_variation": "Assignable cause; out-of-control signal; investigate and eliminate (tool wear, material change, operator error, machine malfunction); adjust process",
+      "overadjustment": "Tampering; adjusting process in control; increases variation; react only to special causes; resist urge to tweak stable process"
+    },
+    "process_capability": {
+      "cp": "Process Capability; Cp = (USL - LSL) / 6σ; measures potential capability (centered process); Cp ≥1.33 (4σ) acceptable, ≥1.67 (5σ) good, ≥2.0 (6σ) excellent",
+      "cpk": "Process Capability Index; Cpk = min[(USL - μ) / 3σ, (μ - LSL) / 3σ]; accounts for centering; Cpk <1.0 = producing defects, 1.0-1.33 marginal, >1.33 acceptable",
+      "ppk": "Process Performance Index; uses actual process σ (not subgroup σ like Cpk); long-term capability; accounts for all variation sources",
+      "interpretation": "Cp vs Cpk: if equal, process centered; if Cpk << Cp, process off-center (adjust mean); if both low, reduce variation (Six Sigma project)"
+    },
+    "sampling": {
+      "random_sampling": "Every unit equal chance; prevents bias; use random number generator or systematic sampling (every nth piece); don't cherry-pick",
+      "sample_size": "Larger sample = more confidence, more expensive; n=30 minimum for normal distribution assumption; calculator or tables for proportion/mean testing",
+      "confidence_interval": "Range likely containing true population parameter; 95% confidence typical; sample mean ± (t-value × s / √n); narrows with larger n",
+      "hypothesis_testing": "Null hypothesis (no difference); alternative (there is difference); p-value <0.05 reject null (95% confidence); Type I error (false positive), Type II (false negative)"
+    }
+  },
+  "six_sigma": {
+    "dmaic": {
+      "define": "Project charter; problem statement; goal (reduce defects 50%); scope; stakeholders; VOC (Voice of Customer); CTQ (Critical to Quality) tree; high-level process map (SIPOC - Suppliers, Inputs, Process, Outputs, Customers)",
+      "measure": "Current state baseline; select CTQ metrics; operational definition (exact measurement method); validate measurement system (Gage R&R); collect data; process capability baseline (current Cpk, defect rate)",
+      "analyze": "Root cause analysis; Pareto chart (80/20 rule - vital few vs trivial many); fishbone diagram (Ishikawa - 6M: Man, Machine, Material, Method, Measurement, Mother Nature); hypothesis testing; regression analysis; identify variables affecting CTQ",
+      "improve": "Brainstorm solutions (address root causes); pilot test; DOE (Design of Experiments) to optimize; implement improvements; mistake-proofing (poka-yoke); update procedures; train operators",
+      "control": "Control plan; SPC charts; audits; standard work; sustain gains; hand off to process owner; monitor KPIs; celebrate success; document lessons learned"
+    },
+    "six_sigma_metrics": {
+      "dpmo": "Defects Per Million Opportunities; (Defects / (Units × Opportunities)) × 1,000,000; industry-standard metric; 6σ = 3.4 DPMO",
+      "sigma_level": "1σ = 691,462 DPMO (69% yield), 2σ = 308,537 DPMO, 3σ = 66,807 DPMO (93%), 4σ = 6,210 DPMO (99.38%), 5σ = 233 DPMO (99.98%), 6σ = 3.4 DPMO (99.9997%)",
+      "yield": "First Pass Yield (FPY); % of units passing without rework; Rolled Throughput Yield (RTY) = FPY1 × FPY2 × FPY3...; accounts for cumulative defects across process steps",
+      "cost_of_poor_quality": "COPQ; scrap, rework, warranty, inspection, customer complaints; typically 15-25% of revenue; Six Sigma reduces to <10%"
+    },
+    "quality_tools": {
+      "pareto_chart": "Bar chart + cumulative line; prioritize (80% of problems from 20% of causes); focus improvement efforts on vital few",
+      "fishbone_diagram": "Cause-and-effect; brainstorm all potential causes; organize by categories (6M); drill down to root cause",
+      "5_whys": "Ask 'why' 5 times to drill to root cause; simple but effective; example: Why is machine down? Bearing failed. Why? No lubrication. Why? Missed PM. Why? No schedule. Why? No PM program. Root cause: implement PM program",
+      "fmea": "Failure Modes and Effects Analysis; proactive; identify potential failures; Severity × Occurrence × Detection = RPN (Risk Priority Number); prioritize mitigation actions for high RPN",
+      "control_plan": "Document critical parameters, measurement method, sample size, frequency, reaction plan; living document; updated with process changes"
+    },
+    "design_of_experiments": {
+      "purpose": "Optimize process; understand variable interactions; efficient (fewer trials than one-factor-at-a-time); statistical rigor",
+      "full_factorial": "All combinations of all levels; 2^k experiments (k factors, 2 levels each); example: 3 factors = 2^3 = 8 runs; identifies main effects and interactions",
+      "fractional_factorial": "Subset of full factorial; fewer runs; assumes some interactions negligible; screening experiments (many factors, identify significant few)",
+      "response_surface": "Optimize settings; Box-Behnken, Central Composite designs; curved response surface; find optimal sweet spot",
+      "analysis": "ANOVA (Analysis of Variance); identifies significant factors; regression equation predicts response; validate with confirmation runs"
+    }
+  },
+  "quality_management_systems": {
+    "iso_9001": {
+      "principles": "Customer focus, leadership, engagement of people, process approach, improvement, evidence-based decisions, relationship management",
+      "requirements": "Context of organization, leadership, planning, support, operation, performance evaluation, improvement; documented procedures; management review; internal audits; corrective action",
+      "certification": "Third-party audit by registrar; initial audit (documentation review + on-site), surveillance audits (annually), recertification (every 3 years); maintains customer confidence; some industries require",
+      "benefits": "Standardized processes, continuous improvement culture, customer satisfaction, reduced waste, employee engagement, competitive advantage (required by some customers)"
+    },
+    "as9100": {
+      "aerospace_quality": "Based on ISO 9001 + aerospace-specific requirements; configuration management, risk management, FOD (Foreign Object Debris) prevention, counterfeit parts prevention",
+      "nadcap": "National Aerospace and Defense Contractors Accreditation Program; special processes (heat treating, welding, NDT, chemical processing); strict auditing; costly but required for aerospace suppliers"
+    },
+    "iatf_16949": {
+      "automotive_quality": "Based on ISO 9001 + automotive requirements (GM, Ford, Chrysler, VW, etc.); PPAP (Production Part Approval Process), APQP (Advanced Product Quality Planning), control plans, MSA (Measurement Systems Analysis)",
+      "core_tools": "APQP, PPAP, FMEA, MSA, SPC; required by automotive OEMs; zero-defect mentality; continuous improvement (Kaizen)"
+    },
+    "document_control": {
+      "procedures": "SOPs (Standard Operating Procedures); work instructions; who, what, when, how; revision control; approval signatures; distribution to point of use",
+      "records": "Objective evidence; inspection records, calibration certificates, training records, audit reports; retention (typically 3-10 years, some forever); traceability",
+      "change_control": "ECN (Engineering Change Notice); document changes; approve before implementation; update drawings, procedures, training; notification to affected parties; revision history"
+    }
+  },
+  "measurement_system_analysis": {
+    "gage_r_and_r": {
+      "purpose": "Validate measurement system; separate measurement variation from process variation; ensure gage capable before process capability study",
+      "method": "10 parts × 3 operators × 2-3 trials = 60-90 measurements; calculate repeatability (equipment variation, EV) and reproducibility (appraiser variation, AV); %GRR = (GRR / Total Variation) × 100",
+      "acceptance_criteria": "%GRR <10% excellent, 10-30% acceptable (may be OK depending on application), >30% unacceptable (improve measurement system before using for decisions)",
+      "improvement": "High repeatability (EV) = gage needs calibration, repair, replacement; High reproducibility (AV) = training needed, procedure unclear, gage difficult to use"
+    },
+    "calibration": {
+      "frequency": "Based on usage, environment, criticality; micrometers annually, thermometers quarterly, load cells monthly; more frequent if critical or harsh environment",
+      "traceability": "NIST (National Institute of Standards and Technology) traceable; standards calibrated against higher-level standards, ultimately to NIST; unbroken chain; certificate required",
+      "out_of_tolerance": "If found OOT during calibration, review all measurements since last calibration; assess impact; may need to recall product, notify customers, corrective action",
+      "calibration_labels": "Sticker on gage; calibration date, due date, calibration lab, unique ID; do not use if expired; quarantine until recalibrated"
+    },
+    "attribute_agreement": {
+      "purpose": "Validate attribute inspection (pass/fail, visual); measure inspector consistency and accuracy",
+      "method": "30-50 samples (mix of good and bad, known truth); 2-3 inspectors; 2 trials; calculate: inspector vs self (within-appraiser), inspector vs standard (vs truth), inspector vs inspector (between-appraiser)",
+      "acceptance": ">90% agreement with self and standard; >80% between appraisers; if low, improve standards (limit samples), training, lighting, magnification"
+    }
+  },
+  "root_cause_analysis": {
+    "8d_problem_solving": {
+      "d1_team": "Assemble cross-functional team; relevant expertise; empowered to implement solutions",
+      "d2_describe": "Problem description; 5W2H (Who, What, When, Where, Why, How, How many); contain problem (interim action to prevent spreading)",
+      "d3_containment": "Immediate actions to protect customer; sort and inspect inventory, 100% inspection, rework, recall; buy time for permanent fix",
+      "d4_root_cause": "5 Whys, fishbone, fault tree analysis; verify root cause (recreate problem by reintroducing cause, eliminate by removing cause)",
+      "d5_permanent_corrective_action": "Develop solutions; pilot test; verify effective; implement; poka-yoke (mistake-proof) preferred",
+      "d6_implement": "Roll out to production; update procedures, train, verify effectiveness over time",
+      "d7_prevent_recurrence": "Systemic improvements; update FMEA, control plan, work instructions; apply lessons learned to similar processes",
+      "d8_team_recognition": "Celebrate success; recognize team contributions; document lessons learned; close report"
+    },
+    "is_is_not_analysis": {
+      "structure": "IS: What is the problem? When/where does it occur? How much? | IS NOT: What related items are OK? When/where does it NOT occur?",
+      "distinctions": "Differences between IS and IS NOT columns; clues to root cause; example: Problem on Line A (IS) but not Line B (IS NOT) → investigate differences between lines",
+      "focus": "Narrows investigation; what's unique about the problem conditions; what changed?"
+    }
+  },
+  "quality_costs": {
+    "cost_categories": {
+      "prevention": "Training, process improvement, quality planning, preventive maintenance, supplier development; proactive; 5-10% of COPQ; high ROI",
+      "appraisal": "Inspection, testing, audits, calibration, gage R&R; finding defects; 10-20% of COPQ; necessary but non-value-added",
+      "internal_failure": "Scrap, rework, re-inspection, downtime, engineering changes; caught before customer; 25-40% of COPQ; waste",
+      "external_failure": "Warranty, returns, recalls, liability, lost sales, reputation damage; reached customer; 25-40% of COPQ; most expensive",
+      "goal": "Shift spending to prevention (lowest total COPQ); reduce appraisal and failure costs; optimal quality cost ~2-4% of sales (world-class)"
+    },
+    "hidden_factory": {
+      "concept": "Rework, sorting, expediting, firefighting; parallel operation fixing defects; hides true capacity; increases lead time",
+      "impact": "Rework = 10-20% of production capacity; eliminate to increase throughput without capital investment; measure OEE (Overall Equipment Effectiveness) to reveal hidden losses"
+    }
+  },
+  "continuous_improvement": {
+    "kaizen": {
+      "philosophy": "Small, incremental improvements; everyone involved; daily improvement culture; Japanese: 'change for better'",
+      "kaizen_event": "Blitz; focused 3-5 day improvement workshop; cross-functional team; specific problem; rapid implementation; celebrate quick wins",
+      "pdca_cycle": "Plan-Do-Check-Act (Deming); Plan (identify improvement, plan change), Do (test on small scale), Check (analyze results), Act (implement if successful or adjust and repeat)",
+      "suggestion_system": "Employees submit improvement ideas; review and implement; recognition/rewards; engagement and ownership; Toyota average 50+ suggestions per employee per year"
+    },
+    "lean_integration": {
+      "waste_elimination": "8 wastes (DOWNTIME): Defects, Overproduction, Waiting, Not utilizing talent, Transportation, Inventory, Motion, Extra processing; quality defects = prime waste",
+      "value_stream_mapping": "Map current state (all steps, value-added vs non-value-added); design future state (eliminate waste); action plan to close gap",
+      "5s": "Sort (remove unnecessary), Set in order (organize), Shine (clean), Standardize (procedures), Sustain (discipline); foundation for quality; visual management",
+      "jidoka": "Automation with human touch; machines stop at abnormality; separate human work from machine work; prevent defects from progressing; andon (visual alert)"
+    },
+    "benchmarking": {
+      "internal": "Compare across plants, lines, shifts; best practices sharing; easiest to access data",
+      "competitive": "Compare to direct competitors; market position; difficult to get data; industry surveys, trade shows",
+      "functional": "Compare to best-in-class (any industry); breakthrough ideas; example: pit crew process (NASCAR) applied to hospital ER patient flow",
+      "process": "Site visits, interviews, data collection, gap analysis, adapt best practices (don't copy blindly - fit to culture)"
+    }
+  },
+  "advanced_quality": {
+    "design_for_quality": {
+      "dfss": "Design for Six Sigma; DMADV (Define, Measure, Analyze, Design, Verify); proactive quality in design phase; prevents defects vs detecting",
+      "qfd": "Quality Function Deployment; House of Quality matrix; customer requirements → engineering characteristics → design targets; prioritize features; competitive analysis",
+      "robust_design": "Taguchi methods; design insensitive to noise (environmental variation, component variation); parameter design (optimal settings); tolerance design (minimize variation)"
+    },
+    "non_destructive_testing": {
+      "visual": "Simplest; naked eye or magnified; surface defects; cracks, corrosion, misalignment; borescope for internal inspection",
+      "dye_penetrant": "Liquid penetrant seeps into surface cracks; developer draws it out; visible or fluorescent dye; finds small surface cracks",
+      "magnetic_particle": "Ferromagnetic materials; magnetic field applied; particles accumulate at cracks; surface and near-surface defects",
+      "ultrasonic": "Sound waves; pulse-echo or through-transmission; internal defects, thickness measurement; welds, castings, composites; requires couplant",
+      "radiography": "X-ray or gamma ray; film or digital detector; internal defects; welds, castings; 2D image of 3D part; safety concerns (radiation)",
+      "eddy_current": "Conductive materials; induced currents; surface and near-surface cracks, coating thickness, conductivity; fast, no couplant"
+    },
+    "reliability_engineering": {
+      "mtbf": "Mean Time Between Failures; 1 / failure rate; repairable systems; higher is better; calculated from field data or predicted from component MTBFs",
+      "weibull_analysis": "Failure distribution; shape parameter β (β<1 infant mortality, β=1 random, β>1 wear-out); scale parameter η (characteristic life); predict warranty costs, optimize maintenance",
+      "reliability_testing": "ALT (Accelerated Life Testing); overstress to induce failures quickly; model degradation; predict field life; save time vs real-time testing",
+      "halt_hass": "Highly Accelerated Life Test (design phase, find weaknesses) / Highly Accelerated Stress Screen (production, screen out infant mortality); thermal cycling, vibration, voltage variation"
+    }
+  }
+}
