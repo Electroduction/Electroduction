@@ -1,0 +1,57 @@
+name: Website CI
+
+on:
+  push:
+    branches: [main, feature/react-fastapi-website]
+    paths:
+      - 'website/**'
+  pull_request:
+    paths:
+      - 'website/**'
+
+jobs:
+  backend-tests:
+    name: Backend Tests (13 unit tests)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          cd website/backend
+          pip install -r requirements.txt
+
+      - name: Run tests
+        run: |
+          cd website/backend
+          pytest test_api.py -v --tb=short
+
+  frontend-build:
+    name: Frontend Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: website/frontend/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd website/frontend
+          npm ci
+
+      - name: Build
+        run: |
+          cd website/frontend
+          REACT_APP_API_URL=http://localhost:8000 npm run build
