@@ -67,6 +67,6 @@ Software development, cybersecurity, fintech, IT, bioinformatics
 ---
 
 ## 🤝 Connect With Me
-**LinkedIn:** https://linkedin.com/in/kenny-situ  
+**LinkedIn:**
 **GitHub:** https://github.com/Electroduction  
 **Project Folder:** https://drive.google.com/drive/folders/1KOyzP4kdgR71ya3HPVXrweMN9Op7SqWX?usp=drive_link
