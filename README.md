@@ -9,13 +9,13 @@
 All projects: **https://tinyurl.com/kenny-projects**
 
 ### 🎮 Summer Projects (WIP)
-- **Video Game Project** – In development  
+- **Video Game Project** – Work in progress  
 - **Machine Learning Project** – Completed Google ML + AI courses  
 - **File Save Script** – Custom file‑saving automation tool  
 
 ### 🐍 Python Data Scraper  
-- Built with Selenium + WebDriver  
-- Extracts structured data from dynamic websites  
+- Built using Selenium + WebDriver  
+- Successfully extracts structured data from dynamic sites  
 
 ### 🔐 IT Capstone: Secure Website Deployment  
 Documentation: **https://tinyurl.com/kenny-capstone**
@@ -59,7 +59,6 @@ Software development, cybersecurity, fintech, IT, bioinformatics
 ---
 
 ## 🤝 Connect With Me
-
-[![LinkedIn](https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg)](https://linkedin.com/in/kenny-situ)
-[![GitHub](https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg)](https://github.com/KennySitu)
-[![Portfolio](https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/google.svg)](https://tinyurl.com/kenny-projects)
+**LinkedIn:** https://linkedin.com/in/kenny-situ  
+**GitHub:** https://github.com/KennySitu  
+**Portfolio/Drive:** https://tinyurl.com/kenny-projects
