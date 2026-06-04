@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './GameStats.css'
+import { API_URL } from '../api'
 
 function GameStats({ apiStatus }) {
   const [stats, setStats] = useState(null)
@@ -15,8 +16,8 @@ function GameStats({ apiStatus }) {
 
       try {
         const [statsRes, leaderboardRes] = await Promise.all([
-          fetch('http://localhost:8000/api/game/stats'),
-          fetch('http://localhost:8000/api/game/leaderboard')
+          fetch(`${API_URL}/api/game/stats`),
+          fetch(`${API_URL}/api/game/leaderboard`)
         ])
 
         if (statsRes.ok) {

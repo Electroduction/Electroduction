@@ -36,7 +36,7 @@ class LeaderboardEntry(BaseModel):
     date: datetime
 
 # In-memory storage (replace with database in production)
-DATA_DIR = "/home/user/Electroduction/website/backend/data"
+DATA_DIR = os.environ.get("DATA_DIR", os.path.join(os.path.dirname(__file__), "data"))
 os.makedirs(DATA_DIR, exist_ok=True)
 
 def load_data(filename: str, default=None):

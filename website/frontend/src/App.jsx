@@ -6,6 +6,7 @@ import GameStats from './components/GameStats'
 import About from './components/About'
 import Contact from './components/Contact'
 import Navigation from './components/Navigation'
+import { API_URL } from './api'
 
 function App() {
   const [apiStatus, setApiStatus] = useState('checking')
@@ -14,7 +15,7 @@ function App() {
     // Check backend API connection
     const checkAPI = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/health')
+        const response = await fetch(`${API_URL}/api/health`)
         if (response.ok) {
           setApiStatus('connected')
         } else {
