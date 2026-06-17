@@ -1,0 +1,11 @@
+# Electroduction IT Security Suite Requirements
+# =============================================
+
+# Cryptography (for VPN encryption)
+cryptography>=41.0.0
+
+# Optional: Network packet manipulation
+# scapy>=2.5.0  # Requires root/admin
+
+# Optional: Raw socket access (Linux only)
+# python-iptables>=1.0.0  # For firewall integration
