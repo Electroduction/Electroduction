@@ -6,7 +6,7 @@ Author: Kenny Situ
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 from typing import Optional
 import datetime
 
@@ -24,7 +24,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ─── Models ───────────────────────────────────────────────────────────────────
+# ── Models ─────────────────────────────────────────────────────
 
 class ContactMessage(BaseModel):
     name: str
@@ -32,7 +32,13 @@ class ContactMessage(BaseModel):
     subject: str
     message: str
 
-# ─── In-memory data ───────────────────────────────────────────────────────────
+# ── Helpers ────────────────────────────────────────────────────
+
+def utcnow() -> str:
+    """Return current UTC time as ISO string (timezone-aware)."""
+    return datetime.datetime.now(datetime.timezone.utc).isoformat()
+
+# ── Data ───────────────────────────────────────────────────────
 
 PROJECTS = [
     {
@@ -107,21 +113,21 @@ STATS = {
 }
 
 LEADERBOARD = [
-    {"rank": 1, "name": "Player_Alpha", "score": 98500, "level": 42, "games": 120},
-    {"rank": 2, "name": "NeonByte", "score": 87200, "level": 38, "games": 95},
-    {"rank": 3, "name": "CyberKnight", "score": 75600, "level": 35, "games": 80},
-    {"rank": 4, "name": "DataPunk", "score": 68900, "level": 31, "games": 72},
-    {"rank": 5, "name": "ElectroAce", "score": 55300, "level": 28, "games": 65},
-    {"rank": 6, "name": "BitWarden", "score": 44700, "level": 24, "games": 53},
-    {"rank": 7, "name": "QuantumQ", "score": 38100, "level": 21, "games": 45},
-    {"rank": 8, "name": "ShadowStack", "score": 29800, "level": 18, "games": 38},
-    {"rank": 9, "name": "GlitchGuru", "score": 21400, "level": 14, "games": 30},
-    {"rank": 10, "name": "ByteBomber", "score": 12600, "level": 10, "games": 22},
+    {"rank": 1,  "name": "Player_Alpha", "score": 98500, "level": 42, "games": 120},
+    {"rank": 2,  "name": "NeonByte",     "score": 87200, "level": 38, "games": 95},
+    {"rank": 3,  "name": "CyberKnight",  "score": 75600, "level": 35, "games": 80},
+    {"rank": 4,  "name": "DataPunk",     "score": 68900, "level": 31, "games": 72},
+    {"rank": 5,  "name": "ElectroAce",   "score": 55300, "level": 28, "games": 65},
+    {"rank": 6,  "name": "BitWarden",    "score": 44700, "level": 24, "games": 53},
+    {"rank": 7,  "name": "QuantumQ",     "score": 38100, "level": 21, "games": 45},
+    {"rank": 8,  "name": "ShadowStack",  "score": 29800, "level": 18, "games": 38},
+    {"rank": 9,  "name": "GlitchGuru",   "score": 21400, "level": 14, "games": 30},
+    {"rank": 10, "name": "ByteBomber",   "score": 12600, "level": 10, "games": 22},
 ]
 
-contact_messages = []
+contact_messages: list = []
 
-# ─── Endpoints ────────────────────────────────────────────────────────────────
+# ── Endpoints ──────────────────────────────────────────────────
 
 @app.get("/", tags=["Health"])
 def root():
@@ -130,7 +136,7 @@ def root():
         "status": "online",
         "message": "Electroduction Portfolio API is running",
         "version": "1.0.0",
-        "timestamp": datetime.datetime.utcnow().isoformat(),
+        "timestamp": utcnow(),
     }
 
 
@@ -160,10 +166,7 @@ def get_project(project_id: int):
 @app.get("/api/stats", tags=["Stats"])
 def get_stats():
     """Get portfolio statistics and key metrics."""
-    return {
-        **STATS,
-        "last_updated": datetime.datetime.utcnow().isoformat(),
-    }
+    return {**STATS, "last_updated": utcnow()}
 
 
 @app.get("/api/leaderboard", tags=["Game"])
@@ -173,7 +176,7 @@ def get_leaderboard(limit: int = 10):
     return {
         "leaderboard": LEADERBOARD[:limit],
         "total_players": len(LEADERBOARD),
-        "last_updated": datetime.datetime.utcnow().isoformat(),
+        "last_updated": utcnow(),
     }
 
 
@@ -184,8 +187,8 @@ def send_contact(msg: ContactMessage):
         raise HTTPException(status_code=422, detail="Message must be at least 10 characters.")
     entry = {
         "id": len(contact_messages) + 1,
-        **msg.dict(),
-        "received_at": datetime.datetime.utcnow().isoformat(),
+        **msg.model_dump(),
+        "received_at": utcnow(),
     }
     contact_messages.append(entry)
     return {
