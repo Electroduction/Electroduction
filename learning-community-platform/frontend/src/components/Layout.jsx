@@ -40,11 +40,12 @@ const Layout = () => {
   const navigation = [
     { name: 'Home', href: '/', icon: HomeIcon },
     { name: 'Topics', href: '/topics', icon: AcademicCapIcon },
+    { name: 'Forum', href: '/forum', icon: ChatBubbleLeftRightIcon },
     { name: 'Lessons', href: '/lessons', icon: BookOpenIcon },
     { name: 'Research', href: '/research', icon: BeakerIcon },
     { name: 'Study Groups', href: '/study-groups', icon: UserGroupIcon, requiresAuth: true },
-    { name: 'Messages', href: '/messages', icon: ChatBubbleLeftRightIcon, requiresAuth: true },
     { name: 'Leaderboard', href: '/leaderboard', icon: TrophyIcon },
+    { name: 'Messages', href: '/messages', icon: ChatBubbleLeftRightIcon, requiresAuth: true },
   ];
 
   return (

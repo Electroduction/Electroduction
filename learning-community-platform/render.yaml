@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: skillsphere-api
+    runtime: node
+    rootDir: learning-community-platform/backend
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: JWT_SECRET
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
